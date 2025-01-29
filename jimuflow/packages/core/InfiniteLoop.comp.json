@@ -1,0 +1,20 @@
+{
+  "name": "InfiniteLoop",
+  "displayName": "Infinite loop",
+  "controlFlowType": "LOOP",
+  "type": "jimuflow.components.core.InfiniteLoopComponent",
+  "primaryCategory": "Process Control",
+  "secondaryCategory": "Loop",
+  "sortNo": 5,
+  "helpUrl": "commands/ProcessControl/loop/infinite_loop/",
+  "variables": [
+    {
+      "name": "loopIndex",
+      "type": "number",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Loop index"
+      }
+    }
+  ]
+}

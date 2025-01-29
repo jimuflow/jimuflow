@@ -1,0 +1,85 @@
+{
+  "name": "GetCookies",
+  "displayName": "Get cookies",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.web_automation.GetCookiesComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Web Automation",
+  "secondaryCategory": "Web Page Operation",
+  "sortNo": 8,
+  "helpUrl": "commands/WebAutomation/WebPageOperation/get_cookies/",
+  "variables": [
+    {
+      "name": "getType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "page",
+      "uiConfig": {
+        "label": "Get type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "page",
+            "label": "Cookies for specified page"
+          },
+          {
+            "value": "url",
+            "label": "Cookies for specified url"
+          }
+        ]
+      }
+    },
+    {
+      "name": "webPage",
+      "type": "WebPage",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web page",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "getType",
+          "operator": "==",
+          "value": "page"
+        }
+      }
+    },
+    {
+      "name": "webBrowser",
+      "type": "WebBrowser",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web browser",
+        "inputType": "expression",
+        "helpInfo": "Please enter or select the web browser",
+        "dependsOn": {
+          "variableName": "getType",
+          "operator": "==",
+          "value": "url"
+        }
+      }
+    },
+    {
+      "name": "url",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Url",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "getType",
+          "operator": "==",
+          "value": "url"
+        }
+      }
+    },
+    {
+      "name": "cookies",
+      "type": "list",
+      "elementType": "dict",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Cookie list"
+      }
+    }
+  ]
+}

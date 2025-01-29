@@ -1,0 +1,93 @@
+{
+  "name": "ImportExcelAsTable",
+  "displayName": "Import excel as table",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.table.ImportExcelAsTableComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Table",
+  "sortNo": 8,
+  "helpUrl": "commands/DataTable/import_excel_as_table/",
+  "variables": [
+    {
+      "name": "filePath",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Excel file path",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.file_path_editor.OpenFilePathEdit",
+        "inputValueType": "expression",
+        "helpInfo": "Please input the file path of the excel file"
+      }
+    },
+    {
+      "name": "sheetSelectType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "by_index",
+      "uiConfig": {
+        "label": "Sheet select type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "by_index",
+            "label": "Select sheet by index"
+          },
+          {
+            "value": "by_name",
+            "label": "Select sheet by name"
+          }
+        ]
+      }
+    },
+    {
+      "name": "sheetIndex",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Sheet index",
+        "inputType": "expression",
+        "placeholder": "The index position of the first sheet is 1, and so on",
+        "dependsOn": {
+          "variableName": "sheetSelectType",
+          "operator": "==",
+          "value": "by_index"
+        }
+      }
+    },
+    {
+      "name": "sheetName",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Sheet name",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "sheetSelectType",
+          "operator": "==",
+          "value": "by_name"
+        }
+      }
+    },
+    {
+      "name": "useFirstRowAsHeader",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": true,
+      "uiConfig": {
+        "label": "Use the first row of data as the header",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "table",
+      "type": "table",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Table",
+        "helpInfo": "The imported table"
+      }
+    }
+  ]
+}

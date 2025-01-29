@@ -1,0 +1,9 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource>
+        <file>icons/jimuflow.png</file>
+        <file>icons/redpoint.png</file>
+        <file>icons/web_element.png</file>
+        <file>icons/window_element.png</file>
+    </qresource>
+</RCC>

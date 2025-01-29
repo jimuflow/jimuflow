@@ -1,0 +1,88 @@
+{
+  "name": "CreateDate",
+  "displayName": "Create Date",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.CreateDateComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "Date Time Operation",
+  "sortNo": 2,
+  "helpUrl": "commands/DataProcess/DateTimeOperation/create_date/",
+  "variables": [
+    {
+      "name": "initType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "today",
+      "uiConfig": {
+        "label": "Initialization type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "today",
+            "label": "Today"
+          },
+          {
+            "value": "timestamp",
+            "label": "Convert timestamp to date"
+          },
+          {
+            "value": "parse",
+            "label": "Parse date string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "timestamp",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Timestamp(s)",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "initType",
+          "operator": "==",
+          "value": "timestamp"
+        }
+      }
+    },
+    {
+      "name": "dateString",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Date string",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "initType",
+          "operator": "==",
+          "value": "parse"
+        }
+      }
+    },
+    {
+      "name": "dateFormat",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Date format",
+        "inputType": "expression",
+        "helpInfo": "Common Format Codes\n\nYYYY: Four digit year (e.g. 2024)\n\nYY: Two digit year (e.g. 24 represents 2024)\n\nMM: Month (01 to 12)\n\nDD: day of the month (01 to 31)",
+        "dependsOn": {
+          "variableName": "initType",
+          "operator": "==",
+          "value": "parse"
+        }
+      }
+    },
+    {
+      "name": "result",
+      "type": "date",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Date"
+      }
+    }
+  ]
+}

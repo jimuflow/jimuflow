@@ -1,0 +1,227 @@
+{
+  "name": "ExportTable",
+  "displayName": "Export table",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.table.ExportTableComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Table",
+  "sortNo": 10,
+  "helpUrl": "commands/DataTable/export_table/",
+  "variables": [
+    {
+      "name": "table",
+      "type": "table",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Data Table",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "saveFolder",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Save folder",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.file_path_editor.FolderPathEdit",
+        "inputValueType": "expression"
+      }
+    },
+    {
+      "name": "fileFormat",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "xlsx",
+      "uiConfig": {
+        "label": "File format",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "xlsx",
+            "label": "xlsx"
+          },
+          {
+            "value": "xls",
+            "label": "xls"
+          },
+          {
+            "value": "csv",
+            "label": "csv"
+          }
+        ]
+      }
+    },
+    {
+      "name": "sheetName",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Sheet name",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "fileFormat",
+          "operator": "in",
+          "value": ["xlsx","xls"]
+        }
+      }
+    },
+    {
+      "name": "fileEncoding",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "system_default",
+      "uiConfig": {
+        "label": "File encoding",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "system_default",
+            "label": "System default"
+          },
+          {
+            "value": "utf-8",
+            "label": "UTF-8"
+          },
+          {
+            "value": "ascii",
+            "label": "ASCII"
+          },
+          {
+            "value": "latin-1",
+            "label": "Latin-1"
+          },
+          {
+            "value": "utf-8-sig",
+            "label": "UTF-8 Bom"
+          },
+          {
+            "value": "utf-16",
+            "label": "UTF-16"
+          },
+          {
+            "value": "utf-32",
+            "label": "UTF-32"
+          },
+          {
+            "value": "gbk",
+            "label": "GBK"
+          },
+          {
+            "value": "gb2312",
+            "label": "GB2312"
+          },
+          {
+            "value": "gb18030",
+            "label": "GB18030"
+          }
+        ],
+        "dependsOn": {
+          "variableName": "fileFormat",
+          "operator": "==",
+          "value": "csv"
+        }
+      }
+    },
+    {
+      "name": "useCustomDelimiter",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Use custom delimiter",
+        "inputType": "check_box",
+        "required": false,
+        "dependsOn": {
+          "variableName": "fileFormat",
+          "operator": "==",
+          "value": "csv"
+        }
+      }
+    },
+    {
+      "name": "customDelimiter",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Custom delimiter",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "useCustomDelimiter",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "fileNamingType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "random",
+      "uiConfig": {
+        "label": "File naming type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "random",
+            "label": "Random file name"
+          },
+          {
+            "value": "custom",
+            "label": "Custom file name"
+          }
+        ]
+      }
+    },
+    {
+      "name": "customFilename",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Custom filename",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "fileNamingType",
+          "operator": "==",
+          "value": "custom"
+        }
+      }
+    },
+    {
+      "name": "overrideExistingFile",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Override existing file",
+        "inputType": "check_box",
+        "required": false,
+        "dependsOn": {
+          "variableName": "fileNamingType",
+          "operator": "==",
+          "value": "custom"
+        }
+      }
+    },
+    {
+      "name": "exportHeader",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": true,
+      "uiConfig": {
+        "label": "Export table header",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "filePath",
+      "type": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "File path"
+      }
+    }
+  ]
+}

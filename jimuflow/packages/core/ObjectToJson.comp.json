@@ -1,0 +1,30 @@
+{
+  "name": "ObjectToJson",
+  "displayName": "Object To Json",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.ObjectToJsonComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "JSON Operation",
+  "sortNo": 2,
+  "helpUrl": "commands/DataProcess/JSONOperation/object_to_json/",
+  "variables": [
+    {
+      "name": "obj",
+      "type": "any",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Object",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "result",
+      "type": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Result"
+      }
+    }
+  ]
+}

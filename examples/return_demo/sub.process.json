@@ -1,0 +1,51 @@
+{
+  "name": "子流程",
+  "variables": [
+    {
+      "name": "参数1",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "required": false
+      }
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"这是子流程\""
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:core:If",
+      "inputs": {
+        "operand1": "参数1",
+        "op": "==",
+        "operand2": "\"提前返回\""
+      },
+      "lineNo": 2,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"提前返回\""
+          },
+          "lineNo": 3
+        },
+        {
+          "component": "jimuflow:core:Return",
+          "lineNo": 4
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"正常返回\""
+      },
+      "lineNo": 5
+    }
+  ]
+}

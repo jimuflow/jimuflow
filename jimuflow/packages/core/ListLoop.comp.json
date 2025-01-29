@@ -1,0 +1,36 @@
+{
+  "name": "ListLoop",
+  "displayName": "List loop",
+  "controlFlowType": "LOOP",
+  "type": "jimuflow.components.core.ListLoopComponent",
+  "primaryCategory": "Process Control",
+  "secondaryCategory": "Loop",
+  "sortNo": 3,
+  "helpUrl": "commands/ProcessControl/loop/list_loop/",
+  "categories": [
+    [
+      "Data Process",
+      "List operation"
+    ]
+  ],
+  "variables": [
+    {
+      "name": "list",
+      "type": "list",
+      "elementType": "any",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "List",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "loopItem",
+      "type": "any",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Loop item"
+      }
+    }
+  ]
+}

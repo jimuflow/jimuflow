@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Page 6 - jimuflow网页自动化测试</title>
+    <style>
+        #dragArea, #dropArea {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+            margin: 20px;
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+        }
+        #draggable {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            position: absolute;
+            cursor: move;
+        }
+    </style>
+</head>
+<body style="margin: 0;">
+<div id="dragArea">
+    <div id="draggable" draggable="true">拖动我</div>
+</div>
+<div id="dropArea">放置区域</div>
+<script>
+    const draggable = document.getElementById('draggable');
+    const dropArea = document.getElementById('dropArea');
+
+    let offsetX, offsetY;
+
+    draggable.addEventListener('dragstart', (e) => {
+        offsetX = e.clientX - draggable.getBoundingClientRect().left;
+        offsetY = e.clientY - draggable.getBoundingClientRect().top;
+        e.dataTransfer.setData('text/plain', null); // 为了兼容性
+    });
+
+    dropArea.addEventListener('dragover', (e) => {
+        e.preventDefault(); // 允许放置
+    });
+
+    dropArea.addEventListener('drop', (e) => {
+        const dropAreaRect = dropArea.getBoundingClientRect();
+        const x = e.clientX - dropAreaRect.left - offsetX;
+        const y = e.clientY - dropAreaRect.top - offsetY;
+
+        // 更新位置
+        draggable.style.left = `${x}px`;
+        draggable.style.top = `${y}px`;
+        dropArea.appendChild(draggable);
+    });
+</script>
+</body>
+</html>

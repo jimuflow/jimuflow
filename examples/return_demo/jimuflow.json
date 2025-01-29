@@ -1,0 +1,7 @@
+{
+  "name": "return_demo",
+  "namespace": "jimuflow",
+  "version": "1.0.0",
+  "mainProcess": "主流程",
+  "dependencies": []
+}

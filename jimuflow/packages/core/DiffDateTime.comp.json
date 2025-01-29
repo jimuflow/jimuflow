@@ -1,0 +1,67 @@
+{
+  "name": "DiffDateTime",
+  "displayName": "Calculate time difference",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.DiffDateTimeComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "Date Time Operation",
+  "sortNo": 5,
+  "helpUrl": "commands/DataProcess/DateTimeOperation/diff_date_time/",
+  "variables": [
+    {
+      "name": "startingDate",
+      "type": "datetime",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Starting date",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "endDate",
+      "type": "datetime",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "End Date",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "timeUnit",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "seconds",
+      "uiConfig": {
+        "label": "Time unit",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "seconds",
+            "label": "Seconds"
+          },
+          {
+            "value": "minutes",
+            "label": "Minutes"
+          },
+          {
+            "value": "hours",
+            "label": "Hours"
+          },
+          {
+            "value": "days",
+            "label": "Days"
+          }
+        ]
+      }
+    },
+    {
+      "name": "timeDifference",
+      "type": "number",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Time difference"
+      }
+    }
+  ]
+}

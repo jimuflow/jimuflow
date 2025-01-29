@@ -1,0 +1,134 @@
+{
+  "name": "WriteTableRow",
+  "displayName": "Write table row",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.table.WriteTableRowComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Table",
+  "sortNo": 3,
+  "helpUrl": "commands/DataTable/write_table_row/",
+  "variables": [
+    {
+      "name": "table",
+      "type": "table",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Data Table",
+        "inputType": "expression",
+        "helpInfo": "Target data table to be written"
+      }
+    },
+    {
+      "name": "writeType",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Write Type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "append",
+            "label": "Append a row"
+          },
+          {
+            "value": "insert",
+            "label": "Insert a row"
+          },
+          {
+            "value": "update",
+            "label": "Update a row"
+          }
+        ]
+      }
+    },
+    {
+      "name": "rowNo",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Row number",
+        "inputType": "expression",
+        "helpInfo": "Enter the line number, starting from line 1, where -n represents the nth to last line",
+        "dependsOn": {
+          "variableName": "writeType",
+          "operator": "in",
+          "value": [
+            "insert",
+            "update"
+          ]
+        }
+      }
+    },
+    {
+      "name": "rowInputType",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Row Input Type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "row",
+            "label": "Input row"
+          },
+          {
+            "value": "columns",
+            "label": "Input columns"
+          }
+        ]
+      }
+    },
+    {
+      "name": "row",
+      "type": "list",
+      "direction": "IN",
+      "elementType": "text",
+      "uiConfig": {
+        "label": "Input row",
+        "inputType": "expression",
+        "helpInfo": "Row value list",
+        "dependsOn": {
+          "variableName": "rowInputType",
+          "operator": "==",
+          "value": "row"
+        }
+      }
+    },
+    {
+      "name": "columns",
+      "type": "list",
+      "direction": "IN",
+      "elementType": "list",
+      "uiConfig": {
+        "label": "Input columns",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.table_row_editor.TableRowEditor",
+        "helpInfo": "Row columns list",
+        "dependsOn": {
+          "variableName": "rowInputType",
+          "operator": "==",
+          "value": "columns"
+        }
+      }
+    },
+    {
+      "name": "appendRowIfOutOfRange",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "If the row number is greater than the number of rows in the table, the content will be automatically written to the next row at the end of the table",
+        "inputType": "check_box",
+        "required": false,
+        "dependsOn": {
+          "variableName": "writeType",
+          "operator": "in",
+          "value": [
+            "insert",
+            "update"
+          ]
+        }
+      }
+    }
+  ]
+}

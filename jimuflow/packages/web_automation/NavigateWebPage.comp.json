@@ -1,0 +1,118 @@
+{
+  "name": "NavigateWebPage",
+  "displayName": "Navigate Web Page",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.web_automation.NavigateWebPageComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Web Automation",
+  "secondaryCategory": "Web Page Operation",
+  "sortNo": 4,
+  "helpUrl": "commands/WebAutomation/WebPageOperation/navigate_web_page/",
+  "variables": [
+    {
+      "name": "webPage",
+      "type": "WebPage",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web page",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "navigateType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "goto",
+      "uiConfig": {
+        "label": "Navigate type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "goto",
+            "label": "Go to new url"
+          },
+          {
+            "value": "go_back",
+            "label": "Go back"
+          },
+          {
+            "value": "go_forward",
+            "label": "Go forward"
+          },
+          {
+            "value": "reload",
+            "label": "Reload"
+          }
+        ]
+      }
+    },
+    {
+      "name": "url",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Url",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "navigateType",
+          "operator": "==",
+          "value": "goto"
+        }
+      }
+    },
+    {
+      "name": "waitLoaded",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": true,
+      "uiConfig": {
+        "label": "Wait for the web page to load",
+        "group": "advanced",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "loadTimeout",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"30\"",
+      "uiConfig": {
+        "label": "Load timeout(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "waitLoaded",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "loadTimeoutAction",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "stop_loading",
+      "uiConfig": {
+        "label": "Execute after loading timeout",
+        "group": "advanced",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "stop_loading",
+            "label": "Stop web page loading"
+          },
+          {
+            "value": "throw_error",
+            "label": "perform error handling"
+          }
+        ],
+        "dependsOn": {
+          "variableName": "waitLoaded",
+          "operator": "==",
+          "value": true
+        }
+      }
+    }
+  ]
+}

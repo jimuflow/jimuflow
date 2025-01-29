@@ -1,0 +1,92 @@
+{
+  "name": "MouseScroll",
+  "displayName": "Mouse Scroll",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.mouse_keyboard.MouseScrollComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Mouse/Keyboard",
+  "sortNo": 3,
+  "helpUrl": "commands/MouseKeyboard/mouse_scroll/",
+  "variables": [
+    {
+      "name": "scrollDirection",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "down",
+      "uiConfig": {
+        "label": "Scroll direction",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "up",
+            "label": "Scroll up"
+          },
+          {
+            "value": "down",
+            "label": "Scroll down"
+          }
+        ]
+      }
+    },
+    {
+      "name": "numberOfScrolls",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Number of scrolls",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "modifierKey",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "none",
+      "uiConfig": {
+        "label": "Modifier key",
+        "group": "advanced",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "Alt",
+            "label": "Alt"
+          },
+          {
+            "value": "Control",
+            "label": "Ctrl"
+          },
+          {
+            "value": "ControlOrMeta",
+            "label": "Ctrl or Meta"
+          },
+          {
+            "value": "Meta",
+            "label": "Meta"
+          },
+          {
+            "value": "Shift",
+            "label": "Shift"
+          }
+        ]
+      }
+    },
+    {
+      "name": "delayAfterAction",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"0\"",
+      "uiConfig": {
+        "label": "Delay after action(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    }
+  ]
+}

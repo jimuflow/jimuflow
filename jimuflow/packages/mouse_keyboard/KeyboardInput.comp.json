@@ -1,0 +1,162 @@
+{
+  "name": "KeyboardInput",
+  "displayName": "Keyboard Input",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.mouse_keyboard.KeyboardInputComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Mouse/Keyboard",
+  "sortNo": 4,
+  "helpUrl": "commands/MouseKeyboard/keyboard_input/",
+  "variables": [
+    {
+      "name": "inputType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "text",
+      "uiConfig": {
+        "label": "Input type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "text",
+            "label": "Input text"
+          },
+          {
+            "value": "hotkey",
+            "label": "Input hotkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "textContent",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Text content",
+        "inputType": "expression",
+        "helpInfo": "Support all Unicode characters, including Chinese and English, on Windows, but only English characters on Linux and macOS. If you need to input non-English characters on Linux or macOS, please use the setting clipboard text command and pasting hotkey.",
+        "dependsOn": {
+          "variableName": "inputType",
+          "operator": "==",
+          "value": "text"
+        }
+      }
+    },
+    {
+      "name": "hotkeyType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "common",
+      "uiConfig": {
+        "label": "Hotkey type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "common",
+            "label": "Common hotkey"
+          },
+          {
+            "value": "custom",
+            "label": "Custom hotkey"
+          }
+        ],
+        "dependsOn": {
+          "variableName": "inputType",
+          "operator": "==",
+          "value": "hotkey"
+        }
+      }
+    },
+    {
+      "name": "commonHotkey",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "ctrlcmd_c",
+      "uiConfig": {
+        "label": "Common hotkey",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "ctrlcmd_c",
+            "label": "Ctrl/Cmd+C"
+          },
+          {
+            "value": "ctrlcmd_v",
+            "label": "Ctrl/Cmd+V"
+          },
+          {
+            "value": "ctrlcmd_x",
+            "label": "Ctrl/Cmd+X"
+          },
+          {
+            "value": "ctrlcmd_z",
+            "label": "Ctrl/Cmd+Z"
+          },
+          {
+            "value": "ctrlcmd_s",
+            "label": "Ctrl/Cmd+S"
+          },
+          {
+            "value": "ctrlcmd_a",
+            "label": "Ctrl/Cmd+A"
+          },
+          {
+            "value": "enter",
+            "label": "Enter"
+          }
+        ],
+        "dependsOn": {
+          "variableName": "hotkeyType",
+          "operator": "==",
+          "value": "common"
+        }
+      }
+    },
+    {
+      "name": "customHotkey",
+      "type": "list",
+      "elementType": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Custom hotkey",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.hotkey_editor.HotkeyEdit",
+        "inputValueType": "literal",
+        "dependsOn": {
+          "variableName": "hotkeyType",
+          "operator": "==",
+          "value": "custom"
+        }
+      }
+    },
+    {
+      "name": "inputInterval",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"100\"",
+      "uiConfig": {
+        "label": "Input interval(milliseconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "inputType",
+          "operator": "==",
+          "value": "text"
+        }
+      }
+    },
+    {
+      "name": "delayAfterAction",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"0\"",
+      "uiConfig": {
+        "label": "Delay after action(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    }
+  ]
+}

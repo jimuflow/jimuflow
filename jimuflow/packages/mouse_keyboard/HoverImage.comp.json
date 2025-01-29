@@ -1,0 +1,145 @@
+{
+  "name": "HoverImage",
+  "displayName": "Hover Image",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.mouse_keyboard.HoverImageComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Mouse/Keyboard",
+  "sortNo": 5,
+  "helpUrl": "commands/MouseKeyboard/hover_image/",
+  "variables": [
+    {
+      "name": "image",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Image",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.process_resource_editor.ProcessResourceEdit",
+        "inputValueType": "expression"
+      }
+    },
+    {
+      "name": "cursorPosition",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "center",
+      "uiConfig": {
+        "label": "Cursor position",
+        "group": "advanced",
+        "required": false,
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "center",
+            "label": "Image Center"
+          },
+          {
+            "value": "upper_left",
+            "label": "The upper left corner of the image"
+          }
+        ]
+      }
+    },
+    {
+      "name": "offsetX",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"0\"",
+      "uiConfig": {
+        "label": "X coordinate offset",
+        "group": "advanced",
+        "required": false,
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "offsetY",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"0\"",
+      "uiConfig": {
+        "label": "Y coordinate offset",
+        "group": "advanced",
+        "required": false,
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "similarity",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"90\"",
+      "uiConfig": {
+        "label": "Similarity(%)",
+        "group": "advanced",
+        "required": false,
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "matchMode",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "color",
+      "uiConfig": {
+        "label": "Match mode",
+        "group": "advanced",
+        "required": false,
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "color",
+            "label": "Color matching"
+          },
+          {
+            "value": "grayscale",
+            "label": "Grayscale matching"
+          }
+        ]
+      }
+    },
+    {
+      "name": "moveSpeed",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "instant",
+      "uiConfig": {
+        "label": "Move speed",
+        "group": "advanced",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "instant",
+            "label": "Instant"
+          },
+          {
+            "value": "fast",
+            "label": "Fast"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "slow",
+            "label": "Slow"
+          }
+        ]
+      }
+    },
+    {
+      "name": "delayAfterAction",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"0\"",
+      "uiConfig": {
+        "label": "Delay after action(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    }
+  ]
+}

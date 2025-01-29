@@ -1,0 +1,50 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "循环次数",
+      "type": "any",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:SetVariable",
+      "inputs": {
+        "value": "\"0\""
+      },
+      "outputs": {
+        "result": "循环次数"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:core:While",
+      "inputs": {
+        "operand1": "循环次数",
+        "op": "<",
+        "operand2": "\"3\""
+      },
+      "lineNo": 2,
+      "flow": [
+        {
+          "component": "jimuflow:core:SetVariable",
+          "inputs": {
+            "value": "循环次数 + \"1\""
+          },
+          "outputs": {
+            "result": "循环次数"
+          },
+          "lineNo": 3
+        },
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"循环次数=\" + 循环次数"
+          },
+          "lineNo": 4
+        }
+      ]
+    }
+  ]
+}

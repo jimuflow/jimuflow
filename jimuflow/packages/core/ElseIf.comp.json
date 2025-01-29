@@ -1,0 +1,65 @@
+{
+  "name": "ElseIf",
+  "displayName": "Else if branch",
+  "controlFlowType": "ELSE_IF",
+  "type": "jimuflow.components.core.ElseIfComponent",
+  "primaryCategory": "Process Control",
+  "secondaryCategory": "Switch",
+  "sortNo": 3,
+  "helpUrl": "commands/ProcessControl/switch/else_if/",
+  "variables": [
+    {
+      "name": "operand1",
+      "type": "any",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "The first operand",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "op",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Operator",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "==",
+            "label": "equal to"
+          },
+          {
+            "value": "!=",
+            "label": "not equal to"
+          },
+          {
+            "value": ">",
+            "label": "greater than"
+          },
+          {
+            "value": "<",
+            "label": "less than"
+          },
+          {
+            "value": ">=",
+            "label": "greater than or equal to"
+          },
+          {
+            "value": "<=",
+            "label": "less than or equal to"
+          }
+        ]
+      }
+    },
+    {
+      "name": "operand2",
+      "type": "any",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "The second operand",
+        "inputType": "expression"
+      }
+    }
+  ]
+}

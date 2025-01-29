@@ -1,0 +1,117 @@
+{
+  "name": "SliceText",
+  "displayName": "Slice Text",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.SliceTextComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "Text Operation",
+  "sortNo": 8,
+  "helpUrl": "commands/DataProcess/TextOperation/slice_text/",
+  "variables": [
+    {
+      "name": "originalText",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Original text",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "fromWhere",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "specified_position",
+      "uiConfig": {
+        "label": "From where",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "first_char",
+            "label": "from the first character"
+          },
+          {
+            "value": "specified_position",
+            "label": "from the specified location"
+          },
+          {
+            "value": "specified_text",
+            "label": "from the specified text"
+          }
+        ]
+      }
+    },
+    {
+      "name": "startingPosition",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Starting character position",
+        "inputType": "expression",
+        "placeholder": "Starting from 0, - n represents the nth to last character",
+        "dependsOn": {
+          "variableName": "fromWhere",
+          "operator": "==",
+          "value": "specified_position"
+        }
+      }
+    },
+    {
+      "name": "startingText",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Starting text content",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "fromWhere",
+          "operator": "==",
+          "value": "specified_text"
+        }
+      }
+    },
+    {
+      "name": "toWhere",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "specified_length",
+      "uiConfig": {
+        "label": "To where",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "end",
+            "label": "to the end of the text"
+          },
+          {
+            "value": "specified_length",
+            "label": "to the specified length"
+          }
+        ]
+      }
+    },
+    {
+      "name": "slicedLength",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Sliced length",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "toWhere",
+          "operator": "==",
+          "value": "specified_length"
+        }
+      }
+    },
+    {
+      "name": "result",
+      "type": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Result"
+      }
+    }
+  ]
+}

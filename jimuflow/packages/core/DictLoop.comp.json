@@ -1,0 +1,36 @@
+{
+  "name": "DictLoop",
+  "displayName": "Dictionary loop",
+  "controlFlowType": "LOOP",
+  "type": "jimuflow.components.core.DictLoopComponent",
+  "primaryCategory": "Process Control",
+  "secondaryCategory": "Loop",
+  "sortNo": 4,
+  "helpUrl": "commands/ProcessControl/loop/dict_loop/",
+  "categories": [
+    [
+      "Data Process",
+      "Dictionary operation"
+    ]
+  ],
+  "variables": [
+    {
+      "name": "dict",
+      "type": "dict",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Dictionary",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "loopItem",
+      "type": "list",
+      "elementType": "any",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Loop item"
+      }
+    }
+  ]
+}

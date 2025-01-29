@@ -1,0 +1,30 @@
+{
+  "name": "TextToNumber",
+  "displayName": "Text To Number",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.TextToNumberComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "Text Operation",
+  "sortNo": 1,
+  "helpUrl": "commands/DataProcess/TextOperation/text_to_number/",
+  "variables": [
+    {
+      "name": "value",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Text value",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "result",
+      "type": "number",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Result"
+      }
+    }
+  ]
+}

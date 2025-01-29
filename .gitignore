@@ -1,0 +1,10 @@
+/venv/
+/.idea/
+/build/
+/dist/
+/JimuFlow.spec
+/site/
+/workspace/
+/.venv/
+/test_venv/
+/jimuflow.egg-info/

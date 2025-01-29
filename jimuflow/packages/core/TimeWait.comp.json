@@ -1,0 +1,20 @@
+{
+  "name": "TimeWait",
+  "displayName": "Wait",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.TimeWaitComponent",
+  "primaryCategory": "Wait",
+  "sortNo": 3,
+  "helpUrl": "commands/Wait/time_wait/",
+  "variables": [
+    {
+      "name": "seconds",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Wait time(seconds)",
+        "inputType": "expression"
+      }
+    }
+  ]
+}

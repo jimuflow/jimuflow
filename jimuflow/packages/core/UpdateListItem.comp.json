@@ -1,0 +1,42 @@
+{
+  "name": "UpdateListItem",
+  "displayName": "Update List Item",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.UpdateListItemComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "List operation",
+  "sortNo": 4,
+  "helpUrl": "commands/DataProcess/ListOperation/update_list_item/",
+  "variables": [
+    {
+      "name": "list",
+      "type": "list",
+      "elementType": "any",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "List",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "position",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Item position",
+        "inputType": "expression",
+        "placeholder": "Starting from 0, - n represents the nth to last"
+      }
+    },
+    {
+      "name": "value",
+      "type": "any",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Item Value",
+        "inputType": "expression"
+      }
+    }
+  ]
+}

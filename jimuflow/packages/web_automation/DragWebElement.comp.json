@@ -1,0 +1,220 @@
+{
+  "name": "DragWebElement",
+  "displayName": "Drag Web Page Element",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.web_automation.DragWebElementComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Web Automation",
+  "secondaryCategory": "Web Element Operation",
+  "sortNo": 10,
+  "helpUrl": "commands/WebAutomation/WebElementOperation/drag_web_element/",
+  "variables": [
+    {
+      "name": "webPage",
+      "type": "WebPage",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web page",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "sourceElementUri",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Source Element",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit"
+      }
+    },
+    {
+      "name": "sourceOffset",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Source element offset",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "sourceX",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Source Element x offset",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "sourceOffset",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "sourceY",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Source Element y offset",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "sourceOffset",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "dragType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "to_element",
+      "uiConfig": {
+        "label": "Drag type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "to_element",
+            "label": "Drag to element"
+          },
+          {
+            "value": "by_offset",
+            "label": "Drag by offset"
+          }
+        ]
+      }
+    },
+    {
+      "name": "targetElementUri",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Target Element",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit",
+        "dependsOn": {
+          "variableName": "dragType",
+          "operator": "==",
+          "value": "to_element"
+        }
+      }
+    },
+    {
+      "name": "targetOffset",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Target element offset",
+        "inputType": "check_box",
+        "required": false,
+        "dependsOn": {
+          "variableName": "dragType",
+          "operator": "==",
+          "value": "to_element"
+        }
+      }
+    },
+    {
+      "name": "targetX",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Target Element x offset",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "targetOffset",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "targetY",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Target Element y offset",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "targetOffset",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "dragOffsetX",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Drag by x offset",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "dragType",
+          "operator": "==",
+          "value": "by_offset"
+        }
+      }
+    },
+    {
+      "name": "dragOffsetY",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Drag by y offset",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "dragType",
+          "operator": "==",
+          "value": "by_offset"
+        }
+      }
+    },
+    {
+      "name": "dragSpeed",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "instant",
+      "uiConfig": {
+        "label": "Drag speed",
+        "group": "advanced",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "instant",
+            "label": "Instant"
+          },
+          {
+            "value": "fast",
+            "label": "Fast"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "slow",
+            "label": "Slow"
+          }
+        ]
+      }
+    },
+    {
+      "name": "waitTime",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"30\"",
+      "uiConfig": {
+        "label": "Wait time(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    }
+  ]
+}

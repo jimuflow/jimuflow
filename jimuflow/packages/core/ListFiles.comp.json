@@ -1,0 +1,135 @@
+{
+  "name": "ListFiles",
+  "displayName": "List Files",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.ListFilesComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Operating System",
+  "sortNo": 1,
+  "helpUrl": "commands/OperatingSystem/list_files/",
+  "variables": [
+    {
+      "name": "folder",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Folder",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.file_path_editor.FolderPathEdit",
+        "inputValueType": "expression"
+      }
+    },
+    {
+      "name": "filenamePattern",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "File name pattern",
+        "inputType": "expression",
+        "helpInfo": "Filename patterns are special strings composed of regular characters and wildcards, with the following syntax for wildcards:\n\n1. *: Matches zero or more characters (including any characters in the filename).\n\n   For example: *.txt matches all .txt files.\n\n2. ?: Matches a single character.\n\n   For example: file?.txt matches file1.txt, fileA.txt, etc., but does not match file.txt.\n\n3. [...]: Matches any single character within the brackets.\n\n   For example: file[1-3].txt matches file1.txt, file2.txt, and file3.txt.\n\n4. [!...]: Matches any single character not within the brackets.\n\n   For example: file[!a-z].txt matches file1.txt, file2.txt, and file3.txt.\n\n5. **: Matches zero or more directories (can span subdirectories).\n\n   For example: **/*.txt matches all .txt files in the current directory and all subdirectories."
+      }
+    },
+    {
+      "name": "findSubFolders",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Find sub folders",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "ignoreHiddenFiles",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": true,
+      "uiConfig": {
+        "label": "Ignore hidden files",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "sortingFiles",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Sorting files",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "sortingFactor",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "name",
+      "uiConfig": {
+        "label": "Sorting factor",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "name",
+            "label": "File name"
+          },
+          {
+            "value": "size",
+            "label": "File size"
+          },
+          {
+            "value": "creationTime",
+            "label": "Creation time"
+          },
+          {
+            "value": "lastModified",
+            "label": "Last modified"
+          }
+        ],
+        "dependsOn": {
+          "variableName": "sortingFiles",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "sortOrder",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "asc",
+      "uiConfig": {
+        "label": "Sort order",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "asc",
+            "label": "Ascending order"
+          },
+          {
+            "value": "desc",
+            "label": "Descending order"
+          }
+        ],
+        "dependsOn": {
+          "variableName": "sortingFiles",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "result",
+      "type": "list",
+      "elementType": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Result"
+      }
+    }
+  ]
+}

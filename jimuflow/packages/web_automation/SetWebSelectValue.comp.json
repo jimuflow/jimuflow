@@ -1,0 +1,134 @@
+{
+  "name": "SetWebSelectValue",
+  "displayName": "Set Web Select Value",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.web_automation.SetWebSelectValueComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Web Automation",
+  "secondaryCategory": "Web Element Operation",
+  "sortNo": 7,
+  "helpUrl": "commands/WebAutomation/WebElementOperation/set_web_select_value/",
+  "variables": [
+    {
+      "name": "webPage",
+      "type": "WebPage",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web page",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "elementUri",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Dropdown box element",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit"
+      }
+    },
+    {
+      "name": "selectType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "by_content",
+      "uiConfig": {
+        "label": "Select type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "by_content",
+            "label": "Select by option content"
+          },
+          {
+            "value": "by_index",
+            "label": "Select by option index"
+          }
+        ]
+      }
+    },
+    {
+      "name": "optionContent",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Option Content",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "selectType",
+          "operator": "==",
+          "value": "by_content"
+        }
+      }
+    },
+    {
+      "name": "matchType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "contains",
+      "uiConfig": {
+        "label": "Match type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "contains",
+            "label": "Fuzzy matching"
+          },
+          {
+            "value": "equals",
+            "label": "Precise matching"
+          },
+          {
+            "value": "regex",
+            "label": "Regular matching"
+          }
+        ],
+        "dependsOn": {
+          "variableName": "selectType",
+          "operator": "==",
+          "value": "by_content"
+        }
+      }
+    },
+    {
+      "name": "optionIndex",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"0\"",
+      "uiConfig": {
+        "label": "Option index",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "selectType",
+          "operator": "==",
+          "value": "by_index"
+        }
+      }
+    },
+    {
+      "name": "delayAfterAction",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"0\"",
+      "uiConfig": {
+        "label": "Delay after action(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    },
+    {
+      "name": "waitTime",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"30\"",
+      "uiConfig": {
+        "label": "Wait time(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "name": "AddPrefixOrSuffix",
+  "displayName": "Add Prefix or Suffix",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.AddPrefixOrSuffixComponent",
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "Text Operation",
+  "sortNo": 2,
+  "helpUrl": "commands/DataProcess/TextOperation/add_prefix_or_suffix/",
+  "variables": [
+    {
+      "name": "originalText",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Original text",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "addType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "suffix",
+      "uiConfig": {
+        "label": "Add type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "prefix",
+            "label": "Add prefix"
+          },
+          {
+            "value": "suffix",
+            "label": "Add suffix"
+          }
+        ]
+      }
+    },
+    {
+      "name": "addText",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Add text",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "result",
+      "type": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Result"
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "UrlEncode",
+  "displayName": "Url Encode",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.UrlEncodeComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "Encoding/Decoding",
+  "sortNo": 1,
+  "helpUrl": "commands/DataProcess/EncodingDecoding/url_encode/",
+  "variables": [
+    {
+      "name": "textToEncode",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Text to encode",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "result",
+      "type": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Result"
+      }
+    }
+  ]
+}

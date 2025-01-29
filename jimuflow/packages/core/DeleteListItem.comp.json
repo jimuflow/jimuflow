@@ -1,0 +1,72 @@
+{
+  "name": "DeleteListItem",
+  "displayName": "Delete List Item",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.DeleteListItemComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "List operation",
+  "sortNo": 3,
+  "helpUrl": "commands/DataProcess/ListOperation/delete_list_item/",
+  "variables": [
+    {
+      "name": "list",
+      "type": "list",
+      "elementType": "any",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "List",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "deleteType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "by_position",
+      "uiConfig": {
+        "label": "Delete Type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "by_position",
+            "label": "Delete list item by position"
+          },
+          {
+            "value": "by_value",
+            "label": "Delete list item by value"
+          }
+        ]
+      }
+    },
+    {
+      "name": "position",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Item position",
+        "inputType": "expression",
+        "placeholder": "Starting from 0, - n represents the nth to last",
+        "dependsOn": {
+          "variableName": "deleteType",
+          "operator": "==",
+          "value": "by_position"
+        }
+      }
+    },
+    {
+      "name": "value",
+      "type": "any",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Item value",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "deleteType",
+          "operator": "==",
+          "value": "by_value"
+        }
+      }
+    }
+  ]
+}

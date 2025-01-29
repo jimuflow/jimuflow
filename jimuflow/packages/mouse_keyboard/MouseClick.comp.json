@@ -1,0 +1,116 @@
+{
+  "name": "MouseClick",
+  "displayName": "Mouse Click",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.mouse_keyboard.MouseClickComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Mouse/Keyboard",
+  "sortNo": 2,
+  "helpUrl": "commands/MouseKeyboard/mouse_click/",
+  "variables": [
+    {
+      "name": "mouseButton",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "left",
+      "uiConfig": {
+        "label": "Mouse button",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "left",
+            "label": "Left button"
+          },
+          {
+            "value": "right",
+            "label": "Right button"
+          },
+          {
+            "value": "middle",
+            "label": "Middle button"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clickType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "single_click",
+      "uiConfig": {
+        "label": "Click Type",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "single_click",
+            "label": "Single click"
+          },
+          {
+            "value": "double_click",
+            "label": "Double click"
+          },
+          {
+            "value": "mouse_down",
+            "label": "Mouse down"
+          },
+          {
+            "value": "mouse_up",
+            "label": "Mouse up"
+          }
+        ]
+      }
+    },
+    {
+      "name": "modifierKey",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "none",
+      "uiConfig": {
+        "label": "Modifier key",
+        "group": "advanced",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "Alt",
+            "label": "Alt"
+          },
+          {
+            "value": "Control",
+            "label": "Ctrl"
+          },
+          {
+            "value": "ControlOrMeta",
+            "label": "Ctrl or Meta"
+          },
+          {
+            "value": "Meta",
+            "label": "Meta"
+          },
+          {
+            "value": "Shift",
+            "label": "Shift"
+          }
+        ]
+      }
+    },
+    {
+      "name": "delayAfterAction",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"0\"",
+      "uiConfig": {
+        "label": "Delay after action(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    }
+  ]
+}

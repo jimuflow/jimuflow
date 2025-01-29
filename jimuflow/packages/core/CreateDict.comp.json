@@ -1,0 +1,20 @@
+{
+  "name": "CreateDict",
+  "displayName": "Create dictionary",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.CreateDictComponent",
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "Dictionary operation",
+  "sortNo": 1,
+  "helpUrl": "commands/DataProcess/DictionaryOperation/create_dict/",
+  "variables": [
+    {
+      "name": "dict",
+      "type": "dict",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Dictionary"
+      }
+    }
+  ]
+}

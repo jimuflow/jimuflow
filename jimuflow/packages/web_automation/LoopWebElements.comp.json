@@ -1,0 +1,70 @@
+{
+  "name": "LoopWebElements",
+  "displayName": "Loop web elements",
+  "controlFlowType": "LOOP",
+  "type": "jimuflow.components.web_automation.LoopWebElementsComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Web Automation",
+  "secondaryCategory": "Web Element Operation",
+  "sortNo": 9,
+  "helpUrl": "commands/WebAutomation/WebElementOperation/loop_web_elements/",
+  "categories": [
+    [
+      "Process Control",
+      "Loop"
+    ]
+  ],
+  "variables": [
+    {
+      "name": "webPage",
+      "type": "any",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web page",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "elementsUri",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Elements",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit"
+      }
+    },
+    {
+      "name": "reversedLoop",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Loop in reverse order",
+        "group": "advanced",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "waitTime",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"30\"",
+      "uiConfig": {
+        "label": "Wait time(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    },
+    {
+      "name": "currentElement",
+      "type": "WebElement",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Current element"
+      }
+    }
+  ]
+}

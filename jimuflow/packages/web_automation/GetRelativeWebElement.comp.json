@@ -1,0 +1,125 @@
+{
+  "name": "GetRelativeWebElement",
+  "displayName": "Get Relative Web Element",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.web_automation.GetRelativeWebElementComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Web Automation",
+  "secondaryCategory": "Web Element Operation",
+  "sortNo": 11,
+  "helpUrl": "commands/WebAutomation/WebElementOperation/get_relative_web_element/",
+  "variables": [
+    {
+      "name": "webPage",
+      "type": "WebPage",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web page",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "elementUri",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web element",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit"
+      }
+    },
+    {
+      "name": "locateType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "parent",
+      "uiConfig": {
+        "label": "Locate type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "parent",
+            "label": "Parent element"
+          },
+          {
+            "value": "prev_sibling",
+            "label": "Previous sibling element"
+          },
+          {
+            "value": "next_sibling",
+            "label": "Next sibling element"
+          },
+          {
+            "value": "first_matched_descendant",
+            "label": "The first matching descendant element"
+          },
+          {
+            "value": "all_matched_descendants",
+            "label": "All matching descendant elements"
+          },
+          {
+            "value": "all_children",
+            "label": "All child elements"
+          },
+          {
+            "value": "specified_child",
+            "label": "The specified child element"
+          }
+        ]
+      }
+    },
+    {
+      "name": "descendantRelativeXpath",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Descendant relative xpath",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.web_relative_xpath_editor.WebRelativeXPathEdit",
+        "inputValueType": "expression",
+        "dependsOn": {
+          "variableName": "locateType",
+          "operator": "in",
+          "value": [
+            "first_matched_descendant",
+            "all_matched_descendants"
+          ]
+        }
+      }
+    },
+    {
+      "name": "childPosition",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Child element position",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "locateType",
+          "operator": "==",
+          "value": "specified_child"
+        }
+      }
+    },
+    {
+      "name": "waitTime",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"30\"",
+      "uiConfig": {
+        "label": "Wait time(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    },
+    {
+      "name": "result",
+      "type": "WebElement",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Found elements"
+      }
+    }
+  ]
+}

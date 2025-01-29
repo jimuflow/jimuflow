@@ -1,0 +1,58 @@
+{
+  "name": "ExtractWebPage",
+  "displayName": "Extract Web Page",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.web_automation.ExtractWebPageComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Web Automation",
+  "secondaryCategory": "Web Data Extraction",
+  "sortNo": 5,
+  "helpUrl": "commands/WebAutomation/WebDataExtraction/extract_web_page/",
+  "variables": [
+    {
+      "name": "webPage",
+      "type": "WebPage",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web page",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "extractType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "title",
+      "uiConfig": {
+        "label": "Extract type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "title",
+            "label": "Web page title"
+          },
+          {
+            "value": "url",
+            "label": "Web page url"
+          },
+          {
+            "value": "html",
+            "label": "Web page html source code"
+          },
+          {
+            "value": "text",
+            "label": "Web page text content"
+          }
+        ]
+      }
+    },
+    {
+      "name": "result",
+      "type": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Extracted result"
+      }
+    }
+  ]
+}

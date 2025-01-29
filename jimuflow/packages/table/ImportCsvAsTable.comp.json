@@ -1,0 +1,122 @@
+{
+  "name": "ImportCsvAsTable",
+  "displayName": "Import csv as table",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.table.ImportCsvAsTableComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Table",
+  "sortNo": 9,
+  "helpUrl": "commands/DataTable/import_csv_as_table/",
+  "variables": [
+    {
+      "name": "filePath",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Csv file path",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.file_path_editor.OpenFilePathEdit",
+        "inputValueType": "expression",
+        "helpInfo": "Please input the file path of the csv file"
+      }
+    },
+    {
+      "name": "fileEncoding",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "system_default",
+      "uiConfig": {
+        "label": "File encoding",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "system_default",
+            "label": "System default"
+          },
+          {
+            "value": "utf-8",
+            "label": "UTF-8"
+          },
+          {
+            "value": "ascii",
+            "label": "ASCII"
+          },
+          {
+            "value": "latin-1",
+            "label": "Latin-1"
+          },
+          {
+            "value": "utf-8-sig",
+            "label": "UTF-8 Bom"
+          },
+          {
+            "value": "utf-16",
+            "label": "UTF-16"
+          },
+          {
+            "value": "utf-32",
+            "label": "UTF-32"
+          },
+          {
+            "value": "gbk",
+            "label": "GBK"
+          },
+          {
+            "value": "gb2312",
+            "label": "GB2312"
+          },
+          {
+            "value": "gb18030",
+            "label": "GB18030"
+          }
+        ]
+      }
+    },
+    {
+      "name": "useCustomDelimiter",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Use custom delimiter",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "customDelimiter",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Custom delimiter",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "useCustomDelimiter",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "useFirstRowAsHeader",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": true,
+      "uiConfig": {
+        "label": "Use the first row of data as the header",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "table",
+      "type": "table",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Table",
+        "helpInfo": "The imported table"
+      }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "ClickToOpenWebPage",
+  "displayName": "Click to open web page",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.web_automation.ClickToOpenWebPageComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Web Automation",
+  "sortNo": 2,
+  "helpUrl": "commands/WebAutomation/click_to_open_web_page/",
+  "variables": [
+    {
+      "name": "webPage",
+      "type": "WebPage",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web page",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "elementUri",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Link element",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit",
+        "placeholder": "Select the link element to be clicked"
+      }
+    },
+    {
+      "name": "waitTime",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"1\"",
+      "uiConfig": {
+        "label": "Wait time(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    },
+    {
+      "name": "newWebPage",
+      "type": "WebPage",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "New web page",
+        "placeholder": "Newly opened webpage object"
+      }
+    }
+  ]
+}

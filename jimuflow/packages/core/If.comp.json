@@ -1,0 +1,115 @@
+{
+  "name": "If",
+  "displayName": "if branch",
+  "controlFlowType": "IF",
+  "type": "jimuflow.components.core.IfComponent",
+  "primaryCategory": "Process Control",
+  "secondaryCategory": "Switch",
+  "sortNo": 1,
+  "helpUrl": "commands/ProcessControl/switch/if/",
+  "variables": [
+    {
+      "name": "operand1",
+      "type": "any",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "The first operand",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "op",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Operator",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "==",
+            "label": "equal to"
+          },
+          {
+            "value": "!=",
+            "label": "not equal to"
+          },
+          {
+            "value": ">",
+            "label": "greater than"
+          },
+          {
+            "value": "<",
+            "label": "less than"
+          },
+          {
+            "value": ">=",
+            "label": "greater than or equal to"
+          },
+          {
+            "value": "<=",
+            "label": "less than or equal to"
+          },
+          {
+            "value": "contains",
+            "label": "contains"
+          },
+          {
+            "value": "not_contains",
+            "label": "not contains"
+          },
+          {
+            "value": "is_empty",
+            "label": "is empty"
+          },
+          {
+            "value": "not_empty",
+            "label": "is not empty"
+          },
+          {
+            "value": "starts_with",
+            "label": "starts with"
+          },
+          {
+            "value": "not_starts_with",
+            "label": "not starts with"
+          },
+          {
+            "value": "ends_with",
+            "label": "ends with"
+          },
+          {
+            "value": "not_ends_with",
+            "label": "not ends with"
+          }
+        ]
+      }
+    },
+    {
+      "name": "operand2",
+      "type": "any",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "The second operand",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "op",
+          "operator": "in",
+          "value": [
+            "==",
+            "!=",
+            ">",
+            "<",
+            ">=",
+            "<=",
+            "contains",
+            "not_contains",
+            "starts_with",
+            "not_starts_with",
+            "ends_with",
+            "not_ends_with"
+          ]
+        }
+      }
+    }
+  ]
+}

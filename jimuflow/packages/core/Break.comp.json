@@ -1,0 +1,11 @@
+{
+  "name": "Break",
+  "displayName": "End loop",
+  "controlFlowType": "BREAK",
+  "type": "jimuflow.components.core.BreakComponent",
+  "primaryCategory": "Process Control",
+  "secondaryCategory": "Loop",
+  "sortNo": 7,
+  "helpUrl": "commands/ProcessControl/loop/break/",
+  "variables": []
+}

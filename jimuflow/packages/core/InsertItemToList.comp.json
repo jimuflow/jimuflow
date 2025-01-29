@@ -1,0 +1,67 @@
+{
+  "name": "InsertItemToList",
+  "displayName": "Insert Item To List",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.InsertItemToListComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "List operation",
+  "sortNo": 2,
+  "helpUrl": "commands/DataProcess/ListOperation/insert_item_to_list/",
+  "variables": [
+    {
+      "name": "list",
+      "type": "list",
+      "elementType": "any",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "List",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "insertType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "append",
+      "uiConfig": {
+        "label": "Insert Type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "append",
+            "label": "Add at the end of the list"
+          },
+          {
+            "value": "insert",
+            "label": "Insert at specified location"
+          }
+        ]
+      }
+    },
+    {
+      "name": "insertPosition",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Insert position",
+        "inputType": "expression",
+        "placeholder": "Starting from 0, - n represents the nth to last",
+        "dependsOn": {
+          "variableName": "insertType",
+          "operator": "==",
+          "value": "insert"
+        }
+      }
+    },
+    {
+      "name": "value",
+      "type": "any",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Value",
+        "inputType": "expression"
+      }
+    }
+  ]
+}

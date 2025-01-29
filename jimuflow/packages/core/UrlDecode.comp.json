@@ -1,0 +1,30 @@
+{
+  "name": "UrlDecode",
+  "displayName": "Url Decode",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.UrlDecodeComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "Encoding/Decoding",
+  "sortNo": 2,
+  "helpUrl": "commands/DataProcess/EncodingDecoding/url_decode/",
+  "variables": [
+    {
+      "name": "textToDecode",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Text to decode",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "result",
+      "type": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Result"
+      }
+    }
+  ]
+}

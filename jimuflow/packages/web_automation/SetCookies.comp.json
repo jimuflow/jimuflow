@@ -1,0 +1,45 @@
+{
+  "name": "SetCookies",
+  "displayName": "Set cookies",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.web_automation.SetCookiesComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Web Automation",
+  "secondaryCategory": "Web Page Operation",
+  "sortNo": 7,
+  "helpUrl": "commands/WebAutomation/WebPageOperation/set_cookies/",
+  "variables": [
+    {
+      "name": "webPage",
+      "type": "WebPage",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web page",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "cookies",
+      "type": "any",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Cookies",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.web_cookie_editor.WebCookieEdit",
+        "inputValueType": "expression",
+        "placeholder": "Please enter the cookie list data or select the variable containing the cookie list"
+      }
+    },
+    {
+      "name": "reloadPage",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": true,
+      "uiConfig": {
+        "label": "Reload page after setting cookies",
+        "inputType": "check_box",
+        "required": false
+      }
+    }
+  ]
+}

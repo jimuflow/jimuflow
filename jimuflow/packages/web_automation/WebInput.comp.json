@@ -1,0 +1,154 @@
+{
+  "name": "WebInput",
+  "displayName": "Web input",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.web_automation.WebInputComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Web Automation",
+  "secondaryCategory": "Web Element Operation",
+  "sortNo": 6,
+  "helpUrl": "commands/WebAutomation/WebElementOperation/web_input/",
+  "variables": [
+    {
+      "name": "webPage",
+      "type": "WebPage",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web page",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "elementUri",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Input Element",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit"
+      }
+    },
+    {
+      "name": "content",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Input Content",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "append",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Append input",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "pressEnterAfterInput",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Press enter after input",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "pressTabAfterInput",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Press tab after input",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "simulateHumanInput",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": true,
+      "uiConfig": {
+        "label": "Simulate human input",
+        "group": "advanced",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "clickBeforeInput",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": true,
+      "uiConfig": {
+        "label": "Click element before input",
+        "group": "advanced",
+        "inputType": "check_box",
+        "required": false,
+        "dependsOn": {
+          "variableName": "simulateHumanInput",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "inputInterval",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"100\"",
+      "uiConfig": {
+        "label": "Input interval(milliseconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "simulateHumanInput",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "delayAfterFocus",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"1\"",
+      "uiConfig": {
+        "label": "Delay input after focus(seconds)",
+        "group": "advanced",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "delayAfterAction",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"0\"",
+      "uiConfig": {
+        "label": "Delay after action(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    },
+    {
+      "name": "waitTime",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"30\"",
+      "uiConfig": {
+        "label": "Wait time(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Loop",
+  "displayName": "Counting loop",
+  "controlFlowType": "LOOP",
+  "type": "jimuflow.components.core.LoopComponent",
+  "primaryCategory": "Process Control",
+  "secondaryCategory": "Loop",
+  "sortNo": 1,
+  "helpUrl": "commands/ProcessControl/loop/loop/",
+  "variables": [
+    {
+      "name": "start",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Start index",
+        "inputType": "expression",
+        "placeholder": "Starting value (inclusive)"
+      }
+    },
+    {
+      "name": "end",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "End index",
+        "inputType": "expression",
+        "placeholder": "End value (excluding)"
+      }
+    },
+    {
+      "name": "loopIndex",
+      "type": "number",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Loop index"
+      }
+    }
+  ]
+}

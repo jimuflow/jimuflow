@@ -1,0 +1,75 @@
+{
+  "name": "ReadTableData",
+  "displayName": "Read table data",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.table.ReadTableDataComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Table",
+  "sortNo": 7,
+  "helpUrl": "commands/DataTable/read_table_data/",
+  "variables": [
+    {
+      "name": "table",
+      "type": "table",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Data Table",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "readType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "row",
+      "uiConfig": {
+        "label": "Read type",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "row",
+            "label": "Read row data"
+          },
+          {
+            "value": "cell",
+            "label": "Read cell data"
+          }
+        ]
+      }
+    },
+    {
+      "name": "rowNo",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Row number",
+        "inputType": "expression",
+        "helpInfo": "Enter the line number, starting from line 1, where -n represents the nth to last line"
+      }
+    },
+    {
+      "name": "columnNo",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Column number",
+        "inputType": "expression",
+        "helpInfo": "Enter the column name/number, starting from column 1, where -n represents the nth to last column",
+        "dependsOn": {
+          "variableName": "readType",
+          "operator": "==",
+          "value": "cell"
+        }
+      }
+    },
+    {
+      "name": "result",
+      "type": "any",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Read result"
+      }
+    }
+  ]
+}

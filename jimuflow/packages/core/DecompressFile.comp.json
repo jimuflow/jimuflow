@@ -1,0 +1,91 @@
+{
+  "name": "DecompressFile",
+  "displayName": "Decompress File/Folder",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.DecompressFileComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Operating System",
+  "sortNo": 11,
+  "helpUrl": "commands/OperatingSystem/decompress_file/",
+  "variables": [
+    {
+      "name": "filePath",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "File path",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.file_path_editor.OpenFilePathEdit",
+        "inputValueType": "expression"
+      }
+    },
+    {
+      "name": "decompressTo",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "source",
+      "uiConfig": {
+        "label": "Decompress to",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "source",
+            "label": "Save to the same level directory as the source file"
+          },
+          {
+            "value": "specified",
+            "label": "Save to specified folder"
+          }
+        ]
+      }
+    },
+    {
+      "name": "saveFolder",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Save folder",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.file_path_editor.FolderPathEdit",
+        "inputValueType": "expression",
+        "dependsOn": {
+          "variableName": "decompressTo",
+          "operator": "==",
+          "value": "specified"
+        }
+      }
+    },
+    {
+      "name": "createFolder",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": true,
+      "uiConfig": {
+        "label": "Create a folder with the same name",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "password",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Password",
+        "placeholder": "Password for the zip compression package",
+        "inputType": "expression",
+        "group": "advanced",
+        "required": false
+      }
+    },
+    {
+      "name": "result",
+      "type": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Result folder"
+      }
+    }
+  ]
+}

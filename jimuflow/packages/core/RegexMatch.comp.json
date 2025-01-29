@@ -1,0 +1,59 @@
+{
+  "name": "RegexMatch",
+  "displayName": "Regex Match",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.RegexMatchComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "Text Operation",
+  "sortNo": 6,
+  "helpUrl": "commands/DataProcess/TextOperation/regex_match/",
+  "variables": [
+    {
+      "name": "originalText",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Original text",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "regex",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Regex",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "findFirstMatch",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Find first match",
+        "inputType": "check_box"
+      }
+    },
+    {
+      "name": "ignoreCase",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Ignore case",
+        "inputType": "check_box"
+      }
+    },
+    {
+      "name": "result",
+      "type": "any",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Result"
+      }
+    }
+  ]
+}

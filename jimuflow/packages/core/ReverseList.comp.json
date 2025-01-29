@@ -1,0 +1,23 @@
+{
+  "name": "ReverseList",
+  "displayName": "Reverse list",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.ReverseListComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "List operation",
+  "sortNo": 6,
+  "helpUrl": "commands/DataProcess/ListOperation/reverse_list/",
+  "variables": [
+    {
+      "name": "list",
+      "type": "list",
+      "elementType": "any",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "List",
+        "inputType": "expression"
+      }
+    }
+  ]
+}

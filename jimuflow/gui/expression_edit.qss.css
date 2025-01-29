@@ -1,0 +1,18 @@
+ExpressionEdit{
+    background-color: #FFFFFF;
+}
+ExpressionEdit:focus{
+    border: 1px solid red;
+}
+QLabel{
+    border-radius: 4px;
+    background-color: #ECF0F0;
+    color: #376EDE;
+    padding: 0 5px;
+}
+QLabel[selected="true"]{
+    background-color: #a9acac;
+}
+QLineEdit {
+    border: none;
+}

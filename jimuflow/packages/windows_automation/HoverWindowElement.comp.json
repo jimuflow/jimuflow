@@ -1,0 +1,49 @@
+{
+  "name": "HoverWindowElement",
+  "displayName": "Hover Window Element",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.windows_automation.HoverWindowElementComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Windows Automation",
+  "sortNo": 4,
+  "helpUrl": "commands/WindowsAutomation/hover_window_element/",
+  "platforms": [
+    "windows"
+  ],
+  "variables": [
+    {
+      "name": "elementUri",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Window element",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.window_element_selector.WindowElementEdit"
+      }
+    },
+    {
+      "name": "delayAfterAction",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"0\"",
+      "uiConfig": {
+        "label": "Delay after action(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    },
+    {
+      "name": "waitTime",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"30\"",
+      "uiConfig": {
+        "label": "Wait time(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    }
+  ]
+}

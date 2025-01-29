@@ -1,0 +1,31 @@
+{
+  "name": "CreateTable",
+  "displayName": "Create table",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.table.CreateTableComponent",
+  "primaryCategory": "Data Table",
+  "sortNo": 1,
+  "helpUrl": "commands/DataTable/create_table/",
+  "variables": [
+    {
+      "name": "columnNames",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Table column names",
+        "inputType": "expression",
+        "placeholder": "List of headers for data table separated by commas",
+        "helpInfo": "List of headers for data table separated by commas"
+      }
+    },
+    {
+      "name": "table",
+      "type": "table",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Table",
+        "helpInfo": "The created table"
+      }
+    }
+  ]
+}

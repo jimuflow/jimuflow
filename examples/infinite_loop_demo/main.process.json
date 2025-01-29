@@ -1,0 +1,43 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "当前循环索引",
+      "type": "number",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:InfiniteLoop",
+      "outputs": {
+        "loopIndex": "当前循环索引"
+      },
+      "lineNo": 1,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"当前循环索引=\" + 当前循环索引"
+          },
+          "lineNo": 2
+        },
+        {
+          "component": "jimuflow:core:If",
+          "inputs": {
+            "operand1": "当前循环索引",
+            "op": ">=",
+            "operand2": "\"2\""
+          },
+          "lineNo": 3,
+          "flow": [
+            {
+              "component": "jimuflow:core:Break",
+              "lineNo": 4
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

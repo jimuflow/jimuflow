@@ -1,0 +1,91 @@
+{
+  "name": "MoveMouse",
+  "displayName": "Move Mouse",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.mouse_keyboard.MoveMouseComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Mouse/Keyboard",
+  "sortNo": 1,
+  "helpUrl": "commands/MouseKeyboard/move_mouse/",
+  "variables": [
+    {
+      "name": "relativeTo",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "screen_origin",
+      "uiConfig": {
+        "label": "Relative to",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "screen_origin",
+            "label": "The upper left corner of the screen"
+          },
+          {
+            "value": "current_position",
+            "label": "Current mouse position"
+          }
+        ]
+      }
+    },
+    {
+      "name": "offsetX",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "X coordinate offset",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "offsetY",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Y coordinate offset",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "moveSpeed",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "instant",
+      "uiConfig": {
+        "label": "Move speed",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "instant",
+            "label": "Instant"
+          },
+          {
+            "value": "fast",
+            "label": "Fast"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "slow",
+            "label": "Slow"
+          }
+        ]
+      }
+    },
+    {
+      "name": "delayAfterAction",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"0\"",
+      "uiConfig": {
+        "label": "Delay after action(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    }
+  ]
+}

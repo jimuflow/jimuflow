@@ -1,0 +1,122 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "名字",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "收入",
+      "type": "number",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "列表",
+      "type": "list",
+      "direction": "LOCAL",
+      "elementType": "any"
+    },
+    {
+      "name": "字典",
+      "type": "dict",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:SetVariable",
+      "inputs": {
+        "value": "\"小明\""
+      },
+      "outputs": {
+        "result": "名字"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"你好，\" + 名字"
+      },
+      "lineNo": 2
+    },
+    {
+      "component": "jimuflow:core:SetVariable",
+      "inputs": {
+        "value": "\"10000\""
+      },
+      "outputs": {
+        "result": "收入"
+      },
+      "lineNo": 3
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "( 收入 - \"100\" ) * \"0.1\""
+      },
+      "lineNo": 4
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "收入 > \"6000 \" && 收入 < \"10000\""
+      },
+      "lineNo": 5
+    },
+    {
+      "component": "jimuflow:core:CreateList",
+      "outputs": {
+        "list": "列表"
+      },
+      "lineNo": 6
+    },
+    {
+      "component": "jimuflow:core:InsertItemToList",
+      "inputs": {
+        "list": "列表",
+        "insertType": "append",
+        "value": "\"第一个元素\""
+      },
+      "lineNo": 7
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "列表 [ \"0\" ]"
+      },
+      "lineNo": 8
+    },
+    {
+      "component": "jimuflow:core:CreateDict",
+      "outputs": {
+        "dict": "字典"
+      },
+      "lineNo": 9
+    },
+    {
+      "component": "jimuflow:core:SetDictKeyValue",
+      "inputs": {
+        "dict": "字典",
+        "key": "\"name\"",
+        "value": "名字"
+      },
+      "lineNo": 10
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "字典 [ \"name\" ]"
+      },
+      "lineNo": 11
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "名字 . length"
+      },
+      "lineNo": 12
+    }
+  ]
+}

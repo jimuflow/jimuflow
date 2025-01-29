@@ -1,0 +1,70 @@
+{
+  "name": "CreateTime",
+  "displayName": "Create Time",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.CreateTimeComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "Date Time Operation",
+  "sortNo": 3,
+  "helpUrl": "commands/DataProcess/DateTimeOperation/create_time/",
+  "variables": [
+    {
+      "name": "initType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "now",
+      "uiConfig": {
+        "label": "Initialization type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "now",
+            "label": "Get the current time"
+          },
+          {
+            "value": "parse",
+            "label": "Parse time string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "timeString",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Time string",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "initType",
+          "operator": "==",
+          "value": "parse"
+        }
+      }
+    },
+    {
+      "name": "timeFormat",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Time format",
+        "inputType": "expression",
+        "helpInfo": "Common Format Codes\n\nHH: Hour (24-hour format, 00 to 23)\n\nhh: Hour (12 hour format, 01 to 12)\n\nmm: Minutes (00 to 59)\n\nss: Seconds (00 to 59)\n\nSSSSSS: Microseconds (000000 to 999999)\n\nA: AM or PM",
+        "dependsOn": {
+          "variableName": "initType",
+          "operator": "==",
+          "value": "parse"
+        }
+      }
+    },
+    {
+      "name": "result",
+      "type": "time",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Time"
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "ParseJson",
+  "displayName": "Parse Json",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.ParseJsonComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "JSON Operation",
+  "sortNo": 1,
+  "helpUrl": "commands/DataProcess/JSONOperation/parse_json/",
+  "variables": [
+    {
+      "name": "jsonText",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Json text",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "result",
+      "type": "any",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Result"
+      }
+    }
+  ]
+}

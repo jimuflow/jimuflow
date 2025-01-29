@@ -1,0 +1,24 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "名字",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "张三",
+      "uiConfig": {
+        "label": "名字",
+        "placeholder": "请输入你的名字"
+      }
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"你好，\" + 名字"
+      },
+      "lineNo": 1
+    }
+  ]
+}

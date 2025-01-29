@@ -1,0 +1,107 @@
+{
+  "name": "ReplaceText",
+  "displayName": "Replace Text",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.ReplaceTextComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "Text Operation",
+  "sortNo": 5,
+  "helpUrl": "commands/DataProcess/TextOperation/replace_text/",
+  "variables": [
+    {
+      "name": "originalText",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Original text",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "replaceType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "text",
+      "uiConfig": {
+        "label": "Replace type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "text",
+            "label": "Text replacement"
+          },
+          {
+            "value": "regex",
+            "label": "Regex replacement"
+          }
+        ]
+      }
+    },
+    {
+      "name": "textToReplace",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Text to replace",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "replaceType",
+          "operator": "==",
+          "value": "text"
+        }
+      }
+    },
+    {
+      "name": "regexToReplace",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Regex to replace",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "replaceType",
+          "operator": "==",
+          "value": "regex"
+        }
+      }
+    },
+    {
+      "name": "replaceFirstMatch",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Replace first match",
+        "inputType": "check_box"
+      }
+    },
+    {
+      "name": "ignoreCase",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Ignore case",
+        "inputType": "check_box"
+      }
+    },
+    {
+      "name": "replacementText",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Replacement text",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "result",
+      "type": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Result"
+      }
+    }
+  ]
+}

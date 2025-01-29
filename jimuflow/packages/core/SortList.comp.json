@@ -1,0 +1,43 @@
+{
+  "name": "SortList",
+  "displayName": "Sort list",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.SortListComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "List operation",
+  "sortNo": 7,
+  "helpUrl": "commands/DataProcess/ListOperation/sort_list/",
+  "variables": [
+    {
+      "name": "list",
+      "type": "list",
+      "elementType": "any",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "List",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "sortOrder",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "asc",
+      "uiConfig": {
+        "label": "Sort order",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "asc",
+            "label": "Ascending order"
+          },
+          {
+            "value": "desc",
+            "label": "Descending order"
+          }
+        ]
+      }
+    }
+  ]
+}

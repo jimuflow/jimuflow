@@ -1,0 +1,9 @@
+{
+  "name": "Return",
+  "displayName": "Return",
+  "controlFlowType": "RETURN",
+  "type": "jimuflow.components.core.ReturnComponent",
+  "primaryCategory": "Process Control",
+  "helpUrl": "commands/ProcessControl/return/",
+  "variables": []
+}

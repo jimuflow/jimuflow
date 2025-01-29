@@ -1,0 +1,127 @@
+{
+  "name": "ClickWindowElement",
+  "displayName": "Click Window Element",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.windows_automation.ClickWindowElementComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Windows Automation",
+  "sortNo": 2,
+  "helpUrl": "commands/WindowsAutomation/click_window_element/",
+  "platforms": [
+    "windows"
+  ],
+  "variables": [
+    {
+      "name": "elementUri",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Window element",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.window_element_selector.WindowElementEdit"
+      }
+    },
+    {
+      "name": "clickType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "single_click",
+      "uiConfig": {
+        "label": "Click Type",
+        "group": "advanced",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "single_click",
+            "label": "Single click"
+          },
+          {
+            "value": "double_click",
+            "label": "Double click"
+          }
+        ]
+      }
+    },
+    {
+      "name": "mouseButton",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "left",
+      "uiConfig": {
+        "label": "Mouse button",
+        "group": "advanced",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "left",
+            "label": "Left button"
+          },
+          {
+            "value": "right",
+            "label": "Right button"
+          },
+          {
+            "value": "middle",
+            "label": "Middle button"
+          }
+        ]
+      }
+    },
+    {
+      "name": "modifierKey",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "none",
+      "uiConfig": {
+        "label": "Modifier key",
+        "group": "advanced",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "alt",
+            "label": "Alt"
+          },
+          {
+            "value": "control",
+            "label": "Ctrl"
+          },
+          {
+            "value": "shift",
+            "label": "Shift"
+          }
+        ]
+      }
+    },
+    {
+      "name": "delayAfterAction",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"0\"",
+      "uiConfig": {
+        "label": "Delay after action(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    },
+    {
+      "name": "waitTime",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"30\"",
+      "uiConfig": {
+        "label": "Wait time(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    }
+  ]
+}

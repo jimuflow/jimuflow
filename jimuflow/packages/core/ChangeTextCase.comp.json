@@ -1,0 +1,54 @@
+{
+  "name": "ChangeTextCase",
+  "displayName": "Change Text Case",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.ChangeTextCaseComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "Text Operation",
+  "sortNo": 7,
+  "helpUrl": "commands/DataProcess/TextOperation/change_text_case/",
+  "variables": [
+    {
+      "name": "originalText",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Original text",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "changeType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "upper",
+      "uiConfig": {
+        "label": "Case change type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "upper",
+            "label": "upper"
+          },
+          {
+            "value": "lower",
+            "label": "lower"
+          },
+          {
+            "value": "capitalize",
+            "label": "capitalize"
+          }
+        ]
+      }
+    },
+    {
+      "name": "result",
+      "type": "any",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Result"
+      }
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "name": "WaitWebContent",
+  "displayName": "Wait web content",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.web_automation.WaitWebContentComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Web Automation",
+  "sortNo": 4,
+  "helpUrl": "commands/WebAutomation/wait_web_content/",
+  "variables": [
+    {
+      "name": "webPage",
+      "type": "WebPage",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web page",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "waitType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "include_element",
+      "uiConfig": {
+        "label": "Wait type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "include_element",
+            "label": "Include element"
+          },
+          {
+            "value": "exclude_element",
+            "label": "Exclude element"
+          },
+          {
+            "value": "include_text",
+            "label": "Include text"
+          },
+          {
+            "value": "exclude_text",
+            "label": "Exclude text"
+          },
+          {
+            "value": "element_is_visible",
+            "label": "Element is visible"
+          },
+          {
+            "value": "element_is_invisible",
+            "label": "Element is invisible"
+          },
+          {
+            "value": "text_is_visible",
+            "label": "Text is visible"
+          },
+          {
+            "value": "text_is_invisible",
+            "label": "Text is invisible"
+          }
+        ]
+      }
+    },
+    {
+      "name": "waitElementUri",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Wait element",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit",
+        "dependsOn": {
+          "variableName": "waitType",
+          "operator": "in",
+          "value": [
+            "include_element",
+            "exclude_element",
+            "element_is_visible",
+            "element_is_invisible"
+          ]
+        }
+      }
+    },
+    {
+      "name": "waitText",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Wait text",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "waitType",
+          "operator": "in",
+          "value": [
+            "include_text",
+            "exclude_text",
+            "text_is_visible",
+            "text_is_invisible"
+          ]
+        }
+      }
+    },
+    {
+      "name": "waitTime",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"30\"",
+      "uiConfig": {
+        "label": "Wait time(seconds)",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "waitResult",
+      "type": "bool",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Wait result"
+      }
+    }
+  ]
+}

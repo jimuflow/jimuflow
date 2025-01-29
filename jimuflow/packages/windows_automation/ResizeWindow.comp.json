@@ -1,0 +1,144 @@
+{
+  "name": "ResizeWindow",
+  "displayName": "Resize Window",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.windows_automation.ResizeWindowComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Windows Automation",
+  "secondaryCategory": "Window Operation",
+  "sortNo": 3,
+  "helpUrl": "commands/WindowsAutomation/WindowOperation/resize_window/",
+  "platforms": [
+    "windows"
+  ],
+  "variables": [
+    {
+      "name": "getWindowMethod",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "window_object",
+      "uiConfig": {
+        "label": "Get window method",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "window_object",
+            "label": "Window object"
+          },
+          {
+            "value": "title",
+            "label": "Window title or class name"
+          },
+          {
+            "value": "element",
+            "label": "Capture window element"
+          }
+        ]
+      }
+    },
+    {
+      "name": "windowObject",
+      "type": "WindowElement",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Window object",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "getWindowMethod",
+          "operator": "==",
+          "value": "window_object"
+        }
+      }
+    },
+    {
+      "name": "title",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Window title",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.window_title_editor.WindowTitleEdit",
+        "inputValueType": "expression",
+        "dependsOn": {
+          "variableName": "getWindowMethod",
+          "operator": "==",
+          "value": "title"
+        }
+      }
+    },
+    {
+      "name": "useClassName",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Use window class name",
+        "inputType": "check_box",
+        "required": false,
+        "dependsOn": {
+          "variableName": "getWindowMethod",
+          "operator": "==",
+          "value": "title"
+        }
+      }
+    },
+    {
+      "name": "className",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Window class name",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.window_class_editor.WindowClassEdit",
+        "inputValueType": "expression",
+        "dependsOn": {
+          "variableName": "useClassName",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "useRegexMatching",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Use regex matching",
+        "inputType": "check_box",
+        "required": false,
+        "dependsOn": {
+          "variableName": "getWindowMethod",
+          "operator": "==",
+          "value": "title"
+        }
+      }
+    },
+    {
+      "name": "elementUri",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Window element",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.window_element_selector.WindowElementEdit",
+        "dependsOn": {
+          "variableName": "getWindowMethod",
+          "operator": "==",
+          "value": "element"
+        }
+      }
+    },
+    {
+      "name": "windowSize",
+      "type": "list",
+      "elementType": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Window size",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.window_size_editor.WindowSizeEdit"
+      }
+    }
+  ]
+}

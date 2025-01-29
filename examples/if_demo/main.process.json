@@ -1,0 +1,41 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "随机数",
+      "type": "number",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:RandomInt",
+      "inputs": {
+        "start": "\"0\"",
+        "end": "\"2\""
+      },
+      "outputs": {
+        "randomInt": "随机数"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:core:If",
+      "inputs": {
+        "operand1": "随机数",
+        "op": "==",
+        "operand2": "\"1\""
+      },
+      "lineNo": 2,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"条件成立\""
+          },
+          "lineNo": 3
+        }
+      ]
+    }
+  ]
+}

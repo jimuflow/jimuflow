@@ -1,0 +1,50 @@
+{
+  "name": "NumberToText",
+  "displayName": "Number To Text",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.NumberToTextComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "Number Operation",
+  "sortNo": 1,
+  "helpUrl": "commands/DataProcess/NumberOperation/number_to_text/",
+  "variables": [
+    {
+      "name": "value",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Number value",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "scale",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Number of decimal places",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "useThousandsSeparator",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Use a thousandth separator",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "result",
+      "type": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Result"
+      }
+    }
+  ]
+}

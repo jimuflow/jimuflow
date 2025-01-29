@@ -1,0 +1,4955 @@
+# Translations template for jimuflow.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the jimuflow project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: jimuflow 1.0.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-01-29 18:18+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+msgid "Unknown element"
+msgstr ""
+
+msgid ""
+"Add suffix ##{addText}## to ##{originalText}##, and save the result to "
+"##{result}##"
+msgstr ""
+
+msgid ""
+"Add prefix ##{addText}## to ##{originalText}##, and save the result to "
+"##{result}##"
+msgstr ""
+
+msgid "End current loop"
+msgstr ""
+
+msgid "uppercase"
+msgstr ""
+
+msgid "lowercase"
+msgstr ""
+
+msgid "capitalized"
+msgstr ""
+
+msgid ""
+"Convert ##{original_text}## to ##{change_type}##, and save the result to "
+"##{result}##"
+msgstr ""
+
+msgid "Unknown case change type: {change_type}"
+msgstr ""
+
+msgid ""
+"Check if the process with the given pid ##{pid}## exists, and save the "
+"result to ##{result}##"
+msgstr ""
+
+msgid ""
+"Check if the process with the given name ##{name}## exists, and save the "
+"result to ##{result}##"
+msgstr ""
+
+msgid "Clear folder ##{folderPath}##"
+msgstr ""
+
+msgid ""
+"Compress ##{filePath}## to ##{packageName}##, and save the compressed "
+"package path to ##{packagePath}##"
+msgstr ""
+
+msgid "File {file} already exists"
+msgstr ""
+
+msgid "{source_path} is not a valid file or directory."
+msgstr ""
+
+msgid "equal to"
+msgstr ""
+
+msgid "not equal to"
+msgstr ""
+
+msgid "greater than"
+msgstr ""
+
+msgid "less than"
+msgstr ""
+
+msgid "greater than or equal to"
+msgstr ""
+
+msgid "less than or equal to"
+msgstr ""
+
+msgid "contains"
+msgstr ""
+
+msgid "not contains"
+msgstr ""
+
+msgid "is empty"
+msgstr ""
+
+msgid "is not empty"
+msgstr ""
+
+msgid "starts with"
+msgstr ""
+
+msgid "not starts with"
+msgstr ""
+
+msgid "ends with"
+msgstr ""
+
+msgid "not ends with"
+msgstr ""
+
+msgid "Unsupported operator: {op}"
+msgstr ""
+
+msgid "Skip current loop, then continue to the next loop"
+msgstr ""
+
+msgid "overwrite existing files"
+msgstr ""
+
+msgid "automatically rename file when target file exist"
+msgstr ""
+
+msgid "execute error handling when target file exists"
+msgstr ""
+
+msgid ""
+"Copy ##{filePath}## to ##{targetFolder}##, {actionWhenExists}, and save "
+"the new file path to ##{newFilePath}##"
+msgstr ""
+
+msgid "File {file_path} already exists"
+msgstr ""
+
+msgid "overwrite existing folder"
+msgstr ""
+
+msgid "automatically rename folder when target folder exist"
+msgstr ""
+
+msgid "execute error handling when target folder exists"
+msgstr ""
+
+msgid ""
+"Copy ##{folderPath}## to ##{targetFolder}##, {actionWhenExists}, and save"
+" the new folder path to ##{newFolderPath}##"
+msgstr ""
+
+msgid "Folder {file_path} already exists"
+msgstr ""
+
+msgid "Create Date today, and save the result to ##{result}##"
+msgstr ""
+
+msgid ""
+"Create Date from timestamp ##{timestamp}##, and save the result to "
+"##{result}##"
+msgstr ""
+
+msgid ""
+"Create Date from string ##{date_string}## with format ##{date_format}##, "
+"and save the result to ##{result}##"
+msgstr ""
+
+msgid "Create DateTime now, and save the result to ##{result}##"
+msgstr ""
+
+msgid ""
+"Create DateTime from timestamp ##{timestamp}##, and save the result to "
+"##{result}##"
+msgstr ""
+
+msgid ""
+"Create DateTime from string ##{datetime_string}## with format "
+"##{datetime_format}##, and save the result to ##{result}##"
+msgstr ""
+
+msgid "Create dictionary ##{dict}##"
+msgstr ""
+
+msgid ""
+"Create folder ##{newFolderName}## under ##{parentFolder}##, and save the "
+"new folder path to ##{newFolderPath}##"
+msgstr ""
+
+msgid "Create list ##{list}##"
+msgstr ""
+
+msgid "Create Time now, and save the result to ##{result}##"
+msgstr ""
+
+msgid ""
+"Create Time from string ##{time_string}## with format ##{time_format}##, "
+"and save the result to ##{result}##"
+msgstr ""
+
+msgid "Decompress ##{filePath}##, and save the result folder to ##{result}##"
+msgstr ""
+
+msgid "Delete key ##{key}## in dictionary ##{dict}##"
+msgstr ""
+
+msgid "Delete ##{filePath}##"
+msgstr ""
+
+msgid "Delete item at position ##{position}## in list ##{list}##"
+msgstr ""
+
+msgid "Delete item ##{value}## in list ##{list}##"
+msgstr ""
+
+msgid ""
+"Loop through each item in the dictionary ##{dict}##, saving the current "
+"item to ##{loopItem}##"
+msgstr ""
+
+msgid ""
+"Calculate the ##{timeUnit}## interval from ##{startingDate}## to "
+"##{endDate}##, and save the result to ##{timeDifference}##"
+msgstr ""
+
+msgid "seconds"
+msgstr ""
+
+msgid "minutes"
+msgstr ""
+
+msgid "hours"
+msgstr ""
+
+msgid "days"
+msgstr ""
+
+msgid "Unknown time unit: {unit}"
+msgstr ""
+
+msgid "If none of the previous conditions are met, the branch is executed."
+msgstr ""
+
+msgid "Execute command ##{cmd}##, and save the command output to ##{result}##"
+msgstr ""
+
+msgid "Command failed with exit code {code}: {error}"
+msgstr ""
+
+msgid "Exit current application"
+msgstr ""
+
+msgid ""
+"Format ##{datetime}## to a string using format ##{datetimeFormat}##, and "
+"save the result to ##{result}##"
+msgstr ""
+
+msgid "Get clipboard text, and save the result to ##{result}##"
+msgstr ""
+
+msgid ""
+"Get file path info of ##{filePath}##, and save the result to "
+"##{filePathInfo}##"
+msgstr ""
+
+msgid "If ##{operand1}## ##{op}## ##{operand2}##, perform the following actions"
+msgstr ""
+
+msgid "If ##{operand1}## ##{op}##, perform the following actions"
+msgstr ""
+
+msgid "Condition matched: {matched}"
+msgstr ""
+
+msgid "##{operand1}## ##{op}## ##{operand2}##"
+msgstr ""
+
+msgid "##{operand1}## ##{op}##"
+msgstr ""
+
+msgid "If satisfy all conditions of [{conditions}], perform the following actions"
+msgstr ""
+
+msgid "If satisfy any condition of [{conditions}], perform the following actions"
+msgstr ""
+
+msgid "Infinite loop, saving the current number of cycles to ##{loopIndex}##"
+msgstr ""
+
+msgid "Append ##{value}## to list ##{list}##"
+msgstr ""
+
+msgid "Insert ##{value}## at position ##{insertPosition}## in list ##{list}##"
+msgstr ""
+
+msgid "Kill process with pid ##{pid}##"
+msgstr ""
+
+msgid "Kill process with name ##{name}##"
+msgstr ""
+
+msgid "Process not found"
+msgstr ""
+
+msgid "Launch application ##{appPath}##, and save the pid to ##{pid}##"
+msgstr ""
+
+msgid ""
+"Find files under ##{folder}## that match the ##{filenamePattern}## naming"
+" rule and save the results in ##{result}##"
+msgstr ""
+
+msgid ""
+"Loop through each item in the list ##{list}##, saving the current item to"
+" ##{loopItem}##"
+msgstr ""
+
+msgid ""
+"Loop from ##{start}## to ##{end}##, saving the current number of cycles "
+"to ##{loopIndex}##"
+msgstr ""
+
+msgid ""
+"Merge list ##{firstList}## with ##{secondList}##, saving result to "
+"##{list}##"
+msgstr ""
+
+msgid ""
+"Move ##{filePath}## to ##{targetFolder}##, {actionWhenExists}, and save "
+"the new file path to ##{newFilePath}##"
+msgstr ""
+
+msgid ""
+"Move ##{folderPath}## to ##{targetFolder}##, {actionWhenExists}, and save"
+" the new folder path to ##{newFolderPath}##"
+msgstr ""
+
+msgid ""
+"Convert ##{value}## to a string, retain ##{scale}## decimal places, add a"
+" thousand separator, and save the result to ##{result}##"
+msgstr ""
+
+msgid ""
+"Convert ##{value}## to a string, retain ##{scale}## decimal places, and "
+"save the result to ##{result}##"
+msgstr ""
+
+msgid "Convert object ##{obj}## to json text, and save the result to ##{result}##"
+msgstr ""
+
+msgid "System default"
+msgstr ""
+
+msgid "UTF-8"
+msgstr ""
+
+msgid "ASCII"
+msgstr ""
+
+msgid "Latin-1"
+msgstr ""
+
+msgid "UTF-8 with BOM"
+msgstr ""
+
+msgid "UTF-16"
+msgstr ""
+
+msgid "UTF-32"
+msgstr ""
+
+msgid "GBK"
+msgstr ""
+
+msgid "GB2312"
+msgstr ""
+
+msgid "GB18030"
+msgstr ""
+
+msgid "Parse json text ##{jsonText}##, and save the result to ##{result}##"
+msgstr ""
+
+msgid "Print message ##{message}##"
+msgstr ""
+
+msgid ""
+"Generates a random integer between ##{start}## and ##{end}##, then save "
+"to ##{randomInt}##"
+msgstr ""
+
+msgid ""
+"Read ##{filePath}## using encoding ##{fileEncoding}##, and save the "
+"result to ##{result}##"
+msgstr ""
+
+msgid ""
+"Find the first ##{regex}## in text ##{originalText}## and save the "
+"matched text to ##{result}##"
+msgstr ""
+
+msgid ""
+"Find all ##{regex}## in text ##{originalText}## and save the matched text"
+" list to ##{result}##"
+msgstr ""
+
+msgid "and cancel renaming if the new file exists"
+msgstr ""
+
+msgid "and overwrite the existing file if the new file exists"
+msgstr ""
+
+msgid ""
+"Rename ##{filePath}## to ##{newFilename}##, {action_when_exists_desc}, "
+"and save the new file path to ##{newFilePath}##"
+msgstr ""
+
+msgid "File {file_path} already exists, cancel renaming"
+msgstr ""
+
+msgid "and cancel renaming if the new folder exists"
+msgstr ""
+
+msgid "and overwrite the existing file if the new folder exists"
+msgstr ""
+
+msgid ""
+"Rename ##{folderPath}## to ##{newFolderName}##, "
+"{action_when_exists_desc}, and save the new folder path to "
+"##{newFolderPath}##"
+msgstr ""
+
+msgid "Folder {folder_path} already exists, cancel renaming"
+msgstr ""
+
+msgid ""
+"Replace the first ##{something_to_replace}## in text ##{originalText}## "
+"with ##{replacementText}## and save the result to ##{result}##"
+msgstr ""
+
+msgid ""
+"Replace all ##{something_to_replace}## in text ##{originalText}## with "
+"##{replacementText}## and save the result to ##{result}##"
+msgstr ""
+
+msgid "End the current process and return to the previous process"
+msgstr ""
+
+msgid "Reverse list ##{list}##"
+msgstr ""
+
+msgid "Copy text ##{textContent}## to clipboard"
+msgstr ""
+
+msgid "Set ##{key}## = ##{value}## in dictionary ##{dict}##"
+msgstr ""
+
+msgid "Set variable ##{result}## = ##{value}##"
+msgstr ""
+
+msgid "from the first character"
+msgstr ""
+
+msgid "from the specified location ##{startingPosition}##"
+msgstr ""
+
+msgid "from the specified text ##{startingText}##"
+msgstr ""
+
+msgid "to the end of the text"
+msgstr ""
+
+msgid "to the specified length ##{slicedLength}##"
+msgstr ""
+
+msgid ""
+"Slice ##{originalText}## {from_description} {to_description}, and save "
+"the result to ##{result}##"
+msgstr ""
+
+msgid "Sort list ##{list}## in ascending order"
+msgstr ""
+
+msgid "Sort list ##{list}## in descending order"
+msgstr ""
+
+msgid "space character"
+msgstr ""
+
+msgid "line break character"
+msgstr ""
+
+msgid "tab character"
+msgstr ""
+
+msgid ""
+"Split ##{textToBeSplit}## by ##{standardDelimiter}##, filter empty items,"
+" and save the result to ##{result}##"
+msgstr ""
+
+msgid ""
+"Split ##{textToBeSplit}## by ##{standardDelimiter}##, and save the result"
+" to ##{result}##"
+msgstr ""
+
+msgid ""
+"Split ##{textToBeSplit}## by regular expression ##{customDelimiter}##, "
+"filter empty items, and save the result to ##{result}##"
+msgstr ""
+
+msgid ""
+"Split ##{textToBeSplit}## by regular expression ##{customDelimiter}##, "
+"and save the result to ##{result}##"
+msgstr ""
+
+msgid ""
+"Split ##{textToBeSplit}## by ##{customDelimiter}##, filter empty items, "
+"and save the result to ##{result}##"
+msgstr ""
+
+msgid ""
+"Split ##{textToBeSplit}## by ##{customDelimiter}##, and save the result "
+"to ##{result}##"
+msgstr ""
+
+msgid "Convert ##{value}## to a number, and save the result to ##{result}##"
+msgstr ""
+
+msgid "Wait ##{seconds}## seconds"
+msgstr ""
+
+msgid ""
+"Remove blank characters on both sides of ##{originalText}##, and save the"
+" result to ##{result}##"
+msgstr ""
+
+msgid ""
+"Remove blank characters on the left side of ##{originalText}##, and save "
+"the result to ##{result}##"
+msgstr ""
+
+msgid ""
+"Remove blank characters on the right side of ##{originalText}##, and save"
+" the result to ##{result}##"
+msgstr ""
+
+msgid ""
+"Update ##{originalDateTime}##, {adjustmentType} ##{adjustmentValue}## "
+"##{adjustmentUnit}##, and save the result to ##{result}##"
+msgstr ""
+
+msgid "increment"
+msgstr ""
+
+msgid "decrement"
+msgstr ""
+
+msgid "microseconds"
+msgstr ""
+
+msgid "milliseconds"
+msgstr ""
+
+msgid "weeks"
+msgstr ""
+
+msgid "months"
+msgstr ""
+
+msgid "years"
+msgstr ""
+
+msgid "Unknown adjustment unit: {unit}"
+msgstr ""
+
+msgid "Update item at position ##{position}## in list ##{list}## to ##{value}##"
+msgstr ""
+
+msgid "Url decode ##{textToDecode}##, and save the result to ##{result}##"
+msgstr ""
+
+msgid "Url encode ##{textToEncode}##, and save the result to ##{result}##"
+msgstr ""
+
+msgid ""
+"Write ##{writeContent}## to ##{filePath}## using encoding "
+"##{fileEncoding}##"
+msgstr ""
+
+msgid "Find the image ##{image}## on the screen and move the mouse to the image"
+msgstr ""
+
+msgid "Found image at {location}"
+msgstr ""
+
+msgid "Type text ##{textContent}## in the current window"
+msgstr ""
+
+msgid "Press the hotkey ##{hotkey}##"
+msgstr ""
+
+msgid "{clickType} {mouseButton}"
+msgstr ""
+
+msgid "{modifierKey} + {clickType} {mouseButton}"
+msgstr ""
+
+msgid "Scroll up ##{number_of_scrolls}## times"
+msgstr ""
+
+msgid "Scroll down ##{number_of_scrolls}## times"
+msgstr ""
+
+msgid "{modifierKey} + Scroll up ##{number_of_scrolls}## times"
+msgstr ""
+
+msgid "{modifierKey} + Scroll down ##{number_of_scrolls}## times"
+msgstr ""
+
+msgid ""
+"Move the mouse to (##{offsetX}##,##{offsetY}##) position relative to the "
+"current position"
+msgstr ""
+
+msgid ""
+"Move the mouse to (##{offsetX}##,##{offsetY}##) position relative to the "
+"upper left corner of the screen"
+msgstr ""
+
+msgid "Add column ##{columnName}## to ##{table}##"
+msgstr ""
+
+msgid "Create data table"
+msgstr ""
+
+msgid "Delete all rows of ##{table}##"
+msgstr ""
+
+msgid "Delete row ##{rowNo}## of ##{table}##"
+msgstr ""
+
+msgid ""
+"Export table ##{table}## to ##{fileFormat}## file in ##{saveFolder}## "
+"with random file name"
+msgstr ""
+
+msgid ""
+"Export table ##{table}## to ##{fileFormat}## file in ##{saveFolder}## "
+"with file name ##{customFilename}##"
+msgstr ""
+
+msgid "File already exists: {file_path}"
+msgstr ""
+
+msgid "Unsupported file format: {file_format}"
+msgstr ""
+
+msgid "Import csv file ##{filePath}## as table ##{table}##"
+msgstr ""
+
+msgid ""
+"Import excel file ##{filePath}## as table ##{table}##, select sheet by "
+"index ##{sheetIndex}##"
+msgstr ""
+
+msgid ""
+"Import excel file ##{filePath}## as table ##{table}##, select sheet by "
+"name ##{sheetName}##"
+msgstr ""
+
+msgid ""
+"Loop through all rows of table ##{table}##, save current row to "
+"##{currentRow}##"
+msgstr ""
+
+msgid ""
+"Loop through row ##{startRowNo}## to row ##{endRowNo}## of table "
+"##{table}##, save current row to ##{currentRow}##"
+msgstr ""
+
+msgid "Read row ##{rowNo}## of table ##{table}##, save result to ##{result}##"
+msgstr ""
+
+msgid ""
+"Read row ##{rowNo}## and column ##{columnNo}## of table ##{table}##, save"
+" result to ##{result}##"
+msgstr ""
+
+msgid "Unsupported read type: {read_type}"
+msgstr ""
+
+msgid "Row no is out of range: {row_no}"
+msgstr ""
+
+msgid ""
+"Write the value ##{value}## to row ##{row_no}##, column ##{column_no}## "
+"of table ##{table}##"
+msgstr ""
+
+msgid "Invalid row type"
+msgstr ""
+
+msgid "Append a row to table ##{table}##"
+msgstr ""
+
+msgid "Insert a row to table ##{table}##"
+msgstr ""
+
+msgid "Update a row in table ##{table}##"
+msgstr ""
+
+msgid "include element"
+msgstr ""
+
+msgid "exclude element"
+msgstr ""
+
+msgid "include text"
+msgstr ""
+
+msgid "exclude text"
+msgstr ""
+
+msgid "can see element"
+msgstr ""
+
+msgid "cannot see element"
+msgstr ""
+
+msgid "can see text"
+msgstr ""
+
+msgid "cannot see text"
+msgstr ""
+
+msgid "Invalid check type: {check_type}"
+msgstr ""
+
+msgid ""
+"Check if web page ##{webPage}## ##{action}## ##{target}##, save result to"
+" ##{checkResult}##"
+msgstr ""
+
+msgid "Clear all cookies of web page ##{webPage}##"
+msgstr ""
+
+msgid "Clear cookie ##{cookieName}## of web page ##{webPage}##"
+msgstr ""
+
+msgid ""
+"Click ##{element}## on web page ##{webPage}##, and save opened web page "
+"to ##{newWebPage}##"
+msgstr ""
+
+msgid "Single click"
+msgstr ""
+
+msgid "Double click"
+msgstr ""
+
+msgid "{action} ##{element}## on web page ##{webPage}##"
+msgstr ""
+
+msgid "Close web page ##{webPage}##"
+msgstr ""
+
+msgid "Close browser ##{webBrowser}##"
+msgstr ""
+
+msgid "Drag ##{sourceElement}## to ##{targetElement}## on web page ##{webPage}##"
+msgstr ""
+
+msgid ""
+"Drag ##{sourceElement}## by offset ##{dragOffsetX}## ##{dragOffsetY}## on"
+" web page ##{webPage}##"
+msgstr ""
+
+msgid ""
+"Evaluate js ##{jsCode}## in web page ##{webPage}##, and save the result "
+"to ##{output}##"
+msgstr ""
+
+msgid "text content"
+msgstr ""
+
+msgid "html content"
+msgstr ""
+
+msgid "input value"
+msgstr ""
+
+msgid "attribute value"
+msgstr ""
+
+msgid "position"
+msgstr ""
+
+msgid "?"
+msgstr ""
+
+msgid ""
+"Extract the ##{extractData}## of element ##{element}## on web page "
+"##{webPage}##, and save to ##{result}##"
+msgstr ""
+
+msgid "title"
+msgstr ""
+
+msgid "url"
+msgstr ""
+
+msgid ""
+"Extract the ##{extractData}## of web page ##{webPage}##, and save to "
+"##{result}##"
+msgstr ""
+
+msgid "Get cookies from web page ##{webPage}##, and save to ##{cookies}##"
+msgstr ""
+
+msgid ""
+"Get cookies for url ##{url}## in ##{webBrowser}##, and save to "
+"##{cookies}##"
+msgstr ""
+
+msgid "Invalid get type: {get_type}"
+msgstr ""
+
+msgid ""
+"Get parent element of ##{element}## on web page ##{webPage}##, and save "
+"to ##{result}##"
+msgstr ""
+
+msgid ""
+"Get previous sibling element of ##{element}## on web page ##{webPage}##, "
+"and save to ##{result}##"
+msgstr ""
+
+msgid ""
+"Get next sibling element of ##{element}## on web page ##{webPage}##, and "
+"save to ##{result}##"
+msgstr ""
+
+msgid ""
+"Get first matched descendant element of ##{element}## on web page "
+"##{webPage}## with relative xpath ##{descendantRelativeXpath}##, and save"
+" to ##{result}##"
+msgstr ""
+
+msgid ""
+"Get all matched descendants of ##{element}## on web page ##{webPage}## "
+"with relative xpath ##{descendantRelativeXpath}##, and save to "
+"##{result}##"
+msgstr ""
+
+msgid ""
+"Get all children of ##{element}## on web page ##{webPage}##, and save to "
+"##{result}##"
+msgstr ""
+
+msgid ""
+"Get ##{childPosition}## child of ##{element}## on web page ##{webPage}##,"
+" and save to ##{result}##"
+msgstr ""
+
+msgid "Unsupported locate type: {locate_type}"
+msgstr ""
+
+msgid ""
+"Get web page ##{matchType}## from ##{webBrowser}##, and save to "
+"##{webPage}##"
+msgstr ""
+
+msgid "Hover ##{element}## on web page ##{webPage}##"
+msgstr ""
+
+msgid ""
+"Loop elements ##{elements}## on web page ##{webPage}##, save current "
+"element to ##{currentElement}##"
+msgstr ""
+
+msgid "Navigate web page ##{webPage}## to ##{url}##"
+msgstr ""
+
+msgid "Go back"
+msgstr ""
+
+msgid "Go forward"
+msgstr ""
+
+msgid "Reload"
+msgstr ""
+
+msgid "{action} web page ##{webPage}##"
+msgstr ""
+
+msgid "Open a new web browser, and save to ##{webBrowser}##"
+msgstr ""
+
+msgid "Open url ##{url}## in ##{webBrowser}##, and save to ##{webPage}##"
+msgstr ""
+
+msgid "Timeout to get the element"
+msgstr ""
+
+msgid "The element is not an iframe"
+msgstr ""
+
+msgid ""
+"Screenshot ##{element}## on web page ##{webPage}##, and save to "
+"##{snapshotFilename}##"
+msgstr ""
+
+msgid "Screenshot web page ##{webPage}##, and save to ##{snapshotFilename}##"
+msgstr ""
+
+msgid "Scroll web page ##{webPage}## to top"
+msgstr ""
+
+msgid "Scroll web page ##{webPage}## to bottom"
+msgstr ""
+
+msgid "Scroll web page ##{webPage}## ##{scrollTimes}## pages"
+msgstr ""
+
+msgid "Scroll web page ##{webPage}## to element ##{scrollToElement}##"
+msgstr ""
+
+msgid "Set cookies ##{cookies}## to web page ##{webPage}##"
+msgstr ""
+
+msgid "Check checkbox ##{element}## on web page ##{webPage}##"
+msgstr ""
+
+msgid "Uncheck checkbox ##{element}## on web page ##{webPage}##"
+msgstr ""
+
+msgid "Toggle checkbox ##{element}## on web page ##{webPage}##"
+msgstr ""
+
+msgid "Select option in drop-down box ##{element}## with content ##{content}##"
+msgstr ""
+
+msgid ""
+"Select option in drop-down box ##{element}## with content containing "
+"##{content}##"
+msgstr ""
+
+msgid ""
+"Select option in drop-down box ##{element}## with content matching regex "
+"##{content}##"
+msgstr ""
+
+msgid ""
+"Select the option indexed as ##{index}## in the drop-down box "
+"##{element}##"
+msgstr ""
+
+msgid "Invalid wait type: {wait_type}"
+msgstr ""
+
+msgid "Wait web page ##{webPage}## {action} {target}"
+msgstr ""
+
+msgid "Wait web page ##{webPage}## to load"
+msgstr ""
+
+msgid "Loading timeout"
+msgstr ""
+
+msgid ""
+"Click ##{element}## on web page ##{webPage}## to download, and save the "
+"downloaded file to ##{downloadFilename}##"
+msgstr ""
+
+msgid ""
+"Open ##{url}## on web page ##{webPage}## to download, and save the "
+"downloaded file to ##{downloadFilename}##"
+msgstr ""
+
+msgid "Input ##{content}## into element ##{element}## on web page ##{webPage}##"
+msgstr ""
+
+msgid "Click ##{element}## on web page ##{webPage}## to upload ##{filePath}##"
+msgstr ""
+
+msgid "Active the window ##{windowObject}##"
+msgstr ""
+
+msgid "Active the window with the title ##{title}## and type ##{className}##"
+msgstr ""
+
+msgid "Active the window with the title ##{title}##"
+msgstr ""
+
+msgid "Active the window of ##{element}##"
+msgstr ""
+
+msgid "{action} ##{element}##"
+msgstr ""
+
+msgid "Close the window ##{windowObject}##"
+msgstr ""
+
+msgid "Close the window with the title ##{title}## and type ##{className}##"
+msgstr ""
+
+msgid "Close the window with the title ##{title}##"
+msgstr ""
+
+msgid "Close the window of ##{element}##"
+msgstr ""
+
+msgid "Drag ##{sourceElement}## to ##{targetElement}##"
+msgstr ""
+
+msgid "Drag ##{sourceElement}## by offset ##{dragOffsetX}## ##{dragOffsetY}##"
+msgstr ""
+
+msgid "process name"
+msgstr ""
+
+msgid ""
+"Extract the ##{extractData}## of the window ##{windowObject}##, and save "
+"to ##{result}##"
+msgstr ""
+
+msgid ""
+"Extract the ##{extractData}## of the window with the title ##{title}##, "
+"and save to ##{result}##"
+msgstr ""
+
+msgid ""
+"Extract the ##{extractData}## of the window of ##{element}##, and save to"
+" ##{result}##"
+msgstr ""
+
+msgid "text"
+msgstr ""
+
+msgid "value"
+msgstr ""
+
+msgid ""
+"Extract the ##{extractData}## of element ##{element}##, and save to "
+"##{result}##"
+msgstr ""
+
+msgid ""
+"Get selected items of the combo box ##{element}##, and save to "
+"##{result}##"
+msgstr ""
+
+msgid "Get all items of the combo box ##{element}##, and save to ##{result}##"
+msgstr ""
+
+msgid "Get parent element of ##{element}##, and save to ##{result}##"
+msgstr ""
+
+msgid "Get previous sibling element of ##{element}##, and save to ##{result}##"
+msgstr ""
+
+msgid "Get next sibling element of ##{element}##, and save to ##{result}##"
+msgstr ""
+
+msgid ""
+"Get first matched descendant element of ##{element}## with relative xpath"
+" ##{descendantRelativeXpath}##, and save to ##{result}##"
+msgstr ""
+
+msgid ""
+"Get all matched descendants of ##{element}## with relative xpath "
+"##{descendantRelativeXpath}##, and save to ##{result}##"
+msgstr ""
+
+msgid "Get all children of ##{element}##, and save to ##{result}##"
+msgstr ""
+
+msgid "Get ##{childPosition}## child of ##{element}##, and save to ##{result}##"
+msgstr ""
+
+msgid "Get the current active window, and save to ##{windowObject}##"
+msgstr ""
+
+msgid ""
+"Get the window with the title ##{title}## and type ##{className}##, and "
+"save to ##{windowObject}##"
+msgstr ""
+
+msgid "Get the window with the title ##{title}##, and save to ##{windowObject}##"
+msgstr ""
+
+msgid "Get the window of ##{element}##, and save to ##{windowObject}##"
+msgstr ""
+
+msgid "Hover ##{element}##"
+msgstr ""
+
+msgid "Loop elements ##{elements}##, save current element to ##{currentElement}##"
+msgstr ""
+
+msgid "Move the window ##{windowObject}## to (##{x}##, ##{y}##)"
+msgstr ""
+
+msgid ""
+"Move the window with the title ##{title}## and type ##{className}## to "
+"(##{x}##, ##{y}##)"
+msgstr ""
+
+msgid "Move the window with the title ##{title}## to (##{x}##, ##{y}##)"
+msgstr ""
+
+msgid "Move the window of ##{element}## to (##{x}##, ##{y}##)"
+msgstr ""
+
+msgid "No windows found"
+msgstr ""
+
+msgid "Multiple windows found"
+msgstr ""
+
+msgid "No controls found"
+msgstr ""
+
+msgid "Multiple controls found"
+msgstr ""
+
+msgid ""
+"Set the width of window ##{windowObject}## to ##{width}## and the height "
+"to ##{height}##"
+msgstr ""
+
+msgid ""
+"Set the width of window with the title ##{title}## and type "
+"##{className}## to ##{width}## and the height to ##{height}##"
+msgstr ""
+
+msgid ""
+"Set the width of window with the title ##{title}## to ##{width}## and the"
+" height to ##{height}##"
+msgstr ""
+
+msgid ""
+"Set the width of window of ##{element}## to ##{width}## and the height to"
+" ##{height}##"
+msgstr ""
+
+msgid "Screenshot ##{element}##, and save to ##{snapshotFilename}##"
+msgstr ""
+
+msgid "Check checkbox ##{element}##"
+msgstr ""
+
+msgid "Uncheck checkbox ##{element}##"
+msgstr ""
+
+msgid "Toggle checkbox ##{element}##"
+msgstr ""
+
+msgid "Select option in combo box ##{element}## with content ##{content}##"
+msgstr ""
+
+msgid ""
+"Select option in combo box ##{element}## with content containing "
+"##{content}##"
+msgstr ""
+
+msgid ""
+"Select option in combo box ##{element}## with content matching regex "
+"##{content}##"
+msgstr ""
+
+msgid "Select the option indexed as ##{index}## in the combo box ##{element}##"
+msgstr ""
+
+msgid "Restore the window ##{windowObject}##"
+msgstr ""
+
+msgid "Maximize the window ##{windowObject}##"
+msgstr ""
+
+msgid "Minimize the window ##{windowObject}##"
+msgstr ""
+
+msgid "Restore the window with the title ##{title}## and type ##{className}##"
+msgstr ""
+
+msgid "Maximize the window with the title ##{title}## and type ##{className}##"
+msgstr ""
+
+msgid "Minimize the window with the title ##{title}## and type ##{className}##"
+msgstr ""
+
+msgid "Restore the window with the title ##{title}##"
+msgstr ""
+
+msgid "Maximize the window with the title ##{title}##"
+msgstr ""
+
+msgid "Minimize the window with the title ##{title}##"
+msgstr ""
+
+msgid "Restore the window of ##{element}##"
+msgstr ""
+
+msgid "Maximize the window of ##{element}##"
+msgstr ""
+
+msgid "Minimize the window of ##{element}##"
+msgstr ""
+
+msgid "Show the window ##{windowObject}##"
+msgstr ""
+
+msgid "Hide the window ##{windowObject}##"
+msgstr ""
+
+msgid "Show the window with the title ##{title}## and type ##{className}##"
+msgstr ""
+
+msgid "Hide the window with the title ##{title}## and type ##{className}##"
+msgstr ""
+
+msgid "Show the window with the title ##{title}##"
+msgstr ""
+
+msgid "Hide the window with the title ##{title}##"
+msgstr ""
+
+msgid "Show the window of ##{element}##"
+msgstr ""
+
+msgid "Hide the window of ##{element}##"
+msgstr ""
+
+msgid "Waiting to ##{action}## ##{target}##, and save to ##{waitResult}##"
+msgstr ""
+
+msgid "Input ##{content}## into element ##{element}##"
+msgstr ""
+
+msgid "Any Type"
+msgstr ""
+
+msgid "Text"
+msgstr ""
+
+msgid "Text length"
+msgstr ""
+
+msgid "Lowercase text"
+msgstr ""
+
+msgid "Uppercase text"
+msgstr ""
+
+msgid "Number"
+msgstr ""
+
+msgid "Round number"
+msgstr ""
+
+msgid "Floor number"
+msgstr ""
+
+msgid "Ceil number"
+msgstr ""
+
+msgid "Absolute value"
+msgstr ""
+
+msgid "Boolean"
+msgstr ""
+
+msgid "List"
+msgstr ""
+
+msgid "Number of items in the list"
+msgstr ""
+
+msgid "Dictionary"
+msgstr ""
+
+msgid "Number of items in the dict"
+msgstr ""
+
+msgid "Keys in the dict"
+msgstr ""
+
+msgid "Values in the dict"
+msgstr ""
+
+msgid "Items in the dict"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "The year of the date"
+msgstr ""
+
+msgid "The month of the date"
+msgstr ""
+
+msgid "The day of the date"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "The hour of the time"
+msgstr ""
+
+msgid "The minute of the time"
+msgstr ""
+
+msgid "The second of the time"
+msgstr ""
+
+msgid "The microsecond of the time"
+msgstr ""
+
+msgid "DateTime"
+msgstr ""
+
+msgid "The date of the datetime"
+msgstr ""
+
+msgid "The time of the datetime"
+msgstr ""
+
+msgid "The year of the datetime"
+msgstr ""
+
+msgid "The month of the datetime"
+msgstr ""
+
+msgid "The day of the datetime"
+msgstr ""
+
+msgid "The hour of the datetime"
+msgstr ""
+
+msgid "The minute of the datetime"
+msgstr ""
+
+msgid "The second of the datetime"
+msgstr ""
+
+msgid "The microsecond of the datetime"
+msgstr ""
+
+msgid "The timestamp of the datetime, in seconds"
+msgstr ""
+
+msgid "File Path Info"
+msgstr ""
+
+msgid "root directory"
+msgstr ""
+
+msgid "parent directory"
+msgstr ""
+
+msgid "file name"
+msgstr ""
+
+msgid "file name without extension"
+msgstr ""
+
+msgid "file extension"
+msgstr ""
+
+msgid "file exists"
+msgstr ""
+
+msgid "is directory"
+msgstr ""
+
+msgid "is file"
+msgstr ""
+
+msgid "file size"
+msgstr ""
+
+msgid "creation time(timestamp)"
+msgstr ""
+
+msgid "modification time(timestamp)"
+msgstr ""
+
+msgid "Column no is out of range: {column_no}"
+msgstr ""
+
+msgid "Table"
+msgstr ""
+
+msgid "Number of rows"
+msgstr ""
+
+msgid "Number of columns"
+msgstr ""
+
+msgid "List of column names"
+msgstr ""
+
+msgid "List of rows"
+msgstr ""
+
+msgid "Web Browser"
+msgstr ""
+
+msgid "Web Page"
+msgstr ""
+
+msgid "Web page url"
+msgstr ""
+
+msgid "Web Element"
+msgstr ""
+
+msgid "Window Element"
+msgstr ""
+
+msgid "Windows"
+msgstr ""
+
+msgid "Linux"
+msgstr ""
+
+msgid "MacOS"
+msgstr ""
+
+msgid "Other"
+msgstr ""
+
+msgid "IN VARIABLE"
+msgstr ""
+
+msgid "OUT VARIABLE"
+msgstr ""
+
+msgid "LOCAL VARIABLE"
+msgstr ""
+
+msgid "contains in"
+msgstr ""
+
+msgid "not contains in"
+msgstr ""
+
+msgid "equals"
+msgstr ""
+
+msgid "not equals"
+msgstr ""
+
+msgid "is true"
+msgstr ""
+
+msgid "is false"
+msgstr ""
+
+msgid "Text input box"
+msgstr ""
+
+msgid "Multi line text input box"
+msgstr ""
+
+msgid "Number input box"
+msgstr ""
+
+msgid "Drop down box"
+msgstr ""
+
+msgid "Expression input box"
+msgstr ""
+
+msgid "Variable input box"
+msgstr ""
+
+msgid "Check box"
+msgstr ""
+
+msgid "Custom input control"
+msgstr ""
+
+msgid "About JimuFlow"
+msgstr ""
+
+msgid "JimuFlow is a simple and easy-to-use cross-platform RPA tool."
+msgstr ""
+
+msgid "Version: {version}"
+msgstr ""
+
+msgid "Project Link: <a href='{link_url}'>{link_name}</a>"
+msgstr ""
+
+msgid "Unknown instruction or process {name}"
+msgstr ""
+
+msgid "Invoke process {name}"
+msgstr ""
+
+msgid "Press the delete key or the backspace key to delete the instruction."
+msgstr ""
+
+msgid "Search process"
+msgstr ""
+
+msgid "Double click to open the process"
+msgstr ""
+
+msgid "Open"
+msgstr ""
+
+msgid "Set As Main Process"
+msgstr ""
+
+msgid "Config"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "General"
+msgstr ""
+
+msgid "Advanced"
+msgstr ""
+
+msgid "Error handling"
+msgstr ""
+
+msgid "Output configs"
+msgstr ""
+
+msgid "Stop"
+msgstr ""
+
+msgid "Retry"
+msgstr ""
+
+msgid "Ignore"
+msgstr ""
+
+msgid "Error handling type"
+msgstr ""
+
+msgid "Max retries"
+msgstr ""
+
+msgid "Retry interval (seconds)"
+msgstr ""
+
+msgid "Outputs on error"
+msgstr ""
+
+msgid "Input parameter {name} is invalid: {editor_errors}"
+msgstr ""
+
+msgid "Input parameter {name} is required"
+msgstr ""
+
+msgid "Invalid expression for input {name}"
+msgstr ""
+
+msgid "Output parameter {name} is required"
+msgstr ""
+
+msgid "Invalid variable name for output {name}"
+msgstr ""
+
+msgid "Max retries is required"
+msgstr ""
+
+msgid "Max retries must be a number"
+msgstr ""
+
+msgid "Max retries must be greater than 0"
+msgstr ""
+
+msgid "Retry interval is required"
+msgstr ""
+
+msgid "Retry interval must be a number"
+msgstr ""
+
+msgid "Retry interval must be greater than 0"
+msgstr ""
+
+msgid "Invalid expression for output {name}"
+msgstr ""
+
+msgid "Process {name}"
+msgstr ""
+
+msgid "Ok"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Help"
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "Process Control"
+msgstr ""
+
+msgid "Switch"
+msgstr ""
+
+msgid "Loop"
+msgstr ""
+
+msgid "Wait"
+msgstr ""
+
+msgid "Web Automation"
+msgstr ""
+
+msgid "Web Page Operation"
+msgstr ""
+
+msgid "Web Element Operation"
+msgstr ""
+
+msgid "Web Data Extraction"
+msgstr ""
+
+msgid "Web Dialog Operation"
+msgstr ""
+
+msgid "Windows Automation"
+msgstr ""
+
+msgid "Data Process"
+msgstr ""
+
+msgid "Text Operation"
+msgstr ""
+
+msgid "Number Operation"
+msgstr ""
+
+msgid "List operation"
+msgstr ""
+
+msgid "Dictionary operation"
+msgstr ""
+
+msgid "Date Time Operation"
+msgstr ""
+
+msgid "Process"
+msgstr ""
+
+msgid "Search instruction"
+msgstr ""
+
+msgid ""
+"Double click or drag to add to the current process, select and press F1 "
+"key to view help"
+msgstr ""
+
+msgid "Double click or drag to add to the current process"
+msgstr ""
+
+msgid "Only supported on {platforms}"
+msgstr ""
+
+msgid "Config Application"
+msgstr ""
+
+msgid "New Application"
+msgstr ""
+
+msgid ""
+"The namespace is used to distinguish processes with the same name written"
+" by different people, using a format similar to a reverse domain name, "
+"such as foo, foo.bar.\n"
+"Each part of the namespace consists of any non blank characters and "
+"underscores other than punctuation, and the total length cannot exceed "
+"100 characters."
+msgstr ""
+
+msgid "Namespace:"
+msgstr ""
+
+msgid ""
+"Consists of any non blank characters and underscores other than "
+"punctuation, and the total length cannot exceed 100 characters."
+msgstr ""
+
+msgid "Application name:"
+msgstr ""
+
+msgid ""
+"Represent using numbers separated by periods in English, such as 1, 1.0, "
+"1.0.0, with a maximum of 3 numbers and a total length of no more than 50 "
+"characters."
+msgstr ""
+
+msgid "Application version:"
+msgstr ""
+
+msgid "Save directory:"
+msgstr ""
+
+msgid "Save application"
+msgstr ""
+
+msgid "Tips"
+msgstr ""
+
+msgid "The namespace cannot be empty"
+msgstr ""
+
+msgid "The application name cannot be empty"
+msgstr ""
+
+msgid "The application version cannot be empty"
+msgstr ""
+
+msgid "Save directory cannot be empty"
+msgstr ""
+
+msgid "The application already exists"
+msgstr ""
+
+msgid "Config Process"
+msgstr ""
+
+msgid "New Process"
+msgstr ""
+
+msgid ""
+"Any non blank characters and underscores other than punctuation can be "
+"used, and the length cannot exceed 100 characters."
+msgstr ""
+
+msgid "Process name:"
+msgstr ""
+
+msgid "Process name cannot be empty"
+msgstr ""
+
+msgid "Modify Variable"
+msgstr ""
+
+msgid "Add Variable"
+msgstr ""
+
+msgid ""
+"Any non blank characters and underscores other than punctuation can be "
+"used, and the length cannot exceed 50 characters."
+msgstr ""
+
+msgid "Variable Name:"
+msgstr ""
+
+msgid "Variable Type:"
+msgstr ""
+
+msgid " VARIABLE"
+msgstr ""
+
+msgid "Variable Direction:"
+msgstr ""
+
+msgid "Element Type:"
+msgstr ""
+
+msgid "Default Value:"
+msgstr ""
+
+msgid "UI Label:"
+msgstr ""
+
+msgid "UI Group:"
+msgstr ""
+
+msgid "Required"
+msgstr ""
+
+msgid "Not exceeding 999, the smaller the number, the higher the ranking"
+msgstr ""
+
+msgid "UI Sort No:"
+msgstr ""
+
+msgid "UI Input Type:"
+msgstr ""
+
+msgid "The class name of the custom input control"
+msgstr ""
+
+msgid "UI Custom Input Control:"
+msgstr ""
+
+msgid "UI Placeholder:"
+msgstr ""
+
+msgid "Add Option"
+msgstr ""
+
+msgid "UI Options:"
+msgstr ""
+
+msgid "UI Help Info:"
+msgstr ""
+
+msgid "UI Depends On:"
+msgstr ""
+
+msgid "Variable name cannot be empty"
+msgstr ""
+
+msgid "Please select variable type"
+msgstr ""
+
+msgid "Please select variable direction"
+msgstr ""
+
+msgid "Please select element type"
+msgstr ""
+
+msgid "Please input custom editor type"
+msgstr ""
+
+msgid "Please input options"
+msgstr ""
+
+msgid "Please select input type"
+msgstr ""
+
+msgid "Call Stack"
+msgstr ""
+
+msgid "Variable Name"
+msgstr ""
+
+msgid "Variable Value"
+msgstr ""
+
+msgid "Line {line_no}"
+msgstr ""
+
+msgid ""
+"Click to view the variable at the call location, double-click to navigate"
+" to the call location"
+msgstr ""
+
+msgid "Capture Element"
+msgstr ""
+
+msgid "Edit Element"
+msgstr ""
+
+msgid "Line No"
+msgstr ""
+
+msgid "Double click to navigate to the corresponding process location"
+msgstr ""
+
+msgid "Bracket operator"
+msgstr ""
+
+msgid "Addition operator"
+msgstr ""
+
+msgid "Subtraction or negative operator"
+msgstr ""
+
+msgid "Multiplication operator"
+msgstr ""
+
+msgid "Division operator"
+msgstr ""
+
+msgid "Remainder operator"
+msgstr ""
+
+msgid "Power operator"
+msgstr ""
+
+msgid "Floor division operator"
+msgstr ""
+
+msgid "Logical and operator"
+msgstr ""
+
+msgid "Logical or operator"
+msgstr ""
+
+msgid "Logical non operator"
+msgstr ""
+
+msgid "Greater than operator"
+msgstr ""
+
+msgid "Greater than or equal to operator"
+msgstr ""
+
+msgid "Less than operator"
+msgstr ""
+
+msgid "Less than or equal to operator"
+msgstr ""
+
+msgid "Equal operator"
+msgstr ""
+
+msgid "Not equal to operator"
+msgstr ""
+
+msgid "Index access operator"
+msgstr ""
+
+msgid "Attribute access operator"
+msgstr ""
+
+msgid "{type} Variable"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Back"
+msgstr ""
+
+msgid "Forward"
+msgstr ""
+
+msgid "Timestamp"
+msgstr ""
+
+msgid "Level"
+msgstr ""
+
+msgid "Instruction"
+msgstr ""
+
+msgid "Message"
+msgstr ""
+
+msgid "Ready"
+msgstr ""
+
+msgid "New App"
+msgstr ""
+
+msgid "Open App"
+msgstr ""
+
+msgid "Config App"
+msgstr ""
+
+msgid "Save Process"
+msgstr ""
+
+msgid "Delete Process"
+msgstr ""
+
+msgid "Undo"
+msgstr ""
+
+msgid "Redo"
+msgstr ""
+
+msgid "Run Process"
+msgstr ""
+
+msgid "Debug Process"
+msgstr ""
+
+msgid "Resume Process"
+msgstr ""
+
+msgid "Stop Process"
+msgstr ""
+
+msgid "Step Over"
+msgstr ""
+
+msgid "Step Into"
+msgstr ""
+
+msgid "Step Out"
+msgstr ""
+
+msgid "File"
+msgstr ""
+
+msgid "Recent Apps"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Run"
+msgstr ""
+
+msgid "Process List"
+msgstr ""
+
+msgid "Instruction List"
+msgstr ""
+
+msgid "Error List"
+msgstr ""
+
+msgid "Running logs"
+msgstr ""
+
+msgid "Variables"
+msgstr ""
+
+msgid "Web Elements"
+msgstr ""
+
+msgid "Window Elements"
+msgstr ""
+
+msgid "Element library"
+msgstr ""
+
+msgid "Resource library"
+msgstr ""
+
+msgid "Open Application"
+msgstr ""
+
+msgid "Undo {action}"
+msgstr ""
+
+msgid "Redo {action}"
+msgstr ""
+
+msgid "Warning"
+msgstr ""
+
+msgid "Process {name} has not been saved. Do you want to save this process?"
+msgstr ""
+
+msgid "Are you sure you want to delete process {name}?"
+msgstr ""
+
+msgid "Process has errors, please fix them first"
+msgstr ""
+
+msgid "Process {name} only supports running on platform {platforms}"
+msgstr ""
+
+msgid "Process {name} is running, do you want to terminate the process?"
+msgstr ""
+
+msgid "An error has occurred!"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "Date Modified"
+msgstr ""
+
+msgid "Add File"
+msgstr ""
+
+msgid "Add Folder"
+msgstr ""
+
+msgid "Add"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Resource Folder"
+msgstr ""
+
+msgid "Open resources folder in Finder"
+msgstr ""
+
+msgid "Add Instruction"
+msgstr ""
+
+msgid "Move instructions"
+msgstr ""
+
+msgid "Copy instructions"
+msgstr ""
+
+msgid "Unknown instruction or process config {config}"
+msgstr ""
+
+msgid "Edit Instruction"
+msgstr ""
+
+msgid "Remove Breakpoint"
+msgstr ""
+
+msgid "Add Breakpoint"
+msgstr ""
+
+msgid "Copy"
+msgstr ""
+
+msgid "Cut"
+msgstr ""
+
+msgid "Paste Before"
+msgstr ""
+
+msgid "Paste Inside"
+msgstr ""
+
+msgid "Paste After"
+msgstr ""
+
+msgid "Paste"
+msgstr ""
+
+msgid "Open Process"
+msgstr ""
+
+msgid "Paste Instructions"
+msgstr ""
+
+msgid "Remove Instructions"
+msgstr ""
+
+msgid "Add variable"
+msgstr ""
+
+msgid "Delete variable"
+msgstr ""
+
+msgid "Direction"
+msgstr ""
+
+msgid "IN"
+msgstr ""
+
+msgid "OUT"
+msgstr ""
+
+msgid "LOCAL"
+msgstr ""
+
+msgid "Update variable"
+msgstr ""
+
+msgid "Process {name} startup parameter configuration"
+msgstr ""
+
+msgid "Web Cookie Tool"
+msgstr ""
+
+msgid "URL: "
+msgstr ""
+
+msgid "Please enter the URL"
+msgstr ""
+
+msgid "Not equal to"
+msgstr ""
+
+msgid "regular expression matches"
+msgstr ""
+
+msgid "Attribute"
+msgstr ""
+
+msgid "Operator"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "Link"
+msgstr ""
+
+msgid "Abbreviation Text"
+msgstr ""
+
+msgid "Address"
+msgstr ""
+
+msgid "Image Map Area"
+msgstr ""
+
+msgid "Article Contents"
+msgstr ""
+
+msgid "Aside"
+msgstr ""
+
+msgid "Audio"
+msgstr ""
+
+msgid "Document Base URL"
+msgstr ""
+
+msgid "Block Quotation"
+msgstr ""
+
+msgid "Document Body"
+msgstr ""
+
+msgid "Line Break"
+msgstr ""
+
+msgid "Button"
+msgstr ""
+
+msgid "Canvas"
+msgstr ""
+
+msgid "Table Caption"
+msgstr ""
+
+msgid "Citation"
+msgstr ""
+
+msgid "Code"
+msgstr ""
+
+msgid "Table Column"
+msgstr ""
+
+msgid "Table Column Group"
+msgstr ""
+
+msgid "Data"
+msgstr ""
+
+msgid "Data List"
+msgstr ""
+
+msgid "Description Details"
+msgstr ""
+
+msgid "Deleted Text"
+msgstr ""
+
+msgid "Details disclosure"
+msgstr ""
+
+msgid "Definition"
+msgstr ""
+
+msgid "Dialog"
+msgstr ""
+
+msgid "Block Element"
+msgstr ""
+
+msgid "Description List"
+msgstr ""
+
+msgid "Description Term"
+msgstr ""
+
+msgid "Emphasis"
+msgstr ""
+
+msgid "Embedded Content"
+msgstr ""
+
+msgid "Fieldset"
+msgstr ""
+
+msgid "Figure Caption"
+msgstr ""
+
+msgid "Figure"
+msgstr ""
+
+msgid "Footer"
+msgstr ""
+
+msgid "Form"
+msgstr ""
+
+msgid "First-level title"
+msgstr ""
+
+msgid "Second-level title"
+msgstr ""
+
+msgid "Third-level title"
+msgstr ""
+
+msgid "Fourth-level title"
+msgstr ""
+
+msgid "Fifth-level title"
+msgstr ""
+
+msgid "Sixth-level title"
+msgstr ""
+
+msgid "Document Head"
+msgstr ""
+
+msgid "Header"
+msgstr ""
+
+msgid "Heading Group"
+msgstr ""
+
+msgid "Horizontal Rule"
+msgstr ""
+
+msgid "Document"
+msgstr ""
+
+msgid "Inline Frame"
+msgstr ""
+
+msgid "Image"
+msgstr ""
+
+msgid "Inserted Text"
+msgstr ""
+
+msgid "Keyboard Input"
+msgstr ""
+
+msgid "Label"
+msgstr ""
+
+msgid "Field Set Legend"
+msgstr ""
+
+msgid "List Item"
+msgstr ""
+
+msgid "External Resource Link"
+msgstr ""
+
+msgid "Main Content"
+msgstr ""
+
+msgid "Image Map"
+msgstr ""
+
+msgid "Mark Text"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+msgid "Metadata"
+msgstr ""
+
+msgid "Meter"
+msgstr ""
+
+msgid "Navigation"
+msgstr ""
+
+msgid "Embedded Object"
+msgstr ""
+
+msgid "Ordered List"
+msgstr ""
+
+msgid "Option Group"
+msgstr ""
+
+msgid "Option"
+msgstr ""
+
+msgid "Output"
+msgstr ""
+
+msgid "Picture"
+msgstr ""
+
+msgid "Preformatted Text"
+msgstr ""
+
+msgid "Progress Indicator"
+msgstr ""
+
+msgid "Inline Quotation"
+msgstr ""
+
+msgid "Script"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Section"
+msgstr ""
+
+msgid "Drop-down box"
+msgstr ""
+
+msgid "Web Component Slot"
+msgstr ""
+
+msgid "Side Comment"
+msgstr ""
+
+msgid "Media Source"
+msgstr ""
+
+msgid "Style"
+msgstr ""
+
+msgid "Subscript"
+msgstr ""
+
+msgid "Summary"
+msgstr ""
+
+msgid "Superscript"
+msgstr ""
+
+msgid "Table Body"
+msgstr ""
+
+msgid "Table Cell"
+msgstr ""
+
+msgid "Content Template"
+msgstr ""
+
+msgid "Text Area"
+msgstr ""
+
+msgid "Table Footer"
+msgstr ""
+
+msgid "Table Header Cell"
+msgstr ""
+
+msgid "Table Header"
+msgstr ""
+
+msgid "Document Title"
+msgstr ""
+
+msgid "Table Row"
+msgstr ""
+
+msgid "Media Track"
+msgstr ""
+
+msgid "Unordered List"
+msgstr ""
+
+msgid "Variable"
+msgstr ""
+
+msgid "Video"
+msgstr ""
+
+msgid "Line Break Opportunity"
+msgstr ""
+
+msgid "Password Input"
+msgstr ""
+
+msgid "Checkbox"
+msgstr ""
+
+msgid "Radio Button"
+msgstr ""
+
+msgid "File Input"
+msgstr ""
+
+msgid "Input box"
+msgstr ""
+
+msgid "Element List"
+msgstr ""
+
+msgid "Web Element Capture Tool"
+msgstr ""
+
+msgid ""
+"Please enter the URL where the web page element you want to get is "
+"located."
+msgstr ""
+
+msgid ""
+"Operation instructions: Ctrl+left-click to get a single element, and "
+"Shift+left-click two elements to get multiple similar elements."
+msgstr ""
+
+msgid "New tab"
+msgstr ""
+
+msgid "The second element does not match the first element, please select again!"
+msgstr ""
+
+msgid "Element Node"
+msgstr ""
+
+msgid "Element Name"
+msgstr ""
+
+msgid "Check Element"
+msgstr ""
+
+msgid "Element Editing"
+msgstr ""
+
+msgid "Element Preview"
+msgstr ""
+
+msgid "Element"
+msgstr ""
+
+msgid "IFrame"
+msgstr ""
+
+msgid "Use Custom Element XPath"
+msgstr ""
+
+msgid "Use Custom IFrame XPath"
+msgstr ""
+
+msgid "Element XPath Preview:"
+msgstr ""
+
+msgid "Enter Custom Element XPath"
+msgstr ""
+
+msgid "Element in IFrame"
+msgstr ""
+
+msgid "Enter Custom IFrame XPath"
+msgstr ""
+
+msgid ""
+"Element XPath Preview: \n"
+"{}"
+msgstr ""
+
+msgid ""
+"IFrame XPath Preview: \n"
+"{}"
+msgstr ""
+
+msgid "Web Element Relative XPath Tool"
+msgstr ""
+
+msgid "Operation instructions: Ctrl+left-click to capture a single element."
+msgstr ""
+
+msgid "Source Element XPath: "
+msgstr ""
+
+msgid "Click the Capture Element button to obtain the XPath of the source element"
+msgstr ""
+
+msgid "Capture Source Element"
+msgstr ""
+
+msgid "Capture the source element"
+msgstr ""
+
+msgid "Match"
+msgstr ""
+
+msgid "Match the source element XPath on the current web page"
+msgstr ""
+
+msgid "Target Element XPath: "
+msgstr ""
+
+msgid "Click the Capture Element button to obtain the XPath of the target element"
+msgstr ""
+
+msgid "Capture Target Element"
+msgstr ""
+
+msgid "Capture the target element"
+msgstr ""
+
+msgid "Match the target element XPath on the current web page"
+msgstr ""
+
+msgid "Relative XPath: "
+msgstr ""
+
+msgid "Relative XPath of the target element relative to the source element"
+msgstr ""
+
+msgid "Accept"
+msgstr ""
+
+msgid "Accept the relative XPath and close the dialog"
+msgstr ""
+
+msgid "Matches count: {}"
+msgstr ""
+
+msgid "Web Element XPath Tool"
+msgstr ""
+
+msgid "Merged XPath: "
+msgstr ""
+
+msgid "Click the merge button to merge the XPath on all tabs"
+msgstr ""
+
+msgid "Merge"
+msgstr ""
+
+msgid "Merge XPath on all tabs"
+msgstr ""
+
+msgid "Match the merged XPath on the current tab"
+msgstr ""
+
+msgid "Copy the merged XPath to clipboard"
+msgstr ""
+
+msgid "Accept the merged XPath and close the dialog"
+msgstr ""
+
+msgid "XPath: "
+msgstr ""
+
+msgid "Match the XPath on the current tab"
+msgstr ""
+
+msgid "Accept the XPath and close the dialog"
+msgstr ""
+
+msgid "Calendar"
+msgstr ""
+
+msgid "CheckBox"
+msgstr ""
+
+msgid "ComboBox"
+msgstr ""
+
+msgid "DataGrid"
+msgstr ""
+
+msgid "DataItem"
+msgstr ""
+
+msgid "Group"
+msgstr ""
+
+msgid "HeaderItem"
+msgstr ""
+
+msgid "Hyperlink"
+msgstr ""
+
+msgid "ListItem"
+msgstr ""
+
+msgid "MenuBar"
+msgstr ""
+
+msgid "MenuItem"
+msgstr ""
+
+msgid "Pane"
+msgstr ""
+
+msgid "ProgressBar"
+msgstr ""
+
+msgid "RadioButton"
+msgstr ""
+
+msgid "ScrollBar"
+msgstr ""
+
+msgid "SemanticZoom"
+msgstr ""
+
+msgid "Separator"
+msgstr ""
+
+msgid "Slider"
+msgstr ""
+
+msgid "Spinner"
+msgstr ""
+
+msgid "SplitButton"
+msgstr ""
+
+msgid "StatusBar"
+msgstr ""
+
+msgid "Tab"
+msgstr ""
+
+msgid "TabItem"
+msgstr ""
+
+msgid "Thumb"
+msgstr ""
+
+msgid "TitleBar"
+msgstr ""
+
+msgid "ToolBar"
+msgstr ""
+
+msgid "ToolTip"
+msgstr ""
+
+msgid "Tree"
+msgstr ""
+
+msgid "TreeItem"
+msgstr ""
+
+msgid "Window"
+msgstr ""
+
+msgid "Window Element Capture Tool"
+msgstr ""
+
+msgid "Elements not found!"
+msgstr ""
+
+msgid "Use Custom Window XPath"
+msgstr ""
+
+msgid "Enter Custom Window XPath"
+msgstr ""
+
+msgid ""
+"Window XPath Preview: \n"
+"{}"
+msgstr ""
+
+msgid "Window Element Relative XPath Tool"
+msgstr ""
+
+msgid "Operation instructions: Ctrl+left-click to get a single element."
+msgstr ""
+
+msgid "Match the source element"
+msgstr ""
+
+msgid "Match the target element"
+msgstr ""
+
+msgid "This feature is only supported on Windows."
+msgstr ""
+
+msgid "True"
+msgstr ""
+
+msgid "False"
+msgstr ""
+
+msgid "Add condition"
+msgstr ""
+
+msgid "The first operand"
+msgstr ""
+
+msgid "The second operand"
+msgstr ""
+
+msgid "The first operand is empty"
+msgstr ""
+
+msgid "The first operand expression is invalid"
+msgstr ""
+
+msgid "The second operand is empty"
+msgstr ""
+
+msgid "The second operand expression is invalid"
+msgstr ""
+
+msgid "Choose"
+msgstr ""
+
+msgid "Choose File"
+msgstr ""
+
+msgid "Choose Folder"
+msgstr ""
+
+msgid "Input configs"
+msgstr ""
+
+msgid "Select Resource"
+msgstr ""
+
+msgid "Add column"
+msgstr ""
+
+msgid "Column name/number"
+msgstr ""
+
+msgid "Cell value"
+msgstr ""
+
+msgid "Column name/number is empty"
+msgstr ""
+
+msgid "Column name/number expression is invalid"
+msgstr ""
+
+msgid "Cell value is empty"
+msgstr ""
+
+msgid "Cell value expression is invalid"
+msgstr ""
+
+msgid "Option label"
+msgstr ""
+
+msgid "Option value"
+msgstr ""
+
+msgid "Add value"
+msgstr ""
+
+msgid "Get Cookie"
+msgstr ""
+
+msgid "Dynamic elements"
+msgstr ""
+
+msgid "Search element"
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "Get Relative XPath"
+msgstr ""
+
+msgid "Get XPath"
+msgstr ""
+
+msgid "The class name of the element"
+msgstr ""
+
+msgid "The friendly class name for the control"
+msgstr ""
+
+msgid "The text for each item of this control"
+msgstr ""
+
+msgid "The ID of the element"
+msgstr ""
+
+msgid "The rectangle of the element on the screen"
+msgstr ""
+
+msgid "Whether the element is visible or not"
+msgstr ""
+
+msgid "Whether the element is enabled or not"
+msgstr ""
+
+msgid "The number of children of this control"
+msgstr ""
+
+msgid "The start and end indices of the current selection text"
+msgstr ""
+
+msgid "The number of columns"
+msgstr ""
+
+msgid "The number of items in the ListView or TreeView"
+msgstr ""
+
+msgid "The information on the columns of the ListView"
+msgstr ""
+
+msgid "The number of buttons on the ToolBar"
+msgstr ""
+
+msgid "{window_text} [x={x}, y={y}]"
+msgstr ""
+
+msgid "X"
+msgstr ""
+
+msgid "Y"
+msgstr ""
+
+msgid "{window_text} [width={width}, height={height}]"
+msgstr ""
+
+msgid "Window width"
+msgstr ""
+
+msgid "Window height"
+msgstr ""
+
+msgid "Add Prefix or Suffix"
+msgstr ""
+
+msgid "Original text"
+msgstr ""
+
+msgid "Add type"
+msgstr ""
+
+msgid "Add prefix"
+msgstr ""
+
+msgid "Add suffix"
+msgstr ""
+
+msgid "Add text"
+msgstr ""
+
+msgid "Result"
+msgstr ""
+
+msgid "End loop"
+msgstr ""
+
+msgid "Change Text Case"
+msgstr ""
+
+msgid "Case change type"
+msgstr ""
+
+msgid "upper"
+msgstr ""
+
+msgid "lower"
+msgstr ""
+
+msgid "capitalize"
+msgstr ""
+
+msgid "Check Process Exist"
+msgstr ""
+
+msgid "Operating System"
+msgstr ""
+
+msgid "Process property"
+msgstr ""
+
+msgid "Process ID"
+msgstr ""
+
+msgid "Process name"
+msgstr ""
+
+msgid "Check result"
+msgstr ""
+
+msgid "Clear Folder"
+msgstr ""
+
+msgid "Folder path"
+msgstr ""
+
+msgid "Compress File/Folder"
+msgstr ""
+
+msgid "File path"
+msgstr ""
+
+msgid "Compressed package name"
+msgstr ""
+
+msgid "Save folder type"
+msgstr ""
+
+msgid "Save to the same level directory as the source file"
+msgstr ""
+
+msgid "Save to specified folder"
+msgstr ""
+
+msgid "Save folder"
+msgstr ""
+
+msgid "Compressed package path"
+msgstr ""
+
+msgid "Continue to the next loop"
+msgstr ""
+
+msgid "Copy File"
+msgstr ""
+
+msgid "Target folder"
+msgstr ""
+
+msgid "Action when exists"
+msgstr ""
+
+msgid "Overwrite"
+msgstr ""
+
+msgid "Automatic renaming"
+msgstr ""
+
+msgid "Perform error handling"
+msgstr ""
+
+msgid "New file path"
+msgstr ""
+
+msgid "Copy Folder"
+msgstr ""
+
+msgid "New folder path"
+msgstr ""
+
+msgid "Create Date"
+msgstr ""
+
+msgid "Initialization type"
+msgstr ""
+
+msgid "Today"
+msgstr ""
+
+msgid "Convert timestamp to date"
+msgstr ""
+
+msgid "Parse date string"
+msgstr ""
+
+msgid "Timestamp(s)"
+msgstr ""
+
+msgid "Date string"
+msgstr ""
+
+msgid "Date format"
+msgstr ""
+
+msgid ""
+"Common Format Codes\n"
+"\n"
+"YYYY: Four digit year (e.g. 2024)\n"
+"\n"
+"YY: Two digit year (e.g. 24 represents 2024)\n"
+"\n"
+"MM: Month (01 to 12)\n"
+"\n"
+"DD: day of the month (01 to 31)"
+msgstr ""
+
+msgid "Create DateTime"
+msgstr ""
+
+msgid "Get the current date and time"
+msgstr ""
+
+msgid "Convert timestamp to datetime"
+msgstr ""
+
+msgid "Parse datetime string"
+msgstr ""
+
+msgid "Datetime string"
+msgstr ""
+
+msgid "Datetime format"
+msgstr ""
+
+msgid ""
+"Common Format Codes\n"
+"\n"
+"YYYY: Four digit year (e.g. 2024)\n"
+"\n"
+"YY: Two digit year (e.g. 24 represents 2024)\n"
+"\n"
+"MM: Month (01 to 12)\n"
+"\n"
+"DD: day of the month (01 to 31)\n"
+"\n"
+"HH: Hour (24-hour format, 00 to 23)\n"
+"\n"
+"hh: Hour (12 hour format, 01 to 12)\n"
+"\n"
+"mm: Minutes (00 to 59)\n"
+"\n"
+"ss: Seconds (00 to 59)\n"
+"\n"
+"SSSSSS: Microseconds (000000 to 999999)\n"
+"\n"
+"A: AM or PM\n"
+"\n"
+"ZZZ: Time Zone Name\n"
+"\n"
+"Z: Time zone offset (e.g.+0000)"
+msgstr ""
+
+msgid "Datetime"
+msgstr ""
+
+msgid "Create dictionary"
+msgstr ""
+
+msgid "Create Folder"
+msgstr ""
+
+msgid "Parent folder"
+msgstr ""
+
+msgid "New folder name"
+msgstr ""
+
+msgid "Create list"
+msgstr ""
+
+msgid "Create Time"
+msgstr ""
+
+msgid "Get the current time"
+msgstr ""
+
+msgid "Parse time string"
+msgstr ""
+
+msgid "Time string"
+msgstr ""
+
+msgid "Time format"
+msgstr ""
+
+msgid ""
+"Common Format Codes\n"
+"\n"
+"HH: Hour (24-hour format, 00 to 23)\n"
+"\n"
+"hh: Hour (12 hour format, 01 to 12)\n"
+"\n"
+"mm: Minutes (00 to 59)\n"
+"\n"
+"ss: Seconds (00 to 59)\n"
+"\n"
+"SSSSSS: Microseconds (000000 to 999999)\n"
+"\n"
+"A: AM or PM"
+msgstr ""
+
+msgid "Decompress File/Folder"
+msgstr ""
+
+msgid "Decompress to"
+msgstr ""
+
+msgid "Create a folder with the same name"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Password for the zip compression package"
+msgstr ""
+
+msgid "Result folder"
+msgstr ""
+
+msgid "Delete dictionary key"
+msgstr ""
+
+msgid "Key"
+msgstr ""
+
+msgid "Delete File"
+msgstr ""
+
+msgid "Delete Folder"
+msgstr ""
+
+msgid "Delete List Item"
+msgstr ""
+
+msgid "Delete Type"
+msgstr ""
+
+msgid "Delete list item by position"
+msgstr ""
+
+msgid "Delete list item by value"
+msgstr ""
+
+msgid "Item position"
+msgstr ""
+
+msgid "Starting from 0, - n represents the nth to last"
+msgstr ""
+
+msgid "Item value"
+msgstr ""
+
+msgid "Dictionary loop"
+msgstr ""
+
+msgid "Loop item"
+msgstr ""
+
+msgid "Calculate time difference"
+msgstr ""
+
+msgid "Starting date"
+msgstr ""
+
+msgid "End Date"
+msgstr ""
+
+msgid "Time unit"
+msgstr ""
+
+msgid "Seconds"
+msgstr ""
+
+msgid "Minutes"
+msgstr ""
+
+msgid "Hours"
+msgstr ""
+
+msgid "Days"
+msgstr ""
+
+msgid "Time difference"
+msgstr ""
+
+msgid "Else branch"
+msgstr ""
+
+msgid "Else if branch"
+msgstr ""
+
+msgid "Else if conditions branch"
+msgstr ""
+
+msgid "Conditions relation"
+msgstr ""
+
+msgid "Satisfy all conditions"
+msgstr ""
+
+msgid "Satisfy any condition"
+msgstr ""
+
+msgid "Condition list"
+msgstr ""
+
+msgid "Execute Command"
+msgstr ""
+
+msgid "Command"
+msgstr ""
+
+msgid "Process working directory"
+msgstr ""
+
+msgid "Encoding"
+msgstr ""
+
+msgid "Wait timeout(s)"
+msgstr ""
+
+msgid "Command output"
+msgstr ""
+
+msgid "Exit"
+msgstr ""
+
+msgid "Format DateTime"
+msgstr ""
+
+msgid "Date Time"
+msgstr ""
+
+msgid "Get Clipboard Text"
+msgstr ""
+
+msgid "Clipboard text"
+msgstr ""
+
+msgid "Get File Path Info"
+msgstr ""
+
+msgid "File path info"
+msgstr ""
+
+msgid "if branch"
+msgstr ""
+
+msgid "if conditions branch"
+msgstr ""
+
+msgid "Infinite loop"
+msgstr ""
+
+msgid "Loop index"
+msgstr ""
+
+msgid "Insert Item To List"
+msgstr ""
+
+msgid "Insert Type"
+msgstr ""
+
+msgid "Add at the end of the list"
+msgstr ""
+
+msgid "Insert at specified location"
+msgstr ""
+
+msgid "Insert position"
+msgstr ""
+
+msgid "Kill Process"
+msgstr ""
+
+msgid "Launch Application"
+msgstr ""
+
+msgid "Application path"
+msgstr ""
+
+msgid "Action after launch"
+msgstr ""
+
+msgid "Continue to execute"
+msgstr ""
+
+msgid "Waiting for application execution to complete"
+msgstr ""
+
+msgid "Command line arguments"
+msgstr ""
+
+msgid "Process PID"
+msgstr ""
+
+msgid "List Files"
+msgstr ""
+
+msgid "Folder"
+msgstr ""
+
+msgid "File name pattern"
+msgstr ""
+
+msgid ""
+"Filename patterns are special strings composed of regular characters and "
+"wildcards, with the following syntax for wildcards:\n"
+"\n"
+"1. *: Matches zero or more characters (including any characters in the "
+"filename).\n"
+"\n"
+"   For example: *.txt matches all .txt files.\n"
+"\n"
+"2. ?: Matches a single character.\n"
+"\n"
+"   For example: file?.txt matches file1.txt, fileA.txt, etc., but does "
+"not match file.txt.\n"
+"\n"
+"3. [...]: Matches any single character within the brackets.\n"
+"\n"
+"   For example: file[1-3].txt matches file1.txt, file2.txt, and "
+"file3.txt.\n"
+"\n"
+"4. [!...]: Matches any single character not within the brackets.\n"
+"\n"
+"   For example: file[!a-z].txt matches file1.txt, file2.txt, and "
+"file3.txt.\n"
+"\n"
+"5. **: Matches zero or more directories (can span subdirectories).\n"
+"\n"
+"   For example: **/*.txt matches all .txt files in the current directory "
+"and all subdirectories."
+msgstr ""
+
+msgid "Find sub folders"
+msgstr ""
+
+msgid "Ignore hidden files"
+msgstr ""
+
+msgid "Sorting files"
+msgstr ""
+
+msgid "Sorting factor"
+msgstr ""
+
+msgid "File name"
+msgstr ""
+
+msgid "File size"
+msgstr ""
+
+msgid "Creation time"
+msgstr ""
+
+msgid "Last modified"
+msgstr ""
+
+msgid "Sort order"
+msgstr ""
+
+msgid "Ascending order"
+msgstr ""
+
+msgid "Descending order"
+msgstr ""
+
+msgid "List loop"
+msgstr ""
+
+msgid "Counting loop"
+msgstr ""
+
+msgid "Start index"
+msgstr ""
+
+msgid "Starting value (inclusive)"
+msgstr ""
+
+msgid "End index"
+msgstr ""
+
+msgid "End value (excluding)"
+msgstr ""
+
+msgid "Merge list"
+msgstr ""
+
+msgid "The first list"
+msgstr ""
+
+msgid "The second list"
+msgstr ""
+
+msgid "Merged list"
+msgstr ""
+
+msgid "Move File"
+msgstr ""
+
+msgid "Move Folder"
+msgstr ""
+
+msgid "Number To Text"
+msgstr ""
+
+msgid "Number value"
+msgstr ""
+
+msgid "Number of decimal places"
+msgstr ""
+
+msgid "Use a thousandth separator"
+msgstr ""
+
+msgid "Object To Json"
+msgstr ""
+
+msgid "JSON Operation"
+msgstr ""
+
+msgid "Object"
+msgstr ""
+
+msgid "Parse Json"
+msgstr ""
+
+msgid "Json text"
+msgstr ""
+
+msgid "Print message"
+msgstr ""
+
+msgid "Generate random integer"
+msgstr ""
+
+msgid "Minimum value"
+msgstr ""
+
+msgid "Minimum value (including this value)"
+msgstr ""
+
+msgid "Maximum value"
+msgstr ""
+
+msgid "Maximum value (excluding this value)"
+msgstr ""
+
+msgid "Random number"
+msgstr ""
+
+msgid "Read Text File"
+msgstr ""
+
+msgid "Read type"
+msgstr ""
+
+msgid "Read as whole text"
+msgstr ""
+
+msgid "Read as lines"
+msgstr ""
+
+msgid "File encoding"
+msgstr ""
+
+msgid "Regex Match"
+msgstr ""
+
+msgid "Regex"
+msgstr ""
+
+msgid "Find first match"
+msgstr ""
+
+msgid "Ignore case"
+msgstr ""
+
+msgid "Rename File"
+msgstr ""
+
+msgid "New file name"
+msgstr ""
+
+msgid "Cancel renaming operation"
+msgstr ""
+
+msgid "Rename Folder"
+msgstr ""
+
+msgid "Replace Text"
+msgstr ""
+
+msgid "Replace type"
+msgstr ""
+
+msgid "Text replacement"
+msgstr ""
+
+msgid "Regex replacement"
+msgstr ""
+
+msgid "Text to replace"
+msgstr ""
+
+msgid "Regex to replace"
+msgstr ""
+
+msgid "Replace first match"
+msgstr ""
+
+msgid "Replacement text"
+msgstr ""
+
+msgid "Return"
+msgstr ""
+
+msgid "Reverse list"
+msgstr ""
+
+msgid "Set Clipboard Text"
+msgstr ""
+
+msgid "Text content"
+msgstr ""
+
+msgid "Set dictionary key value"
+msgstr ""
+
+msgid "Set variable"
+msgstr ""
+
+msgid "Variable value"
+msgstr ""
+
+msgid "Variable name"
+msgstr ""
+
+msgid "Slice Text"
+msgstr ""
+
+msgid "From where"
+msgstr ""
+
+msgid "from the specified location"
+msgstr ""
+
+msgid "from the specified text"
+msgstr ""
+
+msgid "Starting character position"
+msgstr ""
+
+msgid "Starting from 0, - n represents the nth to last character"
+msgstr ""
+
+msgid "Starting text content"
+msgstr ""
+
+msgid "To where"
+msgstr ""
+
+msgid "to the specified length"
+msgstr ""
+
+msgid "Sliced length"
+msgstr ""
+
+msgid "Sort list"
+msgstr ""
+
+msgid "Split Text"
+msgstr ""
+
+msgid "Text to be split"
+msgstr ""
+
+msgid "Delimiter type"
+msgstr ""
+
+msgid "Standard delimiter"
+msgstr ""
+
+msgid "Custom delimiter"
+msgstr ""
+
+msgid "Space character"
+msgstr ""
+
+msgid "Line break character"
+msgstr ""
+
+msgid "Tab character"
+msgstr ""
+
+msgid "Filter empty items"
+msgstr ""
+
+msgid "Use regular expressions"
+msgstr ""
+
+msgid "Text To Number"
+msgstr ""
+
+msgid "Text value"
+msgstr ""
+
+msgid "Wait time(seconds)"
+msgstr ""
+
+msgid "Trim Text"
+msgstr ""
+
+msgid "Trim type"
+msgstr ""
+
+msgid "Remove blank characters on both sides"
+msgstr ""
+
+msgid "Remove blank characters on the left side"
+msgstr ""
+
+msgid "Remove blank characters on the right side"
+msgstr ""
+
+msgid "Update DateTime"
+msgstr ""
+
+msgid "Original date and time"
+msgstr ""
+
+msgid "Adjustment type"
+msgstr ""
+
+msgid "Increment"
+msgstr ""
+
+msgid "Decrement"
+msgstr ""
+
+msgid "Adjustment value"
+msgstr ""
+
+msgid "Adjustment unit"
+msgstr ""
+
+msgid "Microseconds"
+msgstr ""
+
+msgid "Milliseconds"
+msgstr ""
+
+msgid "Weeks"
+msgstr ""
+
+msgid "Months"
+msgstr ""
+
+msgid "Years"
+msgstr ""
+
+msgid "Update List Item"
+msgstr ""
+
+msgid "Item Value"
+msgstr ""
+
+msgid "Url Decode"
+msgstr ""
+
+msgid "Encoding/Decoding"
+msgstr ""
+
+msgid "Text to decode"
+msgstr ""
+
+msgid "Url Encode"
+msgstr ""
+
+msgid "Text to encode"
+msgstr ""
+
+msgid "While loop"
+msgstr ""
+
+msgid "Write Text File"
+msgstr ""
+
+msgid "Write content"
+msgstr ""
+
+msgid "Append"
+msgstr ""
+
+msgid "Hover Image"
+msgstr ""
+
+msgid "Mouse/Keyboard"
+msgstr ""
+
+msgid "Cursor position"
+msgstr ""
+
+msgid "Image Center"
+msgstr ""
+
+msgid "The upper left corner of the image"
+msgstr ""
+
+msgid "X coordinate offset"
+msgstr ""
+
+msgid "Y coordinate offset"
+msgstr ""
+
+msgid "Similarity(%)"
+msgstr ""
+
+msgid "Match mode"
+msgstr ""
+
+msgid "Color matching"
+msgstr ""
+
+msgid "Grayscale matching"
+msgstr ""
+
+msgid "Move speed"
+msgstr ""
+
+msgid "Instant"
+msgstr ""
+
+msgid "Fast"
+msgstr ""
+
+msgid "Medium"
+msgstr ""
+
+msgid "Slow"
+msgstr ""
+
+msgid "Delay after action(seconds)"
+msgstr ""
+
+msgid "Input type"
+msgstr ""
+
+msgid "Input text"
+msgstr ""
+
+msgid "Input hotkey"
+msgstr ""
+
+msgid ""
+"Support all Unicode characters, including Chinese and English, on "
+"Windows, but only English characters on Linux and macOS. If you need to "
+"input non-English characters on Linux or macOS, please use the setting "
+"clipboard text command and pasting hotkey."
+msgstr ""
+
+msgid "Hotkey type"
+msgstr ""
+
+msgid "Common hotkey"
+msgstr ""
+
+msgid "Custom hotkey"
+msgstr ""
+
+msgid "Ctrl/Cmd+C"
+msgstr ""
+
+msgid "Ctrl/Cmd+V"
+msgstr ""
+
+msgid "Ctrl/Cmd+X"
+msgstr ""
+
+msgid "Ctrl/Cmd+Z"
+msgstr ""
+
+msgid "Ctrl/Cmd+S"
+msgstr ""
+
+msgid "Ctrl/Cmd+A"
+msgstr ""
+
+msgid "Enter"
+msgstr ""
+
+msgid "Input interval(milliseconds)"
+msgstr ""
+
+msgid "Mouse Click"
+msgstr ""
+
+msgid "Mouse button"
+msgstr ""
+
+msgid "Left button"
+msgstr ""
+
+msgid "Right button"
+msgstr ""
+
+msgid "Middle button"
+msgstr ""
+
+msgid "Click Type"
+msgstr ""
+
+msgid "Mouse down"
+msgstr ""
+
+msgid "Mouse up"
+msgstr ""
+
+msgid "Modifier key"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Alt"
+msgstr ""
+
+msgid "Ctrl"
+msgstr ""
+
+msgid "Ctrl or Meta"
+msgstr ""
+
+msgid "Meta"
+msgstr ""
+
+msgid "Shift"
+msgstr ""
+
+msgid "Mouse Scroll"
+msgstr ""
+
+msgid "Scroll direction"
+msgstr ""
+
+msgid "Scroll up"
+msgstr ""
+
+msgid "Scroll down"
+msgstr ""
+
+msgid "Number of scrolls"
+msgstr ""
+
+msgid "Move Mouse"
+msgstr ""
+
+msgid "Relative to"
+msgstr ""
+
+msgid "The upper left corner of the screen"
+msgstr ""
+
+msgid "Current mouse position"
+msgstr ""
+
+msgid "Add table column"
+msgstr ""
+
+msgid "Data Table"
+msgstr ""
+
+msgid "Column name"
+msgstr ""
+
+msgid "Create table"
+msgstr ""
+
+msgid "Table column names"
+msgstr ""
+
+msgid "List of headers for data table separated by commas"
+msgstr ""
+
+msgid "The created table"
+msgstr ""
+
+msgid "Delete table row"
+msgstr ""
+
+msgid "Delete all rows"
+msgstr ""
+
+msgid "Delete one row"
+msgstr ""
+
+msgid "Row number"
+msgstr ""
+
+msgid ""
+"Enter the line number, starting from line 1, where -n represents the nth "
+"to last line"
+msgstr ""
+
+msgid "Export table"
+msgstr ""
+
+msgid "File format"
+msgstr ""
+
+msgid "xlsx"
+msgstr ""
+
+msgid "xls"
+msgstr ""
+
+msgid "csv"
+msgstr ""
+
+msgid "Sheet name"
+msgstr ""
+
+msgid "UTF-8 Bom"
+msgstr ""
+
+msgid "Use custom delimiter"
+msgstr ""
+
+msgid "File naming type"
+msgstr ""
+
+msgid "Random file name"
+msgstr ""
+
+msgid "Custom file name"
+msgstr ""
+
+msgid "Custom filename"
+msgstr ""
+
+msgid "Override existing file"
+msgstr ""
+
+msgid "Export table header"
+msgstr ""
+
+msgid "Import csv as table"
+msgstr ""
+
+msgid "Csv file path"
+msgstr ""
+
+msgid "Please input the file path of the csv file"
+msgstr ""
+
+msgid "Use the first row of data as the header"
+msgstr ""
+
+msgid "The imported table"
+msgstr ""
+
+msgid "Import excel as table"
+msgstr ""
+
+msgid "Excel file path"
+msgstr ""
+
+msgid "Please input the file path of the excel file"
+msgstr ""
+
+msgid "Sheet select type"
+msgstr ""
+
+msgid "Select sheet by index"
+msgstr ""
+
+msgid "Select sheet by name"
+msgstr ""
+
+msgid "Sheet index"
+msgstr ""
+
+msgid "The index position of the first sheet is 1, and so on"
+msgstr ""
+
+msgid "Loop table rows"
+msgstr ""
+
+msgid "Loop range"
+msgstr ""
+
+msgid "All rows"
+msgstr ""
+
+msgid "Specified range"
+msgstr ""
+
+msgid "Start row no"
+msgstr ""
+
+msgid "End row no"
+msgstr ""
+
+msgid "Loop in reverse order"
+msgstr ""
+
+msgid "Current row"
+msgstr ""
+
+msgid "Read table data"
+msgstr ""
+
+msgid "Read row data"
+msgstr ""
+
+msgid "Read cell data"
+msgstr ""
+
+msgid "Column number"
+msgstr ""
+
+msgid ""
+"Enter the column name/number, starting from column 1, where -n represents"
+" the nth to last column"
+msgstr ""
+
+msgid "Read result"
+msgstr ""
+
+msgid "Write table cell"
+msgstr ""
+
+msgid "Target data table to be written"
+msgstr ""
+
+msgid "Write cell content"
+msgstr ""
+
+msgid "Enter the content to be written into the cell"
+msgstr ""
+
+msgid ""
+"If the row number is greater than the number of rows in the table, the "
+"content will be automatically written to the next row at the end of the "
+"table"
+msgstr ""
+
+msgid "Write table row"
+msgstr ""
+
+msgid "Write Type"
+msgstr ""
+
+msgid "Append a row"
+msgstr ""
+
+msgid "Insert a row"
+msgstr ""
+
+msgid "Update a row"
+msgstr ""
+
+msgid "Row Input Type"
+msgstr ""
+
+msgid "Input row"
+msgstr ""
+
+msgid "Input columns"
+msgstr ""
+
+msgid "Row value list"
+msgstr ""
+
+msgid "Row columns list"
+msgstr ""
+
+msgid "Check web content"
+msgstr ""
+
+msgid "Web page"
+msgstr ""
+
+msgid "Check type"
+msgstr ""
+
+msgid "Include element"
+msgstr ""
+
+msgid "Exclude element"
+msgstr ""
+
+msgid "Include text"
+msgstr ""
+
+msgid "Exclude text"
+msgstr ""
+
+msgid "Element is visible"
+msgstr ""
+
+msgid "Element is invisible"
+msgstr ""
+
+msgid "Text is visible"
+msgstr ""
+
+msgid "Text is invisible"
+msgstr ""
+
+msgid "Check element"
+msgstr ""
+
+msgid "Check text"
+msgstr ""
+
+msgid "Clear cookies"
+msgstr ""
+
+msgid "Clear type"
+msgstr ""
+
+msgid "Clear specified cookie"
+msgstr ""
+
+msgid "Clear all cookies"
+msgstr ""
+
+msgid "Cookie name"
+msgstr ""
+
+msgid "Click to open web page"
+msgstr ""
+
+msgid "Link element"
+msgstr ""
+
+msgid "Select the link element to be clicked"
+msgstr ""
+
+msgid "New web page"
+msgstr ""
+
+msgid "Newly opened webpage object"
+msgstr ""
+
+msgid "Click Web Page Element"
+msgstr ""
+
+msgid "Web element"
+msgstr ""
+
+msgid "Simulate human click"
+msgstr ""
+
+msgid "Close Web Page"
+msgstr ""
+
+msgid "Close Type"
+msgstr ""
+
+msgid "Close specific page"
+msgstr ""
+
+msgid "Close browser"
+msgstr ""
+
+msgid "Web browser"
+msgstr ""
+
+msgid "Please enter or select the web browser"
+msgstr ""
+
+msgid "Drag Web Page Element"
+msgstr ""
+
+msgid "Source Element"
+msgstr ""
+
+msgid "Source element offset"
+msgstr ""
+
+msgid "Source Element x offset"
+msgstr ""
+
+msgid "Source Element y offset"
+msgstr ""
+
+msgid "Drag type"
+msgstr ""
+
+msgid "Drag to element"
+msgstr ""
+
+msgid "Drag by offset"
+msgstr ""
+
+msgid "Target Element"
+msgstr ""
+
+msgid "Target element offset"
+msgstr ""
+
+msgid "Target Element x offset"
+msgstr ""
+
+msgid "Target Element y offset"
+msgstr ""
+
+msgid "Drag by x offset"
+msgstr ""
+
+msgid "Drag by y offset"
+msgstr ""
+
+msgid "Drag speed"
+msgstr ""
+
+msgid "Evaluate js in web page"
+msgstr ""
+
+msgid "Javascript code"
+msgstr ""
+
+msgid "Javascript output"
+msgstr ""
+
+msgid "Extract Web Element"
+msgstr ""
+
+msgid "Extract type"
+msgstr ""
+
+msgid "Element text content"
+msgstr ""
+
+msgid "Element html source code"
+msgstr ""
+
+msgid "Input element value"
+msgstr ""
+
+msgid "Link element href"
+msgstr ""
+
+msgid "Element attribute value"
+msgstr ""
+
+msgid "Element position"
+msgstr ""
+
+msgid "Attribute name"
+msgstr ""
+
+msgid "Extracted result"
+msgstr ""
+
+msgid "Extract Web Page"
+msgstr ""
+
+msgid "Web page title"
+msgstr ""
+
+msgid "Web page html source code"
+msgstr ""
+
+msgid "Web page text content"
+msgstr ""
+
+msgid "Get cookies"
+msgstr ""
+
+msgid "Get type"
+msgstr ""
+
+msgid "Cookies for specified page"
+msgstr ""
+
+msgid "Cookies for specified url"
+msgstr ""
+
+msgid "Url"
+msgstr ""
+
+msgid "Cookie list"
+msgstr ""
+
+msgid "Get Relative Web Element"
+msgstr ""
+
+msgid "Locate type"
+msgstr ""
+
+msgid "Parent element"
+msgstr ""
+
+msgid "Previous sibling element"
+msgstr ""
+
+msgid "Next sibling element"
+msgstr ""
+
+msgid "The first matching descendant element"
+msgstr ""
+
+msgid "All matching descendant elements"
+msgstr ""
+
+msgid "All child elements"
+msgstr ""
+
+msgid "The specified child element"
+msgstr ""
+
+msgid "Descendant relative xpath"
+msgstr ""
+
+msgid "Child element position"
+msgstr ""
+
+msgid "Found elements"
+msgstr ""
+
+msgid "Get Web Page"
+msgstr ""
+
+msgid "Match Type"
+msgstr ""
+
+msgid "By Title"
+msgstr ""
+
+msgid "By Url"
+msgstr ""
+
+msgid "Current Active Page"
+msgstr ""
+
+msgid "Match Text"
+msgstr ""
+
+msgid "Use Regex Match"
+msgstr ""
+
+msgid "Wait for the web page to load"
+msgstr ""
+
+msgid "Load timeout(seconds)"
+msgstr ""
+
+msgid "Execute after loading timeout"
+msgstr ""
+
+msgid "Stop web page loading"
+msgstr ""
+
+msgid "perform error handling"
+msgstr ""
+
+msgid "Open new page when match failed"
+msgstr ""
+
+msgid "Hover Web Page Element"
+msgstr ""
+
+msgid "Simulate human hover"
+msgstr ""
+
+msgid "Loop web elements"
+msgstr ""
+
+msgid "Elements"
+msgstr ""
+
+msgid "Current element"
+msgstr ""
+
+msgid "Navigate Web Page"
+msgstr ""
+
+msgid "Navigate type"
+msgstr ""
+
+msgid "Go to new url"
+msgstr ""
+
+msgid "Open Web Browser"
+msgstr ""
+
+msgid "Enable proxy"
+msgstr ""
+
+msgid "Proxy server address"
+msgstr ""
+
+msgid ""
+"HTTP and SOCKS proxies are supported, for example http://myproxy.com:3128"
+" or socks5://myproxy.com:3128. Short form myproxy.com:3128 is considered "
+"an HTTP proxy."
+msgstr ""
+
+msgid "Proxy bypass"
+msgstr ""
+
+msgid ""
+"Optional comma-separated domains to bypass proxy, for example \".com, "
+"chromium.org, .domain.com\"."
+msgstr ""
+
+msgid "Proxy server username"
+msgstr ""
+
+msgid "Optional username to use if HTTP proxy requires authentication."
+msgstr ""
+
+msgid "Proxy server password"
+msgstr ""
+
+msgid "Optional password to use if HTTP proxy requires authentication."
+msgstr ""
+
+msgid "Running in the background"
+msgstr ""
+
+msgid "Opened web browser"
+msgstr ""
+
+msgid "Open Web Page"
+msgstr ""
+
+msgid "URL"
+msgstr ""
+
+msgid "Please enter the webpage address you want to open"
+msgstr ""
+
+msgid "Screenshot Web Element"
+msgstr ""
+
+msgid "Screenshot area"
+msgstr ""
+
+msgid "Visible web page viewport"
+msgstr ""
+
+msgid "Full web page"
+msgstr ""
+
+msgid "PNG"
+msgstr ""
+
+msgid "JPEG"
+msgstr ""
+
+msgid "Snapshot filename"
+msgstr ""
+
+msgid "Scroll Web Page"
+msgstr ""
+
+msgid "Scroll on element"
+msgstr ""
+
+msgid "Scroll element"
+msgstr ""
+
+msgid "Find ancestor when element is not scrollable"
+msgstr ""
+
+msgid "Scroll type"
+msgstr ""
+
+msgid "Scroll to the top"
+msgstr ""
+
+msgid "Scroll to the bottom"
+msgstr ""
+
+msgid "Scroll one page"
+msgstr ""
+
+msgid "Scroll to the element"
+msgstr ""
+
+msgid "Scroll times"
+msgstr ""
+
+msgid "Scroll interval(seconds)"
+msgstr ""
+
+msgid "Scroll to element"
+msgstr ""
+
+msgid "Scroll behavior"
+msgstr ""
+
+msgid "Smooth scrolling"
+msgstr ""
+
+msgid "Instant scrolling"
+msgstr ""
+
+msgid "Set cookies"
+msgstr ""
+
+msgid "Cookies"
+msgstr ""
+
+msgid ""
+"Please enter the cookie list data or select the variable containing the "
+"cookie list"
+msgstr ""
+
+msgid "Reload page after setting cookies"
+msgstr ""
+
+msgid "Set Web Checkbox Value"
+msgstr ""
+
+msgid "Checkbox element"
+msgstr ""
+
+msgid "Select type"
+msgstr ""
+
+msgid "Check"
+msgstr ""
+
+msgid "Uncheck"
+msgstr ""
+
+msgid "Toggle"
+msgstr ""
+
+msgid "Set Web Select Value"
+msgstr ""
+
+msgid "Dropdown box element"
+msgstr ""
+
+msgid "Select by option content"
+msgstr ""
+
+msgid "Select by option index"
+msgstr ""
+
+msgid "Option Content"
+msgstr ""
+
+msgid "Match type"
+msgstr ""
+
+msgid "Fuzzy matching"
+msgstr ""
+
+msgid "Precise matching"
+msgstr ""
+
+msgid "Regular matching"
+msgstr ""
+
+msgid "Option index"
+msgstr ""
+
+msgid "Wait web content"
+msgstr ""
+
+msgid "Wait type"
+msgstr ""
+
+msgid "Wait element"
+msgstr ""
+
+msgid "Wait text"
+msgstr ""
+
+msgid "Wait result"
+msgstr ""
+
+msgid "Wait web page load"
+msgstr ""
+
+msgid "Web download"
+msgstr ""
+
+msgid "Download type"
+msgstr ""
+
+msgid "Click download button"
+msgstr ""
+
+msgid "Open download url"
+msgstr ""
+
+msgid "Download button element"
+msgstr ""
+
+msgid "Download url"
+msgstr ""
+
+msgid "Use suggested filename"
+msgstr ""
+
+msgid "Download timeout(seconds)"
+msgstr ""
+
+msgid "Download filename"
+msgstr ""
+
+msgid "Web input"
+msgstr ""
+
+msgid "Input Element"
+msgstr ""
+
+msgid "Input Content"
+msgstr ""
+
+msgid "Append input"
+msgstr ""
+
+msgid "Press enter after input"
+msgstr ""
+
+msgid "Press tab after input"
+msgstr ""
+
+msgid "Simulate human input"
+msgstr ""
+
+msgid "Click element before input"
+msgstr ""
+
+msgid "Delay input after focus(seconds)"
+msgstr ""
+
+msgid "Web upload"
+msgstr ""
+
+msgid "Upload button element"
+msgstr ""
+
+msgid "Upload file path"
+msgstr ""
+
+msgid "Wait button time(seconds)"
+msgstr ""
+
+msgid "Wait dialog time(seconds)"
+msgstr ""
+
+msgid "Active Window"
+msgstr ""
+
+msgid "Window Operation"
+msgstr ""
+
+msgid "Get window method"
+msgstr ""
+
+msgid "Window object"
+msgstr ""
+
+msgid "Window title or class name"
+msgstr ""
+
+msgid "Capture window element"
+msgstr ""
+
+msgid "Window title"
+msgstr ""
+
+msgid "Use window class name"
+msgstr ""
+
+msgid "Window class name"
+msgstr ""
+
+msgid "Use regex matching"
+msgstr ""
+
+msgid "Window element"
+msgstr ""
+
+msgid "Click Window Element"
+msgstr ""
+
+msgid "Close Window"
+msgstr ""
+
+msgid "Drag Window Element"
+msgstr ""
+
+msgid "Window Element Operation"
+msgstr ""
+
+msgid "Extract Window"
+msgstr ""
+
+msgid "Data Extraction"
+msgstr ""
+
+msgid "Window process name"
+msgstr ""
+
+msgid "Extract Window Element"
+msgstr ""
+
+msgid "Element value"
+msgstr ""
+
+msgid "Get ComboBox Items"
+msgstr ""
+
+msgid "ComboBox element"
+msgstr ""
+
+msgid "Content to get"
+msgstr ""
+
+msgid "Selected items"
+msgstr ""
+
+msgid "All items"
+msgstr ""
+
+msgid "Expand the combo box before obtaining items"
+msgstr ""
+
+msgid "Obtained items"
+msgstr ""
+
+msgid "Get Relative Window Element"
+msgstr ""
+
+msgid "Get Window"
+msgstr ""
+
+msgid "Current active window"
+msgstr ""
+
+msgid "Hover Window Element"
+msgstr ""
+
+msgid "Loop window elements"
+msgstr ""
+
+msgid "Move Window"
+msgstr ""
+
+msgid "Window position"
+msgstr ""
+
+msgid "Resize Window"
+msgstr ""
+
+msgid "Window size"
+msgstr ""
+
+msgid "Screenshot Window Element"
+msgstr ""
+
+msgid "Set Checkbox Value"
+msgstr ""
+
+msgid "Set ComboBox Value"
+msgstr ""
+
+msgid "Set Window State"
+msgstr ""
+
+msgid "Window state"
+msgstr ""
+
+msgid "Restore window"
+msgstr ""
+
+msgid "Maximize window"
+msgstr ""
+
+msgid "Minimize window"
+msgstr ""
+
+msgid "Set Window Visibility"
+msgstr ""
+
+msgid "Show window"
+msgstr ""
+
+msgid "Hide window"
+msgstr ""
+
+msgid "Wait window element"
+msgstr ""
+
+msgid "Set the timeout time"
+msgstr ""
+
+msgid "Timeout(seconds)"
+msgstr ""
+
+msgid "Window input"
+msgstr ""
+
+msgid "Input method"
+msgstr ""
+
+msgid "Automated interface input"
+msgstr ""
+
+msgid "The input content includes shortcut keys"
+msgstr ""
+
+msgid "Instruction or process {name} not found"
+msgstr ""
+
+msgid "Write output {out_var_name}: {out_var_value}"
+msgstr ""
+
+msgid "Execution successful"
+msgstr ""
+
+msgid "Execution error"
+msgstr ""
+
+msgid "Ignore error and continue execution"
+msgstr ""
+
+msgid "Wait for {} seconds and retry for the {} time"
+msgstr ""
+
+msgid "The input parameter {var_name} of {comp_name} is not specified."
+msgstr ""
+
+msgid ""
+"The expression format of the input parameter {var_name} of {comp_name} is"
+" incorrect."
+msgstr ""
+
+msgid "The output parameter {var_name} of {comp_name} is not specified."
+msgstr ""
+
+msgid "The format of the output parameter {var_name} of {comp_name} is incorrect."
+msgstr ""
+
+msgid "Error clearing user variable {name}"
+msgstr ""
+
+msgid "Start execution"
+msgstr ""
+
+msgid "Execution completed"
+msgstr ""
+
+msgid ""
+"The input parameter {var_name} for subprocess {process_name} is not "
+"specified"
+msgstr ""
+
+msgid ""
+"The output parameter {var_name} for subprocess {process_name} is not "
+"specified"
+msgstr ""
+
+msgid "{name} must immediately follow the If or Else If instruction"
+msgstr ""
+
+msgid "{name} cannot follow a Break, Continue, Return, or Exit instruction"
+msgstr ""
+
+msgid "{name} has no sub instructions"
+msgstr ""
+
+msgid "{name} should not have any sub instructions"
+msgstr ""
+
+msgid "{name} must be used in conjunction with Loop instruction"
+msgstr ""
+
+msgid "Error clearing process local variable {}"
+msgstr ""
+
+msgid "Debug"
+msgstr ""
+
+msgid "Info"
+msgstr ""
+

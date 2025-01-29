@@ -1,0 +1,64 @@
+{
+  "name": "LoopWindowElements",
+  "displayName": "Loop window elements",
+  "controlFlowType": "LOOP",
+  "type": "jimuflow.components.windows_automation.LoopWindowElementsComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Windows Automation",
+  "secondaryCategory": "Window Element Operation",
+  "sortNo": 4,
+  "helpUrl": "commands/WindowsAutomation/WindowElementOperation/loop_window_elements/",
+  "platforms": [
+    "windows"
+  ],
+  "categories": [
+    [
+      "Process Control",
+      "Loop"
+    ]
+  ],
+  "variables": [
+    {
+      "name": "elementsUri",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Elements",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.window_element_selector.WindowElementEdit"
+      }
+    },
+    {
+      "name": "reversedLoop",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Loop in reverse order",
+        "group": "advanced",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "waitTime",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"30\"",
+      "uiConfig": {
+        "label": "Wait time(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    },
+    {
+      "name": "currentElement",
+      "type": "WindowElement",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Current element"
+      }
+    }
+  ]
+}

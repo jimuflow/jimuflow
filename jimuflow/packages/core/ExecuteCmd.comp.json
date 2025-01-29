@@ -1,0 +1,103 @@
+{
+  "name": "ExecuteCmd",
+  "displayName": "Execute Command",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.ExecuteCmdComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Operating System",
+  "sortNo": 22,
+  "helpUrl": "commands/OperatingSystem/execute_cmd/",
+  "variables": [
+    {
+      "name": "cmd",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Command",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "workDir",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Process working directory",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.file_path_editor.FolderPathEdit",
+        "inputValueType": "expression",
+        "group": "advanced",
+        "required": false
+      }
+    },
+    {
+      "name": "encoding",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "system_default",
+      "uiConfig": {
+        "label": "Encoding",
+        "inputType": "combo_box",
+        "group": "advanced",
+        "required": false,
+        "options": [
+          {
+            "value": "system_default",
+            "label": "System default"
+          },
+          {
+            "value": "utf-8",
+            "label": "UTF-8"
+          },
+          {
+            "value": "ascii",
+            "label": "ASCII"
+          },
+          {
+            "value": "latin-1",
+            "label": "Latin-1"
+          },
+          {
+            "value": "utf-16",
+            "label": "UTF-16"
+          },
+          {
+            "value": "utf-32",
+            "label": "UTF-32"
+          },
+          {
+            "value": "gbk",
+            "label": "GBK"
+          },
+          {
+            "value": "gb2312",
+            "label": "GB2312"
+          },
+          {
+            "value": "gb18030",
+            "label": "GB18030"
+          }
+        ]
+      }
+    },
+    {
+      "name": "waitTimeout",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Wait timeout(s)",
+        "inputType": "expression",
+        "group": "advanced",
+        "required": false
+      }
+    },
+    {
+      "name": "result",
+      "type": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Command output"
+      }
+    }
+  ]
+}

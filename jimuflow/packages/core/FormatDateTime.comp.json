@@ -1,0 +1,40 @@
+{
+  "name": "FormatDateTime",
+  "displayName": "Format DateTime",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.FormatDateTimeComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "Date Time Operation",
+  "sortNo": 6,
+  "helpUrl": "commands/DataProcess/DateTimeOperation/format_date_time/",
+  "variables": [
+    {
+      "name": "datetime",
+      "type": "datetime",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Date Time",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "datetimeFormat",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Datetime format",
+        "inputType": "expression",
+        "helpInfo": "Common Format Codes\n\nYYYY: Four digit year (e.g. 2024)\n\nYY: Two digit year (e.g. 24 represents 2024)\n\nMM: Month (01 to 12)\n\nDD: day of the month (01 to 31)\n\nHH: Hour (24-hour format, 00 to 23)\n\nhh: Hour (12 hour format, 01 to 12)\n\nmm: Minutes (00 to 59)\n\nss: Seconds (00 to 59)\n\nSSSSSS: Microseconds (000000 to 999999)\n\nA: AM or PM\n\nZZZ: Time Zone Name\n\nZ: Time zone offset (e.g.+0000)"
+      }
+    },
+    {
+      "name": "result",
+      "type": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Result"
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "name": "SetWebCheckboxValue",
+  "displayName": "Set Web Checkbox Value",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.web_automation.SetWebCheckboxValueComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Web Automation",
+  "secondaryCategory": "Web Element Operation",
+  "sortNo": 8,
+  "helpUrl": "commands/WebAutomation/WebElementOperation/set_web_checkbox_value/",
+  "variables": [
+    {
+      "name": "webPage",
+      "type": "WebPage",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web page",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "elementUri",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Checkbox element",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit"
+      }
+    },
+    {
+      "name": "checkType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "check",
+      "uiConfig": {
+        "label": "Select type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "check",
+            "label": "Check"
+          },
+          {
+            "value": "uncheck",
+            "label": "Uncheck"
+          },
+          {
+            "value": "toggle",
+            "label": "Toggle"
+          }
+        ]
+      }
+    },
+    {
+      "name": "delayAfterAction",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"0\"",
+      "uiConfig": {
+        "label": "Delay after action(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    },
+    {
+      "name": "waitTime",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"30\"",
+      "uiConfig": {
+        "label": "Wait time(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    }
+  ]
+}

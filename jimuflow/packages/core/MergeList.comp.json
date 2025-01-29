@@ -1,0 +1,42 @@
+{
+  "name": "MergeList",
+  "displayName": "Merge list",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.MergeListComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "List operation",
+  "sortNo": 5,
+  "helpUrl": "commands/DataProcess/ListOperation/merge_list/",
+  "variables": [
+    {
+      "name": "firstList",
+      "type": "list",
+      "elementType": "any",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "The first list",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "secondList",
+      "type": "list",
+      "elementType": "any",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "The second list",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "list",
+      "type": "list",
+      "elementType": "any",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Merged list"
+      }
+    }
+  ]
+}

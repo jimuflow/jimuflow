@@ -1,0 +1,60 @@
+{
+  "name": "KillProcess",
+  "displayName": "Kill Process",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.KillProcessComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Operating System",
+  "sortNo": 14,
+  "helpUrl": "commands/OperatingSystem/kill_process/",
+  "variables": [
+    {
+      "name": "processProp",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "pid",
+      "uiConfig": {
+        "label": "Process property",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "label": "Process ID",
+            "value": "pid"
+          },
+          {
+            "label": "Process name",
+            "value": "name"
+          }
+        ]
+      }
+    },
+    {
+      "name": "pid",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Process ID",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "processProp",
+          "operator": "==",
+          "value": "pid"
+        }
+      }
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Process name",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "processProp",
+          "operator": "==",
+          "value": "name"
+        }
+      }
+    }
+  ]
+}

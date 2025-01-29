@@ -1,0 +1,32 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "当前索引",
+      "type": "number",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:Loop",
+      "inputs": {
+        "start": "\"1\"",
+        "end": "\"5\""
+      },
+      "outputs": {
+        "loopIndex": "当前索引"
+      },
+      "lineNo": 1,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"当前索引=\" + 当前索引"
+          },
+          "lineNo": 2
+        }
+      ]
+    }
+  ]
+}

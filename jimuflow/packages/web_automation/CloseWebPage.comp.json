@@ -1,0 +1,60 @@
+{
+  "name": "CloseWebPage",
+  "displayName": "Close Web Page",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.web_automation.CloseWebPageComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Web Automation",
+  "sortNo": 10,
+  "helpUrl": "commands/WebAutomation/close_web_page/",
+  "variables": [
+    {
+      "name": "closeType",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Close Type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "page",
+            "label": "Close specific page"
+          },
+          {
+            "value": "browser",
+            "label": "Close browser"
+          }
+        ]
+      }
+    },
+    {
+      "name": "webPage",
+      "type": "WebPage",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web page",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "closeType",
+          "operator": "==",
+          "value": "page"
+        }
+      }
+    },
+    {
+      "name": "webBrowser",
+      "type": "WebBrowser",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web browser",
+        "inputType": "expression",
+        "helpInfo": "Please enter or select the web browser",
+        "dependsOn": {
+          "variableName": "closeType",
+          "operator": "==",
+          "value": "browser"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "name": "SplitText",
+  "displayName": "Split Text",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.SplitTextComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "Text Operation",
+  "sortNo": 4,
+  "helpUrl": "commands/DataProcess/TextOperation/split_text/",
+  "variables": [
+    {
+      "name": "textToBeSplit",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Text to be split",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "delimiterType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "standard",
+      "uiConfig": {
+        "label": "Delimiter type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "standard",
+            "label": "Standard delimiter"
+          },
+          {
+            "value": "custom",
+            "label": "Custom delimiter"
+          }
+        ]
+      }
+    },
+    {
+      "name": "standardDelimiter",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "space",
+      "uiConfig": {
+        "label": "Standard delimiter",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "space",
+            "label": "Space character"
+          },
+          {
+            "value": "line_break",
+            "label": "Line break character"
+          },
+          {
+            "value": "tab",
+            "label": "Tab character"
+          }
+        ],
+        "dependsOn": {
+          "variableName": "delimiterType",
+          "operator": "==",
+          "value": "standard"
+        }
+      }
+    },
+    {
+      "name": "customDelimiter",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Custom delimiter",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "delimiterType",
+          "operator": "==",
+          "value": "custom"
+        }
+      }
+    },
+    {
+      "name": "filterEmptyItems",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": true,
+      "uiConfig": {
+        "label": "Filter empty items",
+        "inputType": "check_box"
+      }
+    },
+    {
+      "name": "useRegularExpr",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Use regular expressions",
+        "inputType": "check_box",
+        "dependsOn": {
+          "variableName": "delimiterType",
+          "operator": "==",
+          "value": "custom"
+        }
+      }
+    },
+    {
+      "name": "result",
+      "type": "list",
+      "elementType": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Result"
+      }
+    }
+  ]
+}

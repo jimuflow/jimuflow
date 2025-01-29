@@ -1,0 +1,40 @@
+{
+  "name": "RandomInt",
+  "displayName": "Generate random integer",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.RandomIntComponent",
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "Number Operation",
+  "sortNo": 2,
+  "helpUrl": "commands/DataProcess/NumberOperation/randomint/",
+  "variables": [
+    {
+      "name": "start",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "inputType": "expression",
+        "label": "Minimum value",
+        "placeholder": "Minimum value (including this value)"
+      }
+    },
+    {
+      "name": "end",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "inputType": "expression",
+        "label": "Maximum value",
+        "placeholder": "Maximum value (excluding this value)"
+      }
+    },
+    {
+      "name": "randomInt",
+      "type": "number",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Random number"
+      }
+    }
+  ]
+}

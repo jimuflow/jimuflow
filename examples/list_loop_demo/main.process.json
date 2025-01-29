@@ -1,0 +1,46 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "列表",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "当前值",
+      "type": "any",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:ParseJson",
+      "inputs": {
+        "jsonText": "\"[1,2,3]\""
+      },
+      "outputs": {
+        "result": "列表"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:core:ListLoop",
+      "inputs": {
+        "list": "列表"
+      },
+      "outputs": {
+        "loopItem": "当前值"
+      },
+      "lineNo": 2,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"当前值=\" + 当前值"
+          },
+          "lineNo": 3
+        }
+      ]
+    }
+  ]
+}

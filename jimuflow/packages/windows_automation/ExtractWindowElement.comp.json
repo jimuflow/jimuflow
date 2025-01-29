@@ -1,0 +1,90 @@
+{
+  "name": "ExtractWindowElement",
+  "displayName": "Extract Window Element",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.windows_automation.ExtractWindowElementComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Windows Automation",
+  "secondaryCategory": "Data Extraction",
+  "sortNo": 2,
+  "helpUrl": "commands/WindowsAutomation/DataExtraction/extract_window_element/",
+  "platforms": [
+    "windows"
+  ],
+  "variables": [
+    {
+      "name": "elementUri",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Window element",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.window_element_selector.WindowElementEdit"
+      }
+    },
+    {
+      "name": "extractType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "text",
+      "uiConfig": {
+        "label": "Extract type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "text",
+            "label": "Element text content"
+          },
+          {
+            "value": "value",
+            "label": "Element value"
+          },
+          {
+            "value": "attribute_value",
+            "label": "Element attribute value"
+          },
+          {
+            "value": "position",
+            "label": "Element position"
+          }
+        ]
+      }
+    },
+    {
+      "name": "attributeName",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Attribute name",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.window_element_property_editor.WindowElementPropertyEdit",
+        "inputValueType": "expression",
+        "dependsOn": {
+          "variableName": "extractType",
+          "operator": "==",
+          "value": "attribute_value"
+        }
+      }
+    },
+    {
+      "name": "waitTime",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"30\"",
+      "uiConfig": {
+        "label": "Wait time(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    },
+    {
+      "name": "result",
+      "type": "any",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Extracted result"
+      }
+    }
+  ]
+}

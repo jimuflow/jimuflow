@@ -1,0 +1,154 @@
+{
+  "name": "ClickWebElement",
+  "displayName": "Click Web Page Element",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.web_automation.ClickWebElementComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Web Automation",
+  "secondaryCategory": "Web Element Operation",
+  "sortNo": 4,
+  "helpUrl": "commands/WebAutomation/WebElementOperation/click_web_element/",
+  "variables": [
+    {
+      "name": "webPage",
+      "type": "WebPage",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web page",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "elementUri",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web element",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit"
+      }
+    },
+    {
+      "name": "simulateHumanClick",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": true,
+      "uiConfig": {
+        "label": "Simulate human click",
+        "group": "advanced",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "clickType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "single_click",
+      "uiConfig": {
+        "label": "Click Type",
+        "group": "advanced",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "single_click",
+            "label": "Single click"
+          },
+          {
+            "value": "double_click",
+            "label": "Double click"
+          }
+        ]
+      }
+    },
+    {
+      "name": "mouseButton",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "left",
+      "uiConfig": {
+        "label": "Mouse button",
+        "group": "advanced",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "left",
+            "label": "Left button"
+          },
+          {
+            "value": "right",
+            "label": "Right button"
+          },
+          {
+            "value": "middle",
+            "label": "Middle button"
+          }
+        ]
+      }
+    },
+    {
+      "name": "modifierKey",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "none",
+      "uiConfig": {
+        "label": "Modifier key",
+        "group": "advanced",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "Alt",
+            "label": "Alt"
+          },
+          {
+            "value": "Control",
+            "label": "Ctrl"
+          },
+          {
+            "value": "ControlOrMeta",
+            "label": "Ctrl or Meta"
+          },
+          {
+            "value": "Meta",
+            "label": "Meta"
+          },
+          {
+            "value": "Shift",
+            "label": "Shift"
+          }
+        ]
+      }
+    },
+    {
+      "name": "delayAfterAction",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"0\"",
+      "uiConfig": {
+        "label": "Delay after action(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    },
+    {
+      "name": "waitTime",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"30\"",
+      "uiConfig": {
+        "label": "Wait time(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "name": "WaitWindowElement",
+  "displayName": "Wait window element",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.windows_automation.WaitWindowElementComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Windows Automation",
+  "sortNo": 3,
+  "helpUrl": "commands/WindowsAutomation/wait_window_element/",
+  "platforms": [
+    "windows"
+  ],
+  "variables": [
+    {
+      "name": "waitElementUri",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Window element",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.window_element_selector.WindowElementEdit"
+      }
+    },
+    {
+      "name": "waitType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "include_element",
+      "uiConfig": {
+        "label": "Wait type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "include_element",
+            "label": "Include element"
+          },
+          {
+            "value": "exclude_element",
+            "label": "Exclude element"
+          }
+        ]
+      }
+    },
+    {
+      "name": "withTimeout",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": true,
+      "uiConfig": {
+        "label": "Set the timeout time",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "timeout",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"30\"",
+      "uiConfig": {
+        "label": "Timeout(seconds)",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "withTimeout",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "waitResult",
+      "type": "bool",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Wait result"
+      }
+    }
+  ]
+}

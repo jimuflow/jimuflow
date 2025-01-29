@@ -1,0 +1,162 @@
+{
+  "name": "ScreenshotWebElement",
+  "displayName": "Screenshot Web Element",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.web_automation.ScreenshotWebElementComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Web Automation",
+  "secondaryCategory": "Web Data Extraction",
+  "sortNo": 7,
+  "helpUrl": "commands/WebAutomation/WebDataExtraction/screenshot_web_element/",
+  "variables": [
+    {
+      "name": "webPage",
+      "type": "WebPage",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web page",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "screenshotArea",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "element",
+      "uiConfig": {
+        "label": "Screenshot area",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "element",
+            "label": "Web element"
+          },
+          {
+            "value": "viewport",
+            "label": "Visible web page viewport"
+          },
+          {
+            "value": "full_page",
+            "label": "Full web page"
+          }
+        ]
+      }
+    },
+    {
+      "name": "elementUri",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web element",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit",
+        "dependsOn": {
+          "variableName": "screenshotArea",
+          "operator": "==",
+          "value": "element"
+        }
+      }
+    },
+    {
+      "name": "saveFolder",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Save folder",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.file_path_editor.FolderPathEdit",
+        "inputValueType": "expression"
+      }
+    },
+    {
+      "name": "fileFormat",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "png",
+      "uiConfig": {
+        "label": "File format",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "png",
+            "label": "PNG"
+          },
+          {
+            "value": "jpeg",
+            "label": "JPEG"
+          }
+        ]
+      }
+    },
+    {
+      "name": "fileNamingType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "random",
+      "uiConfig": {
+        "label": "File naming type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "random",
+            "label": "Random file name"
+          },
+          {
+            "value": "custom",
+            "label": "Custom file name"
+          }
+        ]
+      }
+    },
+    {
+      "name": "customFilename",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Custom filename",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "fileNamingType",
+          "operator": "==",
+          "value": "custom"
+        }
+      }
+    },
+    {
+      "name": "overrideExistingFile",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Override existing file",
+        "inputType": "check_box",
+        "required": false,
+        "dependsOn": {
+          "variableName": "fileNamingType",
+          "operator": "==",
+          "value": "custom"
+        }
+      }
+    },
+    {
+      "name": "waitTime",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"30\"",
+      "uiConfig": {
+        "label": "Wait time(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    },
+    {
+      "name": "snapshotFilename",
+      "type": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Snapshot filename"
+      }
+    }
+  ]
+}

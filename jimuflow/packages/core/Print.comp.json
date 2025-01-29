@@ -1,0 +1,19 @@
+{
+  "name": "Print",
+  "displayName": "Print message",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.PrintComponent",
+  "sortNo": 1,
+  "helpUrl": "commands/others/print/",
+  "variables": [
+    {
+      "name": "message",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Message",
+        "inputType": "expression"
+      }
+    }
+  ]
+}

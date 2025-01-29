@@ -1,0 +1,99 @@
+{
+  "name": "LoopTableRows",
+  "displayName": "Loop table rows",
+  "controlFlowType": "LOOP",
+  "type": "jimuflow.components.table.LoopTableRowsComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Table",
+  "sortNo": 6,
+  "helpUrl": "commands/DataTable/loop_table_rows/",
+  "categories": [
+    [
+      "Process Control",
+      "Loop"
+    ]
+  ],
+  "variables": [
+    {
+      "name": "table",
+      "type": "table",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Data Table",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "loopRange",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "all",
+      "uiConfig": {
+        "label": "Loop range",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "all",
+            "label": "All rows"
+          },
+          {
+            "value": "range",
+            "label": "Specified range"
+          }
+        ]
+      }
+    },
+    {
+      "name": "startRowNo",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Start row no",
+        "inputType": "expression",
+        "helpInfo": "Enter the line number, starting from line 1, where -n represents the nth to last line",
+        "dependsOn": {
+          "variableName": "loopRange",
+          "operator": "==",
+          "value": "range"
+        }
+      }
+    },
+    {
+      "name": "endRowNo",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "End row no",
+        "inputType": "expression",
+        "helpInfo": "Enter the line number, starting from line 1, where -n represents the nth to last line",
+        "dependsOn": {
+          "variableName": "loopRange",
+          "operator": "==",
+          "value": "range"
+        }
+      }
+    },
+    {
+      "name": "reversedLoop",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Loop in reverse order",
+        "group": "advanced",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "currentRow",
+      "type": "list",
+      "elementType": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Current row"
+      }
+    }
+  ]
+}

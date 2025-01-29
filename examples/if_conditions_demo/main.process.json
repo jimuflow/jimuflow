@@ -1,0 +1,72 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "身高",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "inputType": "number_edit"
+      }
+    },
+    {
+      "name": "年龄",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "required": false,
+        "inputType": "number_edit"
+      }
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"您输入的身高为\" + 身高 + \"米，年龄为\" + 年龄 + \"岁。\""
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:core:IfConditions",
+      "inputs": {
+        "relation": "any",
+        "conditions": [
+          {
+            "operand1": "身高",
+            "op": "<",
+            "operand2": "\"1.2\""
+          },
+          {
+            "operand1": "年龄",
+            "op": "<",
+            "operand2": "\"6\""
+          }
+        ]
+      },
+      "lineNo": 2,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"可以免票\""
+          },
+          "lineNo": 3
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:core:Else",
+      "lineNo": 4,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"需要购票\""
+          },
+          "lineNo": 5
+        }
+      ]
+    }
+  ]
+}

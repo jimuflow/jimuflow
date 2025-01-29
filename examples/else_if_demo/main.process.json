@@ -1,0 +1,72 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "年龄",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "required": false,
+        "inputType": "number_edit"
+      }
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"你输入的年龄是\" + 年龄"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:core:If",
+      "inputs": {
+        "operand1": "年龄",
+        "op": "<",
+        "operand2": "\"6\""
+      },
+      "lineNo": 2,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"可以免票\""
+          },
+          "lineNo": 3
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:core:ElseIf",
+      "inputs": {
+        "operand1": "年龄",
+        "op": "<",
+        "operand2": "\"18\""
+      },
+      "lineNo": 4,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"请购买学生票\""
+          },
+          "lineNo": 5
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:core:Else",
+      "lineNo": 6,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"请购买成人票\""
+          },
+          "lineNo": 7
+        }
+      ]
+    }
+  ]
+}

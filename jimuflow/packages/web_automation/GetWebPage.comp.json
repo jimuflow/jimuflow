@@ -1,0 +1,164 @@
+{
+  "name": "GetWebPage",
+  "displayName": "Get Web Page",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.web_automation.GetWebPageComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Web Automation",
+  "sortNo": 3,
+  "helpUrl": "commands/WebAutomation/get_web_page/",
+  "variables": [
+    {
+      "name": "webBrowser",
+      "type": "WebBrowser",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web browser",
+        "inputType": "expression",
+        "helpInfo": "Please enter or select the web browser"
+      }
+    },
+    {
+      "name": "matchType",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Match Type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "by_title",
+            "label": "By Title"
+          },
+          {
+            "value": "by_url",
+            "label": "By Url"
+          },
+          {
+            "value": "active",
+            "label": "Current Active Page"
+          }
+        ]
+      }
+    },
+    {
+      "name": "matchText",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Match Text",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "matchType",
+          "operator": "in",
+          "value": ["by_title", "by_url"]
+        }
+      }
+    },
+    {
+      "name": "useRegexMatch",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Use Regex Match",
+        "inputType": "check_box",
+        "required": false,
+        "dependsOn": {
+          "variableName": "matchType",
+          "operator": "in",
+          "value": ["by_title", "by_url"]
+        }
+      }
+    },
+    {
+      "name": "waitLoaded",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": true,
+      "uiConfig": {
+        "label": "Wait for the web page to load",
+        "group": "advanced",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "loadTimeout",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"30\"",
+      "uiConfig": {
+        "label": "Load timeout(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "waitLoaded",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "loadTimeoutAction",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "stop_loading",
+      "uiConfig": {
+        "label": "Execute after loading timeout",
+        "group": "advanced",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "stop_loading",
+            "label": "Stop web page loading"
+          },
+          {
+            "value": "throw_error",
+            "label": "perform error handling"
+          }
+        ],
+        "dependsOn": {
+          "variableName": "waitLoaded",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "openNewPageWhenMatchFailed",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Open new page when match failed",
+        "group": "advanced",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "url",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Url",
+        "inputType": "expression",
+        "group": "advanced",
+        "dependsOn": {
+          "variableName": "openNewPageWhenMatchFailed",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "webPage",
+      "type": "WebPage",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Web page"
+      }
+    }
+  ]
+}

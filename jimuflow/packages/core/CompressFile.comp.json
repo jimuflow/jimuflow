@@ -1,0 +1,77 @@
+{
+  "name": "CompressFile",
+  "displayName": "Compress File/Folder",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.CompressFileComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Operating System",
+  "sortNo": 10,
+  "helpUrl": "commands/OperatingSystem/compress_file/",
+  "variables": [
+    {
+      "name": "filePath",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "File path",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.file_path_editor.FileOrFolderPathEdit",
+        "inputValueType": "expression"
+      }
+    },
+    {
+      "name": "packageName",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Compressed package name",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "saveFolderType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "source",
+      "uiConfig": {
+        "label": "Save folder type",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "source",
+            "label": "Save to the same level directory as the source file"
+          },
+          {
+            "value": "specified",
+            "label": "Save to specified folder"
+          }
+        ]
+      }
+    },
+    {
+      "name": "saveFolder",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Save folder",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.file_path_editor.FolderPathEdit",
+        "inputValueType": "expression",
+        "dependsOn": {
+          "variableName": "saveFolderType",
+          "operator": "==",
+          "value": "specified"
+        }
+      }
+    },
+    {
+      "name": "packagePath",
+      "type": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Compressed package path"
+      }
+    }
+  ]
+}

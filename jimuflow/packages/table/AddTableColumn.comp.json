@@ -1,0 +1,30 @@
+{
+  "name": "AddTableColumn",
+  "displayName": "Add table column",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.table.AddTableColumnComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Table",
+  "sortNo": 5,
+  "helpUrl": "commands/DataTable/add_table_column/",
+  "variables": [
+    {
+      "name": "table",
+      "type": "table",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Data Table",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "columnName",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Column name",
+        "inputType": "expression"
+      }
+    }
+  ]
+}

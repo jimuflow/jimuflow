@@ -1,0 +1,5038 @@
+# Chinese (Simplified, China) translations for jimuflow.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the jimuflow project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: jimuflow 1.0.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-01-29 18:18+0800\n"
+"PO-Revision-Date: 2024-09-14 19:18+0800\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_Hans_CN\n"
+"Language-Team: zh_Hans_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+msgid "Unknown element"
+msgstr "未知元素"
+
+msgid ""
+"Add suffix ##{addText}## to ##{originalText}##, and save the result to "
+"##{result}##"
+msgstr "为##{originalText}##添加后缀##{addText}##，并将结果保存到##{result}##"
+
+msgid ""
+"Add prefix ##{addText}## to ##{originalText}##, and save the result to "
+"##{result}##"
+msgstr "为##{originalText}##添加前缀##{addText}##，并将结果保存到##{result}##"
+
+msgid "End current loop"
+msgstr "结束当前循环"
+
+msgid "uppercase"
+msgstr "大写"
+
+msgid "lowercase"
+msgstr "小写"
+
+msgid "capitalized"
+msgstr "首字母大写"
+
+msgid ""
+"Convert ##{original_text}## to ##{change_type}##, and save the result to "
+"##{result}##"
+msgstr "将##{original_text}##转换为##{change_type}##，并将结果保存到##{result}##"
+
+msgid "Unknown case change type: {change_type}"
+msgstr "未知的大小写转换类型: {change_type}"
+
+msgid ""
+"Check if the process with the given pid ##{pid}## exists, and save the "
+"result to ##{result}##"
+msgstr "检查进程##{pid}##是否存在，并将结果保存到##{result}##"
+
+msgid ""
+"Check if the process with the given name ##{name}## exists, and save the "
+"result to ##{result}##"
+msgstr "检查进程##{name}##是否存在，并将结果保存到##{result}##"
+
+msgid "Clear folder ##{folderPath}##"
+msgstr "清空文件夹##{folderPath}##"
+
+msgid ""
+"Compress ##{filePath}## to ##{packageName}##, and save the compressed "
+"package path to ##{packagePath}##"
+msgstr "将##{filePath}##压缩到##{packageName}##，并将压缩包路径保存到##{packagePath}##"
+
+msgid "File {file} already exists"
+msgstr "文件{file}已存在"
+
+msgid "{source_path} is not a valid file or directory."
+msgstr "{source_path}不是有效的文件或文件夹。"
+
+msgid "equal to"
+msgstr "等于"
+
+msgid "not equal to"
+msgstr "不等于"
+
+msgid "greater than"
+msgstr "大于"
+
+msgid "less than"
+msgstr "小于"
+
+msgid "greater than or equal to"
+msgstr "大于等于"
+
+msgid "less than or equal to"
+msgstr "小于等于"
+
+msgid "contains"
+msgstr "包含"
+
+msgid "not contains"
+msgstr "不包含"
+
+msgid "is empty"
+msgstr "为空"
+
+msgid "is not empty"
+msgstr "不为空"
+
+msgid "starts with"
+msgstr "开头为"
+
+msgid "not starts with"
+msgstr "开头不为"
+
+msgid "ends with"
+msgstr "结尾为"
+
+msgid "not ends with"
+msgstr "结尾不为"
+
+msgid "Unsupported operator: {op}"
+msgstr "不支持的操作符: {op}"
+
+msgid "Skip current loop, then continue to the next loop"
+msgstr "结束当前循环，然后执行下一个循环"
+
+msgid "overwrite existing files"
+msgstr "覆盖存在的文件"
+
+msgid "automatically rename file when target file exist"
+msgstr "当目标文件存在时自动重命名文件"
+
+msgid "execute error handling when target file exists"
+msgstr "当目标文件存在时执行错误处理"
+
+msgid ""
+"Copy ##{filePath}## to ##{targetFolder}##, {actionWhenExists}, and save "
+"the new file path to ##{newFilePath}##"
+msgstr "将##{filePath}##复制到##{targetFolder}##，{actionWhenExists}，并将新文件路径保存到##{newFilePath}##"
+
+msgid "File {file_path} already exists"
+msgstr "文件{file_path}已存在"
+
+msgid "overwrite existing folder"
+msgstr "覆盖存在的文件夹"
+
+msgid "automatically rename folder when target folder exist"
+msgstr "当目标文件夹存在时自动重命名文件夹"
+
+msgid "execute error handling when target folder exists"
+msgstr "当目标文件夹存在时执行错误处理"
+
+msgid ""
+"Copy ##{folderPath}## to ##{targetFolder}##, {actionWhenExists}, and save"
+" the new folder path to ##{newFolderPath}##"
+msgstr "将##{folderPath}##复制到##{targetFolder}##，{actionWhenExists}，并将新文件夹路径保存到##{newFolderPath}##"
+
+msgid "Folder {file_path} already exists"
+msgstr "文件夹{file_path}已存在"
+
+msgid "Create Date today, and save the result to ##{result}##"
+msgstr "获取今天的日期，并将结果保存到 ##{result}##"
+
+msgid ""
+"Create Date from timestamp ##{timestamp}##, and save the result to "
+"##{result}##"
+msgstr "使用时间戳 ##{timestamp}## 创建日期，并将结果保存到 ##{result}##"
+
+msgid ""
+"Create Date from string ##{date_string}## with format ##{date_format}##, "
+"and save the result to ##{result}##"
+msgstr "使用##{date_format}##格式的日期字符串##{date_string}##创建日期，并将结果保存到 ##{result}##"
+
+msgid "Create DateTime now, and save the result to ##{result}##"
+msgstr "获取当前日期时间，并将结果保存到 ##{result}##"
+
+msgid ""
+"Create DateTime from timestamp ##{timestamp}##, and save the result to "
+"##{result}##"
+msgstr "使用时间戳 ##{timestamp}## 创建日期时间，并将结果保存到 ##{result}##"
+
+msgid ""
+"Create DateTime from string ##{datetime_string}## with format "
+"##{datetime_format}##, and save the result to ##{result}##"
+msgstr ""
+"使用##{datetime_format}##格式的日期时间字符串##{datetime_string}##创建日期时间，并将结果保存到 "
+"##{result}##"
+
+msgid "Create dictionary ##{dict}##"
+msgstr "创建字典##{dict}##"
+
+msgid ""
+"Create folder ##{newFolderName}## under ##{parentFolder}##, and save the "
+"new folder path to ##{newFolderPath}##"
+msgstr "在##{parentFolder}##下新建文件夹##{newFolderName}##，并将新文件夹路径保存到##{newFolderPath}##"
+
+msgid "Create list ##{list}##"
+msgstr "创建列表##{list}##"
+
+msgid "Create Time now, and save the result to ##{result}##"
+msgstr "获取当前时间，并将结果保存到 ##{result}##"
+
+msgid ""
+"Create Time from string ##{time_string}## with format ##{time_format}##, "
+"and save the result to ##{result}##"
+msgstr "使用##{time_format}##格式的时间字符串##{time_string}##创建时间，并将结果保存到 ##{result}##"
+
+msgid "Decompress ##{filePath}##, and save the result folder to ##{result}##"
+msgstr "解压缩##{filePath}##，并将解压缩后的文件夹保存到##{result}##"
+
+msgid "Delete key ##{key}## in dictionary ##{dict}##"
+msgstr "删除字典##{dict}##中的键##{key}##"
+
+msgid "Delete ##{filePath}##"
+msgstr "删除##{filePath}##"
+
+msgid "Delete item at position ##{position}## in list ##{list}##"
+msgstr "删除列表##{list}##中的第##{position}##项"
+
+msgid "Delete item ##{value}## in list ##{list}##"
+msgstr "删除列表##{list}##中的项##{value}##"
+
+msgid ""
+"Loop through each item in the dictionary ##{dict}##, saving the current "
+"item to ##{loopItem}##"
+msgstr "循环遍历字典##{dict}##的每个项目，将当前项目保存到##{loopItem}##"
+
+msgid ""
+"Calculate the ##{timeUnit}## interval from ##{startingDate}## to "
+"##{endDate}##, and save the result to ##{timeDifference}##"
+msgstr "计算##{startingDate}##到##{endDate}##间隔的##{timeUnit}##数，并保存结果到##{timeDifference}##"
+
+msgid "seconds"
+msgstr "秒"
+
+msgid "minutes"
+msgstr "分钟"
+
+msgid "hours"
+msgstr "小时"
+
+msgid "days"
+msgstr "天"
+
+msgid "Unknown time unit: {unit}"
+msgstr "未知时间单位: {unit}"
+
+msgid "If none of the previous conditions are met, the branch is executed."
+msgstr "如果之前的If条件均不匹配，则执行该分支。"
+
+msgid "Execute command ##{cmd}##, and save the command output to ##{result}##"
+msgstr "执行命令行##{cmd}##，并将命令行输出保存到##{result}##"
+
+msgid "Command failed with exit code {code}: {error}"
+msgstr "命令失败，退出代码为{code}: {error}"
+
+msgid "Exit current application"
+msgstr "终止当前应用"
+
+msgid ""
+"Format ##{datetime}## to a string using format ##{datetimeFormat}##, and "
+"save the result to ##{result}##"
+msgstr "使用##{datetimeFormat}##格式将##{datetime}##格式化成字符串，并保存结果到##{result}##"
+
+msgid "Get clipboard text, and save the result to ##{result}##"
+msgstr "获取剪贴板文本，并将结果保存到##{result}##"
+
+msgid ""
+"Get file path info of ##{filePath}##, and save the result to "
+"##{filePathInfo}##"
+msgstr "获取##{filePath}##的路径信息，并将结果保存到##{filePathInfo}##"
+
+msgid "If ##{operand1}## ##{op}## ##{operand2}##, perform the following actions"
+msgstr "如果##{operand1}## ##{op}## ##{operand2}##, 执行以下操作"
+
+msgid "If ##{operand1}## ##{op}##, perform the following actions"
+msgstr "如果##{operand1}## ##{op}##, 执行以下操作"
+
+msgid "Condition matched: {matched}"
+msgstr "条件匹配：{matched}"
+
+msgid "##{operand1}## ##{op}## ##{operand2}##"
+msgstr "##{operand1}## ##{op}## ##{operand2}##"
+
+msgid "##{operand1}## ##{op}##"
+msgstr "##{operand1}## ##{op}##"
+
+msgid "If satisfy all conditions of [{conditions}], perform the following actions"
+msgstr "如果满足所有条件[{conditions}]，执行以下操作"
+
+msgid "If satisfy any condition of [{conditions}], perform the following actions"
+msgstr "如果满足任一条件[{conditions}]，执行以下操作"
+
+msgid "Infinite loop, saving the current number of cycles to ##{loopIndex}##"
+msgstr "无限循环，将当前循环次数保存到##{loopIndex}##"
+
+msgid "Append ##{value}## to list ##{list}##"
+msgstr "在列表##{list}##末尾添加##{value}##"
+
+msgid "Insert ##{value}## at position ##{insertPosition}## in list ##{list}##"
+msgstr "在列表##{list}##的第##{insertPosition}##项前插入##{value}##"
+
+msgid "Kill process with pid ##{pid}##"
+msgstr "终止pid为##{pid}##的进程"
+
+msgid "Kill process with name ##{name}##"
+msgstr "终止名为##{name}##的进程"
+
+msgid "Process not found"
+msgstr "进程未找到"
+
+msgid "Launch application ##{appPath}##, and save the pid to ##{pid}##"
+msgstr "启动应用程序##{appPath}##，并将PID保存到##{pid}##"
+
+msgid ""
+"Find files under ##{folder}## that match the ##{filenamePattern}## naming"
+" rule and save the results in ##{result}##"
+msgstr "在##{folder}##下查找匹配##{filenamePattern}##命名规则的文件，并将结果列表保存到##{result}##"
+
+msgid ""
+"Loop through each item in the list ##{list}##, saving the current item to"
+" ##{loopItem}##"
+msgstr "循环遍历列表##{list}##的每个项目，将当前项目保存到##{loopItem}##"
+
+msgid ""
+"Loop from ##{start}## to ##{end}##, saving the current number of cycles "
+"to ##{loopIndex}##"
+msgstr "从##{start}##循环到##{end}##，将当前循环次数保存到##{loopIndex}##"
+
+msgid ""
+"Merge list ##{firstList}## with ##{secondList}##, saving result to "
+"##{list}##"
+msgstr "合并列表##{firstList}##与##{secondList}##，结果保存到##{list}##"
+
+msgid ""
+"Move ##{filePath}## to ##{targetFolder}##, {actionWhenExists}, and save "
+"the new file path to ##{newFilePath}##"
+msgstr "将##{filePath}##移动到##{targetFolder}##，{actionWhenExists}，并将新文件路径保存到##{newFilePath}##"
+
+msgid ""
+"Move ##{folderPath}## to ##{targetFolder}##, {actionWhenExists}, and save"
+" the new folder path to ##{newFolderPath}##"
+msgstr "将##{folderPath}##移动到##{targetFolder}##，{actionWhenExists}，并将新文件夹路径保存到##{newFolderPath}##"
+
+msgid ""
+"Convert ##{value}## to a string, retain ##{scale}## decimal places, add a"
+" thousand separator, and save the result to ##{result}##"
+msgstr "将##{value}##转换为字符串，保留##{scale}##位小数，添加千分位分隔符，并保存到##{result}##"
+
+msgid ""
+"Convert ##{value}## to a string, retain ##{scale}## decimal places, and "
+"save the result to ##{result}##"
+msgstr "将##{value}##转换为字符串，保留##{scale}##位小数，并保存到##{result}##"
+
+msgid "Convert object ##{obj}## to json text, and save the result to ##{result}##"
+msgstr "将对象##{obj}##转换为Json文本，并将结果保存到##{result}##"
+
+msgid "System default"
+msgstr "系统默认"
+
+msgid "UTF-8"
+msgstr "UTF-8"
+
+msgid "ASCII"
+msgstr "ASCII"
+
+msgid "Latin-1"
+msgstr "Latin-1"
+
+msgid "UTF-8 with BOM"
+msgstr "UTF-8 with BOM"
+
+msgid "UTF-16"
+msgstr "UTF-16"
+
+msgid "UTF-32"
+msgstr "UTF-32"
+
+msgid "GBK"
+msgstr "GBK"
+
+msgid "GB2312"
+msgstr "GB2312"
+
+msgid "GB18030"
+msgstr "GB18030"
+
+msgid "Parse json text ##{jsonText}##, and save the result to ##{result}##"
+msgstr "解析Json文本##{jsonText}##，并将结果保存到##{result}##"
+
+msgid "Print message ##{message}##"
+msgstr "打印消息##{message}##"
+
+msgid ""
+"Generates a random integer between ##{start}## and ##{end}##, then save "
+"to ##{randomInt}##"
+msgstr "生成一个##{start}##到##{end}##之间的随机整数，然后保存到##{randomInt}##"
+
+msgid ""
+"Read ##{filePath}## using encoding ##{fileEncoding}##, and save the "
+"result to ##{result}##"
+msgstr "使用编码##{fileEncoding}##读取##{filePath}##，并将结果保存到##{result}##"
+
+msgid ""
+"Find the first ##{regex}## in text ##{originalText}## and save the "
+"matched text to ##{result}##"
+msgstr "在文本##{originalText}##中查找第一个##{regex}##，并将匹配的文本保存到##{result}##"
+
+msgid ""
+"Find all ##{regex}## in text ##{originalText}## and save the matched text"
+" list to ##{result}##"
+msgstr "在文本##{originalText}##中查找所有##{regex}##，并将匹配的文本列表保存到##{result}##"
+
+msgid "and cancel renaming if the new file exists"
+msgstr "如果新文件已存在，则取消重命名"
+
+msgid "and overwrite the existing file if the new file exists"
+msgstr "如果新文件已存在，则覆盖已有文件"
+
+msgid ""
+"Rename ##{filePath}## to ##{newFilename}##, {action_when_exists_desc}, "
+"and save the new file path to ##{newFilePath}##"
+msgstr "将##{filePath}##重命名为##{newFilename}##，{action_when_exists_desc}，并将新文件路径保存到##{newFilePath}##"
+
+msgid "File {file_path} already exists, cancel renaming"
+msgstr "文件{file_path}已存在，取消重命名"
+
+msgid "and cancel renaming if the new folder exists"
+msgstr "如果新文件夹已存在，则取消重命名"
+
+msgid "and overwrite the existing file if the new folder exists"
+msgstr "如果新文件夹已存在，则覆盖已有文件夹"
+
+msgid ""
+"Rename ##{folderPath}## to ##{newFolderName}##, "
+"{action_when_exists_desc}, and save the new folder path to "
+"##{newFolderPath}##"
+msgstr "将##{folderPath}##重命名为##{newFolderName}##，{action_when_exists_desc}，并将新文件夹路径保存到##{newFolderPath}##"
+
+msgid "Folder {folder_path} already exists, cancel renaming"
+msgstr "文件夹{folder_path}已存在，取消重命名"
+
+msgid ""
+"Replace the first ##{something_to_replace}## in text ##{originalText}## "
+"with ##{replacementText}## and save the result to ##{result}##"
+msgstr "将##{originalText}##中的##{something_to_replace}##替换为##{replacementText}##，并将结果保存到##{result}##"
+
+msgid ""
+"Replace all ##{something_to_replace}## in text ##{originalText}## with "
+"##{replacementText}## and save the result to ##{result}##"
+msgstr "将##{originalText}##中的所有##{something_to_replace}##替换为##{replacementText}##，并将结果保存到##{result}##"
+
+msgid "End the current process and return to the previous process"
+msgstr "结束当前流程，返回到上一流程"
+
+msgid "Reverse list ##{list}##"
+msgstr "反转列表##{list}##"
+
+msgid "Copy text ##{textContent}## to clipboard"
+msgstr "将文本##{textContent}##复制到剪贴板"
+
+msgid "Set ##{key}## = ##{value}## in dictionary ##{dict}##"
+msgstr "在字典##{dict}##中设置##{key}## = ##{value}##"
+
+msgid "Set variable ##{result}## = ##{value}##"
+msgstr "设置变量##{result}## = ##{value}##"
+
+msgid "from the first character"
+msgstr "从第一个字符开始"
+
+msgid "from the specified location ##{startingPosition}##"
+msgstr "从指定位置 ##{startingPosition}## 开始"
+
+msgid "from the specified text ##{startingText}##"
+msgstr "从指定文本 ##{startingText}## 开始"
+
+msgid "to the end of the text"
+msgstr "到文本末尾"
+
+msgid "to the specified length ##{slicedLength}##"
+msgstr "到指定长度 ##{slicedLength}##"
+
+msgid ""
+"Slice ##{originalText}## {from_description} {to_description}, and save "
+"the result to ##{result}##"
+msgstr "截取##{originalText}##，{from_description}，{to_description}，并将结果保存到##{result}##"
+
+msgid "Sort list ##{list}## in ascending order"
+msgstr "按升序对列表##{list}##排序"
+
+msgid "Sort list ##{list}## in descending order"
+msgstr "按降序对列表##{list}##排序"
+
+msgid "space character"
+msgstr "空格符"
+
+msgid "line break character"
+msgstr "换行符"
+
+msgid "tab character"
+msgstr "制表符"
+
+msgid ""
+"Split ##{textToBeSplit}## by ##{standardDelimiter}##, filter empty items,"
+" and save the result to ##{result}##"
+msgstr "按##{standardDelimiter}##拆分##{textToBeSplit}##，过滤空项，并将结果保存到##{result}##"
+
+msgid ""
+"Split ##{textToBeSplit}## by ##{standardDelimiter}##, and save the result"
+" to ##{result}##"
+msgstr "按##{standardDelimiter}##拆分##{textToBeSplit}##，并将结果保存到##{result}##"
+
+msgid ""
+"Split ##{textToBeSplit}## by regular expression ##{customDelimiter}##, "
+"filter empty items, and save the result to ##{result}##"
+msgstr "使用正则表达式##{customDelimiter}##拆分##{textToBeSplit}##，过滤空项，并将结果保存到##{result}##"
+
+msgid ""
+"Split ##{textToBeSplit}## by regular expression ##{customDelimiter}##, "
+"and save the result to ##{result}##"
+msgstr "使用正则表达式##{customDelimiter}##拆分##{textToBeSplit}##，并将结果保存到##{result}##"
+
+msgid ""
+"Split ##{textToBeSplit}## by ##{customDelimiter}##, filter empty items, "
+"and save the result to ##{result}##"
+msgstr "按##{customDelimiter}##拆分##{textToBeSplit}##，过滤空项，并将结果保存到##{result}##"
+
+msgid ""
+"Split ##{textToBeSplit}## by ##{customDelimiter}##, and save the result "
+"to ##{result}##"
+msgstr "按##{customDelimiter}##拆分##{textToBeSplit}##，并将结果保存到##{result}##"
+
+msgid "Convert ##{value}## to a number, and save the result to ##{result}##"
+msgstr "将##{value}##转换为数值，并将结果保存到 ##{result}##"
+
+msgid "Wait ##{seconds}## seconds"
+msgstr "等待##{seconds}##秒"
+
+msgid ""
+"Remove blank characters on both sides of ##{originalText}##, and save the"
+" result to ##{result}##"
+msgstr "去除##{originalText}##两边的空格，并将结果保存到##{result}##"
+
+msgid ""
+"Remove blank characters on the left side of ##{originalText}##, and save "
+"the result to ##{result}##"
+msgstr "去除##{originalText}##左边的空格，并将结果保存到##{result}##"
+
+msgid ""
+"Remove blank characters on the right side of ##{originalText}##, and save"
+" the result to ##{result}##"
+msgstr "去除##{originalText}##右边的空格，并将结果保存到##{result}##"
+
+msgid ""
+"Update ##{originalDateTime}##, {adjustmentType} ##{adjustmentValue}## "
+"##{adjustmentUnit}##, and save the result to ##{result}##"
+msgstr "将##{originalDateTime}##{adjustmentType}##{adjustmentValue}####{adjustmentUnit}##，并保存结果到##{result}##"
+
+msgid "increment"
+msgstr "增加"
+
+msgid "decrement"
+msgstr "减少"
+
+msgid "microseconds"
+msgstr "微秒"
+
+msgid "milliseconds"
+msgstr "毫秒"
+
+msgid "weeks"
+msgstr "周"
+
+msgid "months"
+msgstr "月"
+
+msgid "years"
+msgstr "年"
+
+msgid "Unknown adjustment unit: {unit}"
+msgstr "未知调整单位: {unit}"
+
+msgid "Update item at position ##{position}## in list ##{list}## to ##{value}##"
+msgstr "更新列表##{list}##中的第##{position}##项为##{value}##"
+
+msgid "Url decode ##{textToDecode}##, and save the result to ##{result}##"
+msgstr "对##{textToDecode}##进行URL解码，并将结果保存到##{result}##"
+
+msgid "Url encode ##{textToEncode}##, and save the result to ##{result}##"
+msgstr "对##{textToEncode}##进行URL编码，并将结果保存到##{result}##"
+
+msgid ""
+"Write ##{writeContent}## to ##{filePath}## using encoding "
+"##{fileEncoding}##"
+msgstr "将##{writeContent}##写入到##{filePath}##，使用编码##{fileEncoding}##"
+
+msgid "Find the image ##{image}## on the screen and move the mouse to the image"
+msgstr "在屏幕上找到图像##{image}##，然后将鼠标移动到图像上"
+
+msgid "Found image at {location}"
+msgstr "在{location}处找到图片"
+
+msgid "Type text ##{textContent}## in the current window"
+msgstr "在当前窗口中输入文本##{textContent}##"
+
+msgid "Press the hotkey ##{hotkey}##"
+msgstr "按快捷键##{hotkey}##"
+
+msgid "{clickType} {mouseButton}"
+msgstr "{clickType}{mouseButton}"
+
+msgid "{modifierKey} + {clickType} {mouseButton}"
+msgstr "{modifierKey} + {clickType}{mouseButton}"
+
+msgid "Scroll up ##{number_of_scrolls}## times"
+msgstr "向上滚动##{number_of_scrolls}##次"
+
+msgid "Scroll down ##{number_of_scrolls}## times"
+msgstr "向下滚动##{number_of_scrolls}##次"
+
+msgid "{modifierKey} + Scroll up ##{number_of_scrolls}## times"
+msgstr "{modifierKey} + 向上滚动##{number_of_scrolls}##次"
+
+msgid "{modifierKey} + Scroll down ##{number_of_scrolls}## times"
+msgstr "{modifierKey} + 向下滚动##{number_of_scrolls}##次"
+
+msgid ""
+"Move the mouse to (##{offsetX}##,##{offsetY}##) position relative to the "
+"current position"
+msgstr "将鼠标移动到相对于当前位置的(##{offsetX}##,##{offsetY}##)位置"
+
+msgid ""
+"Move the mouse to (##{offsetX}##,##{offsetY}##) position relative to the "
+"upper left corner of the screen"
+msgstr "将鼠标移动到相对于屏幕左上角的(##{offsetX}##,##{offsetY}##)位置"
+
+msgid "Add column ##{columnName}## to ##{table}##"
+msgstr "向表格 ##{table}## 新增列 ##{columnName}##"
+
+msgid "Create data table"
+msgstr "创建数据表格"
+
+msgid "Delete all rows of ##{table}##"
+msgstr "删除表格 ##{table}## 的所有行"
+
+msgid "Delete row ##{rowNo}## of ##{table}##"
+msgstr "删除表格 ##{table}## 的第 ##{rowNo}## 行"
+
+msgid ""
+"Export table ##{table}## to ##{fileFormat}## file in ##{saveFolder}## "
+"with random file name"
+msgstr "将表格 ##{table}## 导出为 ##{saveFolder}## 目录下的 ##{fileFormat}## 文件，并使用随机文件名"
+
+msgid ""
+"Export table ##{table}## to ##{fileFormat}## file in ##{saveFolder}## "
+"with file name ##{customFilename}##"
+msgstr ""
+"将表格 ##{table}## 导出为 ##{saveFolder}## 目录下的 ##{fileFormat}## 文件，并使用文件名 "
+"##{customFilename}##"
+
+msgid "File already exists: {file_path}"
+msgstr "文件已存在: {file_path}"
+
+msgid "Unsupported file format: {file_format}"
+msgstr "不支持的文件格式: {file_format}"
+
+msgid "Import csv file ##{filePath}## as table ##{table}##"
+msgstr "将csv文件 ##{filePath}## 导入为表格 ##{table}##"
+
+msgid ""
+"Import excel file ##{filePath}## as table ##{table}##, select sheet by "
+"index ##{sheetIndex}##"
+msgstr "将excel文件 ##{filePath}## 导入为表格 ##{table}##，通过索引 ##{sheetIndex}## 选择sheet"
+
+msgid ""
+"Import excel file ##{filePath}## as table ##{table}##, select sheet by "
+"name ##{sheetName}##"
+msgstr "将excel文件 ##{filePath}## 导入为表格 ##{table}##，通过名称 ##{sheetName}## 选择sheet"
+
+msgid ""
+"Loop through all rows of table ##{table}##, save current row to "
+"##{currentRow}##"
+msgstr "循环遍历表格 ##{table}## 的所有行，将当前行保存到 ##{currentRow}##"
+
+msgid ""
+"Loop through row ##{startRowNo}## to row ##{endRowNo}## of table "
+"##{table}##, save current row to ##{currentRow}##"
+msgstr ""
+"循环遍历表格 ##{table}## 的第 ##{startRowNo}## 行到 ##{endRowNo}## 行，将当前行保存到 "
+"##{currentRow}##"
+
+msgid "Read row ##{rowNo}## of table ##{table}##, save result to ##{result}##"
+msgstr "读取表格 ##{table}## 的第 ##{rowNo}## 行，将结果保存到 ##{result}##"
+
+msgid ""
+"Read row ##{rowNo}## and column ##{columnNo}## of table ##{table}##, save"
+" result to ##{result}##"
+msgstr "读取表格 ##{table}## 的第 ##{rowNo}## 行和第 ##{columnNo}## 列，将结果保存到 ##{result}##"
+
+msgid "Unsupported read type: {read_type}"
+msgstr "不支持的读取类型: {read_type}"
+
+msgid "Row no is out of range: {row_no}"
+msgstr "行号超出范围: {row_no}"
+
+msgid ""
+"Write the value ##{value}## to row ##{row_no}##, column ##{column_no}## "
+"of table ##{table}##"
+msgstr "向表格 ##{table}## 的 ##{row_no}## 行 ##{column_no}## 列写入值 ##{value}##"
+
+msgid "Invalid row type"
+msgstr "非法的行类型"
+
+msgid "Append a row to table ##{table}##"
+msgstr "向表格 ##{table}## 追加一行"
+
+msgid "Insert a row to table ##{table}##"
+msgstr "向表格 ##{table}## 插入一行"
+
+msgid "Update a row in table ##{table}##"
+msgstr "更新表格 ##{table}## 的一行"
+
+msgid "include element"
+msgstr "包含元素"
+
+msgid "exclude element"
+msgstr "不包含元素"
+
+msgid "include text"
+msgstr "包含文本"
+
+msgid "exclude text"
+msgstr "不包含文本"
+
+msgid "can see element"
+msgstr "可以看见元素"
+
+msgid "cannot see element"
+msgstr "看不见元素"
+
+msgid "can see text"
+msgstr "可以看见文本"
+
+msgid "cannot see text"
+msgstr "看不到文本"
+
+msgid "Invalid check type: {check_type}"
+msgstr "非法的检查类型: {check_type}"
+
+msgid ""
+"Check if web page ##{webPage}## ##{action}## ##{target}##, save result to"
+" ##{checkResult}##"
+msgstr "检测网页##{webPage}##是否##{action}## ##{target}##, 将结果保存到##{checkResult}##"
+
+msgid "Clear all cookies of web page ##{webPage}##"
+msgstr "删除网页##{webPage}##的所有Cookie"
+
+msgid "Clear cookie ##{cookieName}## of web page ##{webPage}##"
+msgstr "删除网页##{webPage}##的Cookie##{cookieName}##"
+
+msgid ""
+"Click ##{element}## on web page ##{webPage}##, and save opened web page "
+"to ##{newWebPage}##"
+msgstr "在网页##{webPage}##上点击##{element}##，保存打开的网页到##{newWebPage}##"
+
+msgid "Single click"
+msgstr "单击"
+
+msgid "Double click"
+msgstr "双击"
+
+msgid "{action} ##{element}## on web page ##{webPage}##"
+msgstr "在网页##{webPage}##上{action}元素##{element}##"
+
+msgid "Close web page ##{webPage}##"
+msgstr "关闭网页##{webPage}##"
+
+msgid "Close browser ##{webBrowser}##"
+msgstr "关闭浏览器##{webBrowser}##"
+
+msgid "Drag ##{sourceElement}## to ##{targetElement}## on web page ##{webPage}##"
+msgstr "在网页##{webPage}##上拖拽元素##{sourceElement}##到元素##{targetElement}##"
+
+msgid ""
+"Drag ##{sourceElement}## by offset ##{dragOffsetX}## ##{dragOffsetY}## on"
+" web page ##{webPage}##"
+msgstr ""
+"在网页##{webPage}##上按偏移量##{dragOffsetX}## "
+"##{dragOffsetY}##拖拽元素##{sourceElement}##"
+
+msgid ""
+"Evaluate js ##{jsCode}## in web page ##{webPage}##, and save the result "
+"to ##{output}##"
+msgstr "在网页##{webPage}##上执行js##{jsCode}##，保存结果到##{output}##"
+
+msgid "text content"
+msgstr "文本内容"
+
+msgid "html content"
+msgstr "HTML内容"
+
+msgid "input value"
+msgstr "输入框值"
+
+msgid "attribute value"
+msgstr "属性值"
+
+msgid "position"
+msgstr "位置"
+
+msgid "?"
+msgstr ""
+
+msgid ""
+"Extract the ##{extractData}## of element ##{element}## on web page "
+"##{webPage}##, and save to ##{result}##"
+msgstr "获取网页##{webPage}##上元素##{element}##的##{extractData}##，保存到##{result}##"
+
+msgid "title"
+msgstr "标题"
+
+msgid "url"
+msgstr "网页地址"
+
+msgid ""
+"Extract the ##{extractData}## of web page ##{webPage}##, and save to "
+"##{result}##"
+msgstr "抽取网页##{webPage}##的##{extractData}##，保存到##{result}##"
+
+msgid "Get cookies from web page ##{webPage}##, and save to ##{cookies}##"
+msgstr "获取网页##{webPage}##的所有Cookie，然后保存到##{cookies}##"
+
+msgid ""
+"Get cookies for url ##{url}## in ##{webBrowser}##, and save to "
+"##{cookies}##"
+msgstr "获取##{webBrowser}##中与链接##{url}##相关的所有Cookie，然后保存到##{cookies}##"
+
+msgid "Invalid get type: {get_type}"
+msgstr "非法的获取类型: {get_type}"
+
+msgid ""
+"Get parent element of ##{element}## on web page ##{webPage}##, and save "
+"to ##{result}##"
+msgstr "获取网页##{webPage}##上##{element}##的父元素，保存到##{result}##"
+
+msgid ""
+"Get previous sibling element of ##{element}## on web page ##{webPage}##, "
+"and save to ##{result}##"
+msgstr "获取网页##{webPage}##上##{element}##的上一个兄弟元素，保存到##{result}##"
+
+msgid ""
+"Get next sibling element of ##{element}## on web page ##{webPage}##, and "
+"save to ##{result}##"
+msgstr "获取网页##{webPage}##上##{element}##的下一个兄弟元素，保存到##{result}##"
+
+msgid ""
+"Get first matched descendant element of ##{element}## on web page "
+"##{webPage}## with relative xpath ##{descendantRelativeXpath}##, and save"
+" to ##{result}##"
+msgstr "获取网页##{webPage}##上##{element}##的第一个子孙元素，相对xpath为##{descendantRelativeXpath}##，保存到##{result}##"
+
+msgid ""
+"Get all matched descendants of ##{element}## on web page ##{webPage}## "
+"with relative xpath ##{descendantRelativeXpath}##, and save to "
+"##{result}##"
+msgstr "获取网页##{webPage}##上##{element}##的所有子孙元素，相对xpath为##{descendantRelativeXpath}##，保存到##{result}##"
+
+msgid ""
+"Get all children of ##{element}## on web page ##{webPage}##, and save to "
+"##{result}##"
+msgstr "获取网页##{webPage}##上##{element}##的所有子元素，保存到##{result}##"
+
+msgid ""
+"Get ##{childPosition}## child of ##{element}## on web page ##{webPage}##,"
+" and save to ##{result}##"
+msgstr "获取网页##{webPage}##上##{element}##的第##{childPosition}##个子元素，保存到##{result}##"
+
+msgid "Unsupported locate type: {locate_type}"
+msgstr "不支持的定位类型: {locate_type}"
+
+msgid ""
+"Get web page ##{matchType}## from ##{webBrowser}##, and save to "
+"##{webPage}##"
+msgstr "按照##{matchType}##从##{webBrowser}##匹配网页，保存到##{webPage}##"
+
+msgid "Hover ##{element}## on web page ##{webPage}##"
+msgstr "鼠标悬停网页##{webPage}##上的元素##{element}##"
+
+msgid ""
+"Loop elements ##{elements}## on web page ##{webPage}##, save current "
+"element to ##{currentElement}##"
+msgstr "遍历网页##{webPage}##上的元素##{elements}##，保存当前元素到##{currentElement}##"
+
+msgid "Navigate web page ##{webPage}## to ##{url}##"
+msgstr "将网页##{webPage}##导航到##{url}##"
+
+msgid "Go back"
+msgstr "后退"
+
+msgid "Go forward"
+msgstr "前进"
+
+msgid "Reload"
+msgstr "刷新"
+
+msgid "{action} web page ##{webPage}##"
+msgstr "{action}网页##{webPage}##"
+
+msgid "Open a new web browser, and save to ##{webBrowser}##"
+msgstr "打开一个新浏览器，并保存到##{webBrowser}##"
+
+msgid "Open url ##{url}## in ##{webBrowser}##, and save to ##{webPage}##"
+msgstr "在##{webBrowser}##中打开网页##{url}##，保存到##{webPage}##"
+
+msgid "Timeout to get the element"
+msgstr "获取元素超时"
+
+msgid "The element is not an iframe"
+msgstr "该元素不是iframe"
+
+msgid ""
+"Screenshot ##{element}## on web page ##{webPage}##, and save to "
+"##{snapshotFilename}##"
+msgstr "截屏网页##{webPage}##上的元素##{element}##，保存到##{snapshotFilename}##"
+
+msgid "Screenshot web page ##{webPage}##, and save to ##{snapshotFilename}##"
+msgstr "截屏网页##{webPage}##，保存到##{snapshotFilename}##"
+
+msgid "Scroll web page ##{webPage}## to top"
+msgstr "将网页##{webPage}##滚动到顶部"
+
+msgid "Scroll web page ##{webPage}## to bottom"
+msgstr "将网页##{webPage}##滚动到底部"
+
+msgid "Scroll web page ##{webPage}## ##{scrollTimes}## pages"
+msgstr "滚动网页##{webPage}## ##{scrollTimes}## 页"
+
+msgid "Scroll web page ##{webPage}## to element ##{scrollToElement}##"
+msgstr "将网页##{webPage}##滚动到元素##{scrollToElement}##"
+
+msgid "Set cookies ##{cookies}## to web page ##{webPage}##"
+msgstr "将Cookie##{cookies}##设置到网页##{webPage}##"
+
+msgid "Check checkbox ##{element}## on web page ##{webPage}##"
+msgstr "在网页##{webPage}##上勾选复选框##{element}##"
+
+msgid "Uncheck checkbox ##{element}## on web page ##{webPage}##"
+msgstr "在网页##{webPage}##上取消勾选复选框##{element}##"
+
+msgid "Toggle checkbox ##{element}## on web page ##{webPage}##"
+msgstr "在网页##{webPage}##上反选复选框##{element}##"
+
+msgid "Select option in drop-down box ##{element}## with content ##{content}##"
+msgstr "选择下拉框##{element}##中内容为##{content}##的选项"
+
+msgid ""
+"Select option in drop-down box ##{element}## with content containing "
+"##{content}##"
+msgstr "选择下拉框##{element}##中内容包含##{content}##的选项"
+
+msgid ""
+"Select option in drop-down box ##{element}## with content matching regex "
+"##{content}##"
+msgstr "选择下拉框##{element}##中内容匹配正则表达式##{content}##的选项"
+
+msgid ""
+"Select the option indexed as ##{index}## in the drop-down box "
+"##{element}##"
+msgstr "选择下拉框##{element}##中索引位置为##{index}##的选项"
+
+msgid "Invalid wait type: {wait_type}"
+msgstr "非法的等待类型: {wait_type}"
+
+msgid "Wait web page ##{webPage}## {action} {target}"
+msgstr "等待网页##{webPage}##{action}{target}"
+
+msgid "Wait web page ##{webPage}## to load"
+msgstr "等待网页##{webPage}##加载"
+
+msgid "Loading timeout"
+msgstr "加载超时"
+
+msgid ""
+"Click ##{element}## on web page ##{webPage}## to download, and save the "
+"downloaded file to ##{downloadFilename}##"
+msgstr "点击网页##{webPage}##上的元素##{element}##下载，保存下载的文件到##{downloadFilename}##"
+
+msgid ""
+"Open ##{url}## on web page ##{webPage}## to download, and save the "
+"downloaded file to ##{downloadFilename}##"
+msgstr "在网页##{webPage}##上打开##{url}##下载，保存下载的文件到##{downloadFilename}##"
+
+msgid "Input ##{content}## into element ##{element}## on web page ##{webPage}##"
+msgstr "在网页##{webPage}##上输入##{content}##到元素##{element}##"
+
+msgid "Click ##{element}## on web page ##{webPage}## to upload ##{filePath}##"
+msgstr "点击网页##{webPage}##上的元素##{element}##上传文件##{filePath}##"
+
+msgid "Active the window ##{windowObject}##"
+msgstr "激活窗口##{windowObject}##"
+
+msgid "Active the window with the title ##{title}## and type ##{className}##"
+msgstr "激活标题为##{title}##类名为##{className}##的窗口"
+
+msgid "Active the window with the title ##{title}##"
+msgstr "激活标题为##{title}##的窗口"
+
+msgid "Active the window of ##{element}##"
+msgstr "激活元素##{element}##所在的窗口"
+
+msgid "{action} ##{element}##"
+msgstr "{action} ##{element}##"
+
+msgid "Close the window ##{windowObject}##"
+msgstr "关闭窗口##{windowObject}##"
+
+msgid "Close the window with the title ##{title}## and type ##{className}##"
+msgstr "关闭标题为##{title}##类名为##{className}##的窗口"
+
+msgid "Close the window with the title ##{title}##"
+msgstr "关闭标题为##{title}##的窗口"
+
+msgid "Close the window of ##{element}##"
+msgstr "关闭元素##{element}##所在的窗口"
+
+msgid "Drag ##{sourceElement}## to ##{targetElement}##"
+msgstr "将元素##{sourceElement}##拖拽到元素##{targetElement}##上"
+
+msgid "Drag ##{sourceElement}## by offset ##{dragOffsetX}## ##{dragOffsetY}##"
+msgstr "将元素##{sourceElement}##拖拽指定的偏移量(##{dragOffsetX}##, ##{dragOffsetY}##)"
+
+msgid "process name"
+msgstr "进程名称"
+
+msgid ""
+"Extract the ##{extractData}## of the window ##{windowObject}##, and save "
+"to ##{result}##"
+msgstr "抽取窗口##{windowObject}##的##{extractData}##，保存到##{result}##"
+
+msgid ""
+"Extract the ##{extractData}## of the window with the title ##{title}##, "
+"and save to ##{result}##"
+msgstr "抽取标题为##{title}##的窗口的##{extractData}##，并保存到##{result}##"
+
+msgid ""
+"Extract the ##{extractData}## of the window of ##{element}##, and save to"
+" ##{result}##"
+msgstr "抽取窗口##{element}##的##{extractData}##，保存到##{result}##"
+
+msgid "text"
+msgstr "文本"
+
+msgid "value"
+msgstr "值"
+
+msgid ""
+"Extract the ##{extractData}## of element ##{element}##, and save to "
+"##{result}##"
+msgstr "抽取元素##{element}##的##{extractData}##，保存到##{result}##"
+
+msgid ""
+"Get selected items of the combo box ##{element}##, and save to "
+"##{result}##"
+msgstr "获取组合框##{element}##当前选中的项目列表，并保存到##{result}##"
+
+msgid "Get all items of the combo box ##{element}##, and save to ##{result}##"
+msgstr "获取组合框##{element}##的所有选项列表，并保存到##{result}##"
+
+msgid "Get parent element of ##{element}##, and save to ##{result}##"
+msgstr "获取元素##{element}##的父元素，保存到##{result}##"
+
+msgid "Get previous sibling element of ##{element}##, and save to ##{result}##"
+msgstr "获取元素##{element}##的上一个兄弟元素，保存到##{result}##"
+
+msgid "Get next sibling element of ##{element}##, and save to ##{result}##"
+msgstr "获取元素##{element}##的下一个兄弟元素，保存到##{result}##"
+
+msgid ""
+"Get first matched descendant element of ##{element}## with relative xpath"
+" ##{descendantRelativeXpath}##, and save to ##{result}##"
+msgstr "获取元素##{element}##的第一个与相对xpath##{descendantRelativeXpath}##匹配的子孙元素，保存到##{result}##"
+
+msgid ""
+"Get all matched descendants of ##{element}## with relative xpath "
+"##{descendantRelativeXpath}##, and save to ##{result}##"
+msgstr "获取元素##{element}##的与相对xpath##{descendantRelativeXpath}##匹配的所有子孙元素，保存到##{result}##"
+
+msgid "Get all children of ##{element}##, and save to ##{result}##"
+msgstr "获取元素##{element}##的所有子元素，保存到##{result}##"
+
+msgid "Get ##{childPosition}## child of ##{element}##, and save to ##{result}##"
+msgstr "获取元素##{element}##的第##{childPosition}##个子元素，保存到##{result}##"
+
+msgid "Get the current active window, and save to ##{windowObject}##"
+msgstr "获取当前活动窗口，并保存到##{windowObject}##"
+
+msgid ""
+"Get the window with the title ##{title}## and type ##{className}##, and "
+"save to ##{windowObject}##"
+msgstr "获取标题为##{title}##类名为##{className}##的窗口，并保存到##{windowObject}##"
+
+msgid "Get the window with the title ##{title}##, and save to ##{windowObject}##"
+msgstr "获取标题为##{title}##的窗口，并保存到##{windowObject}##"
+
+msgid "Get the window of ##{element}##, and save to ##{windowObject}##"
+msgstr "获取##{element}##所在的窗口对象，并保存到##{windowObject}##"
+
+msgid "Hover ##{element}##"
+msgstr "鼠标悬停在##{element}##上"
+
+msgid "Loop elements ##{elements}##, save current element to ##{currentElement}##"
+msgstr "遍历元素##{elements}##，保存当前元素到##{currentElement}##"
+
+msgid "Move the window ##{windowObject}## to (##{x}##, ##{y}##)"
+msgstr "将窗口##{windowObject}##移动到(##{x}##, ##{y}##)"
+
+msgid ""
+"Move the window with the title ##{title}## and type ##{className}## to "
+"(##{x}##, ##{y}##)"
+msgstr "将标题为##{title}##类名为##{className}##的窗口移动到(##{x}##, ##{y}##)"
+
+msgid "Move the window with the title ##{title}## to (##{x}##, ##{y}##)"
+msgstr "将标题为##{title}##的窗口移动到(##{x}##, ##{y}##)"
+
+msgid "Move the window of ##{element}## to (##{x}##, ##{y}##)"
+msgstr "将元素##{element}##所在的窗口对象移动到(##{x}##, ##{y}##)"
+
+msgid "No windows found"
+msgstr "未找到窗口"
+
+msgid "Multiple windows found"
+msgstr "找到多个窗口"
+
+msgid "No controls found"
+msgstr "未找到控件"
+
+msgid "Multiple controls found"
+msgstr "找到多个控件"
+
+msgid ""
+"Set the width of window ##{windowObject}## to ##{width}## and the height "
+"to ##{height}##"
+msgstr "将窗口##{windowObject}##的宽度设置为##{width}##，高度设置为##{height}##"
+
+msgid ""
+"Set the width of window with the title ##{title}## and type "
+"##{className}## to ##{width}## and the height to ##{height}##"
+msgstr "将标题为##{title}##类名为##{className}##的窗口的宽度设置为##{width}##，高度设置为##{height}##"
+
+msgid ""
+"Set the width of window with the title ##{title}## to ##{width}## and the"
+" height to ##{height}##"
+msgstr "将标题为##{title}##的窗口的宽度设置为##{width}##，高度设置为##{height}##"
+
+msgid ""
+"Set the width of window of ##{element}## to ##{width}## and the height to"
+" ##{height}##"
+msgstr "将元素##{element}##所在的窗口对象的宽度设置为##{width}##，高度设置为##{height}##"
+
+msgid "Screenshot ##{element}##, and save to ##{snapshotFilename}##"
+msgstr "获取元素##{element}##的截屏，并将图片保存到##{snapshotFilename}##"
+
+msgid "Check checkbox ##{element}##"
+msgstr "勾选复选框##{element}##"
+
+msgid "Uncheck checkbox ##{element}##"
+msgstr "取消勾选复选框##{element}##"
+
+msgid "Toggle checkbox ##{element}##"
+msgstr "反选复选框##{element}##"
+
+msgid "Select option in combo box ##{element}## with content ##{content}##"
+msgstr "选中组合框##{element}##中内容为##{content}##的选项"
+
+msgid ""
+"Select option in combo box ##{element}## with content containing "
+"##{content}##"
+msgstr "选中组合框##{element}##中内容包含##{content}##的选项"
+
+msgid ""
+"Select option in combo box ##{element}## with content matching regex "
+"##{content}##"
+msgstr "选中组合框##{element}##中内容与正则表达式##{content}##匹配的选项"
+
+msgid "Select the option indexed as ##{index}## in the combo box ##{element}##"
+msgstr "选中组合框##{element}##中索引位置为##{index}##的选项"
+
+msgid "Restore the window ##{windowObject}##"
+msgstr "还原窗口##{windowObject}##"
+
+msgid "Maximize the window ##{windowObject}##"
+msgstr "最大化窗口##{windowObject}##"
+
+msgid "Minimize the window ##{windowObject}##"
+msgstr "最小化窗口##{windowObject}##"
+
+msgid "Restore the window with the title ##{title}## and type ##{className}##"
+msgstr "还原标题为##{title}##类名为##{className}##的窗口"
+
+msgid "Maximize the window with the title ##{title}## and type ##{className}##"
+msgstr "最大化标题为##{title}##类名为##{className}##的窗口"
+
+msgid "Minimize the window with the title ##{title}## and type ##{className}##"
+msgstr "最小化标题为##{title}##类名为##{className}##的窗口"
+
+msgid "Restore the window with the title ##{title}##"
+msgstr "还原标题为##{title}##的窗口"
+
+msgid "Maximize the window with the title ##{title}##"
+msgstr "最大化标题为##{title}##的窗口"
+
+msgid "Minimize the window with the title ##{title}##"
+msgstr "最小化标题为##{title}##的窗口"
+
+msgid "Restore the window of ##{element}##"
+msgstr "还原元素##{element}##所在的窗口"
+
+msgid "Maximize the window of ##{element}##"
+msgstr "最大化元素##{element}##所在的窗口"
+
+msgid "Minimize the window of ##{element}##"
+msgstr "最小化元素##{element}##所在的窗口"
+
+msgid "Show the window ##{windowObject}##"
+msgstr "显示窗口##{windowObject}##"
+
+msgid "Hide the window ##{windowObject}##"
+msgstr "隐藏窗口##{windowObject}##"
+
+msgid "Show the window with the title ##{title}## and type ##{className}##"
+msgstr "显示标题为##{title}##类名为##{className}##的窗口"
+
+msgid "Hide the window with the title ##{title}## and type ##{className}##"
+msgstr "隐藏标题为##{title}##类名为##{className}##的窗口"
+
+msgid "Show the window with the title ##{title}##"
+msgstr "显示标题为##{title}##的窗口"
+
+msgid "Hide the window with the title ##{title}##"
+msgstr "隐藏标题为##{title}##的窗口"
+
+msgid "Show the window of ##{element}##"
+msgstr "显示元素##{element}##所在的窗口"
+
+msgid "Hide the window of ##{element}##"
+msgstr "隐藏元素##{element}##所在的窗口"
+
+msgid "Waiting to ##{action}## ##{target}##, and save to ##{waitResult}##"
+msgstr "等待##{action}####{target}##，并将等待结果保持到##{waitResult}##"
+
+msgid "Input ##{content}## into element ##{element}##"
+msgstr "在元素##{element}##中输入内容##{content}##"
+
+msgid "Any Type"
+msgstr "任意类型"
+
+msgid "Text"
+msgstr "文本"
+
+msgid "Text length"
+msgstr "文本的字符数"
+
+msgid "Lowercase text"
+msgstr "小写文本"
+
+msgid "Uppercase text"
+msgstr "大写文本"
+
+msgid "Number"
+msgstr "数值"
+
+msgid "Round number"
+msgstr "四舍五入后的数值"
+
+msgid "Floor number"
+msgstr "小于等于该数值的最大整数"
+
+msgid "Ceil number"
+msgstr "大于等于该数值的最小整数"
+
+msgid "Absolute value"
+msgstr "绝对值"
+
+msgid "Boolean"
+msgstr "布尔值"
+
+msgid "List"
+msgstr "列表"
+
+msgid "Number of items in the list"
+msgstr "列表项数"
+
+msgid "Dictionary"
+msgstr "字典"
+
+msgid "Number of items in the dict"
+msgstr "字典项数"
+
+msgid "Keys in the dict"
+msgstr "字典中的键列表"
+
+msgid "Values in the dict"
+msgstr "字典中的值列表"
+
+msgid "Items in the dict"
+msgstr "字典中的键值对列表"
+
+msgid "Date"
+msgstr "日期"
+
+msgid "The year of the date"
+msgstr "日期的年份"
+
+msgid "The month of the date"
+msgstr "日期的月份"
+
+msgid "The day of the date"
+msgstr "日期的日期"
+
+msgid "Time"
+msgstr "时间"
+
+msgid "The hour of the time"
+msgstr "时间的小时"
+
+msgid "The minute of the time"
+msgstr "时间的分钟"
+
+msgid "The second of the time"
+msgstr "时间的秒数"
+
+msgid "The microsecond of the time"
+msgstr "时间的微秒数"
+
+msgid "DateTime"
+msgstr "日期时间"
+
+msgid "The date of the datetime"
+msgstr "日期时间的日期"
+
+msgid "The time of the datetime"
+msgstr "日期时间的时间"
+
+msgid "The year of the datetime"
+msgstr "日期时间的年份"
+
+msgid "The month of the datetime"
+msgstr "日期时间的月份"
+
+msgid "The day of the datetime"
+msgstr "日期时间的日期"
+
+msgid "The hour of the datetime"
+msgstr "日期时间的小时"
+
+msgid "The minute of the datetime"
+msgstr "日期时间的分钟"
+
+msgid "The second of the datetime"
+msgstr "日期时间的秒数"
+
+msgid "The microsecond of the datetime"
+msgstr "日期时间的微秒数"
+
+msgid "The timestamp of the datetime, in seconds"
+msgstr "日期时间的时间戳，以秒为单位"
+
+msgid "File Path Info"
+msgstr "文件路径信息"
+
+msgid "root directory"
+msgstr "根目录"
+
+msgid "parent directory"
+msgstr "父目录"
+
+msgid "file name"
+msgstr "文件名"
+
+msgid "file name without extension"
+msgstr "不带扩展名的文件名"
+
+msgid "file extension"
+msgstr "文件扩展名"
+
+msgid "file exists"
+msgstr "文件是否存在"
+
+msgid "is directory"
+msgstr "是否是文件夹"
+
+msgid "is file"
+msgstr "是否是文件"
+
+msgid "file size"
+msgstr "文件大小"
+
+msgid "creation time(timestamp)"
+msgstr "创建时间（时间戳）"
+
+msgid "modification time(timestamp)"
+msgstr "修改时间（时间戳）"
+
+msgid "Column no is out of range: {column_no}"
+msgstr "列号超出范围: {column_no}"
+
+msgid "Table"
+msgstr "数据表格"
+
+msgid "Number of rows"
+msgstr "数据表格的行数"
+
+msgid "Number of columns"
+msgstr "数据表格的列数"
+
+msgid "List of column names"
+msgstr "数据表格的列名列表"
+
+msgid "List of rows"
+msgstr "数据表格的行列表"
+
+msgid "Web Browser"
+msgstr "Web浏览器"
+
+msgid "Web Page"
+msgstr "网页"
+
+msgid "Web page url"
+msgstr "网页地址"
+
+msgid "Web Element"
+msgstr "网页元素"
+
+msgid "Window Element"
+msgstr "窗口元素"
+
+msgid "Windows"
+msgstr "Windows"
+
+msgid "Linux"
+msgstr "Linux"
+
+msgid "MacOS"
+msgstr "MacOS"
+
+msgid "Other"
+msgstr "其他"
+
+msgid "IN VARIABLE"
+msgstr "输入变量"
+
+msgid "OUT VARIABLE"
+msgstr "输出变量"
+
+msgid "LOCAL VARIABLE"
+msgstr "本地变量"
+
+msgid "contains in"
+msgstr "包含在"
+
+msgid "not contains in"
+msgstr "不包含在"
+
+msgid "equals"
+msgstr "等于"
+
+msgid "not equals"
+msgstr "不等于"
+
+msgid "is true"
+msgstr "为真"
+
+msgid "is false"
+msgstr "为假"
+
+msgid "Text input box"
+msgstr "文本输入框"
+
+msgid "Multi line text input box"
+msgstr "多行文本输入框"
+
+msgid "Number input box"
+msgstr "数字输入框"
+
+msgid "Drop down box"
+msgstr "下拉框"
+
+msgid "Expression input box"
+msgstr "表达式输入框"
+
+msgid "Variable input box"
+msgstr "变量输入框"
+
+msgid "Check box"
+msgstr "复选框"
+
+msgid "Custom input control"
+msgstr "自定义输入控件"
+
+msgid "About JimuFlow"
+msgstr "关于 JimuFlow"
+
+msgid "JimuFlow is a simple and easy-to-use cross-platform RPA tool."
+msgstr "JimuFlow是一款简单易用的跨平台RPA工具"
+
+msgid "Version: {version}"
+msgstr "版本：{version}"
+
+msgid "Project Link: <a href='{link_url}'>{link_name}</a>"
+msgstr "项目链接：<a href='{link_url}'>{link_name}</a>"
+
+msgid "Unknown instruction or process {name}"
+msgstr "未知指令或流程{name}"
+
+msgid "Invoke process {name}"
+msgstr "调用流程{name}"
+
+msgid "Press the delete key or the backspace key to delete the instruction."
+msgstr "按删除键或退格键删除指令。"
+
+msgid "Search process"
+msgstr "搜索流程"
+
+msgid "Double click to open the process"
+msgstr "双击打开流程"
+
+msgid "Open"
+msgstr "打开"
+
+msgid "Set As Main Process"
+msgstr "设置为主流程"
+
+msgid "Config"
+msgstr "配置"
+
+msgid "Remove"
+msgstr "删除"
+
+msgid "General"
+msgstr "常规"
+
+msgid "Advanced"
+msgstr "高级"
+
+msgid "Error handling"
+msgstr "错误处理"
+
+msgid "Output configs"
+msgstr "输出配置"
+
+msgid "Stop"
+msgstr "结束流程"
+
+msgid "Retry"
+msgstr "重试"
+
+msgid "Ignore"
+msgstr "忽略错误继续执行"
+
+msgid "Error handling type"
+msgstr "错误处理方式"
+
+msgid "Max retries"
+msgstr "重试次数"
+
+msgid "Retry interval (seconds)"
+msgstr "重试间隔(秒)"
+
+msgid "Outputs on error"
+msgstr "出错时的输出配置"
+
+msgid "Input parameter {name} is invalid: {editor_errors}"
+msgstr "输入参数 {name} 无效: {editor_errors}"
+
+msgid "Input parameter {name} is required"
+msgstr "{name}还未指定"
+
+msgid "Invalid expression for input {name}"
+msgstr "{name}配置的表达式格式不正确"
+
+msgid "Output parameter {name} is required"
+msgstr "{name}还未指定"
+
+msgid "Invalid variable name for output {name}"
+msgstr "{name}配置的变量名格式不正确"
+
+msgid "Max retries is required"
+msgstr "重试次数必须填写"
+
+msgid "Max retries must be a number"
+msgstr "重试次数必须为数字"
+
+msgid "Max retries must be greater than 0"
+msgstr "重试次数必须大于0"
+
+msgid "Retry interval is required"
+msgstr "重试间隔必须填写"
+
+msgid "Retry interval must be a number"
+msgstr "重试间隔必须为数字"
+
+msgid "Retry interval must be greater than 0"
+msgstr "重试间隔必须大于0"
+
+msgid "Invalid expression for output {name}"
+msgstr "{name}配置的表达式格式不正确"
+
+msgid "Process {name}"
+msgstr "流程{name}"
+
+msgid "Ok"
+msgstr "确认"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Help"
+msgstr "帮助"
+
+msgid "Error"
+msgstr "错误"
+
+msgid "Process Control"
+msgstr "流程控制"
+
+msgid "Switch"
+msgstr "条件判断"
+
+msgid "Loop"
+msgstr "循环"
+
+msgid "Wait"
+msgstr "等待"
+
+msgid "Web Automation"
+msgstr "网页自动化"
+
+msgid "Web Page Operation"
+msgstr "网页操作"
+
+msgid "Web Element Operation"
+msgstr "网页元素操作"
+
+msgid "Web Data Extraction"
+msgstr "网页数据抽取"
+
+msgid "Web Dialog Operation"
+msgstr "网页对话框操作"
+
+msgid "Windows Automation"
+msgstr "Windows自动化"
+
+msgid "Data Process"
+msgstr "数据处理"
+
+msgid "Text Operation"
+msgstr "文本操作"
+
+msgid "Number Operation"
+msgstr "数值操作"
+
+msgid "List operation"
+msgstr "列表操作"
+
+msgid "Dictionary operation"
+msgstr "字典操作"
+
+msgid "Date Time Operation"
+msgstr "日期时间操作"
+
+msgid "Process"
+msgstr "流程"
+
+msgid "Search instruction"
+msgstr "搜索指令"
+
+msgid ""
+"Double click or drag to add to the current process, select and press F1 "
+"key to view help"
+msgstr "双击或拖拽添加到当前流程，选择并按F1键查看帮助"
+
+msgid "Double click or drag to add to the current process"
+msgstr "双击或拖拽添加到当前流程"
+
+msgid "Only supported on {platforms}"
+msgstr "仅在{platforms}上支持"
+
+msgid "Config Application"
+msgstr "配置应用"
+
+msgid "New Application"
+msgstr "新建应用"
+
+msgid ""
+"The namespace is used to distinguish processes with the same name written"
+" by different people, using a format similar to a reverse domain name, "
+"such as foo, foo.bar.\n"
+"Each part of the namespace consists of any non blank characters and "
+"underscores other than punctuation, and the total length cannot exceed "
+"100 characters."
+msgstr ""
+"名称空间用于区分由不同人编写的同名流程，使用类似于反向域名的格式，如foo，foo.bar。\n"
+"名称空间的每一部分由除了标点符号之外的非空白符和下划线组成，总长度不能超过100个字符。"
+
+msgid "Namespace:"
+msgstr "名称空间："
+
+msgid ""
+"Consists of any non blank characters and underscores other than "
+"punctuation, and the total length cannot exceed 100 characters."
+msgstr "由除了标点符号之外的非空白符和下划线组成，总长度不能超过100个字符。"
+
+msgid "Application name:"
+msgstr "应用名称："
+
+msgid ""
+"Represent using numbers separated by periods in English, such as 1, 1.0, "
+"1.0.0, with a maximum of 3 numbers and a total length of no more than 50 "
+"characters."
+msgstr "使用英文句号分割的数字来表示，如1、1.0、1.0.0，总长度不能超过50个字符。"
+
+msgid "Application version:"
+msgstr "应用版本："
+
+msgid "Save directory:"
+msgstr "保存目录："
+
+msgid "Save application"
+msgstr "保存应用"
+
+msgid "Tips"
+msgstr "提示"
+
+msgid "The namespace cannot be empty"
+msgstr "命名空间不能为空"
+
+msgid "The application name cannot be empty"
+msgstr "应用名称不能为空"
+
+msgid "The application version cannot be empty"
+msgstr "应用版本不能为空"
+
+msgid "Save directory cannot be empty"
+msgstr "保存目录不能为空"
+
+msgid "The application already exists"
+msgstr "应用已存在"
+
+msgid "Config Process"
+msgstr "配置流程"
+
+msgid "New Process"
+msgstr "新建流程"
+
+msgid ""
+"Any non blank characters and underscores other than punctuation can be "
+"used, and the length cannot exceed 100 characters."
+msgstr "可以使用任意除了标点符号之外的非空白符和下划线，长度不超过100个字符。"
+
+msgid "Process name:"
+msgstr "流程名称："
+
+msgid "Process name cannot be empty"
+msgstr "流程名称不能为空"
+
+msgid "Modify Variable"
+msgstr "修改变量"
+
+msgid "Add Variable"
+msgstr "添加变量"
+
+msgid ""
+"Any non blank characters and underscores other than punctuation can be "
+"used, and the length cannot exceed 50 characters."
+msgstr "可以使用任意除了标点符号之外的非空白符和下划线，长度不超过50个字符。"
+
+msgid "Variable Name:"
+msgstr "变量名称:"
+
+msgid "Variable Type:"
+msgstr "变量类型:"
+
+msgid " VARIABLE"
+msgstr ""
+
+msgid "Variable Direction:"
+msgstr "变量方向:"
+
+msgid "Element Type:"
+msgstr "元素类型:"
+
+msgid "Default Value:"
+msgstr "默认值:"
+
+msgid "UI Label:"
+msgstr "输入控件标签"
+
+msgid "UI Group:"
+msgstr "输入控件分组"
+
+msgid "Required"
+msgstr "必填项"
+
+msgid "Not exceeding 999, the smaller the number, the higher the ranking"
+msgstr "不超过999，数字越小，排序越靠前"
+
+msgid "UI Sort No:"
+msgstr "输入控件排序号"
+
+msgid "UI Input Type:"
+msgstr "输入控件类型"
+
+msgid "The class name of the custom input control"
+msgstr "自定义输入控件的类名"
+
+msgid "UI Custom Input Control:"
+msgstr "自定义输入控件"
+
+msgid "UI Placeholder:"
+msgstr "输入控件提示"
+
+msgid "Add Option"
+msgstr "添加选项"
+
+msgid "UI Options:"
+msgstr "输入选项列表"
+
+msgid "UI Help Info:"
+msgstr "输入控件帮助信息"
+
+msgid "UI Depends On:"
+msgstr "输入控件依赖项"
+
+msgid "Variable name cannot be empty"
+msgstr "变量名称不能为空"
+
+msgid "Please select variable type"
+msgstr "请选择变量类型"
+
+msgid "Please select variable direction"
+msgstr "请选择变量方向"
+
+msgid "Please select element type"
+msgstr "请选择元素类型"
+
+msgid "Please input custom editor type"
+msgstr "请输入自定义编辑器类型"
+
+msgid "Please input options"
+msgstr "请输入选项"
+
+msgid "Please select input type"
+msgstr "请选择输入控件类型"
+
+msgid "Call Stack"
+msgstr "调用堆栈"
+
+msgid "Variable Name"
+msgstr "变量名"
+
+msgid "Variable Value"
+msgstr "变量值"
+
+msgid "Line {line_no}"
+msgstr "第{line_no}行"
+
+msgid ""
+"Click to view the variable at the call location, double-click to navigate"
+" to the call location"
+msgstr "单击查看该调用位置的变量，双击导航到该调用位置"
+
+msgid "Capture Element"
+msgstr "捕获元素"
+
+msgid "Edit Element"
+msgstr "编辑元素"
+
+msgid "Line No"
+msgstr "行号"
+
+msgid "Double click to navigate to the corresponding process location"
+msgstr "双击导航到对应流程位置"
+
+msgid "Bracket operator"
+msgstr "括号运算符"
+
+msgid "Addition operator"
+msgstr "加法运算符"
+
+msgid "Subtraction or negative operator"
+msgstr "减法或取负运算符"
+
+msgid "Multiplication operator"
+msgstr "乘法运算符"
+
+msgid "Division operator"
+msgstr "除法运算符"
+
+msgid "Remainder operator"
+msgstr "取余运算符"
+
+msgid "Power operator"
+msgstr "幂运算符"
+
+msgid "Floor division operator"
+msgstr "整除运算符"
+
+msgid "Logical and operator"
+msgstr "逻辑与运算符"
+
+msgid "Logical or operator"
+msgstr "逻辑或运算符"
+
+msgid "Logical non operator"
+msgstr "逻辑非运算符"
+
+msgid "Greater than operator"
+msgstr "大于运算符"
+
+msgid "Greater than or equal to operator"
+msgstr "大于等于运算符"
+
+msgid "Less than operator"
+msgstr "小于运算符"
+
+msgid "Less than or equal to operator"
+msgstr "小于等于运算符"
+
+msgid "Equal operator"
+msgstr "等于运算符"
+
+msgid "Not equal to operator"
+msgstr "不等于运算符"
+
+msgid "Index access operator"
+msgstr "索引访问运算符"
+
+msgid "Attribute access operator"
+msgstr "属性访问运算符"
+
+msgid "{type} Variable"
+msgstr "{type}变量"
+
+msgid "Close"
+msgstr "关闭"
+
+msgid "Back"
+msgstr "后退"
+
+msgid "Forward"
+msgstr "前进"
+
+msgid "Timestamp"
+msgstr "时间"
+
+msgid "Level"
+msgstr "级别"
+
+msgid "Instruction"
+msgstr "指令"
+
+msgid "Message"
+msgstr "消息"
+
+msgid "Ready"
+msgstr "就绪"
+
+msgid "New App"
+msgstr "新建应用"
+
+msgid "Open App"
+msgstr "打开应用"
+
+msgid "Config App"
+msgstr "配置应用"
+
+msgid "Save Process"
+msgstr "保存流程"
+
+msgid "Delete Process"
+msgstr "删除流程"
+
+msgid "Undo"
+msgstr "撤销"
+
+msgid "Redo"
+msgstr "重做"
+
+msgid "Run Process"
+msgstr "运行流程"
+
+msgid "Debug Process"
+msgstr "调试流程"
+
+msgid "Resume Process"
+msgstr "继续执行"
+
+msgid "Stop Process"
+msgstr "停止流程"
+
+msgid "Step Over"
+msgstr "步过"
+
+msgid "Step Into"
+msgstr "步入"
+
+msgid "Step Out"
+msgstr "步出"
+
+msgid "File"
+msgstr "文件"
+
+msgid "Recent Apps"
+msgstr "最近使用的应用"
+
+msgid "Edit"
+msgstr "编辑"
+
+msgid "Run"
+msgstr "运行"
+
+msgid "Process List"
+msgstr "流程列表"
+
+msgid "Instruction List"
+msgstr "指令列表"
+
+msgid "Error List"
+msgstr "错误列表"
+
+msgid "Running logs"
+msgstr "运行日志"
+
+msgid "Variables"
+msgstr "变量"
+
+msgid "Web Elements"
+msgstr "网页元素"
+
+msgid "Window Elements"
+msgstr "窗口元素"
+
+msgid "Element library"
+msgstr "元素库"
+
+msgid "Resource library"
+msgstr "资源库"
+
+msgid "Open Application"
+msgstr "打开应用"
+
+msgid "Undo {action}"
+msgstr "撤销{action}"
+
+msgid "Redo {action}"
+msgstr "重做{action}"
+
+msgid "Warning"
+msgstr "警告"
+
+msgid "Process {name} has not been saved. Do you want to save this process?"
+msgstr "流程{name}尚未保存。您想保存此流程吗？"
+
+msgid "Are you sure you want to delete process {name}?"
+msgstr "您确定要删除流程{name}吗？"
+
+msgid "Process has errors, please fix them first"
+msgstr "流程有错误，请先修复"
+
+msgid "Process {name} only supports running on platform {platforms}"
+msgstr "流程{name}仅支持在{platforms}平台上运行"
+
+msgid "Process {name} is running, do you want to terminate the process?"
+msgstr "流程{name}正在运行，是否要终止该流程？"
+
+msgid "An error has occurred!"
+msgstr "发生了一个错误！"
+
+msgid "Name"
+msgstr "名称"
+
+msgid "Size"
+msgstr "大小"
+
+msgid "Type"
+msgstr "类型"
+
+msgid "Date Modified"
+msgstr "最后修改时间"
+
+msgid "Add File"
+msgstr "添加文件"
+
+msgid "Add Folder"
+msgstr "添加文件夹"
+
+msgid "Add"
+msgstr "添加"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "Resource Folder"
+msgstr "资源目录"
+
+msgid "Open resources folder in Finder"
+msgstr "在文件浏览器中打开资源文件夹"
+
+msgid "Add Instruction"
+msgstr "添加指令"
+
+msgid "Move instructions"
+msgstr "移动指令"
+
+msgid "Copy instructions"
+msgstr "复制指令"
+
+msgid "Unknown instruction or process config {config}"
+msgstr "未知指令或流程配置{config}"
+
+msgid "Edit Instruction"
+msgstr "编辑指令"
+
+msgid "Remove Breakpoint"
+msgstr "删除断点"
+
+msgid "Add Breakpoint"
+msgstr "添加断点"
+
+msgid "Copy"
+msgstr "复制"
+
+msgid "Cut"
+msgstr "剪切"
+
+msgid "Paste Before"
+msgstr "粘贴在前面"
+
+msgid "Paste Inside"
+msgstr "粘贴在里面"
+
+msgid "Paste After"
+msgstr "粘贴在后面"
+
+msgid "Paste"
+msgstr "粘贴"
+
+msgid "Open Process"
+msgstr "打开流程"
+
+msgid "Paste Instructions"
+msgstr "粘贴指令"
+
+msgid "Remove Instructions"
+msgstr "删除指令"
+
+msgid "Add variable"
+msgstr "添加变量"
+
+msgid "Delete variable"
+msgstr "删除变量"
+
+msgid "Direction"
+msgstr "方向"
+
+msgid "IN"
+msgstr "输入"
+
+msgid "OUT"
+msgstr "输出"
+
+msgid "LOCAL"
+msgstr "本地"
+
+msgid "Update variable"
+msgstr "修改变量"
+
+msgid "Process {name} startup parameter configuration"
+msgstr "流程{name}启动参数配置"
+
+msgid "Web Cookie Tool"
+msgstr "网页Cookie工具"
+
+msgid "URL: "
+msgstr "网址："
+
+msgid "Please enter the URL"
+msgstr "请输入网址"
+
+msgid "Not equal to"
+msgstr "不等于"
+
+msgid "regular expression matches"
+msgstr "正则表达式匹配"
+
+msgid "Attribute"
+msgstr "属性"
+
+msgid "Operator"
+msgstr "运算符"
+
+msgid "Value"
+msgstr "值"
+
+msgid "Link"
+msgstr "链接"
+
+msgid "Abbreviation Text"
+msgstr "缩写文本"
+
+msgid "Address"
+msgstr "地址"
+
+msgid "Image Map Area"
+msgstr "图像映射区域"
+
+msgid "Article Contents"
+msgstr "文章内容"
+
+msgid "Aside"
+msgstr "旁白"
+
+msgid "Audio"
+msgstr "音频"
+
+msgid "Document Base URL"
+msgstr "文档基地址"
+
+msgid "Block Quotation"
+msgstr "块级引用"
+
+msgid "Document Body"
+msgstr "文档正文"
+
+msgid "Line Break"
+msgstr "换行"
+
+msgid "Button"
+msgstr "按钮"
+
+msgid "Canvas"
+msgstr "画布"
+
+msgid "Table Caption"
+msgstr "表格标题"
+
+msgid "Citation"
+msgstr "引文"
+
+msgid "Code"
+msgstr "代码"
+
+msgid "Table Column"
+msgstr "表格列"
+
+msgid "Table Column Group"
+msgstr "表格列组"
+
+msgid "Data"
+msgstr "数据"
+
+msgid "Data List"
+msgstr "数据列表"
+
+msgid "Description Details"
+msgstr "描述详情"
+
+msgid "Deleted Text"
+msgstr "已删除的文本"
+
+msgid "Details disclosure"
+msgstr "详情"
+
+msgid "Definition"
+msgstr "定义"
+
+msgid "Dialog"
+msgstr "对话框"
+
+msgid "Block Element"
+msgstr "块元素"
+
+msgid "Description List"
+msgstr "描述列表"
+
+msgid "Description Term"
+msgstr "描述术语"
+
+msgid "Emphasis"
+msgstr "强调文本"
+
+msgid "Embedded Content"
+msgstr "嵌入式内容"
+
+msgid "Fieldset"
+msgstr "字段集"
+
+msgid "Figure Caption"
+msgstr "图片标题"
+
+msgid "Figure"
+msgstr "图"
+
+msgid "Footer"
+msgstr "页脚"
+
+msgid "Form"
+msgstr "表单"
+
+msgid "First-level title"
+msgstr "一级标题"
+
+msgid "Second-level title"
+msgstr "二级标题"
+
+msgid "Third-level title"
+msgstr "三级标题"
+
+msgid "Fourth-level title"
+msgstr "四级标题"
+
+msgid "Fifth-level title"
+msgstr "五级标题"
+
+msgid "Sixth-level title"
+msgstr "六级标题"
+
+msgid "Document Head"
+msgstr "文档头"
+
+msgid "Header"
+msgstr "头部"
+
+msgid "Heading Group"
+msgstr "标题组"
+
+msgid "Horizontal Rule"
+msgstr "水平分割线"
+
+msgid "Document"
+msgstr "文档"
+
+msgid "Inline Frame"
+msgstr "内联框架"
+
+msgid "Image"
+msgstr "图像"
+
+msgid "Inserted Text"
+msgstr "插入文本"
+
+msgid "Keyboard Input"
+msgstr "键盘输入"
+
+msgid "Label"
+msgstr "标签"
+
+msgid "Field Set Legend"
+msgstr "字段集标题"
+
+msgid "List Item"
+msgstr "列表项目"
+
+msgid "External Resource Link"
+msgstr "外部资源链接"
+
+msgid "Main Content"
+msgstr "主要内容"
+
+msgid "Image Map"
+msgstr "图像地图"
+
+msgid "Mark Text"
+msgstr "标记文本"
+
+msgid "Menu"
+msgstr "菜单"
+
+msgid "Metadata"
+msgstr "元数据"
+
+msgid "Meter"
+msgstr "仪表"
+
+msgid "Navigation"
+msgstr "导航"
+
+msgid "Embedded Object"
+msgstr "嵌入式对象"
+
+msgid "Ordered List"
+msgstr "有序列表"
+
+msgid "Option Group"
+msgstr "选项组"
+
+msgid "Option"
+msgstr "选项"
+
+msgid "Output"
+msgstr "输出"
+
+msgid "Picture"
+msgstr "图片"
+
+msgid "Preformatted Text"
+msgstr "预排格式文本"
+
+msgid "Progress Indicator"
+msgstr "进度指示器"
+
+msgid "Inline Quotation"
+msgstr "行内引用"
+
+msgid "Script"
+msgstr "脚本"
+
+msgid "Search"
+msgstr "搜索"
+
+msgid "Section"
+msgstr "节"
+
+msgid "Drop-down box"
+msgstr "下拉框"
+
+msgid "Web Component Slot"
+msgstr "Web组件插槽"
+
+msgid "Side Comment"
+msgstr "旁注"
+
+msgid "Media Source"
+msgstr "媒体来源"
+
+msgid "Style"
+msgstr "样式"
+
+msgid "Subscript"
+msgstr "下标"
+
+msgid "Summary"
+msgstr "摘要"
+
+msgid "Superscript"
+msgstr "上标"
+
+msgid "Table Body"
+msgstr "表格体"
+
+msgid "Table Cell"
+msgstr "表格单元格"
+
+msgid "Content Template"
+msgstr "内容模板"
+
+msgid "Text Area"
+msgstr "文本框"
+
+msgid "Table Footer"
+msgstr "表尾"
+
+msgid "Table Header Cell"
+msgstr "表格标题单元格"
+
+msgid "Table Header"
+msgstr "表头"
+
+msgid "Document Title"
+msgstr "文档标题"
+
+msgid "Table Row"
+msgstr "表格行"
+
+msgid "Media Track"
+msgstr "媒体轨道"
+
+msgid "Unordered List"
+msgstr "无序列表"
+
+msgid "Variable"
+msgstr "变量"
+
+msgid "Video"
+msgstr "视频"
+
+msgid "Line Break Opportunity"
+msgstr "换行符"
+
+msgid "Password Input"
+msgstr "密码输入框"
+
+msgid "Checkbox"
+msgstr "复选框"
+
+msgid "Radio Button"
+msgstr "单选按钮"
+
+msgid "File Input"
+msgstr "文件上传框"
+
+msgid "Input box"
+msgstr "文本输入框"
+
+msgid "Element List"
+msgstr "元素列表"
+
+msgid "Web Element Capture Tool"
+msgstr "网页元素捕获工具"
+
+msgid ""
+"Please enter the URL where the web page element you want to get is "
+"located."
+msgstr "请输入要获取的网页元素所在的网址。"
+
+msgid ""
+"Operation instructions: Ctrl+left-click to get a single element, and "
+"Shift+left-click two elements to get multiple similar elements."
+msgstr "操作说明：Ctrl+左键点击获取单个元素，Shift+左键连续点击两个元素获取多个相似元素。"
+
+msgid "New tab"
+msgstr "新标签页"
+
+msgid "The second element does not match the first element, please select again!"
+msgstr "第二个元素与第一个元素不匹配，请重新选择！"
+
+msgid "Element Node"
+msgstr "元素节点"
+
+msgid "Element Name"
+msgstr "元素名称"
+
+msgid "Check Element"
+msgstr "校验元素"
+
+msgid "Element Editing"
+msgstr "元素编辑"
+
+msgid "Element Preview"
+msgstr "元素预览"
+
+msgid "Element"
+msgstr "元素"
+
+msgid "IFrame"
+msgstr "IFrame"
+
+msgid "Use Custom Element XPath"
+msgstr "使用自定义元素XPath"
+
+msgid "Use Custom IFrame XPath"
+msgstr "使用自定义IFrame XPath"
+
+msgid "Element XPath Preview:"
+msgstr "元素XPath预览："
+
+msgid "Enter Custom Element XPath"
+msgstr "输入自定义元素XPath"
+
+msgid "Element in IFrame"
+msgstr "元素在IFrame中"
+
+msgid "Enter Custom IFrame XPath"
+msgstr "输入自定义IFrame XPath"
+
+msgid ""
+"Element XPath Preview: \n"
+"{}"
+msgstr ""
+"元素XPath预览：\n"
+"{}"
+
+msgid ""
+"IFrame XPath Preview: \n"
+"{}"
+msgstr ""
+"IFrame XPath预览：\n"
+"{}"
+
+msgid "Web Element Relative XPath Tool"
+msgstr "网页元素相对XPath工具"
+
+msgid "Operation instructions: Ctrl+left-click to capture a single element."
+msgstr "操作说明：Ctrl+左键点击捕获单个元素。"
+
+msgid "Source Element XPath: "
+msgstr "来源元素XPath："
+
+msgid "Click the Capture Element button to obtain the XPath of the source element"
+msgstr "点击捕获元素按钮获取来源元素XPath"
+
+msgid "Capture Source Element"
+msgstr "捕获来源元素"
+
+msgid "Capture the source element"
+msgstr "捕获来源元素"
+
+msgid "Match"
+msgstr "匹配"
+
+msgid "Match the source element XPath on the current web page"
+msgstr "在当前网页上匹配来源元素XPath"
+
+msgid "Target Element XPath: "
+msgstr "目标元素XPath："
+
+msgid "Click the Capture Element button to obtain the XPath of the target element"
+msgstr "点击捕获元素按钮获取目标元素XPath"
+
+msgid "Capture Target Element"
+msgstr "捕获目标元素"
+
+msgid "Capture the target element"
+msgstr "捕获目标元素"
+
+msgid "Match the target element XPath on the current web page"
+msgstr "在当前网页上匹配目标元素XPath"
+
+msgid "Relative XPath: "
+msgstr "相对XPath："
+
+msgid "Relative XPath of the target element relative to the source element"
+msgstr "目标元素相对于来源元素的相对XPath"
+
+msgid "Accept"
+msgstr "采用"
+
+msgid "Accept the relative XPath and close the dialog"
+msgstr "采用相对XPath并关闭对话框"
+
+msgid "Matches count: {}"
+msgstr "匹配数量：{}"
+
+msgid "Web Element XPath Tool"
+msgstr "网页元素XPath工具"
+
+msgid "Merged XPath: "
+msgstr "合并后的XPath："
+
+msgid "Click the merge button to merge the XPath on all tabs"
+msgstr "单击合并按钮以合并所有标签页上的XPath"
+
+msgid "Merge"
+msgstr "合并"
+
+msgid "Merge XPath on all tabs"
+msgstr "合并所有标签页上的XPath"
+
+msgid "Match the merged XPath on the current tab"
+msgstr "在当前标签页上匹配合并后的XPath"
+
+msgid "Copy the merged XPath to clipboard"
+msgstr "将合并的XPath复制到剪贴板"
+
+msgid "Accept the merged XPath and close the dialog"
+msgstr "采用合并的XPath并关闭对话框"
+
+msgid "XPath: "
+msgstr "XPath："
+
+msgid "Match the XPath on the current tab"
+msgstr "在当前标签页上匹配XPath"
+
+msgid "Accept the XPath and close the dialog"
+msgstr "采用XPath并关闭对话框"
+
+msgid "Calendar"
+msgstr "日历"
+
+msgid "CheckBox"
+msgstr "复选框"
+
+msgid "ComboBox"
+msgstr "组合框"
+
+msgid "DataGrid"
+msgstr "数据网格"
+
+msgid "DataItem"
+msgstr "数据项"
+
+msgid "Group"
+msgstr "组"
+
+msgid "HeaderItem"
+msgstr "表头项"
+
+msgid "Hyperlink"
+msgstr "超链接"
+
+msgid "ListItem"
+msgstr "列表项"
+
+msgid "MenuBar"
+msgstr "菜单栏"
+
+msgid "MenuItem"
+msgstr "菜单项"
+
+msgid "Pane"
+msgstr "面板"
+
+msgid "ProgressBar"
+msgstr "进度条"
+
+msgid "RadioButton"
+msgstr "单选按钮"
+
+msgid "ScrollBar"
+msgstr "滚动条"
+
+msgid "SemanticZoom"
+msgstr "语义缩放"
+
+msgid "Separator"
+msgstr "分隔符"
+
+msgid "Slider"
+msgstr "滑块"
+
+msgid "Spinner"
+msgstr "旋转器"
+
+msgid "SplitButton"
+msgstr "分离按钮"
+
+msgid "StatusBar"
+msgstr "状态栏"
+
+msgid "Tab"
+msgstr "选项卡"
+
+msgid "TabItem"
+msgstr "选项卡项"
+
+msgid "Thumb"
+msgstr "拇指"
+
+msgid "TitleBar"
+msgstr "标题栏"
+
+msgid "ToolBar"
+msgstr "工具栏"
+
+msgid "ToolTip"
+msgstr "工具提示"
+
+msgid "Tree"
+msgstr "树"
+
+msgid "TreeItem"
+msgstr "树项"
+
+msgid "Window"
+msgstr "窗口"
+
+msgid "Window Element Capture Tool"
+msgstr "窗口元素捕获工具"
+
+msgid "Elements not found!"
+msgstr "元素未找到！"
+
+msgid "Use Custom Window XPath"
+msgstr "使用自定义窗口XPath"
+
+msgid "Enter Custom Window XPath"
+msgstr "输入自定义窗口XPath"
+
+msgid ""
+"Window XPath Preview: \n"
+"{}"
+msgstr ""
+"窗口XPath预览：\n"
+"{}"
+
+msgid "Window Element Relative XPath Tool"
+msgstr "窗口元素相对XPath工具"
+
+msgid "Operation instructions: Ctrl+left-click to get a single element."
+msgstr "操作说明：Ctrl+左键点击捕获单个元素。"
+
+msgid "Match the source element"
+msgstr "匹配来源元素"
+
+msgid "Match the target element"
+msgstr "匹配目标元素"
+
+msgid "This feature is only supported on Windows."
+msgstr "此功能仅在Windows上受支持。"
+
+msgid "True"
+msgstr "真"
+
+msgid "False"
+msgstr "假"
+
+msgid "Add condition"
+msgstr "添加条件"
+
+msgid "The first operand"
+msgstr "第一个操作数"
+
+msgid "The second operand"
+msgstr "第二个操作数"
+
+msgid "The first operand is empty"
+msgstr "第一个操作数不能为空"
+
+msgid "The first operand expression is invalid"
+msgstr "第一个操作数表达式无效"
+
+msgid "The second operand is empty"
+msgstr "第二个操作数不能为空"
+
+msgid "The second operand expression is invalid"
+msgstr "第二个操作数表达式无效"
+
+msgid "Choose"
+msgstr "选择"
+
+msgid "Choose File"
+msgstr "选择文件"
+
+msgid "Choose Folder"
+msgstr "选择文件夹"
+
+msgid "Input configs"
+msgstr "输入配置"
+
+msgid "Select Resource"
+msgstr "选择资源"
+
+msgid "Add column"
+msgstr "新增列"
+
+msgid "Column name/number"
+msgstr "列名/列号"
+
+msgid "Cell value"
+msgstr "单元值"
+
+msgid "Column name/number is empty"
+msgstr "列名/列号不能为空"
+
+msgid "Column name/number expression is invalid"
+msgstr "列名/列号表达式无效"
+
+msgid "Cell value is empty"
+msgstr "单元值不能为空"
+
+msgid "Cell value expression is invalid"
+msgstr "单元值表达式无效"
+
+msgid "Option label"
+msgstr "选项标签"
+
+msgid "Option value"
+msgstr "选项值"
+
+msgid "Add value"
+msgstr "添加值"
+
+msgid "Get Cookie"
+msgstr "获取Cookie"
+
+msgid "Dynamic elements"
+msgstr "动态元素"
+
+msgid "Search element"
+msgstr "搜索元素"
+
+msgid "OK"
+msgstr "确认"
+
+msgid "Get Relative XPath"
+msgstr "获取相对XPath"
+
+msgid "Get XPath"
+msgstr "获取XPath"
+
+msgid "The class name of the element"
+msgstr "元素类名"
+
+msgid "The friendly class name for the control"
+msgstr "元素友好类名"
+
+msgid "The text for each item of this control"
+msgstr "此控件的每个项目的文本"
+
+msgid "The ID of the element"
+msgstr "元素ID"
+
+msgid "The rectangle of the element on the screen"
+msgstr "屏幕上元素的矩形"
+
+msgid "Whether the element is visible or not"
+msgstr "元素是否可见"
+
+msgid "Whether the element is enabled or not"
+msgstr "元素是否启用"
+
+msgid "The number of children of this control"
+msgstr "控件的子元素数量"
+
+msgid "The start and end indices of the current selection text"
+msgstr "当前选中文本的起始和结束索引"
+
+msgid "The number of columns"
+msgstr "数据表格的列数"
+
+msgid "The number of items in the ListView or TreeView"
+msgstr "数据表格的项数"
+
+msgid "The information on the columns of the ListView"
+msgstr "列表视图的列信息"
+
+msgid "The number of buttons on the ToolBar"
+msgstr "工具条上的按钮数量"
+
+msgid "{window_text} [x={x}, y={y}]"
+msgstr ""
+
+msgid "X"
+msgstr ""
+
+msgid "Y"
+msgstr ""
+
+msgid "{window_text} [width={width}, height={height}]"
+msgstr ""
+
+msgid "Window width"
+msgstr "窗口宽度"
+
+msgid "Window height"
+msgstr "窗口高度"
+
+msgid "Add Prefix or Suffix"
+msgstr "添加前缀或后缀"
+
+msgid "Original text"
+msgstr "原始文本"
+
+msgid "Add type"
+msgstr "添加类型"
+
+msgid "Add prefix"
+msgstr "添加前缀"
+
+msgid "Add suffix"
+msgstr "添加后缀"
+
+msgid "Add text"
+msgstr "添加文本"
+
+msgid "Result"
+msgstr "结果"
+
+msgid "End loop"
+msgstr "结束循环"
+
+msgid "Change Text Case"
+msgstr "改变文本大小写"
+
+msgid "Case change type"
+msgstr "大小写转换类型"
+
+msgid "upper"
+msgstr "大写"
+
+msgid "lower"
+msgstr "小写"
+
+msgid "capitalize"
+msgstr "首字母大写"
+
+msgid "Check Process Exist"
+msgstr "检查进程是否存在"
+
+msgid "Operating System"
+msgstr "操作系统"
+
+msgid "Process property"
+msgstr "进程属性"
+
+msgid "Process ID"
+msgstr "进程ID"
+
+msgid "Process name"
+msgstr "进程名称"
+
+msgid "Check result"
+msgstr "检测结果"
+
+msgid "Clear Folder"
+msgstr "清空文件夹"
+
+msgid "Folder path"
+msgstr "文件夹路径"
+
+msgid "Compress File/Folder"
+msgstr "压缩文件/文件夹"
+
+msgid "File path"
+msgstr "文件路径"
+
+msgid "Compressed package name"
+msgstr "压缩包名称"
+
+msgid "Save folder type"
+msgstr "保存文件夹类型"
+
+msgid "Save to the same level directory as the source file"
+msgstr "保存到源文件所在目录"
+
+msgid "Save to specified folder"
+msgstr "保存到指定文件夹"
+
+msgid "Save folder"
+msgstr "保存文件夹"
+
+msgid "Compressed package path"
+msgstr "压缩包路径"
+
+msgid "Continue to the next loop"
+msgstr "继续下一循环"
+
+msgid "Copy File"
+msgstr "复制文件"
+
+msgid "Target folder"
+msgstr "目标文件夹"
+
+msgid "Action when exists"
+msgstr "存在时操作"
+
+msgid "Overwrite"
+msgstr "覆盖"
+
+msgid "Automatic renaming"
+msgstr "自动重命名"
+
+msgid "Perform error handling"
+msgstr "执行错误处理"
+
+msgid "New file path"
+msgstr "新文件路径"
+
+msgid "Copy Folder"
+msgstr "复制文件夹"
+
+msgid "New folder path"
+msgstr "新文件夹路径"
+
+msgid "Create Date"
+msgstr "创建日期"
+
+msgid "Initialization type"
+msgstr "初始化类型"
+
+msgid "Today"
+msgstr "今天"
+
+msgid "Convert timestamp to date"
+msgstr "将时间戳转换为日期"
+
+msgid "Parse date string"
+msgstr "解析日期字符串"
+
+msgid "Timestamp(s)"
+msgstr "时间戳（秒）"
+
+msgid "Date string"
+msgstr "日期字符串"
+
+msgid "Date format"
+msgstr "日期格式"
+
+msgid ""
+"Common Format Codes\n"
+"\n"
+"YYYY: Four digit year (e.g. 2024)\n"
+"\n"
+"YY: Two digit year (e.g. 24 represents 2024)\n"
+"\n"
+"MM: Month (01 to 12)\n"
+"\n"
+"DD: day of the month (01 to 31)"
+msgstr ""
+"常用的格式代码\n"
+"YYYY: 四位数的年份（例如：2024）\n"
+"\n"
+"YY: 两位数的年份（例如：24 表示 2024）\n"
+"\n"
+"MM: 月份（01到12）\n"
+"\n"
+"DD: 月份中的日期（01到31）"
+
+msgid "Create DateTime"
+msgstr "创建日期时间"
+
+msgid "Get the current date and time"
+msgstr "获取当前日期时间"
+
+msgid "Convert timestamp to datetime"
+msgstr "将时间戳转换为日期时间"
+
+msgid "Parse datetime string"
+msgstr "解析日期时间字符串"
+
+msgid "Datetime string"
+msgstr "日期时间字符串"
+
+msgid "Datetime format"
+msgstr "日期时间格式"
+
+msgid ""
+"Common Format Codes\n"
+"\n"
+"YYYY: Four digit year (e.g. 2024)\n"
+"\n"
+"YY: Two digit year (e.g. 24 represents 2024)\n"
+"\n"
+"MM: Month (01 to 12)\n"
+"\n"
+"DD: day of the month (01 to 31)\n"
+"\n"
+"HH: Hour (24-hour format, 00 to 23)\n"
+"\n"
+"hh: Hour (12 hour format, 01 to 12)\n"
+"\n"
+"mm: Minutes (00 to 59)\n"
+"\n"
+"ss: Seconds (00 to 59)\n"
+"\n"
+"SSSSSS: Microseconds (000000 to 999999)\n"
+"\n"
+"A: AM or PM\n"
+"\n"
+"ZZZ: Time Zone Name\n"
+"\n"
+"Z: Time zone offset (e.g.+0000)"
+msgstr ""
+"常用的格式代码\n"
+"YYYY: 四位数的年份（例如：2024）\n"
+"\n"
+"YY: 两位数的年份（例如：24 表示 2024）\n"
+"\n"
+"MM: 月份（01到12）\n"
+"\n"
+"DD: 月份中的日期（01到31）\n"
+"\n"
+"HH: 小时（24小时制，00到23）\n"
+"\n"
+"hh: 小时（12小时制，01到12）\n"
+"\n"
+"mm: 分钟（00到59）\n"
+"\n"
+"ss: 秒（00到59）\n"
+"\n"
+"SSSSSS: 微秒（000000到999999）\n"
+"\n"
+"A: AM 或 PM\n"
+"\n"
+"ZZZ: 时区名称\n"
+"\n"
+"Z: 时区偏移量（例如+0000）"
+
+msgid "Datetime"
+msgstr "日期时间"
+
+msgid "Create dictionary"
+msgstr "创建字典"
+
+msgid "Create Folder"
+msgstr "新建文件夹"
+
+msgid "Parent folder"
+msgstr "父文件夹"
+
+msgid "New folder name"
+msgstr "新文件夹名称"
+
+msgid "Create list"
+msgstr "创建列表"
+
+msgid "Create Time"
+msgstr "创建时间"
+
+msgid "Get the current time"
+msgstr "获取当前时间"
+
+msgid "Parse time string"
+msgstr "解析时间字符串"
+
+msgid "Time string"
+msgstr "时间字符串"
+
+msgid "Time format"
+msgstr "时间格式"
+
+msgid ""
+"Common Format Codes\n"
+"\n"
+"HH: Hour (24-hour format, 00 to 23)\n"
+"\n"
+"hh: Hour (12 hour format, 01 to 12)\n"
+"\n"
+"mm: Minutes (00 to 59)\n"
+"\n"
+"ss: Seconds (00 to 59)\n"
+"\n"
+"SSSSSS: Microseconds (000000 to 999999)\n"
+"\n"
+"A: AM or PM"
+msgstr ""
+"常用的格式代码\n"
+"\n"
+"HH: 小时（24小时制，00到23）\n"
+"\n"
+"hh: 小时（12小时制，01到12）\n"
+"\n"
+"mm: 分钟（00到59）\n"
+"\n"
+"ss: 秒（00到59）\n"
+"\n"
+"SSSSSS: 微秒（000000到999999）\n"
+"\n"
+"A: AM 或 PM"
+
+msgid "Decompress File/Folder"
+msgstr "解压缩文件/文件夹"
+
+msgid "Decompress to"
+msgstr "解压缩到"
+
+msgid "Create a folder with the same name"
+msgstr "创建同名文件夹"
+
+msgid "Password"
+msgstr "密码"
+
+msgid "Password for the zip compression package"
+msgstr "zip压缩包密码"
+
+msgid "Result folder"
+msgstr "结果文件夹"
+
+msgid "Delete dictionary key"
+msgstr "删除字典键"
+
+msgid "Key"
+msgstr "键名"
+
+msgid "Delete File"
+msgstr "删除文件"
+
+msgid "Delete Folder"
+msgstr "删除文件夹"
+
+msgid "Delete List Item"
+msgstr "删除列表项"
+
+msgid "Delete Type"
+msgstr "删除类型"
+
+msgid "Delete list item by position"
+msgstr "按位置删除列表项"
+
+msgid "Delete list item by value"
+msgstr "按值删除列表项"
+
+msgid "Item position"
+msgstr "项目位置"
+
+msgid "Starting from 0, - n represents the nth to last"
+msgstr "从0开始，-n表示倒数第n个"
+
+msgid "Item value"
+msgstr "项目值"
+
+msgid "Dictionary loop"
+msgstr "字典循环"
+
+msgid "Loop item"
+msgstr "循环项目"
+
+msgid "Calculate time difference"
+msgstr "计算时间差"
+
+msgid "Starting date"
+msgstr "起始日期"
+
+msgid "End Date"
+msgstr "结束日期"
+
+msgid "Time unit"
+msgstr "时间单位"
+
+msgid "Seconds"
+msgstr "秒"
+
+msgid "Minutes"
+msgstr "分钟"
+
+msgid "Hours"
+msgstr "小时"
+
+msgid "Days"
+msgstr "天"
+
+msgid "Time difference"
+msgstr "时间差"
+
+msgid "Else branch"
+msgstr "Else分支"
+
+msgid "Else if branch"
+msgstr "Else if分支"
+
+msgid "Else if conditions branch"
+msgstr "Else if多条件分支"
+
+msgid "Conditions relation"
+msgstr "条件关系"
+
+msgid "Satisfy all conditions"
+msgstr "满足所有条件"
+
+msgid "Satisfy any condition"
+msgstr "满足任意条件"
+
+msgid "Condition list"
+msgstr "条件列表"
+
+msgid "Execute Command"
+msgstr "执行命令行程序"
+
+msgid "Command"
+msgstr "命令行"
+
+msgid "Process working directory"
+msgstr "进程工作目录"
+
+msgid "Encoding"
+msgstr "编码格式"
+
+msgid "Wait timeout(s)"
+msgstr "等待超时时间(秒)"
+
+msgid "Command output"
+msgstr "命令行输出"
+
+msgid "Exit"
+msgstr "终止应用"
+
+msgid "Format DateTime"
+msgstr "格式化日期时间"
+
+msgid "Date Time"
+msgstr "日期时间"
+
+msgid "Get Clipboard Text"
+msgstr "获取剪贴板文本"
+
+msgid "Clipboard text"
+msgstr "剪贴板文本"
+
+msgid "Get File Path Info"
+msgstr "获取文件路径信息"
+
+msgid "File path info"
+msgstr "文件路径信息"
+
+msgid "if branch"
+msgstr "If分支"
+
+msgid "if conditions branch"
+msgstr "If多条件分支"
+
+msgid "Infinite loop"
+msgstr "无限循环"
+
+msgid "Loop index"
+msgstr "循环位置"
+
+msgid "Insert Item To List"
+msgstr "插入列表项"
+
+msgid "Insert Type"
+msgstr "插入类型"
+
+msgid "Add at the end of the list"
+msgstr "在列表末尾添加"
+
+msgid "Insert at specified location"
+msgstr "在指定位置插入"
+
+msgid "Insert position"
+msgstr "插入位置"
+
+msgid "Kill Process"
+msgstr "终止进程"
+
+msgid "Launch Application"
+msgstr "启动应用程序"
+
+msgid "Application path"
+msgstr "应用路径"
+
+msgid "Action after launch"
+msgstr "启动后操作"
+
+msgid "Continue to execute"
+msgstr "继续执行"
+
+msgid "Waiting for application execution to complete"
+msgstr "等待应用程序执行完成"
+
+msgid "Command line arguments"
+msgstr "命令行参数"
+
+msgid "Process PID"
+msgstr "进程PID"
+
+msgid "List Files"
+msgstr "获取文件列表"
+
+msgid "Folder"
+msgstr "文件夹"
+
+msgid "File name pattern"
+msgstr "文件名模式"
+
+msgid ""
+"Filename patterns are special strings composed of regular characters and "
+"wildcards, with the following syntax for wildcards:\n"
+"\n"
+"1. *: Matches zero or more characters (including any characters in the "
+"filename).\n"
+"\n"
+"   For example: *.txt matches all .txt files.\n"
+"\n"
+"2. ?: Matches a single character.\n"
+"\n"
+"   For example: file?.txt matches file1.txt, fileA.txt, etc., but does "
+"not match file.txt.\n"
+"\n"
+"3. [...]: Matches any single character within the brackets.\n"
+"\n"
+"   For example: file[1-3].txt matches file1.txt, file2.txt, and "
+"file3.txt.\n"
+"\n"
+"4. [!...]: Matches any single character not within the brackets.\n"
+"\n"
+"   For example: file[!a-z].txt matches file1.txt, file2.txt, and "
+"file3.txt.\n"
+"\n"
+"5. **: Matches zero or more directories (can span subdirectories).\n"
+"\n"
+"   For example: **/*.txt matches all .txt files in the current directory "
+"and all subdirectories."
+msgstr ""
+"文件名模式是由普通字符和通配符组成的特殊字符串，其中通配符的语法如下：\n"
+"\n"
+"1. *：匹配零个或多个字符（包括文件名中的任何字符）。\n"
+"\n"
+"例如：*.txt 匹配所有 .txt 文件。\n"
+"\n"
+"2. ?：匹配一个字符。\n"
+"\n"
+"例如：file?.txt 匹配 file1.txt、fileA.txt 等，但不匹配 file.txt。\n"
+"\n"
+"3. [...]：匹配方括号内的任意一个字符。\n"
+"\n"
+"例如：file[1-3].txt 匹配 file1.txt、file2.txt 和 file3.txt。\n"
+"\n"
+"4. [!...]：匹配不在方括号内的任意一个字符。\n"
+"\n"
+"例如：file[!a-z].txt 匹配 file1.txt、file2.txt 和 file3.txt。\n"
+"\n"
+"5. **：匹配零个或多个目录（可以跨越子目录）。\n"
+"\n"
+"例如：**/*.txt 匹配当前目录及所有子目录中的所有 .txt 文件。"
+
+msgid "Find sub folders"
+msgstr "查找子文件夹"
+
+msgid "Ignore hidden files"
+msgstr "忽略隐藏文件"
+
+msgid "Sorting files"
+msgstr "排序文件"
+
+msgid "Sorting factor"
+msgstr "排序因素"
+
+msgid "File name"
+msgstr "文件名"
+
+msgid "File size"
+msgstr "文件大小"
+
+msgid "Creation time"
+msgstr "创建时间"
+
+msgid "Last modified"
+msgstr "最后修改时间"
+
+msgid "Sort order"
+msgstr "排序方式"
+
+msgid "Ascending order"
+msgstr "升序"
+
+msgid "Descending order"
+msgstr "降序"
+
+msgid "List loop"
+msgstr "列表循环"
+
+msgid "Counting loop"
+msgstr "计数循环"
+
+msgid "Start index"
+msgstr "起始索引"
+
+msgid "Starting value (inclusive)"
+msgstr "起始值（含该值）"
+
+msgid "End index"
+msgstr "结束索引"
+
+msgid "End value (excluding)"
+msgstr "结束值（不含该值）"
+
+msgid "Merge list"
+msgstr "合并列表"
+
+msgid "The first list"
+msgstr "列表1"
+
+msgid "The second list"
+msgstr "列表2"
+
+msgid "Merged list"
+msgstr "合并后的列表"
+
+msgid "Move File"
+msgstr "移动文件"
+
+msgid "Move Folder"
+msgstr "移动文件夹"
+
+msgid "Number To Text"
+msgstr "数值转文本"
+
+msgid "Number value"
+msgstr "数值"
+
+msgid "Number of decimal places"
+msgstr "保留的小数点位数"
+
+msgid "Use a thousandth separator"
+msgstr "使用千分位分隔符"
+
+msgid "Object To Json"
+msgstr "对象转Json文本"
+
+msgid "JSON Operation"
+msgstr "Json操作"
+
+msgid "Object"
+msgstr "对象"
+
+msgid "Parse Json"
+msgstr "解析Json文本"
+
+msgid "Json text"
+msgstr "Json文本"
+
+msgid "Print message"
+msgstr "打印消息"
+
+msgid "Generate random integer"
+msgstr "生成随机整数"
+
+msgid "Minimum value"
+msgstr "最小值"
+
+msgid "Minimum value (including this value)"
+msgstr "最小值（含该值）"
+
+msgid "Maximum value"
+msgstr "最大值"
+
+msgid "Maximum value (excluding this value)"
+msgstr "最大值（不含该值）"
+
+msgid "Random number"
+msgstr "随机数"
+
+msgid "Read Text File"
+msgstr "读取文本文件"
+
+msgid "Read type"
+msgstr "读取类型"
+
+msgid "Read as whole text"
+msgstr "读取为完整文本"
+
+msgid "Read as lines"
+msgstr "读取为行列表"
+
+msgid "File encoding"
+msgstr "文件编码"
+
+msgid "Regex Match"
+msgstr "正则匹配"
+
+msgid "Regex"
+msgstr "正则表达式"
+
+msgid "Find first match"
+msgstr "查找第一个匹配项"
+
+msgid "Ignore case"
+msgstr "忽略大小写"
+
+msgid "Rename File"
+msgstr "重命名文件"
+
+msgid "New file name"
+msgstr "新文件名"
+
+msgid "Cancel renaming operation"
+msgstr "取消重命名操作"
+
+msgid "Rename Folder"
+msgstr "重命名文件夹"
+
+msgid "Replace Text"
+msgstr "替换文本"
+
+msgid "Replace type"
+msgstr "替换类型"
+
+msgid "Text replacement"
+msgstr "文本替换"
+
+msgid "Regex replacement"
+msgstr "正则替换"
+
+msgid "Text to replace"
+msgstr "要替换的文本"
+
+msgid "Regex to replace"
+msgstr "要替换的正则表达式"
+
+msgid "Replace first match"
+msgstr "只替换第一个匹配项"
+
+msgid "Replacement text"
+msgstr "替换文本"
+
+msgid "Return"
+msgstr "返回"
+
+msgid "Reverse list"
+msgstr "反转列表"
+
+msgid "Set Clipboard Text"
+msgstr "设置剪贴板文本"
+
+msgid "Text content"
+msgstr "文本内容"
+
+msgid "Set dictionary key value"
+msgstr "设置字典键值"
+
+msgid "Set variable"
+msgstr "设置变量"
+
+msgid "Variable value"
+msgstr "变量值"
+
+msgid "Variable name"
+msgstr "变量名"
+
+msgid "Slice Text"
+msgstr "截取文本"
+
+msgid "From where"
+msgstr "起始位置"
+
+msgid "from the specified location"
+msgstr "从指定位置开始"
+
+msgid "from the specified text"
+msgstr "从指定文本开始"
+
+msgid "Starting character position"
+msgstr "起始字符位置"
+
+msgid "Starting from 0, - n represents the nth to last character"
+msgstr "从0开始，-n表示倒数第n个字符"
+
+msgid "Starting text content"
+msgstr "起始文本内容"
+
+msgid "To where"
+msgstr "结束位置"
+
+msgid "to the specified length"
+msgstr "到指定长度"
+
+msgid "Sliced length"
+msgstr "截取长度"
+
+msgid "Sort list"
+msgstr "排序列表"
+
+msgid "Split Text"
+msgstr "拆分文本"
+
+msgid "Text to be split"
+msgstr "要拆分的文本"
+
+msgid "Delimiter type"
+msgstr "分隔符类型"
+
+msgid "Standard delimiter"
+msgstr "标准分隔符"
+
+msgid "Custom delimiter"
+msgstr "自定义分隔符"
+
+msgid "Space character"
+msgstr "空格符"
+
+msgid "Line break character"
+msgstr "换行符"
+
+msgid "Tab character"
+msgstr "制表符"
+
+msgid "Filter empty items"
+msgstr "过滤空项"
+
+msgid "Use regular expressions"
+msgstr "使用正则表达式"
+
+msgid "Text To Number"
+msgstr "文本转数值"
+
+msgid "Text value"
+msgstr "文本值"
+
+msgid "Wait time(seconds)"
+msgstr "等待时间(秒)"
+
+msgid "Trim Text"
+msgstr "去除空格"
+
+msgid "Trim type"
+msgstr "去除类型"
+
+msgid "Remove blank characters on both sides"
+msgstr "去除两边的空格"
+
+msgid "Remove blank characters on the left side"
+msgstr "去除左边的空格"
+
+msgid "Remove blank characters on the right side"
+msgstr "去除右边的空格"
+
+msgid "Update DateTime"
+msgstr "修改日期时间"
+
+msgid "Original date and time"
+msgstr "原始日期时间"
+
+msgid "Adjustment type"
+msgstr "调整类型"
+
+msgid "Increment"
+msgstr "增加"
+
+msgid "Decrement"
+msgstr "减少"
+
+msgid "Adjustment value"
+msgstr "调整值"
+
+msgid "Adjustment unit"
+msgstr "调整单位"
+
+msgid "Microseconds"
+msgstr "微秒"
+
+msgid "Milliseconds"
+msgstr "毫秒"
+
+msgid "Weeks"
+msgstr "周"
+
+msgid "Months"
+msgstr "月"
+
+msgid "Years"
+msgstr "年"
+
+msgid "Update List Item"
+msgstr "更新列表项"
+
+msgid "Item Value"
+msgstr "项目值"
+
+msgid "Url Decode"
+msgstr "URL解码"
+
+msgid "Encoding/Decoding"
+msgstr "编/解码"
+
+msgid "Text to decode"
+msgstr "待解码文本"
+
+msgid "Url Encode"
+msgstr "URL编码"
+
+msgid "Text to encode"
+msgstr "待编码文本"
+
+msgid "While loop"
+msgstr "条件循环"
+
+msgid "Write Text File"
+msgstr "写入文本文件"
+
+msgid "Write content"
+msgstr "写入内容"
+
+msgid "Append"
+msgstr "追加"
+
+msgid "Hover Image"
+msgstr "鼠标悬浮在图像上"
+
+msgid "Mouse/Keyboard"
+msgstr "鼠标键盘"
+
+msgid "Cursor position"
+msgstr "光标位置"
+
+msgid "Image Center"
+msgstr "图像中心"
+
+msgid "The upper left corner of the image"
+msgstr "图像左上角"
+
+msgid "X coordinate offset"
+msgstr "X坐标偏移量"
+
+msgid "Y coordinate offset"
+msgstr "Y坐标偏移量"
+
+msgid "Similarity(%)"
+msgstr "相似度(%)"
+
+msgid "Match mode"
+msgstr "匹配模式"
+
+msgid "Color matching"
+msgstr "彩色匹配"
+
+msgid "Grayscale matching"
+msgstr "灰度匹配"
+
+msgid "Move speed"
+msgstr "移动速度"
+
+msgid "Instant"
+msgstr "瞬间"
+
+msgid "Fast"
+msgstr "快速"
+
+msgid "Medium"
+msgstr "中速"
+
+msgid "Slow"
+msgstr "慢速"
+
+msgid "Delay after action(seconds)"
+msgstr "执行后延迟(秒)"
+
+msgid "Input type"
+msgstr "输入类型"
+
+msgid "Input text"
+msgstr "输入文本"
+
+msgid "Input hotkey"
+msgstr "输入快捷键"
+
+msgid ""
+"Support all Unicode characters, including Chinese and English, on "
+"Windows, but only English characters on Linux and macOS. If you need to "
+"input non-English characters on Linux or macOS, please use the setting "
+"clipboard text command and pasting hotkey."
+msgstr "在Windows中支持中英文等所有Unicode字符，在Linux和MacOS中只支持英文字符。如果你需要在在Linux和MacOS中输入非英文字符，请使用设置剪贴板文本指令和粘贴快捷键实现。"
+
+msgid "Hotkey type"
+msgstr "快捷键类型"
+
+msgid "Common hotkey"
+msgstr "常用快捷键"
+
+msgid "Custom hotkey"
+msgstr "自定义快捷键"
+
+msgid "Ctrl/Cmd+C"
+msgstr "Ctrl/Cmd+C"
+
+msgid "Ctrl/Cmd+V"
+msgstr "Ctrl/Cmd+V"
+
+msgid "Ctrl/Cmd+X"
+msgstr "Ctrl/Cmd+X"
+
+msgid "Ctrl/Cmd+Z"
+msgstr "Ctrl/Cmd+Z"
+
+msgid "Ctrl/Cmd+S"
+msgstr "Ctrl/Cmd+S"
+
+msgid "Ctrl/Cmd+A"
+msgstr "Ctrl/Cmd+A"
+
+msgid "Enter"
+msgstr "Enter"
+
+msgid "Input interval(milliseconds)"
+msgstr "输入间隔(毫秒)"
+
+msgid "Mouse Click"
+msgstr "鼠标点击"
+
+msgid "Mouse button"
+msgstr "鼠标按钮"
+
+msgid "Left button"
+msgstr "左键"
+
+msgid "Right button"
+msgstr "右键"
+
+msgid "Middle button"
+msgstr "中键"
+
+msgid "Click Type"
+msgstr "点击方式"
+
+msgid "Mouse down"
+msgstr "鼠标按下"
+
+msgid "Mouse up"
+msgstr "鼠标弹起"
+
+msgid "Modifier key"
+msgstr "修改键"
+
+msgid "None"
+msgstr "没有"
+
+msgid "Alt"
+msgstr "Alt"
+
+msgid "Ctrl"
+msgstr "Ctrl"
+
+msgid "Ctrl or Meta"
+msgstr "Ctrl或者Meta"
+
+msgid "Meta"
+msgstr "Meta"
+
+msgid "Shift"
+msgstr "Shift"
+
+msgid "Mouse Scroll"
+msgstr "滚动鼠标"
+
+msgid "Scroll direction"
+msgstr "滚动方向"
+
+msgid "Scroll up"
+msgstr "向上滚动"
+
+msgid "Scroll down"
+msgstr "向下滚动"
+
+msgid "Number of scrolls"
+msgstr "滚动次数"
+
+msgid "Move Mouse"
+msgstr "移动鼠标"
+
+msgid "Relative to"
+msgstr "相对于"
+
+msgid "The upper left corner of the screen"
+msgstr "屏幕左上角"
+
+msgid "Current mouse position"
+msgstr "当前鼠标位置"
+
+msgid "Add table column"
+msgstr "新增表格列"
+
+msgid "Data Table"
+msgstr "数据表格"
+
+msgid "Column name"
+msgstr "列名"
+
+msgid "Create table"
+msgstr "创建数据表格"
+
+msgid "Table column names"
+msgstr "表头列表"
+
+msgid "List of headers for data table separated by commas"
+msgstr "逗号分割的数据表格表头列表"
+
+msgid "The created table"
+msgstr "创建的数据表格"
+
+msgid "Delete table row"
+msgstr "删除表格行"
+
+msgid "Delete all rows"
+msgstr "删除所有行"
+
+msgid "Delete one row"
+msgstr "删除一行"
+
+msgid "Row number"
+msgstr "行号"
+
+msgid ""
+"Enter the line number, starting from line 1, where -n represents the nth "
+"to last line"
+msgstr "输入行号，行号从1号开始，-n代表倒数第n行"
+
+msgid "Export table"
+msgstr "导出数据表格"
+
+msgid "File format"
+msgstr "文件格式"
+
+msgid "xlsx"
+msgstr "xlsx"
+
+msgid "xls"
+msgstr "xls"
+
+msgid "csv"
+msgstr "csv"
+
+msgid "Sheet name"
+msgstr "Sheet名称"
+
+msgid "UTF-8 Bom"
+msgstr "UTF-8 Bom"
+
+msgid "Use custom delimiter"
+msgstr "使用自定义分隔符"
+
+msgid "File naming type"
+msgstr "文件命名类型"
+
+msgid "Random file name"
+msgstr "随机文件名"
+
+msgid "Custom file name"
+msgstr "自定义文件名"
+
+msgid "Custom filename"
+msgstr "自定义文件名"
+
+msgid "Override existing file"
+msgstr "覆盖现有文件"
+
+msgid "Export table header"
+msgstr "导出表头"
+
+msgid "Import csv as table"
+msgstr "导入csv为数据表格"
+
+msgid "Csv file path"
+msgstr "Csv文件路径"
+
+msgid "Please input the file path of the csv file"
+msgstr "请输入csv文件的路径"
+
+msgid "Use the first row of data as the header"
+msgstr "使用第一行数据作为表头"
+
+msgid "The imported table"
+msgstr "导入的数据表格"
+
+msgid "Import excel as table"
+msgstr "导入excel为数据表格"
+
+msgid "Excel file path"
+msgstr "Excel文件路径"
+
+msgid "Please input the file path of the excel file"
+msgstr "请输入excel文件的路径"
+
+msgid "Sheet select type"
+msgstr "Sheet选择类型"
+
+msgid "Select sheet by index"
+msgstr "按索引选择Sheet"
+
+msgid "Select sheet by name"
+msgstr "按名称选择Sheet"
+
+msgid "Sheet index"
+msgstr "Sheet索引"
+
+msgid "The index position of the first sheet is 1, and so on"
+msgstr "第一个工作表的索引位置为1，以此类推"
+
+msgid "Loop table rows"
+msgstr "循环遍历表格"
+
+msgid "Loop range"
+msgstr "循环范围"
+
+msgid "All rows"
+msgstr "所有行"
+
+msgid "Specified range"
+msgstr "指定范围"
+
+msgid "Start row no"
+msgstr "起始行号"
+
+msgid "End row no"
+msgstr "结束行号"
+
+msgid "Loop in reverse order"
+msgstr "逆序遍历"
+
+msgid "Current row"
+msgstr "当前行"
+
+msgid "Read table data"
+msgstr "读取表格数据"
+
+msgid "Read row data"
+msgstr "读取行数据"
+
+msgid "Read cell data"
+msgstr "读取单元数据"
+
+msgid "Column number"
+msgstr "列号"
+
+msgid ""
+"Enter the column name/number, starting from column 1, where -n represents"
+" the nth to last column"
+msgstr "输入列名/列号，从第1列开始，-n表示倒数第n列"
+
+msgid "Read result"
+msgstr "读取结果"
+
+msgid "Write table cell"
+msgstr "写入表格单元格"
+
+msgid "Target data table to be written"
+msgstr "写入的目标数据表格"
+
+msgid "Write cell content"
+msgstr "写入单元格内容"
+
+msgid "Enter the content to be written into the cell"
+msgstr "输入要写入单元格中的内容"
+
+msgid ""
+"If the row number is greater than the number of rows in the table, the "
+"content will be automatically written to the next row at the end of the "
+"table"
+msgstr "行号大于表格行数，内容自动写入表格末尾行的下一行"
+
+msgid "Write table row"
+msgstr "写入数据表格行"
+
+msgid "Write Type"
+msgstr "写入类型"
+
+msgid "Append a row"
+msgstr "追加一行"
+
+msgid "Insert a row"
+msgstr "插入一行"
+
+msgid "Update a row"
+msgstr "更新一行"
+
+msgid "Row Input Type"
+msgstr "行输入类型"
+
+msgid "Input row"
+msgstr "输入行"
+
+msgid "Input columns"
+msgstr "输入列"
+
+msgid "Row value list"
+msgstr "行值列表"
+
+msgid "Row columns list"
+msgstr "行列名称列表"
+
+msgid "Check web content"
+msgstr "检测网页内容"
+
+msgid "Web page"
+msgstr "网页对象"
+
+msgid "Check type"
+msgstr "检测类型"
+
+msgid "Include element"
+msgstr "包含元素"
+
+msgid "Exclude element"
+msgstr "不包含元素"
+
+msgid "Include text"
+msgstr "包含文本"
+
+msgid "Exclude text"
+msgstr "不包含文本"
+
+msgid "Element is visible"
+msgstr "元素可见"
+
+msgid "Element is invisible"
+msgstr "元素不可见"
+
+msgid "Text is visible"
+msgstr "文本可见"
+
+msgid "Text is invisible"
+msgstr "文本不可见"
+
+msgid "Check element"
+msgstr "检查元素"
+
+msgid "Check text"
+msgstr "检测文本"
+
+msgid "Clear cookies"
+msgstr "删除Cookie"
+
+msgid "Clear type"
+msgstr "清除类型"
+
+msgid "Clear specified cookie"
+msgstr "清除指定Cookie"
+
+msgid "Clear all cookies"
+msgstr "清除所有Cookies"
+
+msgid "Cookie name"
+msgstr "Cookie名称"
+
+msgid "Click to open web page"
+msgstr "点击打开网页"
+
+msgid "Link element"
+msgstr "链接元素"
+
+msgid "Select the link element to be clicked"
+msgstr "选择要点击的链接元素"
+
+msgid "New web page"
+msgstr "新网页对象"
+
+msgid "Newly opened webpage object"
+msgstr "新打开的网页对象"
+
+msgid "Click Web Page Element"
+msgstr "点击网页元素"
+
+msgid "Web element"
+msgstr "网页元素"
+
+msgid "Simulate human click"
+msgstr "模拟人工点击"
+
+msgid "Close Web Page"
+msgstr "关闭网页"
+
+msgid "Close Type"
+msgstr "关闭类型"
+
+msgid "Close specific page"
+msgstr "关闭指定页面"
+
+msgid "Close browser"
+msgstr "关闭浏览器"
+
+msgid "Web browser"
+msgstr "Web浏览器"
+
+msgid "Please enter or select the web browser"
+msgstr "请输入或选择Web浏览器"
+
+msgid "Drag Web Page Element"
+msgstr "拖拽网页元素"
+
+msgid "Source Element"
+msgstr "拖拽元素"
+
+msgid "Source element offset"
+msgstr "拖拽元素偏移"
+
+msgid "Source Element x offset"
+msgstr "拖拽元素X坐标偏移"
+
+msgid "Source Element y offset"
+msgstr "拖拽元素Y坐标偏移"
+
+msgid "Drag type"
+msgstr "拖拽方式"
+
+msgid "Drag to element"
+msgstr "拖拽到目标元素上"
+
+msgid "Drag by offset"
+msgstr "拖拽指定的偏移量"
+
+msgid "Target Element"
+msgstr "目标元素"
+
+msgid "Target element offset"
+msgstr "目标元素坐标偏移"
+
+msgid "Target Element x offset"
+msgstr "目标元素X坐标偏移"
+
+msgid "Target Element y offset"
+msgstr "目标元素Y坐标偏移"
+
+msgid "Drag by x offset"
+msgstr "拖拽X坐标偏移"
+
+msgid "Drag by y offset"
+msgstr "拖拽Y坐标偏移"
+
+msgid "Drag speed"
+msgstr "拖拽速度"
+
+msgid "Evaluate js in web page"
+msgstr "在网页上执行Javascript"
+
+msgid "Javascript code"
+msgstr "Javascript代码"
+
+msgid "Javascript output"
+msgstr "Javascript输出"
+
+msgid "Extract Web Element"
+msgstr "抽取网页元素数据"
+
+msgid "Extract type"
+msgstr "抽取类型"
+
+msgid "Element text content"
+msgstr "元素文本内容"
+
+msgid "Element html source code"
+msgstr "元素HTML源码"
+
+msgid "Input element value"
+msgstr "输入框值"
+
+msgid "Link element href"
+msgstr "链接地址"
+
+msgid "Element attribute value"
+msgstr "元素属性值"
+
+msgid "Element position"
+msgstr "元素位置"
+
+msgid "Attribute name"
+msgstr "属性名"
+
+msgid "Extracted result"
+msgstr "抽取结果"
+
+msgid "Extract Web Page"
+msgstr "抽取网页数据"
+
+msgid "Web page title"
+msgstr "网页标题"
+
+msgid "Web page html source code"
+msgstr "网页HTML源码"
+
+msgid "Web page text content"
+msgstr "网页文本内容"
+
+msgid "Get cookies"
+msgstr "获取Cookie"
+
+msgid "Get type"
+msgstr "获取方式"
+
+msgid "Cookies for specified page"
+msgstr "指定页面的Cookie"
+
+msgid "Cookies for specified url"
+msgstr "指定链接的Cookie"
+
+msgid "Url"
+msgstr "网页地址"
+
+msgid "Cookie list"
+msgstr "Cookie列表"
+
+msgid "Get Relative Web Element"
+msgstr "获取网页相关元素"
+
+msgid "Locate type"
+msgstr "定位类型"
+
+msgid "Parent element"
+msgstr "父元素"
+
+msgid "Previous sibling element"
+msgstr "上一个兄弟元素"
+
+msgid "Next sibling element"
+msgstr "下一个兄弟元素"
+
+msgid "The first matching descendant element"
+msgstr "第一个匹配的子孙元素"
+
+msgid "All matching descendant elements"
+msgstr "所有匹配的子孙元素"
+
+msgid "All child elements"
+msgstr "所有子元素"
+
+msgid "The specified child element"
+msgstr "指定位置的子元素"
+
+msgid "Descendant relative xpath"
+msgstr "子孙元素相对xpath"
+
+msgid "Child element position"
+msgstr "子元素位置"
+
+msgid "Found elements"
+msgstr "找到的元素"
+
+msgid "Get Web Page"
+msgstr "获取网页"
+
+msgid "Match Type"
+msgstr "匹配类型"
+
+msgid "By Title"
+msgstr "按标题"
+
+msgid "By Url"
+msgstr "按URL"
+
+msgid "Current Active Page"
+msgstr "当前页面"
+
+msgid "Match Text"
+msgstr "匹配文本"
+
+msgid "Use Regex Match"
+msgstr "使用正则表达式匹配"
+
+msgid "Wait for the web page to load"
+msgstr "等待页面加载完成"
+
+msgid "Load timeout(seconds)"
+msgstr "加载超时时间(秒)"
+
+msgid "Execute after loading timeout"
+msgstr "在加载超时后执行"
+
+msgid "Stop web page loading"
+msgstr "停止加载网页"
+
+msgid "perform error handling"
+msgstr "执行错误处理"
+
+msgid "Open new page when match failed"
+msgstr "匹配失败时打开新页面"
+
+msgid "Hover Web Page Element"
+msgstr "鼠标悬停网页元素"
+
+msgid "Simulate human hover"
+msgstr "模拟人工悬停"
+
+msgid "Loop web elements"
+msgstr "遍历网页元素"
+
+msgid "Elements"
+msgstr "元素集"
+
+msgid "Current element"
+msgstr "当前元素"
+
+msgid "Navigate Web Page"
+msgstr "导航网页"
+
+msgid "Navigate type"
+msgstr "导航方式"
+
+msgid "Go to new url"
+msgstr "跳转到新的链接"
+
+msgid "Open Web Browser"
+msgstr "打开Web浏览器"
+
+msgid "Enable proxy"
+msgstr "启用代理"
+
+msgid "Proxy server address"
+msgstr "代理服务器地址"
+
+msgid ""
+"HTTP and SOCKS proxies are supported, for example http://myproxy.com:3128"
+" or socks5://myproxy.com:3128. Short form myproxy.com:3128 is considered "
+"an HTTP proxy."
+msgstr "支持HTTP和SOCKS代理，例如http://myproxy.com:3128或socks5://myproxy.com:3128。缩写形式myproxy.com:3128被认为是一个HTTP代理。"
+
+msgid "Proxy bypass"
+msgstr "忽略代理的域"
+
+msgid ""
+"Optional comma-separated domains to bypass proxy, for example \".com, "
+"chromium.org, .domain.com\"."
+msgstr "可选的逗号分隔的域以绕过代理，例如“.com、chromium.org、.domain.com”。"
+
+msgid "Proxy server username"
+msgstr "代理服务器用户名"
+
+msgid "Optional username to use if HTTP proxy requires authentication."
+msgstr "如果HTTP代理需要身份验证，则可以使用可选的用户名。"
+
+msgid "Proxy server password"
+msgstr "代理服务器密码"
+
+msgid "Optional password to use if HTTP proxy requires authentication."
+msgstr "如果HTTP代理需要身份验证，则使用可选密码。"
+
+msgid "Running in the background"
+msgstr "在后台运行"
+
+msgid "Opened web browser"
+msgstr "新打开的Web浏览器"
+
+msgid "Open Web Page"
+msgstr "打开网页"
+
+msgid "URL"
+msgstr "网页地址"
+
+msgid "Please enter the webpage address you want to open"
+msgstr "请输入您要打开的网页地址"
+
+msgid "Screenshot Web Element"
+msgstr "网页截屏"
+
+msgid "Screenshot area"
+msgstr "截图区域"
+
+msgid "Visible web page viewport"
+msgstr "网页可见区域"
+
+msgid "Full web page"
+msgstr "整个网页"
+
+msgid "PNG"
+msgstr "PNG"
+
+msgid "JPEG"
+msgstr "JPEG"
+
+msgid "Snapshot filename"
+msgstr "截图文件名"
+
+msgid "Scroll Web Page"
+msgstr "滚动网页"
+
+msgid "Scroll on element"
+msgstr "在元素上滚动"
+
+msgid "Scroll element"
+msgstr "滚动元素"
+
+msgid "Find ancestor when element is not scrollable"
+msgstr "当元素不可滚动时向上查找可滚动元素"
+
+msgid "Scroll type"
+msgstr "滚动类型"
+
+msgid "Scroll to the top"
+msgstr "滚动到页面顶部"
+
+msgid "Scroll to the bottom"
+msgstr "滚动到页面底部"
+
+msgid "Scroll one page"
+msgstr "滚动一屏"
+
+msgid "Scroll to the element"
+msgstr "滚动到指定元素"
+
+msgid "Scroll times"
+msgstr "滚动次数"
+
+msgid "Scroll interval(seconds)"
+msgstr "滚动间隔(秒)"
+
+msgid "Scroll to element"
+msgstr "滚动到元素"
+
+msgid "Scroll behavior"
+msgstr "滚动方式"
+
+msgid "Smooth scrolling"
+msgstr "平滑滚动"
+
+msgid "Instant scrolling"
+msgstr "瞬间滚动"
+
+msgid "Set cookies"
+msgstr "设置Cookie"
+
+msgid "Cookies"
+msgstr "Cookies"
+
+msgid ""
+"Please enter the cookie list data or select the variable containing the "
+"cookie list"
+msgstr "请输入Cookie列表或者选择Cookie列表变量"
+
+msgid "Reload page after setting cookies"
+msgstr "设置Cookie后重新加载页面"
+
+msgid "Set Web Checkbox Value"
+msgstr "设置网页复选框值"
+
+msgid "Checkbox element"
+msgstr "复选框元素"
+
+msgid "Select type"
+msgstr "选择方式"
+
+msgid "Check"
+msgstr "选中"
+
+msgid "Uncheck"
+msgstr "取消勾选"
+
+msgid "Toggle"
+msgstr "反选"
+
+msgid "Set Web Select Value"
+msgstr "设置网页下拉框值"
+
+msgid "Dropdown box element"
+msgstr "下拉框元素"
+
+msgid "Select by option content"
+msgstr "按选项内容选择"
+
+msgid "Select by option index"
+msgstr "根据选项索引选择"
+
+msgid "Option Content"
+msgstr "选项内容"
+
+msgid "Match type"
+msgstr "匹配类型"
+
+msgid "Fuzzy matching"
+msgstr "模糊匹配"
+
+msgid "Precise matching"
+msgstr "精确匹配"
+
+msgid "Regular matching"
+msgstr "正则匹配"
+
+msgid "Option index"
+msgstr "选项索引"
+
+msgid "Wait web content"
+msgstr "等待网页内容"
+
+msgid "Wait type"
+msgstr "等待类型"
+
+msgid "Wait element"
+msgstr "等待元素"
+
+msgid "Wait text"
+msgstr "等待文本"
+
+msgid "Wait result"
+msgstr "等待结果"
+
+msgid "Wait web page load"
+msgstr "等待网页加载"
+
+msgid "Web download"
+msgstr "网页下载"
+
+msgid "Download type"
+msgstr "下载类型"
+
+msgid "Click download button"
+msgstr "点击下载按钮"
+
+msgid "Open download url"
+msgstr "打开下载链接"
+
+msgid "Download button element"
+msgstr "下载按钮元素"
+
+msgid "Download url"
+msgstr "下载地址"
+
+msgid "Use suggested filename"
+msgstr "使用建议的文件名"
+
+msgid "Download timeout(seconds)"
+msgstr "下载超时时间(秒)"
+
+msgid "Download filename"
+msgstr "下载文件名"
+
+msgid "Web input"
+msgstr "填写网页输入框"
+
+msgid "Input Element"
+msgstr "输入框元素"
+
+msgid "Input Content"
+msgstr "输入内容"
+
+msgid "Append input"
+msgstr "追加输入"
+
+msgid "Press enter after input"
+msgstr "在输入完成后按下回车键"
+
+msgid "Press tab after input"
+msgstr "输入完成后按下Tab键"
+
+msgid "Simulate human input"
+msgstr "模拟人工输入"
+
+msgid "Click element before input"
+msgstr "在输入前点击元素"
+
+msgid "Delay input after focus(seconds)"
+msgstr "在获得焦点后延迟输入(秒)"
+
+msgid "Web upload"
+msgstr "网页上传"
+
+msgid "Upload button element"
+msgstr "上传按钮元素"
+
+msgid "Upload file path"
+msgstr "上传文件路径"
+
+msgid "Wait button time(seconds)"
+msgstr "等待按钮出现的时间(秒)"
+
+msgid "Wait dialog time(seconds)"
+msgstr "等待对话框出现的时间(秒)"
+
+msgid "Active Window"
+msgstr "激活窗口"
+
+msgid "Window Operation"
+msgstr "窗口操作"
+
+msgid "Get window method"
+msgstr "获取窗口方法"
+
+msgid "Window object"
+msgstr "窗口对象"
+
+msgid "Window title or class name"
+msgstr "窗口标题或类名"
+
+msgid "Capture window element"
+msgstr "捕获窗口元素"
+
+msgid "Window title"
+msgstr "窗口标题"
+
+msgid "Use window class name"
+msgstr "使用窗口类名"
+
+msgid "Window class name"
+msgstr "窗口类名"
+
+msgid "Use regex matching"
+msgstr "使用正则表达式匹配"
+
+msgid "Window element"
+msgstr "窗口元素"
+
+msgid "Click Window Element"
+msgstr "点击窗口元素"
+
+msgid "Close Window"
+msgstr "关闭窗口"
+
+msgid "Drag Window Element"
+msgstr "拖拽窗口元素"
+
+msgid "Window Element Operation"
+msgstr "窗口元素操作"
+
+msgid "Extract Window"
+msgstr "获取窗口信息"
+
+msgid "Data Extraction"
+msgstr "数据抽取"
+
+msgid "Window process name"
+msgstr "窗口所在进程名"
+
+msgid "Extract Window Element"
+msgstr "获取窗口元素信息"
+
+msgid "Element value"
+msgstr "元素值"
+
+msgid "Get ComboBox Items"
+msgstr "获取组合框选项"
+
+msgid "ComboBox element"
+msgstr "组合框元素"
+
+msgid "Content to get"
+msgstr "要获取的内容"
+
+msgid "Selected items"
+msgstr "选中的项目"
+
+msgid "All items"
+msgstr "所有项目"
+
+msgid "Expand the combo box before obtaining items"
+msgstr "在获取项目之前展开组合框"
+
+msgid "Obtained items"
+msgstr "获取到的项目"
+
+msgid "Get Relative Window Element"
+msgstr "获取相关窗口元素"
+
+msgid "Get Window"
+msgstr "获取窗口"
+
+msgid "Current active window"
+msgstr "当前活动窗口"
+
+msgid "Hover Window Element"
+msgstr "鼠标悬停窗口元素"
+
+msgid "Loop window elements"
+msgstr "遍历窗口元素"
+
+msgid "Move Window"
+msgstr "移动窗口"
+
+msgid "Window position"
+msgstr "窗口位置"
+
+msgid "Resize Window"
+msgstr "调整窗口大小"
+
+msgid "Window size"
+msgstr "窗口大小"
+
+msgid "Screenshot Window Element"
+msgstr "窗口元素截屏"
+
+msgid "Set Checkbox Value"
+msgstr "设置复选框值"
+
+msgid "Set ComboBox Value"
+msgstr "设置组合框值"
+
+msgid "Set Window State"
+msgstr "设置窗口状态"
+
+msgid "Window state"
+msgstr "窗口状态"
+
+msgid "Restore window"
+msgstr "还原窗口"
+
+msgid "Maximize window"
+msgstr "最大化窗口"
+
+msgid "Minimize window"
+msgstr "最小化窗口"
+
+msgid "Set Window Visibility"
+msgstr "设置窗口可见性"
+
+msgid "Show window"
+msgstr "显示窗口"
+
+msgid "Hide window"
+msgstr "隐藏窗口"
+
+msgid "Wait window element"
+msgstr "等待窗口元素"
+
+msgid "Set the timeout time"
+msgstr "设置超时时间"
+
+msgid "Timeout(seconds)"
+msgstr "超时时间(秒)"
+
+msgid "Window input"
+msgstr "填写窗口输入框"
+
+msgid "Input method"
+msgstr "输入方法"
+
+msgid "Automated interface input"
+msgstr "自动化接口输入"
+
+msgid "The input content includes shortcut keys"
+msgstr "输入内容包含快捷键"
+
+msgid "Instruction or process {name} not found"
+msgstr "找不到指令或进程{name}"
+
+msgid "Write output {out_var_name}: {out_var_value}"
+msgstr "生成输出变量 {out_var_name}: {out_var_value}"
+
+msgid "Execution successful"
+msgstr "执行成功"
+
+msgid "Execution error"
+msgstr "执行出错"
+
+msgid "Ignore error and continue execution"
+msgstr "忽略错误并继续执行"
+
+msgid "Wait for {} seconds and retry for the {} time"
+msgstr "等待{}秒后进行第{}次重试"
+
+msgid "The input parameter {var_name} of {comp_name} is not specified."
+msgstr "{comp_name}指令的输入参数{var_name}未指定。"
+
+msgid ""
+"The expression format of the input parameter {var_name} of {comp_name} is"
+" incorrect."
+msgstr "{comp_name}指令的输入参数{var_name}的表达式格式不正确。"
+
+msgid "The output parameter {var_name} of {comp_name} is not specified."
+msgstr "{comp_name}指令的输出参数{var_name}未指定。"
+
+msgid "The format of the output parameter {var_name} of {comp_name} is incorrect."
+msgstr "{comp_name}指令的输出参数{var_name}的变量名格式不正确。"
+
+msgid "Error clearing user variable {name}"
+msgstr "清除用户变量{name}出错"
+
+msgid "Start execution"
+msgstr "开始执行"
+
+msgid "Execution completed"
+msgstr "执行完毕"
+
+msgid ""
+"The input parameter {var_name} for subprocess {process_name} is not "
+"specified"
+msgstr "子流程{process_name}的输入参数{var_name}未指定"
+
+msgid ""
+"The output parameter {var_name} for subprocess {process_name} is not "
+"specified"
+msgstr "子流程{process_name}的输出参数{var_name}未指定"
+
+msgid "{name} must immediately follow the If or Else If instruction"
+msgstr "{name}必须紧跟在If或Else If指令之后"
+
+msgid "{name} cannot follow a Break, Continue, Return, or Exit instruction"
+msgstr "{name}不能跟在Break、Continue、Return、Exit指令之后"
+
+msgid "{name} has no sub instructions"
+msgstr "{name}没有子指令"
+
+msgid "{name} should not have any sub instructions"
+msgstr "{name}不应该有子指令"
+
+msgid "{name} must be used in conjunction with Loop instruction"
+msgstr "{name}必须和Loop指令搭配使用"
+
+msgid "Error clearing process local variable {}"
+msgstr "清除流程本地变量{}出错"
+
+msgid "Debug"
+msgstr "调试"
+
+msgid "Info"
+msgstr "信息"
+

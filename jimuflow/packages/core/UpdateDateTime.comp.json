@@ -1,0 +1,107 @@
+{
+  "name": "UpdateDateTime",
+  "displayName": "Update DateTime",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.UpdateDateTimeComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "Date Time Operation",
+  "sortNo": 4,
+  "helpUrl": "commands/DataProcess/DateTimeOperation/update_date_time/",
+  "variables": [
+    {
+      "name": "originalDateTime",
+      "type": "datetime",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Original date and time",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "adjustmentType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "increment",
+      "uiConfig": {
+        "label": "Adjustment type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "increment",
+            "label": "Increment"
+          },
+          {
+            "value": "decrement",
+            "label": "Decrement"
+          }
+        ]
+      }
+    },
+    {
+      "name": "adjustmentValue",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Adjustment value",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "adjustmentUnit",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "seconds",
+      "uiConfig": {
+        "label": "Adjustment unit",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "microseconds",
+            "label": "Microseconds"
+          },
+          {
+            "value": "milliseconds",
+            "label": "Milliseconds"
+          },
+          {
+            "value": "seconds",
+            "label": "Seconds"
+          },
+          {
+            "value": "minutes",
+            "label": "Minutes"
+          },
+          {
+            "value": "hours",
+            "label": "Hours"
+          },
+          {
+            "value": "days",
+            "label": "Days"
+          },
+          {
+            "value": "weeks",
+            "label": "Weeks"
+          },
+          {
+            "value": "months",
+            "label": "Months"
+          },
+          {
+            "value": "years",
+            "label": "Years"
+          }
+        ]
+      }
+    },
+    {
+      "name": "result",
+      "type": "datetime",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Datetime"
+      }
+    }
+  ]
+}

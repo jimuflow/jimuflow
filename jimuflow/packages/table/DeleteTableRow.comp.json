@@ -1,0 +1,56 @@
+{
+  "name": "DeleteTableRow",
+  "displayName": "Delete table row",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.table.DeleteTableRowComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Table",
+  "sortNo": 4,
+  "helpUrl": "commands/DataTable/delete_table_row/",
+  "variables": [
+    {
+      "name": "table",
+      "type": "table",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Data Table",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "deleteType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "all",
+      "uiConfig": {
+        "label": "Delete Type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "all",
+            "label": "Delete all rows"
+          },
+          {
+            "value": "one",
+            "label": "Delete one row"
+          }
+        ]
+      }
+    },
+    {
+      "name": "rowNo",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Row number",
+        "inputType": "expression",
+        "helpInfo": "Enter the line number, starting from line 1, where -n represents the nth to last line",
+        "dependsOn": {
+          "variableName": "deleteType",
+          "operator": "==",
+          "value": "one"
+        }
+      }
+    }
+  ]
+}

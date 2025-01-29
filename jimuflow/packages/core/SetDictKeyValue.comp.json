@@ -1,0 +1,40 @@
+{
+  "name": "SetDictKeyValue",
+  "displayName": "Set dictionary key value",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.SetDictKeyValueComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "Dictionary operation",
+  "sortNo": 2,
+  "helpUrl": "commands/DataProcess/DictionaryOperation/set_dict_key_value/",
+  "variables": [
+    {
+      "name": "dict",
+      "type": "dict",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Dictionary",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "key",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Key",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "value",
+      "type": "any",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Value",
+        "inputType": "expression"
+      }
+    }
+  ]
+}

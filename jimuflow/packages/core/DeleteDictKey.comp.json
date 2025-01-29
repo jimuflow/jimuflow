@@ -1,0 +1,31 @@
+{
+  "name": "DeleteDictKey",
+  "displayName": "Delete dictionary key",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.DeleteDictKeyComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "Dictionary operation",
+  "sortNo": 3,
+  "helpUrl": "commands/DataProcess/DictionaryOperation/delete_dict_key/",
+  "variables": [
+    {
+      "name": "dict",
+      "type": "dict",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Dictionary",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "key",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Key",
+        "inputType": "expression"
+      }
+    }
+  ]
+}

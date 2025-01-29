@@ -1,0 +1,61 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "数字列表",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "当前数字",
+      "type": "any",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:ParseJson",
+      "inputs": {
+        "jsonText": "\"[1, 4, 5, 10]\""
+      },
+      "outputs": {
+        "result": "数字列表"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:core:ListLoop",
+      "inputs": {
+        "list": "数字列表"
+      },
+      "outputs": {
+        "loopItem": "当前数字"
+      },
+      "lineNo": 2,
+      "flow": [
+        {
+          "component": "jimuflow:core:If",
+          "inputs": {
+            "operand1": "当前数字",
+            "op": ">",
+            "operand2": "\"4\""
+          },
+          "lineNo": 3,
+          "flow": [
+            {
+              "component": "jimuflow:core:Print",
+              "inputs": {
+                "message": "当前数字"
+              },
+              "lineNo": 4
+            },
+            {
+              "component": "jimuflow:core:Break",
+              "lineNo": 5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

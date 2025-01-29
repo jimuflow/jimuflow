@@ -1,0 +1,42 @@
+{
+  "name": "IfConditions",
+  "displayName": "if conditions branch",
+  "controlFlowType": "IF",
+  "type": "jimuflow.components.core.IfConditionsComponent",
+  "primaryCategory": "Process Control",
+  "secondaryCategory": "Switch",
+  "sortNo": 2,
+  "helpUrl": "commands/ProcessControl/switch/if_conditions/",
+  "variables": [
+    {
+      "name": "relation",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Conditions relation",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "all",
+            "label": "Satisfy all conditions"
+          },
+          {
+            "value": "any",
+            "label": "Satisfy any condition"
+          }
+        ]
+      }
+    },
+    {
+      "name": "conditions",
+      "type": "list",
+      "elementType": "dict",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Condition list",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.conditions_editor.ConditionsEditor"
+      }
+    }
+  ]
+}

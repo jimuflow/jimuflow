@@ -1,0 +1,11 @@
+{
+  "name": "Else",
+  "displayName": "Else branch",
+  "controlFlowType": "ELSE",
+  "type": "jimuflow.components.core.ElseComponent",
+  "primaryCategory": "Process Control",
+  "secondaryCategory": "Switch",
+  "sortNo": 5,
+  "helpUrl": "commands/ProcessControl/switch/else/",
+  "variables": []
+}

@@ -1,0 +1,16 @@
+PySide6==6.8.1.1
+lark
+playwright
+openpyxl
+xlrd
+xlwt
+python-dateutil
+pyperclip
+psutil
+Babel
+arrow
+pyautogui
+opencv-python
+pywinauto
+lxml
+pillow

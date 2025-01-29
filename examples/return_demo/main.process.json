@@ -1,0 +1,20 @@
+{
+  "name": "主流程",
+  "variables": [],
+  "flow": [
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"这是主流程\""
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "子流程",
+      "inputs": {
+        "参数1": "提前返回"
+      },
+      "lineNo": 2
+    }
+  ]
+}

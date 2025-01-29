@@ -1,0 +1,21 @@
+{
+  "name": "CreateList",
+  "displayName": "Create list",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.CreateListComponent",
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "List operation",
+  "sortNo": 1,
+  "helpUrl": "commands/DataProcess/ListOperation/create_list/",
+  "variables": [
+    {
+      "name": "list",
+      "type": "list",
+      "elementType": "any",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "List"
+      }
+    }
+  ]
+}

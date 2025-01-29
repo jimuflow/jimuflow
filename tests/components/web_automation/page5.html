@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Page 5 - jimuflow网页自动化测试</title>
+</head>
+<body>
+<h3>Page 5</h3>
+<div>
+    <div id="testResult"></div>
+    <div id="test1Button">点击</div>
+    <div id="test2Button">双击</div>
+</div>
+<script>
+    document.getElementById('test1Button').addEventListener('click', onClick)
+    document.getElementById('test2Button').addEventListener('dblclick', onDblclick)
+    function onClick(e){
+        console.log('onClick',e)
+        const keys = []
+        if (e.ctrlKey) {
+            keys.push('ctrl')
+        }
+        if (e.metaKey) {
+            keys.push('meta')
+        }
+        if (e.shiftKey) {
+            keys.push('shift')
+        }
+        if (e.altKey) {
+            keys.push('alt')
+        }
+        keys.push(['左键', '中键', '右键'][e.button])
+        document.getElementById('testResult').innerText = keys.join('+')+'单击'
+    }
+    function onDblclick(e){
+        console.log('onDblclick',e)
+        const keys = []
+        if (e.ctrlKey) {
+            keys.push('ctrl')
+        }
+        if (e.metaKey) {
+            keys.push('meta')
+        }
+        if (e.shiftKey) {
+            keys.push('shift')
+        }
+        if (e.altKey) {
+            keys.push('alt')
+        }
+        keys.push(['左键', '中键', '右键'][e.button])
+        document.getElementById('testResult').innerText = keys.join('+')+'双击'
+    }
+</script>
+</body>
+</html>

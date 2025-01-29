@@ -1,0 +1,102 @@
+{
+  "name": "ExtractWebElement",
+  "displayName": "Extract Web Element",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.web_automation.ExtractWebElementComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Web Automation",
+  "secondaryCategory": "Web Data Extraction",
+  "sortNo": 6,
+  "helpUrl": "commands/WebAutomation/WebDataExtraction/extract_web_element/",
+  "variables": [
+    {
+      "name": "webPage",
+      "type": "WebPage",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web page",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "elementUri",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web element",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit"
+      }
+    },
+    {
+      "name": "extractType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "text",
+      "uiConfig": {
+        "label": "Extract type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "text",
+            "label": "Element text content"
+          },
+          {
+            "value": "html",
+            "label": "Element html source code"
+          },
+          {
+            "value": "input_value",
+            "label": "Input element value"
+          },
+          {
+            "value": "link_href",
+            "label": "Link element href"
+          },
+          {
+            "value": "attribute_value",
+            "label": "Element attribute value"
+          },
+          {
+            "value": "position",
+            "label": "Element position"
+          }
+        ]
+      }
+    },
+    {
+      "name": "attributeName",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Attribute name",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "extractType",
+          "operator": "==",
+          "value": "attribute_value"
+        }
+      }
+    },
+    {
+      "name": "waitTime",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"30\"",
+      "uiConfig": {
+        "label": "Wait time(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    },
+    {
+      "name": "result",
+      "type": "any",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Extracted result"
+      }
+    }
+  ]
+}

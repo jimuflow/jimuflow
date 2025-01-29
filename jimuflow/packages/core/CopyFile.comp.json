@@ -1,0 +1,67 @@
+{
+  "name": "CopyFile",
+  "displayName": "Copy File",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.CopyFileComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Operating System",
+  "sortNo": 5,
+  "helpUrl": "commands/OperatingSystem/copy_file/",
+  "variables": [
+    {
+      "name": "filePath",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "File path",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.file_path_editor.OpenFilePathEdit",
+        "inputValueType": "expression"
+      }
+    },
+    {
+      "name": "targetFolder",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Target folder",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.file_path_editor.FolderPathEdit",
+        "inputValueType": "expression"
+      }
+    },
+    {
+      "name": "actionWhenExists",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "overwrite",
+      "uiConfig": {
+        "label": "Action when exists",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "overwrite",
+            "label": "Overwrite"
+          },
+          {
+            "value": "rename",
+            "label": "Automatic renaming"
+          },
+          {
+            "value": "error",
+            "label": "Perform error handling"
+          }
+        ]
+      }
+    },
+    {
+      "name": "newFilePath",
+      "type": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "New file path"
+      }
+    }
+  ]
+}

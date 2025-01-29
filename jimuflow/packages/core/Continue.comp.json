@@ -1,0 +1,11 @@
+{
+  "name": "Continue",
+  "displayName": "Continue to the next loop",
+  "controlFlowType": "CONTINUE",
+  "type": "jimuflow.components.core.ContinueComponent",
+  "primaryCategory": "Process Control",
+  "secondaryCategory": "Loop",
+  "sortNo": 6,
+  "helpUrl": "commands/ProcessControl/loop/continue/",
+  "variables": []
+}

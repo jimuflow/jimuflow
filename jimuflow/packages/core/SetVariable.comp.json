@@ -1,0 +1,28 @@
+{
+  "name": "SetVariable",
+  "displayName": "Set variable",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.SetVariableComponent",
+  "primaryCategory": "Data Process",
+  "sortNo": 1,
+  "helpUrl": "commands/DataProcess/set_variable/",
+  "variables": [
+    {
+      "name": "value",
+      "type": "any",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Variable value",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "result",
+      "type": "any",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Variable name"
+      }
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "字典",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "当前值",
+      "type": "list",
+      "direction": "LOCAL",
+      "elementType": "any"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:ParseJson",
+      "inputs": {
+        "jsonText": "\"{\\\"name\\\":\\\"张三\\\",\\\"age\\\":20}\""
+      },
+      "outputs": {
+        "result": "字典"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:core:DictLoop",
+      "inputs": {
+        "dict": "字典"
+      },
+      "outputs": {
+        "loopItem": "当前值"
+      },
+      "lineNo": 2,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "当前值 [ \"0\" ] + \"=\" + 当前值 [ \"1\" ]"
+          },
+          "lineNo": 3
+        }
+      ]
+    }
+  ]
+}

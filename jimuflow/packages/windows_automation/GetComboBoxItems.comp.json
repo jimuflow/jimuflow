@@ -1,0 +1,79 @@
+{
+  "name": "GetComboBoxItems",
+  "displayName": "Get ComboBox Items",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.windows_automation.GetComboBoxItemsComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Windows Automation",
+  "secondaryCategory": "Data Extraction",
+  "sortNo": 3,
+  "helpUrl": "commands/WindowsAutomation/DataExtraction/get_combobox_items/",
+  "platforms": [
+    "windows"
+  ],
+  "variables": [
+    {
+      "name": "elementUri",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "ComboBox element",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.window_element_selector.WindowElementEdit"
+      }
+    },
+    {
+      "name": "extractType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "selected",
+      "uiConfig": {
+        "label": "Content to get",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "selected",
+            "label": "Selected items"
+          },
+          {
+            "value": "all",
+            "label": "All items"
+          }
+        ]
+      }
+    },
+    {
+      "name": "expandBeforeObtaining",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Expand the combo box before obtaining items",
+        "group": "advanced",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "waitTime",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "\"30\"",
+      "uiConfig": {
+        "label": "Wait time(seconds)",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false
+      }
+    },
+    {
+      "name": "result",
+      "type": "list",
+      "elementType": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Obtained items"
+      }
+    }
+  ]
+}

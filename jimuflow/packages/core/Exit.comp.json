@@ -1,0 +1,10 @@
+{
+  "name": "Exit",
+  "displayName": "Exit",
+  "controlFlowType": "EXIT",
+  "type": "jimuflow.components.core.ExitComponent",
+  "primaryCategory": "Process Control",
+  "sortNo": 2,
+  "helpUrl": "commands/ProcessControl/exit/",
+  "variables": []
+}
