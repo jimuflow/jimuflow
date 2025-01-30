@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jimuflow 1.0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-01-29 18:18+0800\n"
+"POT-Creation-Date: 2025-01-30 23:28+0800\n"
 "PO-Revision-Date: 2024-09-14 19:18+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hans_CN\n"
@@ -2006,6 +2006,9 @@ msgstr "步入"
 msgid "Step Out"
 msgstr "步出"
 
+msgid "Settings..."
+msgstr "设置..."
+
 msgid "File"
 msgstr "文件"
 
@@ -2173,6 +2176,20 @@ msgstr "本地"
 
 msgid "Update variable"
 msgstr "修改变量"
+
+msgid "Settings"
+msgstr "设置"
+
+msgid "Language"
+msgstr "语言"
+
+msgid "Restart required"
+msgstr "需要重新启动"
+
+msgid ""
+"Restart required to apply the new language setting. Do you want to "
+"restart now?"
+msgstr "需要重新启动才能应用新的语言设置。您想现在重新启动吗？"
 
 msgid "Process {name} startup parameter configuration"
 msgstr "流程{name}启动参数配置"

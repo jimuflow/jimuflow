@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jimuflow 1.0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-01-29 18:18+0800\n"
+"POT-Creation-Date: 2025-01-30 23:28+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1995,6 +1995,9 @@ msgstr ""
 msgid "Step Out"
 msgstr ""
 
+msgid "Settings..."
+msgstr ""
+
 msgid "File"
 msgstr ""
 
@@ -2161,6 +2164,20 @@ msgid "LOCAL"
 msgstr ""
 
 msgid "Update variable"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "Restart required"
+msgstr ""
+
+msgid ""
+"Restart required to apply the new language setting. Do you want to "
+"restart now?"
 msgstr ""
 
 msgid "Process {name} startup parameter configuration"

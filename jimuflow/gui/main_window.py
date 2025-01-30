@@ -17,6 +17,10 @@
 from jimuflow.gui.setup_logging import setup_logging_and_redirect
 
 setup_logging_and_redirect()
+import locale
+from jimuflow.gui.utils import Utils
+
+locale.setlocale(locale.LC_ALL, Utils.get_language() + ".UTF-8")
 import sys
 
 sys.coinit_flags = 2
@@ -50,12 +54,12 @@ from jimuflow.gui.log_widget import LogWidget, LogWidgetLogger
 from jimuflow.gui.process_resource_widget import ProcessResourceWidget
 from jimuflow.gui.process_views import ProcessFlowWidget, ProcessVariablesWidget
 from jimuflow.gui.start_process_dialog import StartProcessDialog
-from jimuflow.gui.utils import Utils
 from jimuflow.locales.i18n import gettext
 from jimuflow.resource import load_resource
 from jimuflow.runtime.execution_engine import Process, Component, ProcessStoppedException
 from jimuflow.runtime.log import LogLevel
 from jimuflow.runtime.process_debugger import ProcessDebugger, DebugListener
+from jimuflow.gui.settings_dialog import SettingsDialog
 
 load_resource()
 logger = logging.getLogger(__name__)
@@ -194,6 +198,9 @@ class MainWindow(QMainWindow, DebugListener):
         self._help_act = QAction(gettext('Help'), self)
         self._help_act.triggered.connect(self.show_help_dialog)
 
+        self._settings_act = QAction(gettext('Settings...'), self)
+        self._settings_act.triggered.connect(self.show_settings_dialog)
+
     def create_menus(self):
         file_menu = self.menuBar().addMenu(gettext('File'))
         file_menu.addAction(self._new_app_act)
@@ -228,6 +235,7 @@ class MainWindow(QMainWindow, DebugListener):
 
         help_menu = self.menuBar().addMenu(gettext('Help'))
         help_menu.addAction(self._about_act)
+        help_menu.addAction(self._settings_act)
         help_menu.addAction(self._help_act)
 
     def create_tool_bar(self):
@@ -777,6 +785,11 @@ class MainWindow(QMainWindow, DebugListener):
         process_widget = self.process_tab_widget.currentWidget()
         process_model: ProcessModel = process_widget.process_model
         process_model.undo_redo_manager.redo()
+
+    @Slot()
+    def show_settings_dialog(self):
+        dialog = SettingsDialog()
+        dialog.exec()
 
 
 def main():

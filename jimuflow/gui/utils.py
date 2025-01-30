@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -15,6 +15,7 @@
 # Copyright (C) 2024-2025  Weng Jing
 
 import importlib
+import locale
 import os
 
 from PySide6.QtCore import QSettings, QObject
@@ -61,3 +62,20 @@ class Utils:
             if current.objectName() == name:
                 return current
             current = current.parent()
+
+    @staticmethod
+    def get_language():
+        language = Utils.settings.value("language")
+        if language is None:
+            language, _ = locale.getdefaultlocale()
+        if language not in Utils.get_supported_languages():
+            language = 'en_US'
+        return language
+
+    @staticmethod
+    def set_language(language):
+        Utils.settings.setValue("language", language)
+
+    @staticmethod
+    def get_supported_languages():
+        return {'zh_CN': '简体中文', 'en_US': 'English (US)'}
