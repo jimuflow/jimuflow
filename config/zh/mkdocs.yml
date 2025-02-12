@@ -1,9 +1,10 @@
 site_name: JimuFlow
 docs_dir: '../../docs/zh'
 site_dir: '../../site/zh'
-site_url: https://mydomain.org/
+site_url: !ENV READTHEDOCS_CANONICAL_URL
 theme:
   name: material
+  custom_dir: '../../docs/overrides/'
   language: zh
   features:
     - navigation.tabs
@@ -11,14 +12,11 @@ theme:
     - navigation.prune
     - navigation.indexes
     - navigation.top
+extra_javascript:
+  - javascripts/readthedocs.js
 markdown_extensions:
   - toc:
       permalink: true
-extra:
-  alternate:
-    - name: English
-      link: /en/
-      lang: en
 nav:
   - 首页: index.md
   - 用户手册:
