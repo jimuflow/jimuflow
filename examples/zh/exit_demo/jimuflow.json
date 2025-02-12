@@ -1,0 +1,7 @@
+{
+  "name": "exit_demo",
+  "namespace": "jimuflow",
+  "version": "1.0.0",
+  "mainProcess": "main",
+  "dependencies": []
+}
