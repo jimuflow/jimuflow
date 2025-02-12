@@ -17,7 +17,7 @@
       "direction": "IN",
       "defaultValue": "window_object",
       "uiConfig": {
-        "label": "Get window method",
+        "label": "Window Acquisition Method",
         "inputType": "combo_box",
         "options": [
           {
@@ -40,7 +40,7 @@
       "type": "WindowElement",
       "direction": "IN",
       "uiConfig": {
-        "label": "Window object",
+        "label": "Window Object",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "getWindowMethod",
@@ -54,7 +54,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Window title",
+        "label": "Window Title",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.window_title_editor.WindowTitleEdit",
         "inputValueType": "expression",
@@ -86,7 +86,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Window class name",
+        "label": "Window Class Name",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.window_class_editor.WindowClassEdit",
         "inputValueType": "expression",
@@ -103,7 +103,7 @@
       "direction": "IN",
       "defaultValue": false,
       "uiConfig": {
-        "label": "Use regex matching",
+        "label": "Use regular expression matching",
         "inputType": "check_box",
         "required": false,
         "dependsOn": {
@@ -118,7 +118,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Window element",
+        "label": "Window Element",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.window_element_selector.WindowElementEdit",
         "dependsOn": {

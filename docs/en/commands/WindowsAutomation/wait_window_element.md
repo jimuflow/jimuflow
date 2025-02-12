@@ -1,4 +1,4 @@
-# Wait for Window Element
+# Wait Window Element
 
 Wait for the window element to meet the specified conditions, and then execute subsequent instructions.
 
@@ -12,10 +12,10 @@ Select a window element from the element library, or click the "Capture Element"
 ### Wait Type
 The wait type can be selected as: contains the element, does not contain the element.
 
-### Set Supermarket Time
+### Set the Timeout Time
 If this option is checked, wait for the element to meet the specified conditions until the timeout. Otherwise, return the waiting result immediately.
 
-### Wait Time
+### Timeout
 The timeout for waiting for the window element to meet the specified conditions, with the unit being seconds.
 
 ### Wait Result

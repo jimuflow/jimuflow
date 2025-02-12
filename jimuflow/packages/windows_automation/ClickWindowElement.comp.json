@@ -16,7 +16,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Window element",
+        "label": "Window Element",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.window_element_selector.WindowElementEdit"
       }
@@ -27,7 +27,7 @@
       "direction": "IN",
       "defaultValue": "single_click",
       "uiConfig": {
-        "label": "Click Type",
+        "label": "Click Method",
         "group": "advanced",
         "inputType": "combo_box",
         "required": false,
@@ -49,7 +49,7 @@
       "direction": "IN",
       "defaultValue": "left",
       "uiConfig": {
-        "label": "Mouse button",
+        "label": "Mouse Button",
         "group": "advanced",
         "inputType": "combo_box",
         "required": false,
@@ -75,7 +75,7 @@
       "direction": "IN",
       "defaultValue": "none",
       "uiConfig": {
-        "label": "Modifier key",
+        "label": "Modifier Keys",
         "group": "advanced",
         "inputType": "combo_box",
         "required": false,
@@ -105,7 +105,7 @@
       "direction": "IN",
       "defaultValue": "\"0\"",
       "uiConfig": {
-        "label": "Delay after action(seconds)",
+        "label": "Delay after Action(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false
@@ -117,7 +117,7 @@
       "direction": "IN",
       "defaultValue": "\"30\"",
       "uiConfig": {
-        "label": "Wait time(seconds)",
+        "label": "Waiting Time(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false

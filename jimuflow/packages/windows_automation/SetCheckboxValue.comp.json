@@ -17,7 +17,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Checkbox element",
+        "label": "Checkbox Element",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.window_element_selector.WindowElementEdit"
       }
@@ -28,7 +28,7 @@
       "direction": "IN",
       "defaultValue": "check",
       "uiConfig": {
-        "label": "Select type",
+        "label": "Selection Method",
         "inputType": "combo_box",
         "options": [
           {
@@ -52,7 +52,7 @@
       "direction": "IN",
       "defaultValue": "\"0\"",
       "uiConfig": {
-        "label": "Delay after action(seconds)",
+        "label": "Delay After Action(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false
@@ -64,7 +64,7 @@
       "direction": "IN",
       "defaultValue": "\"30\"",
       "uiConfig": {
-        "label": "Wait time(seconds)",
+        "label": "Waiting Time(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false

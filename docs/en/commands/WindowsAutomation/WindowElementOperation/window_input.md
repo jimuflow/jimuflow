@@ -1,4 +1,4 @@
-# Fill the Input Box in the Window
+# Window Input
 
 Fill the input box in the window.
 
@@ -31,10 +31,10 @@ If checked, press the Tab key after the input is completed.
 ### Input Method
 
 Select the input method:
-* Simulate Manual Input: Simulate the way of manual input.
+* Simulate Human Input: Simulate the way of manual input.
 * Automated Interface Input: Call the automated interface for input.
 
-### Whether the Input Content Contains Shortcut Keys
+### The Input Content Contains Shortcut Keys
 
 If checked, shortcut keys can be included in the input content.
 
@@ -87,7 +87,7 @@ For example, '{^}a{^}c{%}' will input the content '^a^c%' without pressing the C
 '{{}ENTER{}}' will input the content '{ENTER}' without pressing the Enter key.
 
 
-### Click the Element Before Input
+### Click Element Before Input
 
 If checked, click the specified element before input.
 
@@ -99,7 +99,7 @@ The time interval between inputs, in milliseconds.
 
 After getting focus, delay the input for a period of time, in seconds.
 
-### Delay After Execution
+### Delay After Action
 
 After executing the instruction, delay for a period of time before continuing to execute the subsequent instructions, in seconds.
 

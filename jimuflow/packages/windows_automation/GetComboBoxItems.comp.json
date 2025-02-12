@@ -17,7 +17,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "ComboBox element",
+        "label": "ComboBox Element",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.window_element_selector.WindowElementEdit"
       }
@@ -28,7 +28,7 @@
       "direction": "IN",
       "defaultValue": "selected",
       "uiConfig": {
-        "label": "Content to get",
+        "label": "Content to be Retrieved",
         "inputType": "combo_box",
         "options": [
           {
@@ -48,7 +48,7 @@
       "direction": "IN",
       "defaultValue": false,
       "uiConfig": {
-        "label": "Expand the combo box before obtaining items",
+        "label": "Expand the combo box before retrieving items",
         "group": "advanced",
         "inputType": "check_box",
         "required": false
@@ -60,7 +60,7 @@
       "direction": "IN",
       "defaultValue": "\"30\"",
       "uiConfig": {
-        "label": "Wait time(seconds)",
+        "label": "Waiting Time(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false
@@ -72,7 +72,7 @@
       "elementType": "text",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Obtained items"
+        "label": "Retrieved Items"
       }
     }
   ]

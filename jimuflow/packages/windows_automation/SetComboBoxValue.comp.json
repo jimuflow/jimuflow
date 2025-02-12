@@ -17,7 +17,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "ComboBox element",
+        "label": "ComboBox Element",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.window_element_selector.WindowElementEdit"
       }
@@ -28,7 +28,7 @@
       "direction": "IN",
       "defaultValue": "by_content",
       "uiConfig": {
-        "label": "Select type",
+        "label": "Selection Method",
         "inputType": "combo_box",
         "options": [
           {
@@ -62,7 +62,7 @@
       "direction": "IN",
       "defaultValue": "contains",
       "uiConfig": {
-        "label": "Match type",
+        "label": "Matching Type",
         "inputType": "combo_box",
         "options": [
           {
@@ -71,11 +71,11 @@
           },
           {
             "value": "equals",
-            "label": "Precise matching"
+            "label": "Exact matching"
           },
           {
             "value": "regex",
-            "label": "Regular matching"
+            "label": "Regular expression matching"
           }
         ],
         "dependsOn": {
@@ -91,7 +91,7 @@
       "direction": "IN",
       "defaultValue": "\"0\"",
       "uiConfig": {
-        "label": "Option index",
+        "label": "Option Index",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "selectType",
@@ -106,7 +106,7 @@
       "direction": "IN",
       "defaultValue": "\"0\"",
       "uiConfig": {
-        "label": "Delay after action(seconds)",
+        "label": "Delay After Action(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false
@@ -118,7 +118,7 @@
       "direction": "IN",
       "defaultValue": "\"30\"",
       "uiConfig": {
-        "label": "Wait time(seconds)",
+        "label": "Waiting Time(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false

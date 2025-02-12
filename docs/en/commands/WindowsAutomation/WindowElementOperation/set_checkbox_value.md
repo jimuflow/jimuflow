@@ -16,7 +16,7 @@ Select a checkbox element from the element library, or click the "Capture Elemen
 
 Select the method of checking the checkbox. The available values are: Check, Uncheck, Invert Selection.
 
-### Delay After Execution
+### Delay After Action
 
 After executing the instruction, delay for a period of time before continuing to execute the subsequent instructions. The unit is seconds.
 

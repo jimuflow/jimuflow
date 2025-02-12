@@ -84,20 +84,20 @@ nav:
     - Windows Automation:
       - Get Window: commands/WindowsAutomation/get_window.md
       - Click Window Element: commands/WindowsAutomation/click_window_element.md
-      - Wait window element: commands/WindowsAutomation/wait_window_element.md
+      - Wait Window Element: commands/WindowsAutomation/wait_window_element.md
       - Hover Window Element: commands/WindowsAutomation/hover_window_element.md
       - Close Window: commands/WindowsAutomation/close_window.md
       - Window Operation:
-        - Active Window: commands/WindowsAutomation/WindowOperation/active_window.md
+        - Activate Window: commands/WindowsAutomation/WindowOperation/active_window.md
         - Set Window State: commands/WindowsAutomation/WindowOperation/set_window_state.md
         - Resize Window: commands/WindowsAutomation/WindowOperation/resize_window.md
         - Move Window: commands/WindowsAutomation/WindowOperation/move_window.md
         - Set Window Visibility: commands/WindowsAutomation/WindowOperation/set_window_visibility.md
       - Window Element Operation:
-        - Window input: commands/WindowsAutomation/WindowElementOperation/window_input.md
+        - Window Input: commands/WindowsAutomation/WindowElementOperation/window_input.md
         - Set ComboBox Value: commands/WindowsAutomation/WindowElementOperation/set_combobox_value.md
         - Set Checkbox Value: commands/WindowsAutomation/WindowElementOperation/set_checkbox_value.md
-        - Loop window elements: commands/WindowsAutomation/WindowElementOperation/loop_window_elements.md
+        - Loop Window Elements: commands/WindowsAutomation/WindowElementOperation/loop_window_elements.md
         - Get Relative Window Element: commands/WindowsAutomation/WindowElementOperation/get_relative_window_element.md
         - Drag Window Element: commands/WindowsAutomation/WindowElementOperation/drag_window_element.md
       - Data Extraction:

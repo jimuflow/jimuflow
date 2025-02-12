@@ -1,6 +1,6 @@
 {
   "name": "LoopWindowElements",
-  "displayName": "Loop window elements",
+  "displayName": "Loop Window Elements",
   "controlFlowType": "LOOP",
   "type": "jimuflow.components.windows_automation.LoopWindowElementsComponent",
   "supportsErrorHandling": true,
@@ -46,7 +46,7 @@
       "direction": "IN",
       "defaultValue": "\"30\"",
       "uiConfig": {
-        "label": "Wait time(seconds)",
+        "label": "Waiting Time(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false
@@ -57,7 +57,7 @@
       "type": "WindowElement",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Current element"
+        "label": "Current Element"
       }
     }
   ]

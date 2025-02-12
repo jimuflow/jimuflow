@@ -1,4 +1,4 @@
-# Click Window Elements
+# Click Window Element
 
 Simulate the operation of mouse - clicking window elements, such as buttons, links, etc.
 
@@ -8,7 +8,7 @@ Simulate the operation of mouse - clicking window elements, such as buttons, lin
 
 ![Advanced Configuration Dialog Box for Clicking Window Elements](click_window_element_advanced_config.png)
 
-### Window Elements
+### Window Element
 
 Select a window element from the element library, or click the "Capture Element" button to call the tool for acquisition. For details, please refer to [Window Element Capture Tool](../../manual/window_element_capture_tool.md).
 
@@ -24,7 +24,7 @@ Left button, middle button, right button.
 
 Select the modifier keys to be pressed simultaneously. The available values are: None, Alt, Ctrl, Shift.
 
-### Delay after Execution
+### Delay after Action
 
 After executing the instruction, delay for a period of time before continuing to execute the subsequent instructions. The unit is seconds.
 

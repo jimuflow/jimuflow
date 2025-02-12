@@ -1,4 +1,4 @@
-# Mouse Hover Window Element
+# Hover Window Element
 
 Simulate the operation of hovering the mouse over a window element.
 
@@ -12,7 +12,7 @@ Simulate the operation of hovering the mouse over a window element.
 
 Select a window element from the element library, or click the "Capture Element" button to call the tool for acquisition. For details, please refer to [Window Element Capture Tool](../../manual/window_element_capture_tool.md).
 
-### Delay After Execution
+### Delay After Action
 
 After executing the instruction, delay for a certain period of time before continuing to execute the subsequent instructions. The unit is seconds.
 

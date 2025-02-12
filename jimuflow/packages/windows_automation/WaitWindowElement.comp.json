@@ -1,6 +1,6 @@
 {
   "name": "WaitWindowElement",
-  "displayName": "Wait window element",
+  "displayName": "Wait Window Element",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.windows_automation.WaitWindowElementComponent",
   "supportsErrorHandling": true,
@@ -16,7 +16,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Window element",
+        "label": "Window Element",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.window_element_selector.WindowElementEdit"
       }
@@ -27,7 +27,7 @@
       "direction": "IN",
       "defaultValue": "include_element",
       "uiConfig": {
-        "label": "Wait type",
+        "label": "Wait Type",
         "inputType": "combo_box",
         "options": [
           {
@@ -72,7 +72,7 @@
       "type": "bool",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Wait result"
+        "label": "Wait Result"
       }
     }
   ]

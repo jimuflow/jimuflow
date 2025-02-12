@@ -17,7 +17,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Window element",
+        "label": "Window Element",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.window_element_selector.WindowElementEdit"
       }
@@ -28,7 +28,7 @@
       "direction": "IN",
       "defaultValue": "parent",
       "uiConfig": {
-        "label": "Locate type",
+        "label": "Location Type",
         "inputType": "combo_box",
         "options": [
           {
@@ -67,7 +67,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Descendant relative xpath",
+        "label": "Relative XPath of Descendant Elements",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.window_relative_xpath_editor.WindowRelativeXPathEdit",
         "inputValueType": "expression",
@@ -86,7 +86,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Child element position",
+        "label": "Position of Child Element",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "locateType",
@@ -101,7 +101,7 @@
       "direction": "IN",
       "defaultValue": "\"30\"",
       "uiConfig": {
-        "label": "Wait time(seconds)",
+        "label": "Waiting Time(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false
@@ -112,7 +112,7 @@
       "type": "any",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Found elements"
+        "label": "Found Elements"
       }
     }
   ]

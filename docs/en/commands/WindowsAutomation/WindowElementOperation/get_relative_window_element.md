@@ -1,4 +1,4 @@
-# Obtain Related Window Elements
+# Get Relative Window Element
 
 Obtain the related elements of a specified window element.
 
@@ -12,9 +12,9 @@ Obtain the related elements of a specified window element.
 
 Select a window element from the element library, or click the "Capture Element" button to invoke the tool for acquisition. For details, please refer to [Window Element Capture Tool](../../../manual/window_element_capture_tool.md).
 
-### Positioning Type
+### Location Type
 
-Select the positioning type of the related element. The optional values are: parent element, previous sibling element, next sibling element, first matching descendant element, all matching descendant elements, all child elements, child element at a specified position.
+Select the location type of the related element. The available values are: parent element, previous sibling element, next sibling element, first matching descendant element, all matching descendant elements, all child elements, child element at a specified position.
 
 ### Relative XPath of Descendant Elements
 

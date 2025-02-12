@@ -28,7 +28,7 @@ If you select to select by option content, you need to select the matching metho
 
 If you select to select by option index, you need to enter the option index to be selected. The index starts from 0.
 
-### Delay After Execution
+### Delay After Action
 
 After executing the instruction, delay for a period of time before continuing to execute the subsequent instructions. The unit is seconds.
 

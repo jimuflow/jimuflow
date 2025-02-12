@@ -1,6 +1,6 @@
 {
   "name": "WindowInput",
-  "displayName": "Window input",
+  "displayName": "Window Input",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.windows_automation.WindowInputComponent",
   "supportsErrorHandling": true,
@@ -17,7 +17,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Window element",
+        "label": "Window Element",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.window_element_selector.WindowElementEdit"
       }
@@ -48,7 +48,7 @@
       "direction": "IN",
       "defaultValue": false,
       "uiConfig": {
-        "label": "Press enter after input",
+        "label": "Press enter key after input completion",
         "inputType": "check_box",
         "required": false
       }
@@ -59,7 +59,7 @@
       "direction": "IN",
       "defaultValue": false,
       "uiConfig": {
-        "label": "Press tab after input",
+        "label": "Press tab key after input completion",
         "inputType": "check_box",
         "required": false
       }
@@ -70,7 +70,7 @@
       "direction": "IN",
       "defaultValue": "simulate",
       "uiConfig": {
-        "label": "Input method",
+        "label": "Input Method",
         "group": "advanced",
         "inputType": "combo_box",
         "options": [
@@ -91,7 +91,7 @@
       "direction": "IN",
       "defaultValue": false,
       "uiConfig": {
-        "label": "The input content includes shortcut keys",
+        "label": "The input content contains shortcut keys",
         "group": "advanced",
         "inputType": "check_box",
         "required": false,
@@ -125,7 +125,7 @@
       "direction": "IN",
       "defaultValue": "\"100\"",
       "uiConfig": {
-        "label": "Input interval(milliseconds)",
+        "label": "Input Interval(milliseconds)",
         "group": "advanced",
         "inputType": "expression",
         "dependsOn": {
@@ -141,7 +141,7 @@
       "direction": "IN",
       "defaultValue": "\"1\"",
       "uiConfig": {
-        "label": "Delay input after focus(seconds)",
+        "label": "Delay input after getting focus(seconds)",
         "group": "advanced",
         "inputType": "expression"
       }
@@ -152,7 +152,7 @@
       "direction": "IN",
       "defaultValue": "\"0\"",
       "uiConfig": {
-        "label": "Delay after action(seconds)",
+        "label": "Delay After Action(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false
@@ -164,7 +164,7 @@
       "direction": "IN",
       "defaultValue": "\"30\"",
       "uiConfig": {
-        "label": "Wait time(seconds)",
+        "label": "Waiting Time(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false

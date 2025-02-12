@@ -17,7 +17,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Window element",
+        "label": "Window Element",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.window_element_selector.WindowElementEdit"
       }
@@ -28,7 +28,7 @@
       "direction": "IN",
       "defaultValue": "text",
       "uiConfig": {
-        "label": "Extract type",
+        "label": "Extraction Type",
         "inputType": "combo_box",
         "options": [
           {
@@ -55,7 +55,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Attribute name",
+        "label": "Attribute Name",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.window_element_property_editor.WindowElementPropertyEdit",
         "inputValueType": "expression",
@@ -72,7 +72,7 @@
       "direction": "IN",
       "defaultValue": "\"30\"",
       "uiConfig": {
-        "label": "Wait time(seconds)",
+        "label": "Waiting Time(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false
@@ -83,7 +83,7 @@
       "type": "any",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Extracted result"
+        "label": "Extraction Result"
       }
     }
   ]

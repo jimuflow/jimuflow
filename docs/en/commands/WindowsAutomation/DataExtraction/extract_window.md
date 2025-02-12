@@ -1,4 +1,4 @@
-# Obtain Window Information
+# Extract Window
 
 Obtain information such as the title of the window and the name of the process it belongs to.
 
