@@ -1,23 +1,3 @@
-# Chinese (Simplified, China) translations for jimuflow.
-# Copyright (C) 2024 ORGANIZATION
-# This file is distributed under the same license as the jimuflow project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
-#
-msgid ""
-msgstr ""
-"Project-Id-Version: jimuflow 1.0.0\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-01-30 23:28+0800\n"
-"PO-Revision-Date: 2024-09-14 19:18+0800\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: zh_Hans_CN\n"
-"Language-Team: zh_Hans_CN <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
-
 msgid "Unknown element"
 msgstr "未知元素"
 
@@ -116,6 +96,12 @@ msgstr "结尾为"
 
 msgid "not ends with"
 msgstr "结尾不为"
+
+msgid "is true"
+msgstr "为真"
+
+msgid "is false"
+msgstr "为假"
 
 msgid "Unsupported operator: {op}"
 msgstr "不支持的操作符: {op}"
@@ -970,8 +956,8 @@ msgstr "选择下拉框##{element}##中索引位置为##{index}##的选项"
 msgid "Invalid wait type: {wait_type}"
 msgstr "非法的等待类型: {wait_type}"
 
-msgid "Wait web page ##{webPage}## {action} {target}"
-msgstr "等待网页##{webPage}##{action}{target}"
+msgid "Wait web page ##{webPage}## ##{action}## ##{target}##"
+msgstr "等待网页##{webPage}## ##{action}## ##{target}##"
 
 msgid "Wait web page ##{webPage}## to load"
 msgstr "等待网页##{webPage}##加载"
@@ -1465,12 +1451,6 @@ msgstr "等于"
 
 msgid "not equals"
 msgstr "不等于"
-
-msgid "is true"
-msgstr "为真"
-
-msgid "is false"
-msgstr "为假"
 
 msgid "Text input box"
 msgstr "文本输入框"
@@ -2539,6 +2519,10 @@ msgstr "新标签页"
 
 msgid "The second element does not match the first element, please select again!"
 msgstr "第二个元素与第一个元素不匹配，请重新选择！"
+
+msgid "Found {count} element"
+msgid_plural "Found {count} elements"
+msgstr[0] "找到{count}个元素"
 
 msgid "Element Node"
 msgstr "元素节点"
@@ -4986,6 +4970,9 @@ msgstr "生成输出变量 {out_var_name}: {out_var_value}"
 
 msgid "Execution successful"
 msgstr "执行成功"
+
+msgid "Execution interrupted"
+msgstr "执行被中断"
 
 msgid "Execution error"
 msgstr "执行出错"

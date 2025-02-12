@@ -1,6 +1,6 @@
 {
   "name": "ImportExcelAsTable",
-  "displayName": "Import excel as table",
+  "displayName": "Import Excel as Table",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.table.ImportExcelAsTableComponent",
   "supportsErrorHandling": true,
@@ -13,7 +13,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Excel file path",
+        "label": "Excel File Path",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.file_path_editor.OpenFilePathEdit",
         "inputValueType": "expression",
@@ -26,7 +26,7 @@
       "direction": "IN",
       "defaultValue": "by_index",
       "uiConfig": {
-        "label": "Sheet select type",
+        "label": "Sheet Selection Type",
         "inputType": "combo_box",
         "options": [
           {
@@ -45,7 +45,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Sheet index",
+        "label": "Sheet Index",
         "inputType": "expression",
         "placeholder": "The index position of the first sheet is 1, and so on",
         "dependsOn": {
@@ -60,7 +60,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Sheet name",
+        "label": "Sheet Name",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "sheetSelectType",
@@ -85,7 +85,7 @@
       "type": "table",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Table",
+        "label": "Data Table",
         "helpInfo": "The imported table"
       }
     }

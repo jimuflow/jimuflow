@@ -15,12 +15,12 @@
       "direction": "IN",
       "defaultValue": "now",
       "uiConfig": {
-        "label": "Initialization type",
+        "label": "Initialization Type",
         "inputType": "combo_box",
         "options": [
           {
             "value": "now",
-            "label": "Get the current time"
+            "label": "Get current time"
           },
           {
             "value": "parse",
@@ -34,7 +34,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Time string",
+        "label": "Time String",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "initType",
@@ -48,7 +48,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Time format",
+        "label": "Time Format",
         "inputType": "expression",
         "helpInfo": "Common Format Codes\n\nHH: Hour (24-hour format, 00 to 23)\n\nhh: Hour (12 hour format, 01 to 12)\n\nmm: Minutes (00 to 59)\n\nss: Seconds (00 to 59)\n\nSSSSSS: Microseconds (000000 to 999999)\n\nA: AM or PM",
         "dependsOn": {

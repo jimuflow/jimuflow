@@ -1,0 +1,43 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "current_loop_index",
+      "type": "number",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:InfiniteLoop",
+      "outputs": {
+        "loopIndex": "current_loop_index"
+      },
+      "lineNo": 1,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"current_loop_index=\" + current_loop_index"
+          },
+          "lineNo": 2
+        },
+        {
+          "component": "jimuflow:core:If",
+          "inputs": {
+            "operand1": "current_loop_index",
+            "op": ">=",
+            "operand2": "\"2\""
+          },
+          "lineNo": 3,
+          "flow": [
+            {
+              "component": "jimuflow:core:Break",
+              "lineNo": 4
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

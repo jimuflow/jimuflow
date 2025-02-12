@@ -1,6 +1,6 @@
 {
   "name": "ObjectToJson",
-  "displayName": "Object To Json",
+  "displayName": "Object to Json",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.core.ObjectToJsonComponent",
   "supportsErrorHandling": true,

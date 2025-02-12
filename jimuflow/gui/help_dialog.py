@@ -26,7 +26,7 @@ from PySide6.QtWebEngineWidgets import QWebEngineView
 from PySide6.QtWidgets import QDialog, QVBoxLayout, QDialogButtonBox, QPushButton
 
 from jimuflow.gui.web_view_utils import setup_web_view_actions
-from jimuflow.locales.i18n import gettext
+from jimuflow.locales.i18n import gettext, current_locale
 
 
 class HelpHTTPRequestHandler(SimpleHTTPRequestHandler):
@@ -34,10 +34,10 @@ class HelpHTTPRequestHandler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         if getattr(sys, 'frozen', False):
             # 如果是打包后的程序
-            directory = Path(sys._MEIPASS) / 'jimuflow' / 'site'
+            directory = Path(sys._MEIPASS) / 'jimuflow' / 'help'
         else:
             # 如果是开发模式
-            directory = Path(__file__).parent.parent.parent / 'site'
+            directory = Path(__file__).parent.parent.parent / 'help'
 
         super().__init__(*args, directory=str(directory), **kwargs)
 
@@ -92,7 +92,8 @@ class HelpDialog(QDialog):
         if '://' in url:
             self._web_view.load(url)
         else:
-            self._web_view.load(self._base_uri + '/' + url)
+            lang_code = 'zh' if current_locale == 'zh_CN' else 'en'
+            self._web_view.load(self._base_uri + '/' + lang_code + '/' + url)
 
     def _back(self):
         self._web_view.back()

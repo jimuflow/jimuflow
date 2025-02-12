@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -55,7 +55,7 @@ class WaitWebContentComponent(PrimitiveComponent):
         else:
             raise Exception(gettext("Invalid wait type: {wait_type}").format(wait_type=wait_type))
         return gettext(
-            'Wait web page ##{webPage}## {action} {target}').format(action=action,
+            'Wait web page ##{webPage}## ##{action}## ##{target}##').format(action=action,
                                                                     target=target,
                                                                     webPage=flow_node.input('webPage'))
 

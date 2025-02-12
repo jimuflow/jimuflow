@@ -1,6 +1,6 @@
 {
   "name": "WebUpload",
-  "displayName": "Web upload",
+  "displayName": "Web Upload",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.web_automation.WebUploadComponent",
   "supportsErrorHandling": true,
@@ -14,7 +14,7 @@
       "type": "WebPage",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web page",
+        "label": "Web Page Object",
         "inputType": "expression"
       }
     },
@@ -23,7 +23,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Upload button element",
+        "label": "Upload Button Element",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit"
       }
@@ -33,7 +33,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Upload file path",
+        "label": "Upload File Path",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.file_path_editor.OpenFilePathEdit",
         "inputValueType": "expression"
@@ -45,7 +45,7 @@
       "direction": "IN",
       "defaultValue": "\"30\"",
       "uiConfig": {
-        "label": "Wait button time(seconds)",
+        "label": "Waiting for the Button Time(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false
@@ -57,7 +57,7 @@
       "direction": "IN",
       "defaultValue": "\"3\"",
       "uiConfig": {
-        "label": "Wait dialog time(seconds)",
+        "label": "Waiting for the Dialog Time(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false

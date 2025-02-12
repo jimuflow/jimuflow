@@ -1,0 +1,47 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "dictionary",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "current_value",
+      "type": "list",
+      "direction": "LOCAL",
+      "elementType": "any"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:ParseJson",
+      "inputs": {
+        "jsonText": "\"{\\\"name\\\":\\\"Tom\\\",\\\"age\\\":20}\""
+      },
+      "outputs": {
+        "result": "dictionary"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:core:DictLoop",
+      "inputs": {
+        "dict": "dictionary"
+      },
+      "outputs": {
+        "loopItem": "current_value"
+      },
+      "lineNo": 2,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "current_value [ \"0\" ] + \"=\" + current_value [ \"1\" ]"
+          },
+          "lineNo": 3
+        }
+      ]
+    }
+  ]
+}

@@ -14,7 +14,7 @@
       "direction": "IN",
       "defaultValue": "screen_origin",
       "uiConfig": {
-        "label": "Relative to",
+        "label": "Relative To",
         "inputType": "combo_box",
         "options": [
           {
@@ -33,7 +33,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "X coordinate offset",
+        "label": "X - coordinate Offset",
         "inputType": "expression"
       }
     },
@@ -42,7 +42,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Y coordinate offset",
+        "label": "Y - coordinate Offset",
         "inputType": "expression"
       }
     },
@@ -52,7 +52,7 @@
       "direction": "IN",
       "defaultValue": "instant",
       "uiConfig": {
-        "label": "Move speed",
+        "label": "Movement Speed",
         "inputType": "combo_box",
         "required": false,
         "options": [
@@ -81,7 +81,7 @@
       "direction": "IN",
       "defaultValue": "\"0\"",
       "uiConfig": {
-        "label": "Delay after action(seconds)",
+        "label": "Delay after Action(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false

@@ -13,7 +13,7 @@
       "type": "WebBrowser",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web browser",
+        "label": "Web Browser",
         "inputType": "expression",
         "helpInfo": "Please enter or select the web browser"
       }
@@ -23,7 +23,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "URL",
+        "label": "Web Page Address",
         "inputType": "expression",
         "helpInfo": "Please enter the webpage address you want to open"
       }
@@ -34,7 +34,7 @@
       "direction": "IN",
       "defaultValue": true,
       "uiConfig": {
-        "label": "Wait for the web page to load",
+        "label": "Wait for Page to Finish Loading",
         "group": "advanced",
         "inputType": "check_box",
         "required": false
@@ -46,7 +46,7 @@
       "direction": "IN",
       "defaultValue": "\"30\"",
       "uiConfig": {
-        "label": "Load timeout(seconds)",
+        "label": "Loading Timeout(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "dependsOn": {
@@ -62,17 +62,17 @@
       "direction": "IN",
       "defaultValue": "stop_loading",
       "uiConfig": {
-        "label": "Execute after loading timeout",
+        "label": "Action to Take After Loading Timeout",
         "group": "advanced",
         "inputType": "combo_box",
         "options": [
           {
             "value": "stop_loading",
-            "label": "Stop web page loading"
+            "label": "Stop loading the web page"
           },
           {
             "value": "throw_error",
-            "label": "perform error handling"
+            "label": "Execute error handling"
           }
         ],
         "dependsOn": {
@@ -87,7 +87,7 @@
       "type": "WebPage",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Web page"
+        "label": "Web Page Object"
       }
     }
   ]

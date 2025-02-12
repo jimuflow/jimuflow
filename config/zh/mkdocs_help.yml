@@ -1,0 +1,177 @@
+site_name: JimuFlow
+docs_dir: '../../docs/zh'
+site_dir: '../../help/zh'
+theme:
+  name: readthedocs
+  locale: zh_CN
+markdown_extensions:
+  - toc:
+      permalink: true
+nav:
+  - 首页: index.md
+  - 用户手册:
+    - 表达式: manual/expression.md
+    - 指令的错误处理: manual/error_handling.md
+    - 网页元素捕获工具: manual/web_element_capture_tool.md
+    - 网页元素相对XPath工具: manual/web_element_relative_xpath_tool.md
+    - 网页Cookie工具: manual/web_cookie_tool.md
+    - 窗口元素捕获工具: manual/window_element_capture_tool.md
+    - 窗口元素相对XPath工具: manual/window_element_relative_xpath_tool.md
+  - 指令手册:
+    - 流程控制:
+      - 返回: commands/ProcessControl/return.md
+      - 终止应用: commands/ProcessControl/exit.md
+      - 条件分支:
+        - If 分支: commands/ProcessControl/switch/if.md
+        - If 多条件分支: commands/ProcessControl/switch/if_conditions.md
+        - Else If 分支: commands/ProcessControl/switch/else_if.md
+        - Else If 多条件分支: commands/ProcessControl/switch/else_if_conditions.md
+        - Else 分支: commands/ProcessControl/switch/else.md
+      - 循环:
+        - 计数循环: commands/ProcessControl/loop/loop.md
+        - 条件循环: commands/ProcessControl/loop/while.md
+        - 列表循环: commands/ProcessControl/loop/list_loop.md
+        - 字典循环: commands/ProcessControl/loop/dict_loop.md
+        - 无限循环: commands/ProcessControl/loop/infinite_loop.md
+        - 继续下一循环: commands/ProcessControl/loop/continue.md
+        - 结束循环: commands/ProcessControl/loop/break.md
+    - 等待:
+      - 等待: commands/Wait/time_wait.md
+    - 网页自动化:
+      - 打开Web浏览器: commands/WebAutomation/open_web_browser.md
+      - 打开网页: commands/WebAutomation/open_web_page.md
+      - 点击打开网页: commands/WebAutomation/click_to_open_web_page.md
+      - 获取网页: commands/WebAutomation/get_web_page.md
+      - 等待网页内容: commands/WebAutomation/wait_web_content.md
+      - 检测网页内容: commands/WebAutomation/check_web_content.md
+      - 关闭网页: commands/WebAutomation/close_web_page.md
+      - 网页操作:
+        - 导航网页: commands/WebAutomation/WebPageOperation/navigate_web_page.md
+        - 等待网页加载: commands/WebAutomation/WebPageOperation/wait_web_page_load.md
+        - 滚动网页: commands/WebAutomation/WebPageOperation/scroll_web_page.md
+        - 设置Cookie: commands/WebAutomation/WebPageOperation/set_cookies.md
+        - 获取Cookie: commands/WebAutomation/WebPageOperation/get_cookies.md
+        - 删除Cookie: commands/WebAutomation/WebPageOperation/clear_cookies.md
+        - 在网页上执行Javascript: commands/WebAutomation/WebPageOperation/evaluate_js_in_web_page.md
+      - 网页元素操作:
+        - 点击网页元素: commands/WebAutomation/WebElementOperation/click_web_element.md
+        - 鼠标悬停网页元素: commands/WebAutomation/WebElementOperation/hover_web_element.md
+        - 填写网页输入框: commands/WebAutomation/WebElementOperation/web_input.md
+        - 设置网页下拉框值: commands/WebAutomation/WebElementOperation/set_web_select_value.md
+        - 设置网页复选框值: commands/WebAutomation/WebElementOperation/set_web_checkbox_value.md
+        - 遍历网页元素: commands/WebAutomation/WebElementOperation/loop_web_elements.md
+        - 拖拽网页元素: commands/WebAutomation/WebElementOperation/drag_web_element.md
+        - 获取网页相关元素: commands/WebAutomation/WebElementOperation/get_relative_web_element.md
+      - 网页数据抽取:
+        - 抽取网页数据: commands/WebAutomation/WebDataExtraction/extract_web_page.md
+        - 抽取网页元素数据: commands/WebAutomation/WebDataExtraction/extract_web_element.md
+        - 网页截屏: commands/WebAutomation/WebDataExtraction/screenshot_web_element.md
+      - 网页对话框操作:
+        - 网页下载: commands/WebAutomation/WebDialogOperation/web_download.md
+        - 网页上传: commands/WebAutomation/WebDialogOperation/web_upload.md
+    - Windows自动化:
+      - 获取窗口: commands/WindowsAutomation/get_window.md
+      - 点击窗口元素: commands/WindowsAutomation/click_window_element.md
+      - 等待窗口元素: commands/WindowsAutomation/wait_window_element.md
+      - 鼠标悬停窗口元素: commands/WindowsAutomation/hover_window_element.md
+      - 关闭窗口: commands/WindowsAutomation/close_window.md
+      - 窗口操作:
+        - 激活窗口: commands/WindowsAutomation/WindowOperation/active_window.md
+        - 设置窗口状态: commands/WindowsAutomation/WindowOperation/set_window_state.md
+        - 调整窗口大小: commands/WindowsAutomation/WindowOperation/resize_window.md
+        - 移动窗口: commands/WindowsAutomation/WindowOperation/move_window.md
+        - 设置窗口可见性: commands/WindowsAutomation/WindowOperation/set_window_visibility.md
+      - 窗口元素操作:
+        - 填写窗口输入框: commands/WindowsAutomation/WindowElementOperation/window_input.md
+        - 设置组合框值: commands/WindowsAutomation/WindowElementOperation/set_combobox_value.md
+        - 设置复选框值: commands/WindowsAutomation/WindowElementOperation/set_checkbox_value.md
+        - 遍历窗口元素: commands/WindowsAutomation/WindowElementOperation/loop_window_elements.md
+        - 获取相关窗口元素: commands/WindowsAutomation/WindowElementOperation/get_relative_window_element.md
+        - 拖拽窗口元素: commands/WindowsAutomation/WindowElementOperation/drag_window_element.md
+      - 数据抽取:
+        - 获取窗口信息: commands/WindowsAutomation/DataExtraction/extract_window.md
+        - 获取窗口元素信息: commands/WindowsAutomation/DataExtraction/extract_window_element.md
+        - 获取组合框选项: commands/WindowsAutomation/DataExtraction/get_combobox_items.md
+        - 窗口元素截屏: commands/WindowsAutomation/DataExtraction/screenshot_window_element.md
+    - 数据处理:
+      - 设置变量: commands/DataProcess/set_variable.md
+      - 文本操作:
+        - 文本转数值: commands/DataProcess/TextOperation/text_to_number.md
+        - 添加前缀或后缀: commands/DataProcess/TextOperation/add_prefix_or_suffix.md
+        - 去除空格: commands/DataProcess/TextOperation/trim_text.md
+        - 拆分文本: commands/DataProcess/TextOperation/split_text.md
+        - 替换文本: commands/DataProcess/TextOperation/replace_text.md
+        - 正则匹配: commands/DataProcess/TextOperation/regex_match.md
+        - 改变文本大小写: commands/DataProcess/TextOperation/change_text_case.md
+        - 截取文本: commands/DataProcess/TextOperation/slice_text.md
+      - 数值操作:
+        - 数值转文本: commands/DataProcess/NumberOperation/number_to_text.md
+        - 生成随机整数: commands/DataProcess/NumberOperation/randomint.md
+      - 列表操作:
+        - 创建列表: commands/DataProcess/ListOperation/create_list.md
+        - 插入列表项: commands/DataProcess/ListOperation/insert_item_to_list.md
+        - 删除列表项: commands/DataProcess/ListOperation/delete_list_item.md
+        - 更新列表项: commands/DataProcess/ListOperation/update_list_item.md
+        - 合并列表: commands/DataProcess/ListOperation/merge_list.md
+        - 反转列表: commands/DataProcess/ListOperation/reverse_list.md
+        - 排序列表: commands/DataProcess/ListOperation/sort_list.md
+      - 字典操作:
+        - 创建字典: commands/DataProcess/DictionaryOperation/create_dict.md
+        - 设置字典键值: commands/DataProcess/DictionaryOperation/set_dict_key_value.md
+        - 删除字典键: commands/DataProcess/DictionaryOperation/delete_dict_key.md
+      - 日期时间操作:
+        - 创建日期时间: commands/DataProcess/DateTimeOperation/create_date_time.md
+        - 创建日期: commands/DataProcess/DateTimeOperation/create_date.md
+        - 创建时间: commands/DataProcess/DateTimeOperation/create_time.md
+        - 修改日期时间: commands/DataProcess/DateTimeOperation/update_date_time.md
+        - 计算时间差: commands/DataProcess/DateTimeOperation/diff_date_time.md
+        - 格式化日期时间: commands/DataProcess/DateTimeOperation/format_date_time.md
+      - Json操作:
+        - 解析Json文本: commands/DataProcess/JSONOperation/parse_json.md
+        - 对象转Json文本: commands/DataProcess/JSONOperation/object_to_json.md
+      - 编/解码:
+        - URL编码: commands/DataProcess/EncodingDecoding/url_encode.md
+        - URL解码: commands/DataProcess/EncodingDecoding/url_decode.md
+    - 操作系统:
+      - 获取文件列表: commands/OperatingSystem/list_files.md
+      - 读取文本文件: commands/OperatingSystem/read_text_file.md
+      - 写入文本文件: commands/OperatingSystem/write_text_file.md
+      - 删除文件: commands/OperatingSystem/delete_file.md
+      - 复制文件: commands/OperatingSystem/copy_file.md
+      - 移动文件: commands/OperatingSystem/move_file.md
+      - 新建文件夹: commands/OperatingSystem/create_folder.md
+      - 获取文件路径信息: commands/OperatingSystem/get_file_path_info.md
+      - 重命名文件: commands/OperatingSystem/rename_file.md
+      - 压缩文件/文件夹: commands/OperatingSystem/compress_file.md
+      - 解压缩文件/文件夹: commands/OperatingSystem/decompress_file.md
+      - 获取剪贴板文本: commands/OperatingSystem/get_clipboard_text.md
+      - 设置剪贴板文本: commands/OperatingSystem/set_clipboard_text.md
+      - 终止进程: commands/OperatingSystem/kill_process.md
+      - 检查进程是否存在: commands/OperatingSystem/check_process.md
+      - 重命名文件夹: commands/OperatingSystem/rename_folder.md
+      - 复制文件夹: commands/OperatingSystem/copy_folder.md
+      - 移动文件夹: commands/OperatingSystem/move_folder.md
+      - 删除文件夹: commands/OperatingSystem/delete_folder.md
+      - 清空文件夹: commands/OperatingSystem/clear_folder.md
+      - 启动应用程序: commands/OperatingSystem/launch_app.md
+      - 执行命令行程序: commands/OperatingSystem/execute_cmd.md
+    - 鼠标键盘:
+      - 移动鼠标: commands/MouseKeyboard/move_mouse.md
+      - 鼠标单击: commands/MouseKeyboard/mouse_click.md
+      - 滚动鼠标: commands/MouseKeyboard/mouse_scroll.md
+      - 键盘输入: commands/MouseKeyboard/keyboard_input.md
+      - 鼠标悬浮在图像上: commands/MouseKeyboard/hover_image.md
+    - 数据表格:
+      - 创建数据表格: commands/DataTable/create_table.md
+      - 写入表格单元格: commands/DataTable/write_table_cell.md
+      - 写入数据表格行: commands/DataTable/write_table_row.md
+      - 删除表格行: commands/DataTable/delete_table_row.md
+      - 新增表格列: commands/DataTable/add_table_column.md
+      - 循环遍历表格: commands/DataTable/loop_table_rows.md
+      - 读取表格数据: commands/DataTable/read_table_data.md
+      - 导入excel为数据表格: commands/DataTable/import_excel_as_table.md
+      - 导入csv为数据表格: commands/DataTable/import_csv_as_table.md
+      - 导出数据表格: commands/DataTable/export_table.md
+    - 其他:
+      - 打印消息: commands/others/print.md
+

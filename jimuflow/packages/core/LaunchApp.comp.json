@@ -13,7 +13,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Application path",
+        "label": "Application Path",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.file_path_editor.OpenFilePathEdit",
         "inputValueType": "expression"
@@ -25,17 +25,17 @@
       "direction": "IN",
       "defaultValue": "continue",
       "uiConfig": {
-        "label": "Action after launch",
+        "label": "Post-Launch Action",
         "inputType": "combo_box",
         "required": false,
         "options": [
           {
             "value": "continue",
-            "label": "Continue to execute"
+            "label": "Continue execution"
           },
           {
             "value": "wait_complete",
-            "label": "Waiting for application execution to complete"
+            "label": "Waiting for application to complete"
           }
         ]
       }
@@ -45,7 +45,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Process working directory",
+        "label": "Process Working Directory",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.file_path_editor.FolderPathEdit",
         "inputValueType": "expression",
@@ -58,7 +58,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Command line arguments",
+        "label": "Command Line Arguments",
         "inputType": "expression",
         "group": "advanced",
         "required": false
@@ -69,7 +69,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Wait timeout(s)",
+        "label": "Waiting Timeout(seconds)",
         "inputType": "expression",
         "group": "advanced",
         "required": false,

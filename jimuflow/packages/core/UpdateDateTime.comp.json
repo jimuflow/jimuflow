@@ -14,7 +14,7 @@
       "type": "datetime",
       "direction": "IN",
       "uiConfig": {
-        "label": "Original date and time",
+        "label": "Original DateTime",
         "inputType": "expression"
       }
     },
@@ -24,16 +24,16 @@
       "direction": "IN",
       "defaultValue": "increment",
       "uiConfig": {
-        "label": "Adjustment type",
+        "label": "Adjustment Type",
         "inputType": "combo_box",
         "options": [
           {
             "value": "increment",
-            "label": "Increment"
+            "label": "Increase"
           },
           {
             "value": "decrement",
-            "label": "Decrement"
+            "label": "Decrease"
           }
         ]
       }
@@ -43,7 +43,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Adjustment value",
+        "label": "Adjustment Value",
         "inputType": "expression"
       }
     },
@@ -53,7 +53,7 @@
       "direction": "IN",
       "defaultValue": "seconds",
       "uiConfig": {
-        "label": "Adjustment unit",
+        "label": "Adjustment Unit",
         "inputType": "combo_box",
         "options": [
           {
@@ -100,7 +100,7 @@
       "type": "datetime",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Datetime"
+        "label": "DateTime"
       }
     }
   ]

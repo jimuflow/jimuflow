@@ -31,10 +31,10 @@ import asyncio
 import logging
 import os
 import traceback
-from asyncio import AbstractEventLoop
+from asyncio import AbstractEventLoop, Task
 from pathlib import Path
 
-from PySide6.QtCore import Slot, QThreadPool, QThread, Signal, QSize
+from PySide6.QtCore import Slot, QThread, Signal, QSize
 from PySide6.QtGui import QAction, Qt, QIcon, QKeySequence
 from PySide6.QtWidgets import QMainWindow, QApplication, QLabel, QTabWidget, QSplitter, QVBoxLayout, QWidget, \
     QFileDialog, QDialog, QMessageBox
@@ -72,6 +72,7 @@ class CoroutineThread(QThread):
         self.result = None
         self.exception = None
         self.loop: AbstractEventLoop | None = None
+        self.task: Task | None = None
 
     @Slot()
     def run(self):
@@ -87,7 +88,14 @@ class CoroutineThread(QThread):
 
     async def _async_run(self):
         self.loop = asyncio.get_running_loop()
-        return await self._coro
+        self.task = asyncio.create_task(self._coro)
+        return await self.task
+
+    def stop(self):
+        if self.task and not self.task.done():
+            self.loop.call_soon_threadsafe(self.task.cancel)
+            self.task = None
+        self.wait()
 
 
 class MainWindow(QMainWindow, DebugListener):
@@ -119,7 +127,6 @@ class MainWindow(QMainWindow, DebugListener):
         self.setCentralWidget(self.splitter)
 
         self.statusBar().showMessage(gettext("Ready"))
-        self._threadpool = QThreadPool()
         self.debugger_paused.connect(self.handle_debugger_paused)
         self.debugger_ended.connect(self.stop_process)
         self.debugger_resumed.connect(self.handle_debugger_resumed)
@@ -384,7 +391,15 @@ class MainWindow(QMainWindow, DebugListener):
     def open_app(self):
         workspace_path = Utils.get_workspace_path()
         app_dir = QFileDialog.getExistingDirectory(self, gettext("Open Application"), workspace_path)
-        if not app_dir:
+        self._do_open_app(app_dir)
+
+    @Slot()
+    def open_recent_app(self):
+        app_dir = self.sender().data()
+        self._do_open_app(app_dir)
+
+    def _do_open_app(self, app_dir: str):
+        if not app_dir or not os.path.isdir(app_dir):
             return
         if not self._close_app():
             return
@@ -398,13 +413,6 @@ class MainWindow(QMainWindow, DebugListener):
             main_process_def = app.engine.get_component_def(app.app_package, app.app_package.main_process)
             if main_process_def:
                 self.do_open_process(main_process_def)
-
-    @Slot()
-    def open_recent_app(self):
-        app_path = self.sender().data()
-        app = App(self)
-        app.load(Path(app_path))
-        self.set_app(app)
 
     @Slot()
     def create_process(self):
@@ -630,6 +638,8 @@ class MainWindow(QMainWindow, DebugListener):
                     self._thread.loop.call_soon_threadsafe(lambda: debugger.stop())
             self._debugger = None
             self.variables_tab.set_component(None)
+        if self._thread and not self._thread.isFinished():
+            self._thread.stop()
         self._run_act.setEnabled(True)
         self._start_debug_act.setEnabled(True)
         self._debug_run_act.setEnabled(False)

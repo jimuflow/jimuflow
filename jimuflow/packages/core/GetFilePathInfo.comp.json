@@ -13,7 +13,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "File path",
+        "label": "File Path",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.file_path_editor.FileOrFolderPathEdit",
         "inputValueType": "expression"
@@ -24,7 +24,7 @@
       "type": "FilePathInfo",
       "direction": "OUT",
       "uiConfig": {
-        "label": "File path info"
+        "label": "File Path Information"
       }
     }
   ]

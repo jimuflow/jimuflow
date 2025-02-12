@@ -1,6 +1,6 @@
 {
   "name": "SetCookies",
-  "displayName": "Set cookies",
+  "displayName": "Set Cookies",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.web_automation.SetCookiesComponent",
   "supportsErrorHandling": true,
@@ -14,7 +14,7 @@
       "type": "WebPage",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web page",
+        "label": "Web Page Object",
         "inputType": "expression"
       }
     },

@@ -13,7 +13,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Text content",
+        "label": "Text Content",
         "inputType": "expression"
       }
     }

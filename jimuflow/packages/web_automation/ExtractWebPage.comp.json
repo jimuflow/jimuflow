@@ -14,7 +14,7 @@
       "type": "WebPage",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web page",
+        "label": "Web Page Object",
         "inputType": "expression"
       }
     },
@@ -24,7 +24,7 @@
       "direction": "IN",
       "defaultValue": "title",
       "uiConfig": {
-        "label": "Extract type",
+        "label": "Extraction Type",
         "inputType": "combo_box",
         "options": [
           {
@@ -51,7 +51,7 @@
       "type": "text",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Extracted result"
+        "label": "Extraction Result"
       }
     }
   ]

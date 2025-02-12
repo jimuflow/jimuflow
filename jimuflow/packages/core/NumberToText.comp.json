@@ -1,6 +1,6 @@
 {
   "name": "NumberToText",
-  "displayName": "Number To Text",
+  "displayName": "Number to Text",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.core.NumberToTextComponent",
   "supportsErrorHandling": true,
@@ -14,7 +14,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Number value",
+        "label": "Number",
         "inputType": "expression"
       }
     },
@@ -23,7 +23,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Number of decimal places",
+        "label": "Number of Decimal Places",
         "inputType": "expression"
       }
     },

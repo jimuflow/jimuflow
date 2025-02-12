@@ -5,3 +5,4 @@ pyinstaller
 mkdocs[i18n]
 build
 twine
+mkdocs-material

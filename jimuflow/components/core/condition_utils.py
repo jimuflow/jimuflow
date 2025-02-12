@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -31,11 +31,13 @@ op_i18n = {
     'not_starts_with': gettext('not starts with'),
     'ends_with': gettext('ends with'),
     'not_ends_with': gettext('not ends with'),
+    'is_true': gettext('is true'),
+    'is_false': gettext('is false'),
 }
 
 
 def is_binary_op(op: str):
-    return op not in ["is_empty", "not_empty"]
+    return op not in ["is_empty", "not_empty", "is_true", "is_false"]
 
 
 def convert_to_best_type(value):
@@ -92,5 +94,9 @@ def evaluate_condition(operand1, op, operand2) -> bool:
             operand2) > 0 and operand1.endswith(operand2)
     elif op == 'not_ends_with':
         return not (operand1 and operand2 and operand1.endswith(operand2))
+    elif op == 'is_true':
+        return operand1 is True
+    elif op == 'is_false':
+        return operand1 is False
     else:
         raise Exception(gettext('Unsupported operator: {op}').format(op=op_i18n[op]))

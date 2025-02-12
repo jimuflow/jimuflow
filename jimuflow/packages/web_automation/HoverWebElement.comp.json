@@ -14,7 +14,7 @@
       "type": "WebPage",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web page",
+        "label": "Web Page Object",
         "inputType": "expression"
       }
     },
@@ -23,7 +23,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web element",
+        "label": "Web Element",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit"
       }
@@ -58,7 +58,7 @@
       "direction": "IN",
       "defaultValue": "\"30\"",
       "uiConfig": {
-        "label": "Wait time(seconds)",
+        "label": "Waiting Time(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false

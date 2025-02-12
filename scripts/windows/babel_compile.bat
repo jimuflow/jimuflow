@@ -14,4 +14,4 @@ set "base_dir=%base_dir:~0,-1%"
 set "PYTHONPATH=%base_dir%"
 
 :: 执行 pybabel 命令
-pybabel compile -D messages -d "%base_dir%\jimuflow\locales"
+pybabel compile -f -D messages -d "%base_dir%\jimuflow\locales"

@@ -80,6 +80,14 @@
           {
             "value": "not_ends_with",
             "label": "not ends with"
+          },
+          {
+            "value": "is_true",
+            "label": "is true"
+          },
+          {
+            "value": "is_false",
+            "label": "is false"
           }
         ]
       }

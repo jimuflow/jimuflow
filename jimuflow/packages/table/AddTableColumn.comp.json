@@ -1,6 +1,6 @@
 {
   "name": "AddTableColumn",
-  "displayName": "Add table column",
+  "displayName": "Add Table Column",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.table.AddTableColumnComponent",
   "supportsErrorHandling": true,
@@ -22,7 +22,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Column name",
+        "label": "Column Name",
         "inputType": "expression"
       }
     }

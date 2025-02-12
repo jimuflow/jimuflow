@@ -1,6 +1,6 @@
 {
   "name": "TextToNumber",
-  "displayName": "Text To Number",
+  "displayName": "Text to Number",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.core.TextToNumberComponent",
   "supportsErrorHandling": true,
@@ -14,7 +14,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Text value",
+        "label": "Text Value",
         "inputType": "expression"
       }
     },

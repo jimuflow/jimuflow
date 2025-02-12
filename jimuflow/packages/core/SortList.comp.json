@@ -1,6 +1,6 @@
 {
   "name": "SortList",
-  "displayName": "Sort list",
+  "displayName": "Sort List",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.core.SortListComponent",
   "supportsErrorHandling": true,
@@ -25,7 +25,7 @@
       "direction": "IN",
       "defaultValue": "asc",
       "uiConfig": {
-        "label": "Sort order",
+        "label": "Sorting Method",
         "inputType": "combo_box",
         "options": [
           {

@@ -24,7 +24,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Item position",
+        "label": "Item Position",
         "inputType": "expression",
         "placeholder": "Starting from 0, - n represents the nth to last"
       }

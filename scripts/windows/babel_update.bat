@@ -14,4 +14,4 @@ set "base_dir=%base_dir:~0,-1%"
 set "PYTHONPATH=%base_dir%"
 
 :: 执行 pybabel 命令
-pybabel update -D messages -i "%base_dir%\jimuflow\locales\messages.pot" -d "%base_dir%\jimuflow\locales" -l zh_CN
+pybabel update -D messages -i "%base_dir%\jimuflow\locales\messages.pot" -d "%base_dir%\jimuflow\locales" -l zh_CN --omit-header

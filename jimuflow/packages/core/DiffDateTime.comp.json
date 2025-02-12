@@ -1,6 +1,6 @@
 {
   "name": "DiffDateTime",
-  "displayName": "Calculate time difference",
+  "displayName": "Calculate Time Difference",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.core.DiffDateTimeComponent",
   "supportsErrorHandling": true,
@@ -14,7 +14,7 @@
       "type": "datetime",
       "direction": "IN",
       "uiConfig": {
-        "label": "Starting date",
+        "label": "Start Date",
         "inputType": "expression"
       }
     },
@@ -33,7 +33,7 @@
       "direction": "IN",
       "defaultValue": "seconds",
       "uiConfig": {
-        "label": "Time unit",
+        "label": "Time Unit",
         "inputType": "combo_box",
         "options": [
           {
@@ -60,7 +60,7 @@
       "type": "number",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Time difference"
+        "label": "Time Difference"
       }
     }
   ]

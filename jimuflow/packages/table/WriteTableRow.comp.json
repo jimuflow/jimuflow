@@ -1,6 +1,6 @@
 {
   "name": "WriteTableRow",
-  "displayName": "Write table row",
+  "displayName": "Write Table Row",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.table.WriteTableRowComponent",
   "supportsErrorHandling": true,
@@ -46,7 +46,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Row number",
+        "label": "Row Number",
         "inputType": "expression",
         "helpInfo": "Enter the line number, starting from line 1, where -n represents the nth to last line",
         "dependsOn": {
@@ -84,7 +84,7 @@
       "direction": "IN",
       "elementType": "text",
       "uiConfig": {
-        "label": "Input row",
+        "label": "Input Row",
         "inputType": "expression",
         "helpInfo": "Row value list",
         "dependsOn": {
@@ -100,7 +100,7 @@
       "direction": "IN",
       "elementType": "list",
       "uiConfig": {
-        "label": "Input columns",
+        "label": "Input Columns",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.table_row_editor.TableRowEditor",
         "helpInfo": "Row columns list",

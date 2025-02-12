@@ -14,7 +14,7 @@
       "direction": "IN",
       "defaultValue": "pid",
       "uiConfig": {
-        "label": "Process property",
+        "label": "Process Attributes",
         "inputType": "combo_box",
         "options": [
           {
@@ -47,7 +47,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Process name",
+        "label": "Process Name",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "processProp",
@@ -61,7 +61,7 @@
       "type": "bool",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Check result"
+        "label": "Check Result"
       }
     }
   ]

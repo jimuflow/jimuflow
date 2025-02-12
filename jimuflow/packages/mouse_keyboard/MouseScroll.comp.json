@@ -14,7 +14,7 @@
       "direction": "IN",
       "defaultValue": "down",
       "uiConfig": {
-        "label": "Scroll direction",
+        "label": "Scroll Direction",
         "inputType": "combo_box",
         "required": false,
         "options": [
@@ -34,7 +34,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Number of scrolls",
+        "label": "Number of Scrolls",
         "inputType": "expression"
       }
     },
@@ -44,7 +44,7 @@
       "direction": "IN",
       "defaultValue": "none",
       "uiConfig": {
-        "label": "Modifier key",
+        "label": "Modifier Key",
         "group": "advanced",
         "inputType": "combo_box",
         "required": false,
@@ -82,7 +82,7 @@
       "direction": "IN",
       "defaultValue": "\"0\"",
       "uiConfig": {
-        "label": "Delay after action(seconds)",
+        "label": "Delay after Action(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false

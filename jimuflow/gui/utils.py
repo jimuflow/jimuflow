@@ -28,20 +28,24 @@ class Utils:
 
     @staticmethod
     def get_workspace_path():
-        return Utils.settings.value("workspace_path", os.getcwd())
+        workspace_path = Utils.settings.value("workspace_path")
+        if not workspace_path or not os.path.isdir(workspace_path):
+            workspace_path = os.getcwd()
+        return workspace_path
 
     @staticmethod
-    def set_workspace_path(path):
+    def set_workspace_path(path: str):
         Utils.settings.setValue("workspace_path", path)
 
     @staticmethod
     def add_recent_app(app_path):
         recent_apps = Utils.get_recent_apps()
-        if app_path not in recent_apps:
-            recent_apps.insert(0, app_path)
-            if len(recent_apps) > 10:
-                recent_apps.pop()
-            Utils.settings.setValue("recent_apps", recent_apps)
+        if app_path in recent_apps:
+            recent_apps.remove(app_path)
+        recent_apps.insert(0, app_path)
+        if len(recent_apps) > 10:
+            recent_apps.pop()
+        Utils.settings.setValue("recent_apps", recent_apps)
 
     @staticmethod
     def get_recent_apps():

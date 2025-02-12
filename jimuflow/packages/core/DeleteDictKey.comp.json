@@ -1,6 +1,6 @@
 {
   "name": "DeleteDictKey",
-  "displayName": "Delete dictionary key",
+  "displayName": "Delete Dictionary Key",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.core.DeleteDictKeyComponent",
   "supportsErrorHandling": true,
@@ -23,7 +23,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Key",
+        "label": "Key Name",
         "inputType": "expression"
       }
     }

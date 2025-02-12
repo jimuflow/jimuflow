@@ -13,16 +13,16 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Close Type",
+        "label": "Closing Type",
         "inputType": "combo_box",
         "options": [
           {
             "value": "page",
-            "label": "Close specific page"
+            "label": "close the specified page"
           },
           {
             "value": "browser",
-            "label": "Close browser"
+            "label": "close the browser"
           }
         ]
       }
@@ -32,7 +32,7 @@
       "type": "WebPage",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web page",
+        "label": "Web Page Object",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "closeType",
@@ -46,7 +46,7 @@
       "type": "WebBrowser",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web browser",
+        "label": "Web Browser",
         "inputType": "expression",
         "helpInfo": "Please enter or select the web browser",
         "dependsOn": {

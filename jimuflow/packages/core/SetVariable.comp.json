@@ -1,6 +1,6 @@
 {
   "name": "SetVariable",
-  "displayName": "Set variable",
+  "displayName": "Set Variable",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.core.SetVariableComponent",
   "primaryCategory": "Data Process",
@@ -12,7 +12,7 @@
       "type": "any",
       "direction": "IN",
       "uiConfig": {
-        "label": "Variable value",
+        "label": "Variable Value",
         "inputType": "expression"
       }
     },
@@ -21,7 +21,7 @@
       "type": "any",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Variable name"
+        "label": "Variable Name"
       }
     }
   ]

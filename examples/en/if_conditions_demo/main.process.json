@@ -1,0 +1,72 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "height",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "inputType": "number_edit"
+      }
+    },
+    {
+      "name": "age",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "required": false,
+        "inputType": "number_edit"
+      }
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"The height you entered is \" + height + \" meters, and the age is \" + age + \" years old.\""
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:core:IfConditions",
+      "inputs": {
+        "relation": "any",
+        "conditions": [
+          {
+            "operand1": "height",
+            "op": "<",
+            "operand2": "\"1.2\""
+          },
+          {
+            "operand1": "age",
+            "op": "<",
+            "operand2": "\"6\""
+          }
+        ]
+      },
+      "lineNo": 2,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"Free ticket is available\""
+          },
+          "lineNo": 3
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:core:Else",
+      "lineNo": 4,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"Ticket is required\""
+          },
+          "lineNo": 5
+        }
+      ]
+    }
+  ]
+}

@@ -25,7 +25,7 @@
       "direction": "IN",
       "defaultValue": "by_position",
       "uiConfig": {
-        "label": "Delete Type",
+        "label": "Deletion Type",
         "inputType": "combo_box",
         "options": [
           {
@@ -44,7 +44,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Item position",
+        "label": "Item Position",
         "inputType": "expression",
         "placeholder": "Starting from 0, - n represents the nth to last",
         "dependsOn": {
@@ -59,7 +59,7 @@
       "type": "any",
       "direction": "IN",
       "uiConfig": {
-        "label": "Item value",
+        "label": "Item Value",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "deleteType",

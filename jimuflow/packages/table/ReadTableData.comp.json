@@ -1,6 +1,6 @@
 {
   "name": "ReadTableData",
-  "displayName": "Read table data",
+  "displayName": "Read Table Data",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.table.ReadTableDataComponent",
   "supportsErrorHandling": true,
@@ -23,7 +23,7 @@
       "direction": "IN",
       "defaultValue": "row",
       "uiConfig": {
-        "label": "Read type",
+        "label": "Reading Type",
         "inputType": "combo_box",
         "required": false,
         "options": [
@@ -43,7 +43,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Row number",
+        "label": "Row Number",
         "inputType": "expression",
         "helpInfo": "Enter the line number, starting from line 1, where -n represents the nth to last line"
       }
@@ -53,7 +53,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Column number",
+        "label": "Column Number",
         "inputType": "expression",
         "helpInfo": "Enter the column name/number, starting from column 1, where -n represents the nth to last column",
         "dependsOn": {
@@ -68,7 +68,7 @@
       "type": "any",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Read result"
+        "label": "Reading Result"
       }
     }
   ]

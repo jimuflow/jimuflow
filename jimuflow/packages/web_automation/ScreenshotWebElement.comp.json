@@ -14,7 +14,7 @@
       "type": "WebPage",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web page",
+        "label": "Web Page Object",
         "inputType": "expression"
       }
     },
@@ -24,7 +24,7 @@
       "direction": "IN",
       "defaultValue": "element",
       "uiConfig": {
-        "label": "Screenshot area",
+        "label": "Screenshot Area",
         "inputType": "combo_box",
         "options": [
           {
@@ -33,11 +33,11 @@
           },
           {
             "value": "viewport",
-            "label": "Visible web page viewport"
+            "label": "Visible area of the web page"
           },
           {
             "value": "full_page",
-            "label": "Full web page"
+            "label": "Entire web page"
           }
         ]
       }
@@ -47,7 +47,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web element",
+        "label": "Web Element",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit",
         "dependsOn": {
@@ -62,7 +62,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Save folder",
+        "label": "Save Folder",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.file_path_editor.FolderPathEdit",
         "inputValueType": "expression"
@@ -74,7 +74,7 @@
       "direction": "IN",
       "defaultValue": "png",
       "uiConfig": {
-        "label": "File format",
+        "label": "File Format",
         "inputType": "combo_box",
         "options": [
           {
@@ -94,7 +94,7 @@
       "direction": "IN",
       "defaultValue": "random",
       "uiConfig": {
-        "label": "File naming type",
+        "label": "File Naming Type",
         "inputType": "combo_box",
         "options": [
           {
@@ -113,7 +113,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Custom filename",
+        "label": "Custom File Name",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "fileNamingType",
@@ -144,7 +144,7 @@
       "direction": "IN",
       "defaultValue": "\"30\"",
       "uiConfig": {
-        "label": "Wait time(seconds)",
+        "label": "Waiting Time(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false
@@ -155,7 +155,7 @@
       "type": "text",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Snapshot filename"
+        "label": "Screenshot File Name"
       }
     }
   ]

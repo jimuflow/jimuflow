@@ -13,7 +13,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Original text",
+        "label": "Original Text",
         "inputType": "expression"
       }
     },
@@ -23,16 +23,16 @@
       "direction": "IN",
       "defaultValue": "suffix",
       "uiConfig": {
-        "label": "Add type",
+        "label": "Addition Type",
         "inputType": "combo_box",
         "options": [
           {
             "value": "prefix",
-            "label": "Add prefix"
+            "label": "Add a prefix"
           },
           {
             "value": "suffix",
-            "label": "Add suffix"
+            "label": "Add a suffix"
           }
         ]
       }
@@ -42,7 +42,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Add text",
+        "label": "Added Text",
         "inputType": "expression"
       }
     },

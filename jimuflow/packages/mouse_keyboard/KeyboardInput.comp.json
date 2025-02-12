@@ -14,7 +14,7 @@
       "direction": "IN",
       "defaultValue": "text",
       "uiConfig": {
-        "label": "Input type",
+        "label": "Input Type",
         "inputType": "combo_box",
         "options": [
           {
@@ -33,7 +33,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Text content",
+        "label": "Text Content",
         "inputType": "expression",
         "helpInfo": "Support all Unicode characters, including Chinese and English, on Windows, but only English characters on Linux and macOS. If you need to input non-English characters on Linux or macOS, please use the setting clipboard text command and pasting hotkey.",
         "dependsOn": {
@@ -49,7 +49,7 @@
       "direction": "IN",
       "defaultValue": "common",
       "uiConfig": {
-        "label": "Hotkey type",
+        "label": "Hotkey Type",
         "inputType": "combo_box",
         "options": [
           {
@@ -74,7 +74,7 @@
       "direction": "IN",
       "defaultValue": "ctrlcmd_c",
       "uiConfig": {
-        "label": "Common hotkey",
+        "label": "Common Hotkey",
         "inputType": "combo_box",
         "options": [
           {
@@ -119,7 +119,7 @@
       "elementType": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Custom hotkey",
+        "label": "Custom Hotkey",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.hotkey_editor.HotkeyEdit",
         "inputValueType": "literal",
@@ -136,7 +136,7 @@
       "direction": "IN",
       "defaultValue": "\"100\"",
       "uiConfig": {
-        "label": "Input interval(milliseconds)",
+        "label": "Input Interval(milliseconds)",
         "group": "advanced",
         "inputType": "expression",
         "dependsOn": {
@@ -152,7 +152,7 @@
       "direction": "IN",
       "defaultValue": "\"0\"",
       "uiConfig": {
-        "label": "Delay after action(seconds)",
+        "label": "Delay after Action(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false

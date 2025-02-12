@@ -13,7 +13,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Folder path",
+        "label": "Folder Path",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.file_path_editor.FolderPathEdit",
         "inputValueType": "expression"

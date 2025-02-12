@@ -1,0 +1,20 @@
+{
+  "name": "main_process",
+  "variables": [],
+  "flow": [
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"This is the main process\""
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "sub_process",
+      "inputs": {
+        "param1": "Return in advance"
+      },
+      "lineNo": 2
+    }
+  ]
+}

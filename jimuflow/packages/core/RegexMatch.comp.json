@@ -14,7 +14,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Original text",
+        "label": "Original Text",
         "inputType": "expression"
       }
     },
@@ -23,7 +23,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Regex",
+        "label": "Regular Expression",
         "inputType": "expression"
       }
     },
@@ -33,7 +33,7 @@
       "direction": "IN",
       "defaultValue": false,
       "uiConfig": {
-        "label": "Find first match",
+        "label": "Find the first match",
         "inputType": "check_box"
       }
     },

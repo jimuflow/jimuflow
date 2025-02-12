@@ -1,6 +1,6 @@
 {
   "name": "ExportTable",
-  "displayName": "Export table",
+  "displayName": "Export Table",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.table.ExportTableComponent",
   "supportsErrorHandling": true,
@@ -22,7 +22,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Save folder",
+        "label": "Save Folder",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.file_path_editor.FolderPathEdit",
         "inputValueType": "expression"
@@ -34,7 +34,7 @@
       "direction": "IN",
       "defaultValue": "xlsx",
       "uiConfig": {
-        "label": "File format",
+        "label": "File Format",
         "inputType": "combo_box",
         "options": [
           {
@@ -57,7 +57,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Sheet name",
+        "label": "Sheet Name",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "fileFormat",
@@ -72,7 +72,7 @@
       "direction": "IN",
       "defaultValue": "system_default",
       "uiConfig": {
-        "label": "File encoding",
+        "label": "File Encoding",
         "inputType": "combo_box",
         "required": false,
         "options": [
@@ -145,7 +145,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Custom delimiter",
+        "label": "Custom Delimiter",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "useCustomDelimiter",
@@ -160,7 +160,7 @@
       "direction": "IN",
       "defaultValue": "random",
       "uiConfig": {
-        "label": "File naming type",
+        "label": "File Naming Type",
         "inputType": "combo_box",
         "options": [
           {
@@ -179,7 +179,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Custom filename",
+        "label": "Custom File Name",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "fileNamingType",
@@ -220,7 +220,7 @@
       "type": "text",
       "direction": "OUT",
       "uiConfig": {
-        "label": "File path"
+        "label": "File Path"
       }
     }
   ]

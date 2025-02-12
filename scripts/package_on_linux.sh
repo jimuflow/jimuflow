@@ -20,14 +20,15 @@ done
 
 #PLAYWRIGHT_BROWSERS_PATH=0 playwright install chromium
 
-mkdocs build
+mkdocs build -f config/en/mkdocs_help.yml
+mkdocs build -f config/zh/mkdocs_help.yml
 
 pyinstaller --name JimuFlow \
   --icon jimuflow/icons/jimuflow.png \
   --add-data "jimuflow/locales/zh_CN/LC_MESSAGES/messages.mo:./jimuflow/locales/zh_CN/LC_MESSAGES" \
   --add-data "jimuflow/packages:./jimuflow/packages" \
   --add-data "jimuflow/resources:./jimuflow/resources" \
-  --add-data "site:./jimuflow/site" \
+  --add-data "help:./jimuflow/help" \
   --hidden-import=jimuflow.datatypes.web_page \
   --hidden-import=jimuflow.datatypes.windows_types \
   --hidden-import=jimuflow.components \

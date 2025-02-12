@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -16,17 +16,19 @@
 
 import json
 
-from PySide6.QtCore import Slot, QSize, QDateTime, QTimeZone
+from PySide6.QtCore import Slot, QSize, QDateTime, QTimeZone, QObject, QEvent, QUrl
 from PySide6.QtGui import QStandardItemModel, QStandardItem, Qt
 from PySide6.QtNetwork import QNetworkCookie
 from PySide6.QtWebEngineWidgets import QWebEngineView
-from PySide6.QtWidgets import QDialog, QVBoxLayout, QLabel, QLineEdit, QPushButton, \
+from PySide6.QtWidgets import QVBoxLayout, QLabel, QLineEdit, QPushButton, \
     QGridLayout, QApplication, QDialogButtonBox, QTableView, QAbstractItemView, QSplitter
 
+from jimuflow.gui.dialog_with_webengine import DialogWithWebEngine
+from jimuflow.gui.web_element_capture_tool import validate_and_fix_url
 from jimuflow.locales.i18n import gettext
 
 
-class WebCookieTool(QDialog):
+class WebCookieTool(DialogWithWebEngine):
     last_url = ''
 
     def __init__(self, parent=None):
@@ -37,6 +39,7 @@ class WebCookieTool(QDialog):
         top_layout = QGridLayout()
         url_label = QLabel(gettext('URL: '))
         url_editor = QLineEdit()
+        url_editor.installEventFilter(self)
         url_editor.setPlaceholderText(
             gettext('Please enter the URL'))
         if WebCookieTool.last_url:
@@ -52,6 +55,7 @@ class WebCookieTool(QDialog):
         web_view.page().profile().cookieStore().cookieAdded.connect(self._on_cookie_added)
         web_view.page().profile().cookieStore().cookieRemoved.connect(self._on_cookie_removed)
         web_view.loadFinished.connect(self._on_load_finished)
+        web_view.urlChanged.connect(self._on_url_changed)
         splitter.addWidget(web_view)
         table_view = QTableView()
         table_view.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
@@ -84,17 +88,31 @@ class WebCookieTool(QDialog):
         self.resize(QSize(1200, 700))
         self.cookies = ''
 
+    def eventFilter(self, watched: QObject, event):
+        if event.type() == QEvent.Type.KeyPress and watched is self._url_editor:
+            if event.key() == Qt.Key.Key_Enter or event.key() == Qt.Key.Key_Return:
+                self._open_url()
+                return True
+        return super().eventFilter(watched, event)
+
     @Slot()
     def _open_url(self):
-        url = self._url_editor.text().strip()
+        input_url = self._url_editor.text()
+        url = validate_and_fix_url(input_url)
         if not url:
             return
+        if input_url != url:
+            self._url_editor.setText(url)
         self._web_view.load(url)
         WebCookieTool.last_url = url
 
     @Slot(bool)
     def _on_load_finished(self, ok: bool):
         pass
+
+    @Slot(QUrl)
+    def _on_url_changed(self, url: QUrl):
+        self._url_editor.setText(url.toString())
 
     @Slot(QNetworkCookie)
     def _on_cookie_added(self, cookie: QNetworkCookie):

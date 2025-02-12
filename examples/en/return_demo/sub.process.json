@@ -1,0 +1,51 @@
+{
+  "name": "sub_process",
+  "variables": [
+    {
+      "name": "param1",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "required": false
+      }
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"This is the sub process\""
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:core:If",
+      "inputs": {
+        "operand1": "param1",
+        "op": "==",
+        "operand2": "\"Return in advance\""
+      },
+      "lineNo": 2,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"Return in advance\""
+          },
+          "lineNo": 3
+        },
+        {
+          "component": "jimuflow:core:Return",
+          "lineNo": 4
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"Return normally\""
+      },
+      "lineNo": 5
+    }
+  ]
+}

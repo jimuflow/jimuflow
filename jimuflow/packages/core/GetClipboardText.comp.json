@@ -13,7 +13,7 @@
       "type": "text",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Clipboard text"
+        "label": "Clipboard Text"
       }
     }
   ]

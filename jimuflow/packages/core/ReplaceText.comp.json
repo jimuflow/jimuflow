@@ -14,7 +14,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Original text",
+        "label": "Original Text",
         "inputType": "expression"
       }
     },
@@ -24,7 +24,7 @@
       "direction": "IN",
       "defaultValue": "text",
       "uiConfig": {
-        "label": "Replace type",
+        "label": "Replacement Type",
         "inputType": "combo_box",
         "options": [
           {
@@ -33,7 +33,7 @@
           },
           {
             "value": "regex",
-            "label": "Regex replacement"
+            "label": "Regular expression replacement"
           }
         ]
       }
@@ -43,7 +43,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Text to replace",
+        "label": "Text to Replace",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "replaceType",
@@ -57,7 +57,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Regex to replace",
+        "label": "Regular Expression to Replace",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "replaceType",
@@ -72,7 +72,7 @@
       "direction": "IN",
       "defaultValue": false,
       "uiConfig": {
-        "label": "Replace first match",
+        "label": "Replace only the first match",
         "inputType": "check_box"
       }
     },
@@ -91,7 +91,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Replacement text",
+        "label": "Replacement Text",
         "inputType": "expression"
       }
     },

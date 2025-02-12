@@ -1,0 +1,34 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "message",
+      "type": "text",
+      "direction": "IN"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:If",
+      "inputs": {
+        "operand1": "message",
+        "op": "not_contains",
+        "operand2": "\"Hello\""
+      },
+      "lineNo": 1,
+      "flow": [
+        {
+          "component": "jimuflow:core:Exit",
+          "lineNo": 2
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "message"
+      },
+      "lineNo": 3
+    }
+  ]
+}

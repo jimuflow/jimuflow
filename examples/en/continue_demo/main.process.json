@@ -1,0 +1,61 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "number_list",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "current_number",
+      "type": "any",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:ParseJson",
+      "inputs": {
+        "jsonText": "\"[1, 2, 3, 4, 5]\""
+      },
+      "outputs": {
+        "result": "number_list"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:core:ListLoop",
+      "inputs": {
+        "list": "number_list"
+      },
+      "outputs": {
+        "loopItem": "current_number"
+      },
+      "lineNo": 2,
+      "flow": [
+        {
+          "component": "jimuflow:core:If",
+          "inputs": {
+            "operand1": "current_number % \"2\"",
+            "op": "==",
+            "operand2": "\"0\""
+          },
+          "lineNo": 3,
+          "flow": [
+            {
+              "component": "jimuflow:core:Continue",
+              "lineNo": 4
+            }
+          ]
+        },
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "current_number"
+          },
+          "lineNo": 5
+        }
+      ]
+    }
+  ]
+}

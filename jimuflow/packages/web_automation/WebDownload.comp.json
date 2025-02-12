@@ -1,6 +1,6 @@
 {
   "name": "WebDownload",
-  "displayName": "Web download",
+  "displayName": "Web Download",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.web_automation.WebDownloadComponent",
   "supportsErrorHandling": true,
@@ -14,7 +14,7 @@
       "type": "WebPage",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web page",
+        "label": "Web Page Object",
         "inputType": "expression"
       }
     },
@@ -24,16 +24,16 @@
       "direction": "IN",
       "defaultValue": "click_element",
       "uiConfig": {
-        "label": "Download type",
+        "label": "Download Type",
         "inputType": "combo_box",
         "options": [
           {
             "value": "click_element",
-            "label": "Click download button"
+            "label": "Click the download button"
           },
           {
             "value": "open_url",
-            "label": "Open download url"
+            "label": "Open the download link"
           }
         ]
       }
@@ -43,7 +43,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Download button element",
+        "label": "Download Button Element",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit",
         "dependsOn": {
@@ -58,7 +58,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Download url",
+        "label": "Download Address",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "downloadType",
@@ -72,7 +72,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Save folder",
+        "label": "Save Folder",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.file_path_editor.FolderPathEdit",
         "inputValueType": "expression"
@@ -84,7 +84,7 @@
       "direction": "IN",
       "defaultValue": "suggested",
       "uiConfig": {
-        "label": "File naming type",
+        "label": "File Naming Type",
         "inputType": "combo_box",
         "options": [
           {
@@ -103,7 +103,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Custom filename",
+        "label": "Custom File Name",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "fileNamingType",
@@ -129,7 +129,7 @@
       "direction": "IN",
       "defaultValue": "\"300\"",
       "uiConfig": {
-        "label": "Download timeout(seconds)",
+        "label": "Download Timeout(seconds)",
         "inputType": "expression",
         "required": false
       }
@@ -140,7 +140,7 @@
       "direction": "IN",
       "defaultValue": "\"30\"",
       "uiConfig": {
-        "label": "Wait time(seconds)",
+        "label": "Waiting Time(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false
@@ -151,7 +151,7 @@
       "type": "text",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Download filename"
+        "label": "Download File Name"
       }
     }
   ]

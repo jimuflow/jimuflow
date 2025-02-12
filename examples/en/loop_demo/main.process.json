@@ -1,0 +1,32 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "current_index",
+      "type": "number",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:Loop",
+      "inputs": {
+        "start": "\"1\"",
+        "end": "\"5\""
+      },
+      "outputs": {
+        "loopIndex": "current_index"
+      },
+      "lineNo": 1,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"current_index=\" + current_index"
+          },
+          "lineNo": 2
+        }
+      ]
+    }
+  ]
+}

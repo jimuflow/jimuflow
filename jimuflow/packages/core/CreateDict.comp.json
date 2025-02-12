@@ -1,6 +1,6 @@
 {
   "name": "CreateDict",
-  "displayName": "Create dictionary",
+  "displayName": "Create Dictionary",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.core.CreateDictComponent",
   "primaryCategory": "Data Process",

@@ -1,6 +1,6 @@
 {
   "name": "ClearCookies",
-  "displayName": "Clear cookies",
+  "displayName": "Clear Cookies",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.web_automation.ClearCookiesComponent",
   "supportsErrorHandling": true,
@@ -14,7 +14,7 @@
       "type": "WebPage",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web page",
+        "label": "Web Page Object",
         "inputType": "expression"
       }
     },
@@ -29,7 +29,7 @@
         "options": [
           {
             "value": "specified",
-            "label": "Clear specified cookie"
+            "label": "Delete a specified cookie"
           },
           {
             "value": "all",
@@ -43,7 +43,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Cookie name",
+        "label": "Cookie Name",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "clearType",

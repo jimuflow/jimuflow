@@ -13,7 +13,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "File path",
+        "label": "File Path",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.file_path_editor.SaveFilePathEdit",
         "inputValueType": "expression"
@@ -24,7 +24,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Write content",
+        "label": "Write Content",
         "inputType": "expression"
       }
     },
@@ -34,7 +34,7 @@
       "direction": "IN",
       "defaultValue": "append",
       "uiConfig": {
-        "label": "Action when exists",
+        "label": "Action if Exists",
         "inputType": "combo_box",
         "required": false,
         "options": [
@@ -55,7 +55,7 @@
       "direction": "IN",
       "defaultValue": "system_default",
       "uiConfig": {
-        "label": "File encoding",
+        "label": "File Encoding",
         "inputType": "combo_box",
         "required": false,
         "options": [

@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -82,7 +82,7 @@ class DefaultComponentForm(ComponentForm):
             self._create_error_handling_form()
             error_handling_tab = QWidget()
             error_handling_tab.setLayout(self._error_form_layout)
-            tabs.addTab(error_handling_tab, gettext("Error handling"))
+            tabs.addTab(error_handling_tab, gettext("Error Handling"))
         main_layout = QVBoxLayout()
         main_layout.addWidget(tabs)
         self.setLayout(main_layout)
@@ -209,7 +209,7 @@ class DefaultComponentForm(ComponentForm):
         output_variables = [v for v in self.comp_def.output_variables() if v.ui_config.group == group]
         if len(output_variables) > 0:
             output_variables.sort(key=lambda x: x.ui_config.sort_no)
-            output_configs_label = QLabel(gettext('Output configs'))
+            output_configs_label = QLabel(gettext('Output Configs'))
             output_configs_label.setObjectName("outputConfigsLabel" + group.name)
             layout.addWidget(output_configs_label, row, 0, 1, 3)
             row += 1
@@ -256,13 +256,13 @@ class DefaultComponentForm(ComponentForm):
         # 错误处理类型
         self._error_handling_type = QComboBox()
         self._error_handling_type.setObjectName("errorHandlingTypeEditor")
-        self._error_handling_type.addItems([gettext('Stop'), gettext('Retry'), gettext('Ignore')])
+        self._error_handling_type.addItems([gettext('end the process'), gettext('retry'), gettext('ignore the error and continue execution')])
         row = 0
-        label = QLabel(gettext('Error handling type'))
+        label = QLabel(gettext('Error Handling Methods'))
         label.setObjectName("errorHandlingTypeLabel")
         self._error_form_layout.addWidget(label, row, 0)
         self._error_form_layout.addWidget(self._error_handling_type, row, 1)
-        help_label = self._create_help_label(gettext('Error handling type'))
+        help_label = self._create_help_label(gettext('Error Handling Methods'))
         help_label.setObjectName("errorHandlingTypeHelp")
         self._error_form_layout.addWidget(help_label, row, 2)
         row += 1
@@ -272,9 +272,9 @@ class DefaultComponentForm(ComponentForm):
         self._max_retries.setObjectName("maxRetriesEditor")
         if self.node:
             self._max_retries.setText(str(self.node.max_retries))
-        label = QLabel(gettext('Max retries'))
+        label = QLabel(gettext('Max Retries'))
         label.setObjectName("maxRetriesLabel")
-        help_label = self._create_help_label(gettext('Max retries'))
+        help_label = self._create_help_label(gettext('Max Retries'))
         help_label.setObjectName("maxRetriesHelp")
         self._error_form_layout.addWidget(label, row, 0)
         self._error_form_layout.addWidget(self._max_retries, row, 1)
@@ -286,9 +286,9 @@ class DefaultComponentForm(ComponentForm):
         self._retry_interval.setObjectName("retryIntervalEditor")
         if self.node:
             self._retry_interval.setText(str(self.node.retry_interval))
-        label = QLabel(gettext('Retry interval (seconds)'))
+        label = QLabel(gettext('Retry Interval (seconds)'))
         label.setObjectName("retryIntervalLabel")
-        help_label = self._create_help_label(gettext('Retry interval (seconds)'))
+        help_label = self._create_help_label(gettext('Retry Interval (seconds)'))
         help_label.setObjectName("retryIntervalHelp")
         self._error_form_layout.addWidget(label, row, 0)
         self._error_form_layout.addWidget(self._retry_interval, row, 1)
@@ -296,7 +296,7 @@ class DefaultComponentForm(ComponentForm):
         row += 1
 
         if len(self.comp_def.output_variables()) > 0:
-            label = QLabel(gettext('Outputs on error'))
+            label = QLabel(gettext('Outputs On Error'))
             label.setObjectName("outputsOnErrorLabel")
             self._error_form_layout.addWidget(label, row, 0, 1, 3)
             row += 1

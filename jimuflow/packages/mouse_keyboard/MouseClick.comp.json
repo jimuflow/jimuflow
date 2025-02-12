@@ -14,7 +14,7 @@
       "direction": "IN",
       "defaultValue": "left",
       "uiConfig": {
-        "label": "Mouse button",
+        "label": "Mouse Button",
         "inputType": "combo_box",
         "required": false,
         "options": [
@@ -39,7 +39,7 @@
       "direction": "IN",
       "defaultValue": "single_click",
       "uiConfig": {
-        "label": "Click Type",
+        "label": "Click Method",
         "inputType": "combo_box",
         "required": false,
         "options": [
@@ -68,7 +68,7 @@
       "direction": "IN",
       "defaultValue": "none",
       "uiConfig": {
-        "label": "Modifier key",
+        "label": "Modifier Key",
         "group": "advanced",
         "inputType": "combo_box",
         "required": false,
@@ -106,7 +106,7 @@
       "direction": "IN",
       "defaultValue": "\"0\"",
       "uiConfig": {
-        "label": "Delay after action(seconds)",
+        "label": "Delay after Action(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false

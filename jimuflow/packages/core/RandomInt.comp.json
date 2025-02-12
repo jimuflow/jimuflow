@@ -1,6 +1,6 @@
 {
   "name": "RandomInt",
-  "displayName": "Generate random integer",
+  "displayName": "Generate Random Integer",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.core.RandomIntComponent",
   "primaryCategory": "Data Process",
@@ -14,7 +14,7 @@
       "direction": "IN",
       "uiConfig": {
         "inputType": "expression",
-        "label": "Minimum value",
+        "label": "Minimum Value",
         "placeholder": "Minimum value (including this value)"
       }
     },
@@ -24,7 +24,7 @@
       "direction": "IN",
       "uiConfig": {
         "inputType": "expression",
-        "label": "Maximum value",
+        "label": "Maximum Value",
         "placeholder": "Maximum value (excluding this value)"
       }
     },
@@ -33,7 +33,7 @@
       "type": "number",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Random number"
+        "label": "Random Number"
       }
     }
   ]

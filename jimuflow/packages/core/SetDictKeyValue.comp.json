@@ -1,6 +1,6 @@
 {
   "name": "SetDictKeyValue",
-  "displayName": "Set dictionary key value",
+  "displayName": "Set Dictionary Key-Value",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.core.SetDictKeyValueComponent",
   "supportsErrorHandling": true,
@@ -23,7 +23,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Key",
+        "label": "Key Name",
         "inputType": "expression"
       }
     },

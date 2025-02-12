@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -104,6 +104,9 @@ class WebElementEditor(QWidget):
         self._element_name_edit = QLineEdit()
         self._element_name_edit.editingFinished.connect(self._on_element_name_editing_finished)
         line1_layout.addWidget(self._element_name_edit)
+        self._check_result_label = QLabel()
+        self._check_result_label.setVisible(False)
+        line1_layout.addWidget(self._check_result_label)
         check_button = QPushButton(gettext('Check Element'))
         check_button.clicked.connect(self.check_element_clicked)
         line1_layout.addWidget(check_button)
@@ -332,6 +335,7 @@ class WebElementEditor(QWidget):
         self._element_info['name'] = self._element_name_edit.text()
 
     def set_element_info(self, element_info: dict):
+        self.set_check_result('')
         self._element_info = element_info
         self._element_name_edit.setText(element_info['name'])
         element_node_model: NodePathModel = self._element_node_view.model()
@@ -370,3 +374,10 @@ class WebElementEditor(QWidget):
                         pixmap.scaled(label_size, Qt.AspectRatioMode.KeepAspectRatio))
         else:
             self._preview_label.setPixmap(QPixmap())
+
+    def set_check_result(self, check_result: str):
+        if check_result:
+            self._check_result_label.setText(check_result)
+            self._check_result_label.setVisible(True)
+        else:
+            self._check_result_label.setVisible(False)

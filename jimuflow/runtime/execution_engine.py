@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -128,7 +128,7 @@ class Component(ABC):
         """获取组件ID"""
         return self.component_def.id(self.top_process().component_def.package)
 
-    def log(self, message: str, *args, level: LogLevel = LogLevel.INFO, exception: Exception = None, **kwargs):
+    def log(self, message: str, *args, level: LogLevel = LogLevel.INFO, exception: BaseException = None, **kwargs):
         """
         记录流程日志
         :param message: 日志格式化字符串
@@ -141,7 +141,7 @@ class Component(ABC):
             self.engine.logger.log(message.format(*args, **kwargs), level, self.owner_process_id(),
                                    self.component_id(), self.node.line_no if self.node else None, exception)
 
-    def log_raw(self, message: str, level: LogLevel = LogLevel.INFO, exception: Exception = None):
+    def log_raw(self, message: str, level: LogLevel = LogLevel.INFO, exception: BaseException = None):
         """
         记录流程日志
         :param message: 日志内容
@@ -152,16 +152,16 @@ class Component(ABC):
             self.engine.logger.log(message, level, self.owner_process_id(),
                                    self.component_id(), self.node.line_no if self.node else None, exception)
 
-    def log_info(self, message: str, *args, exception: Exception = None, **kwargs):
+    def log_info(self, message: str, *args, exception: BaseException = None, **kwargs):
         self.log(message, *args, level=LogLevel.INFO, exception=exception, **kwargs)
 
-    def log_error(self, message: str, *args, exception: Exception = None, **kwargs):
+    def log_error(self, message: str, *args, exception: BaseException = None, **kwargs):
         self.log(message, *args, level=LogLevel.ERROR, exception=exception, **kwargs)
 
-    def log_warn(self, message: str, *args, exception: Exception = None, **kwargs):
+    def log_warn(self, message: str, *args, exception: BaseException = None, **kwargs):
         self.log(message, *args, level=LogLevel.WARN, exception=exception, **kwargs)
 
-    def log_debug(self, message: str, *args, exception: Exception = None, **kwargs):
+    def log_debug(self, message: str, *args, exception: BaseException = None, **kwargs):
         self.log(message, *args, level=LogLevel.DEBUG, exception=exception, **kwargs)
 
     def evaluate_expression_in_process(self, expression: str):
@@ -216,8 +216,12 @@ class Component(ABC):
                     self.log_debug(gettext("Execution successful"))
                     return result
                 except ProcessStoppedException:
+                    self.log_warn(gettext("Execution interrupted"))
                     return ControlFlow.EXIT
-                except Exception as e:
+                except asyncio.CancelledError:
+                    self.log_warn(gettext("Execution interrupted"))
+                    return ControlFlow.EXIT
+                except BaseException as e:
                     logger.exception("An error occurred while executing component %s", self.component_id())
                     self.log_error(gettext("Execution error"), exception=e)
                     if self.component_def.supports_error_handling and self.node:
@@ -429,7 +433,7 @@ class Process(Component):
             await self.clear_variables()
             # 清理流程本地变量
             await self.clear_process_vars()
-        return control_flow
+        return ControlFlow.EXIT if control_flow == ControlFlow.EXIT else ControlFlow.NEXT
 
     async def invoke(self) -> ControlFlow:
         if self.process is None:

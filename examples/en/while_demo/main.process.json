@@ -1,0 +1,50 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "loop_count",
+      "type": "any",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:SetVariable",
+      "inputs": {
+        "value": "\"0\""
+      },
+      "outputs": {
+        "result": "loop_count"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:core:While",
+      "inputs": {
+        "operand1": "loop_count",
+        "op": "<",
+        "operand2": "\"3\""
+      },
+      "lineNo": 2,
+      "flow": [
+        {
+          "component": "jimuflow:core:SetVariable",
+          "inputs": {
+            "value": "loop_count + \"1\""
+          },
+          "outputs": {
+            "result": "loop_count"
+          },
+          "lineNo": 3
+        },
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"loop_count=\" + loop_count"
+          },
+          "lineNo": 4
+        }
+      ]
+    }
+  ]
+}

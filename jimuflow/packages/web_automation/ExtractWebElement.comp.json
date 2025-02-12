@@ -14,7 +14,7 @@
       "type": "WebPage",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web page",
+        "label": "Web Page Object",
         "inputType": "expression"
       }
     },
@@ -23,7 +23,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web element",
+        "label": "Web Element",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit"
       }
@@ -34,7 +34,7 @@
       "direction": "IN",
       "defaultValue": "text",
       "uiConfig": {
-        "label": "Extract type",
+        "label": "Extraction Type",
         "inputType": "combo_box",
         "options": [
           {
@@ -47,11 +47,11 @@
           },
           {
             "value": "input_value",
-            "label": "Input element value"
+            "label": "Input box value"
           },
           {
             "value": "link_href",
-            "label": "Link element href"
+            "label": "Link address"
           },
           {
             "value": "attribute_value",
@@ -69,7 +69,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Attribute name",
+        "label": "Attribute Name",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "extractType",
@@ -84,7 +84,7 @@
       "direction": "IN",
       "defaultValue": "\"30\"",
       "uiConfig": {
-        "label": "Wait time(seconds)",
+        "label": "Waiting Time(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false
@@ -95,7 +95,7 @@
       "type": "any",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Extracted result"
+        "label": "Extraction Result"
       }
     }
   ]

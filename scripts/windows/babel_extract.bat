@@ -14,4 +14,4 @@ set "base_dir=%base_dir:~0,-1%"
 set "PYTHONPATH=%base_dir%"
 
 :: 执行 pybabel 命令
-pybabel extract -F "%base_dir%\jimuflow\locales\babel_mapping.ini" -o "%base_dir%\jimuflow\locales\messages.pot" --add-location=never --input-dirs="%base_dir%" --project=jimuflow --version=1.0.0
+pybabel extract -F "%base_dir%\jimuflow\locales\babel_mapping.ini" -o "%base_dir%\jimuflow\locales\messages.pot" --add-location=never --input-dirs="%base_dir%" --omit-header

@@ -1,6 +1,6 @@
 {
   "name": "MergeList",
-  "displayName": "Merge list",
+  "displayName": "Merge Lists",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.core.MergeListComponent",
   "supportsErrorHandling": true,
@@ -35,7 +35,7 @@
       "elementType": "any",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Merged list"
+        "label": "Merged List"
       }
     }
   ]

@@ -25,18 +25,18 @@
       "direction": "IN",
       "defaultValue": "center",
       "uiConfig": {
-        "label": "Cursor position",
+        "label": "Cursor Position",
         "group": "advanced",
         "required": false,
         "inputType": "combo_box",
         "options": [
           {
             "value": "center",
-            "label": "Image Center"
+            "label": "center of the image"
           },
           {
             "value": "upper_left",
-            "label": "The upper left corner of the image"
+            "label": "upper left corner of the image"
           }
         ]
       }
@@ -47,7 +47,7 @@
       "direction": "IN",
       "defaultValue": "\"0\"",
       "uiConfig": {
-        "label": "X coordinate offset",
+        "label": "X Coordinate Offset",
         "group": "advanced",
         "required": false,
         "inputType": "expression"
@@ -59,7 +59,7 @@
       "direction": "IN",
       "defaultValue": "\"0\"",
       "uiConfig": {
-        "label": "Y coordinate offset",
+        "label": "Y Coordinate Offset",
         "group": "advanced",
         "required": false,
         "inputType": "expression"
@@ -83,7 +83,7 @@
       "direction": "IN",
       "defaultValue": "color",
       "uiConfig": {
-        "label": "Match mode",
+        "label": "Matching Mode",
         "group": "advanced",
         "required": false,
         "inputType": "combo_box",
@@ -105,7 +105,7 @@
       "direction": "IN",
       "defaultValue": "instant",
       "uiConfig": {
-        "label": "Move speed",
+        "label": "Movement Speed",
         "group": "advanced",
         "inputType": "combo_box",
         "required": false,
@@ -135,7 +135,7 @@
       "direction": "IN",
       "defaultValue": "\"0\"",
       "uiConfig": {
-        "label": "Delay after action(seconds)",
+        "label": "Delay after Action(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false

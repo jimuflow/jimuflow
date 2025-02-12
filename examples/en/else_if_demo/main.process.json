@@ -1,0 +1,72 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "age",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "required": false,
+        "inputType": "number_edit"
+      }
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"The age you entered is \" + age"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:core:If",
+      "inputs": {
+        "operand1": "age",
+        "op": "<",
+        "operand2": "\"6\""
+      },
+      "lineNo": 2,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"Free admission\""
+          },
+          "lineNo": 3
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:core:ElseIf",
+      "inputs": {
+        "operand1": "age",
+        "op": "<",
+        "operand2": "\"18\""
+      },
+      "lineNo": 4,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"Please buy a student ticket\""
+          },
+          "lineNo": 5
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:core:Else",
+      "lineNo": 6,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"Please buy an adult ticket\""
+          },
+          "lineNo": 7
+        }
+      ]
+    }
+  ]
+}

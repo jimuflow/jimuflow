@@ -1,0 +1,188 @@
+site_name: JimuFlow
+docs_dir: '../../docs/en'
+site_dir: '../../site/en'
+site_url: https://mydomain.org/
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.path
+    - navigation.prune
+    - navigation.indexes
+    - navigation.top
+markdown_extensions:
+  - toc:
+      permalink: true
+extra:
+  alternate:
+    - name: 简体中文
+      link: /zh/
+      lang: zh
+nav:
+  - Home: index.md
+  - User Guide:
+    - Expressions: manual/expression.md
+    - Error Handling for Instructions: manual/error_handling.md
+    - Web Element Capture tool: manual/web_element_capture_tool.md
+    - Web Element Relative XPath Tool: manual/web_element_relative_xpath_tool.md
+    - Web Cookie Tool: manual/web_cookie_tool.md
+    - Window Element Capture Tool: manual/window_element_capture_tool.md
+    - Window Element Relative XPath Tool: manual/window_element_relative_xpath_tool.md
+  - Instruction Manual:
+    - Process Control:
+      - Return: commands/ProcessControl/return.md
+      - Exit: commands/ProcessControl/exit.md
+      - Switch:
+        - If branch: commands/ProcessControl/switch/if.md
+        - If conditions branch: commands/ProcessControl/switch/if_conditions.md
+        - Else if branch: commands/ProcessControl/switch/else_if.md
+        - Else if conditions branch: commands/ProcessControl/switch/else_if_conditions.md
+        - Else branch: commands/ProcessControl/switch/else.md
+      - Loop:
+        - Counting loop: commands/ProcessControl/loop/loop.md
+        - While loop: commands/ProcessControl/loop/while.md
+        - List loop: commands/ProcessControl/loop/list_loop.md
+        - Dictionary loop: commands/ProcessControl/loop/dict_loop.md
+        - Infinite loop: commands/ProcessControl/loop/infinite_loop.md
+        - Continue to the next loop: commands/ProcessControl/loop/continue.md
+        - End loop: commands/ProcessControl/loop/break.md
+    - Wait:
+      - Wait: commands/Wait/time_wait.md
+    - Web Automation:
+      - Open Web Browser: commands/WebAutomation/open_web_browser.md
+      - Open Web Page: commands/WebAutomation/open_web_page.md
+      - Click to Open Web Page: commands/WebAutomation/click_to_open_web_page.md
+      - Get Web Page: commands/WebAutomation/get_web_page.md
+      - Wait Web Page Content: commands/WebAutomation/wait_web_content.md
+      - Detect Web Page Content: commands/WebAutomation/check_web_content.md
+      - Close Web Page: commands/WebAutomation/close_web_page.md
+      - Web Page Operation:
+        - Navigate Web Page: commands/WebAutomation/WebPageOperation/navigate_web_page.md
+        - Wait for Web Page to Load: commands/WebAutomation/WebPageOperation/wait_web_page_load.md
+        - Scroll Web Page: commands/WebAutomation/WebPageOperation/scroll_web_page.md
+        - Set Cookies: commands/WebAutomation/WebPageOperation/set_cookies.md
+        - Get Cookies: commands/WebAutomation/WebPageOperation/get_cookies.md
+        - Clear Cookies: commands/WebAutomation/WebPageOperation/clear_cookies.md
+        - Evaluate JavaScript in Web Page: commands/WebAutomation/WebPageOperation/evaluate_js_in_web_page.md
+      - Web Element Operation:
+        - Click Web Page Element: commands/WebAutomation/WebElementOperation/click_web_element.md
+        - Hover Web Page Element: commands/WebAutomation/WebElementOperation/hover_web_element.md
+        - Web Input: commands/WebAutomation/WebElementOperation/web_input.md
+        - Set Web Select Value: commands/WebAutomation/WebElementOperation/set_web_select_value.md
+        - Set Web Checkbox Value: commands/WebAutomation/WebElementOperation/set_web_checkbox_value.md
+        - Loop Web Elements: commands/WebAutomation/WebElementOperation/loop_web_elements.md
+        - Drag Web Page Element: commands/WebAutomation/WebElementOperation/drag_web_element.md
+        - Get Relative Web Element: commands/WebAutomation/WebElementOperation/get_relative_web_element.md
+      - Web Data Extraction:
+        - Extract Web Page: commands/WebAutomation/WebDataExtraction/extract_web_page.md
+        - Extract Web Element: commands/WebAutomation/WebDataExtraction/extract_web_element.md
+        - Screenshot Web Element: commands/WebAutomation/WebDataExtraction/screenshot_web_element.md
+      - Web Dialog Operation:
+        - Web Download: commands/WebAutomation/WebDialogOperation/web_download.md
+        - Web Upload: commands/WebAutomation/WebDialogOperation/web_upload.md
+    - Windows Automation:
+      - Get Window: commands/WindowsAutomation/get_window.md
+      - Click Window Element: commands/WindowsAutomation/click_window_element.md
+      - Wait window element: commands/WindowsAutomation/wait_window_element.md
+      - Hover Window Element: commands/WindowsAutomation/hover_window_element.md
+      - Close Window: commands/WindowsAutomation/close_window.md
+      - Window Operation:
+        - Active Window: commands/WindowsAutomation/WindowOperation/active_window.md
+        - Set Window State: commands/WindowsAutomation/WindowOperation/set_window_state.md
+        - Resize Window: commands/WindowsAutomation/WindowOperation/resize_window.md
+        - Move Window: commands/WindowsAutomation/WindowOperation/move_window.md
+        - Set Window Visibility: commands/WindowsAutomation/WindowOperation/set_window_visibility.md
+      - Window Element Operation:
+        - Window input: commands/WindowsAutomation/WindowElementOperation/window_input.md
+        - Set ComboBox Value: commands/WindowsAutomation/WindowElementOperation/set_combobox_value.md
+        - Set Checkbox Value: commands/WindowsAutomation/WindowElementOperation/set_checkbox_value.md
+        - Loop window elements: commands/WindowsAutomation/WindowElementOperation/loop_window_elements.md
+        - Get Relative Window Element: commands/WindowsAutomation/WindowElementOperation/get_relative_window_element.md
+        - Drag Window Element: commands/WindowsAutomation/WindowElementOperation/drag_window_element.md
+      - Data Extraction:
+        - Extract Window: commands/WindowsAutomation/DataExtraction/extract_window.md
+        - Extract Window Element: commands/WindowsAutomation/DataExtraction/extract_window_element.md
+        - Get ComboBox Items: commands/WindowsAutomation/DataExtraction/get_combobox_items.md
+        - Screenshot Window Element: commands/WindowsAutomation/DataExtraction/screenshot_window_element.md
+    - Data Process:
+      - Set Variable: commands/DataProcess/set_variable.md
+      - Text Operation:
+        - Text to Number: commands/DataProcess/TextOperation/text_to_number.md
+        - Add Prefix or Suffix: commands/DataProcess/TextOperation/add_prefix_or_suffix.md
+        - Trim Text: commands/DataProcess/TextOperation/trim_text.md
+        - Split Text: commands/DataProcess/TextOperation/split_text.md
+        - Regex Match: commands/DataProcess/TextOperation/replace_text.md
+        - Regex Match: commands/DataProcess/TextOperation/regex_match.md
+        - Change Text Case: commands/DataProcess/TextOperation/change_text_case.md
+        - Slice Text: commands/DataProcess/TextOperation/slice_text.md
+      - Number Operation:
+        - Number to Text: commands/DataProcess/NumberOperation/number_to_text.md
+        - Generate Random Integer: commands/DataProcess/NumberOperation/randomint.md
+      - List operation:
+        - Create List: commands/DataProcess/ListOperation/create_list.md
+        - Insert List Item: commands/DataProcess/ListOperation/insert_item_to_list.md
+        - Delete List Item: commands/DataProcess/ListOperation/delete_list_item.md
+        - Update List Item: commands/DataProcess/ListOperation/update_list_item.md
+        - Merge Lists: commands/DataProcess/ListOperation/merge_list.md
+        - Reverse List: commands/DataProcess/ListOperation/reverse_list.md
+        - Sort List: commands/DataProcess/ListOperation/sort_list.md
+      - Dictionary operation:
+        - Create Dictionary: commands/DataProcess/DictionaryOperation/create_dict.md
+        - Set Dictionary Key-Value: commands/DataProcess/DictionaryOperation/set_dict_key_value.md
+        - Delete Dictionary Key: commands/DataProcess/DictionaryOperation/delete_dict_key.md
+      - Date Time Operation:
+        - Create DateTime: commands/DataProcess/DateTimeOperation/create_date_time.md
+        - Create Date: commands/DataProcess/DateTimeOperation/create_date.md
+        - Create Time: commands/DataProcess/DateTimeOperation/create_time.md
+        - Update DateTime: commands/DataProcess/DateTimeOperation/update_date_time.md
+        - Calculate Time Difference: commands/DataProcess/DateTimeOperation/diff_date_time.md
+        - Format DateTime: commands/DataProcess/DateTimeOperation/format_date_time.md
+      - JSON Operation:
+        - Parse Json: commands/DataProcess/JSONOperation/parse_json.md
+        - Object to Json: commands/DataProcess/JSONOperation/object_to_json.md
+      - Encoding/Decoding:
+        - URL Encode: commands/DataProcess/EncodingDecoding/url_encode.md
+        - URL Decode: commands/DataProcess/EncodingDecoding/url_decode.md
+    - Operating System:
+      - List Files: commands/OperatingSystem/list_files.md
+      - Read Text File: commands/OperatingSystem/read_text_file.md
+      - Write Text File: commands/OperatingSystem/write_text_file.md
+      - Delete File: commands/OperatingSystem/delete_file.md
+      - Copy File: commands/OperatingSystem/copy_file.md
+      - Move File: commands/OperatingSystem/move_file.md
+      - Create Folder: commands/OperatingSystem/create_folder.md
+      - Get File Path Info: commands/OperatingSystem/get_file_path_info.md
+      - Rename File: commands/OperatingSystem/rename_file.md
+      - Compress File/Folder: commands/OperatingSystem/compress_file.md
+      - Decompress File/Folder: commands/OperatingSystem/decompress_file.md
+      - Get Clipboard Text: commands/OperatingSystem/get_clipboard_text.md
+      - Set Clipboard Text: commands/OperatingSystem/set_clipboard_text.md
+      - Kill Process: commands/OperatingSystem/kill_process.md
+      - Check Process Exist: commands/OperatingSystem/check_process.md
+      - Rename Folder: commands/OperatingSystem/rename_folder.md
+      - Copy Folder: commands/OperatingSystem/copy_folder.md
+      - Move Folder: commands/OperatingSystem/move_folder.md
+      - Delete Folder: commands/OperatingSystem/delete_folder.md
+      - Clear Folder: commands/OperatingSystem/clear_folder.md
+      - Launch Application: commands/OperatingSystem/launch_app.md
+      - Execute Command: commands/OperatingSystem/execute_cmd.md
+    - Mouse/Keyboard:
+      - Move Mouse: commands/MouseKeyboard/move_mouse.md
+      - Mouse Click: commands/MouseKeyboard/mouse_click.md
+      - Mouse Scroll: commands/MouseKeyboard/mouse_scroll.md
+      - Keyboard Input: commands/MouseKeyboard/keyboard_input.md
+      - Hover Image: commands/MouseKeyboard/hover_image.md
+    - Data Table:
+      - Create Table: commands/DataTable/create_table.md
+      - Write to Table Cell: commands/DataTable/write_table_cell.md
+      - Write Table Row: commands/DataTable/write_table_row.md
+      - Delete Table Row: commands/DataTable/delete_table_row.md
+      - Add Table Column: commands/DataTable/add_table_column.md
+      - Loop Table Rows: commands/DataTable/loop_table_rows.md
+      - Read Table Data: commands/DataTable/read_table_data.md
+      - Import Excel as Table: commands/DataTable/import_excel_as_table.md
+      - Import CSV as Table: commands/DataTable/import_csv_as_table.md
+      - Export Table: commands/DataTable/export_table.md
+    - Others:
+      - Print Message: commands/others/print.md

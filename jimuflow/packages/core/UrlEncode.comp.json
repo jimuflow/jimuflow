@@ -1,6 +1,6 @@
 {
   "name": "UrlEncode",
-  "displayName": "Url Encode",
+  "displayName": "URL Encode",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.core.UrlEncodeComponent",
   "supportsErrorHandling": true,
@@ -14,7 +14,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Text to encode",
+        "label": "Text to be Encoded",
         "inputType": "expression"
       }
     },

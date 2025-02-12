@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -32,7 +32,7 @@ from jimuflow.gui.dialog_with_webengine import DialogWithWebEngine
 from jimuflow.gui.utils import Utils
 from jimuflow.gui.web_element_editor import WebElementEditor
 from jimuflow.gui.web_view_utils import setup_web_view_actions
-from jimuflow.locales.i18n import gettext
+from jimuflow.locales.i18n import gettext, ngettext
 
 preload_js_path = get_resource_file('web_element_capture_preload.js')
 with open(preload_js_path, 'r', encoding='utf-8') as f:
@@ -353,7 +353,7 @@ class WebElementCaptureTool(DialogWithWebEngine):
 
     def _back(self):
         tab_content_widget = Utils.find_ancestor(self.sender(), "tabContentWidget")
-        web_view= tab_content_widget.findChild(QWebEngineView, "webView")
+        web_view = tab_content_widget.findChild(QWebEngineView, "webView")
         web_view.back()
 
     def _forward(self):
@@ -369,8 +369,8 @@ class WebElementCaptureTool(DialogWithWebEngine):
     @Slot(QUrl)
     def _on_url_changed(self, url: QUrl):
         web_view: QWebEngineView = self.sender()
-        tab_content_widget=Utils.find_ancestor(web_view, "tabContentWidget")
-        url_editor:QLineEdit = tab_content_widget.findChild(QLineEdit, "urlEditor")
+        tab_content_widget = Utils.find_ancestor(web_view, "tabContentWidget")
+        url_editor: QLineEdit = tab_content_widget.findChild(QLineEdit, "urlEditor")
         url_editor.setText(url.toString())
 
     @Slot(bool)
@@ -571,7 +571,10 @@ class WebElementCaptureTool(DialogWithWebEngine):
 
     def _highlight_element(self, frame: QWebEngineFrame, xpath: str):
         frame.runJavaScript(f'highlightElement({json.dumps(xpath, ensure_ascii=False)}, "qt-highlight-selected")',
-                            QWebEngineScript.ScriptWorldId.UserWorld)
+                            QWebEngineScript.ScriptWorldId.UserWorld,
+                            lambda match_count: self._element_editor.set_check_result(
+                                ngettext('Found {count} element', 'Found {count} elements', int(match_count)).format(
+                                    count=int(match_count))))
 
     @Slot()
     def _check_element_info(self):

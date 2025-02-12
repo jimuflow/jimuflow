@@ -14,7 +14,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Text to be split",
+        "label": "Text to Split",
         "inputType": "expression"
       }
     },
@@ -24,7 +24,7 @@
       "direction": "IN",
       "defaultValue": "standard",
       "uiConfig": {
-        "label": "Delimiter type",
+        "label": "Delimiter Type",
         "inputType": "combo_box",
         "options": [
           {
@@ -44,7 +44,7 @@
       "direction": "IN",
       "defaultValue": "space",
       "uiConfig": {
-        "label": "Standard delimiter",
+        "label": "Standard Delimiter",
         "inputType": "combo_box",
         "options": [
           {
@@ -72,7 +72,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Custom delimiter",
+        "label": "Custom Delimiter",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "delimiterType",
@@ -97,7 +97,7 @@
       "direction": "IN",
       "defaultValue": false,
       "uiConfig": {
-        "label": "Use regular expressions",
+        "label": "Use regular expression",
         "inputType": "check_box",
         "dependsOn": {
           "variableName": "delimiterType",

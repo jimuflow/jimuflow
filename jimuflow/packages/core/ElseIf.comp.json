@@ -48,6 +48,14 @@
           {
             "value": "<=",
             "label": "less than or equal to"
+          },
+          {
+            "value": "is_true",
+            "label": "is true"
+          },
+          {
+            "value": "is_false",
+            "label": "is false"
           }
         ]
       }

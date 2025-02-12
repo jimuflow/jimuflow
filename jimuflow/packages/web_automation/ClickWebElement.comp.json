@@ -14,7 +14,7 @@
       "type": "WebPage",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web page",
+        "label": "Web Page Object",
         "inputType": "expression"
       }
     },
@@ -23,7 +23,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web element",
+        "label": "Web Element",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit"
       }
@@ -46,7 +46,7 @@
       "direction": "IN",
       "defaultValue": "single_click",
       "uiConfig": {
-        "label": "Click Type",
+        "label": "Click Method",
         "group": "advanced",
         "inputType": "combo_box",
         "required": false,
@@ -68,7 +68,7 @@
       "direction": "IN",
       "defaultValue": "left",
       "uiConfig": {
-        "label": "Mouse button",
+        "label": "Mouse Button",
         "group": "advanced",
         "inputType": "combo_box",
         "required": false,
@@ -94,7 +94,7 @@
       "direction": "IN",
       "defaultValue": "none",
       "uiConfig": {
-        "label": "Modifier key",
+        "label": "Modifier Key",
         "group": "advanced",
         "inputType": "combo_box",
         "required": false,
@@ -144,7 +144,7 @@
       "direction": "IN",
       "defaultValue": "\"30\"",
       "uiConfig": {
-        "label": "Wait time(seconds)",
+        "label": "Waiting Time(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false

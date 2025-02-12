@@ -1,6 +1,6 @@
 {
   "name": "EvaluateJsInWebPage",
-  "displayName": "Evaluate js in web page",
+  "displayName": "Evaluate JavaScript in Web Page",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.web_automation.EvaluateJsInWebPageComponent",
   "supportsErrorHandling": true,
@@ -14,7 +14,7 @@
       "type": "WebPage",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web page",
+        "label": "Web Page Object",
         "inputType": "expression"
       }
     },
@@ -23,7 +23,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Javascript code",
+        "label": "JavaScript Code",
         "inputType": "expression"
       }
     },
@@ -32,7 +32,7 @@
       "type": "any",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Javascript output"
+        "label": "JavaScript Output"
       }
     }
   ]

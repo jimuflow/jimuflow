@@ -14,7 +14,7 @@
       "type": "WebPage",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web page",
+        "label": "Web Page Object",
         "inputType": "expression"
       }
     },
@@ -24,7 +24,7 @@
       "direction": "IN",
       "defaultValue": false,
       "uiConfig": {
-        "label": "Scroll on element",
+        "label": "Scroll on Element",
         "inputType": "check_box",
         "required": false
       }
@@ -34,7 +34,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Scroll element",
+        "label": "Scroll Element",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit",
         "dependsOn": {
@@ -50,7 +50,7 @@
       "direction": "IN",
       "defaultValue": true,
       "uiConfig": {
-        "label": "Find ancestor when element is not scrollable",
+        "label": "Find Scrollable Element Upward When the Element is Not Scrollable",
         "inputType": "check_box",
         "required": false,
         "dependsOn": {
@@ -66,7 +66,7 @@
       "direction": "IN",
       "defaultValue": "top",
       "uiConfig": {
-        "label": "Scroll type",
+        "label": "Scroll Type",
         "inputType": "combo_box",
         "options": [
           {
@@ -79,11 +79,11 @@
           },
           {
             "value": "page",
-            "label": "Scroll one page"
+            "label": "Scroll one screen"
           },
           {
             "value": "element",
-            "label": "Scroll to the element"
+            "label": "Scroll to a specified element"
           }
         ]
       }
@@ -94,7 +94,7 @@
       "direction": "IN",
       "defaultValue": "\"1\"",
       "uiConfig": {
-        "label": "Scroll times",
+        "label": "Number of Scrolls",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "scrollType",
@@ -109,7 +109,7 @@
       "direction": "IN",
       "defaultValue": "\"2\"",
       "uiConfig": {
-        "label": "Scroll interval(seconds)",
+        "label": "Scroll Interval(seconds)",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "scrollType",
@@ -123,7 +123,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Scroll to element",
+        "label": "Scroll to Element",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit",
         "dependsOn": {
@@ -159,7 +159,7 @@
       "direction": "IN",
       "defaultValue": "\"30\"",
       "uiConfig": {
-        "label": "Wait time(seconds)",
+        "label": "Waiting Time(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false

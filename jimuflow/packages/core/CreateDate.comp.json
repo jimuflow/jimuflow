@@ -15,7 +15,7 @@
       "direction": "IN",
       "defaultValue": "today",
       "uiConfig": {
-        "label": "Initialization type",
+        "label": "Initialization Type",
         "inputType": "combo_box",
         "options": [
           {
@@ -38,7 +38,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Timestamp(s)",
+        "label": "Timestamp(seconds)",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "initType",
@@ -52,7 +52,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Date string",
+        "label": "Date String",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "initType",
@@ -66,7 +66,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Date format",
+        "label": "Date Format",
         "inputType": "expression",
         "helpInfo": "Common Format Codes\n\nYYYY: Four digit year (e.g. 2024)\n\nYY: Two digit year (e.g. 24 represents 2024)\n\nMM: Month (01 to 12)\n\nDD: day of the month (01 to 31)",
         "dependsOn": {

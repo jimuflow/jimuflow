@@ -14,7 +14,7 @@
       "type": "WebPage",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web page",
+        "label": "Web Page Object",
         "inputType": "expression"
       }
     },
@@ -23,7 +23,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Dropdown box element",
+        "label": "Drop - down Box Element",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit"
       }
@@ -34,7 +34,7 @@
       "direction": "IN",
       "defaultValue": "by_content",
       "uiConfig": {
-        "label": "Select type",
+        "label": "Selection Method",
         "inputType": "combo_box",
         "options": [
           {
@@ -68,7 +68,7 @@
       "direction": "IN",
       "defaultValue": "contains",
       "uiConfig": {
-        "label": "Match type",
+        "label": "Matching Type",
         "inputType": "combo_box",
         "options": [
           {
@@ -77,11 +77,11 @@
           },
           {
             "value": "equals",
-            "label": "Precise matching"
+            "label": "Exact matching"
           },
           {
             "value": "regex",
-            "label": "Regular matching"
+            "label": "Regular expression matching"
           }
         ],
         "dependsOn": {
@@ -97,7 +97,7 @@
       "direction": "IN",
       "defaultValue": "\"0\"",
       "uiConfig": {
-        "label": "Option index",
+        "label": "Option Index",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "selectType",
@@ -124,7 +124,7 @@
       "direction": "IN",
       "defaultValue": "\"30\"",
       "uiConfig": {
-        "label": "Wait time(seconds)",
+        "label": "Waiting Time(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false

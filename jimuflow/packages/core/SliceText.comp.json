@@ -14,7 +14,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Original text",
+        "label": "Original Text",
         "inputType": "expression"
       }
     },
@@ -24,20 +24,20 @@
       "direction": "IN",
       "defaultValue": "specified_position",
       "uiConfig": {
-        "label": "From where",
+        "label": "Starting Position",
         "inputType": "combo_box",
         "options": [
           {
             "value": "first_char",
-            "label": "from the first character"
+            "label": "start from the first character"
           },
           {
             "value": "specified_position",
-            "label": "from the specified location"
+            "label": "start from a specified location"
           },
           {
             "value": "specified_text",
-            "label": "from the specified text"
+            "label": "start from specified text"
           }
         ]
       }
@@ -47,7 +47,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Starting character position",
+        "label": "Starting Character Position",
         "inputType": "expression",
         "placeholder": "Starting from 0, - n represents the nth to last character",
         "dependsOn": {
@@ -62,7 +62,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Starting text content",
+        "label": "Starting Text Content",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "fromWhere",
@@ -77,16 +77,16 @@
       "direction": "IN",
       "defaultValue": "specified_length",
       "uiConfig": {
-        "label": "To where",
+        "label": "Ending Position",
         "inputType": "combo_box",
         "options": [
           {
             "value": "end",
-            "label": "to the end of the text"
+            "label": "end at the end of the text"
           },
           {
             "value": "specified_length",
-            "label": "to the specified length"
+            "label": "end at a specified length"
           }
         ]
       }
@@ -96,7 +96,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Sliced length",
+        "label": "Extraction Length",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "toWhere",

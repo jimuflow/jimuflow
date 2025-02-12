@@ -1,6 +1,6 @@
 {
   "name": "WriteTableCell",
-  "displayName": "Write table cell",
+  "displayName": "Write to Table Cell",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.table.WriteTableCellComponent",
   "supportsErrorHandling": true,
@@ -23,7 +23,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Row number",
+        "label": "Row Number",
         "inputType": "expression",
         "helpInfo": "Enter the line number, starting from line 1, where -n represents the nth to last line"
       }
@@ -33,7 +33,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Column number",
+        "label": "Column Number",
         "inputType": "expression",
         "helpInfo": "Enter the column name/number, starting from column 1, where -n represents the nth to last column"
       }
@@ -43,7 +43,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Write cell content",
+        "label": "Content to Write into Cell",
         "inputType": "expression",
         "helpInfo": "Enter the content to be written into the cell"
       }
@@ -54,7 +54,7 @@
       "direction": "IN",
       "defaultValue": false,
       "uiConfig": {
-        "label": "If the row number is greater than the number of rows in the table, the content will be automatically written to the next row at the end of the table",
+        "label": "Excess rows auto-append to table end",
         "inputType": "check_box",
         "required": false
       }

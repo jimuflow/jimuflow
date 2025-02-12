@@ -1,0 +1,46 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "list",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "current_value",
+      "type": "any",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:ParseJson",
+      "inputs": {
+        "jsonText": "\"[1,2,3]\""
+      },
+      "outputs": {
+        "result": "list"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:core:ListLoop",
+      "inputs": {
+        "list": "list"
+      },
+      "outputs": {
+        "loopItem": "current_value"
+      },
+      "lineNo": 2,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"current_value=\" + current_value"
+          },
+          "lineNo": 3
+        }
+      ]
+    }
+  ]
+}

@@ -14,7 +14,7 @@
       "type": "WebPage",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web page",
+        "label": "Web Page Object",
         "inputType": "expression"
       }
     },
@@ -23,7 +23,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Source Element",
+        "label": "Dragging Element",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit"
       }
@@ -34,7 +34,7 @@
       "direction": "IN",
       "defaultValue": false,
       "uiConfig": {
-        "label": "Source element offset",
+        "label": "Dragging element offset",
         "inputType": "check_box",
         "required": false
       }
@@ -44,7 +44,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Source Element x offset",
+        "label": "Dragging Element X Coordinate Offset",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "sourceOffset",
@@ -58,7 +58,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Source Element y offset",
+        "label": "Dragging Element Y Coordinate Offset",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "sourceOffset",
@@ -73,16 +73,16 @@
       "direction": "IN",
       "defaultValue": "to_element",
       "uiConfig": {
-        "label": "Drag type",
+        "label": "Dragging Method",
         "inputType": "combo_box",
         "options": [
           {
             "value": "to_element",
-            "label": "Drag to element"
+            "label": "Drag to the target element"
           },
           {
             "value": "by_offset",
-            "label": "Drag by offset"
+            "label": "Drag by a specified offset"
           }
         ]
       }
@@ -123,7 +123,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Target Element x offset",
+        "label": "Target Element X Coordinate Offset",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "targetOffset",
@@ -137,7 +137,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Target Element y offset",
+        "label": "Target Element Y Coordinate Offset",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "targetOffset",
@@ -151,7 +151,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Drag by x offset",
+        "label": "Dragging X Coordinate Offset",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "dragType",
@@ -165,7 +165,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Drag by y offset",
+        "label": "Dragging Y Coordinate Offset",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "dragType",
@@ -180,7 +180,7 @@
       "direction": "IN",
       "defaultValue": "instant",
       "uiConfig": {
-        "label": "Drag speed",
+        "label": "Dragging Speed",
         "group": "advanced",
         "inputType": "combo_box",
         "required": false,
@@ -210,7 +210,7 @@
       "direction": "IN",
       "defaultValue": "\"30\"",
       "uiConfig": {
-        "label": "Wait time(seconds)",
+        "label": "Waiting Time(seconds)",
         "group": "advanced",
         "inputType": "expression",
         "required": false

@@ -13,7 +13,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Folder path",
+        "label": "Folder Path",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.file_path_editor.FolderPathEdit",
         "inputValueType": "expression"
@@ -24,7 +24,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "New folder name",
+        "label": "New Folder Name",
         "inputType": "expression"
       }
     },
@@ -34,13 +34,13 @@
       "direction": "IN",
       "defaultValue": "cancel",
       "uiConfig": {
-        "label": "Action when exists",
+        "label": "Action if Exists",
         "inputType": "combo_box",
         "required": false,
         "options": [
           {
             "value": "cancel",
-            "label": "Cancel renaming operation"
+            "label": "Cancel the rename operation"
           },
           {
             "value": "overwrite",
@@ -54,7 +54,7 @@
       "type": "text",
       "direction": "OUT",
       "uiConfig": {
-        "label": "New folder path"
+        "label": "New Folder Path"
       }
     }
   ]

@@ -13,7 +13,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Parent folder",
+        "label": "Parent Folder",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.file_path_editor.FolderPathEdit",
         "inputValueType": "expression"
@@ -24,7 +24,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "New folder name",
+        "label": "New Folder Name",
         "inputType": "expression"
       }
     },
@@ -33,7 +33,7 @@
       "type": "text",
       "direction": "OUT",
       "uiConfig": {
-        "label": "New folder path"
+        "label": "New Folder Path"
       }
     }
   ]

@@ -1,6 +1,6 @@
 {
   "name": "WaitWebContent",
-  "displayName": "Wait web content",
+  "displayName": "Wait Web Page Content",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.web_automation.WaitWebContentComponent",
   "supportsErrorHandling": true,
@@ -13,7 +13,7 @@
       "type": "WebPage",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web page",
+        "label": "Web Page Object",
         "inputType": "expression"
       }
     },
@@ -23,40 +23,40 @@
       "direction": "IN",
       "defaultValue": "include_element",
       "uiConfig": {
-        "label": "Wait type",
+        "label": "Waiting Type",
         "inputType": "combo_box",
         "options": [
           {
             "value": "include_element",
-            "label": "Include element"
+            "label": "contains element"
           },
           {
             "value": "exclude_element",
-            "label": "Exclude element"
+            "label": "does not contain element"
           },
           {
             "value": "include_text",
-            "label": "Include text"
+            "label": "contains text"
           },
           {
             "value": "exclude_text",
-            "label": "Exclude text"
+            "label": "does not contain text"
           },
           {
             "value": "element_is_visible",
-            "label": "Element is visible"
+            "label": "element is visible"
           },
           {
             "value": "element_is_invisible",
-            "label": "Element is invisible"
+            "label": "element is invisible"
           },
           {
             "value": "text_is_visible",
-            "label": "Text is visible"
+            "label": "text is visible"
           },
           {
             "value": "text_is_invisible",
-            "label": "Text is invisible"
+            "label": "text is invisible"
           }
         ]
       }
@@ -66,7 +66,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Wait element",
+        "label": "Waiting Element",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit",
         "dependsOn": {
@@ -86,7 +86,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Wait text",
+        "label": "Waiting Text",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "waitType",
@@ -106,7 +106,7 @@
       "direction": "IN",
       "defaultValue": "\"30\"",
       "uiConfig": {
-        "label": "Wait time(seconds)",
+        "label": "Waiting Time(seconds)",
         "inputType": "expression"
       }
     },
@@ -115,7 +115,7 @@
       "type": "bool",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Wait result"
+        "label": "Waiting Result"
       }
     }
   ]

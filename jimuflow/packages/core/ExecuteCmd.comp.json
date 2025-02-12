@@ -13,7 +13,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Command",
+        "label": "Command Line",
         "inputType": "expression"
       }
     },
@@ -22,7 +22,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Process working directory",
+        "label": "Process Working Directory",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.file_path_editor.FolderPathEdit",
         "inputValueType": "expression",
@@ -85,7 +85,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Wait timeout(s)",
+        "label": "Waiting Timeout(seconds)",
         "inputType": "expression",
         "group": "advanced",
         "required": false
@@ -96,7 +96,7 @@
       "type": "text",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Command output"
+        "label": "Command Line Output"
       }
     }
   ]

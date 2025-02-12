@@ -14,7 +14,7 @@
       "type": "datetime",
       "direction": "IN",
       "uiConfig": {
-        "label": "Date Time",
+        "label": "DateTime Value",
         "inputType": "expression"
       }
     },
@@ -23,7 +23,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Datetime format",
+        "label": "DateTime Format",
         "inputType": "expression",
         "helpInfo": "Common Format Codes\n\nYYYY: Four digit year (e.g. 2024)\n\nYY: Two digit year (e.g. 24 represents 2024)\n\nMM: Month (01 to 12)\n\nDD: day of the month (01 to 31)\n\nHH: Hour (24-hour format, 00 to 23)\n\nhh: Hour (12 hour format, 01 to 12)\n\nmm: Minutes (00 to 59)\n\nss: Seconds (00 to 59)\n\nSSSSSS: Microseconds (000000 to 999999)\n\nA: AM or PM\n\nZZZ: Time Zone Name\n\nZ: Time zone offset (e.g.+0000)"
       }

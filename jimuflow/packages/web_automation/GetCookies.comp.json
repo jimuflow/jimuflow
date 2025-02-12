@@ -1,6 +1,6 @@
 {
   "name": "GetCookies",
-  "displayName": "Get cookies",
+  "displayName": "Get Cookies",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.web_automation.GetCookiesComponent",
   "supportsErrorHandling": true,
@@ -15,7 +15,7 @@
       "direction": "IN",
       "defaultValue": "page",
       "uiConfig": {
-        "label": "Get type",
+        "label": "Acquisition Method",
         "inputType": "combo_box",
         "options": [
           {
@@ -34,7 +34,7 @@
       "type": "WebPage",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web page",
+        "label": "Web Page Object",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "getType",
@@ -48,7 +48,7 @@
       "type": "WebBrowser",
       "direction": "IN",
       "uiConfig": {
-        "label": "Web browser",
+        "label": "Web Browser Object",
         "inputType": "expression",
         "helpInfo": "Please enter or select the web browser",
         "dependsOn": {
@@ -63,7 +63,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Url",
+        "label": "Web Page Address",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "getType",
@@ -78,7 +78,7 @@
       "elementType": "dict",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Cookie list"
+        "label": "Cookie List"
       }
     }
   ]

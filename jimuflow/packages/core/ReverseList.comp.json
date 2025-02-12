@@ -1,6 +1,6 @@
 {
   "name": "ReverseList",
-  "displayName": "Reverse list",
+  "displayName": "Reverse List",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.core.ReverseListComponent",
   "supportsErrorHandling": true,

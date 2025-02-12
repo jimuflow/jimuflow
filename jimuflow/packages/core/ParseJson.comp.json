@@ -14,7 +14,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Json text",
+        "label": "JSON Text",
         "inputType": "expression"
       }
     },

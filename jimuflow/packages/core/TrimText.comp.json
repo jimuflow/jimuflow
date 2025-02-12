@@ -13,7 +13,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Original text",
+        "label": "Original Text",
         "inputType": "expression"
       }
     },
@@ -23,7 +23,7 @@
       "direction": "IN",
       "defaultValue": "both",
       "uiConfig": {
-        "label": "Trim type",
+        "label": "Trim Type",
         "inputType": "combo_box",
         "options": [
            {

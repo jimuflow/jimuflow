@@ -1,6 +1,6 @@
 {
   "name": "Print",
-  "displayName": "Print message",
+  "displayName": "Print Message",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.core.PrintComponent",
   "sortNo": 1,

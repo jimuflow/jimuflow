@@ -1,6 +1,6 @@
 {
   "name": "ImportCsvAsTable",
-  "displayName": "Import csv as table",
+  "displayName": "Import CSV as Table",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.table.ImportCsvAsTableComponent",
   "supportsErrorHandling": true,
@@ -13,7 +13,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Csv file path",
+        "label": "CSV File Path",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.file_path_editor.OpenFilePathEdit",
         "inputValueType": "expression",
@@ -26,7 +26,7 @@
       "direction": "IN",
       "defaultValue": "system_default",
       "uiConfig": {
-        "label": "File encoding",
+        "label": "File Encoding",
         "inputType": "combo_box",
         "required": false,
         "options": [
@@ -89,7 +89,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Custom delimiter",
+        "label": "Custom Delimiter",
         "inputType": "expression",
         "dependsOn": {
           "variableName": "useCustomDelimiter",
@@ -114,7 +114,7 @@
       "type": "table",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Table",
+        "label": "Data Table",
         "helpInfo": "The imported table"
       }
     }

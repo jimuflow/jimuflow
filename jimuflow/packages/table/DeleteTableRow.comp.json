@@ -1,6 +1,6 @@
 {
   "name": "DeleteTableRow",
-  "displayName": "Delete table row",
+  "displayName": "Delete Table Row",
   "controlFlowType": "NORMAL",
   "type": "jimuflow.components.table.DeleteTableRowComponent",
   "supportsErrorHandling": true,
@@ -23,7 +23,7 @@
       "direction": "IN",
       "defaultValue": "all",
       "uiConfig": {
-        "label": "Delete Type",
+        "label": "Deletion Type",
         "inputType": "combo_box",
         "options": [
           {
@@ -42,7 +42,7 @@
       "type": "number",
       "direction": "IN",
       "uiConfig": {
-        "label": "Row number",
+        "label": "Row Number",
         "inputType": "expression",
         "helpInfo": "Enter the line number, starting from line 1, where -n represents the nth to last line",
         "dependsOn": {

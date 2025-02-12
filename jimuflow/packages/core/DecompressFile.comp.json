@@ -13,7 +13,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "File path",
+        "label": "File Path",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.file_path_editor.OpenFilePathEdit",
         "inputValueType": "expression"
@@ -25,17 +25,17 @@
       "direction": "IN",
       "defaultValue": "source",
       "uiConfig": {
-        "label": "Decompress to",
+        "label": "Extract To",
         "inputType": "combo_box",
         "required": false,
         "options": [
           {
             "value": "source",
-            "label": "Save to the same level directory as the source file"
+            "label": "Save to the directory of the source file"
           },
           {
             "value": "specified",
-            "label": "Save to specified folder"
+            "label": "Save to a specified folder"
           }
         ]
       }
@@ -45,7 +45,7 @@
       "type": "text",
       "direction": "IN",
       "uiConfig": {
-        "label": "Save folder",
+        "label": "Save Folder",
         "inputType": "custom",
         "inputEditorType": "jimuflow.gui.components.file_path_editor.FolderPathEdit",
         "inputValueType": "expression",
@@ -62,7 +62,7 @@
       "direction": "IN",
       "defaultValue": true,
       "uiConfig": {
-        "label": "Create a folder with the same name",
+        "label": "Create folder with the same name",
         "inputType": "check_box",
         "required": false
       }
@@ -84,7 +84,7 @@
       "type": "text",
       "direction": "OUT",
       "uiConfig": {
-        "label": "Result folder"
+        "label": "Result Folder"
       }
     }
   ]

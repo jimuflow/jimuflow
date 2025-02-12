@@ -7,7 +7,8 @@ source venv/bin/activate
 
 #PLAYWRIGHT_BROWSERS_PATH=0 playwright install chromium
 
-mkdocs build
+mkdocs build -f config/en/mkdocs_help.yml
+mkdocs build -f config/zh/mkdocs_help.yml
 
 # 获取所有自定义编辑器模块的--hidden-import参数
 PACKAGE_NAME="jimuflow.gui.components"
@@ -27,7 +28,7 @@ pyinstaller --name JimuFlow \
   --add-data "jimuflow/locales/zh_CN/LC_MESSAGES/messages.mo:./jimuflow/locales/zh_CN/LC_MESSAGES" \
   --add-data "jimuflow/packages:./jimuflow/packages" \
   --add-data "jimuflow/resources:./jimuflow/resources" \
-  --add-data "site:./jimuflow/site" \
+  --add-data "help:./jimuflow/help" \
   --hidden-import=jimuflow.datatypes.web_page \
   --hidden-import=jimuflow.datatypes.windows_types \
   --hidden-import=jimuflow.components \
