@@ -10,6 +10,8 @@ cd ..\..
 
 @REM call venv\Scripts\activate
 
+python generate_version_info.py
+
 mkdocs build -f config\en\mkdocs_help.yml
 mkdocs build -f config\zh\mkdocs_help.yml
 

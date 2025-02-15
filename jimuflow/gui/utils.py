@@ -20,11 +20,11 @@ import os
 
 from PySide6.QtCore import QSettings, QObject
 
-from jimuflow.common.constants import APP_NAME, APP_ORGANIZATION
+import jimuflow
 
 
 class Utils:
-    settings = QSettings(APP_ORGANIZATION, APP_NAME)
+    settings = QSettings(jimuflow.__project_organization__, jimuflow.__project_name__)
 
     @staticmethod
     def get_workspace_path():

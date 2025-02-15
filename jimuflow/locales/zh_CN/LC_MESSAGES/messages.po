@@ -1485,6 +1485,9 @@ msgstr "JimuFlow是一款简单易用的跨平台RPA工具"
 msgid "Version: {version}"
 msgstr "版本：{version}"
 
+msgid "Git Info: {git_info}"
+msgstr "Git信息：{git_info}"
+
 msgid "Project Link: <a href='{link_url}'>{link_name}</a>"
 msgstr "项目链接：<a href='{link_url}'>{link_name}</a>"
 
@@ -1521,31 +1524,31 @@ msgstr "常规"
 msgid "Advanced"
 msgstr "高级"
 
-msgid "Error handling"
+msgid "Error Handling"
 msgstr "错误处理"
 
-msgid "Output configs"
+msgid "Output Configs"
 msgstr "输出配置"
 
-msgid "Stop"
-msgstr "结束流程"
+msgid "end the process"
+msgstr "终止流程"
 
-msgid "Retry"
+msgid "retry"
 msgstr "重试"
 
-msgid "Ignore"
-msgstr "忽略错误继续执行"
+msgid "ignore the error and continue execution"
+msgstr "忽略错误并继续执行"
 
-msgid "Error handling type"
+msgid "Error Handling Methods"
 msgstr "错误处理方式"
 
-msgid "Max retries"
+msgid "Max Retries"
 msgstr "重试次数"
 
-msgid "Retry interval (seconds)"
+msgid "Retry Interval (seconds)"
 msgstr "重试间隔(秒)"
 
-msgid "Outputs on error"
+msgid "Outputs On Error"
 msgstr "出错时的输出配置"
 
 msgid "Input parameter {name} is invalid: {editor_errors}"
@@ -2938,19 +2941,19 @@ msgstr "窗口高度"
 msgid "Add Prefix or Suffix"
 msgstr "添加前缀或后缀"
 
-msgid "Original text"
+msgid "Original Text"
 msgstr "原始文本"
 
-msgid "Add type"
+msgid "Addition Type"
 msgstr "添加类型"
 
-msgid "Add prefix"
+msgid "Add a prefix"
 msgstr "添加前缀"
 
-msgid "Add suffix"
+msgid "Add a suffix"
 msgstr "添加后缀"
 
-msgid "Add text"
+msgid "Added Text"
 msgstr "添加文本"
 
 msgid "Result"
@@ -2962,14 +2965,8 @@ msgstr "结束循环"
 msgid "Change Text Case"
 msgstr "改变文本大小写"
 
-msgid "Case change type"
+msgid "Case Conversion Type"
 msgstr "大小写转换类型"
-
-msgid "upper"
-msgstr "大写"
-
-msgid "lower"
-msgstr "小写"
 
 msgid "capitalize"
 msgstr "首字母大写"
@@ -2980,7 +2977,7 @@ msgstr "检查进程是否存在"
 msgid "Operating System"
 msgstr "操作系统"
 
-msgid "Process property"
+msgid "Process Attributes"
 msgstr "进程属性"
 
 msgid "Process ID"
@@ -2989,37 +2986,40 @@ msgstr "进程ID"
 msgid "Process name"
 msgstr "进程名称"
 
-msgid "Check result"
+msgid "Process Name"
+msgstr "进程名称"
+
+msgid "Check Result"
 msgstr "检测结果"
 
 msgid "Clear Folder"
 msgstr "清空文件夹"
 
-msgid "Folder path"
+msgid "Folder Path"
 msgstr "文件夹路径"
 
 msgid "Compress File/Folder"
 msgstr "压缩文件/文件夹"
 
-msgid "File path"
+msgid "File Path"
 msgstr "文件路径"
 
-msgid "Compressed package name"
+msgid "Archive Name"
 msgstr "压缩包名称"
 
-msgid "Save folder type"
+msgid "Save Folder Type"
 msgstr "保存文件夹类型"
 
-msgid "Save to the same level directory as the source file"
+msgid "Save to the directory of the source file"
 msgstr "保存到源文件所在目录"
 
-msgid "Save to specified folder"
+msgid "Save to a specified folder"
 msgstr "保存到指定文件夹"
 
-msgid "Save folder"
+msgid "Save Folder"
 msgstr "保存文件夹"
 
-msgid "Compressed package path"
+msgid "Archive Path"
 msgstr "压缩包路径"
 
 msgid "Continue to the next loop"
@@ -3028,34 +3028,34 @@ msgstr "继续下一循环"
 msgid "Copy File"
 msgstr "复制文件"
 
-msgid "Target folder"
+msgid "Target Folder"
 msgstr "目标文件夹"
 
-msgid "Action when exists"
+msgid "Action if Exists"
 msgstr "存在时操作"
 
 msgid "Overwrite"
 msgstr "覆盖"
 
-msgid "Automatic renaming"
+msgid "Auto rename"
 msgstr "自动重命名"
 
 msgid "Perform error handling"
 msgstr "执行错误处理"
 
-msgid "New file path"
+msgid "New File Path"
 msgstr "新文件路径"
 
 msgid "Copy Folder"
 msgstr "复制文件夹"
 
-msgid "New folder path"
+msgid "New Folder Path"
 msgstr "新文件夹路径"
 
 msgid "Create Date"
 msgstr "创建日期"
 
-msgid "Initialization type"
+msgid "Initialization Type"
 msgstr "初始化类型"
 
 msgid "Today"
@@ -3067,13 +3067,13 @@ msgstr "将时间戳转换为日期"
 msgid "Parse date string"
 msgstr "解析日期字符串"
 
-msgid "Timestamp(s)"
-msgstr "时间戳（秒）"
+msgid "Timestamp(seconds)"
+msgstr "时间戳(秒)"
 
-msgid "Date string"
+msgid "Date String"
 msgstr "日期字符串"
 
-msgid "Date format"
+msgid "Date Format"
 msgstr "日期格式"
 
 msgid ""
@@ -3099,7 +3099,7 @@ msgstr ""
 msgid "Create DateTime"
 msgstr "创建日期时间"
 
-msgid "Get the current date and time"
+msgid "Get current date and time"
 msgstr "获取当前日期时间"
 
 msgid "Convert timestamp to datetime"
@@ -3108,10 +3108,10 @@ msgstr "将时间戳转换为日期时间"
 msgid "Parse datetime string"
 msgstr "解析日期时间字符串"
 
-msgid "Datetime string"
+msgid "DateTime String"
 msgstr "日期时间字符串"
 
-msgid "Datetime format"
+msgid "DateTime Format"
 msgstr "日期时间格式"
 
 msgid ""
@@ -3166,37 +3166,34 @@ msgstr ""
 "\n"
 "Z: 时区偏移量（例如+0000）"
 
-msgid "Datetime"
-msgstr "日期时间"
-
-msgid "Create dictionary"
+msgid "Create Dictionary"
 msgstr "创建字典"
 
 msgid "Create Folder"
 msgstr "新建文件夹"
 
-msgid "Parent folder"
+msgid "Parent Folder"
 msgstr "父文件夹"
 
-msgid "New folder name"
+msgid "New Folder Name"
 msgstr "新文件夹名称"
 
-msgid "Create list"
+msgid "Create List"
 msgstr "创建列表"
 
 msgid "Create Time"
 msgstr "创建时间"
 
-msgid "Get the current time"
+msgid "Get current time"
 msgstr "获取当前时间"
 
 msgid "Parse time string"
 msgstr "解析时间字符串"
 
-msgid "Time string"
+msgid "Time String"
 msgstr "时间字符串"
 
-msgid "Time format"
+msgid "Time Format"
 msgstr "时间格式"
 
 msgid ""
@@ -3231,10 +3228,10 @@ msgstr ""
 msgid "Decompress File/Folder"
 msgstr "解压缩文件/文件夹"
 
-msgid "Decompress to"
+msgid "Extract To"
 msgstr "解压缩到"
 
-msgid "Create a folder with the same name"
+msgid "Create folder with the same name"
 msgstr "创建同名文件夹"
 
 msgid "Password"
@@ -3243,17 +3240,20 @@ msgstr "密码"
 msgid "Password for the zip compression package"
 msgstr "zip压缩包密码"
 
-msgid "Result folder"
+msgid "Result Folder"
 msgstr "结果文件夹"
 
-msgid "Delete dictionary key"
+msgid "Delete Dictionary Key"
 msgstr "删除字典键"
 
-msgid "Key"
+msgid "Key Name"
 msgstr "键名"
 
 msgid "Delete File"
 msgstr "删除文件"
+
+msgid "File path"
+msgstr "文件路径"
 
 msgid "Delete Folder"
 msgstr "删除文件夹"
@@ -3261,7 +3261,7 @@ msgstr "删除文件夹"
 msgid "Delete List Item"
 msgstr "删除列表项"
 
-msgid "Delete Type"
+msgid "Deletion Type"
 msgstr "删除类型"
 
 msgid "Delete list item by position"
@@ -3270,13 +3270,13 @@ msgstr "按位置删除列表项"
 msgid "Delete list item by value"
 msgstr "按值删除列表项"
 
-msgid "Item position"
+msgid "Item Position"
 msgstr "项目位置"
 
 msgid "Starting from 0, - n represents the nth to last"
 msgstr "从0开始，-n表示倒数第n个"
 
-msgid "Item value"
+msgid "Item Value"
 msgstr "项目值"
 
 msgid "Dictionary loop"
@@ -3285,16 +3285,16 @@ msgstr "字典循环"
 msgid "Loop item"
 msgstr "循环项目"
 
-msgid "Calculate time difference"
+msgid "Calculate Time Difference"
 msgstr "计算时间差"
 
-msgid "Starting date"
+msgid "Start Date"
 msgstr "起始日期"
 
 msgid "End Date"
 msgstr "结束日期"
 
-msgid "Time unit"
+msgid "Time Unit"
 msgstr "时间单位"
 
 msgid "Seconds"
@@ -3309,7 +3309,7 @@ msgstr "小时"
 msgid "Days"
 msgstr "天"
 
-msgid "Time difference"
+msgid "Time Difference"
 msgstr "时间差"
 
 msgid "Else branch"
@@ -3336,19 +3336,19 @@ msgstr "条件列表"
 msgid "Execute Command"
 msgstr "执行命令行程序"
 
-msgid "Command"
+msgid "Command Line"
 msgstr "命令行"
 
-msgid "Process working directory"
+msgid "Process Working Directory"
 msgstr "进程工作目录"
 
 msgid "Encoding"
 msgstr "编码格式"
 
-msgid "Wait timeout(s)"
-msgstr "等待超时时间(秒)"
+msgid "Waiting Timeout(seconds)"
+msgstr "等待时间(秒)"
 
-msgid "Command output"
+msgid "Command Line Output"
 msgstr "命令行输出"
 
 msgid "Exit"
@@ -3357,19 +3357,19 @@ msgstr "终止应用"
 msgid "Format DateTime"
 msgstr "格式化日期时间"
 
-msgid "Date Time"
-msgstr "日期时间"
+msgid "DateTime Value"
+msgstr "日期时间值"
 
 msgid "Get Clipboard Text"
 msgstr "获取剪贴板文本"
 
-msgid "Clipboard text"
+msgid "Clipboard Text"
 msgstr "剪贴板文本"
 
 msgid "Get File Path Info"
 msgstr "获取文件路径信息"
 
-msgid "File path info"
+msgid "File Path Information"
 msgstr "文件路径信息"
 
 msgid "if branch"
@@ -3384,19 +3384,19 @@ msgstr "无限循环"
 msgid "Loop index"
 msgstr "循环位置"
 
-msgid "Insert Item To List"
+msgid "Insert List Item"
 msgstr "插入列表项"
 
 msgid "Insert Type"
 msgstr "插入类型"
 
-msgid "Add at the end of the list"
+msgid "Add to the end of the list"
 msgstr "在列表末尾添加"
 
-msgid "Insert at specified location"
+msgid "Insert at a specified position"
 msgstr "在指定位置插入"
 
-msgid "Insert position"
+msgid "Insert Position"
 msgstr "插入位置"
 
 msgid "Kill Process"
@@ -3405,19 +3405,19 @@ msgstr "终止进程"
 msgid "Launch Application"
 msgstr "启动应用程序"
 
-msgid "Application path"
+msgid "Application Path"
 msgstr "应用路径"
 
-msgid "Action after launch"
+msgid "Post-Launch Action"
 msgstr "启动后操作"
 
-msgid "Continue to execute"
+msgid "Continue execution"
 msgstr "继续执行"
 
-msgid "Waiting for application execution to complete"
+msgid "Waiting for application to complete"
 msgstr "等待应用程序执行完成"
 
-msgid "Command line arguments"
+msgid "Command Line Arguments"
 msgstr "命令行参数"
 
 msgid "Process PID"
@@ -3429,7 +3429,7 @@ msgstr "获取文件列表"
 msgid "Folder"
 msgstr "文件夹"
 
-msgid "File name pattern"
+msgid "File Name Pattern"
 msgstr "文件名模式"
 
 msgid ""
@@ -3483,17 +3483,17 @@ msgstr ""
 "\n"
 "例如：**/*.txt 匹配当前目录及所有子目录中的所有 .txt 文件。"
 
-msgid "Find sub folders"
-msgstr "查找子文件夹"
+msgid "Search subfolders"
+msgstr "搜索子文件夹"
 
 msgid "Ignore hidden files"
 msgstr "忽略隐藏文件"
 
-msgid "Sorting files"
+msgid "Sort files"
 msgstr "排序文件"
 
-msgid "Sorting factor"
-msgstr "排序因素"
+msgid "Sorting Criteria"
+msgstr "排序条件"
 
 msgid "File name"
 msgstr "文件名"
@@ -3504,10 +3504,10 @@ msgstr "文件大小"
 msgid "Creation time"
 msgstr "创建时间"
 
-msgid "Last modified"
+msgid "Last modified time"
 msgstr "最后修改时间"
 
-msgid "Sort order"
+msgid "Sorting Order"
 msgstr "排序方式"
 
 msgid "Ascending order"
@@ -3534,7 +3534,7 @@ msgstr "结束索引"
 msgid "End value (excluding)"
 msgstr "结束值（不含该值）"
 
-msgid "Merge list"
+msgid "Merge Lists"
 msgstr "合并列表"
 
 msgid "The first list"
@@ -3543,7 +3543,7 @@ msgstr "列表1"
 msgid "The second list"
 msgstr "列表2"
 
-msgid "Merged list"
+msgid "Merged List"
 msgstr "合并后的列表"
 
 msgid "Move File"
@@ -3552,19 +3552,16 @@ msgstr "移动文件"
 msgid "Move Folder"
 msgstr "移动文件夹"
 
-msgid "Number To Text"
+msgid "Number to Text"
 msgstr "数值转文本"
 
-msgid "Number value"
-msgstr "数值"
-
-msgid "Number of decimal places"
+msgid "Number of Decimal Places"
 msgstr "保留的小数点位数"
 
 msgid "Use a thousandth separator"
 msgstr "使用千分位分隔符"
 
-msgid "Object To Json"
+msgid "Object to Json"
 msgstr "对象转Json文本"
 
 msgid "JSON Operation"
@@ -3576,34 +3573,34 @@ msgstr "对象"
 msgid "Parse Json"
 msgstr "解析Json文本"
 
-msgid "Json text"
+msgid "JSON Text"
 msgstr "Json文本"
 
-msgid "Print message"
+msgid "Print Message"
 msgstr "打印消息"
 
-msgid "Generate random integer"
+msgid "Generate Random Integer"
 msgstr "生成随机整数"
 
-msgid "Minimum value"
+msgid "Minimum Value"
 msgstr "最小值"
 
 msgid "Minimum value (including this value)"
 msgstr "最小值（含该值）"
 
-msgid "Maximum value"
+msgid "Maximum Value"
 msgstr "最大值"
 
 msgid "Maximum value (excluding this value)"
 msgstr "最大值（不含该值）"
 
-msgid "Random number"
+msgid "Random Number"
 msgstr "随机数"
 
 msgid "Read Text File"
 msgstr "读取文本文件"
 
-msgid "Read type"
+msgid "Read Type"
 msgstr "读取类型"
 
 msgid "Read as whole text"
@@ -3612,16 +3609,16 @@ msgstr "读取为完整文本"
 msgid "Read as lines"
 msgstr "读取为行列表"
 
-msgid "File encoding"
+msgid "File Encoding"
 msgstr "文件编码"
 
 msgid "Regex Match"
 msgstr "正则匹配"
 
-msgid "Regex"
+msgid "Regular Expression"
 msgstr "正则表达式"
 
-msgid "Find first match"
+msgid "Find the first match"
 msgstr "查找第一个匹配项"
 
 msgid "Ignore case"
@@ -3630,10 +3627,10 @@ msgstr "忽略大小写"
 msgid "Rename File"
 msgstr "重命名文件"
 
-msgid "New file name"
+msgid "New File Name"
 msgstr "新文件名"
 
-msgid "Cancel renaming operation"
+msgid "Cancel the rename operation"
 msgstr "取消重命名操作"
 
 msgid "Rename Folder"
@@ -3642,91 +3639,94 @@ msgstr "重命名文件夹"
 msgid "Replace Text"
 msgstr "替换文本"
 
-msgid "Replace type"
-msgstr "替换类型"
+msgid "Replacement Type"
+msgstr "替换方式"
 
 msgid "Text replacement"
 msgstr "文本替换"
 
-msgid "Regex replacement"
-msgstr "正则替换"
+msgid "Regular expression replacement"
+msgstr "正则表达式替换"
 
-msgid "Text to replace"
+msgid "Text to Replace"
 msgstr "要替换的文本"
 
-msgid "Regex to replace"
+msgid "Regular Expression to Replace"
 msgstr "要替换的正则表达式"
 
-msgid "Replace first match"
+msgid "Replace only the first match"
 msgstr "只替换第一个匹配项"
 
-msgid "Replacement text"
+msgid "Replacement Text"
 msgstr "替换文本"
 
 msgid "Return"
 msgstr "返回"
 
-msgid "Reverse list"
+msgid "Reverse List"
 msgstr "反转列表"
 
 msgid "Set Clipboard Text"
 msgstr "设置剪贴板文本"
 
-msgid "Text content"
+msgid "Text Content"
 msgstr "文本内容"
 
-msgid "Set dictionary key value"
+msgid "Set Dictionary Key-Value"
 msgstr "设置字典键值"
 
-msgid "Set variable"
+msgid "Set Variable"
 msgstr "设置变量"
-
-msgid "Variable value"
-msgstr "变量值"
-
-msgid "Variable name"
-msgstr "变量名"
 
 msgid "Slice Text"
 msgstr "截取文本"
 
-msgid "From where"
+msgid "Starting Position"
 msgstr "起始位置"
 
-msgid "from the specified location"
+msgid "start from the first character"
+msgstr "从第一个字符开始"
+
+msgid "start from a specified location"
 msgstr "从指定位置开始"
 
-msgid "from the specified text"
+msgid "start from specified text"
 msgstr "从指定文本开始"
 
-msgid "Starting character position"
+msgid "Starting Character Position"
 msgstr "起始字符位置"
 
 msgid "Starting from 0, - n represents the nth to last character"
 msgstr "从0开始，-n表示倒数第n个字符"
 
-msgid "Starting text content"
+msgid "Starting Text Content"
 msgstr "起始文本内容"
 
-msgid "To where"
+msgid "Ending Position"
 msgstr "结束位置"
 
-msgid "to the specified length"
-msgstr "到指定长度"
+msgid "end at the end of the text"
+msgstr "到文本末尾结束"
 
-msgid "Sliced length"
-msgstr "截取长度"
+msgid "end at a specified length"
+msgstr "到指定长度结束"
 
-msgid "Sort list"
+msgid "Extraction Length"
+msgstr "抽取长度"
+
+msgid "Sort List"
 msgstr "排序列表"
+
+msgid "Sorting Method"
+msgstr "排序方法"
 
 msgid "Split Text"
 msgstr "拆分文本"
 
-msgid "Text to be split"
+msgid "Text to Split"
 msgstr "要拆分的文本"
 
-msgid "Delimiter type"
+msgid "Delimiter Type"
 msgstr "分隔符类型"
 
 msgid "Standard delimiter"
@@ -3734,6 +3734,9 @@ msgstr "标准分隔符"
 
 msgid "Custom delimiter"
 msgstr "自定义分隔符"
+
+msgid "Standard Delimiter"
+msgstr "标准分隔符"
 
 msgid "Space character"
 msgstr "空格符"
@@ -3744,16 +3747,19 @@ msgstr "换行符"
 msgid "Tab character"
 msgstr "制表符"
 
+msgid "Custom Delimiter"
+msgstr "自定义分隔符"
+
 msgid "Filter empty items"
 msgstr "过滤空项"
 
-msgid "Use regular expressions"
+msgid "Use regular expression"
 msgstr "使用正则表达式"
 
-msgid "Text To Number"
+msgid "Text to Number"
 msgstr "文本转数值"
 
-msgid "Text value"
+msgid "Text Value"
 msgstr "文本值"
 
 msgid "Wait time(seconds)"
@@ -3762,7 +3768,7 @@ msgstr "等待时间(秒)"
 msgid "Trim Text"
 msgstr "去除空格"
 
-msgid "Trim type"
+msgid "Trim Type"
 msgstr "去除类型"
 
 msgid "Remove blank characters on both sides"
@@ -3777,22 +3783,22 @@ msgstr "去除右边的空格"
 msgid "Update DateTime"
 msgstr "修改日期时间"
 
-msgid "Original date and time"
+msgid "Original DateTime"
 msgstr "原始日期时间"
 
-msgid "Adjustment type"
+msgid "Adjustment Type"
 msgstr "调整类型"
 
-msgid "Increment"
+msgid "Increase"
 msgstr "增加"
 
-msgid "Decrement"
+msgid "Decrease"
 msgstr "减少"
 
-msgid "Adjustment value"
+msgid "Adjustment Value"
 msgstr "调整值"
 
-msgid "Adjustment unit"
+msgid "Adjustment Unit"
 msgstr "调整单位"
 
 msgid "Microseconds"
@@ -3813,22 +3819,19 @@ msgstr "年"
 msgid "Update List Item"
 msgstr "更新列表项"
 
-msgid "Item Value"
-msgstr "项目值"
-
-msgid "Url Decode"
+msgid "URL Decode"
 msgstr "URL解码"
 
 msgid "Encoding/Decoding"
 msgstr "编/解码"
 
-msgid "Text to decode"
+msgid "Text to be Decoded"
 msgstr "待解码文本"
 
-msgid "Url Encode"
+msgid "URL Encode"
 msgstr "URL编码"
 
-msgid "Text to encode"
+msgid "Text to be Encoded"
 msgstr "待编码文本"
 
 msgid "While loop"
@@ -3837,7 +3840,7 @@ msgstr "条件循环"
 msgid "Write Text File"
 msgstr "写入文本文件"
 
-msgid "Write content"
+msgid "Write Content"
 msgstr "写入内容"
 
 msgid "Append"
@@ -3849,25 +3852,25 @@ msgstr "鼠标悬浮在图像上"
 msgid "Mouse/Keyboard"
 msgstr "鼠标键盘"
 
-msgid "Cursor position"
+msgid "Cursor Position"
 msgstr "光标位置"
 
-msgid "Image Center"
+msgid "center of the image"
 msgstr "图像中心"
 
-msgid "The upper left corner of the image"
+msgid "upper left corner of the image"
 msgstr "图像左上角"
 
-msgid "X coordinate offset"
+msgid "X Coordinate Offset"
 msgstr "X坐标偏移量"
 
-msgid "Y coordinate offset"
+msgid "Y Coordinate Offset"
 msgstr "Y坐标偏移量"
 
 msgid "Similarity(%)"
 msgstr "相似度(%)"
 
-msgid "Match mode"
+msgid "Matching Mode"
 msgstr "匹配模式"
 
 msgid "Color matching"
@@ -3876,7 +3879,7 @@ msgstr "彩色匹配"
 msgid "Grayscale matching"
 msgstr "灰度匹配"
 
-msgid "Move speed"
+msgid "Movement Speed"
 msgstr "移动速度"
 
 msgid "Instant"
@@ -3891,10 +3894,10 @@ msgstr "中速"
 msgid "Slow"
 msgstr "慢速"
 
-msgid "Delay after action(seconds)"
+msgid "Delay after Action(seconds)"
 msgstr "执行后延迟(秒)"
 
-msgid "Input type"
+msgid "Input Type"
 msgstr "输入类型"
 
 msgid "Input text"
@@ -3910,7 +3913,7 @@ msgid ""
 "clipboard text command and pasting hotkey."
 msgstr "在Windows中支持中英文等所有Unicode字符，在Linux和MacOS中只支持英文字符。如果你需要在在Linux和MacOS中输入非英文字符，请使用设置剪贴板文本指令和粘贴快捷键实现。"
 
-msgid "Hotkey type"
+msgid "Hotkey Type"
 msgstr "快捷键类型"
 
 msgid "Common hotkey"
@@ -3918,6 +3921,9 @@ msgstr "常用快捷键"
 
 msgid "Custom hotkey"
 msgstr "自定义快捷键"
+
+msgid "Common Hotkey"
+msgstr "常用快捷键"
 
 msgid "Ctrl/Cmd+C"
 msgstr "Ctrl/Cmd+C"
@@ -3940,13 +3946,16 @@ msgstr "Ctrl/Cmd+A"
 msgid "Enter"
 msgstr "Enter"
 
-msgid "Input interval(milliseconds)"
+msgid "Custom Hotkey"
+msgstr "自定义快捷键"
+
+msgid "Input Interval(milliseconds)"
 msgstr "输入间隔(毫秒)"
 
 msgid "Mouse Click"
 msgstr "鼠标点击"
 
-msgid "Mouse button"
+msgid "Mouse Button"
 msgstr "鼠标按钮"
 
 msgid "Left button"
@@ -3958,8 +3967,8 @@ msgstr "右键"
 msgid "Middle button"
 msgstr "中键"
 
-msgid "Click Type"
-msgstr "点击方式"
+msgid "Click Method"
+msgstr "点击方法"
 
 msgid "Mouse down"
 msgstr "鼠标按下"
@@ -3967,7 +3976,7 @@ msgstr "鼠标按下"
 msgid "Mouse up"
 msgstr "鼠标弹起"
 
-msgid "Modifier key"
+msgid "Modifier Key"
 msgstr "修改键"
 
 msgid "None"
@@ -3991,7 +4000,7 @@ msgstr "Shift"
 msgid "Mouse Scroll"
 msgstr "滚动鼠标"
 
-msgid "Scroll direction"
+msgid "Scroll Direction"
 msgstr "滚动方向"
 
 msgid "Scroll up"
@@ -4000,13 +4009,13 @@ msgstr "向上滚动"
 msgid "Scroll down"
 msgstr "向下滚动"
 
-msgid "Number of scrolls"
+msgid "Number of Scrolls"
 msgstr "滚动次数"
 
 msgid "Move Mouse"
 msgstr "移动鼠标"
 
-msgid "Relative to"
+msgid "Relative To"
 msgstr "相对于"
 
 msgid "The upper left corner of the screen"
@@ -4015,28 +4024,34 @@ msgstr "屏幕左上角"
 msgid "Current mouse position"
 msgstr "当前鼠标位置"
 
-msgid "Add table column"
+msgid "X - coordinate Offset"
+msgstr "X坐标偏移量"
+
+msgid "Y - coordinate Offset"
+msgstr "Y坐标偏移量"
+
+msgid "Add Table Column"
 msgstr "新增表格列"
 
 msgid "Data Table"
 msgstr "数据表格"
 
-msgid "Column name"
+msgid "Column Name"
 msgstr "列名"
 
-msgid "Create table"
+msgid "Create Table"
 msgstr "创建数据表格"
 
-msgid "Table column names"
-msgstr "表头列表"
+msgid "Table Headers"
+msgstr "表头"
 
 msgid "List of headers for data table separated by commas"
 msgstr "逗号分割的数据表格表头列表"
 
-msgid "The created table"
+msgid "The created data table"
 msgstr "创建的数据表格"
 
-msgid "Delete table row"
+msgid "Delete Table Row"
 msgstr "删除表格行"
 
 msgid "Delete all rows"
@@ -4045,7 +4060,7 @@ msgstr "删除所有行"
 msgid "Delete one row"
 msgstr "删除一行"
 
-msgid "Row number"
+msgid "Row Number"
 msgstr "行号"
 
 msgid ""
@@ -4053,10 +4068,10 @@ msgid ""
 "to last line"
 msgstr "输入行号，行号从1号开始，-n代表倒数第n行"
 
-msgid "Export table"
+msgid "Export Table"
 msgstr "导出数据表格"
 
-msgid "File format"
+msgid "File Format"
 msgstr "文件格式"
 
 msgid "xlsx"
@@ -4068,7 +4083,7 @@ msgstr "xls"
 msgid "csv"
 msgstr "csv"
 
-msgid "Sheet name"
+msgid "Sheet Name"
 msgstr "Sheet名称"
 
 msgid "UTF-8 Bom"
@@ -4077,7 +4092,7 @@ msgstr "UTF-8 Bom"
 msgid "Use custom delimiter"
 msgstr "使用自定义分隔符"
 
-msgid "File naming type"
+msgid "File Naming Type"
 msgstr "文件命名类型"
 
 msgid "Random file name"
@@ -4086,7 +4101,7 @@ msgstr "随机文件名"
 msgid "Custom file name"
 msgstr "自定义文件名"
 
-msgid "Custom filename"
+msgid "Custom File Name"
 msgstr "自定义文件名"
 
 msgid "Override existing file"
@@ -4095,10 +4110,10 @@ msgstr "覆盖现有文件"
 msgid "Export table header"
 msgstr "导出表头"
 
-msgid "Import csv as table"
+msgid "Import CSV as Table"
 msgstr "导入csv为数据表格"
 
-msgid "Csv file path"
+msgid "CSV File Path"
 msgstr "Csv文件路径"
 
 msgid "Please input the file path of the csv file"
@@ -4110,16 +4125,16 @@ msgstr "使用第一行数据作为表头"
 msgid "The imported table"
 msgstr "导入的数据表格"
 
-msgid "Import excel as table"
+msgid "Import Excel as Table"
 msgstr "导入excel为数据表格"
 
-msgid "Excel file path"
+msgid "Excel File Path"
 msgstr "Excel文件路径"
 
 msgid "Please input the file path of the excel file"
 msgstr "请输入excel文件的路径"
 
-msgid "Sheet select type"
+msgid "Sheet Selection Type"
 msgstr "Sheet选择类型"
 
 msgid "Select sheet by index"
@@ -4128,16 +4143,16 @@ msgstr "按索引选择Sheet"
 msgid "Select sheet by name"
 msgstr "按名称选择Sheet"
 
-msgid "Sheet index"
+msgid "Sheet Index"
 msgstr "Sheet索引"
 
 msgid "The index position of the first sheet is 1, and so on"
 msgstr "第一个工作表的索引位置为1，以此类推"
 
-msgid "Loop table rows"
+msgid "Loop Table Rows"
 msgstr "循环遍历表格"
 
-msgid "Loop range"
+msgid "Loop Range"
 msgstr "循环范围"
 
 msgid "All rows"
@@ -4146,20 +4161,23 @@ msgstr "所有行"
 msgid "Specified range"
 msgstr "指定范围"
 
-msgid "Start row no"
+msgid "Starting Row Number"
 msgstr "起始行号"
 
-msgid "End row no"
+msgid "Ending Row Number"
 msgstr "结束行号"
 
 msgid "Loop in reverse order"
 msgstr "逆序遍历"
 
-msgid "Current row"
+msgid "Current Row"
 msgstr "当前行"
 
-msgid "Read table data"
+msgid "Read Table Data"
 msgstr "读取表格数据"
+
+msgid "Reading Type"
+msgstr "读取类型"
 
 msgid "Read row data"
 msgstr "读取行数据"
@@ -4167,7 +4185,7 @@ msgstr "读取行数据"
 msgid "Read cell data"
 msgstr "读取单元数据"
 
-msgid "Column number"
+msgid "Column Number"
 msgstr "列号"
 
 msgid ""
@@ -4175,28 +4193,25 @@ msgid ""
 " the nth to last column"
 msgstr "输入列名/列号，从第1列开始，-n表示倒数第n列"
 
-msgid "Read result"
+msgid "Reading Result"
 msgstr "读取结果"
 
-msgid "Write table cell"
+msgid "Write to Table Cell"
 msgstr "写入表格单元格"
 
 msgid "Target data table to be written"
 msgstr "写入的目标数据表格"
 
-msgid "Write cell content"
+msgid "Content to Write into Cell"
 msgstr "写入单元格内容"
 
 msgid "Enter the content to be written into the cell"
 msgstr "输入要写入单元格中的内容"
 
-msgid ""
-"If the row number is greater than the number of rows in the table, the "
-"content will be automatically written to the next row at the end of the "
-"table"
+msgid "Excess rows auto-append to table end"
 msgstr "行号大于表格行数，内容自动写入表格末尾行的下一行"
 
-msgid "Write table row"
+msgid "Write Table Row"
 msgstr "写入数据表格行"
 
 msgid "Write Type"
@@ -4220,77 +4235,95 @@ msgstr "输入行"
 msgid "Input columns"
 msgstr "输入列"
 
+msgid "Input Row"
+msgstr "输入行"
+
 msgid "Row value list"
 msgstr "行值列表"
+
+msgid "Input Columns"
+msgstr "输入列"
 
 msgid "Row columns list"
 msgstr "行列名称列表"
 
-msgid "Check web content"
+msgid ""
+"If the row number is greater than the number of rows in the table, the "
+"content will be automatically written to the next row at the end of the "
+"table"
+msgstr "行号大于表格行数，内容自动写入表格末尾行的下一行"
+
+msgid "Detect Web Page Content"
 msgstr "检测网页内容"
 
-msgid "Web page"
+msgid "Web Page Object"
 msgstr "网页对象"
 
-msgid "Check type"
+msgid "Detection Type"
 msgstr "检测类型"
 
-msgid "Include element"
+msgid "contains element"
 msgstr "包含元素"
 
-msgid "Exclude element"
+msgid "does not contain element"
 msgstr "不包含元素"
 
-msgid "Include text"
+msgid "contains text"
 msgstr "包含文本"
 
-msgid "Exclude text"
+msgid "does not contain text"
 msgstr "不包含文本"
 
-msgid "Element is visible"
+msgid "element is visible"
 msgstr "元素可见"
 
-msgid "Element is invisible"
+msgid "element is invisible"
 msgstr "元素不可见"
 
-msgid "Text is visible"
+msgid "text is visible"
 msgstr "文本可见"
 
-msgid "Text is invisible"
+msgid "text is invisible"
 msgstr "文本不可见"
 
-msgid "Check element"
-msgstr "检查元素"
+msgid "Detection Element"
+msgstr "检测元素"
 
-msgid "Check text"
+msgid "Detection Text"
 msgstr "检测文本"
 
-msgid "Clear cookies"
+msgid "Detection Result"
+msgstr "检测结果"
+
+msgid "Clear Cookies"
 msgstr "删除Cookie"
 
 msgid "Clear type"
 msgstr "清除类型"
 
-msgid "Clear specified cookie"
+msgid "Delete a specified cookie"
 msgstr "清除指定Cookie"
 
 msgid "Clear all cookies"
 msgstr "清除所有Cookies"
 
-msgid "Cookie name"
+msgid "Cookie Name"
 msgstr "Cookie名称"
 
-msgid "Click to open web page"
+msgid "Click to Open Web Page"
 msgstr "点击打开网页"
 
-msgid "Link element"
+msgid "Link Element"
 msgstr "链接元素"
 
 msgid "Select the link element to be clicked"
 msgstr "选择要点击的链接元素"
 
-msgid "New web page"
-msgstr "新网页对象"
+msgid "Waiting Time(seconds)"
+msgstr "等待时间(秒)"
+
+msgid "New Web Page Object"
+msgstr "新打开的网页对象"
 
 msgid "Newly opened webpage object"
 msgstr "新打开的网页对象"
@@ -4298,26 +4331,23 @@ msgstr "新打开的网页对象"
 msgid "Click Web Page Element"
 msgstr "点击网页元素"
 
-msgid "Web element"
-msgstr "网页元素"
-
 msgid "Simulate human click"
 msgstr "模拟人工点击"
+
+msgid "Delay after action(seconds)"
+msgstr "执行后延迟(秒)"
 
 msgid "Close Web Page"
 msgstr "关闭网页"
 
-msgid "Close Type"
+msgid "Closing Type"
 msgstr "关闭类型"
 
-msgid "Close specific page"
+msgid "close the specified page"
 msgstr "关闭指定页面"
 
-msgid "Close browser"
+msgid "close the browser"
 msgstr "关闭浏览器"
-
-msgid "Web browser"
-msgstr "Web浏览器"
 
 msgid "Please enter or select the web browser"
 msgstr "请输入或选择Web浏览器"
@@ -4325,26 +4355,26 @@ msgstr "请输入或选择Web浏览器"
 msgid "Drag Web Page Element"
 msgstr "拖拽网页元素"
 
-msgid "Source Element"
+msgid "Dragging Element"
 msgstr "拖拽元素"
 
-msgid "Source element offset"
-msgstr "拖拽元素偏移"
+msgid "Dragging element offset"
+msgstr "拖拽元素坐标偏移"
 
-msgid "Source Element x offset"
-msgstr "拖拽元素X坐标偏移"
+msgid "Dragging Element X Coordinate Offset"
+msgstr "拖拽元素X坐标偏移量"
 
-msgid "Source Element y offset"
-msgstr "拖拽元素Y坐标偏移"
+msgid "Dragging Element Y Coordinate Offset"
+msgstr "拖拽元素Y坐标偏移量"
 
-msgid "Drag type"
-msgstr "拖拽方式"
+msgid "Dragging Method"
+msgstr "拖拽方法"
 
-msgid "Drag to element"
+msgid "Drag to the target element"
 msgstr "拖拽到目标元素上"
 
-msgid "Drag by offset"
-msgstr "拖拽指定的偏移量"
+msgid "Drag by a specified offset"
+msgstr "拖拽指定偏移量"
 
 msgid "Target Element"
 msgstr "目标元素"
@@ -4352,34 +4382,34 @@ msgstr "目标元素"
 msgid "Target element offset"
 msgstr "目标元素坐标偏移"
 
-msgid "Target Element x offset"
-msgstr "目标元素X坐标偏移"
+msgid "Target Element X Coordinate Offset"
+msgstr "目标元素X坐标偏移量"
 
-msgid "Target Element y offset"
-msgstr "目标元素Y坐标偏移"
+msgid "Target Element Y Coordinate Offset"
+msgstr "目标元素Y坐标偏移量"
 
-msgid "Drag by x offset"
-msgstr "拖拽X坐标偏移"
+msgid "Dragging X Coordinate Offset"
+msgstr "拖拽X坐标偏移量"
 
-msgid "Drag by y offset"
-msgstr "拖拽Y坐标偏移"
+msgid "Dragging Y Coordinate Offset"
+msgstr "拖拽Y坐标偏移量"
 
-msgid "Drag speed"
+msgid "Dragging Speed"
 msgstr "拖拽速度"
 
-msgid "Evaluate js in web page"
+msgid "Evaluate JavaScript in Web Page"
 msgstr "在网页上执行Javascript"
 
-msgid "Javascript code"
+msgid "JavaScript Code"
 msgstr "Javascript代码"
 
-msgid "Javascript output"
+msgid "JavaScript Output"
 msgstr "Javascript输出"
 
 msgid "Extract Web Element"
 msgstr "抽取网页元素数据"
 
-msgid "Extract type"
+msgid "Extraction Type"
 msgstr "抽取类型"
 
 msgid "Element text content"
@@ -4388,10 +4418,10 @@ msgstr "元素文本内容"
 msgid "Element html source code"
 msgstr "元素HTML源码"
 
-msgid "Input element value"
+msgid "Input box value"
 msgstr "输入框值"
 
-msgid "Link element href"
+msgid "Link address"
 msgstr "链接地址"
 
 msgid "Element attribute value"
@@ -4400,10 +4430,10 @@ msgstr "元素属性值"
 msgid "Element position"
 msgstr "元素位置"
 
-msgid "Attribute name"
+msgid "Attribute Name"
 msgstr "属性名"
 
-msgid "Extracted result"
+msgid "Extraction Result"
 msgstr "抽取结果"
 
 msgid "Extract Web Page"
@@ -4418,11 +4448,11 @@ msgstr "网页HTML源码"
 msgid "Web page text content"
 msgstr "网页文本内容"
 
-msgid "Get cookies"
+msgid "Get Cookies"
 msgstr "获取Cookie"
 
-msgid "Get type"
-msgstr "获取方式"
+msgid "Acquisition Method"
+msgstr "获取方法"
 
 msgid "Cookies for specified page"
 msgstr "指定页面的Cookie"
@@ -4430,16 +4460,19 @@ msgstr "指定页面的Cookie"
 msgid "Cookies for specified url"
 msgstr "指定链接的Cookie"
 
-msgid "Url"
+msgid "Web Browser Object"
+msgstr "Web浏览器对象"
+
+msgid "Web Page Address"
 msgstr "网页地址"
 
-msgid "Cookie list"
+msgid "Cookie List"
 msgstr "Cookie列表"
 
 msgid "Get Relative Web Element"
 msgstr "获取网页相关元素"
 
-msgid "Locate type"
+msgid "Location Type"
 msgstr "定位类型"
 
 msgid "Parent element"
@@ -4463,19 +4496,19 @@ msgstr "所有子元素"
 msgid "The specified child element"
 msgstr "指定位置的子元素"
 
-msgid "Descendant relative xpath"
-msgstr "子孙元素相对xpath"
+msgid "Relative XPath of Descendant Elements"
+msgstr "子孙元素的相对XPath"
 
-msgid "Child element position"
-msgstr "子元素位置"
+msgid "Position of Child Element"
+msgstr "子元素的位置"
 
-msgid "Found elements"
+msgid "Found Elements"
 msgstr "找到的元素"
 
 msgid "Get Web Page"
 msgstr "获取网页"
 
-msgid "Match Type"
+msgid "Matching Type"
 msgstr "匹配类型"
 
 msgid "By Title"
@@ -4487,28 +4520,28 @@ msgstr "按URL"
 msgid "Current Active Page"
 msgstr "当前页面"
 
-msgid "Match Text"
+msgid "Matching Text"
 msgstr "匹配文本"
 
-msgid "Use Regex Match"
+msgid "Use Regular Expression Matching"
 msgstr "使用正则表达式匹配"
 
-msgid "Wait for the web page to load"
+msgid "Wait for Page to Finish Loading"
 msgstr "等待页面加载完成"
 
-msgid "Load timeout(seconds)"
+msgid "Loading Timeout(seconds)"
 msgstr "加载超时时间(秒)"
 
-msgid "Execute after loading timeout"
+msgid "Action to Take After Loading Timeout"
 msgstr "在加载超时后执行"
 
-msgid "Stop web page loading"
+msgid "Stop loading the web page"
 msgstr "停止加载网页"
 
-msgid "perform error handling"
+msgid "Execute error handling"
 msgstr "执行错误处理"
 
-msgid "Open new page when match failed"
+msgid "Open a New Page When Matching Fails"
 msgstr "匹配失败时打开新页面"
 
 msgid "Hover Web Page Element"
@@ -4517,23 +4550,35 @@ msgstr "鼠标悬停网页元素"
 msgid "Simulate human hover"
 msgstr "模拟人工悬停"
 
-msgid "Loop web elements"
+msgid "Loop Web Elements"
 msgstr "遍历网页元素"
 
 msgid "Elements"
 msgstr "元素集"
 
-msgid "Current element"
+msgid "Current Element"
 msgstr "当前元素"
 
 msgid "Navigate Web Page"
 msgstr "导航网页"
 
-msgid "Navigate type"
-msgstr "导航方式"
+msgid "Navigation Method"
+msgstr "导航方法"
 
-msgid "Go to new url"
+msgid "Go to a new url"
 msgstr "跳转到新的链接"
+
+msgid "Wait for Page to Load Completely"
+msgstr "等待页面加载完成"
+
+msgid "Action after Loading Timeout"
+msgstr "在加载超时后执行"
+
+msgid "stop loading the web page"
+msgstr "停止加载网页"
+
+msgid "perform error handling"
+msgstr "执行错误处理"
 
 msgid "Open Web Browser"
 msgstr "打开Web浏览器"
@@ -4579,22 +4624,22 @@ msgstr "新打开的Web浏览器"
 msgid "Open Web Page"
 msgstr "打开网页"
 
-msgid "URL"
-msgstr "网页地址"
-
 msgid "Please enter the webpage address you want to open"
 msgstr "请输入您要打开的网页地址"
 
 msgid "Screenshot Web Element"
 msgstr "网页截屏"
 
-msgid "Screenshot area"
+msgid "Screenshot Area"
 msgstr "截图区域"
 
-msgid "Visible web page viewport"
+msgid "Web element"
+msgstr "网页元素"
+
+msgid "Visible area of the web page"
 msgstr "网页可见区域"
 
-msgid "Full web page"
+msgid "Entire web page"
 msgstr "整个网页"
 
 msgid "PNG"
@@ -4603,22 +4648,22 @@ msgstr "PNG"
 msgid "JPEG"
 msgstr "JPEG"
 
-msgid "Snapshot filename"
+msgid "Screenshot File Name"
 msgstr "截图文件名"
 
 msgid "Scroll Web Page"
 msgstr "滚动网页"
 
-msgid "Scroll on element"
+msgid "Scroll on Element"
 msgstr "在元素上滚动"
 
-msgid "Scroll element"
+msgid "Scroll Element"
 msgstr "滚动元素"
 
-msgid "Find ancestor when element is not scrollable"
+msgid "Find Scrollable Element Upward When the Element is Not Scrollable"
 msgstr "当元素不可滚动时向上查找可滚动元素"
 
-msgid "Scroll type"
+msgid "Scroll Type"
 msgstr "滚动类型"
 
 msgid "Scroll to the top"
@@ -4627,19 +4672,16 @@ msgstr "滚动到页面顶部"
 msgid "Scroll to the bottom"
 msgstr "滚动到页面底部"
 
-msgid "Scroll one page"
+msgid "Scroll one screen"
 msgstr "滚动一屏"
 
-msgid "Scroll to the element"
+msgid "Scroll to a specified element"
 msgstr "滚动到指定元素"
 
-msgid "Scroll times"
-msgstr "滚动次数"
-
-msgid "Scroll interval(seconds)"
+msgid "Scroll Interval(seconds)"
 msgstr "滚动间隔(秒)"
 
-msgid "Scroll to element"
+msgid "Scroll to Element"
 msgstr "滚动到元素"
 
 msgid "Scroll behavior"
@@ -4651,7 +4693,7 @@ msgstr "平滑滚动"
 msgid "Instant scrolling"
 msgstr "瞬间滚动"
 
-msgid "Set cookies"
+msgid "Set Cookies"
 msgstr "设置Cookie"
 
 msgid "Cookies"
@@ -4668,11 +4710,11 @@ msgstr "设置Cookie后重新加载页面"
 msgid "Set Web Checkbox Value"
 msgstr "设置网页复选框值"
 
-msgid "Checkbox element"
+msgid "Checkbox Element"
 msgstr "复选框元素"
 
-msgid "Select type"
-msgstr "选择方式"
+msgid "Selection Method"
+msgstr "选择方法"
 
 msgid "Check"
 msgstr "选中"
@@ -4686,7 +4728,7 @@ msgstr "反选"
 msgid "Set Web Select Value"
 msgstr "设置网页下拉框值"
 
-msgid "Dropdown box element"
+msgid "Drop - down Box Element"
 msgstr "下拉框元素"
 
 msgid "Select by option content"
@@ -4698,70 +4740,73 @@ msgstr "根据选项索引选择"
 msgid "Option Content"
 msgstr "选项内容"
 
-msgid "Match type"
-msgstr "匹配类型"
-
 msgid "Fuzzy matching"
 msgstr "模糊匹配"
 
-msgid "Precise matching"
+msgid "Exact matching"
 msgstr "精确匹配"
 
-msgid "Regular matching"
-msgstr "正则匹配"
+msgid "Regular expression matching"
+msgstr "正则表达式匹配"
 
-msgid "Option index"
+msgid "Option Index"
 msgstr "选项索引"
 
-msgid "Wait web content"
+msgid "Wait Web Page Content"
 msgstr "等待网页内容"
 
-msgid "Wait type"
+msgid "Waiting Type"
 msgstr "等待类型"
 
-msgid "Wait element"
+msgid "Waiting Element"
 msgstr "等待元素"
 
-msgid "Wait text"
+msgid "Waiting Text"
 msgstr "等待文本"
 
-msgid "Wait result"
+msgid "Waiting Result"
 msgstr "等待结果"
 
-msgid "Wait web page load"
-msgstr "等待网页加载"
+msgid "Wait for Web Page to Load"
+msgstr "等待页面加载完成"
 
-msgid "Web download"
+msgid "execute error handling"
+msgstr "执行错误处理"
+
+msgid "Web Download"
 msgstr "网页下载"
 
-msgid "Download type"
+msgid "Download Type"
 msgstr "下载类型"
 
-msgid "Click download button"
+msgid "Click the download button"
 msgstr "点击下载按钮"
 
-msgid "Open download url"
+msgid "Open the download link"
 msgstr "打开下载链接"
 
-msgid "Download button element"
+msgid "Download Button Element"
 msgstr "下载按钮元素"
 
-msgid "Download url"
+msgid "Download Address"
 msgstr "下载地址"
 
 msgid "Use suggested filename"
 msgstr "使用建议的文件名"
 
-msgid "Download timeout(seconds)"
+msgid "Custom filename"
+msgstr "自定义文件名"
+
+msgid "Download Timeout(seconds)"
 msgstr "下载超时时间(秒)"
 
-msgid "Download filename"
+msgid "Download File Name"
 msgstr "下载文件名"
 
-msgid "Web input"
+msgid "Web Input"
 msgstr "填写网页输入框"
 
-msgid "Input Element"
+msgid "Input Box Element"
 msgstr "输入框元素"
 
 msgid "Input Content"
@@ -4770,10 +4815,10 @@ msgstr "输入内容"
 msgid "Append input"
 msgstr "追加输入"
 
-msgid "Press enter after input"
+msgid "Press enter key after input completion"
 msgstr "在输入完成后按下回车键"
 
-msgid "Press tab after input"
+msgid "Press tab key after input completion"
 msgstr "输入完成后按下Tab键"
 
 msgid "Simulate human input"
@@ -4782,32 +4827,32 @@ msgstr "模拟人工输入"
 msgid "Click element before input"
 msgstr "在输入前点击元素"
 
-msgid "Delay input after focus(seconds)"
+msgid "Delay input after getting focus(seconds)"
 msgstr "在获得焦点后延迟输入(秒)"
 
-msgid "Web upload"
+msgid "Web Upload"
 msgstr "网页上传"
 
-msgid "Upload button element"
+msgid "Upload Button Element"
 msgstr "上传按钮元素"
 
-msgid "Upload file path"
+msgid "Upload File Path"
 msgstr "上传文件路径"
 
-msgid "Wait button time(seconds)"
+msgid "Waiting for the Button Time(seconds)"
 msgstr "等待按钮出现的时间(秒)"
 
-msgid "Wait dialog time(seconds)"
+msgid "Waiting for the Dialog Time(seconds)"
 msgstr "等待对话框出现的时间(秒)"
 
-msgid "Active Window"
+msgid "Activate Window"
 msgstr "激活窗口"
 
 msgid "Window Operation"
 msgstr "窗口操作"
 
-msgid "Get window method"
-msgstr "获取窗口方法"
+msgid "Window Acquisition Method"
+msgstr "窗口获取方法"
 
 msgid "Window object"
 msgstr "窗口对象"
@@ -4818,23 +4863,26 @@ msgstr "窗口标题或类名"
 msgid "Capture window element"
 msgstr "捕获窗口元素"
 
-msgid "Window title"
+msgid "Window Object"
+msgstr "窗口对象"
+
+msgid "Window Title"
 msgstr "窗口标题"
 
 msgid "Use window class name"
 msgstr "使用窗口类名"
 
-msgid "Window class name"
+msgid "Window Class Name"
 msgstr "窗口类名"
 
-msgid "Use regex matching"
+msgid "Use regular expression matching"
 msgstr "使用正则表达式匹配"
-
-msgid "Window element"
-msgstr "窗口元素"
 
 msgid "Click Window Element"
 msgstr "点击窗口元素"
+
+msgid "Modifier Keys"
+msgstr "修改键"
 
 msgid "Close Window"
 msgstr "关闭窗口"
@@ -4845,14 +4893,26 @@ msgstr "拖拽窗口元素"
 msgid "Window Element Operation"
 msgstr "窗口元素操作"
 
+msgid "Drag to element"
+msgstr "拖拽到目标元素上"
+
+msgid "Drag by offset"
+msgstr "拖拽指定的偏移量"
+
+msgid "Delay After Action(seconds)"
+msgstr "执行后延迟(秒)"
+
 msgid "Extract Window"
 msgstr "获取窗口信息"
 
 msgid "Data Extraction"
 msgstr "数据抽取"
 
-msgid "Window process name"
-msgstr "窗口所在进程名"
+msgid "Window title"
+msgstr "窗口标题"
+
+msgid "Process name of the window"
+msgstr "窗口所在的进程名"
 
 msgid "Extract Window Element"
 msgstr "获取窗口元素信息"
@@ -4863,10 +4923,10 @@ msgstr "元素值"
 msgid "Get ComboBox Items"
 msgstr "获取组合框选项"
 
-msgid "ComboBox element"
+msgid "ComboBox Element"
 msgstr "组合框元素"
 
-msgid "Content to get"
+msgid "Content to be Retrieved"
 msgstr "要获取的内容"
 
 msgid "Selected items"
@@ -4875,11 +4935,11 @@ msgstr "选中的项目"
 msgid "All items"
 msgstr "所有项目"
 
-msgid "Expand the combo box before obtaining items"
+msgid "Expand the combo box before retrieving items"
 msgstr "在获取项目之前展开组合框"
 
-msgid "Obtained items"
-msgstr "获取到的项目"
+msgid "Retrieved Items"
+msgstr "获取的项目"
 
 msgid "Get Relative Window Element"
 msgstr "获取相关窗口元素"
@@ -4890,22 +4950,25 @@ msgstr "获取窗口"
 msgid "Current active window"
 msgstr "当前活动窗口"
 
+msgid "Waiting Time (seconds)"
+msgstr "等待时间(秒)"
+
 msgid "Hover Window Element"
 msgstr "鼠标悬停窗口元素"
 
-msgid "Loop window elements"
+msgid "Loop Window Elements"
 msgstr "遍历窗口元素"
 
 msgid "Move Window"
 msgstr "移动窗口"
 
-msgid "Window position"
+msgid "Window Position"
 msgstr "窗口位置"
 
 msgid "Resize Window"
 msgstr "调整窗口大小"
 
-msgid "Window size"
+msgid "Window Size"
 msgstr "窗口大小"
 
 msgid "Screenshot Window Element"
@@ -4920,7 +4983,7 @@ msgstr "设置组合框值"
 msgid "Set Window State"
 msgstr "设置窗口状态"
 
-msgid "Window state"
+msgid "Window State"
 msgstr "窗口状态"
 
 msgid "Restore window"
@@ -4941,8 +5004,17 @@ msgstr "显示窗口"
 msgid "Hide window"
 msgstr "隐藏窗口"
 
-msgid "Wait window element"
+msgid "Wait Window Element"
 msgstr "等待窗口元素"
+
+msgid "Wait Type"
+msgstr "等待类型"
+
+msgid "Include element"
+msgstr "包含元素"
+
+msgid "Exclude element"
+msgstr "不包含元素"
 
 msgid "Set the timeout time"
 msgstr "设置超时时间"
@@ -4950,16 +5022,19 @@ msgstr "设置超时时间"
 msgid "Timeout(seconds)"
 msgstr "超时时间(秒)"
 
-msgid "Window input"
+msgid "Wait Result"
+msgstr "等待结果"
+
+msgid "Window Input"
 msgstr "填写窗口输入框"
 
-msgid "Input method"
+msgid "Input Method"
 msgstr "输入方法"
 
 msgid "Automated interface input"
 msgstr "自动化接口输入"
 
-msgid "The input content includes shortcut keys"
+msgid "The input content contains shortcut keys"
 msgstr "输入内容包含快捷键"
 
 msgid "Instruction or process {name} not found"
@@ -5039,4 +5114,208 @@ msgstr "调试"
 
 msgid "Info"
 msgstr "信息"
+
+#~ msgid "Stop"
+#~ msgstr "结束流程"
+
+#~ msgid "Ignore"
+#~ msgstr "忽略错误继续执行"
+
+#~ msgid "upper"
+#~ msgstr "大写"
+
+#~ msgid "lower"
+#~ msgstr "小写"
+
+#~ msgid "Process property"
+#~ msgstr "进程属性"
+
+#~ msgid "Compressed package name"
+#~ msgstr "压缩包名称"
+
+#~ msgid "Compressed package path"
+#~ msgstr "压缩包路径"
+
+#~ msgid "Automatic renaming"
+#~ msgstr "自动重命名"
+
+#~ msgid "Timestamp(s)"
+#~ msgstr "时间戳（秒）"
+
+#~ msgid "Datetime"
+#~ msgstr "日期时间"
+
+#~ msgid "Decompress to"
+#~ msgstr "解压缩到"
+
+#~ msgid "Key"
+#~ msgstr "键名"
+
+#~ msgid "Item value"
+#~ msgstr "项目值"
+
+#~ msgid "Wait timeout(s)"
+#~ msgstr "等待超时时间(秒)"
+
+#~ msgid "Date Time"
+#~ msgstr "日期时间"
+
+#~ msgid "Insert Item To List"
+#~ msgstr "插入列表项"
+
+#~ msgid "Action after launch"
+#~ msgstr "启动后操作"
+
+#~ msgid "Find sub folders"
+#~ msgstr "查找子文件夹"
+
+#~ msgid "Number value"
+#~ msgstr "数值"
+
+#~ msgid "Regex"
+#~ msgstr "正则表达式"
+
+#~ msgid "Replace type"
+#~ msgstr "替换类型"
+
+#~ msgid "Regex replacement"
+#~ msgstr "正则替换"
+
+#~ msgid "Regex to replace"
+#~ msgstr "要替换的正则表达式"
+
+#~ msgid "Variable value"
+#~ msgstr "变量值"
+
+#~ msgid "From where"
+#~ msgstr "起始位置"
+
+#~ msgid "To where"
+#~ msgstr "结束位置"
+
+#~ msgid "Sliced length"
+#~ msgstr "截取长度"
+
+#~ msgid "Increment"
+#~ msgstr "增加"
+
+#~ msgid "Image Center"
+#~ msgstr "图像中心"
+
+#~ msgid "Click Type"
+#~ msgstr "点击方式"
+
+#~ msgid "Table column names"
+#~ msgstr "表头列表"
+
+#~ msgid "End row no"
+#~ msgstr "结束行号"
+
+#~ msgid "Write cell content"
+#~ msgstr "写入单元格内容"
+
+#~ msgid "Check web content"
+#~ msgstr "检测网页内容"
+
+#~ msgid "Web page"
+#~ msgstr "网页对象"
+
+#~ msgid "Check type"
+#~ msgstr "检测类型"
+
+#~ msgid "Include text"
+#~ msgstr "包含文本"
+
+#~ msgid "Exclude text"
+#~ msgstr "不包含文本"
+
+#~ msgid "Check element"
+#~ msgstr "检查元素"
+
+#~ msgid "Check text"
+#~ msgstr "检测文本"
+
+#~ msgid "Source Element"
+#~ msgstr "拖拽元素"
+
+#~ msgid "Source element offset"
+#~ msgstr "拖拽元素偏移"
+
+#~ msgid "Source Element x offset"
+#~ msgstr "拖拽元素X坐标偏移"
+
+#~ msgid "Source Element y offset"
+#~ msgstr "拖拽元素Y坐标偏移"
+
+#~ msgid "Drag type"
+#~ msgstr "拖拽方式"
+
+#~ msgid "Drag by x offset"
+#~ msgstr "拖拽X坐标偏移"
+
+#~ msgid "Input element value"
+#~ msgstr "输入框值"
+
+#~ msgid "Link element href"
+#~ msgstr "链接地址"
+
+#~ msgid "Get type"
+#~ msgstr "获取方式"
+
+#~ msgid "Url"
+#~ msgstr "网页地址"
+
+#~ msgid "Descendant relative xpath"
+#~ msgstr "子孙元素相对xpath"
+
+#~ msgid "Child element position"
+#~ msgstr "子元素位置"
+
+#~ msgid "Match Type"
+#~ msgstr "匹配类型"
+
+#~ msgid "Use Regex Match"
+#~ msgstr "使用正则表达式匹配"
+
+#~ msgid "Stop web page loading"
+#~ msgstr "停止加载网页"
+
+#~ msgid "Navigate type"
+#~ msgstr "导航方式"
+
+#~ msgid "URL"
+#~ msgstr "网页地址"
+
+#~ msgid "Visible web page viewport"
+#~ msgstr "网页可见区域"
+
+#~ msgid "Full web page"
+#~ msgstr "整个网页"
+
+#~ msgid "Scroll one page"
+#~ msgstr "滚动一屏"
+
+#~ msgid "Scroll times"
+#~ msgstr "滚动次数"
+
+#~ msgid "Precise matching"
+#~ msgstr "精确匹配"
+
+#~ msgid "Wait web page load"
+#~ msgstr "等待网页加载"
+
+#~ msgid "Get window method"
+#~ msgstr "获取窗口方法"
+
+#~ msgid "Use regex matching"
+#~ msgstr "使用正则表达式匹配"
+
+#~ msgid "Window element"
+#~ msgstr "窗口元素"
+
+#~ msgid "Window process name"
+#~ msgstr "窗口所在进程名"
+
+#~ msgid "Obtained items"
+#~ msgstr "获取到的项目"
 

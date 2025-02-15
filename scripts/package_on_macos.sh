@@ -7,6 +7,8 @@ source venv/bin/activate
 
 #PLAYWRIGHT_BROWSERS_PATH=0 playwright install chromium
 
+python generate_version_info.py
+
 mkdocs build -f config/en/mkdocs_help.yml
 mkdocs build -f config/zh/mkdocs_help.yml
 

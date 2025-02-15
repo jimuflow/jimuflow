@@ -1477,6 +1477,9 @@ msgstr ""
 msgid "Version: {version}"
 msgstr ""
 
+msgid "Git Info: {git_info}"
+msgstr ""
+
 msgid "Project Link: <a href='{link_url}'>{link_name}</a>"
 msgstr ""
 
@@ -1513,31 +1516,31 @@ msgstr ""
 msgid "Advanced"
 msgstr ""
 
-msgid "Error handling"
+msgid "Error Handling"
 msgstr ""
 
-msgid "Output configs"
+msgid "Output Configs"
 msgstr ""
 
-msgid "Stop"
+msgid "end the process"
 msgstr ""
 
-msgid "Retry"
+msgid "retry"
 msgstr ""
 
-msgid "Ignore"
+msgid "ignore the error and continue execution"
 msgstr ""
 
-msgid "Error handling type"
+msgid "Error Handling Methods"
 msgstr ""
 
-msgid "Max retries"
+msgid "Max Retries"
 msgstr ""
 
-msgid "Retry interval (seconds)"
+msgid "Retry Interval (seconds)"
 msgstr ""
 
-msgid "Outputs on error"
+msgid "Outputs On Error"
 msgstr ""
 
 msgid "Input parameter {name} is invalid: {editor_errors}"
@@ -2923,19 +2926,19 @@ msgstr ""
 msgid "Add Prefix or Suffix"
 msgstr ""
 
-msgid "Original text"
+msgid "Original Text"
 msgstr ""
 
-msgid "Add type"
+msgid "Addition Type"
 msgstr ""
 
-msgid "Add prefix"
+msgid "Add a prefix"
 msgstr ""
 
-msgid "Add suffix"
+msgid "Add a suffix"
 msgstr ""
 
-msgid "Add text"
+msgid "Added Text"
 msgstr ""
 
 msgid "Result"
@@ -2947,13 +2950,7 @@ msgstr ""
 msgid "Change Text Case"
 msgstr ""
 
-msgid "Case change type"
-msgstr ""
-
-msgid "upper"
-msgstr ""
-
-msgid "lower"
+msgid "Case Conversion Type"
 msgstr ""
 
 msgid "capitalize"
@@ -2965,7 +2962,7 @@ msgstr ""
 msgid "Operating System"
 msgstr ""
 
-msgid "Process property"
+msgid "Process Attributes"
 msgstr ""
 
 msgid "Process ID"
@@ -2974,37 +2971,40 @@ msgstr ""
 msgid "Process name"
 msgstr ""
 
-msgid "Check result"
+msgid "Process Name"
+msgstr ""
+
+msgid "Check Result"
 msgstr ""
 
 msgid "Clear Folder"
 msgstr ""
 
-msgid "Folder path"
+msgid "Folder Path"
 msgstr ""
 
 msgid "Compress File/Folder"
 msgstr ""
 
-msgid "File path"
+msgid "File Path"
 msgstr ""
 
-msgid "Compressed package name"
+msgid "Archive Name"
 msgstr ""
 
-msgid "Save folder type"
+msgid "Save Folder Type"
 msgstr ""
 
-msgid "Save to the same level directory as the source file"
+msgid "Save to the directory of the source file"
 msgstr ""
 
-msgid "Save to specified folder"
+msgid "Save to a specified folder"
 msgstr ""
 
-msgid "Save folder"
+msgid "Save Folder"
 msgstr ""
 
-msgid "Compressed package path"
+msgid "Archive Path"
 msgstr ""
 
 msgid "Continue to the next loop"
@@ -3013,34 +3013,34 @@ msgstr ""
 msgid "Copy File"
 msgstr ""
 
-msgid "Target folder"
+msgid "Target Folder"
 msgstr ""
 
-msgid "Action when exists"
+msgid "Action if Exists"
 msgstr ""
 
 msgid "Overwrite"
 msgstr ""
 
-msgid "Automatic renaming"
+msgid "Auto rename"
 msgstr ""
 
 msgid "Perform error handling"
 msgstr ""
 
-msgid "New file path"
+msgid "New File Path"
 msgstr ""
 
 msgid "Copy Folder"
 msgstr ""
 
-msgid "New folder path"
+msgid "New Folder Path"
 msgstr ""
 
 msgid "Create Date"
 msgstr ""
 
-msgid "Initialization type"
+msgid "Initialization Type"
 msgstr ""
 
 msgid "Today"
@@ -3052,13 +3052,13 @@ msgstr ""
 msgid "Parse date string"
 msgstr ""
 
-msgid "Timestamp(s)"
+msgid "Timestamp(seconds)"
 msgstr ""
 
-msgid "Date string"
+msgid "Date String"
 msgstr ""
 
-msgid "Date format"
+msgid "Date Format"
 msgstr ""
 
 msgid ""
@@ -3076,7 +3076,7 @@ msgstr ""
 msgid "Create DateTime"
 msgstr ""
 
-msgid "Get the current date and time"
+msgid "Get current date and time"
 msgstr ""
 
 msgid "Convert timestamp to datetime"
@@ -3085,10 +3085,10 @@ msgstr ""
 msgid "Parse datetime string"
 msgstr ""
 
-msgid "Datetime string"
+msgid "DateTime String"
 msgstr ""
 
-msgid "Datetime format"
+msgid "DateTime Format"
 msgstr ""
 
 msgid ""
@@ -3119,37 +3119,34 @@ msgid ""
 "Z: Time zone offset (e.g.+0000)"
 msgstr ""
 
-msgid "Datetime"
-msgstr ""
-
-msgid "Create dictionary"
+msgid "Create Dictionary"
 msgstr ""
 
 msgid "Create Folder"
 msgstr ""
 
-msgid "Parent folder"
+msgid "Parent Folder"
 msgstr ""
 
-msgid "New folder name"
+msgid "New Folder Name"
 msgstr ""
 
-msgid "Create list"
+msgid "Create List"
 msgstr ""
 
 msgid "Create Time"
 msgstr ""
 
-msgid "Get the current time"
+msgid "Get current time"
 msgstr ""
 
 msgid "Parse time string"
 msgstr ""
 
-msgid "Time string"
+msgid "Time String"
 msgstr ""
 
-msgid "Time format"
+msgid "Time Format"
 msgstr ""
 
 msgid ""
@@ -3171,10 +3168,10 @@ msgstr ""
 msgid "Decompress File/Folder"
 msgstr ""
 
-msgid "Decompress to"
+msgid "Extract To"
 msgstr ""
 
-msgid "Create a folder with the same name"
+msgid "Create folder with the same name"
 msgstr ""
 
 msgid "Password"
@@ -3183,16 +3180,19 @@ msgstr ""
 msgid "Password for the zip compression package"
 msgstr ""
 
-msgid "Result folder"
+msgid "Result Folder"
 msgstr ""
 
-msgid "Delete dictionary key"
+msgid "Delete Dictionary Key"
 msgstr ""
 
-msgid "Key"
+msgid "Key Name"
 msgstr ""
 
 msgid "Delete File"
+msgstr ""
+
+msgid "File path"
 msgstr ""
 
 msgid "Delete Folder"
@@ -3201,7 +3201,7 @@ msgstr ""
 msgid "Delete List Item"
 msgstr ""
 
-msgid "Delete Type"
+msgid "Deletion Type"
 msgstr ""
 
 msgid "Delete list item by position"
@@ -3210,13 +3210,13 @@ msgstr ""
 msgid "Delete list item by value"
 msgstr ""
 
-msgid "Item position"
+msgid "Item Position"
 msgstr ""
 
 msgid "Starting from 0, - n represents the nth to last"
 msgstr ""
 
-msgid "Item value"
+msgid "Item Value"
 msgstr ""
 
 msgid "Dictionary loop"
@@ -3225,16 +3225,16 @@ msgstr ""
 msgid "Loop item"
 msgstr ""
 
-msgid "Calculate time difference"
+msgid "Calculate Time Difference"
 msgstr ""
 
-msgid "Starting date"
+msgid "Start Date"
 msgstr ""
 
 msgid "End Date"
 msgstr ""
 
-msgid "Time unit"
+msgid "Time Unit"
 msgstr ""
 
 msgid "Seconds"
@@ -3249,7 +3249,7 @@ msgstr ""
 msgid "Days"
 msgstr ""
 
-msgid "Time difference"
+msgid "Time Difference"
 msgstr ""
 
 msgid "Else branch"
@@ -3276,19 +3276,19 @@ msgstr ""
 msgid "Execute Command"
 msgstr ""
 
-msgid "Command"
+msgid "Command Line"
 msgstr ""
 
-msgid "Process working directory"
+msgid "Process Working Directory"
 msgstr ""
 
 msgid "Encoding"
 msgstr ""
 
-msgid "Wait timeout(s)"
+msgid "Waiting Timeout(seconds)"
 msgstr ""
 
-msgid "Command output"
+msgid "Command Line Output"
 msgstr ""
 
 msgid "Exit"
@@ -3297,19 +3297,19 @@ msgstr ""
 msgid "Format DateTime"
 msgstr ""
 
-msgid "Date Time"
+msgid "DateTime Value"
 msgstr ""
 
 msgid "Get Clipboard Text"
 msgstr ""
 
-msgid "Clipboard text"
+msgid "Clipboard Text"
 msgstr ""
 
 msgid "Get File Path Info"
 msgstr ""
 
-msgid "File path info"
+msgid "File Path Information"
 msgstr ""
 
 msgid "if branch"
@@ -3324,19 +3324,19 @@ msgstr ""
 msgid "Loop index"
 msgstr ""
 
-msgid "Insert Item To List"
+msgid "Insert List Item"
 msgstr ""
 
 msgid "Insert Type"
 msgstr ""
 
-msgid "Add at the end of the list"
+msgid "Add to the end of the list"
 msgstr ""
 
-msgid "Insert at specified location"
+msgid "Insert at a specified position"
 msgstr ""
 
-msgid "Insert position"
+msgid "Insert Position"
 msgstr ""
 
 msgid "Kill Process"
@@ -3345,19 +3345,19 @@ msgstr ""
 msgid "Launch Application"
 msgstr ""
 
-msgid "Application path"
+msgid "Application Path"
 msgstr ""
 
-msgid "Action after launch"
+msgid "Post-Launch Action"
 msgstr ""
 
-msgid "Continue to execute"
+msgid "Continue execution"
 msgstr ""
 
-msgid "Waiting for application execution to complete"
+msgid "Waiting for application to complete"
 msgstr ""
 
-msgid "Command line arguments"
+msgid "Command Line Arguments"
 msgstr ""
 
 msgid "Process PID"
@@ -3369,7 +3369,7 @@ msgstr ""
 msgid "Folder"
 msgstr ""
 
-msgid "File name pattern"
+msgid "File Name Pattern"
 msgstr ""
 
 msgid ""
@@ -3402,16 +3402,16 @@ msgid ""
 "and all subdirectories."
 msgstr ""
 
-msgid "Find sub folders"
+msgid "Search subfolders"
 msgstr ""
 
 msgid "Ignore hidden files"
 msgstr ""
 
-msgid "Sorting files"
+msgid "Sort files"
 msgstr ""
 
-msgid "Sorting factor"
+msgid "Sorting Criteria"
 msgstr ""
 
 msgid "File name"
@@ -3423,10 +3423,10 @@ msgstr ""
 msgid "Creation time"
 msgstr ""
 
-msgid "Last modified"
+msgid "Last modified time"
 msgstr ""
 
-msgid "Sort order"
+msgid "Sorting Order"
 msgstr ""
 
 msgid "Ascending order"
@@ -3453,7 +3453,7 @@ msgstr ""
 msgid "End value (excluding)"
 msgstr ""
 
-msgid "Merge list"
+msgid "Merge Lists"
 msgstr ""
 
 msgid "The first list"
@@ -3462,7 +3462,7 @@ msgstr ""
 msgid "The second list"
 msgstr ""
 
-msgid "Merged list"
+msgid "Merged List"
 msgstr ""
 
 msgid "Move File"
@@ -3471,19 +3471,16 @@ msgstr ""
 msgid "Move Folder"
 msgstr ""
 
-msgid "Number To Text"
+msgid "Number to Text"
 msgstr ""
 
-msgid "Number value"
-msgstr ""
-
-msgid "Number of decimal places"
+msgid "Number of Decimal Places"
 msgstr ""
 
 msgid "Use a thousandth separator"
 msgstr ""
 
-msgid "Object To Json"
+msgid "Object to Json"
 msgstr ""
 
 msgid "JSON Operation"
@@ -3495,34 +3492,34 @@ msgstr ""
 msgid "Parse Json"
 msgstr ""
 
-msgid "Json text"
+msgid "JSON Text"
 msgstr ""
 
-msgid "Print message"
+msgid "Print Message"
 msgstr ""
 
-msgid "Generate random integer"
+msgid "Generate Random Integer"
 msgstr ""
 
-msgid "Minimum value"
+msgid "Minimum Value"
 msgstr ""
 
 msgid "Minimum value (including this value)"
 msgstr ""
 
-msgid "Maximum value"
+msgid "Maximum Value"
 msgstr ""
 
 msgid "Maximum value (excluding this value)"
 msgstr ""
 
-msgid "Random number"
+msgid "Random Number"
 msgstr ""
 
 msgid "Read Text File"
 msgstr ""
 
-msgid "Read type"
+msgid "Read Type"
 msgstr ""
 
 msgid "Read as whole text"
@@ -3531,16 +3528,16 @@ msgstr ""
 msgid "Read as lines"
 msgstr ""
 
-msgid "File encoding"
+msgid "File Encoding"
 msgstr ""
 
 msgid "Regex Match"
 msgstr ""
 
-msgid "Regex"
+msgid "Regular Expression"
 msgstr ""
 
-msgid "Find first match"
+msgid "Find the first match"
 msgstr ""
 
 msgid "Ignore case"
@@ -3549,10 +3546,10 @@ msgstr ""
 msgid "Rename File"
 msgstr ""
 
-msgid "New file name"
+msgid "New File Name"
 msgstr ""
 
-msgid "Cancel renaming operation"
+msgid "Cancel the rename operation"
 msgstr ""
 
 msgid "Rename Folder"
@@ -3561,97 +3558,103 @@ msgstr ""
 msgid "Replace Text"
 msgstr ""
 
-msgid "Replace type"
+msgid "Replacement Type"
 msgstr ""
 
 msgid "Text replacement"
 msgstr ""
 
-msgid "Regex replacement"
+msgid "Regular expression replacement"
 msgstr ""
 
-msgid "Text to replace"
+msgid "Text to Replace"
 msgstr ""
 
-msgid "Regex to replace"
+msgid "Regular Expression to Replace"
 msgstr ""
 
-msgid "Replace first match"
+msgid "Replace only the first match"
 msgstr ""
 
-msgid "Replacement text"
+msgid "Replacement Text"
 msgstr ""
 
 msgid "Return"
 msgstr ""
 
-msgid "Reverse list"
+msgid "Reverse List"
 msgstr ""
 
 msgid "Set Clipboard Text"
 msgstr ""
 
-msgid "Text content"
+msgid "Text Content"
 msgstr ""
 
-msgid "Set dictionary key value"
+msgid "Set Dictionary Key-Value"
 msgstr ""
 
-msgid "Set variable"
-msgstr ""
-
-msgid "Variable value"
-msgstr ""
-
-msgid "Variable name"
+msgid "Set Variable"
 msgstr ""
 
 msgid "Slice Text"
 msgstr ""
 
-msgid "From where"
+msgid "Starting Position"
 msgstr ""
 
-msgid "from the specified location"
+msgid "start from the first character"
 msgstr ""
 
-msgid "from the specified text"
+msgid "start from a specified location"
 msgstr ""
 
-msgid "Starting character position"
+msgid "start from specified text"
+msgstr ""
+
+msgid "Starting Character Position"
 msgstr ""
 
 msgid "Starting from 0, - n represents the nth to last character"
 msgstr ""
 
-msgid "Starting text content"
+msgid "Starting Text Content"
 msgstr ""
 
-msgid "To where"
+msgid "Ending Position"
 msgstr ""
 
-msgid "to the specified length"
+msgid "end at the end of the text"
 msgstr ""
 
-msgid "Sliced length"
+msgid "end at a specified length"
 msgstr ""
 
-msgid "Sort list"
+msgid "Extraction Length"
+msgstr ""
+
+msgid "Sort List"
+msgstr ""
+
+msgid "Sorting Method"
 msgstr ""
 
 msgid "Split Text"
 msgstr ""
 
-msgid "Text to be split"
+msgid "Text to Split"
 msgstr ""
 
-msgid "Delimiter type"
+msgid "Delimiter Type"
 msgstr ""
 
 msgid "Standard delimiter"
 msgstr ""
 
 msgid "Custom delimiter"
+msgstr ""
+
+msgid "Standard Delimiter"
 msgstr ""
 
 msgid "Space character"
@@ -3663,16 +3666,19 @@ msgstr ""
 msgid "Tab character"
 msgstr ""
 
+msgid "Custom Delimiter"
+msgstr ""
+
 msgid "Filter empty items"
 msgstr ""
 
-msgid "Use regular expressions"
+msgid "Use regular expression"
 msgstr ""
 
-msgid "Text To Number"
+msgid "Text to Number"
 msgstr ""
 
-msgid "Text value"
+msgid "Text Value"
 msgstr ""
 
 msgid "Wait time(seconds)"
@@ -3681,7 +3687,7 @@ msgstr ""
 msgid "Trim Text"
 msgstr ""
 
-msgid "Trim type"
+msgid "Trim Type"
 msgstr ""
 
 msgid "Remove blank characters on both sides"
@@ -3696,22 +3702,22 @@ msgstr ""
 msgid "Update DateTime"
 msgstr ""
 
-msgid "Original date and time"
+msgid "Original DateTime"
 msgstr ""
 
-msgid "Adjustment type"
+msgid "Adjustment Type"
 msgstr ""
 
-msgid "Increment"
+msgid "Increase"
 msgstr ""
 
-msgid "Decrement"
+msgid "Decrease"
 msgstr ""
 
-msgid "Adjustment value"
+msgid "Adjustment Value"
 msgstr ""
 
-msgid "Adjustment unit"
+msgid "Adjustment Unit"
 msgstr ""
 
 msgid "Microseconds"
@@ -3732,22 +3738,19 @@ msgstr ""
 msgid "Update List Item"
 msgstr ""
 
-msgid "Item Value"
-msgstr ""
-
-msgid "Url Decode"
+msgid "URL Decode"
 msgstr ""
 
 msgid "Encoding/Decoding"
 msgstr ""
 
-msgid "Text to decode"
+msgid "Text to be Decoded"
 msgstr ""
 
-msgid "Url Encode"
+msgid "URL Encode"
 msgstr ""
 
-msgid "Text to encode"
+msgid "Text to be Encoded"
 msgstr ""
 
 msgid "While loop"
@@ -3756,7 +3759,7 @@ msgstr ""
 msgid "Write Text File"
 msgstr ""
 
-msgid "Write content"
+msgid "Write Content"
 msgstr ""
 
 msgid "Append"
@@ -3768,25 +3771,25 @@ msgstr ""
 msgid "Mouse/Keyboard"
 msgstr ""
 
-msgid "Cursor position"
+msgid "Cursor Position"
 msgstr ""
 
-msgid "Image Center"
+msgid "center of the image"
 msgstr ""
 
-msgid "The upper left corner of the image"
+msgid "upper left corner of the image"
 msgstr ""
 
-msgid "X coordinate offset"
+msgid "X Coordinate Offset"
 msgstr ""
 
-msgid "Y coordinate offset"
+msgid "Y Coordinate Offset"
 msgstr ""
 
 msgid "Similarity(%)"
 msgstr ""
 
-msgid "Match mode"
+msgid "Matching Mode"
 msgstr ""
 
 msgid "Color matching"
@@ -3795,7 +3798,7 @@ msgstr ""
 msgid "Grayscale matching"
 msgstr ""
 
-msgid "Move speed"
+msgid "Movement Speed"
 msgstr ""
 
 msgid "Instant"
@@ -3810,10 +3813,10 @@ msgstr ""
 msgid "Slow"
 msgstr ""
 
-msgid "Delay after action(seconds)"
+msgid "Delay after Action(seconds)"
 msgstr ""
 
-msgid "Input type"
+msgid "Input Type"
 msgstr ""
 
 msgid "Input text"
@@ -3829,13 +3832,16 @@ msgid ""
 "clipboard text command and pasting hotkey."
 msgstr ""
 
-msgid "Hotkey type"
+msgid "Hotkey Type"
 msgstr ""
 
 msgid "Common hotkey"
 msgstr ""
 
 msgid "Custom hotkey"
+msgstr ""
+
+msgid "Common Hotkey"
 msgstr ""
 
 msgid "Ctrl/Cmd+C"
@@ -3859,13 +3865,16 @@ msgstr ""
 msgid "Enter"
 msgstr ""
 
-msgid "Input interval(milliseconds)"
+msgid "Custom Hotkey"
+msgstr ""
+
+msgid "Input Interval(milliseconds)"
 msgstr ""
 
 msgid "Mouse Click"
 msgstr ""
 
-msgid "Mouse button"
+msgid "Mouse Button"
 msgstr ""
 
 msgid "Left button"
@@ -3877,7 +3886,7 @@ msgstr ""
 msgid "Middle button"
 msgstr ""
 
-msgid "Click Type"
+msgid "Click Method"
 msgstr ""
 
 msgid "Mouse down"
@@ -3886,7 +3895,7 @@ msgstr ""
 msgid "Mouse up"
 msgstr ""
 
-msgid "Modifier key"
+msgid "Modifier Key"
 msgstr ""
 
 msgid "None"
@@ -3910,7 +3919,7 @@ msgstr ""
 msgid "Mouse Scroll"
 msgstr ""
 
-msgid "Scroll direction"
+msgid "Scroll Direction"
 msgstr ""
 
 msgid "Scroll up"
@@ -3919,13 +3928,13 @@ msgstr ""
 msgid "Scroll down"
 msgstr ""
 
-msgid "Number of scrolls"
+msgid "Number of Scrolls"
 msgstr ""
 
 msgid "Move Mouse"
 msgstr ""
 
-msgid "Relative to"
+msgid "Relative To"
 msgstr ""
 
 msgid "The upper left corner of the screen"
@@ -3934,28 +3943,34 @@ msgstr ""
 msgid "Current mouse position"
 msgstr ""
 
-msgid "Add table column"
+msgid "X - coordinate Offset"
+msgstr ""
+
+msgid "Y - coordinate Offset"
+msgstr ""
+
+msgid "Add Table Column"
 msgstr ""
 
 msgid "Data Table"
 msgstr ""
 
-msgid "Column name"
+msgid "Column Name"
 msgstr ""
 
-msgid "Create table"
+msgid "Create Table"
 msgstr ""
 
-msgid "Table column names"
+msgid "Table Headers"
 msgstr ""
 
 msgid "List of headers for data table separated by commas"
 msgstr ""
 
-msgid "The created table"
+msgid "The created data table"
 msgstr ""
 
-msgid "Delete table row"
+msgid "Delete Table Row"
 msgstr ""
 
 msgid "Delete all rows"
@@ -3964,7 +3979,7 @@ msgstr ""
 msgid "Delete one row"
 msgstr ""
 
-msgid "Row number"
+msgid "Row Number"
 msgstr ""
 
 msgid ""
@@ -3972,10 +3987,10 @@ msgid ""
 "to last line"
 msgstr ""
 
-msgid "Export table"
+msgid "Export Table"
 msgstr ""
 
-msgid "File format"
+msgid "File Format"
 msgstr ""
 
 msgid "xlsx"
@@ -3987,7 +4002,7 @@ msgstr ""
 msgid "csv"
 msgstr ""
 
-msgid "Sheet name"
+msgid "Sheet Name"
 msgstr ""
 
 msgid "UTF-8 Bom"
@@ -3996,7 +4011,7 @@ msgstr ""
 msgid "Use custom delimiter"
 msgstr ""
 
-msgid "File naming type"
+msgid "File Naming Type"
 msgstr ""
 
 msgid "Random file name"
@@ -4005,7 +4020,7 @@ msgstr ""
 msgid "Custom file name"
 msgstr ""
 
-msgid "Custom filename"
+msgid "Custom File Name"
 msgstr ""
 
 msgid "Override existing file"
@@ -4014,10 +4029,10 @@ msgstr ""
 msgid "Export table header"
 msgstr ""
 
-msgid "Import csv as table"
+msgid "Import CSV as Table"
 msgstr ""
 
-msgid "Csv file path"
+msgid "CSV File Path"
 msgstr ""
 
 msgid "Please input the file path of the csv file"
@@ -4029,16 +4044,16 @@ msgstr ""
 msgid "The imported table"
 msgstr ""
 
-msgid "Import excel as table"
+msgid "Import Excel as Table"
 msgstr ""
 
-msgid "Excel file path"
+msgid "Excel File Path"
 msgstr ""
 
 msgid "Please input the file path of the excel file"
 msgstr ""
 
-msgid "Sheet select type"
+msgid "Sheet Selection Type"
 msgstr ""
 
 msgid "Select sheet by index"
@@ -4047,16 +4062,16 @@ msgstr ""
 msgid "Select sheet by name"
 msgstr ""
 
-msgid "Sheet index"
+msgid "Sheet Index"
 msgstr ""
 
 msgid "The index position of the first sheet is 1, and so on"
 msgstr ""
 
-msgid "Loop table rows"
+msgid "Loop Table Rows"
 msgstr ""
 
-msgid "Loop range"
+msgid "Loop Range"
 msgstr ""
 
 msgid "All rows"
@@ -4065,19 +4080,22 @@ msgstr ""
 msgid "Specified range"
 msgstr ""
 
-msgid "Start row no"
+msgid "Starting Row Number"
 msgstr ""
 
-msgid "End row no"
+msgid "Ending Row Number"
 msgstr ""
 
 msgid "Loop in reverse order"
 msgstr ""
 
-msgid "Current row"
+msgid "Current Row"
 msgstr ""
 
-msgid "Read table data"
+msgid "Read Table Data"
+msgstr ""
+
+msgid "Reading Type"
 msgstr ""
 
 msgid "Read row data"
@@ -4086,7 +4104,7 @@ msgstr ""
 msgid "Read cell data"
 msgstr ""
 
-msgid "Column number"
+msgid "Column Number"
 msgstr ""
 
 msgid ""
@@ -4094,28 +4112,25 @@ msgid ""
 " the nth to last column"
 msgstr ""
 
-msgid "Read result"
+msgid "Reading Result"
 msgstr ""
 
-msgid "Write table cell"
+msgid "Write to Table Cell"
 msgstr ""
 
 msgid "Target data table to be written"
 msgstr ""
 
-msgid "Write cell content"
+msgid "Content to Write into Cell"
 msgstr ""
 
 msgid "Enter the content to be written into the cell"
 msgstr ""
 
-msgid ""
-"If the row number is greater than the number of rows in the table, the "
-"content will be automatically written to the next row at the end of the "
-"table"
+msgid "Excess rows auto-append to table end"
 msgstr ""
 
-msgid "Write table row"
+msgid "Write Table Row"
 msgstr ""
 
 msgid "Write Type"
@@ -4139,76 +4154,94 @@ msgstr ""
 msgid "Input columns"
 msgstr ""
 
+msgid "Input Row"
+msgstr ""
+
 msgid "Row value list"
+msgstr ""
+
+msgid "Input Columns"
 msgstr ""
 
 msgid "Row columns list"
 msgstr ""
 
-msgid "Check web content"
+msgid ""
+"If the row number is greater than the number of rows in the table, the "
+"content will be automatically written to the next row at the end of the "
+"table"
 msgstr ""
 
-msgid "Web page"
+msgid "Detect Web Page Content"
 msgstr ""
 
-msgid "Check type"
+msgid "Web Page Object"
 msgstr ""
 
-msgid "Include element"
+msgid "Detection Type"
 msgstr ""
 
-msgid "Exclude element"
+msgid "contains element"
 msgstr ""
 
-msgid "Include text"
+msgid "does not contain element"
 msgstr ""
 
-msgid "Exclude text"
+msgid "contains text"
 msgstr ""
 
-msgid "Element is visible"
+msgid "does not contain text"
 msgstr ""
 
-msgid "Element is invisible"
+msgid "element is visible"
 msgstr ""
 
-msgid "Text is visible"
+msgid "element is invisible"
 msgstr ""
 
-msgid "Text is invisible"
+msgid "text is visible"
 msgstr ""
 
-msgid "Check element"
+msgid "text is invisible"
 msgstr ""
 
-msgid "Check text"
+msgid "Detection Element"
 msgstr ""
 
-msgid "Clear cookies"
+msgid "Detection Text"
+msgstr ""
+
+msgid "Detection Result"
+msgstr ""
+
+msgid "Clear Cookies"
 msgstr ""
 
 msgid "Clear type"
 msgstr ""
 
-msgid "Clear specified cookie"
+msgid "Delete a specified cookie"
 msgstr ""
 
 msgid "Clear all cookies"
 msgstr ""
 
-msgid "Cookie name"
+msgid "Cookie Name"
 msgstr ""
 
-msgid "Click to open web page"
+msgid "Click to Open Web Page"
 msgstr ""
 
-msgid "Link element"
+msgid "Link Element"
 msgstr ""
 
 msgid "Select the link element to be clicked"
 msgstr ""
 
-msgid "New web page"
+msgid "Waiting Time(seconds)"
+msgstr ""
+
+msgid "New Web Page Object"
 msgstr ""
 
 msgid "Newly opened webpage object"
@@ -4217,25 +4250,22 @@ msgstr ""
 msgid "Click Web Page Element"
 msgstr ""
 
-msgid "Web element"
+msgid "Simulate human click"
 msgstr ""
 
-msgid "Simulate human click"
+msgid "Delay after action(seconds)"
 msgstr ""
 
 msgid "Close Web Page"
 msgstr ""
 
-msgid "Close Type"
+msgid "Closing Type"
 msgstr ""
 
-msgid "Close specific page"
+msgid "close the specified page"
 msgstr ""
 
-msgid "Close browser"
-msgstr ""
-
-msgid "Web browser"
+msgid "close the browser"
 msgstr ""
 
 msgid "Please enter or select the web browser"
@@ -4244,25 +4274,25 @@ msgstr ""
 msgid "Drag Web Page Element"
 msgstr ""
 
-msgid "Source Element"
+msgid "Dragging Element"
 msgstr ""
 
-msgid "Source element offset"
+msgid "Dragging element offset"
 msgstr ""
 
-msgid "Source Element x offset"
+msgid "Dragging Element X Coordinate Offset"
 msgstr ""
 
-msgid "Source Element y offset"
+msgid "Dragging Element Y Coordinate Offset"
 msgstr ""
 
-msgid "Drag type"
+msgid "Dragging Method"
 msgstr ""
 
-msgid "Drag to element"
+msgid "Drag to the target element"
 msgstr ""
 
-msgid "Drag by offset"
+msgid "Drag by a specified offset"
 msgstr ""
 
 msgid "Target Element"
@@ -4271,34 +4301,34 @@ msgstr ""
 msgid "Target element offset"
 msgstr ""
 
-msgid "Target Element x offset"
+msgid "Target Element X Coordinate Offset"
 msgstr ""
 
-msgid "Target Element y offset"
+msgid "Target Element Y Coordinate Offset"
 msgstr ""
 
-msgid "Drag by x offset"
+msgid "Dragging X Coordinate Offset"
 msgstr ""
 
-msgid "Drag by y offset"
+msgid "Dragging Y Coordinate Offset"
 msgstr ""
 
-msgid "Drag speed"
+msgid "Dragging Speed"
 msgstr ""
 
-msgid "Evaluate js in web page"
+msgid "Evaluate JavaScript in Web Page"
 msgstr ""
 
-msgid "Javascript code"
+msgid "JavaScript Code"
 msgstr ""
 
-msgid "Javascript output"
+msgid "JavaScript Output"
 msgstr ""
 
 msgid "Extract Web Element"
 msgstr ""
 
-msgid "Extract type"
+msgid "Extraction Type"
 msgstr ""
 
 msgid "Element text content"
@@ -4307,10 +4337,10 @@ msgstr ""
 msgid "Element html source code"
 msgstr ""
 
-msgid "Input element value"
+msgid "Input box value"
 msgstr ""
 
-msgid "Link element href"
+msgid "Link address"
 msgstr ""
 
 msgid "Element attribute value"
@@ -4319,10 +4349,10 @@ msgstr ""
 msgid "Element position"
 msgstr ""
 
-msgid "Attribute name"
+msgid "Attribute Name"
 msgstr ""
 
-msgid "Extracted result"
+msgid "Extraction Result"
 msgstr ""
 
 msgid "Extract Web Page"
@@ -4337,10 +4367,10 @@ msgstr ""
 msgid "Web page text content"
 msgstr ""
 
-msgid "Get cookies"
+msgid "Get Cookies"
 msgstr ""
 
-msgid "Get type"
+msgid "Acquisition Method"
 msgstr ""
 
 msgid "Cookies for specified page"
@@ -4349,16 +4379,19 @@ msgstr ""
 msgid "Cookies for specified url"
 msgstr ""
 
-msgid "Url"
+msgid "Web Browser Object"
 msgstr ""
 
-msgid "Cookie list"
+msgid "Web Page Address"
+msgstr ""
+
+msgid "Cookie List"
 msgstr ""
 
 msgid "Get Relative Web Element"
 msgstr ""
 
-msgid "Locate type"
+msgid "Location Type"
 msgstr ""
 
 msgid "Parent element"
@@ -4382,19 +4415,19 @@ msgstr ""
 msgid "The specified child element"
 msgstr ""
 
-msgid "Descendant relative xpath"
+msgid "Relative XPath of Descendant Elements"
 msgstr ""
 
-msgid "Child element position"
+msgid "Position of Child Element"
 msgstr ""
 
-msgid "Found elements"
+msgid "Found Elements"
 msgstr ""
 
 msgid "Get Web Page"
 msgstr ""
 
-msgid "Match Type"
+msgid "Matching Type"
 msgstr ""
 
 msgid "By Title"
@@ -4406,28 +4439,28 @@ msgstr ""
 msgid "Current Active Page"
 msgstr ""
 
-msgid "Match Text"
+msgid "Matching Text"
 msgstr ""
 
-msgid "Use Regex Match"
+msgid "Use Regular Expression Matching"
 msgstr ""
 
-msgid "Wait for the web page to load"
+msgid "Wait for Page to Finish Loading"
 msgstr ""
 
-msgid "Load timeout(seconds)"
+msgid "Loading Timeout(seconds)"
 msgstr ""
 
-msgid "Execute after loading timeout"
+msgid "Action to Take After Loading Timeout"
 msgstr ""
 
-msgid "Stop web page loading"
+msgid "Stop loading the web page"
 msgstr ""
 
-msgid "perform error handling"
+msgid "Execute error handling"
 msgstr ""
 
-msgid "Open new page when match failed"
+msgid "Open a New Page When Matching Fails"
 msgstr ""
 
 msgid "Hover Web Page Element"
@@ -4436,22 +4469,34 @@ msgstr ""
 msgid "Simulate human hover"
 msgstr ""
 
-msgid "Loop web elements"
+msgid "Loop Web Elements"
 msgstr ""
 
 msgid "Elements"
 msgstr ""
 
-msgid "Current element"
+msgid "Current Element"
 msgstr ""
 
 msgid "Navigate Web Page"
 msgstr ""
 
-msgid "Navigate type"
+msgid "Navigation Method"
 msgstr ""
 
-msgid "Go to new url"
+msgid "Go to a new url"
+msgstr ""
+
+msgid "Wait for Page to Load Completely"
+msgstr ""
+
+msgid "Action after Loading Timeout"
+msgstr ""
+
+msgid "stop loading the web page"
+msgstr ""
+
+msgid "perform error handling"
 msgstr ""
 
 msgid "Open Web Browser"
@@ -4498,22 +4543,22 @@ msgstr ""
 msgid "Open Web Page"
 msgstr ""
 
-msgid "URL"
-msgstr ""
-
 msgid "Please enter the webpage address you want to open"
 msgstr ""
 
 msgid "Screenshot Web Element"
 msgstr ""
 
-msgid "Screenshot area"
+msgid "Screenshot Area"
 msgstr ""
 
-msgid "Visible web page viewport"
+msgid "Web element"
 msgstr ""
 
-msgid "Full web page"
+msgid "Visible area of the web page"
+msgstr ""
+
+msgid "Entire web page"
 msgstr ""
 
 msgid "PNG"
@@ -4522,22 +4567,22 @@ msgstr ""
 msgid "JPEG"
 msgstr ""
 
-msgid "Snapshot filename"
+msgid "Screenshot File Name"
 msgstr ""
 
 msgid "Scroll Web Page"
 msgstr ""
 
-msgid "Scroll on element"
+msgid "Scroll on Element"
 msgstr ""
 
-msgid "Scroll element"
+msgid "Scroll Element"
 msgstr ""
 
-msgid "Find ancestor when element is not scrollable"
+msgid "Find Scrollable Element Upward When the Element is Not Scrollable"
 msgstr ""
 
-msgid "Scroll type"
+msgid "Scroll Type"
 msgstr ""
 
 msgid "Scroll to the top"
@@ -4546,19 +4591,16 @@ msgstr ""
 msgid "Scroll to the bottom"
 msgstr ""
 
-msgid "Scroll one page"
+msgid "Scroll one screen"
 msgstr ""
 
-msgid "Scroll to the element"
+msgid "Scroll to a specified element"
 msgstr ""
 
-msgid "Scroll times"
+msgid "Scroll Interval(seconds)"
 msgstr ""
 
-msgid "Scroll interval(seconds)"
-msgstr ""
-
-msgid "Scroll to element"
+msgid "Scroll to Element"
 msgstr ""
 
 msgid "Scroll behavior"
@@ -4570,7 +4612,7 @@ msgstr ""
 msgid "Instant scrolling"
 msgstr ""
 
-msgid "Set cookies"
+msgid "Set Cookies"
 msgstr ""
 
 msgid "Cookies"
@@ -4587,10 +4629,10 @@ msgstr ""
 msgid "Set Web Checkbox Value"
 msgstr ""
 
-msgid "Checkbox element"
+msgid "Checkbox Element"
 msgstr ""
 
-msgid "Select type"
+msgid "Selection Method"
 msgstr ""
 
 msgid "Check"
@@ -4605,7 +4647,7 @@ msgstr ""
 msgid "Set Web Select Value"
 msgstr ""
 
-msgid "Dropdown box element"
+msgid "Drop - down Box Element"
 msgstr ""
 
 msgid "Select by option content"
@@ -4617,70 +4659,73 @@ msgstr ""
 msgid "Option Content"
 msgstr ""
 
-msgid "Match type"
-msgstr ""
-
 msgid "Fuzzy matching"
 msgstr ""
 
-msgid "Precise matching"
+msgid "Exact matching"
 msgstr ""
 
-msgid "Regular matching"
+msgid "Regular expression matching"
 msgstr ""
 
-msgid "Option index"
+msgid "Option Index"
 msgstr ""
 
-msgid "Wait web content"
+msgid "Wait Web Page Content"
 msgstr ""
 
-msgid "Wait type"
+msgid "Waiting Type"
 msgstr ""
 
-msgid "Wait element"
+msgid "Waiting Element"
 msgstr ""
 
-msgid "Wait text"
+msgid "Waiting Text"
 msgstr ""
 
-msgid "Wait result"
+msgid "Waiting Result"
 msgstr ""
 
-msgid "Wait web page load"
+msgid "Wait for Web Page to Load"
 msgstr ""
 
-msgid "Web download"
+msgid "execute error handling"
 msgstr ""
 
-msgid "Download type"
+msgid "Web Download"
 msgstr ""
 
-msgid "Click download button"
+msgid "Download Type"
 msgstr ""
 
-msgid "Open download url"
+msgid "Click the download button"
 msgstr ""
 
-msgid "Download button element"
+msgid "Open the download link"
 msgstr ""
 
-msgid "Download url"
+msgid "Download Button Element"
+msgstr ""
+
+msgid "Download Address"
 msgstr ""
 
 msgid "Use suggested filename"
 msgstr ""
 
-msgid "Download timeout(seconds)"
+msgid "Custom filename"
 msgstr ""
 
-msgid "Download filename"
+msgid "Download Timeout(seconds)"
 msgstr ""
 
-msgid "Web input"
+msgid "Download File Name"
 msgstr ""
 
-msgid "Input Element"
+msgid "Web Input"
+msgstr ""
+
+msgid "Input Box Element"
 msgstr ""
 
 msgid "Input Content"
@@ -4689,10 +4734,10 @@ msgstr ""
 msgid "Append input"
 msgstr ""
 
-msgid "Press enter after input"
+msgid "Press enter key after input completion"
 msgstr ""
 
-msgid "Press tab after input"
+msgid "Press tab key after input completion"
 msgstr ""
 
 msgid "Simulate human input"
@@ -4701,31 +4746,31 @@ msgstr ""
 msgid "Click element before input"
 msgstr ""
 
-msgid "Delay input after focus(seconds)"
+msgid "Delay input after getting focus(seconds)"
 msgstr ""
 
-msgid "Web upload"
+msgid "Web Upload"
 msgstr ""
 
-msgid "Upload button element"
+msgid "Upload Button Element"
 msgstr ""
 
-msgid "Upload file path"
+msgid "Upload File Path"
 msgstr ""
 
-msgid "Wait button time(seconds)"
+msgid "Waiting for the Button Time(seconds)"
 msgstr ""
 
-msgid "Wait dialog time(seconds)"
+msgid "Waiting for the Dialog Time(seconds)"
 msgstr ""
 
-msgid "Active Window"
+msgid "Activate Window"
 msgstr ""
 
 msgid "Window Operation"
 msgstr ""
 
-msgid "Get window method"
+msgid "Window Acquisition Method"
 msgstr ""
 
 msgid "Window object"
@@ -4737,22 +4782,25 @@ msgstr ""
 msgid "Capture window element"
 msgstr ""
 
-msgid "Window title"
+msgid "Window Object"
+msgstr ""
+
+msgid "Window Title"
 msgstr ""
 
 msgid "Use window class name"
 msgstr ""
 
-msgid "Window class name"
+msgid "Window Class Name"
 msgstr ""
 
-msgid "Use regex matching"
-msgstr ""
-
-msgid "Window element"
+msgid "Use regular expression matching"
 msgstr ""
 
 msgid "Click Window Element"
+msgstr ""
+
+msgid "Modifier Keys"
 msgstr ""
 
 msgid "Close Window"
@@ -4764,13 +4812,25 @@ msgstr ""
 msgid "Window Element Operation"
 msgstr ""
 
+msgid "Drag to element"
+msgstr ""
+
+msgid "Drag by offset"
+msgstr ""
+
+msgid "Delay After Action(seconds)"
+msgstr ""
+
 msgid "Extract Window"
 msgstr ""
 
 msgid "Data Extraction"
 msgstr ""
 
-msgid "Window process name"
+msgid "Window title"
+msgstr ""
+
+msgid "Process name of the window"
 msgstr ""
 
 msgid "Extract Window Element"
@@ -4782,10 +4842,10 @@ msgstr ""
 msgid "Get ComboBox Items"
 msgstr ""
 
-msgid "ComboBox element"
+msgid "ComboBox Element"
 msgstr ""
 
-msgid "Content to get"
+msgid "Content to be Retrieved"
 msgstr ""
 
 msgid "Selected items"
@@ -4794,10 +4854,10 @@ msgstr ""
 msgid "All items"
 msgstr ""
 
-msgid "Expand the combo box before obtaining items"
+msgid "Expand the combo box before retrieving items"
 msgstr ""
 
-msgid "Obtained items"
+msgid "Retrieved Items"
 msgstr ""
 
 msgid "Get Relative Window Element"
@@ -4809,22 +4869,25 @@ msgstr ""
 msgid "Current active window"
 msgstr ""
 
+msgid "Waiting Time (seconds)"
+msgstr ""
+
 msgid "Hover Window Element"
 msgstr ""
 
-msgid "Loop window elements"
+msgid "Loop Window Elements"
 msgstr ""
 
 msgid "Move Window"
 msgstr ""
 
-msgid "Window position"
+msgid "Window Position"
 msgstr ""
 
 msgid "Resize Window"
 msgstr ""
 
-msgid "Window size"
+msgid "Window Size"
 msgstr ""
 
 msgid "Screenshot Window Element"
@@ -4839,7 +4902,7 @@ msgstr ""
 msgid "Set Window State"
 msgstr ""
 
-msgid "Window state"
+msgid "Window State"
 msgstr ""
 
 msgid "Restore window"
@@ -4860,7 +4923,16 @@ msgstr ""
 msgid "Hide window"
 msgstr ""
 
-msgid "Wait window element"
+msgid "Wait Window Element"
+msgstr ""
+
+msgid "Wait Type"
+msgstr ""
+
+msgid "Include element"
+msgstr ""
+
+msgid "Exclude element"
 msgstr ""
 
 msgid "Set the timeout time"
@@ -4869,16 +4941,19 @@ msgstr ""
 msgid "Timeout(seconds)"
 msgstr ""
 
-msgid "Window input"
+msgid "Wait Result"
 msgstr ""
 
-msgid "Input method"
+msgid "Window Input"
+msgstr ""
+
+msgid "Input Method"
 msgstr ""
 
 msgid "Automated interface input"
 msgstr ""
 
-msgid "The input content includes shortcut keys"
+msgid "The input content contains shortcut keys"
 msgstr ""
 
 msgid "Instruction or process {name} not found"

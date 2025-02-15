@@ -4,6 +4,7 @@
 
 运行以下命令打包：
 ```shell
+python generate_version_info.py
 python -m build
 rm -rf jimuflow.egg-info # 删除无用的包信息
 ```

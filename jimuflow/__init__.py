@@ -14,6 +14,7 @@
 #
 # Copyright (C) 2024-2025  Weng Jing
 
-from jimuflow.common.constants import APP_VERSION
+from .version_info import __version__, __git_commit__, __git_branch__, __git_tag__, __git_commit_date__
 
-__version__ = APP_VERSION
+__project_name__ = "JimuFlow"
+__project_organization__ = "JimuFlow"

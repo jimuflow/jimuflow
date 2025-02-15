@@ -4,6 +4,7 @@
 
 Run the following command to package the project:
 ```shell
+python generate_version_info.py
 python -m build
 rm -rf jimuflow.egg-info # Remove unnecessary package information
 ```
