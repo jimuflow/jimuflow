@@ -1,6 +1,6 @@
 # JimuFlow
 
-[English](README_en.md) | [中文](README.md)
+English | [中文](README.md)
 
 JimuFlow is a simple and easy-to-use cross-platform RPA tool that allows you to develop and run RPA applications on Windows, Linux, and MacOS.
 
@@ -15,11 +15,11 @@ The currently supported commands are categorized as follows:
 
 ## Demo
 
-![Demo Video](docs/zh/manual/demo_en.gif)
+![Demo Video](docs/en/manual/demo.gif)
 
 ## Installation
 
-Please download the latest version from the project's release page.
+Please download the installation package from the project's release page for installation. For details, please refer to the [Installation Document](docs/en/manual/install.md).
 
 ## Build
 
@@ -49,4 +49,4 @@ For questions related to the project code, please provide feedback directly thro
 
 For other inquiries, you can contact me via:
 
-- Email: jimuflow@gmail.com
+- Email: [jimuflow@gmail.com](mailto:jimuflow@gmail.com)

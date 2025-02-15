@@ -2,6 +2,7 @@ site_name: JimuFlow
 docs_dir: '../../docs/zh'
 site_dir: '../../site/zh'
 site_url: !ENV READTHEDOCS_CANONICAL_URL
+repo_url: https://gitee.com/incoding/jimuflow
 theme:
   name: material
   custom_dir: '../../docs/overrides/'
@@ -12,14 +13,36 @@ theme:
     - navigation.prune
     - navigation.indexes
     - navigation.top
+    - navigation.footer
+  icon:
+    repo: simple/gitee
 extra_javascript:
   - javascripts/readthedocs.js
 markdown_extensions:
   - toc:
       permalink: true
+copyright: Copyright &copy; 2024-2025  Weng Jing
+extra:
+  alternate:
+    - name: English
+      link: /en/
+      lang: en
+    - name: 简体中文
+      link: /zh-cn/
+      lang: zh
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jimuflow/jimuflow
+    - icon: simple/gitee
+      link: https://gitee.com/incoding/jimuflow
+    - icon: simple/pypi
+      link: https://pypi.org/project/jimuflow/
+    - icon: material/email
+      link: mailto:jimuflow@gmail.com
 nav:
   - 首页: index.md
   - 用户手册:
+    - 安装: manual/install.md
     - 表达式: manual/expression.md
     - 指令的错误处理: manual/error_handling.md
     - 网页元素捕获工具: manual/web_element_capture_tool.md
@@ -184,3 +207,21 @@ nav:
       - 导出数据表格: commands/DataTable/export_table.md
     - 其他:
       - 打印消息: commands/others/print.md
+  - 开发:
+    - develop/index.md
+    - 构建和运行JimuFlow: develop/build.md
+    - 开发一个新指令: develop/develop_a_new_instruction.md
+    - 国际化: develop/i18n.md
+    - 表达式: develop/expression.md
+    - 类型系统: develop/type_system.md
+    - 组件资源自动释放: develop/automatic_release_of_component_resources.md
+    - 组件错误处理: develop/component_error_handling.md
+    - 应用管理: develop/application_management.md
+    - 流程编辑组件: develop/process_editing_component.md
+    - 流程执行日志: develop/process_execution_log.md
+    - 错误列表面板: develop/error_list_panel.md
+    - 网页元素管理: develop/web_page_element_management.md
+    - 网页元素XPath获取工具: develop/web_page_element_xpath_acquisition_tool.md
+    - 发布PyPI: develop/publish_package.md
+    - 路线图: develop/roadmap.md
+

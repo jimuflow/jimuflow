@@ -1,6 +1,6 @@
 # JimuFlow
 
-[English](README_en.md) | [中文](README.md)
+[English](README_en.md) | 中文
 
 JimuFlow是一款简单易用的跨平台RPA工具，可以在Windows、Linux、MacOS操作系统上开发和运行RPA应用。
 
@@ -19,7 +19,7 @@ JimuFlow是一款简单易用的跨平台RPA工具，可以在Windows、Linux、
 
 ## 安装
 
-请从项目的发布页面下载最新版本。
+请从项目的发布页面下载安装包进行安装，具体请查看[安装文档](docs/zh/manual/install.md)。
 
 ## 构建
 
@@ -27,7 +27,7 @@ JimuFlow是一款简单易用的跨平台RPA工具，可以在Windows、Linux、
 
 ## 开发
 
-请参见[开发文档](docs/zh/develop/readme.md)。
+请参见[开发文档](docs/zh/develop/index.md)。
 
 ## 贡献
 
@@ -49,4 +49,4 @@ JimuFlow是一款简单易用的跨平台RPA工具，可以在Windows、Linux、
 
 其他问题，可以通过以下方式联系我。
 
-- 邮箱：jimuflow@gmail.com
+- 邮箱：[jimuflow@gmail.com](mailto:jimuflow@gmail.com)

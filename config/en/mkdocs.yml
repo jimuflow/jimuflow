@@ -2,6 +2,7 @@ site_name: JimuFlow
 docs_dir: '../../docs/en'
 site_dir: '../../site/en'
 site_url: !ENV READTHEDOCS_CANONICAL_URL
+repo_url: https://github.com/jimuflow/jimuflow
 theme:
   name: material
   custom_dir: '../../docs/overrides/'
@@ -12,14 +13,36 @@ theme:
     - navigation.prune
     - navigation.indexes
     - navigation.top
+    - navigation.footer
+  icon:
+    repo: fontawesome/brands/github
 extra_javascript:
   - javascripts/readthedocs.js
 markdown_extensions:
   - toc:
       permalink: true
+copyright: Copyright &copy; 2024-2025  Weng Jing
+extra:
+  alternate:
+    - name: English
+      link: /en/
+      lang: en
+    - name: 简体中文
+      link: /zh-cn/
+      lang: zh
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jimuflow/jimuflow
+    - icon: simple/gitee
+      link: https://gitee.com/incoding/jimuflow
+    - icon: simple/pypi
+      link: https://pypi.org/project/jimuflow/
+    - icon: material/email
+      link: mailto:jimuflow@gmail.com
 nav:
   - Home: index.md
   - User Guide:
+    - Installation: manual/install.md
     - Expressions: manual/expression.md
     - Error Handling for Instructions: manual/error_handling.md
     - Web Element Capture tool: manual/web_element_capture_tool.md
@@ -184,3 +207,20 @@ nav:
       - Export Table: commands/DataTable/export_table.md
     - Others:
       - Print Message: commands/others/print.md
+  - Develop:
+    - develop/index.md
+    - Building and Running JimuFlow: develop/build.md
+    - Developing a New Instruction: develop/develop_a_new_instruction.md
+    - Internationalization: develop/i18n.md
+    - Expressions: develop/expression.md
+    - Type System: develop/type_system.md
+    - Automatic Resource Release for Components: develop/automatic_release_of_component_resources.md
+    - Component Error Handling: develop/component_error_handling.md
+    - Application Management: develop/application_management.md
+    - Process Editing Component: develop/process_editing_component.md
+    - Process Execution Log: develop/process_execution_log.md
+    - Error List Panel: develop/error_list_panel.md
+    - Web Element Management: develop/web_page_element_management.md
+    - Web Element XPath Retrieval Tool: develop/web_page_element_xpath_acquisition_tool.md
+    - Publishing to PyPI: develop/publish_package.md
+    - Roadmap: develop/roadmap.md
