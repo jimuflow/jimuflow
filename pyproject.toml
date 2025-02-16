@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "jimuflow"
-version = "1.0.0"
+version = "1.0.1"
 description = "A simple and easy-to-use cross-platform RPA tool"
 readme = "README_PyPI.md"
 license = { file = "LICENSE" }
