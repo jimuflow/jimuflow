@@ -17,10 +17,10 @@
 from jimuflow.gui.setup_logging import setup_logging_and_redirect
 
 setup_logging_and_redirect()
-import locale
 from jimuflow.gui.utils import Utils
+from jimuflow.locales.settings import set_preferred_locale
 
-locale.setlocale(locale.LC_ALL, Utils.get_language() + ".UTF-8")
+set_preferred_locale(Utils.get_language())
 import sys
 
 sys.coinit_flags = 2

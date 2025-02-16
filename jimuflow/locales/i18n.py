@@ -15,19 +15,14 @@
 # Copyright (C) 2024-2025  Weng Jing
 
 import gettext as gt
-import locale
 
 from jimuflow.common import app_base_path
+from jimuflow.locales.settings import get_current_locale
 
 gettext = None
 ngettext = None
 
-current_locale = locale.getlocale()[0]
-if not current_locale:
-    locale.setlocale(locale.LC_ALL, '')
-    current_locale = locale.getlocale()[0]
-if not current_locale or current_locale == 'Chinese (Simplified)_China':
-    current_locale = 'zh_CN'
+current_locale = get_current_locale()
 if current_locale == 'en_US':
     gettext = gt.gettext
     ngettext = gt.ngettext
