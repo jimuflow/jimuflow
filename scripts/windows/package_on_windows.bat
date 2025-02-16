@@ -8,7 +8,7 @@ echo "%scriptPath%"
 cd /d "%scriptPath%"
 cd ..\..
 
-@REM call venv\Scripts\activate
+call venv\Scripts\activate
 
 python generate_version_info.py
 
@@ -32,8 +32,8 @@ for %%M in (%MODULES%) do (
 
 @REM echo %HIDDEN_IMPORTS%
 
-@REM set PLAYWRIGHT_BROWSERS_PATH=0
-@REM playwright install chromium
+set PLAYWRIGHT_BROWSERS_PATH=0
+playwright install chromium
 
 pyinstaller --name JimuFlow ^
   --icon jimuflow\icons\jimuflow.png ^

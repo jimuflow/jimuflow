@@ -18,12 +18,12 @@ for module in $MODULES; do
     HIDDEN_IMPORTS="$HIDDEN_IMPORTS --hidden-import=$module"
 done
 
-#PLAYWRIGHT_BROWSERS_PATH=0 playwright install chromium
-
 python generate_version_info.py
 
 mkdocs build -f config/en/mkdocs_help.yml
 mkdocs build -f config/zh/mkdocs_help.yml
+
+PLAYWRIGHT_BROWSERS_PATH=0 playwright install chromium
 
 pyinstaller --name JimuFlow \
   --icon jimuflow/icons/jimuflow.png \
