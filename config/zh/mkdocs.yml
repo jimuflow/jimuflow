@@ -43,6 +43,7 @@ nav:
   - 首页: index.md
   - 用户手册:
     - 安装: manual/install.md
+    - 界面功能介绍: manual/ui_intro.md
     - 表达式: manual/expression.md
     - 指令的错误处理: manual/error_handling.md
     - 网页元素捕获工具: manual/web_element_capture_tool.md

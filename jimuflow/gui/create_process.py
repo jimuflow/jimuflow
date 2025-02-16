@@ -30,7 +30,7 @@ class CreateProcessDialog(QDialog):
         self._app = app
         self.process_def = process_def
 
-        self.setWindowTitle(gettext("Config Process") if app else gettext('New Process'))
+        self.setWindowTitle(gettext("Config Process") if process_def else gettext('New Process'))
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
 

@@ -43,7 +43,7 @@ class LogWidget(QTableView):
         self.setColumnWidth(0, 70)
         self.setColumnWidth(1, 40)
         self.setColumnWidth(2, 100)
-        self.setColumnWidth(3, 40)
+        self.setColumnWidth(3, 50)
         self.setColumnWidth(4, 100)
         self.horizontalHeader().setStretchLastSection(True)
 

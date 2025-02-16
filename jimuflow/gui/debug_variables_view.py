@@ -41,7 +41,7 @@ class DebugVariablesWidget(QSplitter):
         self._variables_table.setModel(self._variables_model)
         self._variables_table.setMinimumWidth(300)
         self._variables_model.setHorizontalHeaderLabels([gettext('Variable Name'), gettext('Variable Value')])
-        self._variables_table.setColumnWidth(0, 80)
+        self._variables_table.setColumnWidth(0, 90)
         self._variables_table.horizontalHeader().setStretchLastSection(True)
         self.addWidget(self._variables_table)
         self.setStretchFactor(0, 0)

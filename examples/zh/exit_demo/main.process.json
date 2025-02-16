@@ -1,5 +1,34 @@
 {
   "name": "main",
-  "variables": [],
-  "flow": []
+  "variables": [
+    {
+      "name": "消息",
+      "type": "text",
+      "direction": "IN"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:If",
+      "inputs": {
+        "operand1": "消息",
+        "op": "not_contains",
+        "operand2": "\"你好\""
+      },
+      "lineNo": 1,
+      "flow": [
+        {
+          "component": "jimuflow:core:Exit",
+          "lineNo": 2
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "消息"
+      },
+      "lineNo": 3
+    }
+  ]
 }

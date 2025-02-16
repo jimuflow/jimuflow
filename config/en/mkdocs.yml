@@ -43,6 +43,7 @@ nav:
   - Home: index.md
   - User Guide:
     - Installation: manual/install.md
+    - Interface Features Introduction: manual/ui_intro.md
     - Expressions: manual/expression.md
     - Error Handling for Instructions: manual/error_handling.md
     - Web Element Capture tool: manual/web_element_capture_tool.md

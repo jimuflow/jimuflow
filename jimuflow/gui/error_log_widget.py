@@ -34,7 +34,7 @@ class ErrorLogWidget(QTableView):
         self._model.setHorizontalHeaderLabels(
             [gettext('Process'), gettext('Line No'), gettext('Error')])
         self.setColumnWidth(0, 120)
-        self.setColumnWidth(1, 40)
+        self.setColumnWidth(1, 50)
         self.horizontalHeader().setStretchLastSection(True)
 
     def clear(self):

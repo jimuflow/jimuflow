@@ -28,7 +28,7 @@ class ProcessResourceDialog(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         self._selected_resource = None
-        self.setWindowTitle("Resource")
+        self.setWindowTitle(gettext("Select Resource"))
         main_layout = QVBoxLayout(self)
         self._create_content_widgets(main_layout)
         button_box = QDialogButtonBox(QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel)
