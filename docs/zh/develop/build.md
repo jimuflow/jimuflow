@@ -51,7 +51,7 @@ pytest
 ```shell
 ./scripts/package_on_macos.sh
 ```
-执行之后，将会在项目根目录的dist目录下生成JimuFlow.ap。
+执行之后，将会在项目根目录的dist目录下生成`JimuFlow.app`。
 
 在Windows上，执行批处理脚本[package_on_windows.bat](../../../scripts/windows/package_on_windows.bat)
 ```shell

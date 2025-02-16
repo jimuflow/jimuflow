@@ -51,7 +51,7 @@ On MacOS, execute the shell script [package_on_macos.sh](../../../scripts/packag
 ```shell
 ./scripts/package_on_macos.sh
 ```
-After execution, JimuFlow.ap will be generated in the dist directory at the project root.
+After execution, `JimuFlow.app` will be generated in the dist directory at the project root.
 
 On Windows, execute the batch script [package_on_windows.bat](../../../scripts/windows/package_on_windows.bat):
 ```shell
