@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -122,13 +122,12 @@ class CreateNewAppDialog(QDialog):
             if app_package_path.exists():
                 QMessageBox.warning(self, gettext('Tips'), gettext('The application already exists'))
                 return
-            app = App()
-            app.app_package = Package()
-            app.app_package.name = name
-            app.app_package.namespace = namespace
-            app.app_package.version = app_version
-            app.app_package.path = app_package_path
-            app.engine = ExecutionEngine([])
+            app_package = Package()
+            app_package.name = name
+            app_package.namespace = namespace
+            app_package.version = app_version
+            app_package.path = app_package_path
+            app = App(ExecutionEngine(), app_package)
             app.save()
             self.app = app
         else:

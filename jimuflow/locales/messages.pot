@@ -886,7 +886,9 @@ msgstr ""
 msgid "Open a new web browser, and save to ##{webBrowser}##"
 msgstr ""
 
-msgid "Open url ##{url}## in ##{webBrowser}##, and save to ##{webPage}##"
+msgid ""
+"Open ##{url}## in ##{webBrowser}## and save the opened web page object to"
+" ##{webPage}##"
 msgstr ""
 
 msgid "Timeout to get the element"
@@ -1853,6 +1855,12 @@ msgstr ""
 msgid "Double click to navigate to the corresponding process location"
 msgstr ""
 
+msgid "Variable Type"
+msgstr ""
+
+msgid "Variable Description"
+msgstr ""
+
 msgid "Bracket operator"
 msgstr ""
 
@@ -1982,6 +1990,9 @@ msgstr ""
 msgid "Settings..."
 msgstr ""
 
+msgid "Show Log File"
+msgstr ""
+
 msgid "File"
 msgstr ""
 
@@ -2048,7 +2059,13 @@ msgstr ""
 msgid "Process {name} is running, do you want to terminate the process?"
 msgstr ""
 
+msgid "Unable to open automatically, please access manually: {path}"
+msgstr ""
+
 msgid "An error has occurred!"
+msgstr ""
+
+msgid "Select Resource"
 msgstr ""
 
 msgid "Name"
@@ -2813,9 +2830,6 @@ msgid "Choose Folder"
 msgstr ""
 
 msgid "Input configs"
-msgstr ""
-
-msgid "Select Resource"
 msgstr ""
 
 msgid "Add column"

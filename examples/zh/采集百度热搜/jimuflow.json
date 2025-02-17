@@ -1,0 +1,7 @@
+{
+  "name": "采集百度热搜",
+  "namespace": "jimuflow.examples",
+  "version": "1.0.0",
+  "mainProcess": "main",
+  "dependencies": []
+}

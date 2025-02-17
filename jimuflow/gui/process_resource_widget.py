@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -14,9 +14,7 @@
 #
 # Copyright (C) 2024-2025  Weng Jing
 
-import os
 import shutil
-import subprocess
 from pathlib import Path
 
 from PySide6.QtCore import Qt, Slot
@@ -26,6 +24,7 @@ from PySide6.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QT
 
 from jimuflow.common.fs import copy_folder_overwrite, move_folder_overwrite
 from jimuflow.gui.app import App
+from jimuflow.gui.utils import Utils
 from jimuflow.locales.i18n import gettext
 
 
@@ -163,8 +162,5 @@ class ProcessResourceWidget(QWidget):
 
     @Slot()
     def _open_resources_folder(self):
-        path = str(self._app.app_package.path / "resources")
-        if os.name == 'nt':  # Windows
-            subprocess.run(['explorer', path])
-        elif os.name == 'posix':  # macOS or Linux
-            subprocess.run(['open', path])  # macOS
+        dir_path = str(self._app.app_package.path / "resources")
+        Utils.open_file_in_explorer(dir_path)

@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -25,7 +25,7 @@ from jimuflow.components.core.os_utils import is_macos, is_windows, is_linux
 from jimuflow.definition import ProcessDef, FlowNode, Package, PrimitiveComponentDef, VariableDef
 from jimuflow.runtime.execution_engine import Process, ExecutionEngine, PrimitiveComponent, Component, ControlFlow
 
-engine = ExecutionEngine([])
+engine = ExecutionEngine()
 
 
 def create_component(comp_class, result_var_name='r', result_var_type='any') -> PrimitiveComponent:

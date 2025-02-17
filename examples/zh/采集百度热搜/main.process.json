@@ -1,0 +1,181 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "浏览器",
+      "type": "WebBrowser",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "百度页面",
+      "type": "WebPage",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "当前元素",
+      "type": "WebElement",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "热搜标题",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "结果数据表格",
+      "type": "table",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "导出文件路径",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "当前日期",
+      "type": "datetime",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "当前日期字符串",
+      "type": "text",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:web_automation:OpenWebBrowser",
+      "inputs": {
+        "enableProxy": false,
+        "headless": true
+      },
+      "outputs": {
+        "webBrowser": "浏览器"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:web_automation:OpenWebPage",
+      "inputs": {
+        "webBrowser": "浏览器",
+        "url": "\"https://www.baidu.com\"",
+        "waitLoaded": true,
+        "loadTimeout": "\"30\"",
+        "loadTimeoutAction": "stop_loading"
+      },
+      "outputs": {
+        "webPage": "百度页面"
+      },
+      "lineNo": 2
+    },
+    {
+      "component": "jimuflow:table:CreateTable",
+      "inputs": {
+        "columnNames": "\"标题,日期\""
+      },
+      "outputs": {
+        "table": "结果数据表格"
+      },
+      "lineNo": 3
+    },
+    {
+      "component": "jimuflow:core:CreateDateTime",
+      "inputs": {
+        "initType": "now"
+      },
+      "outputs": {
+        "result": "当前日期"
+      },
+      "lineNo": 4
+    },
+    {
+      "component": "jimuflow:core:FormatDateTime",
+      "inputs": {
+        "datetime": "当前日期",
+        "datetimeFormat": "\"YYYY-MM-DD HH:mm:ss\""
+      },
+      "outputs": {
+        "result": "当前日期字符串"
+      },
+      "lineNo": 5
+    },
+    {
+      "component": "jimuflow:web_automation:LoopWebElements",
+      "inputs": {
+        "webPage": "百度页面",
+        "elementsUri": "jimuflow:webelement:cb46b9079d594eaa8a1c8fea89a7c8e3",
+        "reversedLoop": false,
+        "waitTime": "\"30\""
+      },
+      "outputs": {
+        "currentElement": "当前元素"
+      },
+      "lineNo": 6,
+      "flow": [
+        {
+          "component": "jimuflow:web_automation:ExtractWebElement",
+          "inputs": {
+            "webPage": "百度页面",
+            "elementUri": "jimuflow:variable:当前元素",
+            "extractType": "text",
+            "waitTime": "\"30\""
+          },
+          "outputs": {
+            "result": "热搜标题"
+          },
+          "lineNo": 7
+        },
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"热搜标题：\" + 热搜标题"
+          },
+          "lineNo": 8
+        },
+        {
+          "component": "jimuflow:table:WriteTableRow",
+          "inputs": {
+            "table": "结果数据表格",
+            "writeType": "append",
+            "rowInputType": "columns",
+            "columns": [
+              [
+                "\"标题\"",
+                "热搜标题"
+              ],
+              [
+                "\"日期\"",
+                "当前日期字符串"
+              ]
+            ]
+          },
+          "lineNo": 9
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:table:ExportTable",
+      "inputs": {
+        "table": "结果数据表格",
+        "saveFolder": "\"/Users/wengjing/Downloads\"",
+        "fileFormat": "xlsx",
+        "sheetName": "\"百度热搜\"",
+        "fileNamingType": "custom",
+        "customFilename": "\"百度热搜\"",
+        "overrideExistingFile": true,
+        "exportHeader": true
+      },
+      "outputs": {
+        "filePath": "导出文件路径"
+      },
+      "lineNo": 10
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"导出成功：\" + 导出文件路径"
+      },
+      "lineNo": 11
+    }
+  ]
+}

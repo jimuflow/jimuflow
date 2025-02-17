@@ -613,12 +613,13 @@ class Process(Component):
 
 
 class ExecutionEngine:
-    def __init__(self, package_paths: list[str]):
+    def __init__(self, package_paths: list[str] = None):
         self.logger = ConsoleLogger()
         self.packages: list[Package] = []
         self.package_paths = []
         self.package_paths.append(str(app_base_path / "packages"))
-        self.package_paths.extend(package_paths)
+        if package_paths:
+            self.package_paths.extend(package_paths)
         self.type_registry = DataTypeRegistry()
         self.type_registry.copy_from_registry(builtin_data_type_registry)
         self.scan_packages(self.package_paths)

@@ -17,6 +17,9 @@
 import importlib
 import locale
 import os
+import shutil
+import subprocess
+import sys
 
 from PySide6.QtCore import QSettings, QObject
 
@@ -83,3 +86,61 @@ class Utils:
     @staticmethod
     def get_supported_languages():
         return {'zh_CN': '简体中文', 'en_US': 'English (US)'}
+
+    def open_file_in_explorer(filepath):
+        """
+        打开文件资源管理器并定位到指定文件或目录
+
+        参数:
+            filepath (str): 要定位的文件或目录路径
+        """
+        filepath = os.path.abspath(filepath)
+
+        if not os.path.exists(filepath):
+            raise FileNotFoundError(f"Path does not exist: {filepath}")
+
+        try:
+            if sys.platform == "win32":
+                # Windows系统
+                if os.path.isfile(filepath):
+                    subprocess.run(f'explorer /select,"{filepath}"', shell=True)
+                else:
+                    subprocess.run(['explorer', filepath], shell=True)
+
+            elif sys.platform == "darwin":
+                # macOS系统
+                if os.path.isfile(filepath):
+                    subprocess.run(["open", "-R", filepath])
+                else:
+                    subprocess.run(["open", filepath])
+
+            else:
+                # Linux/Unix系统
+                # 判断是文件还是目录
+                if os.path.isfile(filepath):
+                    dir_path = os.path.dirname(filepath)
+                    target = filepath
+                else:
+                    dir_path = filepath
+                    target = None
+
+                # 尝试不同文件管理器
+                managers = [
+                    ["nautilus", "--select", target] if target else ["nautilus", dir_path],
+                    ["dolphin", "--select", target] if target else ["dolphin", dir_path],
+                    ["thunar", dir_path],
+                    ["xdg-open", dir_path]
+                ]
+
+                for args in managers:
+                    if args[0] and shutil.which(args[0]):
+                        try:
+                            subprocess.run([arg for arg in args if arg])
+                            break
+                        except:
+                            return False
+                else:
+                    return False
+            return True
+        except:
+            return False

@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -145,6 +145,7 @@ class ElementsWidget(QWidget):
             element_info = tool.element_info
             app_package.update_web_element(group_name, element_id, element_info)
             element_item.setText(element_info['name'])
+            self._on_current_changed(index, QModelIndex())
 
     def _remove_element(self, index: QModelIndex):
         element_id = index.data(Qt.ItemDataRole.UserRole)

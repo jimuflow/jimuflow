@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -20,6 +20,7 @@ from PySide6.QtWidgets import QWidget, QVBoxLayout, QTreeView
 
 from jimuflow.datatypes import DataTypeRegistry
 from jimuflow.definition import VariableDef
+from jimuflow.locales.i18n import gettext
 
 
 class ExpressionEditPopup(QWidget):
@@ -31,17 +32,20 @@ class ExpressionEditPopup(QWidget):
         self.layout.setContentsMargins(0, 0, 0, 0)
         self.setWindowFlags(Qt.WindowType.Popup)
         self._list_view = QTreeView()
-        self._list_view.setHeaderHidden(True)
         self._list_view.setSelectionMode(QTreeView.SelectionMode.SingleSelection)
         self._list_view.setSelectionBehavior(QTreeView.SelectionBehavior.SelectRows)
         self._list_view.activated.connect(self.on_item_activated)
-        self._list_model = QStandardItemModel()
+        self._list_model = QStandardItemModel(0, 3)
+        self._list_model.setHorizontalHeaderLabels(
+            [gettext('Variable Name'), gettext('Variable Type'), gettext('Variable Description')])
         self._list_view.setModel(self._list_model)
         self.layout.addWidget(self._list_view)
         self._list_view.installEventFilter(self)
 
     def set_variables(self, variables: list[VariableDef], type_registry: DataTypeRegistry):
-        self._list_model.clear()
+        row_count = self._list_model.rowCount()
+        if row_count:
+            self._list_model.removeRows(0, row_count)
         # 变量名、变量类型、变量说明
         for var_def in variables:
             name_item = QStandardItem(var_def.name)
@@ -75,10 +79,10 @@ class ExpressionEditPopup(QWidget):
         self._resize_columns()
 
     def _resize_columns(self):
-        width = self.contentsRect().width()-20
-        min_column1_width = 120
-        column2_width = 70
-        min_column3_width = 200
+        width = self.contentsRect().width() - 20
+        min_column1_width = 150
+        column2_width = 100
+        min_column3_width = 250
         if width > 0:
             min_width = min_column1_width + column2_width + min_column3_width
             if width < min_width:

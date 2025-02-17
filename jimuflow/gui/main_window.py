@@ -14,7 +14,7 @@
 #
 # Copyright (C) 2024-2025  Weng Jing
 
-from jimuflow.gui.setup_logging import setup_logging_and_redirect
+from jimuflow.gui.setup_logging import setup_logging_and_redirect, get_log_file_path
 
 setup_logging_and_redirect()
 from jimuflow.gui.utils import Utils
@@ -26,7 +26,6 @@ import sys
 sys.coinit_flags = 2
 
 from jimuflow.gui.window_elements_widget import WindowElementsWidget
-
 import asyncio
 import logging
 import os
@@ -208,6 +207,9 @@ class MainWindow(QMainWindow, DebugListener):
         self._settings_act = QAction(gettext('Settings...'), self)
         self._settings_act.triggered.connect(self.show_settings_dialog)
 
+        self._show_log_act = QAction(gettext('Show Log File'), self)
+        self._show_log_act.triggered.connect(self._show_log_file)
+
     def create_menus(self):
         file_menu = self.menuBar().addMenu(gettext('File'))
         file_menu.addAction(self._new_app_act)
@@ -244,6 +246,7 @@ class MainWindow(QMainWindow, DebugListener):
         help_menu.addAction(self._about_act)
         help_menu.addAction(self._settings_act)
         help_menu.addAction(self._help_act)
+        help_menu.addAction(self._show_log_act)
 
     def create_tool_bar(self):
         tool_bar = self.addToolBar('Main')
@@ -367,6 +370,8 @@ class MainWindow(QMainWindow, DebugListener):
             self.do_open_process(process_def)
 
     def set_app(self, app: App):
+        Utils.set_workspace_path(str(app.app_package.path.parent))
+        Utils.add_recent_app(str(app.app_package.path))
         AppContext.set_app(app)
         app.engine.set_logger(LogWidgetLogger(LogLevel.INFO, self.log))
         self.setWindowTitle(f'JimuFlow - {app.app_package.name}')
@@ -403,11 +408,8 @@ class MainWindow(QMainWindow, DebugListener):
             return
         if not self._close_app():
             return
-        app = App()
-        app.load(Path(app_dir))
+        app = App.load(Path(app_dir))
         self.set_app(app)
-        Utils.set_workspace_path(os.path.dirname(app_dir))
-        Utils.add_recent_app(app_dir)
 
         if app.app_package.main_process:
             main_process_def = app.engine.get_component_def(app.app_package, app.app_package.main_process)
@@ -800,6 +802,14 @@ class MainWindow(QMainWindow, DebugListener):
     def show_settings_dialog(self):
         dialog = SettingsDialog()
         dialog.exec()
+
+    @Slot()
+    def _show_log_file(self):
+        log_file_path = get_log_file_path()
+        if not Utils.open_file_in_explorer(log_file_path):
+            QMessageBox.warning(self, gettext('Error'),
+                                gettext('Unable to open automatically, please access manually: {path}').format(
+                                    path=log_file_path))
 
 
 def main():

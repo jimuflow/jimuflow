@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -193,6 +193,10 @@ class Package:
         element_path = group_path / f"{WEB_ELEMENT_PREFIX}{element_id}.jsonl"
         if not element_path.exists():
             raise ValueError(f"Element {element_id} not found.")
+        element_snapshot = element_info.get("snapshot", None)
+        snapshot_path = group_path / f"{WEB_ELEMENT_PREFIX}{element_id}.png"
+        if element_snapshot and element_snapshot != snapshot_path:
+            shutil.copy(element_snapshot, snapshot_path)
         self._write_element_jsonl(element_path, element_info)
 
     def remove_web_element(self, group_name: str, element_id: str):

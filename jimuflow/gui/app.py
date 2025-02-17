@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -480,33 +480,31 @@ class App(QObject):
     web_elements_changed = Signal()
     window_elements_changed = Signal()
 
-    def __init__(self, parent: QObject | None = None):
+    def __init__(self, engine: ExecutionEngine, app_package: Package, parent: QObject | None = None):
         super().__init__(parent)
-        self.engine: ExecutionEngine | None = None
-        self.app_package: Package | None = None
-        self.process_models: list[ProcessModel] = []
-        self.web_elements_model: QStandardItemModel | None = None
-        self.window_elements_model: QStandardItemModel | None = None
         self.element_icon = QIcon(":/icons/web_element.png")
         self.window_element_icon = QIcon(":/icons/window_element.png")
-
-    def save(self):
-        self.app_package.save()
-
-    def load(self, app_path: Path):
-        self.engine = ExecutionEngine([])
-        self.app_package = self.engine.load_package(app_path)
+        self.engine = engine
+        self.app_package = app_package
+        self.process_models: list[ProcessModel] = []
         self.web_elements_model = QStandardItemModel(self)
         self.reload_web_elements_model()
         self.web_elements_model.dataChanged.connect(
             lambda topLeft, bottomRight, roles: self.web_elements_changed.emit())
         self.web_elements_model.rowsRemoved.connect(lambda parent, first, last: self.web_elements_changed.emit())
-
         self.window_elements_model = QStandardItemModel(self)
         self.reload_window_elements_model()
         self.window_elements_model.dataChanged.connect(
             lambda topLeft, bottomRight, roles: self.window_elements_changed.emit())
         self.window_elements_model.rowsRemoved.connect(lambda parent, first, last: self.window_elements_changed.emit())
+
+    def save(self):
+        self.app_package.save()
+
+    @staticmethod
+    def load(app_path: Path):
+        engine = ExecutionEngine()
+        return App(engine, engine.load_package(app_path))
 
     @Slot()
     def reload_web_elements_model(self):

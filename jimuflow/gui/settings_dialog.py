@@ -59,7 +59,24 @@ class SettingsDialog(QDialog):
 
                 @Slot()
                 def start_new_process():
-                    subprocess.Popen([program] + args)  # 启动新进程
+                    command = [program] + args
+
+                    if sys.platform == 'win32':
+                        subprocess.Popen(
+                            command,
+                            creationflags=subprocess.DETACHED_PROCESS,
+                            stdin=subprocess.DEVNULL,
+                            stdout=subprocess.DEVNULL,
+                            stderr=subprocess.DEVNULL
+                        )
+                    else:
+                        subprocess.Popen(
+                            command,
+                            start_new_session=True,
+                            stdin=subprocess.DEVNULL,
+                            stdout=subprocess.DEVNULL,
+                            stderr=subprocess.DEVNULL
+                        )
 
                 # 当应用即将退出时，启动新进程
                 QApplication.instance().aboutToQuit.connect(start_new_process)

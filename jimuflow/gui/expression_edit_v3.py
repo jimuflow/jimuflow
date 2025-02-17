@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -491,7 +491,7 @@ class ExpressionEditV3(QTextEdit):
     def _show_variable_popup(self):
         pos = self.mapToGlobal(QPoint(0, self.height() - 2))
         self._variable_popup.move(pos)
-        self._variable_popup.setFixedWidth(self.width())
+        self._variable_popup.setFixedWidth(max(500, self.width()))
         self._variable_popup.show()
 
 
