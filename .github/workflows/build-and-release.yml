@@ -1,7 +1,9 @@
 name: Build and Release
 
 on:
-  workflow_dispatch:
+  pull_request:
+    branches：
+      - main
 
 jobs:
   build-for-macos:
