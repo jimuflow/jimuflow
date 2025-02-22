@@ -25,7 +25,7 @@ for module in $MODULES; do
     HIDDEN_IMPORTS="$HIDDEN_IMPORTS --hidden-import=$module"
 done
 
-pyinstaller --name JimuFlow \
+pyi-makespec --name JimuFlow \
   --icon jimuflow/icons/jimuflow.png \
   --add-data "jimuflow/locales/zh_CN/LC_MESSAGES/messages.mo:./jimuflow/locales/zh_CN/LC_MESSAGES" \
   --add-data "jimuflow/packages:./jimuflow/packages" \
@@ -42,6 +42,10 @@ pyinstaller --name JimuFlow \
   $HIDDEN_IMPORTS \
   --noconsole \
   jimuflow/gui/main_window.py
+
+python scripts/customize_macos_pyinstaller_spec.py
+
+pyinstaller JimuFlow.spec
 
 #cp -r venv/lib/python3.11/site-packages/playwright/driver/package/.local-browsers \
 #  dist/JimuFlow.app/Contents/Resources/playwright/driver/package
