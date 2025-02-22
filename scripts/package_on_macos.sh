@@ -50,6 +50,6 @@ pyinstaller JimuFlow.spec
 #cp -r venv/lib/python3.11/site-packages/playwright/driver/package/.local-browsers \
 #  dist/JimuFlow.app/Contents/Resources/playwright/driver/package
 
-PLAYWRIGHT_BROWSERS_PATH=dist/JimuFlow.app/Contents/Resources/playwright/driver/package/.local-browsers playwright install chromium
+#PLAYWRIGHT_BROWSERS_PATH=dist/JimuFlow.app/Contents/Resources/playwright/driver/package/.local-browsers playwright install chromium
 
 cd $old_pwd
