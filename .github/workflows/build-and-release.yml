@@ -41,12 +41,19 @@ jobs:
     - name: Create dmg
       run: |
         cd dist
-        create-dmg JimuFlow.app
+        create-dmg JimuFlow.app || true
+        shopt -s nullglob
+        dmg_files=( *.dmg )
+        if [ ${#dmg_files[@]} -eq 0 ]; then
+            echo "当前目录下未找到 DMG 文件。"
+            exit 1
+        fi
+        shopt -u nullglob
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: JimuFlow_MacOS_${{ github.ref }}.dmg
+        name: JimuFlow_MacOS.dmg
         path: dist/*.dmg
 
   build-for-windows:
@@ -69,6 +76,7 @@ jobs:
           pip install -r requirements-dev.txt
 
       - name: Build Application
+        shell: cmd
         run: |
           call .\scripts\windows\package_on_windows.bat
 
@@ -80,7 +88,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: JimuFlow_Windows_${{ github.ref }}.zip
+          name: JimuFlow_Windows.zip
           path: dist/*.zip
 
   build-for-ubuntu:
@@ -113,7 +121,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: JimuFlow_Ubuntu_${{ github.ref }}.tar.xz
+          name: JimuFlow_Ubuntu.tar.xz
           path: dist/*.tar.xz
 
 #  release:
