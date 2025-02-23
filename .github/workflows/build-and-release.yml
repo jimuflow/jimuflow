@@ -1,9 +1,9 @@
 name: Build and Release
 
 on:
-  pull_request:
-    branches:
-      - main
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   build-for-macos:
@@ -128,7 +128,6 @@ jobs:
   release:
     needs: [ "build-for-macos","build-for-windows","build-for-ubuntu" ]
     runs-on: ubuntu-latest
-    #    if: startsWith(github.ref, 'refs/tags/v')
 
     steps:
       - name: Download Windows artifact
@@ -155,16 +154,16 @@ jobs:
           ls -R ./macos
           ls -R ./ubuntu
           mkdir ./release_assets
-          mv ./windows/JimuFlow.zip ./release_assets/JimuFlow_Windows_v1.0.1-test.zip
-          mv ./macos/JimuFlow*.dmg ./release_assets/JimuFlow_MacOS_v1.0.1-test.dmg
-          mv ./ubuntu/JimuFlow.zip ./release_assets/JimuFlow_Ubuntu_v1.0.1-test.zip
+          mv ./windows/JimuFlow.zip ./release_assets/JimuFlow_Windows_${{ github.ref }}.zip
+          mv ./macos/JimuFlow*.dmg ./release_assets/JimuFlow_MacOS_${{ github.ref }}.dmg
+          mv ./ubuntu/JimuFlow.zip ./release_assets/JimuFlow_Ubuntu_${{ github.ref }}.zip
 
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v1.0.1
-          release_name: JimuFlow v1.0.1-test
+          tag_name: ${{ github.ref }}
+          release_name: JimuFlow ${{ github.ref }}
           draft: true
           prerelease: false
           files: |
