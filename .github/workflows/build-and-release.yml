@@ -11,187 +11,159 @@ jobs:
     runs-on: macos-13
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.10'
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install -r requirements-dev.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r requirements-dev.txt
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18.x'
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
 
-    - name: Install create-dmg
-      run: |
-        npm install -g create-dmg
+      - name: Install create-dmg
+        run: |
+          npm install -g create-dmg
 
-    - name: Build Application
-      run: |
-        /bin/bash scripts/package_on_macos.sh
+      - name: Build Application
+        run: |
+          /bin/bash scripts/package_on_macos.sh
 
-#    - name: Create ZIP
-#      shell: pwsh
-#      run: |
-#        cd dist
-#        zip -ry JimuFlow.app.zip JimuFlow.app
+      - name: Create dmg
+        run: |
+          cd dist
+          create-dmg JimuFlow.app || true
+          shopt -s nullglob
+          dmg_files=( *.dmg )
+          if [ ${#dmg_files[@]} -eq 0 ]; then
+              echo "当前目录下未找到 DMG 文件。"
+              exit 1
+          fi
+          shopt -u nullglob
 
-    - name: Create dmg
-      run: |
-        cd dist
-        create-dmg JimuFlow.app || true
-        shopt -s nullglob
-        dmg_files=( *.dmg )
-        if [ ${#dmg_files[@]} -eq 0 ]; then
-            echo "当前目录下未找到 DMG 文件。"
-            exit 1
-        fi
-        shopt -u nullglob
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: JimuFlow_MacOS
+          path: dist/*.dmg
 
-    - name: Upload artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: JimuFlow_MacOS
-        path: dist/*.dmg
+  build-for-windows:
 
-#  build-for-windows:
-#
-#    runs-on: windows-2022
-#
-#    steps:
-#      - name: Checkout code
-#        uses: actions/checkout@v4
-#
-#      - name: Set up Python
-#        uses: actions/setup-python@v2
-#        with:
-#          python-version: '3.10'
-#
-#      - name: Install dependencies
-#        run: |
-#          python -m pip install --upgrade pip
-#          pip install -r requirements.txt
-#          pip install -r requirements-dev.txt
-#
-#      - name: Build Application
-#        shell: cmd
-#        run: |
-#          call .\scripts\windows\package_on_windows.bat
-#
-#      - name: Create ZIP
-#        shell: pwsh
-#        run: |
-#          Compress-Archive -Path .\dist\JimuFlow -DestinationPath .\dist\JimuFlow.zip
-#
-#      - name: Upload artifact
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: JimuFlow_Windows.zip
-#          path: dist/*.zip
-#
-#  build-for-ubuntu:
-#
-#    runs-on: ubuntu-24.04
-#
-#    steps:
-#      - name: Checkout code
-#        uses: actions/checkout@v4
-#
-#      - name: Set up Python
-#        uses: actions/setup-python@v2
-#        with:
-#          python-version: '3.10'
-#
-#      - name: Install dependencies
-#        run: |
-#          python -m pip install --upgrade pip
-#          pip install -r requirements.txt
-#          pip install -r requirements-dev.txt
-#
-#      - name: Build Application
-#        run: |
-#          /bin/bash scripts/package_on_linux.sh
-#
-#      - name: Create tar.xz archive
-#        run: |
-#          cd dist
-#          tar -cJf JimuFlow.tar.xz JimuFlow
-#
-#      - name: Upload artifact
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: JimuFlow_Ubuntu.tar.xz
-#          path: dist/*.tar.xz
+    runs-on: windows-2022
 
-#  release:
-#    needs: build
-#    runs-on: ubuntu-latest
-#    if: startsWith(github.ref, 'refs/tags/v')
-#
-#    steps:
-#    - name: Create Release
-#      id: create_release
-#      uses: actions/create-release@v1
-#      env:
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#      with:
-#        tag_name: ${{ github.ref }}
-#        release_name: Release ${{ github.ref }}
-#        draft: false
-#        prerelease: false
-#
-#    - name: Download Windows artifact
-#      uses: actions/download-artifact@v2
-#      with:
-#        name: your_app_windows-latest
-#        path: ./windows
-#
-#    - name: Download macOS artifact
-#      uses: actions/download-artifact@v2
-#      with:
-#        name: your_app_macos-latest
-#        path: ./macos
-#
-#    - name: Download Ubuntu artifact
-#      uses: actions/download-artifact@v2
-#      with:
-#        name: your_app_ubuntu-latest
-#        path: ./ubuntu
-#
-#    - name: Upload Windows Release Asset
-#      uses: actions/upload-release-asset@v1
-#      env:
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#      with:
-#        upload_url: ${{ steps.create_release.outputs.upload_url }}
-#        asset_path: ./windows/your_app_windows-latest.exe
-#        asset_name: your_app_windows.exe
-#        asset_content_type: application/octet-stream
-#
-#    - name: Upload macOS Release Asset
-#      uses: actions/upload-release-asset@v1
-#      env:
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#      with:
-#        upload_url: ${{ steps.create_release.outputs.upload_url }}
-#        asset_path: ./macos/your_app_macos-latest
-#        asset_name: your_app_macos
-#        asset_content_type: application/octet-stream
-#
-#    - name: Upload Ubuntu Release Asset
-#      uses: actions/upload-release-asset@v1
-#      env:
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#      with:
-#        upload_url: ${{ steps.create_release.outputs.upload_url }}
-#        asset_path: ./ubuntu/your_app_ubuntu-latest
-#        asset_name: your_app_ubuntu
-#        asset_content_type: application/octet-stream
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r requirements-dev.txt
+
+      - name: Build Application
+        shell: cmd
+        run: |
+          call .\scripts\windows\package_on_windows.bat
+
+      - name: Create ZIP
+        shell: pwsh
+        run: |
+          Compress-Archive -Path .\dist\JimuFlow -DestinationPath .\dist\JimuFlow.zip
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: JimuFlow_Windows
+          path: dist/*.zip
+
+  build-for-ubuntu:
+
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r requirements-dev.txt
+
+      - name: Build Application
+        run: |
+          /bin/bash scripts/package_on_linux.sh
+
+      - name: Create ZIP
+        run: |
+          cd dist
+          zip -ry JimuFlow.zip JimuFlow
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: JimuFlow_Ubuntu
+          path: dist/*.zip
+
+  release:
+    needs: [ "build-for-macos","build-for-windows","build-for-ubuntu" ]
+    runs-on: ubuntu-latest
+    #    if: startsWith(github.ref, 'refs/tags/v')
+
+    steps:
+      - name: Download Windows artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: JimuFlow_Windows
+          path: ./windows
+
+      - name: Download macOS artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: JimuFlow_MacOS
+          path: ./macos
+
+      - name: Download Ubuntu artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: JimuFlow_Ubuntu
+          path: ./ubuntu
+
+      - name: Rename assets
+        run: |
+          mv ./windows/JimuFlow.zip ./JimuFlow_Windows_v1.0.1-test.zip
+          mv ./macos/JimuFlow.dmg ./JimuFlow_MacOS_v1.0.1-test.dmg
+          mv ./ubuntu/JimuFlow.zip ./JimuFlow_Ubuntu_v1.0.1-test.zip
+
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.1
+          release_name: JimuFlow v1.0.1-test
+          draft: true
+          prerelease: false
+          files: |
+            JimuFlow_Windows_v1.0.1-test.zip
+            JimuFlow_MacOS_v1.0.1-test.dmg
+            JimuFlow_Ubuntu_v1.0.1-test.zip
