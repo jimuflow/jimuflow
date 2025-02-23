@@ -154,9 +154,10 @@ jobs:
           ls -R ./windows
           ls -R ./macos
           ls -R ./ubuntu
-          mv ./windows/JimuFlow.zip ./JimuFlow_Windows_v1.0.1-test.zip
-          mv ./macos/JimuFlow.dmg ./JimuFlow_MacOS_v1.0.1-test.dmg
-          mv ./ubuntu/JimuFlow.zip ./JimuFlow_Ubuntu_v1.0.1-test.zip
+          mkdir ./release_assets
+          mv ./windows/JimuFlow.zip ./release_assets/JimuFlow_Windows_v1.0.1-test.zip
+          mv ./macos/JimuFlow*.dmg ./release_assets/JimuFlow_MacOS_v1.0.1-test.dmg
+          mv ./ubuntu/JimuFlow.zip ./release_assets/JimuFlow_Ubuntu_v1.0.1-test.zip
 
       - name: Create Release
         id: create_release
@@ -167,6 +168,4 @@ jobs:
           draft: true
           prerelease: false
           files: |
-            JimuFlow_Windows_v1.0.1-test.zip
-            JimuFlow_MacOS_v1.0.1-test.dmg
-            JimuFlow_Ubuntu_v1.0.1-test.zip
+            ./release_assets/*
