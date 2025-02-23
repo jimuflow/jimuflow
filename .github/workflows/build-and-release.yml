@@ -60,7 +60,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: JimuFlow_MacOS
-        path: dist/*.zip
+        path: dist/*.dmg
 
 #  build-for-windows:
 #
