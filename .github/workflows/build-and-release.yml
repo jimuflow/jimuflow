@@ -25,36 +25,42 @@ jobs:
         pip install -r requirements.txt
         pip install -r requirements-dev.txt
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18.x'
-
-    - name: Install create-dmg
-      run: |
-        npm install -g create-dmg
+#    - name: Set up Node.js
+#      uses: actions/setup-node@v4
+#      with:
+#        node-version: '18.x'
+#
+#    - name: Install create-dmg
+#      run: |
+#        npm install -g create-dmg
 
     - name: Build Application
       run: |
         /bin/bash scripts/package_on_macos.sh
 
-    - name: Create dmg
+    - name: Create ZIP
+      shell: pwsh
       run: |
         cd dist
-        create-dmg JimuFlow.app || true
-        shopt -s nullglob
-        dmg_files=( *.dmg )
-        if [ ${#dmg_files[@]} -eq 0 ]; then
-            echo "当前目录下未找到 DMG 文件。"
-            exit 1
-        fi
-        shopt -u nullglob
+        zip -ry JimuFlow.app.zip JimuFlow.app
+
+#    - name: Create dmg
+#      run: |
+#        cd dist
+#        create-dmg JimuFlow.app || true
+#        shopt -s nullglob
+#        dmg_files=( *.dmg )
+#        if [ ${#dmg_files[@]} -eq 0 ]; then
+#            echo "当前目录下未找到 DMG 文件。"
+#            exit 1
+#        fi
+#        shopt -u nullglob
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: JimuFlow_MacOS
-        path: dist/*.dmg
+        path: dist/*.zip
 
 #  build-for-windows:
 #
