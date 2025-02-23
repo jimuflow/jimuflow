@@ -5,8 +5,6 @@ old_pwd=$(pwd)
 cd $base_dir
 source venv/bin/activate
 
-#PLAYWRIGHT_BROWSERS_PATH=0 playwright install chromium
-
 python generate_version_info.py
 
 mkdocs build -f config/en/mkdocs_help.yml
@@ -25,7 +23,8 @@ for module in $MODULES; do
     HIDDEN_IMPORTS="$HIDDEN_IMPORTS --hidden-import=$module"
 done
 
-pyinstaller --name JimuFlow \
+# 生成pyinstaller的spec文件
+pyi-makespec --name JimuFlow \
   --icon jimuflow/icons/jimuflow.png \
   --add-data "jimuflow/locales/zh_CN/LC_MESSAGES/messages.mo:./jimuflow/locales/zh_CN/LC_MESSAGES" \
   --add-data "jimuflow/packages:./jimuflow/packages" \
@@ -43,9 +42,16 @@ pyinstaller --name JimuFlow \
   --noconsole \
   jimuflow/gui/main_window.py
 
-#cp -r venv/lib/python3.11/site-packages/playwright/driver/package/.local-browsers \
-#  dist/JimuFlow.app/Contents/Resources/playwright/driver/package
+# 自定义pyinstaller的spec文件，添加版本号
+python scripts/customize_macos_pyinstaller_spec.py
 
+# 生成macOS的app
+pyinstaller JimuFlow.spec
+
+# 安装浏览器
 PLAYWRIGHT_BROWSERS_PATH=dist/JimuFlow.app/Contents/Resources/playwright/driver/package/.local-browsers playwright install chromium
+
+# 添加文件后需要重新签名
+codesign --force --deep --sign - dist/JimuFlow.app
 
 cd $old_pwd
