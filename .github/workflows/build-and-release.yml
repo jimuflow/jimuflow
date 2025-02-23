@@ -154,16 +154,16 @@ jobs:
           ls -R ./macos
           ls -R ./ubuntu
           mkdir ./release_assets
-          mv ./windows/JimuFlow.zip ./release_assets/JimuFlow_Windows_${{ github.ref }}.zip
-          mv ./macos/JimuFlow*.dmg ./release_assets/JimuFlow_MacOS_${{ github.ref }}.dmg
-          mv ./ubuntu/JimuFlow.zip ./release_assets/JimuFlow_Ubuntu_${{ github.ref }}.zip
+          mv ./windows/JimuFlow.zip ./release_assets/JimuFlow_Windows_${{ github.ref_name }}.zip
+          mv ./macos/JimuFlow*.dmg ./release_assets/JimuFlow_MacOS_${{ github.ref_name }}.dmg
+          mv ./ubuntu/JimuFlow.zip ./release_assets/JimuFlow_Ubuntu_${{ github.ref_name }}.zip
 
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ github.ref }}
-          release_name: JimuFlow ${{ github.ref }}
+          tag_name: ${{ github.ref_name }}
+          release_name: JimuFlow ${{ github.ref_name }}
           draft: true
           prerelease: false
           files: |
