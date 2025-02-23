@@ -38,11 +38,11 @@ jobs:
       run: |
         /bin/bash scripts/package_on_macos.sh
 
-    - name: Create ZIP
-      shell: pwsh
-      run: |
-        cd dist
-        zip -ry JimuFlow.app.zip JimuFlow.app
+#    - name: Create ZIP
+#      shell: pwsh
+#      run: |
+#        cd dist
+#        zip -ry JimuFlow.app.zip JimuFlow.app
 
 #    - name: Create dmg
 #      run: |

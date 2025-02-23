@@ -54,4 +54,22 @@ PLAYWRIGHT_BROWSERS_PATH=dist/JimuFlow.app/Contents/Resources/playwright/driver/
 # 添加文件后需要重新签名
 codesign --force --deep --sign - dist/JimuFlow.app
 
+# 生成macOS的dmg
+cd dist
+git clone https://github.com/create-dmg/create-dmg.git
+cd ..
+mkdir dist/dmg
+mv dist/JimuFlow.app dist/dmg/JimuFlow.app
+dist/create-dmg/create-dmg \
+  --volname "JimuFlow" \
+  --background "scripts/dmg_bg.png" \
+  --window-pos 200 120 \
+  --window-size 800 400 \
+  --icon-size 100 \
+  --icon "JimuFlow.app" 200 190 \
+  --hide-extension "JimuFlow.app" \
+  --app-drop-link 600 185 \
+  "dist/JimuFlow.dmg" \
+  "dist/dmg"
+
 cd $old_pwd
