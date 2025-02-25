@@ -370,3 +370,10 @@ def move_text_cursor_to_end(control: UIAWrapper):
         document_range.Select()
     except comtypes.COMError:
         control.type_keys("^{END}", set_foreground=False)
+
+
+def set_control_text(control: UIAWrapper, text):
+    if hasattr(control, 'set_text'):
+        control.set_text(text)
+        return
+    control.iface_value.SetValue(text)

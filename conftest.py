@@ -47,3 +47,43 @@ def start_python_process():
     for process in started_processes:
         process.terminate()
         process.wait()
+
+
+@pytest.fixture(scope="function")
+def start_app_process():
+    started_processes = []
+
+    def _start_python_process(app_path, *args, wait_time=2):
+        # 构建命令
+        command = [app_path] + list(args)
+
+        # 启动子进程
+        if sys.platform == 'win32':
+            process = subprocess.Popen(
+                command,
+                creationflags=subprocess.DETACHED_PROCESS,
+                stdin=subprocess.DEVNULL,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL
+            )
+        else:
+            process = subprocess.Popen(
+                command,
+                start_new_session=True,
+                stdin=subprocess.DEVNULL,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL
+            )
+        started_processes.append(process)
+
+        if wait_time > 0:
+            # 等待应用启动，确保它已经在运行
+            time.sleep(wait_time)
+
+        return process
+
+    yield _start_python_process
+
+    for process in started_processes:
+        process.terminate()
+        process.wait()

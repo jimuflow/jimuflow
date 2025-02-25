@@ -13,8 +13,8 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
 # Copyright (C) 2024-2025  Weng Jing
-
 import sys
+from pathlib import Path
 
 from jimuflow.runtime.expression import escape_string
 
@@ -57,6 +57,54 @@ if sys.platform == "win32":
                     component,
                     "/Edit[@automation_id='QApplication.WindowInputTestApp.QTextEdit']",
                     "/Window[@automation_id='QApplication.WindowInputTestApp']"),
+                "content": escape_string(content),
+                "append": append,
+                "pressEnterAfterInput": press_enter_after_input,
+                "pressTabAfterInput": press_tab_after_input,
+                "inputMethod": input_method,
+                "includeShortcutKeys": include_shortcut_keys,
+                "clickBeforeInput": click_before_input,
+                "inputInterval": f'"{input_interval}"',
+                "delayAfterFocus": f'"{delay_after_focus}"',
+                "delayAfterAction": f'"{delay_after_action}"',
+                "waitTime": '"5"',
+            }
+            assert (await component.execute()) == ControlFlow.NEXT
+            assert edit.window_text() == expected
+
+
+    @pytest.mark.asyncio
+    @pytest.mark.parametrize(
+        "content,append,press_enter_after_input,press_tab_after_input,input_method,include_shortcut_keys,click_before_input,input_interval,delay_after_focus,delay_after_action,expected",
+        [
+            ("abc\n 中\t文", False, False, False, "simulate", False, True, 100, 1, 0, "abc\r 中\t文"),
+            ("abc\n 中\t文", False, False, False, "simulate", True, True, 100, 1, 0, "abc\r 中\t文"),
+            ("abc\n 中\t文", True, True, True, "simulate", True, False, 100, 1, 0, "你好hello\r第二行abc\r 中\t文\r\t"),
+            ("^{END}", False, False, False, "simulate", True, True, 100, 1, 0, ""),
+            ("abc\n 中\t文", False, False, False, "automate", False, False, 100, 1, 0, "abc\r 中\t文"),
+            (
+            "abc\n 中\t文", True, True, True, "automate", False, False, 100, 1, 0, "你好hello\r第二行abc\r 中\t文\r\t"),
+            ("^{END}", False, False, False, "automate", False, False, 100, 1, 0, "^{END}"),
+        ]
+    )
+    async def test_win_forms_rich_text_box(start_app_process, content, append, press_enter_after_input,
+                                           press_tab_after_input,
+                                           input_method, include_shortcut_keys, click_before_input, input_interval,
+                                           delay_after_focus,
+                                           delay_after_action, expected):
+        app_path = Path(__file__).parent / "../../windows_apps/JimuFlowWinFormsTestApp/JimuFlowWinFormsTestApp.exe"
+        start_app_process(str(app_path), wait_time=0)
+        edit: UIAWrapper = pywinauto.Desktop(backend='uia').window(
+            title="JimuFlow WinForms Test APP").child_window(
+            auto_id='richTextBox1').wrapper_object()
+        assert edit.window_text() == '你好hello\r第二行'
+
+        async with create_component_context(WindowInputComponent) as component:
+            component.node.inputs = {
+                "elementUri": add_test_window_element(
+                    component,
+                    "/Document[@automation_id='richTextBox1']",
+                    "/Window[@name='JimuFlow WinForms Test APP']"),
                 "content": escape_string(content),
                 "append": append,
                 "pressEnterAfterInput": press_enter_after_input,

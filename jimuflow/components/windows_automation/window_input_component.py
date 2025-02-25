@@ -33,7 +33,7 @@ class WindowInputComponent(PrimitiveComponent):
 
     async def execute(self) -> ControlFlow:
         from jimuflow.components.windows_automation.pywinauto_utill import get_element_by_uri, type_text, \
-            move_text_cursor_to_end
+            move_text_cursor_to_end, set_control_text
 
         element_uri = self.read_input("elementUri")
         wait_time = float(self.read_input("waitTime"))
@@ -61,7 +61,7 @@ class WindowInputComponent(PrimitiveComponent):
             if not append:
                 control_object.type_keys("^a{BACKSPACE}", pause=input_interval, set_foreground=False)
                 if control_object.window_text():
-                    control_object.set_text("")
+                    set_control_text(control_object, "")
             else:
                 move_text_cursor_to_end(control_object)
             if include_shortcut_keys:
@@ -72,7 +72,7 @@ class WindowInputComponent(PrimitiveComponent):
         else:
             if append:
                 content = control_object.window_text() + content
-            control_object.set_text(content)
+            set_control_text(control_object, content)
             move_text_cursor_to_end(control_object)
         if press_enter_after_input:
             control_object.type_keys("{ENTER}", set_foreground=False)

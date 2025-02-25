@@ -14,7 +14,6 @@
 #
 # Copyright (C) 2024-2025  Weng Jing
 
-import os
 import random
 import shutil
 import tempfile
@@ -94,8 +93,8 @@ def get_test_app_path():
     if is_macos():
         return "FindMy", "/System/Applications/FindMy.app"
     elif is_windows():
-        system_root = os.environ['SYSTEMROOT']
-        return "notepad.exe", os.path.join(system_root, 'System32', 'notepad.exe')
+        app_path = Path(__file__).parent / "windows_apps" / "JimuFlowWinFormsTestApp" / "JimuFlowWinFormsTestApp.exe"
+        return "JimuFlowWinFormsTestApp.exe", str(app_path)
     elif is_linux():
         return "gnome-calculator", "/usr/bin/gnome-calculator"
     else:
