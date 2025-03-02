@@ -84,6 +84,8 @@ def setup_logging_and_redirect():
                       f'{jimuflow.__version__} {jimuflow.__git_tag__} {jimuflow.__git_commit_date__}')
     logging.root.info("Python version: %s", sys.version)
     logging.root.info("Platform: %s", platform.platform())
-    logging.root.info("Host uname: %s", platform.uname())
+    uname_res = platform.uname()
+    logging.root.info("Host: system=%s, release=%s, version=%s, machine=%s, processor=%s", uname_res.system,
+                      uname_res.release, uname_res.version, uname_res.machine, uname_res.processor)
     logging.root.info("Host codepage=%s encoding=%s", locale.getpreferredencoding(), sys.getdefaultencoding())
     logging.root.info("Host offset from UTC is %s", get_timezone_offset())
