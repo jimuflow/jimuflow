@@ -18,7 +18,7 @@ from jimuflow.gui.setup_logging import setup_logging_and_redirect, get_log_file_
 
 setup_logging_and_redirect()
 from jimuflow.gui.utils import Utils
-from jimuflow.locales.settings import set_preferred_locale
+from jimuflow.locales.settings import set_preferred_locale, get_current_locale
 
 set_preferred_locale(Utils.get_language())
 import sys
@@ -33,8 +33,8 @@ import traceback
 from asyncio import AbstractEventLoop, Task
 from pathlib import Path
 
-from PySide6.QtCore import Slot, QThread, Signal, QSize
-from PySide6.QtGui import QAction, Qt, QIcon, QKeySequence
+from PySide6.QtCore import Slot, QThread, Signal, QSize, QUrl
+from PySide6.QtGui import QAction, Qt, QIcon, QKeySequence, QDesktopServices
 from PySide6.QtWidgets import QMainWindow, QApplication, QLabel, QTabWidget, QSplitter, QVBoxLayout, QWidget, \
     QFileDialog, QDialog, QMessageBox
 
@@ -210,6 +210,9 @@ class MainWindow(QMainWindow, DebugListener):
         self._show_log_act = QAction(gettext('Show Log File'), self)
         self._show_log_act.triggered.connect(self._show_log_file)
 
+        self._submit_feedback_act = QAction(gettext('Submit Feedback...'), self)
+        self._submit_feedback_act.triggered.connect(self._submit_feedback)
+
     def create_menus(self):
         file_menu = self.menuBar().addMenu(gettext('File'))
         file_menu.addAction(self._new_app_act)
@@ -247,6 +250,7 @@ class MainWindow(QMainWindow, DebugListener):
         help_menu.addAction(self._settings_act)
         help_menu.addAction(self._help_act)
         help_menu.addAction(self._show_log_act)
+        help_menu.addAction(self._submit_feedback_act)
 
     def create_tool_bar(self):
         tool_bar = self.addToolBar('Main')
@@ -268,6 +272,8 @@ class MainWindow(QMainWindow, DebugListener):
         tool_bar.addAction(self._step_into_act)
         tool_bar.addAction(self._step_out_act)
         tool_bar.addAction(self._stop_act)
+        tool_bar.addSeparator()
+        tool_bar.addAction(self._submit_feedback_act)
 
     def create_left_widget(self):
         left_widget = QSplitter()
@@ -810,6 +816,12 @@ class MainWindow(QMainWindow, DebugListener):
             QMessageBox.warning(self, gettext('Error'),
                                 gettext('Unable to open automatically, please access manually: {path}').format(
                                     path=log_file_path))
+
+    @Slot()
+    def _submit_feedback(self):
+        url = "https://gitee.com/incoding/jimuflow/issues" if get_current_locale() == 'zh_CN' else \
+            "https://github.com/jimuflow/jimuflow/issues"
+        QDesktopServices.openUrl(QUrl(url))
 
 
 def main():

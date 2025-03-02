@@ -2003,6 +2003,9 @@ msgstr "设置..."
 msgid "Show Log File"
 msgstr "显示日志文件"
 
+msgid "Submit Feedback..."
+msgstr "提交反馈..."
+
 msgid "File"
 msgstr "文件"
 
