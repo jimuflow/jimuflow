@@ -18,13 +18,18 @@ import locale
 import logging
 import os
 import platform
+import re
 import sys
 import time
+from datetime import datetime
 
 import jimuflow
 
+log_file_name = jimuflow.__project_name__.lower() + "_" + datetime.now().strftime("%Y%m%d_%H%M%S") + ".log"
+log_file_name_pattern = re.compile(r"^" + re.escape(jimuflow.__project_name__.lower()) + r"_\d{8}_\d{6}\.log$")
 
-def get_log_file_path(log_file_name="app.log"):
+
+def get_log_file_path():
     platform_name = platform.system()
     if platform_name == 'Windows':
         local_appdata_dir = os.getenv('LOCALAPPDATA')  # 获取 LocalAppData 路径
@@ -55,21 +60,20 @@ LOGGING_FORMAT = "%(asctime)s %(levelname)s %(name)s %(threadName)s %(filename)s
 
 
 def setup_logging_and_redirect():
+    # 获取最新的日志文件
+    log_file_path = get_log_file_path()
     if not getattr(sys, 'frozen', False):
         # 开发环境
         logging.basicConfig(
             level=logging.DEBUG,
             format=LOGGING_FORMAT,
             handlers=[
-                logging.StreamHandler(sys.stdout)
+                logging.StreamHandler(sys.stdout),
+                logging.FileHandler(log_file_path, encoding="utf-8"),
             ]
         )
     else:
         # 打包环境
-        log_file_path = get_log_file_path()
-        if os.path.exists(log_file_path):
-            # 删除旧日志
-            os.remove(log_file_path)
         logging.basicConfig(
             level=logging.INFO,
             format=LOGGING_FORMAT,
@@ -89,3 +93,13 @@ def setup_logging_and_redirect():
                       uname_res.release, uname_res.version, uname_res.machine, uname_res.processor)
     logging.root.info("Host codepage=%s encoding=%s", locale.getpreferredencoding(), sys.getdefaultencoding())
     logging.root.info("Host offset from UTC is %s", get_timezone_offset())
+    # 删除旧的日志文件，只保留最近10个日志文件
+    log_dir = os.path.dirname(log_file_path)
+    old_log_files = []
+    for filename in os.listdir(log_dir):
+        if log_file_name_pattern.match(filename):
+            old_log_files.append(filename)
+    old_log_files.sort(reverse=True)
+    for filename in old_log_files[9:]:
+        os.remove(os.path.join(log_dir, filename))
+        logging.root.info("Delete old log file: %s", filename)
