@@ -1,11 +1,13 @@
 msgid "Unknown element"
 msgstr "未知元素"
 
+#, python-brace-format
 msgid ""
 "Add suffix ##{addText}## to ##{originalText}##, and save the result to "
 "##{result}##"
 msgstr "为##{originalText}##添加后缀##{addText}##，并将结果保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Add prefix ##{addText}## to ##{originalText}##, and save the result to "
 "##{result}##"
@@ -23,35 +25,43 @@ msgstr "小写"
 msgid "capitalized"
 msgstr "首字母大写"
 
+#, python-brace-format
 msgid ""
 "Convert ##{original_text}## to ##{change_type}##, and save the result to "
 "##{result}##"
 msgstr "将##{original_text}##转换为##{change_type}##，并将结果保存到##{result}##"
 
+#, python-brace-format
 msgid "Unknown case change type: {change_type}"
 msgstr "未知的大小写转换类型: {change_type}"
 
+#, python-brace-format
 msgid ""
 "Check if the process with the given pid ##{pid}## exists, and save the "
 "result to ##{result}##"
 msgstr "检查进程##{pid}##是否存在，并将结果保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Check if the process with the given name ##{name}## exists, and save the "
 "result to ##{result}##"
 msgstr "检查进程##{name}##是否存在，并将结果保存到##{result}##"
 
+#, python-brace-format
 msgid "Clear folder ##{folderPath}##"
 msgstr "清空文件夹##{folderPath}##"
 
+#, python-brace-format
 msgid ""
 "Compress ##{filePath}## to ##{packageName}##, and save the compressed "
 "package path to ##{packagePath}##"
 msgstr "将##{filePath}##压缩到##{packageName}##，并将压缩包路径保存到##{packagePath}##"
 
+#, python-brace-format
 msgid "File {file} already exists"
 msgstr "文件{file}已存在"
 
+#, python-brace-format
 msgid "{source_path} is not a valid file or directory."
 msgstr "{source_path}不是有效的文件或文件夹。"
 
@@ -103,6 +113,7 @@ msgstr "为真"
 msgid "is false"
 msgstr "为假"
 
+#, python-brace-format
 msgid "Unsupported operator: {op}"
 msgstr "不支持的操作符: {op}"
 
@@ -118,11 +129,13 @@ msgstr "当目标文件存在时自动重命名文件"
 msgid "execute error handling when target file exists"
 msgstr "当目标文件存在时执行错误处理"
 
+#, python-brace-format
 msgid ""
 "Copy ##{filePath}## to ##{targetFolder}##, {actionWhenExists}, and save "
 "the new file path to ##{newFilePath}##"
 msgstr "将##{filePath}##复制到##{targetFolder}##，{actionWhenExists}，并将新文件路径保存到##{newFilePath}##"
 
+#, python-brace-format
 msgid "File {file_path} already exists"
 msgstr "文件{file_path}已存在"
 
@@ -135,35 +148,43 @@ msgstr "当目标文件夹存在时自动重命名文件夹"
 msgid "execute error handling when target folder exists"
 msgstr "当目标文件夹存在时执行错误处理"
 
+#, python-brace-format
 msgid ""
 "Copy ##{folderPath}## to ##{targetFolder}##, {actionWhenExists}, and save"
 " the new folder path to ##{newFolderPath}##"
 msgstr "将##{folderPath}##复制到##{targetFolder}##，{actionWhenExists}，并将新文件夹路径保存到##{newFolderPath}##"
 
+#, python-brace-format
 msgid "Folder {file_path} already exists"
 msgstr "文件夹{file_path}已存在"
 
+#, python-brace-format
 msgid "Create Date today, and save the result to ##{result}##"
 msgstr "获取今天的日期，并将结果保存到 ##{result}##"
 
+#, python-brace-format
 msgid ""
 "Create Date from timestamp ##{timestamp}##, and save the result to "
 "##{result}##"
 msgstr "使用时间戳 ##{timestamp}## 创建日期，并将结果保存到 ##{result}##"
 
+#, python-brace-format
 msgid ""
 "Create Date from string ##{date_string}## with format ##{date_format}##, "
 "and save the result to ##{result}##"
 msgstr "使用##{date_format}##格式的日期字符串##{date_string}##创建日期，并将结果保存到 ##{result}##"
 
+#, python-brace-format
 msgid "Create DateTime now, and save the result to ##{result}##"
 msgstr "获取当前日期时间，并将结果保存到 ##{result}##"
 
+#, python-brace-format
 msgid ""
 "Create DateTime from timestamp ##{timestamp}##, and save the result to "
 "##{result}##"
 msgstr "使用时间戳 ##{timestamp}## 创建日期时间，并将结果保存到 ##{result}##"
 
+#, python-brace-format
 msgid ""
 "Create DateTime from string ##{datetime_string}## with format "
 "##{datetime_format}##, and save the result to ##{result}##"
@@ -171,45 +192,57 @@ msgstr ""
 "使用##{datetime_format}##格式的日期时间字符串##{datetime_string}##创建日期时间，并将结果保存到 "
 "##{result}##"
 
+#, python-brace-format
 msgid "Create dictionary ##{dict}##"
 msgstr "创建字典##{dict}##"
 
+#, python-brace-format
 msgid ""
 "Create folder ##{newFolderName}## under ##{parentFolder}##, and save the "
 "new folder path to ##{newFolderPath}##"
 msgstr "在##{parentFolder}##下新建文件夹##{newFolderName}##，并将新文件夹路径保存到##{newFolderPath}##"
 
+#, python-brace-format
 msgid "Create list ##{list}##"
 msgstr "创建列表##{list}##"
 
+#, python-brace-format
 msgid "Create Time now, and save the result to ##{result}##"
 msgstr "获取当前时间，并将结果保存到 ##{result}##"
 
+#, python-brace-format
 msgid ""
 "Create Time from string ##{time_string}## with format ##{time_format}##, "
 "and save the result to ##{result}##"
 msgstr "使用##{time_format}##格式的时间字符串##{time_string}##创建时间，并将结果保存到 ##{result}##"
 
+#, python-brace-format
 msgid "Decompress ##{filePath}##, and save the result folder to ##{result}##"
 msgstr "解压缩##{filePath}##，并将解压缩后的文件夹保存到##{result}##"
 
+#, python-brace-format
 msgid "Delete key ##{key}## in dictionary ##{dict}##"
 msgstr "删除字典##{dict}##中的键##{key}##"
 
+#, python-brace-format
 msgid "Delete ##{filePath}##"
 msgstr "删除##{filePath}##"
 
+#, python-brace-format
 msgid "Delete item at position ##{position}## in list ##{list}##"
 msgstr "删除列表##{list}##中的第##{position}##项"
 
+#, python-brace-format
 msgid "Delete item ##{value}## in list ##{list}##"
 msgstr "删除列表##{list}##中的项##{value}##"
 
+#, python-brace-format
 msgid ""
 "Loop through each item in the dictionary ##{dict}##, saving the current "
 "item to ##{loopItem}##"
 msgstr "循环遍历字典##{dict}##的每个项目，将当前项目保存到##{loopItem}##"
 
+#, python-brace-format
 msgid ""
 "Calculate the ##{timeUnit}## interval from ##{startingDate}## to "
 "##{endDate}##, and save the result to ##{timeDifference}##"
@@ -227,116 +260,144 @@ msgstr "小时"
 msgid "days"
 msgstr "天"
 
+#, python-brace-format
 msgid "Unknown time unit: {unit}"
 msgstr "未知时间单位: {unit}"
 
 msgid "If none of the previous conditions are met, the branch is executed."
 msgstr "如果之前的If条件均不匹配，则执行该分支。"
 
+#, python-brace-format
 msgid "Execute command ##{cmd}##, and save the command output to ##{result}##"
 msgstr "执行命令行##{cmd}##，并将命令行输出保存到##{result}##"
 
+#, python-brace-format
 msgid "Command failed with exit code {code}: {error}"
 msgstr "命令失败，退出代码为{code}: {error}"
 
 msgid "Exit current application"
 msgstr "终止当前应用"
 
+#, python-brace-format
 msgid ""
 "Format ##{datetime}## to a string using format ##{datetimeFormat}##, and "
 "save the result to ##{result}##"
 msgstr "使用##{datetimeFormat}##格式将##{datetime}##格式化成字符串，结果保存到##{result}##"
 
+#, python-brace-format
 msgid "Get clipboard text, and save the result to ##{result}##"
 msgstr "获取剪贴板文本，并将结果保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Get file path info of ##{filePath}##, and save the result to "
 "##{filePathInfo}##"
 msgstr "获取##{filePath}##的路径信息，并将结果保存到##{filePathInfo}##"
 
+#, python-brace-format
 msgid "If ##{operand1}## ##{op}## ##{operand2}##, perform the following actions"
 msgstr "如果##{operand1}## ##{op}## ##{operand2}##, 执行以下操作"
 
+#, python-brace-format
 msgid "If ##{operand1}## ##{op}##, perform the following actions"
 msgstr "如果##{operand1}## ##{op}##, 执行以下操作"
 
+#, python-brace-format
 msgid "Condition matched: {matched}"
 msgstr "条件匹配：{matched}"
 
+#, python-brace-format
 msgid "##{operand1}## ##{op}## ##{operand2}##"
 msgstr "##{operand1}## ##{op}## ##{operand2}##"
 
+#, python-brace-format
 msgid "##{operand1}## ##{op}##"
 msgstr "##{operand1}## ##{op}##"
 
+#, python-brace-format
 msgid "If satisfy all conditions of [{conditions}], perform the following actions"
 msgstr "如果满足所有条件[{conditions}]，执行以下操作"
 
+#, python-brace-format
 msgid "If satisfy any condition of [{conditions}], perform the following actions"
 msgstr "如果满足任一条件[{conditions}]，执行以下操作"
 
+#, python-brace-format
 msgid "Infinite loop, saving the current number of cycles to ##{loopIndex}##"
 msgstr "无限循环，将当前循环次数保存到##{loopIndex}##"
 
+#, python-brace-format
 msgid "Append ##{value}## to list ##{list}##"
 msgstr "在列表##{list}##末尾添加##{value}##"
 
+#, python-brace-format
 msgid "Insert ##{value}## at position ##{insertPosition}## in list ##{list}##"
 msgstr "在列表##{list}##的第##{insertPosition}##项前插入##{value}##"
 
+#, python-brace-format
 msgid "Kill process with pid ##{pid}##"
 msgstr "终止pid为##{pid}##的进程"
 
+#, python-brace-format
 msgid "Kill process with name ##{name}##"
 msgstr "终止名为##{name}##的进程"
 
 msgid "Process not found"
 msgstr "进程未找到"
 
+#, python-brace-format
 msgid "Launch application ##{appPath}##, and save the pid to ##{pid}##"
 msgstr "启动应用程序##{appPath}##，并将PID保存到##{pid}##"
 
+#, python-brace-format
 msgid ""
 "Find files under ##{folder}## that match the ##{filenamePattern}## naming"
 " rule and save the results in ##{result}##"
 msgstr "在##{folder}##下查找匹配##{filenamePattern}##命名规则的文件，并将结果列表保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Loop through each item in the list ##{list}##, saving the current item to"
 " ##{loopItem}##"
 msgstr "循环遍历列表##{list}##的每个项目，将当前项目保存到##{loopItem}##"
 
+#, python-brace-format
 msgid ""
 "Loop from ##{start}## to ##{end}##, saving the current number of cycles "
 "to ##{loopIndex}##"
 msgstr "从##{start}##循环到##{end}##，将当前循环次数保存到##{loopIndex}##"
 
+#, python-brace-format
 msgid ""
 "Merge list ##{firstList}## with ##{secondList}##, saving result to "
 "##{list}##"
 msgstr "合并列表##{firstList}##与##{secondList}##，结果保存到##{list}##"
 
+#, python-brace-format
 msgid ""
 "Move ##{filePath}## to ##{targetFolder}##, {actionWhenExists}, and save "
 "the new file path to ##{newFilePath}##"
 msgstr "将##{filePath}##移动到##{targetFolder}##，{actionWhenExists}，并将新文件路径保存到##{newFilePath}##"
 
+#, python-brace-format
 msgid ""
 "Move ##{folderPath}## to ##{targetFolder}##, {actionWhenExists}, and save"
 " the new folder path to ##{newFolderPath}##"
 msgstr "将##{folderPath}##移动到##{targetFolder}##，{actionWhenExists}，并将新文件夹路径保存到##{newFolderPath}##"
 
+#, python-brace-format
 msgid ""
 "Convert ##{value}## to a string, retain ##{scale}## decimal places, add a"
 " thousand separator, and save the result to ##{result}##"
 msgstr "将##{value}##转换为字符串，保留##{scale}##位小数，添加千分位分隔符，并保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Convert ##{value}## to a string, retain ##{scale}## decimal places, and "
 "save the result to ##{result}##"
 msgstr "将##{value}##转换为字符串，保留##{scale}##位小数，并保存到##{result}##"
 
+#, python-brace-format
 msgid "Convert object ##{obj}## to json text, and save the result to ##{result}##"
 msgstr "将对象##{obj}##转换为Json文本，并将结果保存到##{result}##"
 
@@ -370,27 +431,33 @@ msgstr "GB2312"
 msgid "GB18030"
 msgstr "GB18030"
 
+#, python-brace-format
 msgid "Parse json text ##{jsonText}##, and save the result to ##{result}##"
 msgstr "解析Json文本##{jsonText}##，并将结果保存到##{result}##"
 
+#, python-brace-format
 msgid "Print message ##{message}##"
 msgstr "打印消息##{message}##"
 
+#, python-brace-format
 msgid ""
 "Generates a random integer between ##{start}## and ##{end}##, then save "
 "to ##{randomInt}##"
 msgstr "生成一个##{start}##到##{end}##之间的随机整数，然后保存到##{randomInt}##"
 
+#, python-brace-format
 msgid ""
 "Read ##{filePath}## using encoding ##{fileEncoding}##, and save the "
 "result to ##{result}##"
 msgstr "使用编码##{fileEncoding}##读取##{filePath}##，并将结果保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Find the first ##{regex}## in text ##{originalText}## and save the "
 "matched text to ##{result}##"
 msgstr "在文本##{originalText}##中查找第一个##{regex}##，并将匹配的文本保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Find all ##{regex}## in text ##{originalText}## and save the matched text"
 " list to ##{result}##"
@@ -402,11 +469,13 @@ msgstr "如果新文件已存在，则取消重命名"
 msgid "and overwrite the existing file if the new file exists"
 msgstr "如果新文件已存在，则覆盖已有文件"
 
+#, python-brace-format
 msgid ""
 "Rename ##{filePath}## to ##{newFilename}##, {action_when_exists_desc}, "
 "and save the new file path to ##{newFilePath}##"
 msgstr "将##{filePath}##重命名为##{newFilename}##，{action_when_exists_desc}，并将新文件路径保存到##{newFilePath}##"
 
+#, python-brace-format
 msgid "File {file_path} already exists, cancel renaming"
 msgstr "文件{file_path}已存在，取消重命名"
 
@@ -416,20 +485,24 @@ msgstr "如果新文件夹已存在，则取消重命名"
 msgid "and overwrite the existing file if the new folder exists"
 msgstr "如果新文件夹已存在，则覆盖已有文件夹"
 
+#, python-brace-format
 msgid ""
 "Rename ##{folderPath}## to ##{newFolderName}##, "
 "{action_when_exists_desc}, and save the new folder path to "
 "##{newFolderPath}##"
 msgstr "将##{folderPath}##重命名为##{newFolderName}##，{action_when_exists_desc}，并将新文件夹路径保存到##{newFolderPath}##"
 
+#, python-brace-format
 msgid "Folder {folder_path} already exists, cancel renaming"
 msgstr "文件夹{folder_path}已存在，取消重命名"
 
+#, python-brace-format
 msgid ""
 "Replace the first ##{something_to_replace}## in text ##{originalText}## "
 "with ##{replacementText}## and save the result to ##{result}##"
 msgstr "将##{originalText}##中的##{something_to_replace}##替换为##{replacementText}##，并将结果保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Replace all ##{something_to_replace}## in text ##{originalText}## with "
 "##{replacementText}## and save the result to ##{result}##"
@@ -438,41 +511,51 @@ msgstr "将##{originalText}##中的所有##{something_to_replace}##替换为##{r
 msgid "End the current process and return to the previous process"
 msgstr "结束当前流程，返回到上一流程"
 
+#, python-brace-format
 msgid "Reverse list ##{list}##"
 msgstr "反转列表##{list}##"
 
+#, python-brace-format
 msgid "Copy text ##{textContent}## to clipboard"
 msgstr "将文本##{textContent}##复制到剪贴板"
 
+#, python-brace-format
 msgid "Set ##{key}## = ##{value}## in dictionary ##{dict}##"
 msgstr "在字典##{dict}##中设置##{key}## = ##{value}##"
 
+#, python-brace-format
 msgid "Set variable ##{result}## = ##{value}##"
 msgstr "设置变量##{result}## = ##{value}##"
 
 msgid "from the first character"
 msgstr "从第一个字符开始"
 
+#, python-brace-format
 msgid "from the specified location ##{startingPosition}##"
 msgstr "从指定位置 ##{startingPosition}## 开始"
 
+#, python-brace-format
 msgid "from the specified text ##{startingText}##"
 msgstr "从指定文本 ##{startingText}## 开始"
 
 msgid "to the end of the text"
 msgstr "到文本末尾"
 
+#, python-brace-format
 msgid "to the specified length ##{slicedLength}##"
 msgstr "到指定长度 ##{slicedLength}##"
 
+#, python-brace-format
 msgid ""
 "Slice ##{originalText}## {from_description} {to_description}, and save "
 "the result to ##{result}##"
 msgstr "截取##{originalText}##，{from_description}，{to_description}，并将结果保存到##{result}##"
 
+#, python-brace-format
 msgid "Sort list ##{list}## in ascending order"
 msgstr "按升序对列表##{list}##排序"
 
+#, python-brace-format
 msgid "Sort list ##{list}## in descending order"
 msgstr "按降序对列表##{list}##排序"
 
@@ -485,57 +568,69 @@ msgstr "换行符"
 msgid "tab character"
 msgstr "制表符"
 
+#, python-brace-format
 msgid ""
 "Split ##{textToBeSplit}## by ##{standardDelimiter}##, filter empty items,"
 " and save the result to ##{result}##"
 msgstr "按##{standardDelimiter}##拆分##{textToBeSplit}##，过滤空项，并将结果保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Split ##{textToBeSplit}## by ##{standardDelimiter}##, and save the result"
 " to ##{result}##"
 msgstr "按##{standardDelimiter}##拆分##{textToBeSplit}##，并将结果保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Split ##{textToBeSplit}## by regular expression ##{customDelimiter}##, "
 "filter empty items, and save the result to ##{result}##"
 msgstr "使用正则表达式##{customDelimiter}##拆分##{textToBeSplit}##，过滤空项，并将结果保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Split ##{textToBeSplit}## by regular expression ##{customDelimiter}##, "
 "and save the result to ##{result}##"
 msgstr "使用正则表达式##{customDelimiter}##拆分##{textToBeSplit}##，并将结果保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Split ##{textToBeSplit}## by ##{customDelimiter}##, filter empty items, "
 "and save the result to ##{result}##"
 msgstr "按##{customDelimiter}##拆分##{textToBeSplit}##，过滤空项，并将结果保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Split ##{textToBeSplit}## by ##{customDelimiter}##, and save the result "
 "to ##{result}##"
 msgstr "按##{customDelimiter}##拆分##{textToBeSplit}##，并将结果保存到##{result}##"
 
+#, python-brace-format
 msgid "Convert ##{value}## to a number, and save the result to ##{result}##"
 msgstr "将##{value}##转换为数值，并将结果保存到 ##{result}##"
 
+#, python-brace-format
 msgid "Wait ##{seconds}## seconds"
 msgstr "等待##{seconds}##秒"
 
+#, python-brace-format
 msgid ""
 "Remove blank characters on both sides of ##{originalText}##, and save the"
 " result to ##{result}##"
 msgstr "去除##{originalText}##两边的空格，并将结果保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Remove blank characters on the left side of ##{originalText}##, and save "
 "the result to ##{result}##"
 msgstr "去除##{originalText}##左边的空格，并将结果保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Remove blank characters on the right side of ##{originalText}##, and save"
 " the result to ##{result}##"
 msgstr "去除##{originalText}##右边的空格，并将结果保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Update ##{originalDateTime}##, {adjustmentType} ##{adjustmentValue}## "
 "##{adjustmentUnit}##, and save the result to ##{result}##"
@@ -562,80 +657,105 @@ msgstr "月"
 msgid "years"
 msgstr "年"
 
+#, python-brace-format
 msgid "Unknown adjustment unit: {unit}"
 msgstr "未知调整单位: {unit}"
 
+#, python-brace-format
 msgid "Update item at position ##{position}## in list ##{list}## to ##{value}##"
 msgstr "更新列表##{list}##中的第##{position}##项为##{value}##"
 
+#, python-brace-format
 msgid "Url decode ##{textToDecode}##, and save the result to ##{result}##"
 msgstr "对##{textToDecode}##进行URL解码，并将结果保存到##{result}##"
 
+#, python-brace-format
 msgid "Url encode ##{textToEncode}##, and save the result to ##{result}##"
 msgstr "对##{textToEncode}##进行URL编码，并将结果保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Write ##{writeContent}## to ##{filePath}## using encoding "
 "##{fileEncoding}##"
 msgstr "将##{writeContent}##写入到##{filePath}##，使用编码##{fileEncoding}##"
 
+#, python-brace-format
 msgid "Find the image ##{image}## on the screen and move the mouse to the image"
 msgstr "在屏幕上找到图像##{image}##，然后将鼠标移动到图像上"
 
+#, python-brace-format
 msgid "Found image at {location}"
 msgstr "在{location}处找到图片"
 
+#, python-brace-format
 msgid "Type text ##{textContent}## in the current window"
 msgstr "在当前窗口中输入文本##{textContent}##"
 
+#, python-brace-format
 msgid "Press the hotkey ##{hotkey}##"
 msgstr "按快捷键##{hotkey}##"
 
+#, python-brace-format
 msgid "{clickType} {mouseButton}"
 msgstr "{clickType}{mouseButton}"
 
+#, python-brace-format
 msgid "{modifierKey} + {clickType} {mouseButton}"
 msgstr "{modifierKey} + {clickType}{mouseButton}"
 
+#, python-brace-format
 msgid "Scroll up ##{number_of_scrolls}## times"
 msgstr "向上滚动##{number_of_scrolls}##次"
 
+#, python-brace-format
 msgid "Scroll down ##{number_of_scrolls}## times"
 msgstr "向下滚动##{number_of_scrolls}##次"
 
+#, python-brace-format
 msgid "{modifierKey} + Scroll up ##{number_of_scrolls}## times"
 msgstr "{modifierKey} + 向上滚动##{number_of_scrolls}##次"
 
+#, python-brace-format
 msgid "{modifierKey} + Scroll down ##{number_of_scrolls}## times"
 msgstr "{modifierKey} + 向下滚动##{number_of_scrolls}##次"
 
+#, python-brace-format
 msgid ""
 "Move the mouse to (##{offsetX}##,##{offsetY}##) position relative to the "
 "current position"
 msgstr "将鼠标移动到相对于当前位置的(##{offsetX}##,##{offsetY}##)位置"
 
+#, python-brace-format
 msgid ""
 "Move the mouse to (##{offsetX}##,##{offsetY}##) position relative to the "
 "upper left corner of the screen"
 msgstr "将鼠标移动到相对于屏幕左上角的(##{offsetX}##,##{offsetY}##)位置"
 
+msgid "Send ##{method}## request to ##{url}##"
+msgstr "发送##{method}##请求到##{url}##"
+
+#, python-brace-format
 msgid "Add column ##{columnName}## to ##{table}##"
 msgstr "向 ##{table}## 新增名为 ##{columnName}## 的列"
 
 msgid "Create data table"
 msgstr "创建数据表格"
 
+#, python-brace-format
 msgid "Delete all rows of ##{table}##"
 msgstr "删除 ##{table}## 的所有行"
 
+#, python-brace-format
 msgid "Delete row ##{rowNo}## of ##{table}##"
 msgstr "删除 ##{table}## 的第 ##{rowNo}## 行"
 
+#, python-brace-format
 msgid ""
 "Export table ##{table}## to ##{fileFormat}## file in ##{saveFolder}## "
 "with random file name"
 msgstr "将 ##{table}## 导出为 ##{saveFolder}## 下的 ##{fileFormat}## 文件，并使用随机文件名"
 
+#, python-brace-format
 msgid ""
 "Export table ##{table}## to ##{fileFormat}## file in ##{saveFolder}## "
 "with file name ##{customFilename}##"
@@ -643,30 +763,37 @@ msgstr ""
 "将 ##{table}## 导出为 ##{saveFolder}## 下名为 ##{customFilename}## 的 "
 "##{fileFormat}## 文件"
 
+#, python-brace-format
 msgid "File already exists: {file_path}"
 msgstr "文件已存在: {file_path}"
 
+#, python-brace-format
 msgid "Unsupported file format: {file_format}"
 msgstr "不支持的文件格式: {file_format}"
 
+#, python-brace-format
 msgid "Import csv file ##{filePath}## as table ##{table}##"
 msgstr "将 ##{filePath}## 导入为 ##{table}##"
 
+#, python-brace-format
 msgid ""
 "Import excel file ##{filePath}## as table ##{table}##, select sheet by "
 "index ##{sheetIndex}##"
 msgstr "将 ##{filePath}## 中索引为 ##{sheetIndex}## 的工作表导入为 ##{table}##"
 
+#, python-brace-format
 msgid ""
 "Import excel file ##{filePath}## as table ##{table}##, select sheet by "
 "name ##{sheetName}##"
 msgstr "将 ##{filePath}## 中名为 ##{sheetName}# 的工作表导入为 ##{table}##"
 
+#, python-brace-format
 msgid ""
 "Loop through all rows of table ##{table}##, save current row to "
 "##{currentRow}##"
 msgstr "循环遍历 ##{table}## 的所有行，将当前行保存到 ##{currentRow}##"
 
+#, python-brace-format
 msgid ""
 "Loop through row ##{startRowNo}## to row ##{endRowNo}## of table "
 "##{table}##, save current row to ##{currentRow}##"
@@ -674,20 +801,25 @@ msgstr ""
 "循环遍历 ##{table}## 的第 ##{startRowNo}## 行到 ##{endRowNo}## 行，将当前行保存到 "
 "##{currentRow}##"
 
+#, python-brace-format
 msgid "Read row ##{rowNo}## of table ##{table}##, save result to ##{result}##"
 msgstr "读取 ##{table}## 的第 ##{rowNo}## 行，结果保存到 ##{result}##"
 
+#, python-brace-format
 msgid ""
 "Read row ##{rowNo}## and column ##{columnNo}## of table ##{table}##, save"
 " result to ##{result}##"
 msgstr "读取 ##{table}## 的第 ##{rowNo}## 行和第 ##{columnNo}## 列，结果保存到 ##{result}##"
 
+#, python-brace-format
 msgid "Unsupported read type: {read_type}"
 msgstr "不支持的读取类型: {read_type}"
 
+#, python-brace-format
 msgid "Row no is out of range: {row_no}"
 msgstr "行号超出范围: {row_no}"
 
+#, python-brace-format
 msgid ""
 "Write the value ##{value}## to row ##{row_no}##, column ##{column_no}## "
 "of table ##{table}##"
@@ -696,12 +828,15 @@ msgstr "向 ##{table}## 的 ##{row_no}## 行 ##{column_no}## 列写入值 ##{val
 msgid "Invalid row type"
 msgstr "非法的行类型"
 
+#, python-brace-format
 msgid "Append a row to table ##{table}##"
 msgstr "向 ##{table}## 追加一行"
 
+#, python-brace-format
 msgid "Insert a row to table ##{table}##"
 msgstr "向 ##{table}## 插入一行"
 
+#, python-brace-format
 msgid "Update a row in table ##{table}##"
 msgstr "更新 ##{table}## 的一行"
 
@@ -729,20 +864,25 @@ msgstr "可以看见文本"
 msgid "cannot see text"
 msgstr "看不到文本"
 
+#, python-brace-format
 msgid "Invalid check type: {check_type}"
 msgstr "非法的检查类型: {check_type}"
 
+#, python-brace-format
 msgid ""
 "Check if web page ##{webPage}## ##{action}## ##{target}##, save result to"
 " ##{checkResult}##"
 msgstr "检测网页##{webPage}##是否##{action}## ##{target}##, 将结果保存到##{checkResult}##"
 
+#, python-brace-format
 msgid "Clear all cookies of web page ##{webPage}##"
 msgstr "删除网页##{webPage}##的所有Cookie"
 
+#, python-brace-format
 msgid "Clear cookie ##{cookieName}## of web page ##{webPage}##"
 msgstr "删除网页##{webPage}##的Cookie##{cookieName}##"
 
+#, python-brace-format
 msgid ""
 "Click ##{element}## on web page ##{webPage}##, and save opened web page "
 "to ##{newWebPage}##"
@@ -754,18 +894,23 @@ msgstr "单击"
 msgid "Double click"
 msgstr "双击"
 
+#, python-brace-format
 msgid "{action} ##{element}## on web page ##{webPage}##"
 msgstr "在网页##{webPage}##上{action}元素##{element}##"
 
+#, python-brace-format
 msgid "Close web page ##{webPage}##"
 msgstr "关闭网页##{webPage}##"
 
+#, python-brace-format
 msgid "Close browser ##{webBrowser}##"
 msgstr "关闭浏览器##{webBrowser}##"
 
+#, python-brace-format
 msgid "Drag ##{sourceElement}## to ##{targetElement}## on web page ##{webPage}##"
 msgstr "在网页##{webPage}##上拖拽元素##{sourceElement}##到元素##{targetElement}##"
 
+#, python-brace-format
 msgid ""
 "Drag ##{sourceElement}## by offset ##{dragOffsetX}## ##{dragOffsetY}## on"
 " web page ##{webPage}##"
@@ -773,6 +918,7 @@ msgstr ""
 "在网页##{webPage}##上按偏移量##{dragOffsetX}## "
 "##{dragOffsetY}##拖拽元素##{sourceElement}##"
 
+#, python-brace-format
 msgid ""
 "Evaluate js ##{jsCode}## in web page ##{webPage}##, and save the result "
 "to ##{output}##"
@@ -796,6 +942,7 @@ msgstr "位置"
 msgid "?"
 msgstr ""
 
+#, python-brace-format
 msgid ""
 "Extract the ##{extractData}## of element ##{element}## on web page "
 "##{webPage}##, and save to ##{result}##"
@@ -807,75 +954,91 @@ msgstr "标题"
 msgid "url"
 msgstr "网页地址"
 
+#, python-brace-format
 msgid ""
 "Extract the ##{extractData}## of web page ##{webPage}##, and save to "
 "##{result}##"
 msgstr "抽取网页##{webPage}##的##{extractData}##，保存到##{result}##"
 
+#, python-brace-format
 msgid "Get cookies from web page ##{webPage}##, and save to ##{cookies}##"
 msgstr "获取##{webPage}##的所有Cookie，然后保存到##{cookies}##"
 
+#, python-brace-format
 msgid ""
 "Get cookies for url ##{url}## in ##{webBrowser}##, and save to "
 "##{cookies}##"
 msgstr "获取##{webBrowser}##中与链接##{url}##相关的所有Cookie，然后保存到##{cookies}##"
 
+#, python-brace-format
 msgid "Invalid get type: {get_type}"
 msgstr "非法的获取类型: {get_type}"
 
+#, python-brace-format
 msgid ""
 "Get parent element of ##{element}## on web page ##{webPage}##, and save "
 "to ##{result}##"
 msgstr "获取##{webPage}##上##{element}##的父元素，保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Get previous sibling element of ##{element}## on web page ##{webPage}##, "
 "and save to ##{result}##"
 msgstr "获取##{webPage}##上##{element}##的上一个兄弟元素，保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Get next sibling element of ##{element}## on web page ##{webPage}##, and "
 "save to ##{result}##"
 msgstr "获取##{webPage}##上##{element}##的下一个兄弟元素，保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Get first matched descendant element of ##{element}## on web page "
 "##{webPage}## with relative xpath ##{descendantRelativeXpath}##, and save"
 " to ##{result}##"
 msgstr "获取##{webPage}##上##{element}##的第一个子孙元素，相对xpath为##{descendantRelativeXpath}##，保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Get all matched descendants of ##{element}## on web page ##{webPage}## "
 "with relative xpath ##{descendantRelativeXpath}##, and save to "
 "##{result}##"
 msgstr "获取##{webPage}##上##{element}##的所有子孙元素，相对xpath为##{descendantRelativeXpath}##，保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Get all children of ##{element}## on web page ##{webPage}##, and save to "
 "##{result}##"
 msgstr "获取##{webPage}##上##{element}##的所有子元素，保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Get ##{childPosition}## child of ##{element}## on web page ##{webPage}##,"
 " and save to ##{result}##"
 msgstr "获取##{webPage}##上##{element}##的第##{childPosition}##个子元素，保存到##{result}##"
 
+#, python-brace-format
 msgid "Unsupported locate type: {locate_type}"
 msgstr "不支持的定位类型: {locate_type}"
 
+#, python-brace-format
 msgid ""
 "Get web page ##{matchType}## from ##{webBrowser}##, and save to "
 "##{webPage}##"
 msgstr "按照##{matchType}##从##{webBrowser}##匹配网页，保存到##{webPage}##"
 
+#, python-brace-format
 msgid "Hover ##{element}## on web page ##{webPage}##"
 msgstr "鼠标悬停网页##{webPage}##上的元素##{element}##"
 
+#, python-brace-format
 msgid ""
 "Loop elements ##{elements}## on web page ##{webPage}##, save current "
 "element to ##{currentElement}##"
 msgstr "遍历##{webPage}##上的##{elements}##，将当前元素保存到##{currentElement}##"
 
+#, python-brace-format
 msgid "Navigate web page ##{webPage}## to ##{url}##"
 msgstr "将网页##{webPage}##导航到##{url}##"
 
@@ -888,12 +1051,15 @@ msgstr "前进"
 msgid "Reload"
 msgstr "刷新"
 
+#, python-brace-format
 msgid "{action} web page ##{webPage}##"
 msgstr "{action}网页##{webPage}##"
 
+#, python-brace-format
 msgid "Open a new web browser, and save to ##{webBrowser}##"
 msgstr "打开一个新浏览器，并保存到##{webBrowser}##"
 
+#, python-brace-format
 msgid ""
 "Open ##{url}## in ##{webBrowser}## and save the opened web page object to"
 " ##{webPage}##"
@@ -905,130 +1071,165 @@ msgstr "获取元素超时"
 msgid "The element is not an iframe"
 msgstr "该元素不是iframe"
 
+#, python-brace-format
 msgid ""
 "Screenshot ##{element}## on web page ##{webPage}##, and save to "
 "##{snapshotFilename}##"
 msgstr "截屏网页##{webPage}##上的元素##{element}##，保存到##{snapshotFilename}##"
 
+#, python-brace-format
 msgid "Screenshot web page ##{webPage}##, and save to ##{snapshotFilename}##"
 msgstr "截屏网页##{webPage}##，保存到##{snapshotFilename}##"
 
+#, python-brace-format
 msgid "Scroll web page ##{webPage}## to top"
 msgstr "将网页##{webPage}##滚动到顶部"
 
+#, python-brace-format
 msgid "Scroll web page ##{webPage}## to bottom"
 msgstr "将网页##{webPage}##滚动到底部"
 
+#, python-brace-format
 msgid "Scroll web page ##{webPage}## ##{scrollTimes}## pages"
 msgstr "滚动网页##{webPage}## ##{scrollTimes}## 页"
 
+#, python-brace-format
 msgid "Scroll web page ##{webPage}## to element ##{scrollToElement}##"
 msgstr "将网页##{webPage}##滚动到元素##{scrollToElement}##"
 
+#, python-brace-format
 msgid "Set cookies ##{cookies}## to web page ##{webPage}##"
 msgstr "将Cookie##{cookies}##设置到网页##{webPage}##"
 
+#, python-brace-format
 msgid "Check checkbox ##{element}## on web page ##{webPage}##"
 msgstr "在网页##{webPage}##上勾选复选框##{element}##"
 
+#, python-brace-format
 msgid "Uncheck checkbox ##{element}## on web page ##{webPage}##"
 msgstr "在网页##{webPage}##上取消勾选复选框##{element}##"
 
+#, python-brace-format
 msgid "Toggle checkbox ##{element}## on web page ##{webPage}##"
 msgstr "在网页##{webPage}##上反选复选框##{element}##"
 
+#, python-brace-format
 msgid "Select option in drop-down box ##{element}## with content ##{content}##"
 msgstr "选择下拉框##{element}##中内容为##{content}##的选项"
 
+#, python-brace-format
 msgid ""
 "Select option in drop-down box ##{element}## with content containing "
 "##{content}##"
 msgstr "选择下拉框##{element}##中内容包含##{content}##的选项"
 
+#, python-brace-format
 msgid ""
 "Select option in drop-down box ##{element}## with content matching regex "
 "##{content}##"
 msgstr "选择下拉框##{element}##中内容匹配正则表达式##{content}##的选项"
 
+#, python-brace-format
 msgid ""
 "Select the option indexed as ##{index}## in the drop-down box "
 "##{element}##"
 msgstr "选择下拉框##{element}##中索引位置为##{index}##的选项"
 
+#, python-brace-format
 msgid "Invalid wait type: {wait_type}"
 msgstr "非法的等待类型: {wait_type}"
 
+#, python-brace-format
 msgid "Wait web page ##{webPage}## ##{action}## ##{target}##"
 msgstr "等待网页##{webPage}## ##{action}## ##{target}##"
 
+#, python-brace-format
 msgid "Wait web page ##{webPage}## to load"
 msgstr "等待网页##{webPage}##加载"
 
 msgid "Loading timeout"
 msgstr "加载超时"
 
+#, python-brace-format
 msgid ""
 "Click ##{element}## on web page ##{webPage}## to download, and save the "
 "downloaded file to ##{downloadFilename}##"
 msgstr "点击网页##{webPage}##上的元素##{element}##下载，保存下载的文件到##{downloadFilename}##"
 
+#, python-brace-format
 msgid ""
 "Open ##{url}## on web page ##{webPage}## to download, and save the "
 "downloaded file to ##{downloadFilename}##"
 msgstr "在网页##{webPage}##上打开##{url}##下载，保存下载的文件到##{downloadFilename}##"
 
+#, python-brace-format
 msgid "Input ##{content}## into element ##{element}## on web page ##{webPage}##"
 msgstr "在网页##{webPage}##上输入##{content}##到元素##{element}##"
 
+#, python-brace-format
 msgid "Click ##{element}## on web page ##{webPage}## to upload ##{filePath}##"
 msgstr "点击网页##{webPage}##上的元素##{element}##上传文件##{filePath}##"
 
+#, python-brace-format
 msgid "Active the window ##{windowObject}##"
 msgstr "激活窗口##{windowObject}##"
 
+#, python-brace-format
 msgid "Active the window with the title ##{title}## and type ##{className}##"
 msgstr "激活标题为##{title}##类名为##{className}##的窗口"
 
+#, python-brace-format
 msgid "Active the window with the title ##{title}##"
 msgstr "激活标题为##{title}##的窗口"
 
+#, python-brace-format
 msgid "Active the window of ##{element}##"
 msgstr "激活元素##{element}##所在的窗口"
 
+#, python-brace-format
 msgid "{action} ##{element}##"
 msgstr "{action} ##{element}##"
 
+#, python-brace-format
 msgid "Close the window ##{windowObject}##"
 msgstr "关闭窗口##{windowObject}##"
 
+#, python-brace-format
 msgid "Close the window with the title ##{title}## and type ##{className}##"
 msgstr "关闭标题为##{title}##类名为##{className}##的窗口"
 
+#, python-brace-format
 msgid "Close the window with the title ##{title}##"
 msgstr "关闭标题为##{title}##的窗口"
 
+#, python-brace-format
 msgid "Close the window of ##{element}##"
 msgstr "关闭元素##{element}##所在的窗口"
 
+#, python-brace-format
 msgid "Drag ##{sourceElement}## to ##{targetElement}##"
 msgstr "将元素##{sourceElement}##拖拽到元素##{targetElement}##上"
 
+#, python-brace-format
 msgid "Drag ##{sourceElement}## by offset ##{dragOffsetX}## ##{dragOffsetY}##"
 msgstr "将元素##{sourceElement}##拖拽指定的偏移量(##{dragOffsetX}##, ##{dragOffsetY}##)"
 
 msgid "process name"
 msgstr "进程名称"
 
+#, python-brace-format
 msgid ""
 "Extract the ##{extractData}## of the window ##{windowObject}##, and save "
 "to ##{result}##"
 msgstr "抽取窗口##{windowObject}##的##{extractData}##，保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Extract the ##{extractData}## of the window with the title ##{title}##, "
 "and save to ##{result}##"
 msgstr "抽取标题为##{title}##的窗口的##{extractData}##，并保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Extract the ##{extractData}## of the window of ##{element}##, and save to"
 " ##{result}##"
@@ -1040,75 +1241,95 @@ msgstr "文本"
 msgid "value"
 msgstr "值"
 
+#, python-brace-format
 msgid ""
 "Extract the ##{extractData}## of element ##{element}##, and save to "
 "##{result}##"
 msgstr "抽取元素##{element}##的##{extractData}##，保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Get selected items of the combo box ##{element}##, and save to "
 "##{result}##"
 msgstr "获取组合框##{element}##当前选中的项目列表，并保存到##{result}##"
 
+#, python-brace-format
 msgid "Get all items of the combo box ##{element}##, and save to ##{result}##"
 msgstr "获取组合框##{element}##的所有选项列表，并保存到##{result}##"
 
+#, python-brace-format
 msgid "Get parent element of ##{element}##, and save to ##{result}##"
 msgstr "获取元素##{element}##的父元素，保存到##{result}##"
 
+#, python-brace-format
 msgid "Get previous sibling element of ##{element}##, and save to ##{result}##"
 msgstr "获取元素##{element}##的上一个兄弟元素，保存到##{result}##"
 
+#, python-brace-format
 msgid "Get next sibling element of ##{element}##, and save to ##{result}##"
 msgstr "获取元素##{element}##的下一个兄弟元素，保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Get first matched descendant element of ##{element}## with relative xpath"
 " ##{descendantRelativeXpath}##, and save to ##{result}##"
 msgstr "获取元素##{element}##的第一个与相对xpath##{descendantRelativeXpath}##匹配的子孙元素，保存到##{result}##"
 
+#, python-brace-format
 msgid ""
 "Get all matched descendants of ##{element}## with relative xpath "
 "##{descendantRelativeXpath}##, and save to ##{result}##"
 msgstr "获取元素##{element}##的与相对xpath##{descendantRelativeXpath}##匹配的所有子孙元素，保存到##{result}##"
 
+#, python-brace-format
 msgid "Get all children of ##{element}##, and save to ##{result}##"
 msgstr "获取元素##{element}##的所有子元素，保存到##{result}##"
 
+#, python-brace-format
 msgid "Get ##{childPosition}## child of ##{element}##, and save to ##{result}##"
 msgstr "获取元素##{element}##的第##{childPosition}##个子元素，保存到##{result}##"
 
+#, python-brace-format
 msgid "Get the current active window, and save to ##{windowObject}##"
 msgstr "获取当前活动窗口，并保存到##{windowObject}##"
 
+#, python-brace-format
 msgid ""
 "Get the window with the title ##{title}## and type ##{className}##, and "
 "save to ##{windowObject}##"
 msgstr "获取标题为##{title}##类名为##{className}##的窗口，并保存到##{windowObject}##"
 
+#, python-brace-format
 msgid "Get the window with the title ##{title}##, and save to ##{windowObject}##"
 msgstr "获取标题为##{title}##的窗口，并保存到##{windowObject}##"
 
+#, python-brace-format
 msgid "Get the window of ##{element}##, and save to ##{windowObject}##"
 msgstr "获取##{element}##所在的窗口对象，并保存到##{windowObject}##"
 
+#, python-brace-format
 msgid "Hover ##{element}##"
 msgstr "鼠标悬停在##{element}##上"
 
+#, python-brace-format
 msgid "Loop elements ##{elements}##, save current element to ##{currentElement}##"
 msgstr "遍历元素##{elements}##，保存当前元素到##{currentElement}##"
 
+#, python-brace-format
 msgid "Move the window ##{windowObject}## to (##{x}##, ##{y}##)"
 msgstr "将窗口##{windowObject}##移动到(##{x}##, ##{y}##)"
 
+#, python-brace-format
 msgid ""
 "Move the window with the title ##{title}## and type ##{className}## to "
 "(##{x}##, ##{y}##)"
 msgstr "将标题为##{title}##类名为##{className}##的窗口移动到(##{x}##, ##{y}##)"
 
+#, python-brace-format
 msgid "Move the window with the title ##{title}## to (##{x}##, ##{y}##)"
 msgstr "将标题为##{title}##的窗口移动到(##{x}##, ##{y}##)"
 
+#, python-brace-format
 msgid "Move the window of ##{element}## to (##{x}##, ##{y}##)"
 msgstr "将元素##{element}##所在的窗口对象移动到(##{x}##, ##{y}##)"
 
@@ -1124,117 +1345,151 @@ msgstr "未找到控件"
 msgid "Multiple controls found"
 msgstr "找到多个控件"
 
+#, python-brace-format
 msgid ""
 "Set the width of window ##{windowObject}## to ##{width}## and the height "
 "to ##{height}##"
 msgstr "将窗口##{windowObject}##的宽度设置为##{width}##，高度设置为##{height}##"
 
+#, python-brace-format
 msgid ""
 "Set the width of window with the title ##{title}## and type "
 "##{className}## to ##{width}## and the height to ##{height}##"
 msgstr "将标题为##{title}##类名为##{className}##的窗口的宽度设置为##{width}##，高度设置为##{height}##"
 
+#, python-brace-format
 msgid ""
 "Set the width of window with the title ##{title}## to ##{width}## and the"
 " height to ##{height}##"
 msgstr "将标题为##{title}##的窗口的宽度设置为##{width}##，高度设置为##{height}##"
 
+#, python-brace-format
 msgid ""
 "Set the width of window of ##{element}## to ##{width}## and the height to"
 " ##{height}##"
 msgstr "将元素##{element}##所在的窗口对象的宽度设置为##{width}##，高度设置为##{height}##"
 
+#, python-brace-format
 msgid "Screenshot ##{element}##, and save to ##{snapshotFilename}##"
 msgstr "获取元素##{element}##的截屏，并将图片保存到##{snapshotFilename}##"
 
+#, python-brace-format
 msgid "Check checkbox ##{element}##"
 msgstr "勾选复选框##{element}##"
 
+#, python-brace-format
 msgid "Uncheck checkbox ##{element}##"
 msgstr "取消勾选复选框##{element}##"
 
+#, python-brace-format
 msgid "Toggle checkbox ##{element}##"
 msgstr "反选复选框##{element}##"
 
+#, python-brace-format
 msgid "Select option in combo box ##{element}## with content ##{content}##"
 msgstr "选中组合框##{element}##中内容为##{content}##的选项"
 
+#, python-brace-format
 msgid ""
 "Select option in combo box ##{element}## with content containing "
 "##{content}##"
 msgstr "选中组合框##{element}##中内容包含##{content}##的选项"
 
+#, python-brace-format
 msgid ""
 "Select option in combo box ##{element}## with content matching regex "
 "##{content}##"
 msgstr "选中组合框##{element}##中内容与正则表达式##{content}##匹配的选项"
 
+#, python-brace-format
 msgid "Select the option indexed as ##{index}## in the combo box ##{element}##"
 msgstr "选中组合框##{element}##中索引位置为##{index}##的选项"
 
+#, python-brace-format
 msgid "Restore the window ##{windowObject}##"
 msgstr "还原窗口##{windowObject}##"
 
+#, python-brace-format
 msgid "Maximize the window ##{windowObject}##"
 msgstr "最大化窗口##{windowObject}##"
 
+#, python-brace-format
 msgid "Minimize the window ##{windowObject}##"
 msgstr "最小化窗口##{windowObject}##"
 
+#, python-brace-format
 msgid "Restore the window with the title ##{title}## and type ##{className}##"
 msgstr "还原标题为##{title}##类名为##{className}##的窗口"
 
+#, python-brace-format
 msgid "Maximize the window with the title ##{title}## and type ##{className}##"
 msgstr "最大化标题为##{title}##类名为##{className}##的窗口"
 
+#, python-brace-format
 msgid "Minimize the window with the title ##{title}## and type ##{className}##"
 msgstr "最小化标题为##{title}##类名为##{className}##的窗口"
 
+#, python-brace-format
 msgid "Restore the window with the title ##{title}##"
 msgstr "还原标题为##{title}##的窗口"
 
+#, python-brace-format
 msgid "Maximize the window with the title ##{title}##"
 msgstr "最大化标题为##{title}##的窗口"
 
+#, python-brace-format
 msgid "Minimize the window with the title ##{title}##"
 msgstr "最小化标题为##{title}##的窗口"
 
+#, python-brace-format
 msgid "Restore the window of ##{element}##"
 msgstr "还原元素##{element}##所在的窗口"
 
+#, python-brace-format
 msgid "Maximize the window of ##{element}##"
 msgstr "最大化元素##{element}##所在的窗口"
 
+#, python-brace-format
 msgid "Minimize the window of ##{element}##"
 msgstr "最小化元素##{element}##所在的窗口"
 
+#, python-brace-format
 msgid "Show the window ##{windowObject}##"
 msgstr "显示窗口##{windowObject}##"
 
+#, python-brace-format
 msgid "Hide the window ##{windowObject}##"
 msgstr "隐藏窗口##{windowObject}##"
 
+#, python-brace-format
 msgid "Show the window with the title ##{title}## and type ##{className}##"
 msgstr "显示标题为##{title}##类名为##{className}##的窗口"
 
+#, python-brace-format
 msgid "Hide the window with the title ##{title}## and type ##{className}##"
 msgstr "隐藏标题为##{title}##类名为##{className}##的窗口"
 
+#, python-brace-format
 msgid "Show the window with the title ##{title}##"
 msgstr "显示标题为##{title}##的窗口"
 
+#, python-brace-format
 msgid "Hide the window with the title ##{title}##"
 msgstr "隐藏标题为##{title}##的窗口"
 
+#, python-brace-format
 msgid "Show the window of ##{element}##"
 msgstr "显示元素##{element}##所在的窗口"
 
+#, python-brace-format
 msgid "Hide the window of ##{element}##"
 msgstr "隐藏元素##{element}##所在的窗口"
 
+#, python-brace-format
 msgid "Waiting to ##{action}## ##{target}##, and save to ##{waitResult}##"
 msgstr "等待##{action}####{target}##，并将等待结果保持到##{waitResult}##"
 
+#, python-brace-format
 msgid "Input ##{content}## into element ##{element}##"
 msgstr "在元素##{element}##中输入内容##{content}##"
 
@@ -1352,6 +1607,12 @@ msgstr "日期时间的微秒数"
 msgid "The timestamp of the datetime, in seconds"
 msgstr "日期时间的时间戳，以秒为单位"
 
+msgid "Byte String"
+msgstr "字节串"
+
+msgid "Number of bytes"
+msgstr "字节数"
+
 msgid "File Path Info"
 msgstr "文件路径信息"
 
@@ -1388,6 +1649,37 @@ msgstr "创建时间（时间戳）"
 msgid "modification time(timestamp)"
 msgstr "修改时间（时间戳）"
 
+msgid "HTTP Response"
+msgstr "HTTP响应"
+
+msgid "Status Code"
+msgstr "状态码"
+
+msgid "Reason"
+msgstr "原因"
+
+msgid "Response Headers"
+msgstr "响应头"
+
+msgid "Response Cookies"
+msgstr "响应Cookie"
+
+msgid "All cookies set on this session"
+msgstr "此会话中设置的所有cookie"
+
+msgid "Text Response Content"
+msgstr "文本响应内容"
+
+msgid "JSON Response Content"
+msgstr "JSON响应内容"
+
+msgid "Binary Response Content"
+msgstr "二进制响应内容"
+
+msgid "Response Encoding"
+msgstr "响应编码"
+
+#, python-brace-format
 msgid "Column no is out of range: {column_no}"
 msgstr "列号超出范围: {column_no}"
 
@@ -1484,18 +1776,23 @@ msgstr "关于 JimuFlow"
 msgid "JimuFlow is a simple and easy-to-use cross-platform RPA tool."
 msgstr "JimuFlow是一款简单易用的跨平台RPA工具"
 
+#, python-brace-format
 msgid "Version: {version}"
 msgstr "版本：{version}"
 
+#, python-brace-format
 msgid "Git Info: {git_info}"
 msgstr "Git信息：{git_info}"
 
+#, python-brace-format
 msgid "Project Link: <a href='{link_url}'>{link_name}</a>"
 msgstr "项目链接：<a href='{link_url}'>{link_name}</a>"
 
+#, python-brace-format
 msgid "Unknown instruction or process {name}"
 msgstr "未知指令或流程{name}"
 
+#, python-brace-format
 msgid "Invoke process {name}"
 msgstr "调用流程{name}"
 
@@ -1553,18 +1850,23 @@ msgstr "重试间隔(秒)"
 msgid "Outputs On Error"
 msgstr "出错时的输出配置"
 
+#, python-brace-format
 msgid "Input parameter {name} is invalid: {editor_errors}"
 msgstr "输入参数 {name} 无效: {editor_errors}"
 
+#, python-brace-format
 msgid "Input parameter {name} is required"
 msgstr "{name}还未指定"
 
+#, python-brace-format
 msgid "Invalid expression for input {name}"
 msgstr "{name}配置的表达式格式不正确"
 
+#, python-brace-format
 msgid "Output parameter {name} is required"
 msgstr "{name}还未指定"
 
+#, python-brace-format
 msgid "Invalid variable name for output {name}"
 msgstr "{name}配置的变量名格式不正确"
 
@@ -1586,9 +1888,11 @@ msgstr "重试间隔必须为数字"
 msgid "Retry interval must be greater than 0"
 msgstr "重试间隔必须大于0"
 
+#, python-brace-format
 msgid "Invalid expression for output {name}"
 msgstr "{name}配置的表达式格式不正确"
 
+#, python-brace-format
 msgid "Process {name}"
 msgstr "流程{name}"
 
@@ -1666,6 +1970,7 @@ msgstr "双击或拖拽添加到当前流程，选择并按F1键查看帮助"
 msgid "Double click or drag to add to the current process"
 msgstr "双击或拖拽添加到当前流程"
 
+#, python-brace-format
 msgid "Only supported on {platforms}"
 msgstr "仅在{platforms}上支持"
 
@@ -1845,6 +2150,7 @@ msgstr "变量名"
 msgid "Variable Value"
 msgstr "变量值"
 
+#, python-brace-format
 msgid "Line {line_no}"
 msgstr "第{line_no}行"
 
@@ -1870,6 +2176,9 @@ msgstr "变量类型"
 
 msgid "Variable Description"
 msgstr "变量说明"
+
+msgid "Variable"
+msgstr "变量"
 
 msgid "Bracket operator"
 msgstr "括号运算符"
@@ -1928,6 +2237,7 @@ msgstr "索引访问运算符"
 msgid "Attribute access operator"
 msgstr "属性访问运算符"
 
+#, python-brace-format
 msgid "{type} Variable"
 msgstr "{type}变量"
 
@@ -2048,30 +2358,37 @@ msgstr "资源库"
 msgid "Open Application"
 msgstr "打开应用"
 
+#, python-brace-format
 msgid "Undo {action}"
 msgstr "撤销{action}"
 
+#, python-brace-format
 msgid "Redo {action}"
 msgstr "重做{action}"
 
 msgid "Warning"
 msgstr "警告"
 
+#, python-brace-format
 msgid "Process {name} has not been saved. Do you want to save this process?"
 msgstr "流程{name}尚未保存。您想保存此流程吗？"
 
+#, python-brace-format
 msgid "Are you sure you want to delete process {name}?"
 msgstr "您确定要删除流程{name}吗？"
 
 msgid "Process has errors, please fix them first"
 msgstr "流程有错误，请先修复"
 
+#, python-brace-format
 msgid "Process {name} only supports running on platform {platforms}"
 msgstr "流程{name}仅支持在{platforms}平台上运行"
 
+#, python-brace-format
 msgid "Process {name} is running, do you want to terminate the process?"
 msgstr "流程{name}正在运行，是否要终止该流程？"
 
+#, python-brace-format
 msgid "Unable to open automatically, please access manually: {path}"
 msgstr "无法自动打开，请手动访问：{path}"
 
@@ -2120,6 +2437,7 @@ msgstr "移动指令"
 msgid "Copy instructions"
 msgstr "复制指令"
 
+#, python-brace-format
 msgid "Unknown instruction or process config {config}"
 msgstr "未知指令或流程配置{config}"
 
@@ -2194,6 +2512,7 @@ msgid ""
 "restart now?"
 msgstr "需要重新启动才能应用新的语言设置。您想现在重新启动吗？"
 
+#, python-brace-format
 msgid "Process {name} startup parameter configuration"
 msgstr "流程{name}启动参数配置"
 
@@ -2497,9 +2816,6 @@ msgstr "媒体轨道"
 msgid "Unordered List"
 msgstr "无序列表"
 
-msgid "Variable"
-msgstr "变量"
-
 msgid "Video"
 msgstr "视频"
 
@@ -2543,6 +2859,7 @@ msgstr "新标签页"
 msgid "The second element does not match the first element, please select again!"
 msgstr "第二个元素与第一个元素不匹配，请重新选择！"
 
+#, python-brace-format
 msgid "Found {count} element"
 msgid_plural "Found {count} elements"
 msgstr[0] "找到{count}个元素"
@@ -2586,6 +2903,7 @@ msgstr "元素在IFrame中"
 msgid "Enter Custom IFrame XPath"
 msgstr "输入自定义IFrame XPath"
 
+#, python-brace-format
 msgid ""
 "Element XPath Preview: \n"
 "{}"
@@ -2593,6 +2911,7 @@ msgstr ""
 "元素XPath预览：\n"
 "{}"
 
+#, python-brace-format
 msgid ""
 "IFrame XPath Preview: \n"
 "{}"
@@ -2651,6 +2970,7 @@ msgstr "采用"
 msgid "Accept the relative XPath and close the dialog"
 msgstr "采用相对XPath并关闭对话框"
 
+#, python-brace-format
 msgid "Matches count: {}"
 msgstr "匹配数量：{}"
 
@@ -2789,6 +3109,7 @@ msgstr "使用自定义窗口XPath"
 msgid "Enter Custom Window XPath"
 msgstr "输入自定义窗口XPath"
 
+#, python-brace-format
 msgid ""
 "Window XPath Preview: \n"
 "{}"
@@ -2841,11 +3162,62 @@ msgstr "第二个操作数表达式无效"
 msgid "Choose"
 msgstr "选择"
 
+msgid "Invalid expression"
+msgstr "无效表达式"
+
 msgid "Choose File"
 msgstr "选择文件"
 
 msgid "Choose Folder"
 msgstr "选择文件夹"
+
+msgid "name is invalid"
+msgstr "名称无效"
+
+msgid "value is invalid"
+msgstr "值无效"
+
+msgid "name is required"
+msgstr "名称是必需的"
+
+msgid "Field Name"
+msgstr "字段名"
+
+msgid "Field Value"
+msgstr "字段值"
+
+msgid "host"
+msgstr "主机名"
+
+msgid "port"
+msgstr "端口"
+
+msgid "user"
+msgstr "用户"
+
+msgid "password"
+msgstr "密码"
+
+msgid "proxy host is required"
+msgstr "需要代理主机"
+
+msgid "proxy host is invalid"
+msgstr "代理主机无效"
+
+msgid "proxy port is required"
+msgstr "需要代理端口"
+
+msgid "proxy port is invalid"
+msgstr "代理端口无效"
+
+msgid "proxy user is invalid"
+msgstr "代理用户无效"
+
+msgid "proxy password is invalid"
+msgstr "代理密码无效"
+
+msgid "proxy user is required when proxy password is set"
+msgstr "设置代理密码时需要代理用户"
 
 msgid "Input configs"
 msgstr "输入配置"
@@ -2937,6 +3309,7 @@ msgstr "列表视图的列信息"
 msgid "The number of buttons on the ToolBar"
 msgstr "工具条上的按钮数量"
 
+#, python-brace-format
 msgid "{window_text} [x={x}, y={y}]"
 msgstr ""
 
@@ -2946,6 +3319,7 @@ msgstr ""
 msgid "Y"
 msgstr ""
 
+#, python-brace-format
 msgid "{window_text} [width={width}, height={height}]"
 msgstr ""
 
@@ -4047,6 +4421,132 @@ msgstr "X坐标偏移量"
 msgid "Y - coordinate Offset"
 msgstr "Y坐标偏移量"
 
+msgid "Send Http Request"
+msgstr "发送Http请求"
+
+msgid "Cookie Name"
+msgstr "Cookie名称"
+
+msgid "Cookie Value"
+msgstr "Cookie值"
+
+msgid "Request URL"
+msgstr "请求URL"
+
+msgid "Request Method"
+msgstr "请求方法"
+
+msgid "GET"
+msgstr "GET"
+
+msgid "POST"
+msgstr "POST"
+
+msgid "PUT"
+msgstr "PUT"
+
+msgid "DELETE"
+msgstr "DELETE"
+
+msgid "OPTIONS"
+msgstr "OPTIONS"
+
+msgid "HEAD"
+msgstr "HEAD"
+
+msgid "PATCH"
+msgstr "PATCH"
+
+msgid "Request Params"
+msgstr "请求参数"
+
+msgid "Request Body Type"
+msgstr "请求正文类型"
+
+msgid "none"
+msgstr "没有"
+
+msgid "Form with Attachments"
+msgstr "附件表单"
+
+msgid "Form without Attachments"
+msgstr "参数表单"
+
+msgid "JSON Data"
+msgstr "Json数据"
+
+msgid "XML Data"
+msgstr "XML数据"
+
+msgid "Binary Data"
+msgstr "二进制数据"
+
+msgid "Request JSON"
+msgstr "请求JSON数据"
+
+msgid "Request XML"
+msgstr "请求XML数据"
+
+msgid "Request Text"
+msgstr "请求文本"
+
+msgid "Request File"
+msgstr "请求文件"
+
+msgid "Request Cookies"
+msgstr "请求Cookies"
+
+msgid "Request Headers"
+msgstr "请求头"
+
+msgid "Verify server certificate"
+msgstr "校验服务器证书"
+
+msgid "Enable http authentication"
+msgstr "启用HTTP认证"
+
+msgid "Authentication Method"
+msgstr "认证方法"
+
+msgid "HTTP Basic Auth"
+msgstr "HTTP Basic认证"
+
+msgid "HTTP Digest Auth"
+msgstr "HTTP Digest认证"
+
+msgid "Username"
+msgstr "用户名"
+
+msgid "Enable client certificate"
+msgstr "启用客户端证书"
+
+msgid "Client Cert File"
+msgstr "客户端证书文件"
+
+msgid "Client Key File"
+msgstr "客户端密钥文件"
+
+msgid "Enable proxy"
+msgstr "启用代理"
+
+msgid "Proxy Server"
+msgstr "代理服务器"
+
+msgid "Save response content to file"
+msgstr "将响应内容保存到文件"
+
+msgid "File Save Directory"
+msgstr "文件保存目录"
+
+msgid "File Name"
+msgstr "文件名"
+
+msgid "Timeout(seconds)"
+msgstr "超时时间(秒)"
+
+msgid "Response Object"
+msgstr "响应对象"
+
 msgid "Add Table Column"
 msgstr "新增表格列"
 
@@ -4324,9 +4824,6 @@ msgstr "清除指定Cookie"
 msgid "Clear all cookies"
 msgstr "清除所有Cookies"
 
-msgid "Cookie Name"
-msgstr "Cookie名称"
-
 msgid "Click to Open Web Page"
 msgstr "点击打开网页"
 
@@ -4599,9 +5096,6 @@ msgstr "执行错误处理"
 
 msgid "Open Web Browser"
 msgstr "打开Web浏览器"
-
-msgid "Enable proxy"
-msgstr "启用代理"
 
 msgid "Proxy server address"
 msgstr "代理服务器地址"
@@ -5036,9 +5530,6 @@ msgstr "不包含元素"
 msgid "Set the timeout time"
 msgstr "设置超时时间"
 
-msgid "Timeout(seconds)"
-msgstr "超时时间(秒)"
-
 msgid "Wait Result"
 msgstr "等待结果"
 
@@ -5054,9 +5545,11 @@ msgstr "自动化接口输入"
 msgid "The input content contains shortcut keys"
 msgstr "输入内容包含快捷键"
 
+#, python-brace-format
 msgid "Instruction or process {name} not found"
 msgstr "找不到指令或进程{name}"
 
+#, python-brace-format
 msgid "Write output {out_var_name}: {out_var_value}"
 msgstr "生成输出变量 {out_var_name}: {out_var_value}"
 
@@ -5072,23 +5565,29 @@ msgstr "执行出错"
 msgid "Ignore error and continue execution"
 msgstr "忽略错误并继续执行"
 
+#, python-brace-format
 msgid "Wait for {} seconds and retry for the {} time"
 msgstr "等待{}秒后进行第{}次重试"
 
+#, python-brace-format
 msgid "The input parameter {var_name} of {comp_name} is not specified."
 msgstr "{comp_name}指令的输入参数{var_name}未指定。"
 
+#, python-brace-format
 msgid ""
 "The expression format of the input parameter {var_name} of {comp_name} is"
 " incorrect."
 msgstr "{comp_name}指令的输入参数{var_name}的表达式格式不正确。"
 
+#, python-brace-format
 msgid "The output parameter {var_name} of {comp_name} is not specified."
 msgstr "{comp_name}指令的输出参数{var_name}未指定。"
 
+#, python-brace-format
 msgid "The format of the output parameter {var_name} of {comp_name} is incorrect."
 msgstr "{comp_name}指令的输出参数{var_name}的变量名格式不正确。"
 
+#, python-brace-format
 msgid "Error clearing user variable {name}"
 msgstr "清除用户变量{name}出错"
 
@@ -5098,31 +5597,39 @@ msgstr "开始执行"
 msgid "Execution completed"
 msgstr "执行完毕"
 
+#, python-brace-format
 msgid ""
 "The input parameter {var_name} for subprocess {process_name} is not "
 "specified"
 msgstr "子流程{process_name}的输入参数{var_name}未指定"
 
+#, python-brace-format
 msgid ""
 "The output parameter {var_name} for subprocess {process_name} is not "
 "specified"
 msgstr "子流程{process_name}的输出参数{var_name}未指定"
 
+#, python-brace-format
 msgid "{name} must immediately follow the If or Else If instruction"
 msgstr "{name}必须紧跟在If或Else If指令之后"
 
+#, python-brace-format
 msgid "{name} cannot follow a Break, Continue, Return, or Exit instruction"
 msgstr "{name}不能跟在Break、Continue、Return、Exit指令之后"
 
+#, python-brace-format
 msgid "{name} has no sub instructions"
 msgstr "{name}没有子指令"
 
+#, python-brace-format
 msgid "{name} should not have any sub instructions"
 msgstr "{name}不应该有子指令"
 
+#, python-brace-format
 msgid "{name} must be used in conjunction with Loop instruction"
 msgstr "{name}必须和Loop指令搭配使用"
 
+#, python-brace-format
 msgid "Error clearing process local variable {}"
 msgstr "清除流程本地变量{}出错"
 
@@ -5131,208 +5638,4 @@ msgstr "调试"
 
 msgid "Info"
 msgstr "信息"
-
-#~ msgid "Stop"
-#~ msgstr "结束流程"
-
-#~ msgid "Ignore"
-#~ msgstr "忽略错误继续执行"
-
-#~ msgid "upper"
-#~ msgstr "大写"
-
-#~ msgid "lower"
-#~ msgstr "小写"
-
-#~ msgid "Process property"
-#~ msgstr "进程属性"
-
-#~ msgid "Compressed package name"
-#~ msgstr "压缩包名称"
-
-#~ msgid "Compressed package path"
-#~ msgstr "压缩包路径"
-
-#~ msgid "Automatic renaming"
-#~ msgstr "自动重命名"
-
-#~ msgid "Timestamp(s)"
-#~ msgstr "时间戳（秒）"
-
-#~ msgid "Datetime"
-#~ msgstr "日期时间"
-
-#~ msgid "Decompress to"
-#~ msgstr "解压缩到"
-
-#~ msgid "Key"
-#~ msgstr "键名"
-
-#~ msgid "Item value"
-#~ msgstr "项目值"
-
-#~ msgid "Wait timeout(s)"
-#~ msgstr "等待超时时间(秒)"
-
-#~ msgid "Date Time"
-#~ msgstr "日期时间"
-
-#~ msgid "Insert Item To List"
-#~ msgstr "插入列表项"
-
-#~ msgid "Action after launch"
-#~ msgstr "启动后操作"
-
-#~ msgid "Find sub folders"
-#~ msgstr "查找子文件夹"
-
-#~ msgid "Number value"
-#~ msgstr "数值"
-
-#~ msgid "Regex"
-#~ msgstr "正则表达式"
-
-#~ msgid "Replace type"
-#~ msgstr "替换类型"
-
-#~ msgid "Regex replacement"
-#~ msgstr "正则替换"
-
-#~ msgid "Regex to replace"
-#~ msgstr "要替换的正则表达式"
-
-#~ msgid "Variable value"
-#~ msgstr "变量值"
-
-#~ msgid "From where"
-#~ msgstr "起始位置"
-
-#~ msgid "To where"
-#~ msgstr "结束位置"
-
-#~ msgid "Sliced length"
-#~ msgstr "截取长度"
-
-#~ msgid "Increment"
-#~ msgstr "增加"
-
-#~ msgid "Image Center"
-#~ msgstr "图像中心"
-
-#~ msgid "Click Type"
-#~ msgstr "点击方式"
-
-#~ msgid "Table column names"
-#~ msgstr "表头列表"
-
-#~ msgid "End row no"
-#~ msgstr "结束行号"
-
-#~ msgid "Write cell content"
-#~ msgstr "写入单元格内容"
-
-#~ msgid "Check web content"
-#~ msgstr "检测网页内容"
-
-#~ msgid "Web page"
-#~ msgstr "网页对象"
-
-#~ msgid "Check type"
-#~ msgstr "检测类型"
-
-#~ msgid "Include text"
-#~ msgstr "包含文本"
-
-#~ msgid "Exclude text"
-#~ msgstr "不包含文本"
-
-#~ msgid "Check element"
-#~ msgstr "检查元素"
-
-#~ msgid "Check text"
-#~ msgstr "检测文本"
-
-#~ msgid "Source Element"
-#~ msgstr "拖拽元素"
-
-#~ msgid "Source element offset"
-#~ msgstr "拖拽元素偏移"
-
-#~ msgid "Source Element x offset"
-#~ msgstr "拖拽元素X坐标偏移"
-
-#~ msgid "Source Element y offset"
-#~ msgstr "拖拽元素Y坐标偏移"
-
-#~ msgid "Drag type"
-#~ msgstr "拖拽方式"
-
-#~ msgid "Drag by x offset"
-#~ msgstr "拖拽X坐标偏移"
-
-#~ msgid "Input element value"
-#~ msgstr "输入框值"
-
-#~ msgid "Link element href"
-#~ msgstr "链接地址"
-
-#~ msgid "Get type"
-#~ msgstr "获取方式"
-
-#~ msgid "Url"
-#~ msgstr "网页地址"
-
-#~ msgid "Descendant relative xpath"
-#~ msgstr "子孙元素相对xpath"
-
-#~ msgid "Child element position"
-#~ msgstr "子元素位置"
-
-#~ msgid "Match Type"
-#~ msgstr "匹配类型"
-
-#~ msgid "Use Regex Match"
-#~ msgstr "使用正则表达式匹配"
-
-#~ msgid "Stop web page loading"
-#~ msgstr "停止加载网页"
-
-#~ msgid "Navigate type"
-#~ msgstr "导航方式"
-
-#~ msgid "URL"
-#~ msgstr "网页地址"
-
-#~ msgid "Visible web page viewport"
-#~ msgstr "网页可见区域"
-
-#~ msgid "Full web page"
-#~ msgstr "整个网页"
-
-#~ msgid "Scroll one page"
-#~ msgstr "滚动一屏"
-
-#~ msgid "Scroll times"
-#~ msgstr "滚动次数"
-
-#~ msgid "Precise matching"
-#~ msgstr "精确匹配"
-
-#~ msgid "Wait web page load"
-#~ msgstr "等待网页加载"
-
-#~ msgid "Get window method"
-#~ msgstr "获取窗口方法"
-
-#~ msgid "Use regex matching"
-#~ msgstr "使用正则表达式匹配"
-
-#~ msgid "Window element"
-#~ msgstr "窗口元素"
-
-#~ msgid "Window process name"
-#~ msgstr "窗口所在进程名"
-
-#~ msgid "Obtained items"
-#~ msgstr "获取到的项目"
 

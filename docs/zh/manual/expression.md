@@ -141,6 +141,12 @@
 * ctime：创建时间，是一个时间戳，单位秒
 * mtime：修改时间，是一个时间戳，单位秒
 
+### 字节串类型 - bytes
+
+字节串类型用来表示二进制字节数据，该类型具有如下属性：
+
+* length：获取字节串的字节数量。
+
 ### 网页浏览器类型 - WebBrowser
 
 网页浏览器类型代表了一个打开的网页浏览器对象。
@@ -158,6 +164,21 @@
 ### 窗口元素类型 - WindowElement
 
 窗口元素类型代表了一个窗口对象或窗口中元素对象。
+
+### HTTP响应类型 - HttpResponse
+
+HTTP响应类型代表了一个HTTP响应对象，该类型具有如下属性：
+
+* `status_code`：响应状态码。
+* `reason`：响应原因。
+* `headers`：响应头信息，是一个字典对象。
+* `cookies`：响应Cookie信息，是一个字典对象。
+* `sessionCookies`：通过`cookies`属性只能获取当前响应返回的Cookie信息， 
+如果存在重定向，则无法获取中间响应返回的Cookie信息，这时，可以通过`sessionCookies`属性获取当前存活的所有Cookie信息。
+* `text`：响应文本内容。
+* `json`：响应JSON数据。
+* `content`：响应二进制数据，是一个字节字符串。
+* `encoding`：响应文本编码。
 
 ## 操作符
 

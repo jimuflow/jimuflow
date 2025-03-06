@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -38,6 +38,9 @@ def extract_component_def_json(fileobj, keywords, comment_tags, options):
         yield 0, "gettext", json_data["primaryCategory"], []
     if "secondaryCategory" in json_data:
         yield 0, "gettext", json_data["secondaryCategory"], []
+    if "i18nMessages" in json_data:
+        for msg in json_data["i18nMessages"]:
+            yield 0, "gettext", msg, []
     if "variables" in json_data:
         for var_def in json_data["variables"]:
             if "uiConfig" in var_def:

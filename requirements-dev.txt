@@ -2,8 +2,10 @@ pytest
 pytest-asyncio
 freezegun
 pyinstaller
+mkdocs
 mkdocs[i18n]
 build
 twine
 mkdocs-material
 tomli
+pytest-httpbin

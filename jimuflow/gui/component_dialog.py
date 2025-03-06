@@ -153,7 +153,7 @@ class DefaultComponentForm(ComponentForm):
                     input_editor.checkStateChanged.connect(lambda: self._update_all_forms())
                 elif input_def.ui_config.input_type == VariableUiInputType.CUSTOM:
                     editor_class = Utils.load_class(input_def.ui_config.input_editor_type)
-                    input_editor = editor_class()
+                    input_editor = editor_class(**input_def.ui_config.input_editor_params)
                     if input_def.ui_config.placeholder and getattr(input_editor, 'setPlaceholderText', None):
                         input_editor.setPlaceholderText(gettext(input_def.ui_config.placeholder))
                     if getattr(input_editor, 'set_variables', None):
@@ -256,7 +256,8 @@ class DefaultComponentForm(ComponentForm):
         # 错误处理类型
         self._error_handling_type = QComboBox()
         self._error_handling_type.setObjectName("errorHandlingTypeEditor")
-        self._error_handling_type.addItems([gettext('end the process'), gettext('retry'), gettext('ignore the error and continue execution')])
+        self._error_handling_type.addItems(
+            [gettext('end the process'), gettext('retry'), gettext('ignore the error and continue execution')])
         row = 0
         label = QLabel(gettext('Error Handling Methods'))
         label.setObjectName("errorHandlingTypeLabel")

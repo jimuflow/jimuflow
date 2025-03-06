@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -188,6 +188,7 @@ class VariableUiConfig:
         self.depends_on = VariableUiDependency('', '', '')
         self.input_type = VariableUiInputType.LINE_EDIT
         self.input_editor_type = ""
+        self.input_editor_params = {}
         self.input_value_type = None
         self.placeholder = ""
         self.options: list[VariableUiInputOption] = []
@@ -211,6 +212,8 @@ class VariableUiConfig:
             self.input_type = VariableUiInputType(json_data["inputType"])
         if "inputEditorType" in json_data:
             self.input_editor_type = json_data["inputEditorType"]
+            if "inputEditorParams" in json_data:
+                self.input_editor_params = json_data["inputEditorParams"]
         if "inputValueType" in json_data:
             self.input_value_type = VariableUiInputValueType(json_data["inputValueType"])
         if "placeholder" in json_data:
@@ -238,6 +241,8 @@ class VariableUiConfig:
             json_data["options"] = [o.to_json() for o in self.options]
         elif self.input_type == VariableUiInputType.CUSTOM:
             json_data["inputEditorType"] = self.input_editor_type
+            if self.input_editor_params:
+                json_data["inputEditorParams"] = self.input_editor_params
         if self.placeholder:
             json_data["placeholder"] = self.placeholder
         if self.help_info:

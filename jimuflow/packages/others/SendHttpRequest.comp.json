@@ -1,0 +1,455 @@
+{
+  "name": "SendHttpRequest",
+  "displayName": "Send Http Request",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.others.SendHttpRequestComponent",
+  "supportsErrorHandling": true,
+  "sortNo": 2,
+  "helpUrl": "commands/others/send_http_request/",
+  "variables": [
+    {
+      "name": "requestUrl",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Request URL",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "requestMethod",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "GET",
+      "uiConfig": {
+        "label": "Request Method",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "GET",
+            "label": "GET"
+          },
+          {
+            "value": "POST",
+            "label": "POST"
+          },
+          {
+            "value": "PUT",
+            "label": "PUT"
+          },
+          {
+            "value": "DELETE",
+            "label": "DELETE"
+          },
+          {
+            "value": "OPTIONS",
+            "label": "OPTIONS"
+          },
+          {
+            "value": "HEAD",
+            "label": "HEAD"
+          },
+          {
+            "value": "PATCH",
+            "label": "PATCH"
+          }
+        ]
+      }
+    },
+    {
+      "name": "requestParams",
+      "type": "dict",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Request Params",
+        "required": false,
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.form_data_editor.FormDataEditor"
+      }
+    },
+    {
+      "name": "requestBodyType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "none",
+      "uiConfig": {
+        "label": "Request Body Type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "none",
+            "label": "none"
+          },
+          {
+            "value": "form-data",
+            "label": "Form with Attachments"
+          },
+          {
+            "value": "x-www-form-urlencoded",
+            "label": "Form without Attachments"
+          },
+          {
+            "value": "json",
+            "label": "JSON Data"
+          },
+          {
+            "value": "xml",
+            "label": "XML Data"
+          },
+          {
+            "value": "raw",
+            "label": "Text"
+          },
+          {
+            "value": "binary",
+            "label": "Binary Data"
+          }
+        ]
+      }
+    },
+    {
+      "name": "requestMultipartForm",
+      "type": "dict",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Form with Attachments",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.form_data_editor.FormDataEditor",
+        "inputEditorParams": {
+          "multipart_form": true
+        },
+        "dependsOn": {
+          "variableName": "requestBodyType",
+          "operator": "==",
+          "value": "form-data"
+        }
+      }
+    },
+    {
+      "name": "requestForm",
+      "type": "dict",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Form without Attachments",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.form_data_editor.FormDataEditor",
+        "dependsOn": {
+          "variableName": "requestBodyType",
+          "operator": "==",
+          "value": "x-www-form-urlencoded"
+        }
+      }
+    },
+    {
+      "name": "requestJson",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Request JSON",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "requestBodyType",
+          "operator": "==",
+          "value": "json"
+        }
+      }
+    },
+    {
+      "name": "requestXml",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Request XML",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "requestBodyType",
+          "operator": "==",
+          "value": "xml"
+        }
+      }
+    },
+    {
+      "name": "requestText",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Request Text",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "requestBodyType",
+          "operator": "==",
+          "value": "raw"
+        }
+      }
+    },
+    {
+      "name": "requestFile",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Request File",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.file_path_editor.OpenFilePathEdit",
+        "inputValueType": "expression",
+        "dependsOn": {
+          "variableName": "requestBodyType",
+          "operator": "==",
+          "value": "binary"
+        }
+      }
+    },
+    {
+      "name": "requestCookies",
+      "type": "dict",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Request Cookies",
+        "group": "advanced",
+        "required": false,
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.form_data_editor.FormDataEditor",
+        "inputEditorParams": {
+          "name_placeholder": "Cookie Name",
+          "value_placeholder": "Cookie Value"
+        }
+      }
+    },
+    {
+      "name": "requestHeaders",
+      "type": "dict",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Request Headers",
+        "group": "advanced",
+        "required": false,
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.form_data_editor.FormDataEditor"
+      }
+    },
+    {
+      "name": "verify",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": true,
+      "uiConfig": {
+        "label": "Verify server certificate",
+        "group": "advanced",
+        "required": false,
+        "inputType": "check_box"
+      }
+    },
+    {
+      "name": "enableAuth",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Enable http authentication",
+        "group": "advanced",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "authMethod",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "http_basic",
+      "uiConfig": {
+        "label": "Authentication Method",
+        "group": "advanced",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "http_basic",
+            "label": "HTTP Basic Auth"
+          },
+          {
+            "value": "http_digest",
+            "label": "HTTP Digest Auth"
+          }
+        ],
+        "dependsOn": {
+          "variableName": "enableAuth",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "username",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Username",
+        "group": "advanced",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "authMethod",
+          "operator": "in",
+          "value": [
+            "http_basic",
+            "http_digest"
+          ]
+        }
+      }
+    },
+    {
+      "name": "password",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Password",
+        "group": "advanced",
+        "required": false,
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "authMethod",
+          "operator": "in",
+          "value": [
+            "http_basic",
+            "http_digest"
+          ]
+        }
+      }
+    },
+    {
+      "name": "enableClientCert",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Enable client certificate",
+        "group": "advanced",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "clientCert",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Client Cert File",
+        "group": "advanced",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "enableClientCert",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "clientKey",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Client Key File",
+        "group": "advanced",
+        "required": false,
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "enableClientCert",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "enableProxy",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Enable proxy",
+        "group": "advanced",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "proxy",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Proxy Server",
+        "group": "advanced",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.http_proxy_editor.HttpProxyEditor",
+        "dependsOn": {
+          "variableName": "enableProxy",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "saveToFile",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Save response content to file",
+        "group": "advanced",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
+      "name": "saveDirectory",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "File Save Directory",
+        "group": "advanced",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.file_path_editor.FolderPathEdit",
+        "inputValueType": "expression",
+        "dependsOn": {
+          "variableName": "saveToFile",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "fileName",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "File Name",
+        "group": "advanced",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "saveToFile",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
+      "name": "timeout",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": "10",
+      "uiConfig": {
+        "label": "Timeout(seconds)",
+        "group": "advanced",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "response",
+      "type": "HttpResponse",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Response Object"
+      }
+    }
+  ],
+  "i18nMessages": [
+    "Cookie Name",
+    "Cookie Value"
+  ]
+}

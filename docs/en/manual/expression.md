@@ -141,6 +141,12 @@ The file path information type contains information related to file paths. File 
 * ctime: Creation time, a timestamp in seconds
 * mtime: Modification time, a timestamp in seconds
 
+### Byte String Type - bytes
+
+The byte string type is used to represent binary byte data, and has the following attributes:
+
+* length: Get the number of bytes of the byte string.
+
 ### Web Browser Type - WebBrowser
 
 The web browser type represents an open web browser object.
@@ -158,6 +164,20 @@ The web element type represents a web element object, such as a button or link.
 ### Window Element Type - WindowElement
 
 The window element type represents a window object or an element within a window.
+
+### HTTP Response Type - HttpResponse
+
+The HttpResponse type represents an HTTP response object, and has the following properties:
+
+* `status_code`: Response status code.
+* `reason`: Response reason.
+* `headers`: Response header information, which is a dictionary object.
+* `cookies`: Response Cookie information, which is a dictionary object.
+* `sessionCookies`: The `cookies` attribute can only obtain the Cookie information returned by the current response. If there is a redirection, the Cookie information returned by intermediate responses cannot be obtained. In this case, you can use the `sessionCookies` attribute to obtain all currently active Cookie information.
+* `text`: Response text content.
+* `json`: Response JSON data.
+* `content`: Response binary data, which is a byte string.
+* `encoding`: Response text encoding.
 
 ## Operators
 

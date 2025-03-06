@@ -14,3 +14,5 @@ opencv-python
 pywinauto
 lxml
 pillow
+requests
+requests[socks]

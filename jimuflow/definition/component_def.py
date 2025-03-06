@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -25,16 +25,16 @@ from ..locales.i18n import gettext
 
 
 class ControlFlowType(Enum):
-    NORMAL = "NORMAL" # 普通组件
-    IF = "IF" # IF条件分支组件
-    ELSE_IF = "ELSE_IF" # ELSE IF条件分支组件
-    ELSE = "ELSE" # ELSE条件分支组件
-    LOOP = "LOOP" # 循环组件
-    BREAK = "BREAK" # 跳出循环组件
-    CONTINUE = "CONTINUE" # 跳过循环组件
-    RETURN = "RETURN" # 返回组件
-    INVOKE = "INVOKE" # 调用流程组件
-    EXIT = "EXIT" # 退出应用组件
+    NORMAL = "NORMAL"  # 普通组件
+    IF = "IF"  # IF条件分支组件
+    ELSE_IF = "ELSE_IF"  # ELSE IF条件分支组件
+    ELSE = "ELSE"  # ELSE条件分支组件
+    LOOP = "LOOP"  # 循环组件
+    BREAK = "BREAK"  # 跳出循环组件
+    CONTINUE = "CONTINUE"  # 跳过循环组件
+    RETURN = "RETURN"  # 返回组件
+    INVOKE = "INVOKE"  # 调用流程组件
+    EXIT = "EXIT"  # 退出应用组件
 
 
 class Platform(Enum):
@@ -52,6 +52,7 @@ class Platform(Enum):
             return gettext('MacOS')
         else:
             return gettext('Other')
+
 
 system_name = platform.system()
 if system_name == 'Windows':
@@ -162,6 +163,7 @@ class PrimitiveComponentDef(ComponentDef):
         self.class_name = ""
         self.ui_module_name = ""
         self.ui_class_name = ""
+        self.i18n_messages = []
 
     def load(self, json_data: dict):
         super().load(json_data)
@@ -174,3 +176,5 @@ class PrimitiveComponentDef(ComponentDef):
             last_dot_index = ui_type_name.rindex('.')
             self.ui_module_name = ui_type_name[0:last_dot_index]
             self.ui_class_name = ui_type_name[last_dot_index + 1:]
+        if 'i18nMessages' in json_data:
+            self.i18n_messages = json_data['i18nMessages']

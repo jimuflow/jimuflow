@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -50,6 +50,12 @@ class FilePathEdit(QWidget):
 
     def set_variables(self, variables: list[VariableDef], type_registry: DataTypeRegistry):
         self._expression_editor.set_variables(variables, type_registry)
+
+    def validate(self):
+        errors = []
+        if self._expression_editor.get_expression() and not self._expression_editor.validate_expression():
+            errors.append(gettext('Invalid expression'))
+        return errors
 
     @Slot()
     def _open_tool(self):

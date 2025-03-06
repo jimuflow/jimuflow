@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -102,3 +102,9 @@ builtin_data_type_registry.register(datetime_data_type)
 
 # FilePathInfo type
 builtin_data_type_registry.register(file_path_info_type)
+
+# bytes type
+bytes_data_type = DataTypeDef("bytes", gettext('Byte String'), [
+    DataTypeProperty("length", "number", gettext("Number of bytes"), lambda x: len(x)),
+], types=(bytes,))
+builtin_data_type_registry.register(bytes_data_type)
