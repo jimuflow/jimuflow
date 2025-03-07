@@ -1,0 +1,21 @@
+{
+  "name": "CloseDatabaseConnection",
+  "displayName": "Close Database Connection",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.database.CloseDatabaseConnectionComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Database",
+  "sortNo": 5,
+  "helpUrl": "commands/database/close_database_connection/",
+  "variables": [
+    {
+      "name": "dbConnection",
+      "type": "DbConnection",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Database Connection",
+        "inputType": "expression"
+      }
+    }
+  ]
+}

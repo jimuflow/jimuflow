@@ -208,6 +208,7 @@ nav:
       - Export Table: commands/DataTable/export_table.md
     - Others:
       - Print Message: commands/others/print.md
+      - Send HTTP Request: commands/others/send_http_request.md
   - Develop:
     - develop/index.md
     - Building and Running JimuFlow: develop/build.md

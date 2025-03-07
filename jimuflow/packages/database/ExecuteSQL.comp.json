@@ -1,0 +1,40 @@
+{
+  "name": "ExecuteSQL",
+  "displayName": "Execute SQL",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.database.ExecuteSQLComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Database",
+  "sortNo": 2,
+  "helpUrl": "commands/database/execute_sql/",
+  "variables": [
+    {
+      "name": "dbConnection",
+      "type": "DbConnection",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Database Connection",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "sql",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "SQL",
+        "placeholder": "SQL Statement",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "rowCount",
+      "type": "number",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Row Count",
+        "placeholder": "Number of rows affected by the sql"
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "QueryDatabase",
+  "displayName": "Query Database",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.database.QueryDatabaseComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Database",
+  "sortNo": 3,
+  "helpUrl": "commands/database/execute_sql/",
+  "variables": [
+    {
+      "name": "dbConnection",
+      "type": "DbConnection",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Database Connection",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "sql",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Query SQL",
+        "placeholder": "Query SQL Statement",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "table",
+      "type": "table",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Result Table"
+      }
+    }
+  ]
+}

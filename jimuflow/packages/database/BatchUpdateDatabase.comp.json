@@ -1,0 +1,49 @@
+{
+  "name": "BatchUpdateDatabase",
+  "displayName": "Batch Update Database",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.database.BatchUpdateDatabaseComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Database",
+  "sortNo": 4,
+  "helpUrl": "commands/database/batch_update_database/",
+  "variables": [
+    {
+      "name": "dbConnection",
+      "type": "DbConnection",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Database Connection",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "sql",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "SQL",
+        "placeholder": "example: insert into your_table (column1, column2) values (@table_column1@, @table_column2@)",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "table",
+      "type": "table",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Data Table",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "rowCount",
+      "type": "number",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Row Count",
+        "placeholder": "The number of records inserted, updated or deleted"
+      }
+    }
+  ]
+}

@@ -16,3 +16,6 @@ lxml
 pillow
 requests
 requests[socks]
+mysql-connector-python
+psycopg2-binary
+pymssql

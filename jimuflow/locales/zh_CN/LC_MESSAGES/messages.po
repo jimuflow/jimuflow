@@ -680,6 +680,41 @@ msgid ""
 msgstr "将##{writeContent}##写入到##{filePath}##，使用编码##{fileEncoding}##"
 
 #, python-brace-format
+msgid ""
+"Use ##{sql}## and ##{table}## to batch update the database "
+"##{dbConnection}##, and save the row count to ##{rowCount}##"
+msgstr "使用##{sql}##和##{table}##批量更新数据库##{dbConnection}##，并将更新记录数保存到##{rowCount}##"
+
+#, python-brace-format
+msgid "Close ##{dbConnection}##"
+msgstr "关闭##{dbConnection}##"
+
+#, python-brace-format
+msgid ""
+"Connect ##{db_type}## database ##{db_desc}##, and save the created "
+"connection object to ##{connection}##"
+msgstr "连接##{db_type}##数据库##{db_desc}##，并将创建的连接对象保存到##{connection}##"
+
+#, python-brace-format
+msgid "Database type {db_type} is not supported."
+msgstr "不支持数据库类型{db_type}"
+
+msgid "Database Connection"
+msgstr "数据库连接"
+
+#, python-brace-format
+msgid ""
+"Execute ##{sql}## on ##{dbConnection}##, and save the row count to "
+"##{rowCount}##"
+msgstr "在##{dbConnection}##上执行##{sql}##，并将影响的记录数保存到##{rowCount}##"
+
+#, python-brace-format
+msgid ""
+"Query ##{dbConnection}## with ##{sql}##, and save the result set to "
+"##{table}##"
+msgstr "使用##{sql}##查询##{dbConnection}##，将结果集保存到##{table}##"
+
+#, python-brace-format
 msgid "Find the image ##{image}## on the screen and move the mouse to the image"
 msgstr "在屏幕上找到图像##{image}##，然后将鼠标移动到图像上"
 
@@ -731,8 +766,11 @@ msgid ""
 "upper left corner of the screen"
 msgstr "将鼠标移动到相对于屏幕左上角的(##{offsetX}##,##{offsetY}##)位置"
 
-msgid "Send ##{method}## request to ##{url}##"
-msgstr "发送##{method}##请求到##{url}##"
+#, python-brace-format
+msgid ""
+"Send ##{method}## request to ##{url}##, and save the response object to "
+"##{response}##"
+msgstr "发送##{method}##请求到##{url}##，并将响应结果对象保存到##{response}##"
 
 #, python-brace-format
 msgid "Add column ##{columnName}## to ##{table}##"
@@ -4237,6 +4275,104 @@ msgstr "写入内容"
 msgid "Append"
 msgstr "追加"
 
+msgid "Batch Update Database"
+msgstr "批量更新数据库"
+
+msgid "Database"
+msgstr "数据库"
+
+msgid "SQL"
+msgstr "SQL"
+
+msgid ""
+"example: insert into your_table (column1, column2) values "
+"(@table_column1@, @table_column2@)"
+msgstr "示例：insert into your_table (column1, column2) values (@table_column1@, @table_column2@)"
+
+msgid "Data Table"
+msgstr "数据表格"
+
+msgid "Row Count"
+msgstr "记录数"
+
+msgid "The number of records inserted, updated or deleted"
+msgstr "插入、更新或删除的记录数"
+
+msgid "Close Database Connection"
+msgstr "关闭数据库连接"
+
+msgid "Connect to Database"
+msgstr "连接数据库"
+
+msgid "Database Type"
+msgstr "数据库类型"
+
+msgid "SQLite"
+msgstr "SQLite"
+
+msgid "MySQL"
+msgstr "MySQL"
+
+msgid "SQLServer"
+msgstr "SQLServer"
+
+msgid "PostgreSQL"
+msgstr "PostgreSQL"
+
+msgid "Database File"
+msgstr "数据库文件"
+
+msgid "Please input database file path"
+msgstr "请输入数据库文件的路径"
+
+msgid "Database Host"
+msgstr "数据库主机名"
+
+msgid "Database Port"
+msgstr "数据库端口"
+
+msgid "Database Name"
+msgstr "数据库名"
+
+msgid "Database User"
+msgstr "数据库用户"
+
+msgid "Database Password"
+msgstr "数据库密码"
+
+msgid "Database Extra Config"
+msgstr "数据库额外配置"
+
+msgid "Please input config dictionary or json object string"
+msgstr "请输入配置字典或JSON对象字符串"
+
+msgid "Connection Object"
+msgstr "连接对象"
+
+msgid "Please assign a variable to store the connection object"
+msgstr "请指定一个变量来存储连接对象"
+
+msgid "Execute SQL"
+msgstr "执行SQL语句"
+
+msgid "SQL Statement"
+msgstr "SQL语句"
+
+msgid "Number of rows affected by the sql"
+msgstr "受SQL影响的行数"
+
+msgid "Query Database"
+msgstr "查询数据库"
+
+msgid "Query SQL"
+msgstr "查询SQL"
+
+msgid "Query SQL Statement"
+msgstr "查询SQL语句"
+
+msgid "Result Table"
+msgstr "结果数据表格"
+
 msgid "Hover Image"
 msgstr "鼠标悬浮在图像上"
 
@@ -4549,9 +4685,6 @@ msgstr "响应对象"
 
 msgid "Add Table Column"
 msgstr "新增表格列"
-
-msgid "Data Table"
-msgstr "数据表格"
 
 msgid "Column Name"
 msgstr "列名"

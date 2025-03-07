@@ -1,0 +1,153 @@
+{
+  "name": "ConnectToDatabase",
+  "displayName": "Connect to Database",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.database.ConnectToDatabaseComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Database",
+  "sortNo": 1,
+  "helpUrl": "commands/database/connect_to_database/",
+  "variables": [
+    {
+      "name": "dbType",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "SQLite",
+      "uiConfig": {
+        "label": "Database Type",
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "SQLite",
+            "label": "SQLite"
+          },
+          {
+            "value": "MySQL",
+            "label": "MySQL"
+          },
+          {
+            "value": "SQLServer",
+            "label": "SQLServer"
+          },
+          {
+            "value": "PostgreSQL",
+            "label": "PostgreSQL"
+          }
+        ]
+      }
+    },
+    {
+      "name": "dbFile",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Database File",
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.file_path_editor.OpenFilePathEdit",
+        "inputValueType": "expression",
+        "placeholder": "Please input database file path",
+        "dependsOn": {
+          "variableName": "dbType",
+          "operator": "==",
+          "value": "SQLite"
+        }
+      }
+    },
+    {
+      "name": "host",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "\"127.0.0.1\"",
+      "uiConfig": {
+        "label": "Database Host",
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "dbType",
+          "operator": "!=",
+          "value": "SQLite"
+        }
+      }
+    },
+    {
+      "name": "port",
+      "type": "number",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Database Port",
+        "inputType": "expression",
+        "required": false,
+        "dependsOn": {
+          "variableName": "dbType",
+          "operator": "!=",
+          "value": "SQLite"
+        }
+      }
+    },
+    {
+      "name": "database",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Database Name",
+        "inputType": "expression",
+        "required": false,
+        "dependsOn": {
+          "variableName": "dbType",
+          "operator": "!=",
+          "value": "SQLite"
+        }
+      }
+    },
+    {
+      "name": "user",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Database User",
+        "inputType": "expression",
+        "required": false,
+        "dependsOn": {
+          "variableName": "dbType",
+          "operator": "!=",
+          "value": "SQLite"
+        }
+      }
+    },
+    {
+      "name": "password",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Database Password",
+        "inputType": "expression",
+        "required": false,
+        "dependsOn": {
+          "variableName": "dbType",
+          "operator": "!=",
+          "value": "SQLite"
+        }
+      }
+    },
+    {
+      "name": "extraConfig",
+      "type": "any",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Database Extra Config",
+        "group": "advanced",
+        "inputType": "expression",
+        "required": false,
+        "placeholder": "Please input config dictionary or json object string"
+      }
+    },
+    {
+      "name": "connection",
+      "type": "DbConnection",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Connection Object",
+        "placeholder": "Please assign a variable to store the connection object"
+      }
+    }
+  ]
+}

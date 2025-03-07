@@ -30,8 +30,9 @@ class SendHttpRequestComponent(PrimitiveComponent):
 
     @classmethod
     def display_description(cls, flow_node: FlowNode):
-        return gettext('Send ##{method}## request to ##{url}##').format(url=flow_node.input('requestUrl'),
-                                                                        method=flow_node.input('requestMethod'))
+        return gettext('Send ##{method}## request to ##{url}##, and save the response object to ##{response}##').format(
+            url=flow_node.input('requestUrl'),
+            method=flow_node.input('requestMethod'), response=flow_node.output('response'))
 
     async def execute(self) -> ControlFlow:
         url = self.read_input('requestUrl')

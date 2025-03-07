@@ -678,6 +678,41 @@ msgid ""
 msgstr ""
 
 #, python-brace-format
+msgid ""
+"Use ##{sql}## and ##{table}## to batch update the database "
+"##{dbConnection}##, and save the row count to ##{rowCount}##"
+msgstr ""
+
+#, python-brace-format
+msgid "Close ##{dbConnection}##"
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"Connect ##{db_type}## database ##{db_desc}##, and save the created "
+"connection object to ##{connection}##"
+msgstr ""
+
+#, python-brace-format
+msgid "Database type {db_type} is not supported."
+msgstr ""
+
+msgid "Database Connection"
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"Execute ##{sql}## on ##{dbConnection}##, and save the row count to "
+"##{rowCount}##"
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"Query ##{dbConnection}## with ##{sql}##, and save the result set to "
+"##{table}##"
+msgstr ""
+
+#, python-brace-format
 msgid "Find the image ##{image}## on the screen and move the mouse to the image"
 msgstr ""
 
@@ -730,7 +765,9 @@ msgid ""
 msgstr ""
 
 #, python-brace-format
-msgid "Send ##{method}## request to ##{url}##"
+msgid ""
+"Send ##{method}## request to ##{url}##, and save the response object to "
+"##{response}##"
 msgstr ""
 
 #, python-brace-format
@@ -4157,6 +4194,104 @@ msgstr ""
 msgid "Append"
 msgstr ""
 
+msgid "Batch Update Database"
+msgstr ""
+
+msgid "Database"
+msgstr ""
+
+msgid "SQL"
+msgstr ""
+
+msgid ""
+"example: insert into your_table (column1, column2) values "
+"(@table_column1@, @table_column2@)"
+msgstr ""
+
+msgid "Data Table"
+msgstr ""
+
+msgid "Row Count"
+msgstr ""
+
+msgid "The number of records inserted, updated or deleted"
+msgstr ""
+
+msgid "Close Database Connection"
+msgstr ""
+
+msgid "Connect to Database"
+msgstr ""
+
+msgid "Database Type"
+msgstr ""
+
+msgid "SQLite"
+msgstr ""
+
+msgid "MySQL"
+msgstr ""
+
+msgid "SQLServer"
+msgstr ""
+
+msgid "PostgreSQL"
+msgstr ""
+
+msgid "Database File"
+msgstr ""
+
+msgid "Please input database file path"
+msgstr ""
+
+msgid "Database Host"
+msgstr ""
+
+msgid "Database Port"
+msgstr ""
+
+msgid "Database Name"
+msgstr ""
+
+msgid "Database User"
+msgstr ""
+
+msgid "Database Password"
+msgstr ""
+
+msgid "Database Extra Config"
+msgstr ""
+
+msgid "Please input config dictionary or json object string"
+msgstr ""
+
+msgid "Connection Object"
+msgstr ""
+
+msgid "Please assign a variable to store the connection object"
+msgstr ""
+
+msgid "Execute SQL"
+msgstr ""
+
+msgid "SQL Statement"
+msgstr ""
+
+msgid "Number of rows affected by the sql"
+msgstr ""
+
+msgid "Query Database"
+msgstr ""
+
+msgid "Query SQL"
+msgstr ""
+
+msgid "Query SQL Statement"
+msgstr ""
+
+msgid "Result Table"
+msgstr ""
+
 msgid "Hover Image"
 msgstr ""
 
@@ -4468,9 +4603,6 @@ msgid "Response Object"
 msgstr ""
 
 msgid "Add Table Column"
-msgstr ""
-
-msgid "Data Table"
 msgstr ""
 
 msgid "Column Name"

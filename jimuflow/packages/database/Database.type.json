@@ -1,0 +1,3 @@
+{
+  "registrar": "jimuflow.components.database.db_types.DbTypesRegistrar"
+}

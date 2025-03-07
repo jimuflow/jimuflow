@@ -208,6 +208,7 @@ nav:
       - 导出数据表格: commands/DataTable/export_table.md
     - 其他:
       - 打印消息: commands/others/print.md
+      - 发送HTTP请求: commands/others/send_http_request.md
   - 开发:
     - develop/index.md
     - 构建和运行JimuFlow: develop/build.md

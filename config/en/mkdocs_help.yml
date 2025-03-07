@@ -176,3 +176,4 @@ nav:
       - Export Table: commands/DataTable/export_table.md
     - Others:
       - Print Message: commands/others/print.md
+      - Send HTTP Request: commands/others/send_http_request.md
