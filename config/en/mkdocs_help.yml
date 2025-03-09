@@ -174,6 +174,12 @@ nav:
       - Import Excel as Table: commands/DataTable/import_excel_as_table.md
       - Import CSV as Table: commands/DataTable/import_csv_as_table.md
       - Export Table: commands/DataTable/export_table.md
+    - Database:
+      - Connect to Database: commands/Database/connect_to_database.md
+      - Execute SQL: commands/Database/execute_sql.md
+      - Query Database: commands/Database/query_database.md
+      - Batch Update Database: commands/Database/batch_update_database.md
+      - Connect to Database: commands/Database/close_database_connection.md
     - Others:
       - Print Message: commands/others/print.md
       - Send HTTP Request: commands/others/send_http_request.md

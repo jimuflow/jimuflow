@@ -56,7 +56,9 @@ class ConnectToDatabaseComponent(PrimitiveComponent):
 
     def _connect_to_sqllite(self):
         db_file = self.read_input('dbFile')
-        connect_kwargs = {}
+        connect_kwargs = {
+            'autocommit': False
+        }
         connect_kwargs.update(self._get_extra_config())
         import sqlite3
         conn = sqlite3.connect(db_file, **connect_kwargs)
@@ -129,7 +131,7 @@ class ConnectToDatabaseComponent(PrimitiveComponent):
         if database:
             connect_kwargs['database'] = database
         connect_kwargs.update(self._get_extra_config())
+        connect_kwargs.update({'as_dict': False})
         import pymssql
         conn = pymssql.connect(**connect_kwargs)
-        conn.paramstyle = pymssql.paramstyle
         return conn

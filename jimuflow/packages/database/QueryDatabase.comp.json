@@ -6,7 +6,7 @@
   "supportsErrorHandling": true,
   "primaryCategory": "Database",
   "sortNo": 3,
-  "helpUrl": "commands/database/execute_sql/",
+  "helpUrl": "commands/database/query_database/",
   "variables": [
     {
       "name": "dbConnection",

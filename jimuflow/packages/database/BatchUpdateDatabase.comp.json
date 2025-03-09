@@ -18,21 +18,21 @@
       }
     },
     {
+      "name": "table",
+      "type": "table",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Data Table",
+        "inputType": "expression"
+      }
+    },
+    {
       "name": "sql",
       "type": "text",
       "direction": "IN",
       "uiConfig": {
         "label": "SQL",
         "placeholder": "example: insert into your_table (column1, column2) values (@table_column1@, @table_column2@)",
-        "inputType": "expression"
-      }
-    },
-    {
-      "name": "table",
-      "type": "table",
-      "direction": "IN",
-      "uiConfig": {
-        "label": "Data Table",
         "inputType": "expression"
       }
     },

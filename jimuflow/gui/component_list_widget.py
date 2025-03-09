@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -41,6 +41,10 @@ categories = {
     "Wait": {
         "title": gettext("Wait"),
         "sort_no": 35
+    },
+    "Process": {
+        "title": gettext("Process"),
+        "sort_no": 36
     },
     "Web Automation": {
         "title": gettext("Web Automation"),
@@ -90,9 +94,21 @@ categories = {
         "title": gettext("Date Time Operation"),
         "sort_no": 55
     },
-    "Process": {
-        "title": gettext("Process"),
+    "Operating System": {
+        "title": gettext("Operating System"),
+        "sort_no": 60
+    },
+    "Mouse/Keyboard": {
+        "title": gettext("Mouse/Keyboard"),
         "sort_no": 70
+    },
+    "Data Table": {
+        "title": gettext("Data Table"),
+        "sort_no": 80
+    },
+    "Database": {
+        "title": gettext("Database"),
+        "sort_no": 90
     },
     "Other": {
         "title": gettext("Other"),
