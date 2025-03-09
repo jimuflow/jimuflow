@@ -12,8 +12,9 @@ from tests.utils import create_component_context
 @pytest.mark.asyncio
 async def test_execute_create_table_sql():
     async with create_component_context(ExecuteSQLComponent) as component:
-        with tempfile.NamedTemporaryFile(suffix=".db") as db_file:
-            with sqlite3.connect(db_file.name) as conn:
+        with tempfile.NamedTemporaryFile(suffix=".db", delete_on_close=False) as db_file:
+            conn = sqlite3.connect(db_file.name)
+            try:
                 await component.process.update_variable('conn', conn)
                 component.node.inputs = {
                     "dbConnection": 'conn',
@@ -28,13 +29,16 @@ async def test_execute_create_table_sql():
                 cursor = conn.cursor()
                 assert cursor.execute('SELECT count(*) FROM movie').fetchone()[0] == 0
                 cursor.close()
+            finally:
+                conn.close()
 
 
 @pytest.mark.asyncio
 async def test_execute_insert_sql():
     async with create_component_context(ExecuteSQLComponent) as component:
-        with tempfile.NamedTemporaryFile(suffix=".db") as db_file:
-            with sqlite3.connect(db_file.name) as conn:
+        with tempfile.NamedTemporaryFile(suffix=".db", delete_on_close=False) as db_file:
+            conn = sqlite3.connect(db_file.name)
+            try:
                 await component.process.update_variable('conn', conn)
                 cursor = conn.cursor()
                 cursor.execute('CREATE TABLE movie(title, year, score)')
@@ -56,3 +60,5 @@ async def test_execute_insert_sql():
                 assert r == 2
                 cursor = conn.cursor()
                 assert cursor.execute('SELECT count(*) FROM movie').fetchone()[0] == 2
+            finally:
+                conn.close()

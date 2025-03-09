@@ -15,22 +15,8 @@ python generate_version_info.py
 mkdocs build -f config\en\mkdocs_help.yml
 mkdocs build -f config\zh\mkdocs_help.yml
 
-:: 获取所有自定义编辑器模块的--hidden-import参数
-set "PACKAGE_NAME=jimuflow.gui.components"
-setlocal enabledelayedexpansion
-for /f "delims=" %%A in ('python -c "import pkgutil, importlib; package = importlib.import_module('%PACKAGE_NAME%'); modules = [module.name for module in pkgutil.iter_modules(package.__path__)]; print(','.join(modules))" 2^>nul') do set "MODULES=%%A"
-if "%MODULES%"=="" (
-    echo Failed to retrieve modules for package %PACKAGE_NAME%. Ensure the package is installed and valid.
-    exit /b 1
-)
-echo Modules found: %MODULES%
-echo Generating hidden-import arguments...
-set "HIDDEN_IMPORTS="
-for %%M in (%MODULES%) do (
-    set "HIDDEN_IMPORTS=!HIDDEN_IMPORTS! --hidden-import=%PACKAGE_NAME%.%%M"
-)
-
-@REM echo %HIDDEN_IMPORTS%
+:: 生成组件定义中引用的模块所需要的--hidden-import参数
+for /f "delims=" %%A in ('python scripts\gen_hidden_imports.py') do set HIDDEN_IMPORTS=%%A
 
 set PLAYWRIGHT_BROWSERS_PATH=0
 playwright install chromium
@@ -41,14 +27,6 @@ pyinstaller --name JimuFlow ^
   --add-data "jimuflow\packages:.\jimuflow\packages" ^
   --add-data "jimuflow\resources:.\jimuflow\resources" ^
   --add-data "help:.\jimuflow\help" ^
-  --hidden-import=jimuflow.datatypes.web_page ^
-  --hidden-import=jimuflow.datatypes.windows_types ^
-  --hidden-import=jimuflow.components ^
-  --hidden-import=jimuflow.components.core ^
-  --hidden-import=jimuflow.components.table ^
-  --hidden-import=jimuflow.components.web_automation ^
-  --hidden-import=jimuflow.components.mouse_keyboard ^
-  --hidden-import=jimuflow.components.windows_automation ^
   %HIDDEN_IMPORTS% ^
   --noconsole ^
   jimuflow\gui\main_window.py

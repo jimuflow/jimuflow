@@ -11,7 +11,7 @@ from tests.utils import create_component_context
 @pytest.mark.asyncio
 async def test_connect_to_sqlite():
     async with create_component_context(ConnectToDatabaseComponent) as component:
-        with tempfile.NamedTemporaryFile(suffix=".db") as db_file:
+        with tempfile.NamedTemporaryFile(suffix=".db", delete_on_close=False) as db_file:
             component.node.inputs = {
                 "dbType": 'SQLite',
                 "dbFile": escape_string(db_file.name),

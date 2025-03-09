@@ -13,8 +13,9 @@ from tests.utils import create_component_context
 @pytest.mark.asyncio
 async def test_execute():
     async with create_component_context(BatchUpdateDatabaseComponent) as component:
-        with tempfile.NamedTemporaryFile(suffix=".db") as db_file:
-            with sqlite3.connect(db_file.name) as conn:
+        with tempfile.NamedTemporaryFile(suffix=".db", delete_on_close=False) as db_file:
+            conn = sqlite3.connect(db_file.name)
+            try:
                 await component.process.update_variable('conn', conn)
                 table = Table(['col1', 'col2', 'col3'])
                 table.rows = [('Monty Python and the Holy Grail', 1975, 8.2),
@@ -40,3 +41,5 @@ async def test_execute():
                 result = cursor.fetchall()
                 assert result == table.rows
                 cursor.close()
+            finally:
+                conn.close()

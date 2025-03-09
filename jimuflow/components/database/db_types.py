@@ -14,13 +14,10 @@
 #
 # Copyright (C) 2024-2025  Weng Jing
 
-import requests
-
 from jimuflow.datatypes.core import DataTypeDef, DataTypeRegistry
 from jimuflow.locales.i18n import gettext
 
-db_connection_type = DataTypeDef("DbConnection", gettext('Database Connection'), [
-], types=(requests.Response,))
+db_connection_type = DataTypeDef("DbConnection", gettext('Database Connection'))
 
 
 class DbTypesRegistrar:

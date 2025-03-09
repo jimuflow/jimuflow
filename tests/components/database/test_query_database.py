@@ -13,8 +13,9 @@ from tests.utils import create_component_context
 @pytest.mark.asyncio
 async def test_execute():
     async with create_component_context(QueryDatabaseComponent) as component:
-        with tempfile.NamedTemporaryFile(suffix=".db") as db_file:
-            with sqlite3.connect(db_file.name) as conn:
+        with tempfile.NamedTemporaryFile(suffix=".db", delete_on_close=False) as db_file:
+            conn = sqlite3.connect(db_file.name)
+            try:
                 await component.process.update_variable('conn', conn)
                 cursor = conn.cursor()
                 cursor.execute('CREATE TABLE movie(title, year, score)')
@@ -38,3 +39,5 @@ async def test_execute():
                 assert r.columnNames == ['title', 'year', 'score']
                 assert r.rows[0] == ('Monty Python and the Holy Grail', 1975, 8.2)
                 assert r.rows[1] == ('And Now for Something Completely Different', 1971, 7.5)
+            finally:
+                conn.close()
