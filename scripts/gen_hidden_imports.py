@@ -1,5 +1,7 @@
+import importlib
 import json
 import os.path
+import pkgutil
 from pathlib import Path
 
 base_path = os.path.dirname(os.path.dirname(__file__))
@@ -31,4 +33,9 @@ for package_path in packages_path.iterdir():
                     if 'registrar' in type_json:
                         modules.add(get_type_module(type_json['registrar']))
 
+packages = ['mysql.connector.locales', 'mysql.connector.plugins']
+for package_name in packages:
+    package = importlib.import_module(package_name)
+    for _, name, _ in pkgutil.walk_packages(package.__path__, package_name + '.'):
+        modules.add(name)
 print(' '.join(f'--hidden-import={name}' for name in modules))
