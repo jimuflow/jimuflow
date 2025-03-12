@@ -163,7 +163,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
-          release_name: JimuFlow ${{ github.ref_name }}
+          name: JimuFlow ${{ github.ref_name }}
           draft: true
           prerelease: false
           files: |
