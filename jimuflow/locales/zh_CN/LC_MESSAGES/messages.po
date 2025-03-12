@@ -2320,6 +2320,9 @@ msgstr "后退"
 msgid "Forward"
 msgstr "前进"
 
+msgid "Log Details"
+msgstr "日志详情"
+
 msgid "Timestamp"
 msgstr "时间"
 
@@ -2331,6 +2334,9 @@ msgstr "指令"
 
 msgid "Message"
 msgstr "消息"
+
+msgid "Double-click to view the full content"
+msgstr "双击查看完整内容"
 
 msgid "Ready"
 msgstr "就绪"

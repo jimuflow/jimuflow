@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -18,12 +18,27 @@ from datetime import datetime
 
 from PySide6.QtCore import Signal, Slot, QModelIndex
 from PySide6.QtGui import QStandardItemModel, QStandardItem, Qt
-from PySide6.QtWidgets import QTableView
+from PySide6.QtWidgets import QTableView, QVBoxLayout, QDialogButtonBox, QDialog, QTextEdit
 
 from jimuflow.definition import ProcessDef
 from jimuflow.gui.app import AppContext
 from jimuflow.locales.i18n import gettext
 from jimuflow.runtime.log import Logger, LogEntry, LogLevel
+
+
+class LogDetailsWidget(QDialog):
+    def __init__(self, message: str, parent=None):
+        super().__init__(parent)
+        self.setWindowTitle(gettext('Log Details'))
+        layout = QVBoxLayout(self)
+        text_edit = QTextEdit()
+        text_edit.setText(message)
+        text_edit.setReadOnly(True)
+        layout.addWidget(text_edit)
+        button_box = QDialogButtonBox(QDialogButtonBox.StandardButton.Close)
+        button_box.rejected.connect(self.close)
+        layout.addWidget(button_box)
+        self.resize(600, 300)
 
 
 class LogWidget(QTableView):
@@ -86,11 +101,16 @@ class LogWidget(QTableView):
         line_no.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable)
         message_content = log_entry.message
         if log_entry.exception:
-            message_content = message_content + ": " + f'{type(log_entry.exception).__name__}: {str(log_entry.exception)}'.replace(
-                '\n', '')
-        message = QStandardItem(message_content)
+            message_content = message_content + ": " + f'{type(log_entry.exception).__name__}: {str(log_entry.exception)}'
+        message_title = message_content[:100].replace('\n', ' ') + "..." + gettext(
+            'Double-click to view the full content') if len(
+            message_content) > 100 else message_content
+        message_tooltip = message_content[:200] + "..." + gettext('Double-click to view the full content') if len(
+            message_content) > 200 else message_content
+        message = QStandardItem(message_title)
         message.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable)
-        message.setData(message_content, Qt.ItemDataRole.ToolTipRole)
+        message.setData(message_tooltip, Qt.ItemDataRole.ToolTipRole)
+        message.setData(message_content, Qt.ItemDataRole.UserRole)
         self._model.appendRow([timestamp, level, process_name, line_no, comp_name, message])
         if self._model.rowCount() > self.max_logs:
             self._model.removeRow(0)
@@ -98,6 +118,11 @@ class LogWidget(QTableView):
 
     @Slot(QModelIndex)
     def _on_double_clicked(self, index: QModelIndex):
+        if index.column() == 5:
+            message = self._model.data(self._model.index(index.row(), 5, index.parent()), Qt.ItemDataRole.UserRole)
+            details_dialog = LogDetailsWidget(message)
+            details_dialog.exec()
+            return
         process_id = self._model.data(self._model.index(index.row(), 2, index.parent()))
         line_no = self._model.data(self._model.index(index.row(), 3, index.parent()))
         if process_id and line_no:
