@@ -1,0 +1,251 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "浏览器",
+      "type": "WebBrowser",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "豆包网页",
+      "type": "WebPage",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "待翻译文件列表",
+      "type": "list",
+      "direction": "LOCAL",
+      "elementType": "text"
+    },
+    {
+      "name": "当前文件",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "待翻译内容",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "重试次数",
+      "type": "number",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "翻译结果",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "待翻译文件夹",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "inputType": "expression",
+        "placeholder": "待翻译文件所在文件夹"
+      }
+    },
+    {
+      "name": "翻译文件保存目录",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "inputType": "expression",
+        "placeholder": "翻译文件保存的文件夹"
+      }
+    },
+    {
+      "name": "待翻译文件后缀名",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": ".txt",
+      "uiConfig": {
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "文件相对路径",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "待翻译文件总数",
+      "type": "number",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "当前文件序号",
+      "type": "number",
+      "direction": "LOCAL",
+      "defaultValue": 0
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:web_automation:OpenWebBrowser",
+      "inputs": {
+        "enableProxy": false,
+        "headless": false
+      },
+      "outputs": {
+        "webBrowser": "浏览器"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:web_automation:OpenWebPage",
+      "inputs": {
+        "webBrowser": "浏览器",
+        "url": "\"https://www.doubao.com/chat/\"",
+        "waitLoaded": true,
+        "loadTimeout": "\"30\"",
+        "loadTimeoutAction": "stop_loading"
+      },
+      "outputs": {
+        "webPage": "豆包网页"
+      },
+      "lineNo": 2
+    },
+    {
+      "component": "jimuflow:core:ListFiles",
+      "inputs": {
+        "folder": "待翻译文件夹",
+        "filenamePattern": "\"*\" + 待翻译文件后缀名",
+        "findSubFolders": true,
+        "ignoreHiddenFiles": true,
+        "sortingFiles": false
+      },
+      "outputs": {
+        "result": "待翻译文件列表"
+      },
+      "lineNo": 3
+    },
+    {
+      "component": "jimuflow:core:SetVariable",
+      "inputs": {
+        "value": "待翻译文件列表 . size"
+      },
+      "outputs": {
+        "result": "待翻译文件总数"
+      },
+      "lineNo": 4
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"共有\" + 待翻译文件总数 + \"个文件待翻译\""
+      },
+      "lineNo": 5
+    },
+    {
+      "component": "jimuflow:core:SetVariable",
+      "inputs": {
+        "value": "\"1\""
+      },
+      "outputs": {
+        "result": "当前文件序号"
+      },
+      "lineNo": 6
+    },
+    {
+      "component": "jimuflow:core:ListLoop",
+      "inputs": {
+        "list": "待翻译文件列表"
+      },
+      "outputs": {
+        "loopItem": "当前文件"
+      },
+      "lineNo": 7,
+      "flow": [
+        {
+          "component": "jimuflow:core:SliceText",
+          "inputs": {
+            "fromWhere": "specified_position",
+            "originalText": "当前文件",
+            "startingPosition": "待翻译文件夹 . length",
+            "toWhere": "end"
+          },
+          "outputs": {
+            "result": "文件相对路径"
+          },
+          "lineNo": 8
+        },
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"开始处理(\" + 当前文件序号 + \"/\" + 待翻译文件总数 + \")\" + \"：\" + 文件相对路径"
+          },
+          "lineNo": 9
+        },
+        {
+          "component": "jimuflow:core:ReadTextFile",
+          "inputs": {
+            "fileEncoding": "utf-8",
+            "filePath": "当前文件",
+            "readType": "whole"
+          },
+          "outputs": {
+            "result": "待翻译内容"
+          },
+          "lineNo": 10
+        },
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"待翻译内容：\" + 待翻译内容"
+          },
+          "lineNo": 11
+        },
+        {
+          "component": "使用豆包进行翻译",
+          "inputs": {
+            "豆包页面": "豆包网页",
+            "待翻译文本": "待翻译内容"
+          },
+          "outputs": {
+            "翻译结果": "翻译结果"
+          },
+          "errorHandlingType": "RETRY",
+          "maxRetries": 100,
+          "retryInterval": 60,
+          "lineNo": 12
+        },
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"翻译结果：\" + 翻译结果"
+          },
+          "lineNo": 13
+        },
+        {
+          "component": "jimuflow:core:WriteTextFile",
+          "inputs": {
+            "filePath": "翻译文件保存目录 + 文件相对路径",
+            "writeContent": "翻译结果",
+            "actionWhenExists": "overwrite",
+            "fileEncoding": "utf-8"
+          },
+          "lineNo": 14
+        },
+        {
+          "component": "jimuflow:core:TimeWait",
+          "inputs": {
+            "seconds": "\"10\""
+          },
+          "lineNo": 15
+        },
+        {
+          "component": "jimuflow:core:SetVariable",
+          "inputs": {
+            "value": "当前文件序号 + \"1\""
+          },
+          "outputs": {
+            "result": "当前文件序号"
+          },
+          "lineNo": 16
+        }
+      ]
+    }
+  ]
+}

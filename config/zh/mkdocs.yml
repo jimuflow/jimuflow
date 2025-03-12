@@ -55,6 +55,7 @@ nav:
     - 流程控制:
       - 返回: commands/ProcessControl/return.md
       - 终止应用: commands/ProcessControl/exit.md
+      - 抛出错误: commands/ProcessControl/raise_error.md
       - 条件分支:
         - If 分支: commands/ProcessControl/switch/if.md
         - If 多条件分支: commands/ProcessControl/switch/if_conditions.md
@@ -232,4 +233,7 @@ nav:
     - 网页元素XPath获取工具: develop/web_page_element_xpath_acquisition_tool.md
     - 发布PyPI: develop/publish_package.md
     - 路线图: develop/roadmap.md
-
+  - 示例应用:
+    - examples/index.md
+    - 采集百度热搜: examples/collect_baidu_hot_searches/index.md
+    - 使用大模型批量翻译文本文件: examples/translate_files_using_llm/index.md

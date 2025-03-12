@@ -55,6 +55,7 @@ nav:
     - Process Control:
       - Return: commands/ProcessControl/return.md
       - Exit: commands/ProcessControl/exit.md
+      - Raise Error: commands/ProcessControl/raise_error.md
       - Switch:
         - If branch: commands/ProcessControl/switch/if.md
         - If conditions branch: commands/ProcessControl/switch/if_conditions.md
@@ -232,3 +233,7 @@ nav:
     - Web Element XPath Retrieval Tool: develop/web_page_element_xpath_acquisition_tool.md
     - Publishing to PyPI: develop/publish_package.md
     - Roadmap: develop/roadmap.md
+  - Examples:
+    - examples/index.md
+    - Collect Baidu Hot Searches: examples/collect_baidu_hot_searches/index.md
+    - Batch Translation of Text Files Using a LLM: examples/translate_files_using_llm/index.md

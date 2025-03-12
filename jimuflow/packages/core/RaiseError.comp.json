@@ -1,0 +1,20 @@
+{
+  "name": "RaiseError",
+  "displayName": "Raise Error",
+  "controlFlowType": "RETURN",
+  "type": "jimuflow.components.core.RaiseErrorComponent",
+  "primaryCategory": "Process Control",
+  "sortNo": 3,
+  "helpUrl": "commands/ProcessControl/raise_error/",
+  "variables": [
+    {
+      "name": "reason",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Error Reason",
+        "inputType": "expression"
+      }
+    }
+  ]
+}

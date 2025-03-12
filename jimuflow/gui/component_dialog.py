@@ -296,6 +296,22 @@ class DefaultComponentForm(ComponentForm):
         self._error_form_layout.addWidget(help_label, row, 2)
         row += 1
 
+        # 错误原因
+        self._error_reason_output_editor = VariableLineEdit()
+        self._error_reason_output_editor.setPlaceholderText(gettext('The variable name used to save the error reason'))
+        self._error_reason_output_editor.set_variables(self.process_model.process_def.variables)
+        self._error_reason_output_editor.setObjectName("errorReasonOutputEditor")
+        if self.node:
+            self._error_reason_output_editor.setText(self.node.error_reason_out_var)
+        label = QLabel(gettext('Error Reason'))
+        label.setObjectName("errorReasonOutputLabel")
+        help_label = self._create_help_label(gettext('Please enter the variable name used to save the error reason.'))
+        help_label.setObjectName("errorReasonOutputHelp")
+        self._error_form_layout.addWidget(label, row, 0)
+        self._error_form_layout.addWidget(self._error_reason_output_editor, row, 1)
+        self._error_form_layout.addWidget(help_label, row, 2)
+        row += 1
+
         if len(self.comp_def.output_variables()) > 0:
             label = QLabel(gettext('Outputs On Error'))
             label.setObjectName("outputsOnErrorLabel")
@@ -389,6 +405,9 @@ class DefaultComponentForm(ComponentForm):
                 self._retry_interval.hide()
                 self.findChild(QWidget, 'retryIntervalLabel').hide()
                 self.findChild(QWidget, 'retryIntervalHelp').hide()
+                self._error_reason_output_editor.hide()
+                self.findChild(QWidget, 'errorReasonOutputLabel').hide()
+                self.findChild(QWidget, 'errorReasonOutputHelp').hide()
                 self._hide_error_outputs()
             elif index == 1:
                 self._max_retries.show()
@@ -397,6 +416,9 @@ class DefaultComponentForm(ComponentForm):
                 self._retry_interval.show()
                 self.findChild(QWidget, 'retryIntervalLabel').show()
                 self.findChild(QWidget, 'retryIntervalHelp').show()
+                self._error_reason_output_editor.hide()
+                self.findChild(QWidget, 'errorReasonOutputLabel').hide()
+                self.findChild(QWidget, 'errorReasonOutputHelp').hide()
                 self._hide_error_outputs()
             elif index == 2:
                 self._max_retries.hide()
@@ -405,6 +427,9 @@ class DefaultComponentForm(ComponentForm):
                 self._retry_interval.hide()
                 self.findChild(QWidget, 'retryIntervalLabel').hide()
                 self.findChild(QWidget, 'retryIntervalHelp').hide()
+                self._error_reason_output_editor.show()
+                self.findChild(QWidget, 'errorReasonOutputLabel').show()
+                self.findChild(QWidget, 'errorReasonOutputHelp').show()
                 self._show_error_outputs(out_var_satisfied_dict)
 
     def _hide_error_outputs(self):
@@ -507,6 +532,10 @@ class DefaultComponentForm(ComponentForm):
                 node['retry_interval'] = int(self._retry_interval.text())
             elif self._error_handling_type.currentIndex() == 2:
                 node['outputs_on_error'] = {}
+                error_reason_out_var = self._error_reason_output_editor.text()
+                if error_reason_out_var:
+                    error_reason_out_var = error_reason_out_var.strip()
+                node['error_reason_out_var'] = error_reason_out_var
                 for output_def in self.comp_def.output_variables():
                     node['outputs_on_error'][output_def.name] = self._output_editors_on_error[output_def.name].text()
         return node
@@ -557,9 +586,8 @@ class DefaultComponentForm(ComponentForm):
                 for output_def in self.comp_def.output_variables():
                     if self._is_variable_dependency_satisfied(output_def):
                         display_name = gettext(output_def.ui_config.label or output_def.name)
-                        if not self._output_editors_on_error[output_def.name].text():
-                            errors.append(gettext('Output parameter {name} is required').format(name=display_name))
-                        elif not self._output_editors_on_error[output_def.name].validate_expression():
+                        output_editor_on_error = self._output_editors_on_error[output_def.name]
+                        if output_editor_on_error.text() and not output_editor_on_error.validate_expression():
                             errors.append(gettext('Invalid expression for output {name}').format(name=display_name))
         return errors
 

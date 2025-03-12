@@ -1,0 +1,216 @@
+{
+  "name": "使用豆包进行翻译",
+  "variables": [
+    {
+      "name": "豆包页面",
+      "type": "WebPage",
+      "direction": "IN",
+      "uiConfig": {
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "待翻译文本",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "翻译结果",
+      "type": "text",
+      "direction": "OUT"
+    },
+    {
+      "name": "需要登录",
+      "type": "bool",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "是否处于登录状态",
+      "type": "bool",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "生成结束",
+      "type": "bool",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:web_automation:NavigateWebPage",
+      "inputs": {
+        "webPage": "豆包页面",
+        "navigateType": "goto",
+        "url": "\"https://www.doubao.com/chat/\"",
+        "waitLoaded": true,
+        "loadTimeout": "\"30\"",
+        "loadTimeoutAction": "stop_loading"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:core:TimeWait",
+      "inputs": {
+        "seconds": "\"3\""
+      },
+      "lineNo": 2
+    },
+    {
+      "component": "jimuflow:web_automation:CheckWebContent",
+      "inputs": {
+        "webPage": "豆包页面",
+        "checkType": "element_is_visible",
+        "checkElementUri": "jimuflow:webelement:accbc27df3464bcb87659e88db982b9b"
+      },
+      "outputs": {
+        "checkResult": "需要登录"
+      },
+      "lineNo": 3
+    },
+    {
+      "component": "jimuflow:core:If",
+      "inputs": {
+        "operand1": "需要登录",
+        "op": "is_true"
+      },
+      "lineNo": 4,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"请先完成登录\""
+          },
+          "lineNo": 5
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:web_automation:WaitWebContent",
+      "inputs": {
+        "webPage": "豆包页面",
+        "waitType": "element_is_visible",
+        "waitElementUri": "jimuflow:webelement:0e67b93084834e00b9ce3a931b56ccda",
+        "waitTime": "\"300\""
+      },
+      "outputs": {
+        "waitResult": "是否处于登录状态"
+      },
+      "lineNo": 6
+    },
+    {
+      "component": "jimuflow:core:If",
+      "inputs": {
+        "operand1": "是否处于登录状态",
+        "op": "is_false"
+      },
+      "lineNo": 7,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"翻译失败，页面未登录\""
+          },
+          "lineNo": 8
+        },
+        {
+          "component": "jimuflow:core:RaiseError",
+          "inputs": {
+            "reason": "\"翻译失败，页面未登录\""
+          },
+          "lineNo": 9
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:web_automation:WebInput",
+      "inputs": {
+        "webPage": "豆包页面",
+        "elementUri": "jimuflow:webelement:1a413c38b6b3418998999d57f0bc4b73",
+        "content": "\"将下面这个markdown文档翻译成英文，直接生成原文翻译，不要添加其他内容，注意，将文中的术语 \\\"指令\\\" 统一翻译为 \\\"instruction\\\"。\\n\\n待翻译内容如下：\\n\\n\" + 待翻译文本",
+        "append": false,
+        "pressEnterAfterInput": true,
+        "pressTabAfterInput": false,
+        "simulateHumanInput": false,
+        "delayAfterFocus": "\"1\"",
+        "delayAfterAction": "\"0\"",
+        "waitTime": "\"30\""
+      },
+      "lineNo": 10
+    },
+    {
+      "component": "jimuflow:web_automation:WaitWebContent",
+      "inputs": {
+        "webPage": "豆包页面",
+        "waitType": "element_is_visible",
+        "waitElementUri": "jimuflow:webelement:0f5181803f31415081245fac2eeae5b1",
+        "waitTime": "\"600\""
+      },
+      "outputs": {
+        "waitResult": "生成结束"
+      },
+      "lineNo": 11
+    },
+    {
+      "component": "jimuflow:core:If",
+      "inputs": {
+        "operand1": "生成结束",
+        "op": "is_false"
+      },
+      "lineNo": 12,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"生成超时\""
+          },
+          "lineNo": 13
+        },
+        {
+          "component": "删除豆包当前会话",
+          "inputs": {
+            "当前页面": "豆包页面"
+          },
+          "lineNo": 14
+        },
+        {
+          "component": "jimuflow:core:RaiseError",
+          "inputs": {
+            "reason": "\"生成超时\""
+          },
+          "lineNo": 15
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:web_automation:ClickWebElement",
+      "inputs": {
+        "webPage": "豆包页面",
+        "elementUri": "jimuflow:webelement:0f5181803f31415081245fac2eeae5b1",
+        "simulateHumanClick": true,
+        "clickType": "single_click",
+        "mouseButton": "left",
+        "modifierKey": "none",
+        "delayAfterAction": "\"0\"",
+        "waitTime": "\"30\""
+      },
+      "lineNo": 16
+    },
+    {
+      "component": "jimuflow:core:GetClipboardText",
+      "outputs": {
+        "result": "翻译结果"
+      },
+      "lineNo": 17
+    },
+    {
+      "component": "删除豆包当前会话",
+      "inputs": {
+        "当前页面": "豆包页面"
+      },
+      "lineNo": 18
+    }
+  ]
+}

@@ -22,3 +22,5 @@
 运行日志：
 
 ![继续下一循环示例流程运行日志](continue_demo_log.png)
+
+应用下载地址：[继续下一循环示例应用](../../../examples/continue_demo.zip)

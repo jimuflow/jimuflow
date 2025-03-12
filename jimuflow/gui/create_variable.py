@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -112,12 +112,6 @@ class CreateVariableDialog(QDialog):
             self._get_label_widget(self._default_value).hide()
 
         self._ui_config_label = QLineEdit()
-        self._ui_config_label.setMaxLength(50)
-        self._ui_config_label.setToolTip(
-            gettext(
-                'Any non blank characters and underscores other than punctuation can be used, and the length cannot exceed 50 characters.'))
-        self._ui_config_label.setValidator(
-            QRegularExpressionValidator(QRegularExpression(R"([^\s\p{P}]|_)+"), self))
         if var_def:
             self._ui_config_label.setText(var_def.ui_config.label)
         row += 1

@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -60,6 +60,7 @@ from .number_to_text_component import NumberToTextComponent
 from .object_to_json_component import ObjectToJsonComponent
 from .parse_json_component import ParseJsonComponent
 from .print_component import PrintComponent
+from .raise_error_component import RaiseErrorComponent
 from .random_int_component import RandomIntComponent
 from .read_text_file_component import ReadTextFileComponent
 from .regex_match_component import RegexMatchComponent

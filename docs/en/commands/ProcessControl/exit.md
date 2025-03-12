@@ -18,3 +18,5 @@ The execution logic of this process is as follows:
 2. Otherwise, print the message.
 
 ![Process Running Log](exit_demo_log.png)
+
+Application download link: [Example Application of Exit](../../examples/exit_demo.zip)

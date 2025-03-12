@@ -55,9 +55,9 @@ class WaitWebContentComponent(PrimitiveComponent):
         else:
             raise Exception(gettext("Invalid wait type: {wait_type}").format(wait_type=wait_type))
         return gettext(
-            'Wait web page ##{webPage}## ##{action}## ##{target}##').format(action=action,
-                                                                    target=target,
-                                                                    webPage=flow_node.input('webPage'))
+            'Wait web page ##{webPage}## ##{action}## ##{target}##, and save the waiting result to ##{waitResult}##').format(
+            action=action, target=target,
+            webPage=flow_node.input('webPage'), waitResult=flow_node.output('waitResult'))
 
     async def execute(self) -> ControlFlow:
         page: Page = self.read_input("webPage")

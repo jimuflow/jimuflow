@@ -27,3 +27,5 @@
 运行日志：
 
 ![列表循环示例流程运行日志](list_loop_demo_log.png)
+
+应用下载地址：[列表循环示例应用](../../../examples/list_loop_demo.zip)

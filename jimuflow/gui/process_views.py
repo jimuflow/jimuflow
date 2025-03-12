@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -25,7 +25,7 @@ from PySide6.QtWidgets import QTreeView, QDialog, QWidget, QVBoxLayout, QPushBut
     QHeaderView
 
 from jimuflow.common.mimetypes import mimetype_process_flow_nodes
-from jimuflow.definition import FlowNode, ComponentDef, VariableDef, VariableDirection, ProcessDef
+from jimuflow.definition import FlowNode, ComponentDef, VariableDef, VariableDirection, ProcessDef, ErrorHandlingType
 from jimuflow.definition.process_def import snapshot_flow_node, snapshot_flow_node_tree
 from jimuflow.gui.app import ProcessModel, AppContext
 from jimuflow.gui.component_dialog import ComponentDialog
@@ -341,6 +341,15 @@ class ProcessFlowView(QTreeView):
                 v_var_def.type = k_var_def.type
                 v_var_def.direction = VariableDirection.LOCAL
                 v_var_def.elementType = k_var_def.elementType
+                model.add_variable(v_var_def)
+                added.append(v_var_def)
+        if flow_node.error_handling_type==ErrorHandlingType.IGNORE and flow_node.error_reason_out_var:
+            v_var_def = model.process_def.get_variable(flow_node.error_reason_out_var)
+            if v_var_def is None:
+                v_var_def = VariableDef()
+                v_var_def.name = flow_node.error_reason_out_var
+                v_var_def.type = 'text'
+                v_var_def.direction = VariableDirection.LOCAL
                 model.add_variable(v_var_def)
                 added.append(v_var_def)
         return added

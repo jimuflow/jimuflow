@@ -27,3 +27,5 @@ The execution logic of this process is as follows:
 Running Log:
 
 ![Running Log of the Dictionary Loop Example Process](dict_loop_demo_log.png)
+
+Application download link: [Example Application of Dictionary Loop](../../../examples/dict_loop_demo.zip)

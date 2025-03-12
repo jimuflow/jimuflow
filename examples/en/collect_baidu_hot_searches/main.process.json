@@ -1,0 +1,205 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "browser",
+      "type": "WebBrowser",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "baidu_page",
+      "type": "WebPage",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "current_element",
+      "type": "WebElement",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "hot_search_title",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "result_data_table",
+      "type": "table",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "exported_file_path",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "current_date",
+      "type": "datetime",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "current_date_string",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "filename_timestamp",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "save_directory",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Data File Save Directory"
+      }
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:table:CreateTable",
+      "inputs": {
+        "columnNames": "\"title,date\""
+      },
+      "outputs": {
+        "table": "result_data_table"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:web_automation:OpenWebBrowser",
+      "inputs": {
+        "enableProxy": false,
+        "headless": true
+      },
+      "outputs": {
+        "webBrowser": "browser"
+      },
+      "lineNo": 2
+    },
+    {
+      "component": "jimuflow:web_automation:OpenWebPage",
+      "inputs": {
+        "webBrowser": "browser",
+        "url": "\"https://www.baidu.com\"",
+        "waitLoaded": true,
+        "loadTimeout": "\"30\"",
+        "loadTimeoutAction": "stop_loading"
+      },
+      "outputs": {
+        "webPage": "baidu_page"
+      },
+      "lineNo": 3
+    },
+    {
+      "component": "jimuflow:core:CreateDateTime",
+      "inputs": {
+        "initType": "now"
+      },
+      "outputs": {
+        "result": "current_date"
+      },
+      "lineNo": 4
+    },
+    {
+      "component": "jimuflow:core:FormatDateTime",
+      "inputs": {
+        "datetime": "current_date",
+        "datetimeFormat": "\"YYYY-MM-DD HH:mm:ss\""
+      },
+      "outputs": {
+        "result": "current_date_string"
+      },
+      "lineNo": 5
+    },
+    {
+      "component": "jimuflow:core:FormatDateTime",
+      "inputs": {
+        "datetime": "current_date",
+        "datetimeFormat": "\"YYYYMMDD_HHmmss\""
+      },
+      "outputs": {
+        "result": "filename_timestamp"
+      },
+      "lineNo": 6
+    },
+    {
+      "component": "jimuflow:web_automation:LoopWebElements",
+      "inputs": {
+        "webPage": "baidu_page",
+        "elementsUri": "jimuflow:webelement:cb46b9079d594eaa8a1c8fea89a7c8e3",
+        "reversedLoop": false,
+        "waitTime": "\"30\""
+      },
+      "outputs": {
+        "currentElement": "current_element"
+      },
+      "lineNo": 7,
+      "flow": [
+        {
+          "component": "jimuflow:web_automation:ExtractWebElement",
+          "inputs": {
+            "webPage": "baidu_page",
+            "elementUri": "jimuflow:variable:current_element",
+            "extractType": "text",
+            "waitTime": "\"30\""
+          },
+          "outputs": {
+            "result": "hot_search_title"
+          },
+          "lineNo": 8
+        },
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"Hot Search Title: \" + hot_search_title"
+          },
+          "lineNo": 9
+        },
+        {
+          "component": "jimuflow:table:WriteTableRow",
+          "inputs": {
+            "table": "result_data_table",
+            "writeType": "append",
+            "rowInputType": "columns",
+            "columns": [
+              [
+                "\"title\"",
+                "hot_search_title"
+              ],
+              [
+                "\"date\"",
+                "current_date_string"
+              ]
+            ]
+          },
+          "lineNo": 10
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:table:ExportTable",
+      "inputs": {
+        "table": "result_data_table",
+        "saveFolder": "save_directory",
+        "fileFormat": "xlsx",
+        "sheetName": "\"Baidu Hot Searches\"",
+        "fileNamingType": "custom",
+        "customFilename": "\"baidu_host_searches_\" + filename_timestamp",
+        "overrideExistingFile": true,
+        "exportHeader": true
+      },
+      "outputs": {
+        "filePath": "exported_file_path"
+      },
+      "lineNo": 11
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"Export successfully: \" + exported_file_path"
+      },
+      "lineNo": 12
+    }
+  ]
+}

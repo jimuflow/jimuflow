@@ -15,6 +15,7 @@
 # Copyright (C) 2024-2025  Weng Jing
 
 import json
+import os.path
 import re
 import shutil
 import uuid
@@ -195,7 +196,7 @@ class Package:
             raise ValueError(f"Element {element_id} not found.")
         element_snapshot = element_info.get("snapshot", None)
         snapshot_path = group_path / f"{WEB_ELEMENT_PREFIX}{element_id}.png"
-        if element_snapshot and element_snapshot != snapshot_path:
+        if element_snapshot and not os.path.samefile(element_snapshot, snapshot_path):
             shutil.copy(element_snapshot, snapshot_path)
         self._write_element_jsonl(element_path, element_info)
 

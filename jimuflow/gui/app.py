@@ -230,6 +230,8 @@ class ProcessModel(QAbstractItemModel):
                         item.max_retries = value["max_retries"]
                     if 'retry_interval' in value:
                         item.retry_interval = value["retry_interval"]
+                    if 'error_reason_out_var' in value:
+                        item.error_reason_out_var = value["error_reason_out_var"]
                     if 'outputs_on_error' in value:
                         item.outputs_on_error = value["outputs_on_error"]
                     self.update_dirty()

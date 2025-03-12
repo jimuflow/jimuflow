@@ -32,3 +32,5 @@
 运行日志：
 
 ![条件循环示例流程运行日志](while_demo_log.png)
+
+应用下载地址：[条件循环示例应用](../../../examples/while_demo.zip)

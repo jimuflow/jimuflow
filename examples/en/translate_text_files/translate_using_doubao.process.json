@@ -1,0 +1,207 @@
+{
+  "name": "translate_using_doubao",
+  "variables": [
+    {
+      "name": "doubao_page",
+      "type": "WebPage",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Doubao Web Page",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "text_to_translate",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Text to Translate",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "translation_result",
+      "type": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Translation Result"
+      }
+    },
+    {
+      "name": "need_login",
+      "type": "bool",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "is_logged_in",
+      "type": "bool",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "translation_completed",
+      "type": "bool",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:web_automation:NavigateWebPage",
+      "inputs": {
+        "webPage": "doubao_page",
+        "navigateType": "goto",
+        "url": "\"https://www.doubao.com/chat/\"",
+        "waitLoaded": true,
+        "loadTimeout": "\"30\"",
+        "loadTimeoutAction": "stop_loading"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:core:TimeWait",
+      "inputs": {
+        "seconds": "\"3\""
+      },
+      "lineNo": 2
+    },
+    {
+      "component": "jimuflow:web_automation:CheckWebContent",
+      "inputs": {
+        "webPage": "doubao_page",
+        "checkType": "element_is_visible",
+        "checkElementUri": "jimuflow:webelement:accbc27df3464bcb87659e88db982b9b"
+      },
+      "outputs": {
+        "checkResult": "need_login"
+      },
+      "lineNo": 3
+    },
+    {
+      "component": "jimuflow:core:If",
+      "inputs": {
+        "operand1": "need_login",
+        "op": "is_true"
+      },
+      "lineNo": 4,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"Please complete the login first.\""
+          },
+          "lineNo": 5
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:web_automation:WaitWebContent",
+      "inputs": {
+        "webPage": "doubao_page",
+        "waitType": "element_is_visible",
+        "waitElementUri": "jimuflow:webelement:0e67b93084834e00b9ce3a931b56ccda",
+        "waitTime": "\"300\""
+      },
+      "outputs": {
+        "waitResult": "is_logged_in"
+      },
+      "lineNo": 6
+    },
+    {
+      "component": "jimuflow:core:If",
+      "inputs": {
+        "operand1": "is_logged_in",
+        "op": "is_false"
+      },
+      "lineNo": 7,
+      "flow": [
+        {
+          "component": "jimuflow:core:RaiseError",
+          "inputs": {
+            "reason": "\"Translation failed, the page is not logged in\""
+          },
+          "lineNo": 8
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:web_automation:WebInput",
+      "inputs": {
+        "webPage": "doubao_page",
+        "elementUri": "jimuflow:webelement:1a413c38b6b3418998999d57f0bc4b73",
+        "content": "\"Translate the markdown document below into English and generate the original translation without adding any additional content. Please ensure that the term '指令' in the text is uniformly translated as 'instruction'.\\n\\nThe content to be translated is as follows:\\n\\n\" + text_to_translate",
+        "append": false,
+        "pressEnterAfterInput": true,
+        "pressTabAfterInput": false,
+        "simulateHumanInput": false,
+        "delayAfterFocus": "\"1\"",
+        "delayAfterAction": "\"0\"",
+        "waitTime": "\"30\""
+      },
+      "lineNo": 9
+    },
+    {
+      "component": "jimuflow:web_automation:WaitWebContent",
+      "inputs": {
+        "webPage": "doubao_page",
+        "waitType": "element_is_visible",
+        "waitElementUri": "jimuflow:webelement:0f5181803f31415081245fac2eeae5b1",
+        "waitTime": "\"600\""
+      },
+      "outputs": {
+        "waitResult": "translation_completed"
+      },
+      "lineNo": 10
+    },
+    {
+      "component": "jimuflow:core:If",
+      "inputs": {
+        "operand1": "translation_completed",
+        "op": "is_false"
+      },
+      "lineNo": 11,
+      "flow": [
+        {
+          "component": "delete_translate_session",
+          "inputs": {
+            "current_page": "doubao_page"
+          },
+          "lineNo": 12
+        },
+        {
+          "component": "jimuflow:core:RaiseError",
+          "inputs": {
+            "reason": "\"Translation timeout\""
+          },
+          "lineNo": 13
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:web_automation:ClickWebElement",
+      "inputs": {
+        "webPage": "doubao_page",
+        "elementUri": "jimuflow:webelement:0f5181803f31415081245fac2eeae5b1",
+        "simulateHumanClick": true,
+        "clickType": "single_click",
+        "mouseButton": "left",
+        "modifierKey": "none",
+        "delayAfterAction": "\"0\"",
+        "waitTime": "\"30\""
+      },
+      "lineNo": 14
+    },
+    {
+      "component": "jimuflow:core:GetClipboardText",
+      "outputs": {
+        "result": "translation_result"
+      },
+      "lineNo": 15
+    },
+    {
+      "component": "delete_translate_session",
+      "inputs": {
+        "current_page": "doubao_page"
+      },
+      "lineNo": 16
+    }
+  ]
+}

@@ -23,6 +23,7 @@ nav:
     - 流程控制:
       - 返回: commands/ProcessControl/return.md
       - 终止应用: commands/ProcessControl/exit.md
+      - 抛出错误: commands/ProcessControl/raise_error.md
       - 条件分支:
         - If 分支: commands/ProcessControl/switch/if.md
         - If 多条件分支: commands/ProcessControl/switch/if_conditions.md

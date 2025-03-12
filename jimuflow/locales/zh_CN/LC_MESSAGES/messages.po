@@ -441,6 +441,12 @@ msgstr "打印消息##{message}##"
 
 #, python-brace-format
 msgid ""
+"Terminate the current process and throw an error with the reason "
+"##{reason}##"
+msgstr "结束当前流程并抛出错误，错误原因为##{reason}##"
+
+#, python-brace-format
+msgid ""
 "Generates a random integer between ##{start}## and ##{end}##, then save "
 "to ##{randomInt}##"
 msgstr "生成一个##{start}##到##{end}##之间的随机整数，然后保存到##{randomInt}##"
@@ -776,8 +782,11 @@ msgstr "发送##{method}##请求到##{url}##，并将响应结果对象保存到
 msgid "Add column ##{columnName}## to ##{table}##"
 msgstr "向 ##{table}## 新增名为 ##{columnName}## 的列"
 
-msgid "Create data table"
-msgstr "创建数据表格"
+#, python-brace-format
+msgid ""
+"Create an empty data table with the headers ##{columnNames}##, and save "
+"the table to ##{table}##"
+msgstr "创建一个空数据表格，表头为##{columnNames}##，将新创建的数据表格保存到##{table}##"
 
 #, python-brace-format
 msgid "Delete all rows of ##{table}##"
@@ -1178,8 +1187,10 @@ msgid "Invalid wait type: {wait_type}"
 msgstr "非法的等待类型: {wait_type}"
 
 #, python-brace-format
-msgid "Wait web page ##{webPage}## ##{action}## ##{target}##"
-msgstr "等待网页##{webPage}## ##{action}## ##{target}##"
+msgid ""
+"Wait web page ##{webPage}## ##{action}## ##{target}##, and save the "
+"waiting result to ##{waitResult}##"
+msgstr "等待##{webPage}## ##{action}## ##{target}##, 将等待结果保存到##{waitResult}##"
 
 #, python-brace-format
 msgid "Wait web page ##{webPage}## to load"
@@ -1885,6 +1896,15 @@ msgstr "重试次数"
 msgid "Retry Interval (seconds)"
 msgstr "重试间隔(秒)"
 
+msgid "The variable name used to save the error reason"
+msgstr "用于保存错误原因的变量名"
+
+msgid "Error Reason"
+msgstr "错误原因"
+
+msgid "Please enter the variable name used to save the error reason."
+msgstr "请输入用于保存错误原因的变量名。"
+
 msgid "Outputs On Error"
 msgstr "出错时的输出配置"
 
@@ -1958,6 +1978,9 @@ msgstr "循环"
 msgid "Wait"
 msgstr "等待"
 
+msgid "Process"
+msgstr "流程"
+
 msgid "Web Automation"
 msgstr "网页自动化"
 
@@ -1994,8 +2017,17 @@ msgstr "字典操作"
 msgid "Date Time Operation"
 msgstr "日期时间操作"
 
-msgid "Process"
-msgstr "流程"
+msgid "Operating System"
+msgstr "操作系统"
+
+msgid "Mouse/Keyboard"
+msgstr "鼠标键盘"
+
+msgid "Data Table"
+msgstr "数据表格"
+
+msgid "Database"
+msgstr "数据库"
 
 msgid "Search instruction"
 msgstr "搜索指令"
@@ -3403,9 +3435,6 @@ msgstr "首字母大写"
 msgid "Check Process Exist"
 msgstr "检查进程是否存在"
 
-msgid "Operating System"
-msgstr "操作系统"
-
 msgid "Process Attributes"
 msgstr "进程属性"
 
@@ -4008,6 +4037,9 @@ msgstr "Json文本"
 msgid "Print Message"
 msgstr "打印消息"
 
+msgid "Raise Error"
+msgstr "抛出错误"
+
 msgid "Generate Random Integer"
 msgstr "生成随机整数"
 
@@ -4278,19 +4310,15 @@ msgstr "追加"
 msgid "Batch Update Database"
 msgstr "批量更新数据库"
 
-msgid "Database"
-msgstr "数据库"
-
 msgid "SQL"
 msgstr "SQL"
 
 msgid ""
 "example: insert into your_table (column1, column2) values "
 "(@table_column1@, @table_column2@)"
-msgstr "示例：insert into your_table (column1, column2) values (@table_column1@, @table_column2@)"
-
-msgid "Data Table"
-msgstr "数据表格"
+msgstr ""
+"示例：insert into your_table (column1, column2) values (@table_column1@, "
+"@table_column2@)"
 
 msgid "Row Count"
 msgstr "记录数"
@@ -4375,9 +4403,6 @@ msgstr "结果数据表格"
 
 msgid "Hover Image"
 msgstr "鼠标悬浮在图像上"
-
-msgid "Mouse/Keyboard"
-msgstr "鼠标键盘"
 
 msgid "Cursor Position"
 msgstr "光标位置"
@@ -5771,4 +5796,10 @@ msgstr "调试"
 
 msgid "Info"
 msgstr "信息"
+
+#~ msgid "Create data table"
+#~ msgstr "创建数据表格"
+
+#~ msgid "Wait web page ##{webPage}## ##{action}## ##{target}##"
+#~ msgstr "等待网页##{webPage}## ##{action}## ##{target}##"
 

@@ -32,3 +32,5 @@ The execution logic of this process is as follows:
 Run Log:
 
 ![Run Log of the Conditional Loop Example Process](while_demo_log.png)
+
+Application download link: [Example Application of While Loop](../../../examples/while_demo.zip)

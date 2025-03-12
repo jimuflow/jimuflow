@@ -25,3 +25,5 @@
 运行日志：
 
 ![无限循环示例流程运行日志](infinite_loop_demo_log.png)
+
+应用下载地址：[无限循环示例应用](../../../examples/infinite_loop_demo.zip)

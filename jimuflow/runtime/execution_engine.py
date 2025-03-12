@@ -214,6 +214,9 @@ class Component(ABC):
                     await self.before_execute()
                     result = await self.execute()
                     self.log_debug(gettext("Execution successful"))
+                    if self.component_def.supports_error_handling and self.node and self.node.error_handling_type == ErrorHandlingType.IGNORE:
+                        if self.node.error_reason_out_var:
+                            await self.process.remove_variable(self.node.error_reason_out_var)
                     return result
                 except ProcessStoppedException:
                     self.log_warn(gettext("Execution interrupted"))
@@ -226,8 +229,11 @@ class Component(ABC):
                     self.log_error(gettext("Execution error"), exception=e)
                     if self.component_def.supports_error_handling and self.node:
                         if self.node.error_handling_type == ErrorHandlingType.IGNORE:
+                            if self.node.error_reason_out_var:
+                                await self.process.update_variable(self.node.error_reason_out_var, str(e))
                             for k, v in self.node.outputs_on_error.items():
-                                await self.write_output(k, self.evaluate_expression_in_process(v))
+                                if v:
+                                    await self.write_output(k, self.evaluate_expression_in_process(v))
                             self.log_error(gettext('Ignore error and continue execution'), exception=e)
                             return ControlFlow.NEXT
                         elif self.node.error_handling_type == ErrorHandlingType.RETRY:

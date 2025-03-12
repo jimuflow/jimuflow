@@ -2,6 +2,8 @@ version: 2
 
 build:
   os: "ubuntu-24.04"
+  apt_packages:
+    - zip
   tools:
     python: "3.10"
   jobs:
@@ -9,8 +11,7 @@ build:
       - pip install mkdocs-material
     build:
       html:
-        - cat config/$(echo "$READTHEDOCS_LANGUAGE"|cut -d'-' -f1)/mkdocs.yml
-        - python -m mkdocs build --clean --site-dir $READTHEDOCS_OUTPUT/html --config-file config/$(echo "$READTHEDOCS_LANGUAGE"|cut -d'-' -f1)/mkdocs.yml
+        - ./scripts/build_readthedocs_site.sh
 
 mkdocs:
   configuration: config/zh/mkdocs.yml

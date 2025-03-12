@@ -23,6 +23,7 @@ nav:
     - Process Control:
       - Return: commands/ProcessControl/return.md
       - Exit: commands/ProcessControl/exit.md
+      - Raise Error: commands/ProcessControl/raise_error.md
       - Switch:
         - If branch: commands/ProcessControl/switch/if.md
         - If conditions branch: commands/ProcessControl/switch/if_conditions.md

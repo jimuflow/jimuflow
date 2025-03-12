@@ -1,0 +1,248 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "browser",
+      "type": "WebBrowser",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "doubao_page",
+      "type": "WebPage",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "file_list_to_translate",
+      "type": "list",
+      "direction": "LOCAL",
+      "elementType": "text"
+    },
+    {
+      "name": "current_file",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "content_to_translate",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "translation_result",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "folder_to_translate",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Folder to Translate",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "save_directory",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Translation File Save Directory",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "file_suffix",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": ".txt",
+      "uiConfig": {
+        "label": "File Suffix to Translate",
+        "inputType": "expression",
+        "placeholder": "The suffix name of the file to be translated"
+      }
+    },
+    {
+      "name": "file_relative_path",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "total_files",
+      "type": "number",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "file_index",
+      "type": "number",
+      "direction": "LOCAL",
+      "defaultValue": 0
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:web_automation:OpenWebBrowser",
+      "inputs": {
+        "enableProxy": false,
+        "headless": false
+      },
+      "outputs": {
+        "webBrowser": "browser"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:web_automation:OpenWebPage",
+      "inputs": {
+        "webBrowser": "browser",
+        "url": "\"https://www.doubao.com/chat/\"",
+        "waitLoaded": true,
+        "loadTimeout": "\"30\"",
+        "loadTimeoutAction": "stop_loading"
+      },
+      "outputs": {
+        "webPage": "doubao_page"
+      },
+      "lineNo": 2
+    },
+    {
+      "component": "jimuflow:core:ListFiles",
+      "inputs": {
+        "folder": "folder_to_translate",
+        "filenamePattern": "\"*\" + file_suffix",
+        "findSubFolders": true,
+        "ignoreHiddenFiles": true,
+        "sortingFiles": false
+      },
+      "outputs": {
+        "result": "file_list_to_translate"
+      },
+      "lineNo": 3
+    },
+    {
+      "component": "jimuflow:core:SetVariable",
+      "inputs": {
+        "value": "file_list_to_translate . size"
+      },
+      "outputs": {
+        "result": "total_files"
+      },
+      "lineNo": 4
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"There are \" + total_files + \" files to be translated\""
+      },
+      "lineNo": 5
+    },
+    {
+      "component": "jimuflow:core:SetVariable",
+      "inputs": {
+        "value": "\"1\""
+      },
+      "outputs": {
+        "result": "file_index"
+      },
+      "lineNo": 6
+    },
+    {
+      "component": "jimuflow:core:ListLoop",
+      "inputs": {
+        "list": "file_list_to_translate"
+      },
+      "outputs": {
+        "loopItem": "current_file"
+      },
+      "lineNo": 7,
+      "flow": [
+        {
+          "component": "jimuflow:core:SliceText",
+          "inputs": {
+            "originalText": "current_file",
+            "fromWhere": "specified_position",
+            "startingPosition": "folder_to_translate . length",
+            "toWhere": "end"
+          },
+          "outputs": {
+            "result": "file_relative_path"
+          },
+          "lineNo": 8
+        },
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"Start processing (\" + file_index + \"/\" + total_files + \")\" + \": \" + file_relative_path"
+          },
+          "lineNo": 9
+        },
+        {
+          "component": "jimuflow:core:ReadTextFile",
+          "inputs": {
+            "filePath": "current_file",
+            "readType": "whole",
+            "fileEncoding": "utf-8"
+          },
+          "outputs": {
+            "result": "content_to_translate"
+          },
+          "lineNo": 10
+        },
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"Content to translate: \" + content_to_translate"
+          },
+          "lineNo": 11
+        },
+        {
+          "component": "translate_using_doubao",
+          "inputs": {
+            "doubao_page": "doubao_page",
+            "text_to_translate": "content_to_translate"
+          },
+          "outputs": {
+            "translation_result": "translation_result"
+          },
+          "errorHandlingType": "RETRY",
+          "maxRetries": 100,
+          "retryInterval": 60,
+          "lineNo": 12
+        },
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"Translation result: \" + translation_result"
+          },
+          "lineNo": 13
+        },
+        {
+          "component": "jimuflow:core:WriteTextFile",
+          "inputs": {
+            "filePath": "save_directory + file_relative_path",
+            "writeContent": "translation_result",
+            "actionWhenExists": "overwrite",
+            "fileEncoding": "utf-8"
+          },
+          "lineNo": 14
+        },
+        {
+          "component": "jimuflow:core:TimeWait",
+          "inputs": {
+            "seconds": "\"10\""
+          },
+          "lineNo": 15
+        },
+        {
+          "component": "jimuflow:core:SetVariable",
+          "inputs": {
+            "value": "file_index + \"1\""
+          },
+          "outputs": {
+            "result": "file_index"
+          },
+          "lineNo": 16
+        }
+      ]
+    }
+  ]
+}

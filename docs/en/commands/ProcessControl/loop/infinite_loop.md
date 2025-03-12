@@ -25,3 +25,5 @@ The execution logic of this process is as follows:
 Running Log:
 
 ![Running Log of Infinite Loop Example Process](infinite_loop_demo_log.png)
+
+Application download link: [Example Application of Infinite Loop](../../../examples/infinite_loop_demo.zip)

@@ -26,3 +26,5 @@ The execution logic of this process is as follows:
 Running Log:
 
 ![Running Log of the Counting Loop Example Process](loop_demo_log.png)
+
+Application download link: [Example Application of Counting Loop](../../../examples/loop_demo.zip)

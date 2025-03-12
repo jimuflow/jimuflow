@@ -26,3 +26,5 @@
 运行日志：
 
 ![计数循环示例流程运行日志](loop_demo_log.png)
+
+应用下载地址：[计数循环示例应用](../../../examples/loop_demo.zip)

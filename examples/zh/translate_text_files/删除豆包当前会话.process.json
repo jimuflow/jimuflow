@@ -1,0 +1,95 @@
+{
+  "name": "删除豆包当前会话",
+  "variables": [
+    {
+      "name": "当前页面",
+      "type": "WebPage",
+      "direction": "IN",
+      "uiConfig": {
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "菜单是否可见",
+      "type": "bool",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:web_automation:CheckWebContent",
+      "inputs": {
+        "webPage": "当前页面",
+        "checkType": "element_is_visible",
+        "checkElementUri": "jimuflow:webelement:5b38bcd588ef49eb9e605b97e23af3bc"
+      },
+      "outputs": {
+        "checkResult": "菜单是否可见"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:core:If",
+      "inputs": {
+        "operand1": "菜单是否可见",
+        "op": "is_false"
+      },
+      "lineNo": 2,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"对话菜单不可见\""
+          },
+          "lineNo": 3
+        },
+        {
+          "component": "jimuflow:core:Return",
+          "lineNo": 4
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:web_automation:ClickWebElement",
+      "inputs": {
+        "webPage": "当前页面",
+        "elementUri": "jimuflow:webelement:5b38bcd588ef49eb9e605b97e23af3bc",
+        "simulateHumanClick": true,
+        "clickType": "single_click",
+        "mouseButton": "left",
+        "modifierKey": "none",
+        "delayAfterAction": "\"0\"",
+        "waitTime": "\"30\""
+      },
+      "lineNo": 5
+    },
+    {
+      "component": "jimuflow:web_automation:ClickWebElement",
+      "inputs": {
+        "webPage": "当前页面",
+        "elementUri": "jimuflow:webelement:02773f63efc543848da2a592cf025dd8",
+        "simulateHumanClick": true,
+        "clickType": "single_click",
+        "mouseButton": "left",
+        "modifierKey": "none",
+        "delayAfterAction": "\"0\"",
+        "waitTime": "\"30\""
+      },
+      "lineNo": 6
+    },
+    {
+      "component": "jimuflow:web_automation:ClickWebElement",
+      "inputs": {
+        "webPage": "当前页面",
+        "elementUri": "jimuflow:webelement:56232dc28c5449239b36c4f593687d09",
+        "simulateHumanClick": true,
+        "clickType": "single_click",
+        "mouseButton": "left",
+        "modifierKey": "none",
+        "delayAfterAction": "\"0\"",
+        "waitTime": "\"30\""
+      },
+      "lineNo": 7
+    }
+  ]
+}

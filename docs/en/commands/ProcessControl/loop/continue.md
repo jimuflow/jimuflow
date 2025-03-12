@@ -22,3 +22,5 @@ The execution logic of this process is as follows:
 Running Log:
 
 ![Running Log of the Example Process for Continuing to the Next Loop](continue_demo_log.png)
+
+Application download link: [Example Application of Continue](../../../examples/continue_demo.zip)

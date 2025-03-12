@@ -27,3 +27,5 @@
 运行日志：
 
 ![字典循环示例流程运行日志](dict_loop_demo_log.png)
+
+应用下载地址：[字典循环示例应用](../../../examples/dict_loop_demo.zip)

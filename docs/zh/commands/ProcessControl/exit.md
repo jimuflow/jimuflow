@@ -18,3 +18,5 @@
 2. 否则，打印消息。
 
 ![流程运行日志](exit_demo_log.png)
+
+应用下载地址：[终止应用示例应用](../../examples/exit_demo.zip)

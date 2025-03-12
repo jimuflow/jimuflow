@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -51,6 +51,7 @@ class FlowNode:
         self.error_handling_type = ErrorHandlingType.STOP
         self.max_retries = 0
         self.retry_interval = 0
+        self.error_reason_out_var = ""
         self.outputs_on_error = {}
         self.line_no = 0
         self._id = get_next_flow_node_id()
@@ -76,6 +77,8 @@ class FlowNode:
             self.max_retries = json_data['maxRetries']
         if 'retryInterval' in json_data:
             self.retry_interval = json_data['retryInterval']
+        if 'errorReasonOutVar' in json_data:
+            self.error_reason_out_var = json_data['errorReasonOutVar']
         if 'outputsOnError' in json_data:
             self.outputs_on_error = json_data['outputsOnError']
         if 'lineNo' in json_data:
@@ -95,6 +98,7 @@ class FlowNode:
             result['retryInterval'] = self.retry_interval
         elif self.error_handling_type == ErrorHandlingType.IGNORE:
             result['errorHandlingType'] = self.error_handling_type.value
+            result['errorReasonOutVar'] = self.error_reason_out_var
             result['outputsOnError'] = self.outputs_on_error
         if self.line_no > 0:
             result['lineNo'] = self.line_no
@@ -128,6 +132,7 @@ def snapshot_flow_node(flow_node: FlowNode) -> dict:
         result['retry_interval'] = flow_node.retry_interval
     elif flow_node.error_handling_type == ErrorHandlingType.IGNORE:
         result['error_handling_type'] = flow_node.error_handling_type.value
+        result['error_reason_out_var'] = flow_node.error_reason_out_var
         result['outputs_on_error'] = flow_node.outputs_on_error
     return result
 
@@ -201,6 +206,7 @@ class ProcessDef(ComponentDef):
             if (node1.component != node2.component or node1.error_handling_type != node2.error_handling_type
                     or node1.max_retries != node2.max_retries or node1.retry_interval != node2.retry_interval
                     or node1.inputs != node2.inputs or node1.outputs != node2.outputs
+                    or node1.error_reason_out_var != node2.error_reason_out_var
                     or node1.outputs_on_error != node2.outputs_on_error
                     or not self._is_flow_equal(node1.flow, node2.flow)):
                 return False

@@ -439,6 +439,12 @@ msgstr ""
 
 #, python-brace-format
 msgid ""
+"Terminate the current process and throw an error with the reason "
+"##{reason}##"
+msgstr ""
+
+#, python-brace-format
+msgid ""
 "Generates a random integer between ##{start}## and ##{end}##, then save "
 "to ##{randomInt}##"
 msgstr ""
@@ -774,7 +780,10 @@ msgstr ""
 msgid "Add column ##{columnName}## to ##{table}##"
 msgstr ""
 
-msgid "Create data table"
+#, python-brace-format
+msgid ""
+"Create an empty data table with the headers ##{columnNames}##, and save "
+"the table to ##{table}##"
 msgstr ""
 
 #, python-brace-format
@@ -1170,7 +1179,9 @@ msgid "Invalid wait type: {wait_type}"
 msgstr ""
 
 #, python-brace-format
-msgid "Wait web page ##{webPage}## ##{action}## ##{target}##"
+msgid ""
+"Wait web page ##{webPage}## ##{action}## ##{target}##, and save the "
+"waiting result to ##{waitResult}##"
 msgstr ""
 
 #, python-brace-format
@@ -1877,6 +1888,15 @@ msgstr ""
 msgid "Retry Interval (seconds)"
 msgstr ""
 
+msgid "The variable name used to save the error reason"
+msgstr ""
+
+msgid "Error Reason"
+msgstr ""
+
+msgid "Please enter the variable name used to save the error reason."
+msgstr ""
+
 msgid "Outputs On Error"
 msgstr ""
 
@@ -1950,6 +1970,9 @@ msgstr ""
 msgid "Wait"
 msgstr ""
 
+msgid "Process"
+msgstr ""
+
 msgid "Web Automation"
 msgstr ""
 
@@ -1986,7 +2009,16 @@ msgstr ""
 msgid "Date Time Operation"
 msgstr ""
 
-msgid "Process"
+msgid "Operating System"
+msgstr ""
+
+msgid "Mouse/Keyboard"
+msgstr ""
+
+msgid "Data Table"
+msgstr ""
+
+msgid "Database"
 msgstr ""
 
 msgid "Search instruction"
@@ -3388,9 +3420,6 @@ msgstr ""
 msgid "Check Process Exist"
 msgstr ""
 
-msgid "Operating System"
-msgstr ""
-
 msgid "Process Attributes"
 msgstr ""
 
@@ -3927,6 +3956,9 @@ msgstr ""
 msgid "Print Message"
 msgstr ""
 
+msgid "Raise Error"
+msgstr ""
+
 msgid "Generate Random Integer"
 msgstr ""
 
@@ -4197,18 +4229,12 @@ msgstr ""
 msgid "Batch Update Database"
 msgstr ""
 
-msgid "Database"
-msgstr ""
-
 msgid "SQL"
 msgstr ""
 
 msgid ""
 "example: insert into your_table (column1, column2) values "
 "(@table_column1@, @table_column2@)"
-msgstr ""
-
-msgid "Data Table"
 msgstr ""
 
 msgid "Row Count"
@@ -4293,9 +4319,6 @@ msgid "Result Table"
 msgstr ""
 
 msgid "Hover Image"
-msgstr ""
-
-msgid "Mouse/Keyboard"
 msgstr ""
 
 msgid "Cursor Position"

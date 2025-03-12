@@ -1,0 +1,7 @@
+{
+  "name": "translate_text_files",
+  "namespace": "jimuflow",
+  "version": "1.0.0",
+  "mainProcess": "main",
+  "dependencies": []
+}
