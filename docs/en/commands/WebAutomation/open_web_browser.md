@@ -38,6 +38,9 @@ Enter the proxy server password.
 
 Configure whether to run the web browser in the background.
 
+### Enable Incognito Mode
+Configure whether to enable the incognito mode of the browser.
+
 ### Error Handling
 
 If an error occurs during the execution of the instruction, perform error handling. For details, see [Error Handling of Instructions](../../manual/error_handling.md).

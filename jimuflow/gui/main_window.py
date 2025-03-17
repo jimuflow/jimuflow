@@ -546,6 +546,17 @@ class MainWindow(QMainWindow, DebugListener):
 
     @Slot(ProcessDef)
     def delete_process(self, process_def: ProcessDef):
+        if self._running_process is not None:
+            message = gettext('Process {name} is running, do you want to terminate the process?').format(
+                name=self._running_process.component_def.name)
+            if QMessageBox.warning(self, gettext('Tips'), message,
+                                   QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+                                   QMessageBox.StandardButton.Yes) == QMessageBox.StandardButton.Yes:
+                self.stop_process()
+                if self._thread:
+                    self._thread.wait()
+            else:
+                return
         if QMessageBox.warning(self, gettext("Warning"),
                                gettext('Are you sure you want to delete process {name}?').format(
                                    name=process_def.name),

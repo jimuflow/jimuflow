@@ -118,6 +118,14 @@ Select the directory to save the file. If the directory does not exist, it will 
 
 Select the name of the file to save. If the file already exists, an error will be reported.
 
+### Set Response Encoding
+
+Check whether to set the response encoding. If not set, the encoding in the response header will be used. If there is no encoding information in the response header, the default encoding ISO-8859-1 will be used.
+
+### Response Encoding
+
+If "Set response encoding" is checked, you need to select the response encoding. You can choose automatic detection (detect the encoding from the response content), or you can choose a specific encoding. 
+
 ### Timeout (Seconds)
 
 Set the connection and read timeout for the request, in seconds, defaulting to 10 seconds. If the connection is not successful or response data is not read within this time, the request will fail.

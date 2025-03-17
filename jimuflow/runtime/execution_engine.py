@@ -226,7 +226,6 @@ class Component(ABC):
                     return ControlFlow.EXIT
                 except BaseException as e:
                     logger.exception("An error occurred while executing component %s", self.component_id())
-                    self.log_error(gettext("Execution error"), exception=e)
                     if self.component_def.supports_error_handling and self.node:
                         if self.node.error_handling_type == ErrorHandlingType.IGNORE:
                             if self.node.error_reason_out_var:
@@ -234,6 +233,8 @@ class Component(ABC):
                             for k, v in self.node.outputs_on_error.items():
                                 if v:
                                     await self.write_output(k, self.evaluate_expression_in_process(v))
+                                else:
+                                    await self.write_output(k, None)
                             self.log_error(gettext('Ignore error and continue execution'), exception=e)
                             return ControlFlow.NEXT
                         elif self.node.error_handling_type == ErrorHandlingType.RETRY:
@@ -243,6 +244,7 @@ class Component(ABC):
                                                self.node.retry_interval, retries, exception=e)
                                 await asyncio.sleep(self.node.retry_interval)
                                 continue
+                    self.log_error(gettext("Execution error"), exception=e)
                     raise
         finally:
             await self.after_execute()

@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -13,12 +13,14 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
 # Copyright (C) 2024-2025  Weng Jing
-
+import os
+import platform
 import time
 
-from playwright.async_api import async_playwright, Browser, Playwright, Page, Locator, \
+from playwright.async_api import async_playwright, Playwright, Page, Locator, \
     TimeoutError as PlaywrightTimeoutError, BrowserContext
 
+import jimuflow
 from jimuflow.common import get_resource_file
 from jimuflow.common.uri_utils import parse_variable_uri, parse_web_element_uri
 from jimuflow.common.web_element_utils import parse_xpath
@@ -38,24 +40,13 @@ async def stop_playwright(playwright):
 playwright_var = ProcessVar("playwright")
 
 
-async def create_browser(playwright: Playwright):
-    return await playwright.chromium.launch()
-
-
-async def close_browser(browser: Browser):
-    await browser.close()
-
-
-browser_var = ProcessVar("browser")
-
-
 async def close_page(process: Process, page: Page):
     if not page.is_closed():
         await page.close()
         await process.remove_variable_by_value(page)
 
 
-async def init_playwright_for_process(process: Process, headless=False):
+async def init_playwright_for_process(process: Process):
     """
     初始化Playwright相关环境
     """
@@ -65,18 +56,37 @@ async def init_playwright_for_process(process: Process, headless=False):
         playwright = await start_playwright()
         await process.set_process_var(playwright_var, playwright, stop_playwright, ProcessVarScope.GLOBAL)
 
-    # 检查浏览器是否已经打开，如果没有，则先打开浏览器
-    browser: Browser = process.get_process_var(browser_var, ProcessVarScope.GLOBAL)
-    if browser is None:
+    return playwright
+
+
+def get_browser_data_dir(browser_type):
+    platform_name = platform.system()
+    if platform_name == 'Windows':
+        local_appdata_dir = os.getenv('LOCALAPPDATA')  # 获取 LocalAppData 路径
+        browser_data_dir = os.path.join(local_appdata_dir, jimuflow.__project_name__, browser_type)
+        os.makedirs(browser_data_dir, exist_ok=True)  # 确保目录存在
+        return browser_data_dir
+    elif platform_name == 'Linux':
+        home_dir = os.path.expanduser("~")
+        browser_data_dir = os.path.join(home_dir, ".local", "share", jimuflow.__project_name__, browser_type)
+        os.makedirs(browser_data_dir, exist_ok=True)  # 确保目录存在
+        return browser_data_dir
+    elif platform_name == 'Darwin':
+        home_dir = os.path.expanduser("~")
+        browser_data_dir = os.path.join(home_dir, "Library", "Application Support", jimuflow.__project_name__,
+                                        browser_type)
+        os.makedirs(browser_data_dir, exist_ok=True)  # 确保目录存在
+        return browser_data_dir
+
+
+async def open_web_browser(process: Process, *args, headless=False, incognito=False, **kwargs):
+    playwright = await init_playwright_for_process(process)
+    if incognito:
         browser = await playwright.chromium.launch(headless=headless)
-        await process.set_process_var(browser_var, browser, close_browser, ProcessVarScope.GLOBAL)
-
-    return browser
-
-
-async def open_web_browser(process: Process, *args, headless=False, **kwargs):
-    browser = await init_playwright_for_process(process, headless)
-    web_browser = await browser.new_context(*args, **kwargs)
+        web_browser = await browser.new_context(*args, **kwargs)
+    else:
+        web_browser = await playwright.chromium.launch_persistent_context(get_browser_data_dir('chromium'), *args,
+                                                                          headless=headless, **kwargs)
     path = get_resource_file("stealth.min.js")
     await web_browser.add_init_script(path=path.__str__())
     return web_browser
@@ -86,8 +96,8 @@ async def close_web_browser(process: Process, web_browser: BrowserContext):
     for page in web_browser.pages:
         await close_page(process, page)
     await web_browser.close()
-    if len(web_browser.browser.contexts) == 0:
-        await process.remove_process_var(browser_var, ProcessVarScope.GLOBAL)
+    if web_browser.browser and len(web_browser.browser.contexts) == 0:
+        await web_browser.browser.close()
 
 
 async def stop_loading(page: Page):

@@ -111,8 +111,8 @@ class DefaultComponentForm(ComponentForm):
                                                AppContext.engine().type_registry)
                     if self.node and input_def.name in self.node.inputs:
                         input_editor.setText(self.node.input(input_def.name))
-                    elif input_def.defaultValue:
-                        input_editor.setText(input_def.defaultValue)
+                    elif input_def.defaultValue is not None:
+                        input_editor.setText(str(input_def.defaultValue))
                 elif input_def.ui_config.input_type == VariableUiInputType.VARIABLE:
                     input_editor = VariableLineEdit()
                     if input_def.ui_config.placeholder:

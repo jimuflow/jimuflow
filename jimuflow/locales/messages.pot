@@ -113,6 +113,12 @@ msgstr ""
 msgid "is false"
 msgstr ""
 
+msgid "is null"
+msgstr ""
+
+msgid "is not null"
+msgstr ""
+
 #, python-brace-format
 msgid "Unsupported operator: {op}"
 msgstr ""
@@ -1059,6 +1065,9 @@ msgstr ""
 
 #, python-brace-format
 msgid "Unsupported locate type: {locate_type}"
+msgstr ""
+
+msgid "The element is not found"
 msgstr ""
 
 #, python-brace-format
@@ -2440,6 +2449,10 @@ msgid "Process {name} has not been saved. Do you want to save this process?"
 msgstr ""
 
 #, python-brace-format
+msgid "Process {name} is running, do you want to terminate the process?"
+msgstr ""
+
+#, python-brace-format
 msgid "Are you sure you want to delete process {name}?"
 msgstr ""
 
@@ -2448,10 +2461,6 @@ msgstr ""
 
 #, python-brace-format
 msgid "Process {name} only supports running on platform {platforms}"
-msgstr ""
-
-#, python-brace-format
-msgid "Process {name} is running, do you want to terminate the process?"
 msgstr ""
 
 #, python-brace-format
@@ -2914,6 +2923,9 @@ msgid ""
 "located."
 msgstr ""
 
+msgid "Dev Tools"
+msgstr ""
+
 msgid ""
 "Operation instructions: Ctrl+left-click to get a single element, and "
 "Shift+left-click two elements to get multiple similar elements."
@@ -2985,56 +2997,40 @@ msgstr ""
 msgid "Web Element Relative XPath Tool"
 msgstr ""
 
+msgid "Open Element Page"
+msgstr ""
+
 msgid "Operation instructions: Ctrl+left-click to capture a single element."
-msgstr ""
-
-msgid "Source Element XPath: "
-msgstr ""
-
-msgid "Click the Capture Element button to obtain the XPath of the source element"
 msgstr ""
 
 msgid "Capture Source Element"
 msgstr ""
 
-msgid "Capture the source element"
+msgid "Select Source Element"
 msgstr ""
 
-msgid "Match"
+msgid "Source Element XPath"
 msgstr ""
 
-msgid "Match the source element XPath on the current web page"
+msgid "Target Element Relative XPath"
 msgstr ""
 
-msgid "Target Element XPath: "
-msgstr ""
-
-msgid "Click the Capture Element button to obtain the XPath of the target element"
+msgid "Operation"
 msgstr ""
 
 msgid "Capture Target Element"
 msgstr ""
 
-msgid "Capture the target element"
-msgstr ""
-
-msgid "Match the target element XPath on the current web page"
-msgstr ""
-
-msgid "Relative XPath: "
+msgid "Final Relative XPath: "
 msgstr ""
 
 msgid "Relative XPath of the target element relative to the source element"
 msgstr ""
 
-msgid "Accept"
+msgid "Test"
 msgstr ""
 
-msgid "Accept the relative XPath and close the dialog"
-msgstr ""
-
-#, python-brace-format
-msgid "Matches count: {}"
+msgid "Select Source Element to Test"
 msgstr ""
 
 msgid "Web Element XPath Tool"
@@ -3052,10 +3048,16 @@ msgstr ""
 msgid "Merge XPath on all tabs"
 msgstr ""
 
+msgid "Match"
+msgstr ""
+
 msgid "Match the merged XPath on the current tab"
 msgstr ""
 
 msgid "Copy the merged XPath to clipboard"
+msgstr ""
+
+msgid "Accept"
 msgstr ""
 
 msgid "Accept the merged XPath and close the dialog"
@@ -3068,6 +3070,13 @@ msgid "Match the XPath on the current tab"
 msgstr ""
 
 msgid "Accept the XPath and close the dialog"
+msgstr ""
+
+#, python-brace-format
+msgid "Matches count: {}"
+msgstr ""
+
+msgid "Inspect"
 msgstr ""
 
 msgid "Calendar"
@@ -3184,10 +3193,34 @@ msgstr ""
 msgid "Operation instructions: Ctrl+left-click to get a single element."
 msgstr ""
 
+msgid "Source Element XPath: "
+msgstr ""
+
+msgid "Click the Capture Element button to obtain the XPath of the source element"
+msgstr ""
+
+msgid "Capture the source element"
+msgstr ""
+
 msgid "Match the source element"
 msgstr ""
 
+msgid "Target Element XPath: "
+msgstr ""
+
+msgid "Click the Capture Element button to obtain the XPath of the target element"
+msgstr ""
+
+msgid "Capture the target element"
+msgstr ""
+
 msgid "Match the target element"
+msgstr ""
+
+msgid "Relative XPath: "
+msgstr ""
+
+msgid "Accept the relative XPath and close the dialog"
 msgstr ""
 
 msgid "This feature is only supported on Windows."
@@ -3323,6 +3356,9 @@ msgid "Search element"
 msgstr ""
 
 msgid "OK"
+msgstr ""
+
+msgid "Select Web Element"
 msgstr ""
 
 msgid "Get Relative XPath"
@@ -4625,6 +4661,12 @@ msgstr ""
 msgid "File Name"
 msgstr ""
 
+msgid "Set response encoding"
+msgstr ""
+
+msgid "Automatic Detection"
+msgstr ""
+
 msgid "Timeout(seconds)"
 msgstr ""
 
@@ -5210,6 +5252,9 @@ msgstr ""
 msgid "Running in the background"
 msgstr ""
 
+msgid "Enable incognito mode"
+msgstr ""
+
 msgid "Opened web browser"
 msgstr ""
 
@@ -5640,14 +5685,14 @@ msgstr ""
 msgid "Execution interrupted"
 msgstr ""
 
-msgid "Execution error"
-msgstr ""
-
 msgid "Ignore error and continue execution"
 msgstr ""
 
 #, python-brace-format
 msgid "Wait for {} seconds and retry for the {} time"
+msgstr ""
+
+msgid "Execution error"
 msgstr ""
 
 #, python-brace-format

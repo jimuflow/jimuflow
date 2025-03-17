@@ -63,7 +63,9 @@
                 position = count
             }
         }
-        pathNode.predicates.push(['position()', '=', position + '', !hasId])
+        if (count > 1) {
+            pathNode.predicates.push(['position()', '=', position + '', !hasId])
+        }
         let notHasChildElements = ![...element.childNodes].some(node => node.nodeType === 1)
         if (notHasChildElements) {
             pathNode.predicates.push(['text()', '=', element.innerText, false])
@@ -107,7 +109,9 @@
             }
             const pathNode = path[nodeIndex]
             const enabledPredicate = pathNode.predicates.find(predicate => predicate[3])
-            if (enabledPredicate[0] === 'position()') {
+            if (!enabledPredicate) {
+                xpath += pathNode.element
+            } else if (enabledPredicate[0] === 'position()') {
                 xpath += pathNode.element + '[' + enabledPredicate[2] + ']'
             } else {
                 xpath += pathNode.element + '[@' + enabledPredicate[0] + '=\'' + escapeXPathString(enabledPredicate[2]) + '\']'
@@ -347,6 +351,22 @@
         return result.snapshotLength;
     }
 
+    window.highlightRelativeElement = function (sourceXPath, relativeXPath, cssClass) {
+        const sourceList = document.evaluate(sourceXPath, document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+        const allTargetList=[]
+        for (let i = 0; i < sourceList.snapshotLength; i++) {
+            const targetList= document.evaluate(relativeXPath, sourceList.snapshotItem(i), null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+            for (let j = 0; j < targetList.snapshotLength; j++) {
+                allTargetList.push(targetList.snapshotItem(j))
+                targetList.snapshotItem(j).classList.add(cssClass)
+            }
+        }
+        if(allTargetList.length>0){
+            allTargetList[0].scrollIntoView();
+        }
+        return allTargetList.snapshotLength;
+    }
+
     window.findIframeByXpathSteps = function (xpath_steps,scrollIntoView) {
         let contextNodes = [document]
         while (xpath_steps.length > 0) {
@@ -372,5 +392,15 @@
         }
         return JSON.stringify({iframeId: null, xpath_steps: []})
     }
+
+    window.getElementInfosByXPath = function (xpath) {
+        const result = document.evaluate(xpath, document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+        const elements=[]
+        for (let i = 0; i < result.snapshotLength; i++) {
+            elements.push(getElementInfo(result.snapshotItem(i)))
+        }
+        return JSON.stringify(elements)
+    }
+
     window.__preload_js_injected__ = true
 })()

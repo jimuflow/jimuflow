@@ -12,11 +12,11 @@ Enter the expression of the first operand, such as variables, strings, numerical
 
 ### Operator
 
-Select the comparison operator to use. The currently supported operators are: equal to, not equal to, greater than, less than, greater than or equal to, less than or equal to, contains, not contains, is empty, is not empty, starts with, not starts with, ends with, not ends with, is true, is false.
+Select the comparison operator to use. The currently supported operators are: equal to, not equal to, greater than, less than, greater than or equal to, less than or equal to, contains, not contains, is empty, is not empty, starts with, not starts with, ends with, not ends with, is true, is false, is null, is not null.
 
 ### Second Operand
 
-Except for "is empty", "is not empty", "is true", "is false", other operators also require entering the second operand.
+Except for "is empty", "is not empty", "is true", "is false", "is null", "is not null", other operators also require entering the second operand.
 
 ## Usage Example<a name="example"></a>
 

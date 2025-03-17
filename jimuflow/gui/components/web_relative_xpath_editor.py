@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -22,12 +22,13 @@ from jimuflow.definition import VariableDef
 from jimuflow.gui.expression_edit_v3 import ExpressionEditV3
 from jimuflow.gui.web_element_relative_xpath_tool import WebElementRelativeXpathTool
 from jimuflow.locales.i18n import gettext
-from jimuflow.runtime.expression import escape_string
+from jimuflow.runtime.expression import escape_string, evaluate
 
 
 class WebRelativeXPathEdit(QWidget):
     def __init__(self, parent: QWidget = None):
         super().__init__(parent)
+        self._type_registry = None
         self.setContentsMargins(0, 0, 0, 0)
         self._layout = QGridLayout(self)
         self._layout.setContentsMargins(0, 0, 0, 0)
@@ -47,10 +48,15 @@ class WebRelativeXPathEdit(QWidget):
         self._xpath_editor.setPlaceholderText(text)
 
     def set_variables(self, variables: list[VariableDef], type_registry: DataTypeRegistry):
+        self._type_registry = type_registry
         self._xpath_editor.set_variables(variables, type_registry)
 
     @Slot()
     def _open_tool(self):
-        tool = WebElementRelativeXpathTool()
+        try:
+            xpath = evaluate(self.get_value(), dict(), self._type_registry)
+        except:
+            xpath = ''
+        tool = WebElementRelativeXpathTool(xpath)
         if tool.exec_until_closed() == QDialog.DialogCode.Accepted:
             self.set_value(escape_string(tool.accepted_xpath))

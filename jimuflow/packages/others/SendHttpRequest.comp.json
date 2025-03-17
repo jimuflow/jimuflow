@@ -429,6 +429,82 @@
       }
     },
     {
+      "name": "setResponseEncoding",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Set response encoding",
+        "group": "advanced",
+        "inputType": "check_box",
+        "required": false,
+        "dependsOn": {
+          "variableName": "saveToFile",
+          "operator": "==",
+          "value": false
+        }
+      }
+    },
+    {
+      "name": "responseEncoding",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "auto",
+      "uiConfig": {
+        "label": "Response Encoding",
+        "group": "advanced",
+        "inputType": "combo_box",
+        "required": false,
+        "options": [
+          {
+            "value": "auto",
+            "label": "Automatic Detection"
+          },
+          {
+            "value": "utf-8",
+            "label": "UTF-8"
+          },
+          {
+            "value": "ascii",
+            "label": "ASCII"
+          },
+          {
+            "value": "latin-1",
+            "label": "Latin-1"
+          },
+          {
+            "value": "utf-8-sig",
+            "label": "UTF-8 with BOM"
+          },
+          {
+            "value": "utf-16",
+            "label": "UTF-16"
+          },
+          {
+            "value": "utf-32",
+            "label": "UTF-32"
+          },
+          {
+            "value": "gbk",
+            "label": "GBK"
+          },
+          {
+            "value": "gb2312",
+            "label": "GB2312"
+          },
+          {
+            "value": "gb18030",
+            "label": "GB18030"
+          }
+        ],
+        "dependsOn": {
+          "variableName": "setResponseEncoding",
+          "operator": "==",
+          "value": true
+        }
+      }
+    },
+    {
       "name": "timeout",
       "type": "number",
       "direction": "IN",

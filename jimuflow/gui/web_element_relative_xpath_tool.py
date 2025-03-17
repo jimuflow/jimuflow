@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -15,20 +15,25 @@
 # Copyright (C) 2024-2025  Weng Jing
 
 import json
+import uuid
 from typing import Callable
 
 from PySide6.QtCore import Slot, QSize, QEvent, Qt, QTimer, QPointF, QUrl
-from PySide6.QtGui import QMouseEvent, QIcon
+from PySide6.QtGui import QMouseEvent, QIcon, QStandardItemModel, QStandardItem
 from PySide6.QtWebEngineCore import QWebEngineScript, QWebEnginePage, QWebEngineFrame, QWebEngineNewWindowRequest
 from PySide6.QtWebEngineWidgets import QWebEngineView
 from PySide6.QtWidgets import QVBoxLayout, QLabel, QLineEdit, QPushButton, \
-    QGridLayout, QApplication
+    QGridLayout, QApplication, QSplitter, QTableView, QAbstractItemView, QHBoxLayout, QHeaderView, QWidget, \
+    QSizePolicy, QDialog, QDialogButtonBox
 
 from jimuflow.common import get_resource_file
+from jimuflow.common.uri_utils import parse_web_element_uri
 from jimuflow.common.web_element_utils import get_relative_xpath, get_full_element_xpath
+from jimuflow.gui.app import AppContext
+from jimuflow.gui.components.web_element_selector import WebElementSelectDialog
 from jimuflow.gui.dialog_with_webengine import DialogWithWebEngine
 from jimuflow.gui.web_element_capture_tool import validate_and_fix_url
-from jimuflow.gui.web_view_utils import setup_web_view_actions
+from jimuflow.gui.web_view_utils import setup_web_view_actions, get_persistent_profile
 from jimuflow.locales.i18n import gettext
 
 preload_js_path = get_resource_file('web_element_capture_preload.js')
@@ -44,8 +49,10 @@ highlight_target_css_class = 'qt-highlight-target'
 class WebElementRelativeXpathTool(DialogWithWebEngine):
     last_url = ''
 
-    def __init__(self, parent=None):
+    def __init__(self, init_value='', parent=None):
         super().__init__(parent)
+        self._current_row_id = None
+        self._in_test_mode = False
         self._pick_mode = None
         self.setWindowTitle(gettext('Web Element Relative XPath Tool'))
         self.accepted_xpath = ''
@@ -59,7 +66,10 @@ class WebElementRelativeXpathTool(DialogWithWebEngine):
         if WebElementRelativeXpathTool.last_url:
             url_editor.setText(WebElementRelativeXpathTool.last_url)
         open_button = QPushButton(gettext('Open'))
+        open_button.setDefault(True)
         open_button.clicked.connect(self._open_url)
+        open_element_page_button = QPushButton(gettext('Open Element Page'))
+        open_element_page_button.clicked.connect(self._open_element_page)
         back_button = QPushButton(QIcon.fromTheme(QIcon.ThemeIcon.GoPrevious), '')
         back_button.setDisabled(True)
         self._back_button = back_button
@@ -72,15 +82,21 @@ class WebElementRelativeXpathTool(DialogWithWebEngine):
         reload_button.setDisabled(False)
         self._reload_button = reload_button
         reload_button.clicked.connect(self._reload)
+        dev_tools_button = QPushButton(gettext('Dev Tools'))
         top_layout.addWidget(url_label, 0, 0, 1, 1)
         top_layout.addWidget(url_editor, 0, 1, 1, 1)
         top_layout.addWidget(open_button, 0, 2, 1, 1)
-        top_layout.addWidget(back_button, 0, 3, 1, 1)
-        top_layout.addWidget(forward_button, 0, 4, 1, 1)
-        top_layout.addWidget(reload_button, 0, 5, 1, 1)
+        top_layout.addWidget(open_element_page_button, 0, 3, 1, 1)
+        top_layout.addWidget(back_button, 0, 4, 1, 1)
+        top_layout.addWidget(forward_button, 0, 5, 1, 1)
+        top_layout.addWidget(reload_button, 0, 6, 1, 1)
+        top_layout.addWidget(dev_tools_button, 0, 7, 1, 1)
         main_layout.addLayout(top_layout)
         self._web_view = self._create_web_view()
-        main_layout.addWidget(self._web_view, 1)
+        self._splitter = QSplitter()
+        self._splitter.addWidget(self._web_view)
+        main_layout.addWidget(self._splitter, 1)
+        dev_tools_button.clicked.connect(self._open_dev_tools)
         help_label = QLabel(gettext(
             'Operation instructions: Ctrl+left-click to capture a single element.'))
         help_label.setVisible(False)
@@ -88,22 +104,40 @@ class WebElementRelativeXpathTool(DialogWithWebEngine):
         main_layout.addWidget(help_label)
 
         bottom_layout = QVBoxLayout()
-        bottom_layout.setSpacing(0)
-        source_element_layout, source_xpath_edit, source_matches_count_label = self._create_source_element_layout()
-        bottom_layout.addLayout(source_element_layout)
-        self._source_xpath_edit = source_xpath_edit
-        self._source_matches_count_label = source_matches_count_label
+        bottom_layout.setSpacing(4)
 
-        target_element_layout, target_xpath_edit, target_matches_count_label = self._create_target_element_layout()
-        bottom_layout.addLayout(target_element_layout)
-        self._target_xpath_edit = target_xpath_edit
-        self._target_matches_count_label = target_matches_count_label
+        table_buttons_layout = QHBoxLayout()
+        table_buttons_layout.setAlignment(Qt.AlignmentFlag.AlignRight)
+        capture_button = QPushButton(gettext('Capture Source Element'))
+        capture_button.setDisabled(True)
+        capture_button.clicked.connect(self._pick_source_element_xpath)
+        self._capture_button = capture_button
+        table_buttons_layout.addWidget(capture_button)
+        select_button = QPushButton(gettext('Select Source Element'))
+        select_button.clicked.connect(self._select_source_elements)
+        select_button.setDisabled(True)
+        self._select_button = select_button
+        table_buttons_layout.addWidget(select_button)
+
+        bottom_layout.addLayout(table_buttons_layout)
+
+        self._create_table_view()
+        bottom_layout.addWidget(self._table_view)
 
         result_layout, result_xpath_edit = self._create_result_layout()
         bottom_layout.addLayout(result_layout)
         self._result_xpath_edit = result_xpath_edit
+        if init_value:
+            self._result_xpath_edit.setText(init_value)
 
         main_layout.addLayout(bottom_layout)
+
+        button_box = QDialogButtonBox(QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel)
+        button_box.accepted.connect(self._accept_result_xpath)
+        button_box.rejected.connect(self.reject)
+        button_box.button(QDialogButtonBox.StandardButton.Ok).setText(gettext('Ok'))
+        button_box.button(QDialogButtonBox.StandardButton.Cancel).setText(gettext('Cancel'))
+        main_layout.addWidget(button_box)
 
         self.resize(QSize(1200, 700))
         self._iframe_setup_timer = QTimer(self)
@@ -111,11 +145,111 @@ class WebElementRelativeXpathTool(DialogWithWebEngine):
         self._iframe_setup_timer.timeout.connect(self._init_all_iframes)
         self._iframe_setup_timer.start()
 
+    def _create_table_view(self):
+        table_view = QTableView()
+        table_model = QStandardItemModel()
+        table_model.setHorizontalHeaderLabels(
+            [gettext('Source Element XPath'), gettext('Target Element Relative XPath'), gettext('Operation')])
+        table_view.setModel(table_model)
+        table_view.verticalHeader().hide()
+        table_view.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch)
+        table_view.horizontalHeader().setSectionResizeMode(1, QHeaderView.ResizeMode.Stretch)
+        table_view.horizontalHeader().setSectionResizeMode(2, QHeaderView.ResizeMode.ResizeToContents)
+        table_view.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
+        table_view.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
+        self._table_view = table_view
+        self._table_model = table_model
+
+    def _add_source_element(self, source_element_xpath: str):
+        id = uuid.uuid4().hex
+        source_element_item = QStandardItem(source_element_xpath)
+        source_element_item.setData(id, Qt.ItemDataRole.UserRole)
+        target_element_item = QStandardItem('')
+        operation_item = QStandardItem('')
+        self._table_model.appendRow([source_element_item, target_element_item, operation_item])
+        index = self._table_model.indexFromItem(source_element_item)
+        self._table_view.setIndexWidget(self._table_model.index(index.row(), 2),
+                                        self._create_actions_widget(id))
+        self._table_view.resizeColumnToContents(2)
+
+    def _add_target_element(self, target_element_xpath: str):
+        for row in range(self._table_model.rowCount()):
+            source_element_item = self._table_model.item(row, 0)
+            if source_element_item.data(Qt.ItemDataRole.UserRole) == self._current_row_id:
+                break
+        else:
+            return
+        relative_xpath = get_relative_xpath(source_element_item.text(), target_element_xpath)
+        self._table_model.item(source_element_item.row(), 1).setText(relative_xpath)
+        self._update_result()
+
+    def _create_actions_widget(self, id):
+        widget = QWidget()
+        layout = QHBoxLayout(widget)
+        layout.setContentsMargins(5, 0, 5, 0)
+        button = QPushButton(gettext('Capture Target Element'))
+        button.setSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+        button.clicked.connect(lambda: self._capture_target_element(id))
+        layout.addWidget(button)
+        button = QPushButton(gettext('Delete'))
+        button.setSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+        button.clicked.connect(lambda: self._remove_row(id))
+        layout.addWidget(button)
+        return widget
+
+    def _capture_target_element(self, row_id):
+        self._current_row_id = row_id
+        row = self._get_row_by_id(row_id)
+        self._table_view.selectRow(row)
+        source_element_item = self._table_model.item(row, 0)
+        source_element_xpath = source_element_item.text()
+        relative_xpath_item = self._table_model.item(row, 1)
+        relative_xpath = relative_xpath_item.text()
+        if source_element_xpath and relative_xpath:
+            self._highlight_relative_element(source_element_xpath, relative_xpath)
+        else:
+            self._clear_selection(highlight_source_css_class)
+            self._clear_selection(highlight_target_css_class)
+            self._highlight_element(source_element_xpath, highlight_source_css_class)
+        self._pick_target_element_xpath()
+
+    def _remove_row(self, row_id):
+        row = self._get_row_by_id(row_id)
+        if row >= 0:
+            self._table_model.removeRow(row)
+
+    def _get_row_by_id(self, row_id):
+        for row in range(self._table_model.rowCount()):
+            source_element_item = self._table_model.item(row, 0)
+            if source_element_item.data(Qt.ItemDataRole.UserRole) == row_id:
+                return row
+
+    def _select_source_elements(self):
+        dialog = WebElementSelectDialog([])
+        if dialog.exec() == QDialog.DialogCode.Accepted and dialog.selected_element:
+            element_id = parse_web_element_uri(dialog.selected_element)
+            element_info = AppContext.app().app_package.get_web_element_by_id(element_id)
+
+            def on_result(elements: list):
+                for item in elements:
+                    self._add_source_element(get_full_element_xpath(item['elementPath']))
+
+            self._get_elements_by_xpath(element_info['elementXPath'], on_result)
+
+    def _open_element_page(self):
+        """打开元素所在页面"""
+        dialog = WebElementSelectDialog([])
+        if dialog.exec() == QDialog.DialogCode.Accepted and dialog.selected_element:
+            element_id = parse_web_element_uri(dialog.selected_element)
+            element_info = AppContext.app().app_package.get_web_element_by_id(element_id)
+            self._url_editor.setText(element_info['webPageUrl'])
+            self._open_url()
+
     def get_web_view(self):
         return self._web_view
 
     def _create_web_view(self):
-        web_view = QWebEngineView()
+        web_view = QWebEngineView(get_persistent_profile())
         setup_web_view_actions(web_view)
         web_view.loadFinished.connect(self._on_load_finished)
         script = QWebEngineScript()
@@ -137,6 +271,25 @@ class WebElementRelativeXpathTool(DialogWithWebEngine):
         web_view.urlChanged.connect(self._on_url_changed)
         web_view.page().newWindowRequested.connect(self.on_new_window_requested)
         return web_view
+
+    def _open_dev_tools(self):
+        dev_tools_view = self._splitter.findChild(QWebEngineView, "devToolsView")
+        if dev_tools_view:
+            self._close_dev_tools(dev_tools_view)
+            return
+        dev_tools_view = QWebEngineView()
+        dev_tools_view.setObjectName("devToolsView")
+        dev_tools_view.setMinimumWidth(300)
+        self._splitter.addWidget(dev_tools_view)
+        dev_tools_view.page().setInspectedPage(self._web_view.page())
+        dev_tools_view.page().windowCloseRequested.connect(
+            lambda: self._close_dev_tools(dev_tools_view))
+        dev_tools_view.show()
+
+    def _close_dev_tools(self, dev_tools_view: QWebEngineView):
+        dev_tools_view.page().setInspectedPage(None)
+        dev_tools_view.close()
+        dev_tools_view.deleteLater()
 
     def _back(self):
         self._web_view.back()
@@ -176,56 +329,10 @@ class WebElementRelativeXpathTool(DialogWithWebEngine):
             frame.runJavaScript(after_load_js, QWebEngineScript.ScriptWorldId.UserWorld)
             stack.extend(frame.children())
 
-    def _create_source_element_layout(self):
-        source_element_layout = QGridLayout()
-        source_element_layout.setSpacing(4)
-        xpath_label = QLabel(gettext('Source Element XPath: '))
-        xpath_edit = QLineEdit()
-        xpath_edit.setPlaceholderText(
-            gettext('Click the Capture Element button to obtain the XPath of the source element'))
-        xpath_edit.editingFinished.connect(self._update_result)
-        matches_count_label = QLabel()
-        pick_button = QPushButton(gettext('Capture Source Element'))
-        pick_button.setToolTip(gettext('Capture the source element'))
-        pick_button.clicked.connect(self._pick_source_element_xpath)
-        match_button = QPushButton(gettext('Match'))
-        match_button.setToolTip(gettext('Match the source element XPath on the current web page'))
-        match_button.clicked.connect(self._on_source_match_button_clicked)
-        self._set_matches_count(matches_count_label, 0)
-        source_element_layout.addWidget(xpath_label, 0, 0, 1, 1)
-        source_element_layout.addWidget(xpath_edit, 0, 1, 1, 1)
-        source_element_layout.addWidget(matches_count_label, 0, 2, 1, 1)
-        source_element_layout.addWidget(pick_button, 0, 3, 1, 1)
-        source_element_layout.addWidget(match_button, 0, 4, 1, 1)
-        return source_element_layout, xpath_edit, matches_count_label
-
     @Slot()
     def _pick_source_element_xpath(self):
         self._pick_mode = 'pick_source'
         self._help_label.setVisible(True)
-
-    def _create_target_element_layout(self):
-        target_element_layout = QGridLayout()
-        target_element_layout.setSpacing(4)
-        xpath_label = QLabel(gettext('Target Element XPath: '))
-        xpath_edit = QLineEdit()
-        xpath_edit.setPlaceholderText(
-            gettext('Click the Capture Element button to obtain the XPath of the target element'))
-        xpath_edit.editingFinished.connect(self._update_result)
-        matches_count_label = QLabel()
-        pick_button = QPushButton(gettext('Capture Target Element'))
-        pick_button.setToolTip(gettext('Capture the target element'))
-        pick_button.clicked.connect(self._pick_target_element_xpath)
-        match_button = QPushButton(gettext('Match'))
-        match_button.setToolTip(gettext('Match the target element XPath on the current web page'))
-        match_button.clicked.connect(self._on_target_match_button_clicked)
-        self._set_matches_count(matches_count_label, 0)
-        target_element_layout.addWidget(xpath_label, 0, 0, 1, 1)
-        target_element_layout.addWidget(xpath_edit, 0, 1, 1, 1)
-        target_element_layout.addWidget(matches_count_label, 0, 2, 1, 1)
-        target_element_layout.addWidget(pick_button, 0, 3, 1, 1)
-        target_element_layout.addWidget(match_button, 0, 4, 1, 1)
-        return target_element_layout, xpath_edit, matches_count_label
 
     @Slot()
     def _pick_target_element_xpath(self):
@@ -235,19 +342,17 @@ class WebElementRelativeXpathTool(DialogWithWebEngine):
     def _create_result_layout(self):
         result_layout = QGridLayout()
         result_layout.setSpacing(4)
-        xpath_label = QLabel(gettext('Relative XPath: '))
+        xpath_label = QLabel(gettext('Final Relative XPath: '))
         xpath_edit = QLineEdit()
         xpath_edit.setReadOnly(True)
         xpath_edit.setPlaceholderText(gettext('Relative XPath of the target element relative to the source element'))
-        accept_button = QPushButton(gettext('Accept'))
-        accept_button.setToolTip(gettext('Accept the relative XPath and close the dialog'))
-        accept_button.clicked.connect(self._accept_result_xpath)
-        close_button = QPushButton(gettext('Close'))
-        close_button.clicked.connect(self.reject)
+        test_button = QPushButton(gettext('Test'))
+        test_button.clicked.connect(self._test_final_relative_xpath)
+        test_button.setDisabled(True)
+        self._test_button = test_button
         result_layout.addWidget(xpath_label, 0, 0, 1, 1)
         result_layout.addWidget(xpath_edit, 0, 1, 1, 1)
-        result_layout.addWidget(accept_button, 0, 2, 1, 1)
-        result_layout.addWidget(close_button, 0, 3, 1, 1)
+        result_layout.addWidget(test_button, 0, 2, 1, 1)
         return result_layout, xpath_edit
 
     @Slot()
@@ -261,6 +366,10 @@ class WebElementRelativeXpathTool(DialogWithWebEngine):
         self._web_view.load(url)
         self._web_view.focusProxy().installEventFilter(self)
         WebElementRelativeXpathTool.last_url = url
+        self._capture_button.setEnabled(True)
+        self._select_button.setEnabled(True)
+        if self._result_xpath_edit.text().strip():
+            self._test_button.setEnabled(True)
 
     def eventFilter(self, watched, event):
         if (event.type() == QEvent.Type.MouseButtonPress and event.button() == Qt.MouseButton.LeftButton
@@ -358,22 +467,22 @@ class WebElementRelativeXpathTool(DialogWithWebEngine):
 
     def _select_xpath(self, web_view: QWebEngineView, xpath: str):
         if self._pick_mode == 'pick_source':
-            self._source_xpath_edit.setText(xpath)
-            self._set_matches_count(self._source_matches_count_label, 1)
+            self._add_source_element(xpath)
         else:
-            self._target_xpath_edit.setText(xpath)
-            self._set_matches_count(self._target_matches_count_label, 1)
-        self._update_result()
+            self._add_target_element(xpath)
         self._pick_mode = ''
         self._help_label.setVisible(False)
 
     @Slot()
     def _update_result(self):
-        self._result_xpath_edit.setText(
-            get_relative_xpath(self._source_xpath_edit.text(), self._target_xpath_edit.text()))
-
-    def _set_matches_count(self, label: QLabel, count: int):
-        label.setText(gettext('Matches count: {}').format(count))
+        all_relative_xpath = set()
+        for row in range(self._table_model.rowCount()):
+            relative_path_item = self._table_model.item(row, 1)
+            if relative_path_item.text():
+                all_relative_xpath.add(relative_path_item.text())
+        if all_relative_xpath:
+            self._result_xpath_edit.setText(' | '.join(all_relative_xpath))
+            self._test_button.setEnabled(True)
 
     def _clear_selection(self, css_class: str):
         for frame in self.get_all_frames(self._web_view):
@@ -392,45 +501,69 @@ class WebElementRelativeXpathTool(DialogWithWebEngine):
             yield frame
             stack.extend(frame.children())
 
-    def _highlight_element(self, xpath: str, matches_count_label: QLabel, css_class: str):
+    def _highlight_element(self, xpath: str, css_class: str):
         matches = []
         frames = list(self.get_all_frames(self._web_view))
 
         def on_highlighted(count: int):
             matches.append(count)
-            if len(matches) == len(frames):
-                self._set_matches_count(matches_count_label, int(sum(matches)))
 
         for frame in frames:
             frame.runJavaScript(f'highlightElement({json.dumps(xpath, ensure_ascii=False)}, "{css_class}")',
                                 QWebEngineScript.ScriptWorldId.UserWorld, on_highlighted)
 
     @Slot()
-    def _on_source_match_button_clicked(self):
-        xpath = self._source_xpath_edit.text().strip()
-        self._clear_selection(highlight_source_css_class)
-        if xpath:
-            self._highlight_element(xpath, self._source_matches_count_label, highlight_source_css_class)
-        else:
-            self._set_matches_count(self._source_matches_count_label, 0)
-
-    @Slot()
-    def _on_target_match_button_clicked(self):
-        xpath = self._target_xpath_edit.text().strip()
-        self._clear_selection(highlight_target_css_class)
-        if xpath:
-            self._highlight_element(xpath, self._target_matches_count_label, highlight_target_css_class)
-        else:
-            self._set_matches_count(self._target_matches_count_label, 0)
-
-    @Slot()
     def _accept_result_xpath(self):
         self.accepted_xpath = self._result_xpath_edit.text().strip()
         self.accept()
 
+    def _highlight_relative_element(self, source_xpath, relative_xpath):
+        if not source_xpath or not relative_xpath:
+            return
+
+        self._clear_selection(highlight_source_css_class)
+        self._clear_selection(highlight_target_css_class)
+
+        self._highlight_element(source_xpath, highlight_source_css_class)
+
+        frames = list(self.get_all_frames(self._web_view))
+
+        for frame in frames:
+            frame.runJavaScript(
+                f'highlightRelativeElement({json.dumps(source_xpath, ensure_ascii=False)}, {json.dumps(relative_xpath, ensure_ascii=False)}, "{highlight_target_css_class}")',
+                QWebEngineScript.ScriptWorldId.UserWorld)
+
+    def _get_elements_by_xpath(self, xpath: str, callback):
+        result_list = []
+        frames = list(self.get_all_frames(self._web_view))
+
+        def on_result(result: str):
+            result_list.append(json.loads(result))
+            if len(result_list) == len(frames):
+                all_elements = []
+                for item in result_list:
+                    all_elements.extend(item)
+                callback(all_elements)
+
+        for frame in frames:
+            frame.runJavaScript(f'getElementInfosByXPath({json.dumps(xpath, ensure_ascii=False)})',
+                                QWebEngineScript.ScriptWorldId.UserWorld, on_result)
+
+    def _test_final_relative_xpath(self):
+        result_xpath = self._result_xpath_edit.text().strip()
+        if not result_xpath:
+            return
+        dialog = WebElementSelectDialog([])
+        dialog.setWindowTitle(gettext('Select Source Element to Test'))
+        if dialog.exec() == QDialog.DialogCode.Accepted and dialog.selected_element:
+            element_id = parse_web_element_uri(dialog.selected_element)
+            element_info = AppContext.app().app_package.get_web_element_by_id(element_id)
+            self._highlight_relative_element(element_info['elementXPath'], result_xpath)
+
 
 if __name__ == '__main__':
     app = QApplication()
+    app.setApplicationName("JimuFlow")
     tool = WebElementRelativeXpathTool()
     tool.show()
     app.exec()

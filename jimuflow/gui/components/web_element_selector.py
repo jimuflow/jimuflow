@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -17,7 +17,7 @@
 from PySide6.QtCore import QSortFilterProxyModel, Slot, QModelIndex, Signal, QEvent, QPoint, QAbstractItemModel
 from PySide6.QtGui import QStandardItemModel, Qt, QPixmap
 from PySide6.QtWidgets import QWidget, QGridLayout, QLabel, QLineEdit, QTreeView, QPushButton, QFrame, QHBoxLayout, \
-    QSizePolicy
+    QSizePolicy, QDialog, QVBoxLayout, QDialogButtonBox
 
 from jimuflow.common.uri_utils import build_web_element_uri, is_variable_uri, parse_web_element_uri, \
     parse_variable_uri, build_variable_uri
@@ -55,9 +55,12 @@ class WebElementSelectorPopupModel(QAbstractItemModel):
         self.dataChanged.emit(self._map_elements_model_index(top_left), self._map_elements_model_index(bottom_right),
                               roles)
 
+    def _group_row_offset(self):
+        return 1 if len(self._element_variables) > 0 else 0
+
     def _on_elements_model_rows_inserted(self, parent, first, last):
         if not parent.isValid():
-            self.beginInsertRows(QModelIndex(), first + 1, last + 1)
+            self.beginInsertRows(QModelIndex(), first + self._group_row_offset(), last + self._group_row_offset())
             self.endInsertRows()
         else:
             self.beginInsertRows(self._map_elements_model_index(parent), first, last)
@@ -65,7 +68,7 @@ class WebElementSelectorPopupModel(QAbstractItemModel):
 
     def _on_elements_model_rows_removed(self, parent, first, last):
         if not parent.isValid():
-            self.beginRemoveRows(QModelIndex(), first + 1, last + 1)
+            self.beginRemoveRows(QModelIndex(), first + self._group_row_offset(), last + self._group_row_offset())
             self.endRemoveRows()
         else:
             self.beginRemoveRows(self._map_elements_model_index(parent), first, last)
@@ -75,7 +78,7 @@ class WebElementSelectorPopupModel(QAbstractItemModel):
         if not source_index.isValid():
             return QModelIndex()
         elif not source_index.parent().isValid():
-            return self.index(source_index.row() + 1, 0)
+            return self.index(source_index.row() + self._group_row_offset(), 0)
         else:
             return self.index(source_index.row(), source_index.column(),
                               self._map_elements_model_index(source_index.parent()))
@@ -84,12 +87,15 @@ class WebElementSelectorPopupModel(QAbstractItemModel):
         if not self.hasIndex(row, column, parent):
             return QModelIndex()
         if not parent.isValid():
-            if row == 0:
-                return self.createIndex(row, column, WebElementSelectorPopupModel.DYNAMIC_ELEMENTS_GROUP_ID)
+            if len(self._element_variables) > 0:
+                if row == 0:
+                    return self.createIndex(row, column, WebElementSelectorPopupModel.DYNAMIC_ELEMENTS_GROUP_ID)
+                else:
+                    return self.createIndex(row, column, WebElementSelectorPopupModel.STATIC_ELEMENT_GROUP_ID)
             else:
                 return self.createIndex(row, column, WebElementSelectorPopupModel.STATIC_ELEMENT_GROUP_ID)
         else:
-            if parent.row() == 0:
+            if parent.internalId() == WebElementSelectorPopupModel.DYNAMIC_ELEMENTS_GROUP_ID:
                 return self.createIndex(row, column, WebElementSelectorPopupModel.VARIABLE_ID_OFFSET + parent.row())
             else:
                 return self.createIndex(row, column, WebElementSelectorPopupModel.ELEMENT_ID_OFFSET + parent.row())
@@ -108,13 +114,13 @@ class WebElementSelectorPopupModel(QAbstractItemModel):
 
     def rowCount(self, parent=QModelIndex()):
         if not parent.isValid():
-            return self._elements_model.rowCount() + 1
+            return self._elements_model.rowCount() + self._group_row_offset()
         if parent.parent().isValid():
             return 0
-        if parent.row() == 0:
+        if parent.internalId() == WebElementSelectorPopupModel.DYNAMIC_ELEMENTS_GROUP_ID:
             return len(self._element_variables)
         else:
-            source_parent = self._elements_model.index(parent.row() - 1, 0)
+            source_parent = self._elements_model.index(parent.row() - self._group_row_offset(), 0)
             return self._elements_model.rowCount(source_parent)
 
     def columnCount(self, parent=QModelIndex()):
@@ -125,10 +131,10 @@ class WebElementSelectorPopupModel(QAbstractItemModel):
             return None
         internal_id = index.internalId()
         if internal_id == WebElementSelectorPopupModel.STATIC_ELEMENT_GROUP_ID:
-            source_index = self._elements_model.index(index.row() - 1, 0)
+            source_index = self._elements_model.index(index.row() - self._group_row_offset(), 0)
             return source_index.data(role)
         if internal_id >= WebElementSelectorPopupModel.ELEMENT_ID_OFFSET:
-            source_parent = self._elements_model.index(index.parent().row() - 1, 0)
+            source_parent = self._elements_model.index(index.parent().row() - self._group_row_offset(), 0)
             source_index = self._elements_model.index(index.row(), 0, source_parent)
             return source_index.data(role)
 
@@ -152,21 +158,21 @@ class WebElementSelectorPopupModel(QAbstractItemModel):
             return Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable
 
 
-class WebElementSelectorPopup(QWidget):
-    accepted = Signal(str)
+class WebElementSelectWidget(QWidget):
+    element_added = Signal(str)
+    element_double_clicked = Signal(str)
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.setWindowFlags(Qt.WindowType.Popup)
         layout = QGridLayout(self)
-        layout.addWidget(QLabel(gettext('Element library')), 0, 0, 1, 3)
+        layout.setContentsMargins(0, 0, 0, 0)
         keyword_input = QLineEdit()
         keyword_input.setPlaceholderText(gettext('Search element'))
         keyword_input.textEdited.connect(self.on_keyword_edited)
-        layout.addWidget(keyword_input, 1, 0, 1, 1)
+        layout.addWidget(keyword_input, 0, 0, 1, 1)
         capture_button = CaptureElementButton()
         capture_button.element_added.connect(self._on_element_added)
-        layout.addWidget(capture_button, 1, 1, 1, 2)
+        layout.addWidget(capture_button, 0, 1, 1, 2)
         tree_view = QTreeView()
         tree_model = WebElementSelectorPopupModel([], QStandardItemModel(), self)
         proxy_model = QSortFilterProxyModel(self)
@@ -177,18 +183,12 @@ class WebElementSelectorPopup(QWidget):
         tree_view.header().hide()
         tree_view.selectionModel().currentChanged.connect(self.on_current_changed)
         tree_view.doubleClicked.connect(self.on_double_clicked)
-        layout.addWidget(tree_view, 2, 0, 1, 1)
+        layout.addWidget(tree_view, 1, 0, 1, 1)
         preview_label = QLabel()
         preview_label.setFixedWidth(200)
         preview_label.setFrameShape(QFrame.Shape.StyledPanel)
-        layout.addWidget(preview_label, 2, 1, 1, 2)
-        cancel_button = QPushButton(gettext('Cancel'))
-        cancel_button.clicked.connect(self.close)
-        ok_button = QPushButton(gettext('OK'))
-        ok_button.clicked.connect(self.on_ok)
-        layout.addWidget(cancel_button, 3, 1, 1, 1)
-        layout.addWidget(ok_button, 3, 2, 1, 1)
-        layout.setRowStretch(2, 1)
+        layout.addWidget(preview_label, 1, 1, 1, 2)
+        layout.setRowStretch(1, 1)
         layout.setColumnStretch(0, 1)
         self.setFixedWidth(700)
         self.setFixedHeight(300)
@@ -198,7 +198,7 @@ class WebElementSelectorPopup(QWidget):
         self._variables = []
         self._tree_view = tree_view
 
-    def set_variables(self, variables: list[VariableDef], type_registry: DataTypeRegistry):
+    def set_variables(self, variables: list[VariableDef]):
         self._variables = variables
         self._tree_model.reset(variables, AppContext.app().web_elements_model)
         self._tree_view.expandAll()
@@ -236,22 +236,17 @@ class WebElementSelectorPopup(QWidget):
     def on_double_clicked(self, index: QModelIndex):
         if index.isValid() and index.parent().isValid():
             item_data = index.data(Qt.ItemDataRole.UserRole + 1)
-            self.accepted.emit(item_data)
-            self.close()
+            self.element_double_clicked.emit(item_data)
 
-    @Slot()
-    def on_ok(self):
+    def get_current_element_uri(self):
         index = self._tree_view.currentIndex()
         if index.isValid() and index.parent().isValid():
-            item_data = index.data(Qt.ItemDataRole.UserRole + 1)
-            self.accepted.emit(item_data)
-        self.close()
+            return index.data(Qt.ItemDataRole.UserRole + 1)
 
     @Slot(str)
     def _on_element_added(self, element_id):
         element_info = AppContext.app().app_package.get_web_element_by_id(element_id)
-        self.accepted.emit(build_web_element_uri(element_info))
-        self.close()
+        self.element_added.emit(build_web_element_uri(element_info))
 
     def set_current_uri(self, uri: str):
         for group_row in range(self._tree_model.rowCount()):
@@ -261,6 +256,48 @@ class WebElementSelectorPopup(QWidget):
                 if element_index.data(Qt.ItemDataRole.UserRole + 1) == uri:
                     self._tree_view.setCurrentIndex(self._proxy_model.mapFromSource(element_index))
                     return
+
+
+class WebElementSelectorPopup(QWidget):
+    accepted = Signal(str)
+
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.setWindowFlags(Qt.WindowType.Popup)
+        layout = QVBoxLayout(self)
+        layout.addWidget(QLabel(gettext('Element library')))
+        self._select_widget = WebElementSelectWidget()
+        self._select_widget.element_added.connect(self._on_element_added)
+        self._select_widget.element_double_clicked.connect(self.on_double_clicked)
+        layout.addWidget(self._select_widget)
+        grid_layout: QGridLayout = self._select_widget.layout()
+        cancel_button = QPushButton(gettext('Cancel'))
+        cancel_button.clicked.connect(self.close)
+        ok_button = QPushButton(gettext('OK'))
+        ok_button.clicked.connect(self.on_ok)
+        grid_layout.addWidget(cancel_button, 2, 1, 1, 1)
+        grid_layout.addWidget(ok_button, 2, 2, 1, 1)
+
+    def set_variables(self, variables: list[VariableDef], type_registry: DataTypeRegistry):
+        self._select_widget.set_variables(variables)
+
+    def on_double_clicked(self, uri):
+        self.accepted.emit(uri)
+        self.close()
+
+    def _on_element_added(self, uri):
+        self.accepted.emit(uri)
+        self.close()
+
+    @Slot()
+    def on_ok(self):
+        current_element_uri = self._select_widget.get_current_element_uri()
+        if current_element_uri:
+            self.accepted.emit(current_element_uri)
+        self.close()
+
+    def set_current_uri(self, uri: str):
+        self._select_widget.set_current_uri(uri)
 
 
 class WebElementSelector(QLineEdit):
@@ -358,6 +395,37 @@ class WebElementEdit(QWidget):
     def _on_element_added(self, element_id):
         element_info = AppContext.app().app_package.get_web_element_by_id(element_id)
         self.set_value(build_web_element_uri(element_info))
+
+
+class WebElementSelectDialog(QDialog):
+    def __init__(self, variables: list[VariableDef], parent=None):
+        super().__init__(parent)
+        self.setWindowTitle(gettext('Select Web Element'))
+        self.selected_element = ''
+        self._select_widget = WebElementSelectWidget()
+        self._select_widget.element_added.connect(self._on_element_added)
+        self._select_widget.element_double_clicked.connect(self.on_double_clicked)
+        layout = QVBoxLayout(self)
+        layout.addWidget(self._select_widget)
+        button_box = QDialogButtonBox(QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel)
+        button_box.accepted.connect(self._on_accepted)
+        button_box.rejected.connect(self.reject)
+        button_box.button(QDialogButtonBox.StandardButton.Ok).setText(gettext('Ok'))
+        button_box.button(QDialogButtonBox.StandardButton.Cancel).setText(gettext('Cancel'))
+        layout.addWidget(button_box)
+        self._select_widget.set_variables(variables)
+
+    def _on_accepted(self):
+        self.selected_element = self._select_widget.get_current_element_uri()
+        self.accept()
+
+    def on_double_clicked(self, uri):
+        self.selected_element = uri
+        self.accept()
+
+    def _on_element_added(self, uri):
+        self.selected_element = uri
+        self.accept()
 
 
 if __name__ == '__main__':

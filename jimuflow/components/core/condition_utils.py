@@ -33,11 +33,13 @@ op_i18n = {
     'not_ends_with': gettext('not ends with'),
     'is_true': gettext('is true'),
     'is_false': gettext('is false'),
+    'is_null': gettext('is null'),
+    'is_not_null': gettext('is not null'),
 }
 
 
 def is_binary_op(op: str):
-    return op not in ["is_empty", "not_empty", "is_true", "is_false"]
+    return op not in ["is_empty", "not_empty", "is_true", "is_false", "is_null", "is_not_null"]
 
 
 def convert_to_best_type(value):
@@ -98,5 +100,9 @@ def evaluate_condition(operand1, op, operand2) -> bool:
         return operand1 is True
     elif op == 'is_false':
         return operand1 is False
+    elif op == 'is_null':
+        return operand1 is None
+    elif op == 'is_not_null':
+        return operand1 is not None
     else:
         raise Exception(gettext('Unsupported operator: {op}').format(op=op_i18n[op]))

@@ -24,6 +24,8 @@ The editing interface will display the IFrame XPath path and element XPath path 
 
 Users can also re-capture elements using Ctrl + Left Click or Shift + Left Click, or click the "Validate Element" button to find and highlight matching elements on the current web page to verify if the element is correct.
 
+Clicking on the element node can search for and highlight the corresponding element in the current webpage.
+
 The element preview interface allows users to view a screenshot of the element, as shown below:
 
 ![Element Preview Interface](web_element_capture_tool_preview_element.png)

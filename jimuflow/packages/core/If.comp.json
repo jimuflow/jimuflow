@@ -88,6 +88,14 @@
           {
             "value": "is_false",
             "label": "is false"
+          },
+          {
+            "value": "is_null",
+            "label": "is null"
+          },
+          {
+            "value": "is_not_null",
+            "label": "is not null"
           }
         ]
       }

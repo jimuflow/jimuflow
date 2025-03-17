@@ -343,7 +343,7 @@ class ProcessFlowView(QTreeView):
                 v_var_def.elementType = k_var_def.elementType
                 model.add_variable(v_var_def)
                 added.append(v_var_def)
-        if flow_node.error_handling_type==ErrorHandlingType.IGNORE and flow_node.error_reason_out_var:
+        if flow_node.error_handling_type == ErrorHandlingType.IGNORE and flow_node.error_reason_out_var:
             v_var_def = model.process_def.get_variable(flow_node.error_reason_out_var)
             if v_var_def is None:
                 v_var_def = VariableDef()
@@ -556,6 +556,9 @@ class ProcessFlowView(QTreeView):
                                                                  root_node_data["component"])
                 model.insertRow(row, parent)
                 index = model.index(row, 0, parent)
+                if 'error_handling_type' in root_node_data:
+                    root_node_data['error_handling_type'] = ErrorHandlingType(
+                        root_node_data['error_handling_type'])  # 将字符串转为枚举类型
                 model.setData(index, root_node_data)
                 flow_node = index.internalPointer()
                 self._added_variables.extend(outer_self.add_variables_if_not_exist(flow_node, comp_def))

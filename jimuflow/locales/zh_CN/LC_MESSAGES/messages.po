@@ -113,6 +113,12 @@ msgstr "为真"
 msgid "is false"
 msgstr "为假"
 
+msgid "is null"
+msgstr "没有值"
+
+msgid "is not null"
+msgstr "有值"
+
 #, python-brace-format
 msgid "Unsupported operator: {op}"
 msgstr "不支持的操作符: {op}"
@@ -1068,6 +1074,9 @@ msgstr "获取##{webPage}##上##{element}##的第##{childPosition}##个子元素
 #, python-brace-format
 msgid "Unsupported locate type: {locate_type}"
 msgstr "不支持的定位类型: {locate_type}"
+
+msgid "The element is not found"
+msgstr "元素未找到"
 
 #, python-brace-format
 msgid ""
@@ -2450,6 +2459,10 @@ msgid "Process {name} has not been saved. Do you want to save this process?"
 msgstr "流程{name}尚未保存。您想保存此流程吗？"
 
 #, python-brace-format
+msgid "Process {name} is running, do you want to terminate the process?"
+msgstr "流程{name}正在运行，是否要终止该流程？"
+
+#, python-brace-format
 msgid "Are you sure you want to delete process {name}?"
 msgstr "您确定要删除流程{name}吗？"
 
@@ -2459,10 +2472,6 @@ msgstr "流程有错误，请先修复"
 #, python-brace-format
 msgid "Process {name} only supports running on platform {platforms}"
 msgstr "流程{name}仅支持在{platforms}平台上运行"
-
-#, python-brace-format
-msgid "Process {name} is running, do you want to terminate the process?"
-msgstr "流程{name}正在运行，是否要终止该流程？"
 
 #, python-brace-format
 msgid "Unable to open automatically, please access manually: {path}"
@@ -2924,6 +2933,9 @@ msgid ""
 "located."
 msgstr "请输入要获取的网页元素所在的网址。"
 
+msgid "Dev Tools"
+msgstr "开发工具"
+
 msgid ""
 "Operation instructions: Ctrl+left-click to get a single element, and "
 "Shift+left-click two elements to get multiple similar elements."
@@ -2998,57 +3010,41 @@ msgstr ""
 msgid "Web Element Relative XPath Tool"
 msgstr "网页元素相对XPath工具"
 
+msgid "Open Element Page"
+msgstr "打开元素所在网页"
+
 msgid "Operation instructions: Ctrl+left-click to capture a single element."
 msgstr "操作说明：Ctrl+左键点击捕获单个元素。"
-
-msgid "Source Element XPath: "
-msgstr "来源元素XPath："
-
-msgid "Click the Capture Element button to obtain the XPath of the source element"
-msgstr "点击捕获元素按钮获取来源元素XPath"
 
 msgid "Capture Source Element"
 msgstr "捕获来源元素"
 
-msgid "Capture the source element"
-msgstr "捕获来源元素"
+msgid "Select Source Element"
+msgstr "选择来源元素"
 
-msgid "Match"
-msgstr "匹配"
+msgid "Source Element XPath"
+msgstr "来源元素XPath"
 
-msgid "Match the source element XPath on the current web page"
-msgstr "在当前网页上匹配来源元素XPath"
+msgid "Target Element Relative XPath"
+msgstr "目标元素相对XPath"
 
-msgid "Target Element XPath: "
-msgstr "目标元素XPath："
-
-msgid "Click the Capture Element button to obtain the XPath of the target element"
-msgstr "点击捕获元素按钮获取目标元素XPath"
+msgid "Operation"
+msgstr "操作"
 
 msgid "Capture Target Element"
 msgstr "捕获目标元素"
 
-msgid "Capture the target element"
-msgstr "捕获目标元素"
-
-msgid "Match the target element XPath on the current web page"
-msgstr "在当前网页上匹配目标元素XPath"
-
-msgid "Relative XPath: "
-msgstr "相对XPath："
+msgid "Final Relative XPath: "
+msgstr "最终相对XPath："
 
 msgid "Relative XPath of the target element relative to the source element"
 msgstr "目标元素相对于来源元素的相对XPath"
 
-msgid "Accept"
-msgstr "采用"
+msgid "Test"
+msgstr "测试"
 
-msgid "Accept the relative XPath and close the dialog"
-msgstr "采用相对XPath并关闭对话框"
-
-#, python-brace-format
-msgid "Matches count: {}"
-msgstr "匹配数量：{}"
+msgid "Select Source Element to Test"
+msgstr "选择测试的来源元素"
 
 msgid "Web Element XPath Tool"
 msgstr "网页元素XPath工具"
@@ -3065,11 +3061,17 @@ msgstr "合并"
 msgid "Merge XPath on all tabs"
 msgstr "合并所有标签页上的XPath"
 
+msgid "Match"
+msgstr "匹配"
+
 msgid "Match the merged XPath on the current tab"
 msgstr "在当前标签页上匹配合并后的XPath"
 
 msgid "Copy the merged XPath to clipboard"
 msgstr "将合并的XPath复制到剪贴板"
+
+msgid "Accept"
+msgstr "采用"
 
 msgid "Accept the merged XPath and close the dialog"
 msgstr "采用合并的XPath并关闭对话框"
@@ -3082,6 +3084,13 @@ msgstr "在当前标签页上匹配XPath"
 
 msgid "Accept the XPath and close the dialog"
 msgstr "采用XPath并关闭对话框"
+
+#, python-brace-format
+msgid "Matches count: {}"
+msgstr "匹配数量：{}"
+
+msgid "Inspect"
+msgstr "检查元素"
 
 msgid "Calendar"
 msgstr "日历"
@@ -3199,11 +3208,35 @@ msgstr "窗口元素相对XPath工具"
 msgid "Operation instructions: Ctrl+left-click to get a single element."
 msgstr "操作说明：Ctrl+左键点击捕获单个元素。"
 
+msgid "Source Element XPath: "
+msgstr "来源元素XPath："
+
+msgid "Click the Capture Element button to obtain the XPath of the source element"
+msgstr "点击捕获元素按钮获取来源元素XPath"
+
+msgid "Capture the source element"
+msgstr "捕获来源元素"
+
 msgid "Match the source element"
 msgstr "匹配来源元素"
 
+msgid "Target Element XPath: "
+msgstr "目标元素XPath："
+
+msgid "Click the Capture Element button to obtain the XPath of the target element"
+msgstr "点击捕获元素按钮获取目标元素XPath"
+
+msgid "Capture the target element"
+msgstr "捕获目标元素"
+
 msgid "Match the target element"
 msgstr "匹配目标元素"
+
+msgid "Relative XPath: "
+msgstr "相对XPath："
+
+msgid "Accept the relative XPath and close the dialog"
+msgstr "采用相对XPath并关闭对话框"
 
 msgid "This feature is only supported on Windows."
 msgstr "此功能仅在Windows上受支持。"
@@ -3339,6 +3372,9 @@ msgstr "搜索元素"
 
 msgid "OK"
 msgstr "确认"
+
+msgid "Select Web Element"
+msgstr "选择网页元素"
 
 msgid "Get Relative XPath"
 msgstr "获取相对XPath"
@@ -4708,6 +4744,12 @@ msgstr "文件保存目录"
 msgid "File Name"
 msgstr "文件名"
 
+msgid "Set response encoding"
+msgstr "设置响应编码"
+
+msgid "Automatic Detection"
+msgstr "自动检测"
+
 msgid "Timeout(seconds)"
 msgstr "超时时间(秒)"
 
@@ -5293,6 +5335,9 @@ msgstr "如果HTTP代理需要身份验证，则使用可选密码。"
 msgid "Running in the background"
 msgstr "在后台运行"
 
+msgid "Enable incognito mode"
+msgstr "启用无痕模式"
+
 msgid "Opened web browser"
 msgstr "新打开的Web浏览器"
 
@@ -5723,15 +5768,15 @@ msgstr "执行成功"
 msgid "Execution interrupted"
 msgstr "执行被中断"
 
-msgid "Execution error"
-msgstr "执行出错"
-
 msgid "Ignore error and continue execution"
 msgstr "忽略错误并继续执行"
 
 #, python-brace-format
 msgid "Wait for {} seconds and retry for the {} time"
 msgstr "等待{}秒后进行第{}次重试"
+
+msgid "Execution error"
+msgstr "执行出错"
 
 #, python-brace-format
 msgid "The input parameter {var_name} of {comp_name} is not specified."
@@ -5808,4 +5853,10 @@ msgstr "信息"
 
 #~ msgid "Wait web page ##{webPage}## ##{action}## ##{target}##"
 #~ msgstr "等待网页##{webPage}## ##{action}## ##{target}##"
+
+#~ msgid "Match the source element XPath on the current web page"
+#~ msgstr "在当前网页上匹配来源元素XPath"
+
+#~ msgid "Match the target element XPath on the current web page"
+#~ msgstr "在当前网页上匹配目标元素XPath"
 

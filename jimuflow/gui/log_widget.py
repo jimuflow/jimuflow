@@ -32,7 +32,7 @@ class LogDetailsWidget(QDialog):
         self.setWindowTitle(gettext('Log Details'))
         layout = QVBoxLayout(self)
         text_edit = QTextEdit()
-        text_edit.setText(message)
+        text_edit.setPlainText(message)
         text_edit.setReadOnly(True)
         layout.addWidget(text_edit)
         button_box = QDialogButtonBox(QDialogButtonBox.StandardButton.Close)

@@ -91,6 +91,7 @@ class NodePathModel(QAbstractItemModel):
 
 class WebElementEditor(QWidget):
     check_element_clicked = Signal()
+    element_node_clicked = Signal(int)
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -296,6 +297,7 @@ class WebElementEditor(QWidget):
     def _on_current_element_node_changed(self, current: QModelIndex, previous: QModelIndex):
         node = current.internalPointer()
         self._element_attr_table.set_attributes(node["predicates"])
+        self.element_node_clicked.emit(current.row())
 
     @Slot()
     def _on_current_element_node_attributes_edited(self):

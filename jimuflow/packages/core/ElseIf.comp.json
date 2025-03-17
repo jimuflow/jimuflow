@@ -50,12 +50,52 @@
             "label": "less than or equal to"
           },
           {
+            "value": "contains",
+            "label": "contains"
+          },
+          {
+            "value": "not_contains",
+            "label": "not contains"
+          },
+          {
+            "value": "is_empty",
+            "label": "is empty"
+          },
+          {
+            "value": "not_empty",
+            "label": "is not empty"
+          },
+          {
+            "value": "starts_with",
+            "label": "starts with"
+          },
+          {
+            "value": "not_starts_with",
+            "label": "not starts with"
+          },
+          {
+            "value": "ends_with",
+            "label": "ends with"
+          },
+          {
+            "value": "not_ends_with",
+            "label": "not ends with"
+          },
+          {
             "value": "is_true",
             "label": "is true"
           },
           {
             "value": "is_false",
             "label": "is false"
+          },
+          {
+            "value": "is_null",
+            "label": "is null"
+          },
+          {
+            "value": "is_not_null",
+            "label": "is not null"
           }
         ]
       }

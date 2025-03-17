@@ -140,6 +140,13 @@ class SendHttpRequestComponent(PrimitiveComponent):
                 with open(filename, 'xb') as fd:
                     for chunk in response.iter_content(chunk_size=4096):
                         fd.write(chunk)
+            else:
+                if self.read_input('setResponseEncoding'):
+                    encoding = self.read_input('responseEncoding')
+                    if encoding == 'auto':
+                        response.encoding = response.apparent_encoding
+                    else:
+                        response.encoding = encoding
             response.session_cookies = requests.utils.dict_from_cookiejar(s.cookies)
             await self.write_output('response', response)
             return ControlFlow.NEXT

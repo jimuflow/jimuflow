@@ -100,6 +100,18 @@
       }
     },
     {
+      "name": "incognito",
+      "type": "bool",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Enable incognito mode",
+        "group": "advanced",
+        "inputType": "check_box",
+        "required": false
+      }
+    },
+    {
       "name": "webBrowser",
       "type": "WebBrowser",
       "direction": "OUT",

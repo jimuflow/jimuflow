@@ -24,14 +24,14 @@ from PySide6.QtGui import QMouseEvent, QIcon
 from PySide6.QtWebEngineCore import QWebEngineScript, QWebEnginePage, QWebEngineFrame
 from PySide6.QtWebEngineWidgets import QWebEngineView
 from PySide6.QtWidgets import QVBoxLayout, QLabel, QLineEdit, QPushButton, \
-    QGridLayout, QTabWidget, QWidget, QApplication, QMessageBox, QSplitter, QDialogButtonBox
+    QGridLayout, QTabWidget, QWidget, QApplication, QMessageBox, QSplitter, QDialogButtonBox, QHBoxLayout
 
 from jimuflow.common import get_resource_file
 from jimuflow.common.web_element_utils import build_xpath, parse_xpath
 from jimuflow.gui.dialog_with_webengine import DialogWithWebEngine
 from jimuflow.gui.utils import Utils
 from jimuflow.gui.web_element_editor import WebElementEditor
-from jimuflow.gui.web_view_utils import setup_web_view_actions
+from jimuflow.gui.web_view_utils import setup_web_view_actions, get_persistent_profile
 from jimuflow.locales.i18n import gettext, ngettext
 
 preload_js_path = get_resource_file('web_element_capture_preload.js')
@@ -172,8 +172,10 @@ def merge_elements(first: dict, second: dict):
                 loop_node_index = i
                 first_node['enabled'] = True
                 second_node['enabled'] = True
-            first_node_pred[3] = False
-            second_node_pred[3] = False
+            if first_node_pred:
+                first_node_pred[3] = False
+            if second_node_pred:
+                second_node_pred[3] = False
             first_node_class_pred = next((pred for pred in first_node['predicates'] if pred[0] == 'class'), None)
             second_node_class_pred = next((pred for pred in second_node['predicates'] if pred[0] == 'class'), None)
             if (first_node_class_pred and second_node_class_pred
@@ -187,8 +189,8 @@ def merge_elements(first: dict, second: dict):
     if loop_node_index >= 1:
         for i in range(loop_node_index - 1, -1, -1):
             element_path[i]['enabled'] = True
-            enabled_pred = next(pred for pred in element_path[i]['predicates'] if pred[3])
-            if enabled_pred[0] == 'id':
+            enabled_pred = next((pred for pred in element_path[i]['predicates'] if pred[3]), None)
+            if enabled_pred and enabled_pred[0] == 'id':
                 break
     element_type = first['elementType']
     merged_element['name'] = localized_element_types.get(element_type, element_type) + '_' + first['name'] + '_' + \
@@ -230,8 +232,8 @@ def validate_and_fix_url(url):
 
 class WebElementCaptureWebView(QWebEngineView):
 
-    def __init__(self, capture_tool: 'WebElementCaptureTool', parent=None):
-        super().__init__(parent)
+    def __init__(self, capture_tool: 'WebElementCaptureTool', profile=None, parent=None):
+        super().__init__(profile, parent)
         self.capture_tool = capture_tool
 
     def createWindow(self, type):
@@ -254,6 +256,7 @@ class WebElementCaptureTool(DialogWithWebEngine):
         self._element_editor = WebElementEditor()
         self._element_editor.setVisible(False)
         self._element_editor.check_element_clicked.connect(self._check_element_info)
+        self._element_editor.element_node_clicked.connect(self._highlight_current_element_node)
         splitter.addWidget(self._element_editor)
         splitter.setSizes([500, 300])
         main_layout.addWidget(splitter)
@@ -269,6 +272,7 @@ class WebElementCaptureTool(DialogWithWebEngine):
         self._iframe_setup_timer.setInterval(500)
         self._iframe_setup_timer.timeout.connect(self._init_all_iframes)
         self._iframe_setup_timer.start()
+        self._web_profile = get_persistent_profile()
         if element_info:
             self.add_new_tab(element_info['webPageUrl'])
             self._edit_element_info(element_info)
@@ -298,13 +302,19 @@ class WebElementCaptureTool(DialogWithWebEngine):
         reload_button = QPushButton(QIcon.fromTheme(QIcon.ThemeIcon.ViewRefresh), '')
         reload_button.setDisabled(False)
         reload_button.clicked.connect(self._reload)
+        dev_tools_button = QPushButton(gettext('Dev Tools'))
+        buttons_layout = QHBoxLayout()
+        buttons_layout.addWidget(open_button)
+        buttons_layout.addWidget(back_button)
+        buttons_layout.addWidget(forward_button)
+        buttons_layout.addWidget(reload_button)
+        buttons_layout.addWidget(dev_tools_button)
         tab_content_layout.addWidget(url_label, 0, 0, 1, 1)
         tab_content_layout.addWidget(url_editor, 0, 1, 1, 1)
-        tab_content_layout.addWidget(open_button, 0, 2, 1, 1)
-        tab_content_layout.addWidget(back_button, 0, 3, 1, 1)
-        tab_content_layout.addWidget(forward_button, 0, 4, 1, 1)
-        tab_content_layout.addWidget(reload_button, 0, 5, 1, 1)
-        web_view = WebElementCaptureWebView(self)
+        tab_content_layout.addLayout(buttons_layout, 0, 2, 1, 1)
+        splitter = QSplitter()
+        splitter.setObjectName("splitter")
+        web_view = WebElementCaptureWebView(self, self._web_profile)
         setup_web_view_actions(web_view)
         web_view.loadFinished.connect(self._on_load_finished)
         web_view.setObjectName('webView')
@@ -320,7 +330,8 @@ class WebElementCaptureTool(DialogWithWebEngine):
         script.setSourceCode(after_load_js)
         script.setInjectionPoint(QWebEngineScript.InjectionPoint.DocumentReady)
         web_view.page().scripts().insert(script)
-        tab_content_layout.addWidget(web_view, 1, 0, 1, 6)
+        splitter.addWidget(web_view)
+        tab_content_layout.addWidget(splitter, 1, 0, 1, 3)
         tab_content_layout.setRowStretch(1, 1)
         help_label = QLabel(gettext(
             'Operation instructions: Ctrl+left-click to get a single element, and Shift+left-click two elements to get multiple similar elements.'))
@@ -334,12 +345,32 @@ class WebElementCaptureTool(DialogWithWebEngine):
             lambda enabled: forward_button.setDisabled(not enabled))
         web_view.pageAction(QWebEnginePage.WebAction.Reload).enabledChanged.connect(
             lambda enabled: reload_button.setDisabled(not enabled))
+        dev_tools_button.clicked.connect(lambda: self._open_dev_tools(splitter, web_view))
         if url:
             web_view.load(url)
             web_view.focusProxy().installEventFilter(self)
         web_view.show()
         open_button.clicked.connect(lambda: self._open_url(url_editor, web_view))
         return web_view
+
+    def _open_dev_tools(self, splitter: QSplitter, web_view: QWebEngineView):
+        dev_tools_view = splitter.findChild(QWebEngineView, "devToolsView")
+        if dev_tools_view:
+            self._close_dev_tools(dev_tools_view)
+            return
+        dev_tools_view = QWebEngineView()
+        dev_tools_view.setObjectName("devToolsView")
+        dev_tools_view.setMinimumWidth(300)
+        splitter.addWidget(dev_tools_view)
+        dev_tools_view.page().setInspectedPage(web_view.page())
+        dev_tools_view.page().windowCloseRequested.connect(
+            lambda: self._close_dev_tools(dev_tools_view))
+        dev_tools_view.show()
+
+    def _close_dev_tools(self, dev_tools_view: QWebEngineView):
+        dev_tools_view.page().setInspectedPage(None)
+        dev_tools_view.close()
+        dev_tools_view.deleteLater()
 
     def _open_url(self, url_editor: QLineEdit, web_view: QWebEngineView):
         input_url = url_editor.text()
@@ -570,25 +601,49 @@ class WebElementCaptureTool(DialogWithWebEngine):
             stack.extend(frame.children())
 
     def _highlight_element(self, frame: QWebEngineFrame, xpath: str):
-        frame.runJavaScript(f'highlightElement({json.dumps(xpath, ensure_ascii=False)}, "qt-highlight-selected")',
-                            QWebEngineScript.ScriptWorldId.UserWorld,
-                            lambda match_count: self._element_editor.set_check_result(
-                                ngettext('Found {count} element', 'Found {count} elements', int(match_count)).format(
-                                    count=int(match_count))))
+        self._highlight_element2(frame, xpath, lambda match_count: self._element_editor.set_check_result(
+            ngettext('Found {count} element', 'Found {count} elements', int(match_count)).format(
+                count=int(match_count))))
+
+    def _highlight_element2(self, frame: QWebEngineFrame, xpath: str, match_count_callback=None):
+        if match_count_callback:
+            frame.runJavaScript(f'highlightElement({json.dumps(xpath, ensure_ascii=False)}, "qt-highlight-selected")',
+                                QWebEngineScript.ScriptWorldId.UserWorld, match_count_callback)
+        else:
+            frame.runJavaScript(f'highlightElement({json.dumps(xpath, ensure_ascii=False)}, "qt-highlight-selected")',
+                                QWebEngineScript.ScriptWorldId.UserWorld)
 
     @Slot()
     def _check_element_info(self):
         if not self.element_info:
             return
         element_info = self.element_info
+
+        def handle_match_count(match_count):
+            match_count = int(match_count)
+            self._element_editor.set_check_result(
+                ngettext('Found {count} element', 'Found {count} elements', match_count).format(count=match_count))
+
+        self._highlight_by_xpath(element_info['elementXPath'], element_info['iframeXPath'], handle_match_count)
+
+    @Slot(int)
+    def _highlight_current_element_node(self, row: int):
+        if not self.element_info:
+            return
+        element_info = self.element_info
+        element_xpath = build_xpath(element_info['elementPath'][0:row + 1])
+        self._highlight_by_xpath(element_xpath, element_info['iframeXPath'])
+
+    @Slot()
+    def _highlight_by_xpath(self, element_xpath, iframe_xpath, match_count_callback=None):
         tab_content_widget = self._tab_widget.currentWidget()
         current_web_view: QWebEngineView = tab_content_widget.findChild(QWebEngineView, 'webView')
         self._clear_selection(current_web_view)
         frame = current_web_view.page().mainFrame()
-        if not element_info['inIframe']:
-            self._highlight_element(frame, element_info['elementXPath'])
+        if not iframe_xpath:
+            self._highlight_element2(frame, element_xpath, match_count_callback)
             return
-        iframe_xpath_steps = parse_xpath(element_info['iframeXPath'])
+        iframe_xpath_steps = parse_xpath(iframe_xpath)
 
         def on_sub_iframe_found(sub_iframe_info: dict):
             if not sub_iframe_info['iframeId']:
@@ -596,7 +651,7 @@ class WebElementCaptureTool(DialogWithWebEngine):
 
             def on_frame_found(sub_frame: QWebEngineFrame):
                 if not sub_iframe_info['xpath_steps']:
-                    self._highlight_element(sub_frame, element_info['elementXPath'])
+                    self._highlight_element2(sub_frame, element_xpath, match_count_callback)
                     return
                 self._find_sub_iframe_by_xpath_steps(sub_frame, sub_iframe_info['xpath_steps'], True,
                                                      on_sub_iframe_found)
@@ -623,6 +678,7 @@ class WebElementCaptureTool(DialogWithWebEngine):
 
 if __name__ == '__main__':
     app = QApplication()
+    app.setApplicationName("JimuFlow")
     tool = WebElementCaptureTool(
         url='https://scm.chinaoct.com/octdzzc/spw/portal/detail.html?selectTab=jiaoyixinxi&primaryId=C0523739DCD04C009811C9603EFA806A&noticePath=变更公告&pageCode=noticeDetailFrame&pageName=变更公告')
     tool.show()

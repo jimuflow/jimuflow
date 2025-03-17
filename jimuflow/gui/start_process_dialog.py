@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -92,8 +92,8 @@ class StartProcessForm(QWidget):
                         input_editor.setPlaceholderText(gettext(input_def.ui_config.placeholder))
                     if input_def.ui_config.help_info:
                         input_editor.setToolTip(gettext(input_def.ui_config.help_info))
-                    if input_def.defaultValue:
-                        input_editor.setText(input_def.defaultValue)
+                    if input_def.defaultValue is not None:
+                        input_editor.setText(str(input_def.defaultValue))
                 self.input_editors[input_def.name] = input_editor
                 input_editor.setObjectName('inputVarEditor_' + input_def.name)
                 if no_label:
