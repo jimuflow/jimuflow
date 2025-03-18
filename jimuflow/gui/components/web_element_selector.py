@@ -20,7 +20,7 @@ from PySide6.QtWidgets import QWidget, QGridLayout, QLabel, QLineEdit, QTreeView
     QSizePolicy, QDialog, QVBoxLayout, QDialogButtonBox
 
 from jimuflow.common.uri_utils import build_web_element_uri, is_variable_uri, parse_web_element_uri, \
-    parse_variable_uri, build_variable_uri
+    parse_variable_uri, build_variable_uri, rename_variable_in_element_uri, get_variable_reference_in_element_uri
 from jimuflow.datatypes import DataTypeRegistry
 from jimuflow.definition import VariableDef
 from jimuflow.gui.app import AppContext
@@ -395,6 +395,16 @@ class WebElementEdit(QWidget):
     def _on_element_added(self, element_id):
         element_info = AppContext.app().app_package.get_web_element_by_id(element_id)
         self.set_value(build_web_element_uri(element_info))
+
+    def rename_variable_in_value(self, value, old_name, new_name):
+        if not value:
+            return value, False
+        return rename_variable_in_element_uri(value, old_name, new_name)
+
+    def get_variable_reference_in_value(self, value, var_name):
+        if not value:
+            return 0
+        return get_variable_reference_in_element_uri(value, var_name)
 
 
 class WebElementSelectDialog(QDialog):

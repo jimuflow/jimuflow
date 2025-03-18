@@ -1,0 +1,546 @@
+{
+  "name": "采集微信公众号文章",
+  "variables": [
+    {
+      "name": "浏览器",
+      "type": "WebBrowser",
+      "direction": "IN",
+      "uiConfig": {
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "搜狗页面",
+      "type": "WebPage",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "搜索关键词",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "小米SU7 Ultra",
+      "uiConfig": {
+        "label": "搜索关键词",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "检索结果加载完成",
+      "type": "bool",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "当前元素",
+      "type": "WebElement",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "标题元素",
+      "type": "WebElement",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "标题",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "细览页面",
+      "type": "WebPage",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "公众号名称",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "发布时间",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "文章正文",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "文章链接",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "是否是转发",
+      "type": "bool",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "是否包含正文",
+      "type": "bool",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "数据表",
+      "type": "table",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "导出文件路径",
+      "type": "text",
+      "direction": "OUT"
+    },
+    {
+      "name": "微信采集页数",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": 3,
+      "uiConfig": {
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "数据保存目录",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "循环索引",
+      "type": "number",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "是否有下一页",
+      "type": "bool",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"开始采集微信公众号文章\""
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:web_automation:OpenWebPage",
+      "inputs": {
+        "webBrowser": "浏览器",
+        "url": "\"https://weixin.sogou.com/\"",
+        "waitLoaded": true,
+        "loadTimeout": "\"30\"",
+        "loadTimeoutAction": "stop_loading"
+      },
+      "outputs": {
+        "webPage": "搜狗页面"
+      },
+      "lineNo": 2
+    },
+    {
+      "component": "jimuflow:web_automation:WebInput",
+      "inputs": {
+        "webPage": "搜狗页面",
+        "elementUri": "jimuflow:webelement:ff166a1785b64049bb737422ab7637e2",
+        "content": "搜索关键词",
+        "append": false,
+        "pressEnterAfterInput": true,
+        "pressTabAfterInput": false,
+        "simulateHumanInput": true,
+        "clickBeforeInput": true,
+        "inputInterval": "\"100\"",
+        "delayAfterFocus": "\"1\"",
+        "delayAfterAction": "\"5\"",
+        "waitTime": "\"30\""
+      },
+      "lineNo": 3
+    },
+    {
+      "component": "jimuflow:web_automation:WaitWebContent",
+      "inputs": {
+        "webPage": "搜狗页面",
+        "waitType": "include_element",
+        "waitElementUri": "jimuflow:webelement:7c32c964808246b686aef0a9e7b6f3c8",
+        "waitTime": "\"30\""
+      },
+      "outputs": {
+        "waitResult": "检索结果加载完成"
+      },
+      "lineNo": 4
+    },
+    {
+      "component": "jimuflow:table:CreateTable",
+      "inputs": {
+        "columnNames": "\"文章标题,作者,发布时间,正文\""
+      },
+      "outputs": {
+        "table": "数据表"
+      },
+      "lineNo": 5
+    },
+    {
+      "component": "jimuflow:core:Loop",
+      "inputs": {
+        "start": "\"0\"",
+        "end": "微信采集页数"
+      },
+      "outputs": {
+        "loopIndex": "循环索引"
+      },
+      "lineNo": 6,
+      "flow": [
+        {
+          "component": "jimuflow:web_automation:LoopWebElements",
+          "inputs": {
+            "elementsUri": "jimuflow:webelement:6c33d15be8bc4b1f980f3831ffc3f5f1",
+            "reversedLoop": false,
+            "waitTime": "\"30\"",
+            "webPage": "搜狗页面"
+          },
+          "outputs": {
+            "currentElement": "当前元素"
+          },
+          "lineNo": 7,
+          "flow": [
+            {
+              "component": "jimuflow:web_automation:GetRelativeWebElement",
+              "inputs": {
+                "descendantRelativeXpath": "\"div[2]/h3/a\"",
+                "elementUri": "jimuflow:variable:当前元素",
+                "locateType": "first_matched_descendant",
+                "waitTime": "\"30\"",
+                "webPage": "搜狗页面"
+              },
+              "outputs": {
+                "result": "标题元素"
+              },
+              "lineNo": 8
+            },
+            {
+              "component": "jimuflow:web_automation:ExtractWebElement",
+              "inputs": {
+                "elementUri": "jimuflow:variable:标题元素",
+                "extractType": "text",
+                "waitTime": "\"30\"",
+                "webPage": "搜狗页面"
+              },
+              "outputs": {
+                "result": "标题"
+              },
+              "lineNo": 9
+            },
+            {
+              "component": "jimuflow:web_automation:ClickToOpenWebPage",
+              "inputs": {
+                "elementUri": "jimuflow:variable:标题元素",
+                "waitTime": "\"1\"",
+                "webPage": "搜狗页面"
+              },
+              "outputs": {
+                "newWebPage": "细览页面"
+              },
+              "lineNo": 10
+            },
+            {
+              "component": "jimuflow:web_automation:WaitWebContent",
+              "inputs": {
+                "waitElementUri": "jimuflow:webelement:fa41cde5830d4d7781da1bdb4d01e774",
+                "waitTime": "\"30\"",
+                "waitType": "include_element",
+                "webPage": "细览页面"
+              },
+              "outputs": {
+                "waitResult": "是否包含正文"
+              },
+              "lineNo": 11
+            },
+            {
+              "component": "jimuflow:web_automation:CheckWebContent",
+              "inputs": {
+                "checkElementUri": "jimuflow:webelement:28a8dc8abbca4d488bcbb974ff9d3a53",
+                "checkType": "include_element",
+                "webPage": "细览页面"
+              },
+              "outputs": {
+                "checkResult": "是否是转发"
+              },
+              "lineNo": 12
+            },
+            {
+              "component": "jimuflow:core:If",
+              "inputs": {
+                "op": "is_true",
+                "operand1": "是否是转发"
+              },
+              "lineNo": 13,
+              "flow": [
+                {
+                  "component": "jimuflow:web_automation:ClickWebElement",
+                  "inputs": {
+                    "clickType": "single_click",
+                    "delayAfterAction": "\"0\"",
+                    "elementUri": "jimuflow:webelement:28a8dc8abbca4d488bcbb974ff9d3a53",
+                    "modifierKey": "none",
+                    "mouseButton": "left",
+                    "simulateHumanClick": true,
+                    "waitTime": "\"30\"",
+                    "webPage": "细览页面"
+                  },
+                  "lineNo": 14
+                },
+                {
+                  "component": "jimuflow:web_automation:WaitWebContent",
+                  "inputs": {
+                    "waitElementUri": "jimuflow:webelement:fa41cde5830d4d7781da1bdb4d01e774",
+                    "waitTime": "\"30\"",
+                    "waitType": "include_element",
+                    "webPage": "细览页面"
+                  },
+                  "outputs": {
+                    "waitResult": "是否包含正文"
+                  },
+                  "lineNo": 15
+                }
+              ]
+            },
+            {
+              "component": "jimuflow:web_automation:ExtractWebPage",
+              "inputs": {
+                "extractType": "url",
+                "webPage": "细览页面"
+              },
+              "outputs": {
+                "result": "文章链接"
+              },
+              "lineNo": 16
+            },
+            {
+              "component": "jimuflow:web_automation:ExtractWebElement",
+              "inputs": {
+                "webPage": "细览页面",
+                "elementUri": "jimuflow:webelement:cc2361b7e13c4ac6b49b9e95e51edccb",
+                "extractType": "text",
+                "waitTime": "\"1\""
+              },
+              "outputs": {
+                "result": "公众号名称"
+              },
+              "errorHandlingType": "IGNORE",
+              "errorReasonOutVar": "",
+              "outputsOnError": {
+                "result": ""
+              },
+              "lineNo": 17
+            },
+            {
+              "component": "jimuflow:core:If",
+              "inputs": {
+                "op": "is_empty",
+                "operand1": "公众号名称"
+              },
+              "lineNo": 18,
+              "flow": [
+                {
+                  "component": "jimuflow:web_automation:ExtractWebElement",
+                  "inputs": {
+                    "webPage": "细览页面",
+                    "elementUri": "jimuflow:webelement:67c07640bbd74e2fb16d97b49cba86c1",
+                    "extractType": "text",
+                    "waitTime": "\"1\""
+                  },
+                  "outputs": {
+                    "result": "公众号名称"
+                  },
+                  "errorHandlingType": "IGNORE",
+                  "errorReasonOutVar": "",
+                  "outputsOnError": {
+                    "result": ""
+                  },
+                  "lineNo": 19
+                }
+              ]
+            },
+            {
+              "component": "jimuflow:web_automation:ExtractWebElement",
+              "inputs": {
+                "webPage": "细览页面",
+                "elementUri": "jimuflow:webelement:d3dea0d4dad1451b8e7a9d6d6bc44f37",
+                "extractType": "text",
+                "waitTime": "\"1\""
+              },
+              "outputs": {
+                "result": "发布时间"
+              },
+              "errorHandlingType": "IGNORE",
+              "errorReasonOutVar": "",
+              "outputsOnError": {
+                "result": ""
+              },
+              "lineNo": 20
+            },
+            {
+              "component": "jimuflow:core:If",
+              "inputs": {
+                "op": "is_empty",
+                "operand1": "发布时间"
+              },
+              "lineNo": 21,
+              "flow": [
+                {
+                  "component": "jimuflow:web_automation:ExtractWebElement",
+                  "inputs": {
+                    "webPage": "细览页面",
+                    "elementUri": "jimuflow:webelement:515f7253539f477db88d4bc4aa2b2d3f",
+                    "extractType": "text",
+                    "waitTime": "\"1\""
+                  },
+                  "outputs": {
+                    "result": "发布时间"
+                  },
+                  "errorHandlingType": "IGNORE",
+                  "errorReasonOutVar": "",
+                  "outputsOnError": {
+                    "result": ""
+                  },
+                  "lineNo": 22
+                }
+              ]
+            },
+            {
+              "component": "jimuflow:web_automation:ExtractWebElement",
+              "inputs": {
+                "webPage": "细览页面",
+                "elementUri": "jimuflow:webelement:fa41cde5830d4d7781da1bdb4d01e774",
+                "extractType": "text",
+                "waitTime": "\"1\""
+              },
+              "outputs": {
+                "result": "文章正文"
+              },
+              "errorHandlingType": "IGNORE",
+              "errorReasonOutVar": "",
+              "outputsOnError": {
+                "result": ""
+              },
+              "lineNo": 23
+            },
+            {
+              "component": "jimuflow:core:Print",
+              "inputs": {
+                "message": "标题 + \"\\n\" + 公众号名称 + \" \" + 发布时间 + \"\\n\" + 文章链接 + \"\\n\" + 文章正文"
+              },
+              "lineNo": 24
+            },
+            {
+              "component": "jimuflow:web_automation:CloseWebPage",
+              "inputs": {
+                "closeType": "page",
+                "webPage": "细览页面"
+              },
+              "lineNo": 25
+            },
+            {
+              "component": "jimuflow:table:WriteTableRow",
+              "inputs": {
+                "columns": [
+                  [
+                    "\"文章标题\"",
+                    "标题"
+                  ],
+                  [
+                    "\"发布时间\"",
+                    "发布时间"
+                  ],
+                  [
+                    "\"作者\"",
+                    "公众号名称"
+                  ],
+                  [
+                    "\"正文\"",
+                    "文章正文"
+                  ]
+                ],
+                "rowInputType": "columns",
+                "table": "数据表",
+                "writeType": "append"
+              },
+              "lineNo": 26
+            }
+          ]
+        },
+        {
+          "component": "jimuflow:web_automation:CheckWebContent",
+          "inputs": {
+            "checkElementUri": "jimuflow:webelement:5e8e714874ac4f3db5175029f1d67286",
+            "checkType": "element_is_visible",
+            "webPage": "搜狗页面"
+          },
+          "outputs": {
+            "checkResult": "是否有下一页"
+          },
+          "lineNo": 27
+        },
+        {
+          "component": "jimuflow:core:If",
+          "inputs": {
+            "operand1": "是否有下一页",
+            "op": "is_true"
+          },
+          "lineNo": 28,
+          "flow": [
+            {
+              "component": "jimuflow:web_automation:ClickWebElement",
+              "inputs": {
+                "clickType": "single_click",
+                "delayAfterAction": "\"0\"",
+                "elementUri": "jimuflow:webelement:5e8e714874ac4f3db5175029f1d67286",
+                "modifierKey": "none",
+                "mouseButton": "left",
+                "simulateHumanClick": true,
+                "waitTime": "\"30\"",
+                "webPage": "搜狗页面"
+              },
+              "lineNo": 29
+            }
+          ]
+        },
+        {
+          "component": "jimuflow:core:Else",
+          "lineNo": 30,
+          "flow": [
+            {
+              "component": "jimuflow:core:Break",
+              "lineNo": 31
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:table:ExportTable",
+      "inputs": {
+        "table": "数据表",
+        "saveFolder": "数据保存目录",
+        "fileFormat": "xlsx",
+        "sheetName": "\"微信文章\"",
+        "fileNamingType": "custom",
+        "customFilename": "\"微信文章\"",
+        "overrideExistingFile": true,
+        "exportHeader": true
+      },
+      "outputs": {
+        "filePath": "导出文件路径"
+      },
+      "lineNo": 32
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"共采集\"+数据表.numberOfRows+\"条微信公众号文章，保存文件路径\"+导出文件路径"
+      },
+      "lineNo": 33
+    }
+  ]
+}

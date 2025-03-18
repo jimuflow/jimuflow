@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -87,3 +87,18 @@ def describe_element_uri(package: Package, element_uri: str) -> str:
                 if element_info:
                     return element_info['name']
     return gettext('Unknown element')
+
+
+def rename_variable_in_element_uri(element_uri: str, old_name: str, new_name: str):
+    element_var = parse_variable_uri(element_uri)
+    if element_var == old_name:
+        return build_variable_uri(new_name), True
+    return element_uri, False
+
+
+def get_variable_reference_in_element_uri(element_uri: str, var_name: str):
+    element_var = parse_variable_uri(element_uri)
+    if element_var == var_name:
+        return 1
+    else:
+        return 0

@@ -1,0 +1,318 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "浏览器",
+      "type": "WebBrowser",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "kimi聊天页面",
+      "type": "WebPage",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "是否登录",
+      "type": "bool",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "回答内容",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "搜索关键词",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "小米SU7 Ultra"
+    },
+    {
+      "name": "数据保存目录",
+      "type": "text",
+      "direction": "IN"
+    },
+    {
+      "name": "微博采集页数",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": 3,
+      "uiConfig": {
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "微信采集页数",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": 3,
+      "uiConfig": {
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "当前日期时间",
+      "type": "datetime",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "当前日期时间字符串",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "当前数据保存目录",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "微博数据文件路径",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "微信数据文件路径",
+      "type": "text",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:web_automation:OpenWebBrowser",
+      "inputs": {
+        "enableProxy": false,
+        "headless": false,
+        "incognito": false
+      },
+      "outputs": {
+        "webBrowser": "浏览器"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:web_automation:OpenWebPage",
+      "inputs": {
+        "webBrowser": "浏览器",
+        "url": "\"https://kimi.moonshot.cn/chat/empty\"",
+        "waitLoaded": true,
+        "loadTimeout": "\"30\"",
+        "loadTimeoutAction": "stop_loading"
+      },
+      "outputs": {
+        "webPage": "kimi聊天页面"
+      },
+      "lineNo": 2
+    },
+    {
+      "component": "jimuflow:core:TimeWait",
+      "inputs": {
+        "seconds": "\"5\""
+      },
+      "lineNo": 3
+    },
+    {
+      "component": "jimuflow:web_automation:CheckWebContent",
+      "inputs": {
+        "webPage": "kimi聊天页面",
+        "checkType": "include_element",
+        "checkElementUri": "jimuflow:webelement:0d5cfa0f515f4f0f9b4e22ed68a3e2a1"
+      },
+      "outputs": {
+        "checkResult": "是否登录"
+      },
+      "lineNo": 4
+    },
+    {
+      "component": "jimuflow:core:If",
+      "inputs": {
+        "operand1": "是否登录",
+        "op": "is_false"
+      },
+      "lineNo": 5,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"请登录kimi\""
+          },
+          "lineNo": 6
+        },
+        {
+          "component": "jimuflow:web_automation:WaitWebContent",
+          "inputs": {
+            "webPage": "kimi聊天页面",
+            "waitType": "element_is_visible",
+            "waitElementUri": "jimuflow:webelement:0d5cfa0f515f4f0f9b4e22ed68a3e2a1",
+            "waitTime": "\"300\""
+          },
+          "outputs": {
+            "waitResult": "是否登录"
+          },
+          "lineNo": 7
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:core:CreateDateTime",
+      "inputs": {
+        "initType": "now"
+      },
+      "outputs": {
+        "result": "当前日期时间"
+      },
+      "lineNo": 8
+    },
+    {
+      "component": "jimuflow:core:FormatDateTime",
+      "inputs": {
+        "datetime": "当前日期时间",
+        "datetimeFormat": "\"YYYYMMDD_HHmmss\""
+      },
+      "outputs": {
+        "result": "当前日期时间字符串"
+      },
+      "lineNo": 9
+    },
+    {
+      "component": "jimuflow:core:CreateFolder",
+      "inputs": {
+        "parentFolder": "数据保存目录",
+        "newFolderName": "当前日期时间字符串"
+      },
+      "outputs": {
+        "newFolderPath": "当前数据保存目录"
+      },
+      "lineNo": 10
+    },
+    {
+      "component": "采集微博数据",
+      "inputs": {
+        "浏览器": "浏览器",
+        "搜索关键词": "搜索关键词",
+        "微博采集页数": "微博采集页数",
+        "数据保存目录": "当前数据保存目录"
+      },
+      "outputs": {
+        "导出文件路径": "微博数据文件路径"
+      },
+      "lineNo": 11
+    },
+    {
+      "component": "采集微信公众号文章",
+      "inputs": {
+        "浏览器": "浏览器",
+        "搜索关键词": "搜索关键词",
+        "微信采集页数": "微信采集页数",
+        "数据保存目录": "当前数据保存目录"
+      },
+      "outputs": {
+        "导出文件路径": "微信数据文件路径"
+      },
+      "lineNo": 12
+    },
+    {
+      "component": "jimuflow:web_automation:ClickWebElement",
+      "inputs": {
+        "webPage": "kimi聊天页面",
+        "elementUri": "jimuflow:webelement:bec2b95de9724810860768171ebb6539",
+        "simulateHumanClick": true,
+        "clickType": "single_click",
+        "mouseButton": "left",
+        "modifierKey": "none",
+        "delayAfterAction": "\"0\"",
+        "waitTime": "\"30\""
+      },
+      "lineNo": 13
+    },
+    {
+      "component": "jimuflow:web_automation:WebUpload",
+      "inputs": {
+        "webPage": "kimi聊天页面",
+        "elementUri": "jimuflow:webelement:410862022a3d49e4b07640221586b348",
+        "filePath": "微博数据文件路径",
+        "waitTime": "\"30\"",
+        "waitDialogTime": "\"3\""
+      },
+      "lineNo": 14
+    },
+    {
+      "component": "jimuflow:web_automation:WebUpload",
+      "inputs": {
+        "webPage": "kimi聊天页面",
+        "elementUri": "jimuflow:webelement:410862022a3d49e4b07640221586b348",
+        "filePath": "微信数据文件路径",
+        "waitTime": "\"30\"",
+        "waitDialogTime": "\"3\""
+      },
+      "lineNo": 15
+    },
+    {
+      "component": "jimuflow:web_automation:WebInput",
+      "inputs": {
+        "webPage": "kimi聊天页面",
+        "elementUri": "jimuflow:webelement:1ec00981b1ba4407b53dcd01a01ce06f",
+        "content": "\"这些数据是我今天使用“\" + 搜索关键词 + \"”作为关键词搜索得到的微博和微信数据，请从这些数据中提炼有价值的信息，并生成今日舆情摘要。\"",
+        "append": false,
+        "pressEnterAfterInput": false,
+        "pressTabAfterInput": false,
+        "simulateHumanInput": false,
+        "delayAfterFocus": "\"1\"",
+        "delayAfterAction": "\"0\"",
+        "waitTime": "\"30\""
+      },
+      "lineNo": 16
+    },
+    {
+      "component": "jimuflow:web_automation:ClickWebElement",
+      "inputs": {
+        "webPage": "kimi聊天页面",
+        "elementUri": "jimuflow:webelement:9504340d04434722a418fe7438bd44a3",
+        "simulateHumanClick": true,
+        "clickType": "single_click",
+        "mouseButton": "left",
+        "modifierKey": "none",
+        "delayAfterAction": "\"0\"",
+        "waitTime": "\"60\""
+      },
+      "lineNo": 17
+    },
+    {
+      "component": "jimuflow:web_automation:ClickWebElement",
+      "inputs": {
+        "webPage": "kimi聊天页面",
+        "elementUri": "jimuflow:webelement:5cccb2cf23f2422fb9d84067e4d55e2d",
+        "simulateHumanClick": true,
+        "clickType": "single_click",
+        "mouseButton": "left",
+        "modifierKey": "none",
+        "delayAfterAction": "\"0\"",
+        "waitTime": "\"300\""
+      },
+      "lineNo": 18
+    },
+    {
+      "component": "jimuflow:core:GetClipboardText",
+      "outputs": {
+        "result": "回答内容"
+      },
+      "lineNo": 19
+    },
+    {
+      "component": "jimuflow:core:WriteTextFile",
+      "inputs": {
+        "filePath": "当前数据保存目录 + \"/舆情简报.md\"",
+        "writeContent": "回答内容",
+        "actionWhenExists": "overwrite",
+        "fileEncoding": "utf-8"
+      },
+      "lineNo": 20
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"舆情简报生成成功，舆情简报路径\" + 当前数据保存目录 + \"/舆情简报.md\""
+      },
+      "lineNo": 21
+    }
+  ]
+}

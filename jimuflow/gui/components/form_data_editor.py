@@ -23,6 +23,8 @@ from jimuflow.gui.components.file_path_editor import OpenFilePathEdit
 from jimuflow.gui.components.list_editor import ListEditor
 from jimuflow.gui.expression_edit_v3 import ExpressionEditV3
 from jimuflow.locales.i18n import gettext
+from jimuflow.runtime.expression import rename_variable_in_dict, \
+    get_variable_reference_in_dict
 
 
 class FormDataRowEditor(QWidget):
@@ -149,6 +151,23 @@ class FormDataEditor(ListEditor):
     def set_variables(self, variables: list[VariableDef], type_registry: DataTypeRegistry):
         for editor, _ in self.get_rows():
             editor.set_variables(variables, type_registry)
+
+    def rename_variable_in_value(self, value, old_name, new_name):
+        if value is None:
+            return value, False
+        update_count = 0
+        for item in value:
+            if rename_variable_in_dict(item, ['name', 'value'], old_name, new_name):
+                update_count += 1
+        return value, update_count > 0
+
+    def get_variable_reference_in_value(self, value, var_name):
+        if value is None:
+            return 0
+        count = 0
+        for item in value:
+            count += get_variable_reference_in_dict(item, ['name', 'value'], var_name)
+        return count
 
 
 if __name__ == '__main__':

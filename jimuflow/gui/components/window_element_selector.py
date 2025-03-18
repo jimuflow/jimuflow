@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -20,7 +20,7 @@ from PySide6.QtWidgets import QWidget, QGridLayout, QLabel, QLineEdit, QTreeView
     QSizePolicy
 
 from jimuflow.common.uri_utils import is_variable_uri, parse_variable_uri, build_variable_uri, parse_window_element_uri, \
-    build_window_element_uri
+    build_window_element_uri, rename_variable_in_element_uri, get_variable_reference_in_element_uri
 from jimuflow.datatypes import DataTypeRegistry
 from jimuflow.definition import VariableDef
 from jimuflow.gui.app import AppContext
@@ -356,6 +356,16 @@ class WindowElementEdit(QWidget):
     @Slot(str)
     def _on_element_added(self, element_id):
         self.set_value(build_window_element_uri(element_id))
+
+    def rename_variable_in_value(self, value, old_name, new_name):
+        if not value:
+            return value, False
+        return rename_variable_in_element_uri(value, old_name, new_name)
+
+    def get_variable_reference_in_value(self, value, var_name):
+        if not value:
+            return 0
+        return get_variable_reference_in_element_uri(value, var_name)
 
 
 if __name__ == '__main__':

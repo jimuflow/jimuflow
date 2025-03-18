@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -24,7 +24,7 @@ from jimuflow.definition import VariableDef
 from jimuflow.gui.expression_edit_v3 import ExpressionEditV3
 from jimuflow.gui.window_utils import draw_outline_rect, get_control_rect, close_outline_rect
 from jimuflow.locales.i18n import gettext
-from jimuflow.runtime.expression import escape_string
+from jimuflow.runtime.expression import escape_string, rename_variable_in_tuple, get_variable_reference_in_tuple
 
 
 class WindowPositionPopup(QWidget):
@@ -158,3 +158,13 @@ class WindowPositionEdit(QWidget):
         pos = self._button.mapToGlobal(QPoint(0, self._button.height() - 2))
         self._popup.move(pos)
         self._popup.show()
+
+    def rename_variable_in_value(self, value, old_name, new_name):
+        if not value:
+            return value, False
+        return rename_variable_in_tuple(value, [0, 1], old_name, new_name)
+
+    def get_variable_reference_in_value(self, value, var_name):
+        if not value:
+            return 0
+        return get_variable_reference_in_tuple(value, [0, 1], var_name)

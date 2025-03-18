@@ -20,6 +20,7 @@ from jimuflow.datatypes import DataTypeRegistry
 from jimuflow.definition import VariableDef
 from jimuflow.gui.expression_edit_v3 import ExpressionEditV3
 from jimuflow.locales.i18n import gettext
+from jimuflow.runtime.expression import rename_variable_in_dict, get_variable_reference_in_dict
 
 
 class HttpProxyEditor(QWidget):
@@ -93,3 +94,20 @@ class HttpProxyEditor(QWidget):
             errors.append(gettext("proxy user is required when proxy password is set"))
 
         return errors
+
+    def rename_variable_in_value(self, value, old_name, new_name):
+        if value is None:
+            return value, False
+        update_count = 0
+        for item in value:
+            if rename_variable_in_dict(item, ['host', 'port', 'user', 'password'], old_name, new_name):
+                update_count += 1
+        return value, update_count > 0
+
+    def get_variable_reference_in_value(self, value, var_name):
+        if value is None:
+            return 0
+        count = 0
+        for item in value:
+            count += get_variable_reference_in_dict(item, ['host', 'port', 'user', 'password'], var_name)
+        return count

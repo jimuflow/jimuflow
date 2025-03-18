@@ -31,7 +31,7 @@ from jimuflow.gui.app import ProcessModel, AppContext
 from jimuflow.gui.component_dialog import ComponentDialog
 from jimuflow.gui.create_variable import CreateVariableDialog
 from jimuflow.gui.undo_redo_manager import Action
-from jimuflow.locales.i18n import gettext
+from jimuflow.locales.i18n import gettext, ngettext
 
 
 class RichTextDelegate(QStyledItemDelegate):
@@ -901,6 +901,20 @@ class ProcessVariablesWidget(QWidget):
         selected_vars = [index.data(Qt.ItemDataRole.UserRole) for index in
                          self.list_view.selectionModel().selectedRows()]
         outer_self = self
+
+        for var_def in selected_vars:
+            result = self._process_model.get_variable_reference_count(var_def.name)
+            if result:
+                lines = sorted(i[0] for i in result)
+                lines = [str(i) for i in lines]
+
+                QMessageBox.warning(self, gettext("Delete variable"),
+                                    ngettext(
+                                        "Variable {name} is referenced by {count} instruction in the process, and the line number is {lines}.",
+                                        "Variable {name} is referenced by {count} instructions in the process, and the line numbers are {lines}.",
+                                        len(result)).format(name=var_def.name, count=len(result),
+                                                            lines=",".join(lines)))
+                return
 
         class DeleteVarAction(Action):
 

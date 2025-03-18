@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -24,6 +24,8 @@ from jimuflow.datatypes import DataTypeRegistry, builtin_data_type_registry
 from jimuflow.definition import VariableDef
 from jimuflow.gui.expression_edit_v3 import ExpressionEditV3
 from jimuflow.locales.i18n import gettext
+from jimuflow.runtime.expression import rename_variable_in_dict, \
+    get_variable_reference_in_dict
 
 
 class ConditionsEditor(QWidget):
@@ -131,3 +133,20 @@ class ConditionsEditor(QWidget):
         for condition in self._conditions:
             condition[0].set_variables(self._variables, self._type_registry)
             condition[2].set_variables(self._variables, self._type_registry)
+
+    def rename_variable_in_value(self, value, old_name, new_name):
+        if value is None:
+            return value, False
+        update_count = 0
+        for item in value:
+            if rename_variable_in_dict(item, ['operand1', 'operand2'], old_name, new_name):
+                update_count += 1
+        return value, update_count > 0
+
+    def get_variable_reference_in_value(self, value, var_name):
+        if value is None:
+            return 0
+        count = 0
+        for item in value:
+            count += get_variable_reference_in_dict(item, ['operand1', 'operand2'], var_name)
+        return count

@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -22,6 +22,7 @@ from jimuflow.datatypes import builtin_data_type_registry, DataTypeRegistry
 from jimuflow.definition import VariableDef
 from jimuflow.gui.expression_edit_v3 import ExpressionEditV3
 from jimuflow.locales.i18n import gettext
+from jimuflow.runtime.expression import rename_variable_in_tuple, get_variable_reference_in_tuple
 
 
 class TableRowEditor(QWidget):
@@ -40,7 +41,6 @@ class TableRowEditor(QWidget):
         self._add_column_button.clicked.connect(self._add_column)
         self._add_column()
         self.setContentsMargins(0, 0, 0, 0)
-
 
     @Slot()
     def _add_column(self):
@@ -108,3 +108,22 @@ class TableRowEditor(QWidget):
         for column in self._columns:
             column[0].set_variables(self._variables, self._type_registry)
             column[1].set_variables(self._variables, self._type_registry)
+
+    def rename_variable_in_value(self, value, old_name, new_name):
+        if not value:
+            return value, False
+        update_count = 0
+        for i in range(len(value)):
+            item, updated = rename_variable_in_tuple(value[i], [0, 1], old_name, new_name)
+            if updated:
+                update_count += 1
+                value[i] = item
+        return value, update_count > 0
+
+    def get_variable_reference_in_value(self, value, var_name):
+        if not value:
+            return 0
+        count = 0
+        for i in range(len(value)):
+            count += get_variable_reference_in_tuple(value[i], [0, 1], var_name)
+        return count

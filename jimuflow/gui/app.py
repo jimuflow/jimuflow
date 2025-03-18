@@ -26,11 +26,15 @@ from PySide6.QtGui import QColor, QStandardItemModel, QStandardItem, QIcon
 
 from jimuflow.common.mimetypes import mimetype_component_def_ids, mimetype_process_flow_nodes
 from jimuflow.common.uri_utils import build_web_element_uri, build_window_element_uri
-from jimuflow.definition import Package, ProcessDef, FlowNode, ComponentDef, VariableDef
+from jimuflow.definition import Package, ProcessDef, FlowNode, ComponentDef, VariableDef, VariableUiInputType, \
+    VariableDirection
 from jimuflow.definition.process_def import snapshot_flow_node_tree
+from jimuflow.definition.variable_def import VariableUiInputValueType
 from jimuflow.gui.undo_redo_manager import UndoRedoManager
+from jimuflow.gui.utils import Utils
 from jimuflow.locales.i18n import gettext
 from jimuflow.runtime.execution_engine import ExecutionEngine, Process
+from jimuflow.runtime.expression import rename_variable, get_variable_reference_count
 
 
 class AppContext:
@@ -123,14 +127,135 @@ class ProcessModel(QAbstractItemModel):
         self.update_dirty()
 
     def update_variable(self, new_var_def: VariableDef, old_var_def: VariableDef):
-        index = self._process_def.variables.index(old_var_def)
+        index = self.index_of_variable(old_var_def.name)
         self._process_def.variables.pop(index)
         self._process_def.variables.insert(index, new_var_def)
         self.variable_updated.emit(index, new_var_def, old_var_def)
+        ## 更新所有的变量引用
+        if old_var_def.name != new_var_def.name:
+            for node in self._process_def.flow:
+                self.rename_variable_in_node(node, new_var_def, old_var_def)
         self.update_dirty()
 
+    def rename_variable_in_node(self, node: FlowNode, new_var_def: VariableDef, old_var_def: VariableDef):
+        """更新流程节点中的所有变量引用"""
+        update_count = 0
+        for var_def in node.component_def.variables:
+            if var_def.direction == VariableDirection.IN:
+                # 更新节点输入配置中的变量引用
+                var_value = node.inputs.get(var_def.name, None)
+                if var_value is None:
+                    continue
+                if var_def.ui_config.input_type == VariableUiInputType.EXPRESSION:
+                    node.inputs[var_def.name], updated = rename_variable(var_value, old_var_def.name, new_var_def.name)
+                    if updated:
+                        update_count += 1
+                elif var_def.ui_config.input_type == VariableUiInputType.VARIABLE:
+                    if var_value == old_var_def.name:
+                        node.inputs[var_def.name] = new_var_def.name
+                        update_count += 1
+                elif var_def.ui_config.input_type == VariableUiInputType.CUSTOM:
+                    if var_def.ui_config.input_value_type == VariableUiInputValueType.EXPRESSION:
+                        node.inputs[var_def.name], updated = rename_variable(var_value, old_var_def.name,
+                                                                             new_var_def.name)
+                        if updated:
+                            update_count += 1
+                    else:
+                        editor_class = Utils.load_class(var_def.ui_config.input_editor_type)
+                        input_editor = editor_class(**var_def.ui_config.input_editor_params)
+                        rename_variable_in_value = getattr(input_editor, 'rename_variable_in_value',
+                                                           None)
+                        if rename_variable_in_value:
+                            node.inputs[var_def.name], updated = rename_variable_in_value(var_value,
+                                                                                          old_var_def.name,
+                                                                                          new_var_def.name)
+                            if updated:
+                                update_count += 1
+            elif var_def.direction == VariableDirection.OUT:
+                # 更新节点输出配置中的变量引用
+                var_value = node.outputs.get(var_def.name, None)
+                if var_value is None:
+                    continue
+                if var_value == old_var_def.name:
+                    node.outputs[var_def.name] = new_var_def.name
+                    update_count += 1
+                # 更新出错时的输出配置中的变量应用
+                if node.outputs_on_error:
+                    var_value_on_error = node.outputs_on_error.get(var_def.name, None)
+                    if var_value_on_error:
+                        node.outputs_on_error[var_def.name], updated = rename_variable(var_value_on_error,
+                                                                                       old_var_def.name,
+                                                                                       new_var_def.name)
+                        if updated:
+                            update_count += 1
+        # 更新错误原因变量
+        if node.error_reason_out_var == old_var_def.name:
+            node.error_reason_out_var = new_var_def.name
+            update_count += 1
+        if update_count > 0:
+            index = self.node_index(node)
+            self.dataChanged.emit(index, index, [Qt.ItemDataRole.EditRole])
+        if node.flow:
+            for child in node.flow:
+                self.rename_variable_in_node(child, new_var_def, old_var_def)
+
+    def get_variable_reference_count(self, var_name):
+        result = []
+        for node in self._process_def.flow:
+            self.get_variable_reference_count_in_node(node, var_name, result)
+        return result
+
+    def get_variable_reference_count_in_node(self, node: FlowNode, var_name: str, result: list):
+        count = 0
+        for var_def in node.component_def.variables:
+            if var_def.direction == VariableDirection.IN:
+                # 获取节点输入配置中的变量引用
+                var_value = node.inputs.get(var_def.name, None)
+                if var_value is None:
+                    continue
+                if var_def.ui_config.input_type == VariableUiInputType.EXPRESSION:
+                    count += get_variable_reference_count(var_value, var_name)
+                elif var_def.ui_config.input_type == VariableUiInputType.VARIABLE:
+                    count += 1 if var_value == var_name else 0
+                elif var_def.ui_config.input_type == VariableUiInputType.CUSTOM:
+                    if var_def.ui_config.input_value_type == VariableUiInputValueType.EXPRESSION:
+                        count += get_variable_reference_count(var_value, var_name)
+                    else:
+                        editor_class = Utils.load_class(var_def.ui_config.input_editor_type)
+                        input_editor = editor_class(**var_def.ui_config.input_editor_params)
+                        get_variable_reference_in_value = getattr(input_editor,
+                                                                  'get_variable_reference_in_value',
+                                                                  None)
+                        if get_variable_reference_in_value:
+                            count += get_variable_reference_in_value(var_value, var_name)
+            elif var_def.direction == VariableDirection.OUT:
+                # 获取节点输出配置中的变量引用
+                var_value = node.outputs.get(var_def.name, None)
+                if var_value is None:
+                    continue
+                count += 1 if var_value == var_name else 0
+                # 获取出错时的输出配置中的变量应用
+                if node.outputs_on_error:
+                    var_value_on_error = node.outputs_on_error.get(var_def.name, None)
+                    if var_value_on_error:
+                        count += get_variable_reference_count(var_value_on_error, var_name)
+        # 获取错误原因变量
+        if node.error_reason_out_var == var_name:
+            count += 1
+        if count > 0:
+            result.append((node.line_no, count))
+        if node.flow:
+            for child in node.flow:
+                self.get_variable_reference_count_in_node(child, var_name, result)
+
+    def index_of_variable(self, var_name: str):
+        for i, var in enumerate(self._process_def.variables):
+            if var.name == var_name:
+                return i
+        return -1
+
     def remove_variable(self, var_def: VariableDef):
-        index = self._process_def.variables.index(var_def)
+        index = self.index_of_variable(var_def.name)
         self._process_def.variables.pop(index)
         self.variable_removed.emit(index, var_def)
         self.update_dirty()

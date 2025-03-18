@@ -2573,6 +2573,16 @@ msgstr ""
 msgid "Update variable"
 msgstr ""
 
+#, python-brace-format
+msgid ""
+"Variable {name} is referenced by {count} instruction in the process, and "
+"the line number is {lines}."
+msgid_plural ""
+"Variable {name} is referenced by {count} instructions in the process, and"
+" the line numbers are {lines}."
+msgstr[0] ""
+msgstr[1] ""
+
 msgid "Settings"
 msgstr ""
 

@@ -1,0 +1,326 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "browser",
+      "type": "WebBrowser",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "kimi_chat_page",
+      "type": "WebPage",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "have_logged_in",
+      "type": "bool",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "answer_content",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "search_keyword",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "小米SU7 Ultra",
+      "uiConfig": {
+        "label": "Search Keyword"
+      }
+    },
+    {
+      "name": "data_save_directory",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Data Save Directory"
+      }
+    },
+    {
+      "name": "weibo_collect_pages",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": 3,
+      "uiConfig": {
+        "label": "Weibo Collect Pages",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "wechat_collect_pages",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": 3,
+      "uiConfig": {
+        "label": "WeChat Collect Pages",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "current_date_time",
+      "type": "datetime",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "current_date_time_string",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "current_data_save_directory",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "weibo_data_file_path",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "wechat_data_file_path",
+      "type": "text",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:web_automation:OpenWebBrowser",
+      "inputs": {
+        "enableProxy": false,
+        "headless": false,
+        "incognito": false
+      },
+      "outputs": {
+        "webBrowser": "browser"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:web_automation:OpenWebPage",
+      "inputs": {
+        "webBrowser": "browser",
+        "url": "\"https://kimi.moonshot.cn/chat/empty\"",
+        "waitLoaded": true,
+        "loadTimeout": "\"30\"",
+        "loadTimeoutAction": "stop_loading"
+      },
+      "outputs": {
+        "webPage": "kimi_chat_page"
+      },
+      "lineNo": 2
+    },
+    {
+      "component": "jimuflow:core:TimeWait",
+      "inputs": {
+        "seconds": "\"5\""
+      },
+      "lineNo": 3
+    },
+    {
+      "component": "jimuflow:web_automation:CheckWebContent",
+      "inputs": {
+        "webPage": "kimi_chat_page",
+        "checkType": "include_element",
+        "checkElementUri": "jimuflow:webelement:0d5cfa0f515f4f0f9b4e22ed68a3e2a1"
+      },
+      "outputs": {
+        "checkResult": "have_logged_in"
+      },
+      "lineNo": 4
+    },
+    {
+      "component": "jimuflow:core:If",
+      "inputs": {
+        "operand1": "have_logged_in",
+        "op": "is_false"
+      },
+      "lineNo": 5,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"Please log in first.\""
+          },
+          "lineNo": 6
+        },
+        {
+          "component": "jimuflow:web_automation:WaitWebContent",
+          "inputs": {
+            "webPage": "kimi_chat_page",
+            "waitType": "element_is_visible",
+            "waitElementUri": "jimuflow:webelement:0d5cfa0f515f4f0f9b4e22ed68a3e2a1",
+            "waitTime": "\"300\""
+          },
+          "outputs": {
+            "waitResult": "have_logged_in"
+          },
+          "lineNo": 7
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:core:CreateDateTime",
+      "inputs": {
+        "initType": "now"
+      },
+      "outputs": {
+        "result": "current_date_time"
+      },
+      "lineNo": 8
+    },
+    {
+      "component": "jimuflow:core:FormatDateTime",
+      "inputs": {
+        "datetime": "current_date_time",
+        "datetimeFormat": "\"YYYYMMDD_HHmmss\""
+      },
+      "outputs": {
+        "result": "current_date_time_string"
+      },
+      "lineNo": 9
+    },
+    {
+      "component": "jimuflow:core:CreateFolder",
+      "inputs": {
+        "parentFolder": "data_save_directory",
+        "newFolderName": "current_date_time_string"
+      },
+      "outputs": {
+        "newFolderPath": "current_data_save_directory"
+      },
+      "lineNo": 10
+    },
+    {
+      "component": "collect_weibo_data",
+      "inputs": {
+        "browser": "browser",
+        "search_keyword": "search_keyword",
+        "weibo_collect_pages": "weibo_collect_pages",
+        "data_save_directory": "current_data_save_directory"
+      },
+      "outputs": {
+        "export_file_path": "weibo_data_file_path"
+      },
+      "lineNo": 11
+    },
+    {
+      "component": "collect_wechat_articles",
+      "inputs": {
+        "browser": "browser",
+        "search_keyword": "search_keyword",
+        "wechat_collect_pages": "wechat_collect_pages",
+        "data_save_directory": "current_data_save_directory"
+      },
+      "outputs": {
+        "export_file_path": "wechat_data_file_path"
+      },
+      "lineNo": 12
+    },
+    {
+      "component": "jimuflow:web_automation:ClickWebElement",
+      "inputs": {
+        "webPage": "kimi_chat_page",
+        "elementUri": "jimuflow:webelement:bec2b95de9724810860768171ebb6539",
+        "simulateHumanClick": true,
+        "clickType": "single_click",
+        "mouseButton": "left",
+        "modifierKey": "none",
+        "delayAfterAction": "\"0\"",
+        "waitTime": "\"30\""
+      },
+      "lineNo": 13
+    },
+    {
+      "component": "jimuflow:web_automation:WebUpload",
+      "inputs": {
+        "webPage": "kimi_chat_page",
+        "elementUri": "jimuflow:webelement:410862022a3d49e4b07640221586b348",
+        "filePath": "weibo_data_file_path",
+        "waitTime": "\"30\"",
+        "waitDialogTime": "\"3\""
+      },
+      "lineNo": 14
+    },
+    {
+      "component": "jimuflow:web_automation:WebUpload",
+      "inputs": {
+        "webPage": "kimi_chat_page",
+        "elementUri": "jimuflow:webelement:410862022a3d49e4b07640221586b348",
+        "filePath": "wechat_data_file_path",
+        "waitTime": "\"30\"",
+        "waitDialogTime": "\"3\""
+      },
+      "lineNo": 15
+    },
+    {
+      "component": "jimuflow:web_automation:WebInput",
+      "inputs": {
+        "webPage": "kimi_chat_page",
+        "elementUri": "jimuflow:webelement:1ec00981b1ba4407b53dcd01a01ce06f",
+        "content": "\"These data were obtained by searching with the keyword \\\"\" + search_keyword + \"\\\" today, including data from Weibo and WeChat. Please extract valuable information from these data and generate a public opinion summary for today.\"",
+        "append": false,
+        "pressEnterAfterInput": false,
+        "pressTabAfterInput": false,
+        "simulateHumanInput": false,
+        "delayAfterFocus": "\"1\"",
+        "delayAfterAction": "\"0\"",
+        "waitTime": "\"30\""
+      },
+      "lineNo": 16
+    },
+    {
+      "component": "jimuflow:web_automation:ClickWebElement",
+      "inputs": {
+        "webPage": "kimi_chat_page",
+        "elementUri": "jimuflow:webelement:9504340d04434722a418fe7438bd44a3",
+        "simulateHumanClick": true,
+        "clickType": "single_click",
+        "mouseButton": "left",
+        "modifierKey": "none",
+        "delayAfterAction": "\"0\"",
+        "waitTime": "\"60\""
+      },
+      "lineNo": 17
+    },
+    {
+      "component": "jimuflow:web_automation:ClickWebElement",
+      "inputs": {
+        "webPage": "kimi_chat_page",
+        "elementUri": "jimuflow:webelement:5cccb2cf23f2422fb9d84067e4d55e2d",
+        "simulateHumanClick": true,
+        "clickType": "single_click",
+        "mouseButton": "left",
+        "modifierKey": "none",
+        "delayAfterAction": "\"0\"",
+        "waitTime": "\"300\""
+      },
+      "lineNo": 18
+    },
+    {
+      "component": "jimuflow:core:GetClipboardText",
+      "outputs": {
+        "result": "answer_content"
+      },
+      "lineNo": 19
+    },
+    {
+      "component": "jimuflow:core:WriteTextFile",
+      "inputs": {
+        "filePath": "current_data_save_directory + \"/report.md\"",
+        "writeContent": "answer_content",
+        "actionWhenExists": "overwrite",
+        "fileEncoding": "utf-8"
+      },
+      "lineNo": 20
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"The public opinion brief has been successfully generated. The path of the public opinion brief is \" + current_data_save_directory + \"/report.md.\""
+      },
+      "lineNo": 21
+    }
+  ]
+}

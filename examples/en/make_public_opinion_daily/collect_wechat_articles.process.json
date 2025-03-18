@@ -1,0 +1,575 @@
+{
+  "name": "collect_wechat_articles",
+  "variables": [
+    {
+      "name": "browser",
+      "type": "WebBrowser",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web Browser",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "sougou_page",
+      "type": "WebPage",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "search_keyword",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Search Keyword",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "loading_finished",
+      "type": "bool",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "current_element",
+      "type": "WebElement",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "title_element",
+      "type": "WebElement",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "title",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "details_page",
+      "type": "WebPage",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "author_name",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "publish_time",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "article_content",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "article_url",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "is_retweeted",
+      "type": "bool",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "has_content",
+      "type": "bool",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "datatable",
+      "type": "table",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "export_file_path",
+      "type": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Export File Path"
+      }
+    },
+    {
+      "name": "wechat_collect_pages",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": 3,
+      "uiConfig": {
+        "label": "WeChat Collect Pages",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "data_save_directory",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Data Save Directory",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "loop_index",
+      "type": "number",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "has_next_page",
+      "type": "bool",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "error_reason",
+      "type": "text",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"Start collecting WeChat articles\""
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:web_automation:OpenWebPage",
+      "inputs": {
+        "webBrowser": "browser",
+        "url": "\"https://weixin.sogou.com/\"",
+        "waitLoaded": true,
+        "loadTimeout": "\"30\"",
+        "loadTimeoutAction": "stop_loading"
+      },
+      "outputs": {
+        "webPage": "sougou_page"
+      },
+      "lineNo": 2
+    },
+    {
+      "component": "jimuflow:web_automation:WebInput",
+      "inputs": {
+        "webPage": "sougou_page",
+        "elementUri": "jimuflow:webelement:ff166a1785b64049bb737422ab7637e2",
+        "content": "search_keyword",
+        "append": false,
+        "pressEnterAfterInput": true,
+        "pressTabAfterInput": false,
+        "simulateHumanInput": true,
+        "clickBeforeInput": true,
+        "inputInterval": "\"100\"",
+        "delayAfterFocus": "\"1\"",
+        "delayAfterAction": "\"5\"",
+        "waitTime": "\"30\""
+      },
+      "lineNo": 3
+    },
+    {
+      "component": "jimuflow:web_automation:WaitWebContent",
+      "inputs": {
+        "webPage": "sougou_page",
+        "waitType": "include_element",
+        "waitElementUri": "jimuflow:webelement:7c32c964808246b686aef0a9e7b6f3c8",
+        "waitTime": "\"30\""
+      },
+      "outputs": {
+        "waitResult": "loading_finished"
+      },
+      "lineNo": 4
+    },
+    {
+      "component": "jimuflow:table:CreateTable",
+      "inputs": {
+        "columnNames": "\"Title,Author,PublishTime,Content\""
+      },
+      "outputs": {
+        "table": "datatable"
+      },
+      "lineNo": 5
+    },
+    {
+      "component": "jimuflow:core:Loop",
+      "inputs": {
+        "start": "\"0\"",
+        "end": "wechat_collect_pages"
+      },
+      "outputs": {
+        "loopIndex": "loop_index"
+      },
+      "lineNo": 6,
+      "flow": [
+        {
+          "component": "jimuflow:web_automation:LoopWebElements",
+          "inputs": {
+            "elementsUri": "jimuflow:webelement:6c33d15be8bc4b1f980f3831ffc3f5f1",
+            "reversedLoop": false,
+            "waitTime": "\"30\"",
+            "webPage": "sougou_page"
+          },
+          "outputs": {
+            "currentElement": "current_element"
+          },
+          "lineNo": 7,
+          "flow": [
+            {
+              "component": "jimuflow:web_automation:GetRelativeWebElement",
+              "inputs": {
+                "descendantRelativeXpath": "\"div[2]/h3/a\"",
+                "elementUri": "jimuflow:variable:current_element",
+                "locateType": "first_matched_descendant",
+                "waitTime": "\"30\"",
+                "webPage": "sougou_page"
+              },
+              "outputs": {
+                "result": "title_element"
+              },
+              "lineNo": 8
+            },
+            {
+              "component": "jimuflow:web_automation:ExtractWebElement",
+              "inputs": {
+                "elementUri": "jimuflow:variable:title_element",
+                "extractType": "text",
+                "waitTime": "\"30\"",
+                "webPage": "sougou_page"
+              },
+              "outputs": {
+                "result": "title"
+              },
+              "lineNo": 9
+            },
+            {
+              "component": "jimuflow:web_automation:ClickToOpenWebPage",
+              "inputs": {
+                "elementUri": "jimuflow:variable:title_element",
+                "waitTime": "\"1\"",
+                "webPage": "sougou_page"
+              },
+              "outputs": {
+                "newWebPage": "details_page"
+              },
+              "lineNo": 10
+            },
+            {
+              "component": "jimuflow:web_automation:WaitWebContent",
+              "inputs": {
+                "webPage": "details_page",
+                "waitType": "include_element",
+                "waitElementUri": "jimuflow:webelement:fa41cde5830d4d7781da1bdb4d01e774",
+                "waitTime": "\"30\""
+              },
+              "outputs": {
+                "waitResult": "has_content"
+              },
+              "errorHandlingType": "IGNORE",
+              "errorReasonOutVar": "error_reason",
+              "outputsOnError": {
+                "waitResult": ""
+              },
+              "lineNo": 11
+            },
+            {
+              "component": "jimuflow:core:If",
+              "inputs": {
+                "operand1": "error_reason",
+                "op": "not_empty"
+              },
+              "lineNo": 12,
+              "flow": [
+                {
+                  "component": "jimuflow:core:Continue",
+                  "lineNo": 13
+                }
+              ]
+            },
+            {
+              "component": "jimuflow:web_automation:CheckWebContent",
+              "inputs": {
+                "checkElementUri": "jimuflow:webelement:28a8dc8abbca4d488bcbb974ff9d3a53",
+                "checkType": "include_element",
+                "webPage": "details_page"
+              },
+              "outputs": {
+                "checkResult": "is_retweeted"
+              },
+              "lineNo": 14
+            },
+            {
+              "component": "jimuflow:core:If",
+              "inputs": {
+                "op": "is_true",
+                "operand1": "is_retweeted"
+              },
+              "lineNo": 15,
+              "flow": [
+                {
+                  "component": "jimuflow:web_automation:ClickWebElement",
+                  "inputs": {
+                    "clickType": "single_click",
+                    "delayAfterAction": "\"0\"",
+                    "elementUri": "jimuflow:webelement:28a8dc8abbca4d488bcbb974ff9d3a53",
+                    "modifierKey": "none",
+                    "mouseButton": "left",
+                    "simulateHumanClick": true,
+                    "waitTime": "\"30\"",
+                    "webPage": "details_page"
+                  },
+                  "lineNo": 16
+                },
+                {
+                  "component": "jimuflow:web_automation:WaitWebContent",
+                  "inputs": {
+                    "waitElementUri": "jimuflow:webelement:fa41cde5830d4d7781da1bdb4d01e774",
+                    "waitTime": "\"30\"",
+                    "waitType": "include_element",
+                    "webPage": "details_page"
+                  },
+                  "outputs": {
+                    "waitResult": "has_content"
+                  },
+                  "lineNo": 17
+                }
+              ]
+            },
+            {
+              "component": "jimuflow:web_automation:ExtractWebPage",
+              "inputs": {
+                "extractType": "url",
+                "webPage": "details_page"
+              },
+              "outputs": {
+                "result": "article_url"
+              },
+              "lineNo": 18
+            },
+            {
+              "component": "jimuflow:web_automation:ExtractWebElement",
+              "inputs": {
+                "webPage": "details_page",
+                "elementUri": "jimuflow:webelement:cc2361b7e13c4ac6b49b9e95e51edccb",
+                "extractType": "text",
+                "waitTime": "\"1\""
+              },
+              "outputs": {
+                "result": "author_name"
+              },
+              "errorHandlingType": "IGNORE",
+              "errorReasonOutVar": "",
+              "outputsOnError": {
+                "result": ""
+              },
+              "lineNo": 19
+            },
+            {
+              "component": "jimuflow:core:If",
+              "inputs": {
+                "op": "is_empty",
+                "operand1": "author_name"
+              },
+              "lineNo": 20,
+              "flow": [
+                {
+                  "component": "jimuflow:web_automation:ExtractWebElement",
+                  "inputs": {
+                    "webPage": "details_page",
+                    "elementUri": "jimuflow:webelement:67c07640bbd74e2fb16d97b49cba86c1",
+                    "extractType": "text",
+                    "waitTime": "\"1\""
+                  },
+                  "outputs": {
+                    "result": "author_name"
+                  },
+                  "errorHandlingType": "IGNORE",
+                  "errorReasonOutVar": "",
+                  "outputsOnError": {
+                    "result": ""
+                  },
+                  "lineNo": 21
+                }
+              ]
+            },
+            {
+              "component": "jimuflow:web_automation:ExtractWebElement",
+              "inputs": {
+                "webPage": "details_page",
+                "elementUri": "jimuflow:webelement:d3dea0d4dad1451b8e7a9d6d6bc44f37",
+                "extractType": "text",
+                "waitTime": "\"1\""
+              },
+              "outputs": {
+                "result": "publish_time"
+              },
+              "errorHandlingType": "IGNORE",
+              "errorReasonOutVar": "",
+              "outputsOnError": {
+                "result": ""
+              },
+              "lineNo": 22
+            },
+            {
+              "component": "jimuflow:core:If",
+              "inputs": {
+                "op": "is_empty",
+                "operand1": "publish_time"
+              },
+              "lineNo": 23,
+              "flow": [
+                {
+                  "component": "jimuflow:web_automation:ExtractWebElement",
+                  "inputs": {
+                    "webPage": "details_page",
+                    "elementUri": "jimuflow:webelement:515f7253539f477db88d4bc4aa2b2d3f",
+                    "extractType": "text",
+                    "waitTime": "\"1\""
+                  },
+                  "outputs": {
+                    "result": "publish_time"
+                  },
+                  "errorHandlingType": "IGNORE",
+                  "errorReasonOutVar": "",
+                  "outputsOnError": {
+                    "result": ""
+                  },
+                  "lineNo": 24
+                }
+              ]
+            },
+            {
+              "component": "jimuflow:web_automation:ExtractWebElement",
+              "inputs": {
+                "webPage": "details_page",
+                "elementUri": "jimuflow:webelement:fa41cde5830d4d7781da1bdb4d01e774",
+                "extractType": "text",
+                "waitTime": "\"1\""
+              },
+              "outputs": {
+                "result": "article_content"
+              },
+              "errorHandlingType": "IGNORE",
+              "errorReasonOutVar": "",
+              "outputsOnError": {
+                "result": ""
+              },
+              "lineNo": 25
+            },
+            {
+              "component": "jimuflow:core:Print",
+              "inputs": {
+                "message": "title+\"\\n\"+author_name+\" \"+publish_time+\"\\n\"+article_url+\"\\n\"+article_content"
+              },
+              "lineNo": 26
+            },
+            {
+              "component": "jimuflow:web_automation:CloseWebPage",
+              "inputs": {
+                "closeType": "page",
+                "webPage": "details_page"
+              },
+              "lineNo": 27
+            },
+            {
+              "component": "jimuflow:table:WriteTableRow",
+              "inputs": {
+                "table": "datatable",
+                "writeType": "append",
+                "rowInputType": "columns",
+                "columns": [
+                  [
+                    "\"Title\"",
+                    "title"
+                  ],
+                  [
+                    "\"PublishTime\"",
+                    "publish_time"
+                  ],
+                  [
+                    "\"Author\"",
+                    "author_name"
+                  ],
+                  [
+                    "\"Content\"",
+                    "article_content"
+                  ]
+                ]
+              },
+              "lineNo": 28
+            }
+          ]
+        },
+        {
+          "component": "jimuflow:web_automation:CheckWebContent",
+          "inputs": {
+            "checkElementUri": "jimuflow:webelement:5e8e714874ac4f3db5175029f1d67286",
+            "checkType": "element_is_visible",
+            "webPage": "sougou_page"
+          },
+          "outputs": {
+            "checkResult": "has_next_page"
+          },
+          "lineNo": 29
+        },
+        {
+          "component": "jimuflow:core:If",
+          "inputs": {
+            "operand1": "has_next_page",
+            "op": "is_true"
+          },
+          "lineNo": 30,
+          "flow": [
+            {
+              "component": "jimuflow:web_automation:ClickWebElement",
+              "inputs": {
+                "clickType": "single_click",
+                "delayAfterAction": "\"0\"",
+                "elementUri": "jimuflow:webelement:5e8e714874ac4f3db5175029f1d67286",
+                "modifierKey": "none",
+                "mouseButton": "left",
+                "simulateHumanClick": true,
+                "waitTime": "\"30\"",
+                "webPage": "sougou_page"
+              },
+              "lineNo": 31
+            }
+          ]
+        },
+        {
+          "component": "jimuflow:core:Else",
+          "lineNo": 32,
+          "flow": [
+            {
+              "component": "jimuflow:core:Break",
+              "lineNo": 33
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:table:ExportTable",
+      "inputs": {
+        "table": "datatable",
+        "saveFolder": "data_save_directory",
+        "fileFormat": "xlsx",
+        "sheetName": "\"WeChatArticles\"",
+        "fileNamingType": "custom",
+        "customFilename": "\"wechat_articles\"",
+        "overrideExistingFile": true,
+        "exportHeader": true
+      },
+      "outputs": {
+        "filePath": "export_file_path"
+      },
+      "lineNo": 34
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"A total of \" + datatable . numberOfRows + \" WeChat articles have been collected, and the file saving path is \" + export_file_path + \".\""
+      },
+      "lineNo": 35
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "make_public_opinion_daily",
+  "namespace": "jimuflow",
+  "version": "1.0.0",
+  "mainProcess": "main",
+  "dependencies": []
+}

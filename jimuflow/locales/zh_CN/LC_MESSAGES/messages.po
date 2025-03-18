@@ -2583,6 +2583,15 @@ msgstr "本地"
 msgid "Update variable"
 msgstr "修改变量"
 
+#, python-brace-format
+msgid ""
+"Variable {name} is referenced by {count} instruction in the process, and "
+"the line number is {lines}."
+msgid_plural ""
+"Variable {name} is referenced by {count} instructions in the process, and"
+" the line numbers are {lines}."
+msgstr[0] "变量{name}被流程中的{count}个指令所引用，行号为{lines}。"
+
 msgid "Settings"
 msgstr "设置"
 

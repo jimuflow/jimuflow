@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -198,14 +198,15 @@ class ExpressionEvaluator(Transformer):
 
 
 class ExpressionToken():
-    def __init__(self, data):
+    def __init__(self, data, is_variable=False):
         self.data = data
+        self.is_variable = is_variable
 
     def __repr__(self):
-        return 'EToken(' + self.data + ')'
+        return 'EToken(' + self.data + (', v' if self.is_variable else '') + ')'
 
     def __eq__(self, other):
-        return isinstance(other, ExpressionToken) and self.data == other.data
+        return isinstance(other, ExpressionToken) and self.data == other.data and self.is_variable == other.is_variable
 
 
 def extend_list(l, items):
@@ -334,11 +335,13 @@ class ExpressionTokenizer(Transformer):
 
     def variable(self, nodes):
         result = []
+        is_variable = True
         for node in nodes:
             if isinstance(node, Token):
-                result.append(ExpressionToken(node))
+                result.append(ExpressionToken(node, is_variable))
             else:
                 extend_list(result, node)
+            is_variable = False
         return result
 
 
@@ -418,6 +421,84 @@ def tokenize_expression(expression: str):
     return tokens
 
 
+def rename_variable(expression: str, old_name: str, new_name: str):
+    tokens = ExpressionTokenizer().transform(expr_parser.parse(expression))
+    if not isinstance(tokens, list):
+        tokens = [tokens]
+    new_expression = ''
+    updated = False
+    for token in tokens:
+        if isinstance(token, str):
+            new_expression += escape_string(token)
+        elif token.is_variable and token.data == old_name:
+            new_expression += new_name
+            updated = True
+        else:
+            new_expression += token.data
+    return new_expression if updated else expression, updated
+
+
+def get_variable_reference_count(expression: str, var_name: str):
+    tokens = ExpressionTokenizer().transform(expr_parser.parse(expression))
+    if not isinstance(tokens, list):
+        tokens = [tokens]
+    count = 0
+    for token in tokens:
+        if isinstance(token, ExpressionToken) and token.is_variable and token.data == var_name:
+            count += 1
+    return count
+
+
+def rename_variable_in_dict(value: dict, props: list, old_name, new_name):
+    if not value:
+        return False
+    update_count = 0
+    for prop in props:
+        prop_value = value.get(prop, None)
+        if isinstance(prop_value, str) and prop_value:
+            value[prop], updated = rename_variable(prop_value, old_name, new_name)
+            if updated:
+                update_count += 1
+    return update_count > 0
+
+
+def get_variable_reference_in_dict(value: dict, props: list, var_name):
+    if not value:
+        return 0
+    count = 0
+    for prop in props:
+        prop_value = value.get(prop, None)
+        if isinstance(prop_value, str) and prop_value:
+            count += get_variable_reference_count(prop_value, var_name)
+    return count
+
+
+def rename_variable_in_tuple(value: tuple, indexes: list, old_name, new_name):
+    if not value:
+        return value, False
+    update_count = 0
+    result = []
+    for i in range(len(value)):
+        index_value = value[i]
+        if i in indexes and isinstance(index_value, str) and index_value:
+            index_value, updated = rename_variable(index_value, old_name, new_name)
+            if updated:
+                update_count += 1
+        result.append(index_value)
+    return tuple(result) if update_count > 0 else value, update_count > 0
+
+
+def get_variable_reference_in_tuple(value: tuple, indexes: list, var_name):
+    if not value:
+        return 0
+    count = 0
+    for i in indexes:
+        index_value = value[i]
+        if isinstance(index_value, str) and index_value:
+            count += get_variable_reference_count(index_value, var_name)
+    return count
+
+
 if __name__ == '__main__':
     for i in ['', '1', ' ', '_1', 'ab', '变量']:
         print(i, is_identifier(i))
@@ -462,3 +543,5 @@ if __name__ == '__main__':
         VariableDef("v1", "text"),
         VariableDef("v2", "list", element_type='text')
     ], builtin_data_type_registry))
+
+    print('renamed expr: ', rename_variable(text, 'arr1', 'new_arr1'))

@@ -1,0 +1,603 @@
+{
+  "name": "collect_weibo_data",
+  "variables": [
+    {
+      "name": "browser",
+      "type": "WebBrowser",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web Browser",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "weibo_page",
+      "type": "WebPage",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "scroll_loop_index",
+      "type": "number",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "datatable",
+      "type": "table",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "current_element",
+      "type": "WebElement",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "content_element",
+      "type": "WebElement",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "weibo_content",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "account_name_element",
+      "type": "WebElement",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "account_name",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "publish_time_element",
+      "type": "WebElement",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "publish_time",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "retweets_element",
+      "type": "WebElement",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "retweets",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "comments_element",
+      "type": "WebElement",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "comments",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "likes_element",
+      "type": "WebElement",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "likes",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "collect_time",
+      "type": "datetime",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "collect_time_string",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "export_file_path",
+      "type": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Export File Path"
+      }
+    },
+    {
+      "name": "search_keyword",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Search Keyword",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "weibo_collect_pages",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": 3,
+      "uiConfig": {
+        "label": "Weibo Collect Pages",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "data_save_directory",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Data Save Directory",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "error_reason",
+      "type": "text",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"Start collecting Weibo data\""
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:web_automation:OpenWebPage",
+      "inputs": {
+        "webBrowser": "browser",
+        "url": "\"https://m.weibo.cn/\"",
+        "waitLoaded": true,
+        "loadTimeout": "\"30\"",
+        "loadTimeoutAction": "stop_loading"
+      },
+      "outputs": {
+        "webPage": "weibo_page"
+      },
+      "lineNo": 2
+    },
+    {
+      "component": "jimuflow:web_automation:ClickWebElement",
+      "inputs": {
+        "webPage": "weibo_page",
+        "elementUri": "jimuflow:webelement:54fd2ce31ae749109814c095b4954889",
+        "simulateHumanClick": true,
+        "clickType": "single_click",
+        "mouseButton": "left",
+        "modifierKey": "none",
+        "delayAfterAction": "\"0\"",
+        "waitTime": "\"30\""
+      },
+      "lineNo": 3
+    },
+    {
+      "component": "jimuflow:web_automation:WebInput",
+      "inputs": {
+        "webPage": "weibo_page",
+        "elementUri": "jimuflow:webelement:a757e85c2c0449ca861548726f90d3d4",
+        "content": "search_keyword",
+        "append": false,
+        "pressEnterAfterInput": true,
+        "pressTabAfterInput": false,
+        "simulateHumanInput": true,
+        "clickBeforeInput": true,
+        "inputInterval": "\"100\"",
+        "delayAfterFocus": "\"1\"",
+        "delayAfterAction": "\"5\"",
+        "waitTime": "\"30\""
+      },
+      "lineNo": 4
+    },
+    {
+      "component": "jimuflow:core:Loop",
+      "inputs": {
+        "start": "\"0\"",
+        "end": "weibo_collect_pages"
+      },
+      "outputs": {
+        "loopIndex": "scroll_loop_index"
+      },
+      "lineNo": 5,
+      "flow": [
+        {
+          "component": "jimuflow:web_automation:ScrollWebPage",
+          "inputs": {
+            "scrollBehavior": "smooth",
+            "scrollOnElement": false,
+            "scrollType": "bottom",
+            "waitTime": "\"30\"",
+            "webPage": "weibo_page"
+          },
+          "lineNo": 6
+        },
+        {
+          "component": "jimuflow:core:TimeWait",
+          "inputs": {
+            "seconds": "\"5\""
+          },
+          "lineNo": 7
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:table:CreateTable",
+      "inputs": {
+        "columnNames": "\"AccountName,PublishTime,Content,Retweets,Comments,Likes,CollectTime\""
+      },
+      "outputs": {
+        "table": "datatable"
+      },
+      "lineNo": 8
+    },
+    {
+      "component": "jimuflow:web_automation:LoopWebElements",
+      "inputs": {
+        "webPage": "weibo_page",
+        "elementsUri": "jimuflow:webelement:60f406329e0d4786a0c9e33d3e71b37c",
+        "reversedLoop": false,
+        "waitTime": "\"30\""
+      },
+      "outputs": {
+        "currentElement": "current_element"
+      },
+      "lineNo": 9,
+      "flow": [
+        {
+          "component": "jimuflow:web_automation:GetRelativeWebElement",
+          "inputs": {
+            "webPage": "weibo_page",
+            "elementUri": "jimuflow:variable:current_element",
+            "locateType": "first_matched_descendant",
+            "descendantRelativeXpath": "\"div/div/div/div/div/article/div[2]/div[1] | div/div/article/div[2]/div[1]\"",
+            "waitTime": "\"0\""
+          },
+          "outputs": {
+            "result": "content_element"
+          },
+          "errorHandlingType": "IGNORE",
+          "errorReasonOutVar": "error_reason",
+          "outputsOnError": {
+            "result": ""
+          },
+          "lineNo": 10
+        },
+        {
+          "component": "jimuflow:core:If",
+          "inputs": {
+            "op": "not_empty",
+            "operand1": "error_reason"
+          },
+          "lineNo": 11,
+          "flow": [
+            {
+              "component": "jimuflow:core:Continue",
+              "lineNo": 12
+            }
+          ]
+        },
+        {
+          "component": "jimuflow:web_automation:ExtractWebElement",
+          "inputs": {
+            "webPage": "weibo_page",
+            "elementUri": "jimuflow:variable:content_element",
+            "extractType": "text",
+            "waitTime": "\"0\""
+          },
+          "outputs": {
+            "result": "weibo_content"
+          },
+          "lineNo": 13
+        },
+        {
+          "component": "jimuflow:web_automation:GetRelativeWebElement",
+          "inputs": {
+            "webPage": "weibo_page",
+            "elementUri": "jimuflow:variable:current_element",
+            "locateType": "first_matched_descendant",
+            "descendantRelativeXpath": "\"//header[1]/div[1]/div[1]/a[1]/h3[1]\"",
+            "waitTime": "\"30\""
+          },
+          "outputs": {
+            "result": "account_name_element"
+          },
+          "errorHandlingType": "IGNORE",
+          "errorReasonOutVar": "",
+          "outputsOnError": {
+            "result": ""
+          },
+          "lineNo": 14
+        },
+        {
+          "component": "jimuflow:core:If",
+          "inputs": {
+            "operand1": "account_name_element",
+            "op": "is_not_null"
+          },
+          "lineNo": 15,
+          "flow": [
+            {
+              "component": "jimuflow:web_automation:ExtractWebElement",
+              "inputs": {
+                "elementUri": "jimuflow:variable:account_name_element",
+                "extractType": "text",
+                "waitTime": "\"30\"",
+                "webPage": "weibo_page"
+              },
+              "outputs": {
+                "result": "account_name"
+              },
+              "lineNo": 16
+            }
+          ]
+        },
+        {
+          "component": "jimuflow:web_automation:GetRelativeWebElement",
+          "inputs": {
+            "webPage": "weibo_page",
+            "elementUri": "jimuflow:variable:current_element",
+            "locateType": "first_matched_descendant",
+            "descendantRelativeXpath": "\"//header[1]/div[1]/div[1]/h4[1]/span[1]\"",
+            "waitTime": "\"30\""
+          },
+          "outputs": {
+            "result": "publish_time_element"
+          },
+          "errorHandlingType": "IGNORE",
+          "errorReasonOutVar": "",
+          "outputsOnError": {
+            "result": ""
+          },
+          "lineNo": 17
+        },
+        {
+          "component": "jimuflow:core:If",
+          "inputs": {
+            "operand1": "publish_time_element",
+            "op": "is_not_null"
+          },
+          "lineNo": 18,
+          "flow": [
+            {
+              "component": "jimuflow:web_automation:ExtractWebElement",
+              "inputs": {
+                "webPage": "weibo_page",
+                "elementUri": "jimuflow:variable:publish_time_element",
+                "extractType": "text",
+                "waitTime": "\"30\""
+              },
+              "outputs": {
+                "result": "publish_time"
+              },
+              "lineNo": 19
+            }
+          ]
+        },
+        {
+          "component": "jimuflow:web_automation:GetRelativeWebElement",
+          "inputs": {
+            "webPage": "weibo_page",
+            "elementUri": "jimuflow:variable:current_element",
+            "locateType": "first_matched_descendant",
+            "descendantRelativeXpath": "\"//footer[1]/div[1]/h4[1]\"",
+            "waitTime": "\"0\""
+          },
+          "outputs": {
+            "result": "retweets_element"
+          },
+          "errorHandlingType": "IGNORE",
+          "errorReasonOutVar": "",
+          "outputsOnError": {
+            "result": ""
+          },
+          "lineNo": 20
+        },
+        {
+          "component": "jimuflow:core:If",
+          "inputs": {
+            "operand1": "retweets_element",
+            "op": "is_not_null"
+          },
+          "lineNo": 21,
+          "flow": [
+            {
+              "component": "jimuflow:web_automation:ExtractWebElement",
+              "inputs": {
+                "webPage": "weibo_page",
+                "elementUri": "jimuflow:variable:retweets_element",
+                "extractType": "text",
+                "waitTime": "\"30\""
+              },
+              "outputs": {
+                "result": "retweets"
+              },
+              "lineNo": 22
+            }
+          ]
+        },
+        {
+          "component": "jimuflow:web_automation:GetRelativeWebElement",
+          "inputs": {
+            "webPage": "weibo_page",
+            "elementUri": "jimuflow:variable:current_element",
+            "locateType": "first_matched_descendant",
+            "descendantRelativeXpath": "\"//footer[1]/div[2]/h4[1]\"",
+            "waitTime": "\"0\""
+          },
+          "outputs": {
+            "result": "comments_element"
+          },
+          "errorHandlingType": "IGNORE",
+          "errorReasonOutVar": "",
+          "outputsOnError": {
+            "result": ""
+          },
+          "lineNo": 23
+        },
+        {
+          "component": "jimuflow:core:If",
+          "inputs": {
+            "operand1": "comments_element",
+            "op": "is_not_null"
+          },
+          "lineNo": 24,
+          "flow": [
+            {
+              "component": "jimuflow:web_automation:ExtractWebElement",
+              "inputs": {
+                "webPage": "weibo_page",
+                "elementUri": "jimuflow:variable:comments_element",
+                "extractType": "text",
+                "waitTime": "\"30\""
+              },
+              "outputs": {
+                "result": "comments"
+              },
+              "lineNo": 25
+            }
+          ]
+        },
+        {
+          "component": "jimuflow:web_automation:GetRelativeWebElement",
+          "inputs": {
+            "webPage": "weibo_page",
+            "elementUri": "jimuflow:variable:current_element",
+            "locateType": "first_matched_descendant",
+            "descendantRelativeXpath": "\"//footer[1]/div[3]/h4[1]\"",
+            "waitTime": "\"0\""
+          },
+          "outputs": {
+            "result": "likes_element"
+          },
+          "errorHandlingType": "IGNORE",
+          "errorReasonOutVar": "",
+          "outputsOnError": {
+            "result": ""
+          },
+          "lineNo": 26
+        },
+        {
+          "component": "jimuflow:core:If",
+          "inputs": {
+            "operand1": "likes_element",
+            "op": "is_not_null"
+          },
+          "lineNo": 27,
+          "flow": [
+            {
+              "component": "jimuflow:web_automation:ExtractWebElement",
+              "inputs": {
+                "webPage": "weibo_page",
+                "elementUri": "jimuflow:variable:likes_element",
+                "extractType": "text",
+                "waitTime": "\"30\""
+              },
+              "outputs": {
+                "result": "likes"
+              },
+              "lineNo": 28
+            }
+          ]
+        },
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "account_name+\",\"+publish_time+\",\"+weibo_content"
+          },
+          "lineNo": 29
+        },
+        {
+          "component": "jimuflow:core:CreateDateTime",
+          "inputs": {
+            "initType": "now"
+          },
+          "outputs": {
+            "result": "collect_time"
+          },
+          "lineNo": 30
+        },
+        {
+          "component": "jimuflow:core:FormatDateTime",
+          "inputs": {
+            "datetime": "collect_time",
+            "datetimeFormat": "\"YYYY-MM-DD HH:mm:ss\""
+          },
+          "outputs": {
+            "result": "collect_time_string"
+          },
+          "lineNo": 31
+        },
+        {
+          "component": "jimuflow:table:WriteTableRow",
+          "inputs": {
+            "table": "datatable",
+            "writeType": "append",
+            "rowInputType": "columns",
+            "columns": [
+              [
+                "\"AccountName\"",
+                "account_name"
+              ],
+              [
+                "\"PublishTime\"",
+                "publish_time"
+              ],
+              [
+                "\"Content\"",
+                "weibo_content"
+              ],
+              [
+                "\"Retweets\"",
+                "retweets"
+              ],
+              [
+                "\"Comments\"",
+                "comments"
+              ],
+              [
+                "\"Likes\"",
+                "likes"
+              ],
+              [
+                "\"CollectTime\"",
+                "collect_time"
+              ]
+            ]
+          },
+          "lineNo": 32
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:table:ExportTable",
+      "inputs": {
+        "table": "datatable",
+        "saveFolder": "data_save_directory",
+        "fileFormat": "xlsx",
+        "sheetName": "\"WeiboData\"",
+        "fileNamingType": "custom",
+        "customFilename": "\"weibo_data\"",
+        "overrideExistingFile": true,
+        "exportHeader": true
+      },
+      "outputs": {
+        "filePath": "export_file_path"
+      },
+      "lineNo": 33
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"A total of \" + datatable . numberOfRows + \" Weibo posts have been collected, and the file saving path is \" + export_file_path + \".\""
+      },
+      "lineNo": 34
+    }
+  ]
+}

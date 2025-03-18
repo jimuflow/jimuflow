@@ -1,0 +1,598 @@
+{
+  "name": "采集微博数据",
+  "variables": [
+    {
+      "name": "浏览器",
+      "type": "WebBrowser",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "浏览器",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "微博页面",
+      "type": "WebPage",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "滚动循环索引",
+      "type": "number",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "数据表",
+      "type": "table",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "当前元素",
+      "type": "WebElement",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "内容元素",
+      "type": "WebElement",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "微博内容",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "账号名称元素",
+      "type": "WebElement",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "账号名称",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "发布时间元素",
+      "type": "WebElement",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "发布时间",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "转发数元素",
+      "type": "WebElement",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "转发数",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "评论数元素",
+      "type": "WebElement",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "评论数",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "点赞数元素",
+      "type": "WebElement",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "点赞数",
+      "type": "any",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "采集时间",
+      "type": "datetime",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "采集时间字符串",
+      "type": "text",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "导出文件路径",
+      "type": "text",
+      "direction": "OUT"
+    },
+    {
+      "name": "搜索关键词",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "搜索关键词",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "微博采集页数",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": 3,
+      "uiConfig": {
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "数据保存目录",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "错误原因",
+      "type": "text",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"开始采集微博数据\""
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:web_automation:OpenWebPage",
+      "inputs": {
+        "webBrowser": "浏览器",
+        "url": "\"https://m.weibo.cn/\"",
+        "waitLoaded": true,
+        "loadTimeout": "\"30\"",
+        "loadTimeoutAction": "stop_loading"
+      },
+      "outputs": {
+        "webPage": "微博页面"
+      },
+      "lineNo": 2
+    },
+    {
+      "component": "jimuflow:web_automation:ClickWebElement",
+      "inputs": {
+        "webPage": "微博页面",
+        "elementUri": "jimuflow:webelement:54fd2ce31ae749109814c095b4954889",
+        "simulateHumanClick": true,
+        "clickType": "single_click",
+        "mouseButton": "left",
+        "modifierKey": "none",
+        "delayAfterAction": "\"0\"",
+        "waitTime": "\"30\""
+      },
+      "lineNo": 3
+    },
+    {
+      "component": "jimuflow:web_automation:WebInput",
+      "inputs": {
+        "webPage": "微博页面",
+        "elementUri": "jimuflow:webelement:a757e85c2c0449ca861548726f90d3d4",
+        "content": "搜索关键词",
+        "append": false,
+        "pressEnterAfterInput": true,
+        "pressTabAfterInput": false,
+        "simulateHumanInput": true,
+        "clickBeforeInput": true,
+        "inputInterval": "\"100\"",
+        "delayAfterFocus": "\"1\"",
+        "delayAfterAction": "\"5\"",
+        "waitTime": "\"30\""
+      },
+      "lineNo": 4
+    },
+    {
+      "component": "jimuflow:core:Loop",
+      "inputs": {
+        "start": "\"0\"",
+        "end": "微博采集页数"
+      },
+      "outputs": {
+        "loopIndex": "滚动循环索引"
+      },
+      "lineNo": 5,
+      "flow": [
+        {
+          "component": "jimuflow:web_automation:ScrollWebPage",
+          "inputs": {
+            "scrollBehavior": "smooth",
+            "scrollOnElement": false,
+            "scrollType": "bottom",
+            "waitTime": "\"30\"",
+            "webPage": "微博页面"
+          },
+          "lineNo": 6
+        },
+        {
+          "component": "jimuflow:core:TimeWait",
+          "inputs": {
+            "seconds": "\"5\""
+          },
+          "lineNo": 7
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:table:CreateTable",
+      "inputs": {
+        "columnNames": "\"账号名,发布时间,内容,转发数,评论数,点赞数,采集时间\""
+      },
+      "outputs": {
+        "table": "数据表"
+      },
+      "lineNo": 8
+    },
+    {
+      "component": "jimuflow:web_automation:LoopWebElements",
+      "inputs": {
+        "webPage": "微博页面",
+        "elementsUri": "jimuflow:webelement:60f406329e0d4786a0c9e33d3e71b37c",
+        "reversedLoop": false,
+        "waitTime": "\"30\""
+      },
+      "outputs": {
+        "currentElement": "当前元素"
+      },
+      "lineNo": 9,
+      "flow": [
+        {
+          "component": "jimuflow:web_automation:GetRelativeWebElement",
+          "inputs": {
+            "webPage": "微博页面",
+            "elementUri": "jimuflow:variable:当前元素",
+            "locateType": "first_matched_descendant",
+            "descendantRelativeXpath": "\"div/div/div/div/div/article/div[2]/div[1] | div/div/article/div[2]/div[1]\"",
+            "waitTime": "\"0\""
+          },
+          "outputs": {
+            "result": "内容元素"
+          },
+          "errorHandlingType": "IGNORE",
+          "errorReasonOutVar": "错误原因",
+          "outputsOnError": {
+            "result": ""
+          },
+          "lineNo": 10
+        },
+        {
+          "component": "jimuflow:core:If",
+          "inputs": {
+            "op": "not_empty",
+            "operand1": "错误原因"
+          },
+          "lineNo": 11,
+          "flow": [
+            {
+              "component": "jimuflow:core:Continue",
+              "lineNo": 12
+            }
+          ]
+        },
+        {
+          "component": "jimuflow:web_automation:ExtractWebElement",
+          "inputs": {
+            "webPage": "微博页面",
+            "elementUri": "jimuflow:variable:内容元素",
+            "extractType": "text",
+            "waitTime": "\"0\""
+          },
+          "outputs": {
+            "result": "微博内容"
+          },
+          "lineNo": 13
+        },
+        {
+          "component": "jimuflow:web_automation:GetRelativeWebElement",
+          "inputs": {
+            "webPage": "微博页面",
+            "elementUri": "jimuflow:variable:当前元素",
+            "locateType": "first_matched_descendant",
+            "descendantRelativeXpath": "\"//header[1]/div[1]/div[1]/a[1]/h3[1]\"",
+            "waitTime": "\"30\""
+          },
+          "outputs": {
+            "result": "账号名称元素"
+          },
+          "errorHandlingType": "IGNORE",
+          "errorReasonOutVar": "",
+          "outputsOnError": {
+            "result": ""
+          },
+          "lineNo": 14
+        },
+        {
+          "component": "jimuflow:core:If",
+          "inputs": {
+            "operand1": "账号名称元素",
+            "op": "is_not_null"
+          },
+          "lineNo": 15,
+          "flow": [
+            {
+              "component": "jimuflow:web_automation:ExtractWebElement",
+              "inputs": {
+                "elementUri": "jimuflow:variable:账号名称元素",
+                "extractType": "text",
+                "waitTime": "\"30\"",
+                "webPage": "微博页面"
+              },
+              "outputs": {
+                "result": "账号名称"
+              },
+              "lineNo": 16
+            }
+          ]
+        },
+        {
+          "component": "jimuflow:web_automation:GetRelativeWebElement",
+          "inputs": {
+            "webPage": "微博页面",
+            "elementUri": "jimuflow:variable:当前元素",
+            "locateType": "first_matched_descendant",
+            "descendantRelativeXpath": "\"//header[1]/div[1]/div[1]/h4[1]/span[1]\"",
+            "waitTime": "\"30\""
+          },
+          "outputs": {
+            "result": "发布时间元素"
+          },
+          "errorHandlingType": "IGNORE",
+          "errorReasonOutVar": "",
+          "outputsOnError": {
+            "result": ""
+          },
+          "lineNo": 17
+        },
+        {
+          "component": "jimuflow:core:If",
+          "inputs": {
+            "operand1": "发布时间元素",
+            "op": "is_not_null"
+          },
+          "lineNo": 18,
+          "flow": [
+            {
+              "component": "jimuflow:web_automation:ExtractWebElement",
+              "inputs": {
+                "webPage": "微博页面",
+                "elementUri": "jimuflow:variable:发布时间元素",
+                "extractType": "text",
+                "waitTime": "\"30\""
+              },
+              "outputs": {
+                "result": "发布时间"
+              },
+              "lineNo": 19
+            }
+          ]
+        },
+        {
+          "component": "jimuflow:web_automation:GetRelativeWebElement",
+          "inputs": {
+            "webPage": "微博页面",
+            "elementUri": "jimuflow:variable:当前元素",
+            "locateType": "first_matched_descendant",
+            "descendantRelativeXpath": "\"//footer[1]/div[1]/h4[1]\"",
+            "waitTime": "\"0\""
+          },
+          "outputs": {
+            "result": "转发数元素"
+          },
+          "errorHandlingType": "IGNORE",
+          "errorReasonOutVar": "",
+          "outputsOnError": {
+            "result": ""
+          },
+          "lineNo": 20
+        },
+        {
+          "component": "jimuflow:core:If",
+          "inputs": {
+            "operand1": "转发数元素",
+            "op": "is_not_null"
+          },
+          "lineNo": 21,
+          "flow": [
+            {
+              "component": "jimuflow:web_automation:ExtractWebElement",
+              "inputs": {
+                "webPage": "微博页面",
+                "elementUri": "jimuflow:variable:转发数元素",
+                "extractType": "text",
+                "waitTime": "\"30\""
+              },
+              "outputs": {
+                "result": "转发数"
+              },
+              "lineNo": 22
+            }
+          ]
+        },
+        {
+          "component": "jimuflow:web_automation:GetRelativeWebElement",
+          "inputs": {
+            "webPage": "微博页面",
+            "elementUri": "jimuflow:variable:当前元素",
+            "locateType": "first_matched_descendant",
+            "descendantRelativeXpath": "\"//footer[1]/div[2]/h4[1]\"",
+            "waitTime": "\"0\""
+          },
+          "outputs": {
+            "result": "评论数元素"
+          },
+          "errorHandlingType": "IGNORE",
+          "errorReasonOutVar": "",
+          "outputsOnError": {
+            "result": ""
+          },
+          "lineNo": 23
+        },
+        {
+          "component": "jimuflow:core:If",
+          "inputs": {
+            "operand1": "评论数元素",
+            "op": "is_not_null"
+          },
+          "lineNo": 24,
+          "flow": [
+            {
+              "component": "jimuflow:web_automation:ExtractWebElement",
+              "inputs": {
+                "webPage": "微博页面",
+                "elementUri": "jimuflow:variable:评论数元素",
+                "extractType": "text",
+                "waitTime": "\"30\""
+              },
+              "outputs": {
+                "result": "评论数"
+              },
+              "lineNo": 25
+            }
+          ]
+        },
+        {
+          "component": "jimuflow:web_automation:GetRelativeWebElement",
+          "inputs": {
+            "webPage": "微博页面",
+            "elementUri": "jimuflow:variable:当前元素",
+            "locateType": "first_matched_descendant",
+            "descendantRelativeXpath": "\"//footer[1]/div[3]/h4[1]\"",
+            "waitTime": "\"0\""
+          },
+          "outputs": {
+            "result": "点赞数元素"
+          },
+          "errorHandlingType": "IGNORE",
+          "errorReasonOutVar": "",
+          "outputsOnError": {
+            "result": ""
+          },
+          "lineNo": 26
+        },
+        {
+          "component": "jimuflow:core:If",
+          "inputs": {
+            "operand1": "点赞数元素",
+            "op": "is_not_null"
+          },
+          "lineNo": 27,
+          "flow": [
+            {
+              "component": "jimuflow:web_automation:ExtractWebElement",
+              "inputs": {
+                "webPage": "微博页面",
+                "elementUri": "jimuflow:variable:点赞数元素",
+                "extractType": "text",
+                "waitTime": "\"30\""
+              },
+              "outputs": {
+                "result": "点赞数"
+              },
+              "lineNo": 28
+            }
+          ]
+        },
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "账号名称+\",\"+发布时间+\",\"+微博内容"
+          },
+          "lineNo": 29
+        },
+        {
+          "component": "jimuflow:core:CreateDateTime",
+          "inputs": {
+            "initType": "now"
+          },
+          "outputs": {
+            "result": "采集时间"
+          },
+          "lineNo": 30
+        },
+        {
+          "component": "jimuflow:core:FormatDateTime",
+          "inputs": {
+            "datetime": "采集时间",
+            "datetimeFormat": "\"YYYY-MM-DD HH:mm:ss\""
+          },
+          "outputs": {
+            "result": "采集时间字符串"
+          },
+          "lineNo": 31
+        },
+        {
+          "component": "jimuflow:table:WriteTableRow",
+          "inputs": {
+            "table": "数据表",
+            "writeType": "append",
+            "rowInputType": "columns",
+            "columns": [
+              [
+                "\"账号名\"",
+                "账号名称"
+              ],
+              [
+                "\"发布时间\"",
+                "发布时间"
+              ],
+              [
+                "\"内容\"",
+                "微博内容"
+              ],
+              [
+                "\"转发数\"",
+                "转发数"
+              ],
+              [
+                "\"评论数\"",
+                "评论数"
+              ],
+              [
+                "\"点赞数\"",
+                "点赞数"
+              ],
+              [
+                "\"采集时间\"",
+                "采集时间"
+              ]
+            ]
+          },
+          "lineNo": 32
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:table:ExportTable",
+      "inputs": {
+        "table": "数据表",
+        "saveFolder": "数据保存目录",
+        "fileFormat": "xlsx",
+        "sheetName": "\"微博数据\"",
+        "fileNamingType": "custom",
+        "customFilename": "\"微博数据\"",
+        "overrideExistingFile": true,
+        "exportHeader": true
+      },
+      "outputs": {
+        "filePath": "导出文件路径"
+      },
+      "lineNo": 33
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"共采集\"+数据表.numberOfRows+\"条微博，保存文件路径\"+导出文件路径"
+      },
+      "lineNo": 34
+    }
+  ]
+}
