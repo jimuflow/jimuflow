@@ -87,7 +87,7 @@ class GetRelativeWebElementComponent(PrimitiveComponent):
         else:
             raise Exception(gettext("Unsupported locate type: {locate_type}").format(locate_type=locate_type))
         if wait_time > 0:
-            await result.wait_for(timeout=wait_time * 1000, state='attached')
+            await result.nth(0).wait_for(timeout=wait_time * 1000, state='attached')
         else:
             count = await result.count()
             if count == 0:
