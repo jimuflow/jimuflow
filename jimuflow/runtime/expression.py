@@ -422,6 +422,8 @@ def tokenize_expression(expression: str):
 
 
 def rename_variable(expression: str, old_name: str, new_name: str):
+    if not expression:
+        return expression, False
     tokens = ExpressionTokenizer().transform(expr_parser.parse(expression))
     if not isinstance(tokens, list):
         tokens = [tokens]
@@ -439,6 +441,8 @@ def rename_variable(expression: str, old_name: str, new_name: str):
 
 
 def get_variable_reference_count(expression: str, var_name: str):
+    if not expression:
+        return 0
     tokens = ExpressionTokenizer().transform(expr_parser.parse(expression))
     if not isinstance(tokens, list):
         tokens = [tokens]

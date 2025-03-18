@@ -17,7 +17,8 @@
 import pytest
 
 from jimuflow.datatypes import builtin_data_type_registry
-from jimuflow.runtime.expression import ExpressionToken, tokenize_expression, evaluate, rename_variable
+from jimuflow.runtime.expression import ExpressionToken, tokenize_expression, evaluate, rename_variable, \
+    get_variable_reference_count
 
 
 @pytest.mark.parametrize("expression, expected", [
@@ -65,8 +66,21 @@ def test_evaluate(expression, expected):
     assert result == expected
 
 
-def test_rename_variable():
-    expression = 'foo.bar+bar+"bar"+1+true+1.234'
-    new_expression, updated = rename_variable(expression, 'bar', 'new_bar')
-    assert updated
-    assert new_expression == 'foo.bar+new_bar+"bar"+1+true+1.234'
+@pytest.mark.parametrize("expression,old_name,new_name,expected", [
+    ('foo.bar+bar+"bar"+1+true+1.234', 'bar', 'new_bar', ('foo.bar+new_bar+"bar"+1+true+1.234', True)),
+    ('', 'bar', 'new_bar', ('', False)),
+    (None, 'bar', 'new_bar', (None, False)),
+])
+def test_rename_variable(expression, old_name, new_name, expected):
+    result = rename_variable(expression, old_name, new_name)
+    assert result == expected
+
+
+@pytest.mark.parametrize("expression,var_name,expected", [
+    ('foo.bar+bar+"bar"+1+true+1.234', 'bar', 1),
+    ('', 'bar', 0),
+    (None, 'bar', 0),
+])
+def test_get_variable_reference_count(expression, var_name, expected):
+    result = get_variable_reference_count(expression, var_name)
+    assert result == expected
