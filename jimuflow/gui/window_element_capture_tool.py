@@ -125,7 +125,7 @@ class Hooker(QThread):
         super().quit()
 
 
-def get_element_node(element: UIAElementInfo, with_position=True):
+def get_element_node(parent: UIAElementInfo, element: UIAElementInfo, with_position=True):
     path_node = {
         "element": element.control_type,
         "enabled": True,
@@ -146,7 +146,6 @@ def get_element_node(element: UIAElementInfo, with_position=True):
     name = element.name
     if name:
         path_node["predicates"].append(['name', '=', name, True])
-    parent = element.parent
     if parent == UIAElementInfo():
         path_node["handle"] = element.handle
     if with_position:
@@ -162,7 +161,7 @@ def get_element_node(element: UIAElementInfo, with_position=True):
                 if siblings[i] == element:
                     position = count
             path_node["predicates"].append(['position()', '=', str(position), count > 1])
-    return parent, path_node
+    return path_node
 
 
 def get_element_path(element: UIAElementInfo):
@@ -171,9 +170,10 @@ def get_element_path(element: UIAElementInfo):
     root = UIAElementInfo()
     in_window_path = False
     while element != root:
+        parent = element.parent
         if not in_window_path:
-            in_window_path = UIAWrapper(element).is_dialog()
-        parent, path_node = get_element_node(element, not in_window_path)
+            in_window_path = UIAWrapper(element).is_dialog() or parent == root
+        path_node = get_element_node(parent, element, not in_window_path)
         if in_window_path:
             window_path.append(path_node)
         else:
