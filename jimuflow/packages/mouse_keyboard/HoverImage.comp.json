@@ -15,7 +15,7 @@
       "uiConfig": {
         "label": "Image",
         "inputType": "custom",
-        "inputEditorType": "jimuflow.gui.components.process_resource_editor.ProcessResourceEdit",
+        "inputEditorType": "jimuflow.gui.components.process_resource_editor.ImageResourceEdit",
         "inputValueType": "expression"
       }
     },

@@ -10,9 +10,7 @@ Locate the image on the screen and move the mouse over the image.
 
 ### Image
 
-Click the "Select Resource" button to select the image file to be located from the resource library.
-
-This tool does not provide a screenshot tool for the time being. Please use other screenshot tools to capture the image, and then add the captured image to the resource library for use.
+Click the "Select Resource" button to select the image file you want to search for from the resource library, or click the "Screenshot" button to take a screenshot using the screenshot tool.
 
 Please ensure that the resolution of the screenshot is the same as the system's screen resolution, otherwise the positioning may fail.
 

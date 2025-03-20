@@ -2473,6 +2473,27 @@ msgstr ""
 msgid "Select Resource"
 msgstr ""
 
+msgid "Save Resource"
+msgstr ""
+
+msgid "Resource Name"
+msgstr ""
+
+msgid "Create Folder"
+msgstr ""
+
+msgid "New Folder"
+msgstr ""
+
+msgid "Rename"
+msgstr ""
+
+msgid "Overwrite"
+msgstr ""
+
+msgid "The file already exists, do you want to overwrite it?"
+msgstr ""
+
 msgid "Name"
 msgstr ""
 
@@ -2582,6 +2603,13 @@ msgid_plural ""
 " the line numbers are {lines}."
 msgstr[0] ""
 msgstr[1] ""
+
+msgid "Save"
+msgstr ""
+
+#, python-brace-format
+msgid "Coordinate: ({x},{y}) Color value: {color}"
+msgstr ""
 
 msgid "Settings"
 msgstr ""
@@ -3326,6 +3354,9 @@ msgstr ""
 msgid "Input configs"
 msgstr ""
 
+msgid "Screenshot"
+msgstr ""
+
 msgid "Add column"
 msgstr ""
 
@@ -3529,9 +3560,6 @@ msgstr ""
 msgid "Action if Exists"
 msgstr ""
 
-msgid "Overwrite"
-msgstr ""
-
 msgid "Auto rename"
 msgstr ""
 
@@ -3630,9 +3658,6 @@ msgid ""
 msgstr ""
 
 msgid "Create Dictionary"
-msgstr ""
-
-msgid "Create Folder"
 msgstr ""
 
 msgid "Parent Folder"

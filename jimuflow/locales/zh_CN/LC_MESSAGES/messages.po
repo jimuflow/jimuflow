@@ -2483,6 +2483,27 @@ msgstr "发生了一个错误！"
 msgid "Select Resource"
 msgstr "选择资源"
 
+msgid "Save Resource"
+msgstr "保存资源"
+
+msgid "Resource Name"
+msgstr "资源名称"
+
+msgid "Create Folder"
+msgstr "新建文件夹"
+
+msgid "New Folder"
+msgstr "新建文件夹"
+
+msgid "Rename"
+msgstr "重命名"
+
+msgid "Overwrite"
+msgstr "覆盖"
+
+msgid "The file already exists, do you want to overwrite it?"
+msgstr "文件已存在，是否要覆盖它？"
+
 msgid "Name"
 msgstr "名称"
 
@@ -2591,6 +2612,13 @@ msgid_plural ""
 "Variable {name} is referenced by {count} instructions in the process, and"
 " the line numbers are {lines}."
 msgstr[0] "变量{name}被流程中的{count}个指令所引用，行号为{lines}。"
+
+msgid "Save"
+msgstr "保存"
+
+#, python-brace-format
+msgid "Coordinate: ({x},{y}) Color value: {color}"
+msgstr "坐标：({x},{y}) 色值：{color}"
 
 msgid "Settings"
 msgstr "设置"
@@ -3340,6 +3368,9 @@ msgstr "设置代理密码时需要代理用户"
 msgid "Input configs"
 msgstr "输入配置"
 
+msgid "Screenshot"
+msgstr "截图"
+
 msgid "Add column"
 msgstr "新增列"
 
@@ -3543,9 +3574,6 @@ msgstr "目标文件夹"
 msgid "Action if Exists"
 msgstr "存在时操作"
 
-msgid "Overwrite"
-msgstr "覆盖"
-
 msgid "Auto rename"
 msgstr "自动重命名"
 
@@ -3677,9 +3705,6 @@ msgstr ""
 
 msgid "Create Dictionary"
 msgstr "创建字典"
-
-msgid "Create Folder"
-msgstr "新建文件夹"
 
 msgid "Parent Folder"
 msgstr "父文件夹"
