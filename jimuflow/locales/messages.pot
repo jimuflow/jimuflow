@@ -1864,6 +1864,9 @@ msgstr ""
 msgid "Config"
 msgstr ""
 
+msgid "Copy"
+msgstr ""
+
 msgid "Remove"
 msgstr ""
 
@@ -2119,6 +2122,15 @@ msgid "Process name:"
 msgstr ""
 
 msgid "Process name cannot be empty"
+msgstr ""
+
+msgid "Process name already exists"
+msgstr ""
+
+msgid "Copy Process"
+msgstr ""
+
+msgid "New Process Name:"
 msgstr ""
 
 msgid "Modify Variable"
@@ -2544,9 +2556,6 @@ msgid "Remove Breakpoint"
 msgstr ""
 
 msgid "Add Breakpoint"
-msgstr ""
-
-msgid "Copy"
 msgstr ""
 
 msgid "Cut"

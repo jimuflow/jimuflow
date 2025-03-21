@@ -1872,6 +1872,9 @@ msgstr "设置为主流程"
 msgid "Config"
 msgstr "配置"
 
+msgid "Copy"
+msgstr "复制"
+
 msgid "Remove"
 msgstr "删除"
 
@@ -2130,6 +2133,15 @@ msgstr "流程名称："
 
 msgid "Process name cannot be empty"
 msgstr "流程名称不能为空"
+
+msgid "Process name already exists"
+msgstr "流程名称已存在"
+
+msgid "Copy Process"
+msgstr "复制流程"
+
+msgid "New Process Name:"
+msgstr "新流程名称："
 
 msgid "Modify Variable"
 msgstr "修改变量"
@@ -2555,9 +2567,6 @@ msgstr "删除断点"
 
 msgid "Add Breakpoint"
 msgstr "添加断点"
-
-msgid "Copy"
-msgstr "复制"
 
 msgid "Cut"
 msgstr "剪切"

@@ -44,7 +44,7 @@ from jimuflow.gui.app import App, AppContext, ProcessModel
 from jimuflow.gui.app_widget import AppProcessListView
 from jimuflow.gui.component_list_widget import ComponentListWidget
 from jimuflow.gui.create_new_app import CreateNewAppDialog
-from jimuflow.gui.create_process import CreateProcessDialog
+from jimuflow.gui.create_process import CreateProcessDialog, CopyProcessDialog
 from jimuflow.gui.debug_variables_view import DebugVariablesWidget
 from jimuflow.gui.elements_widget import ElementsWidget
 from jimuflow.gui.error_log_widget import ErrorLogWidget
@@ -291,6 +291,7 @@ class MainWindow(QMainWindow, DebugListener):
         self._process_list_view.open_process_def.connect(self.do_open_process)
         self._process_list_view.config_process_def_requested.connect(self.config_process)
         self._process_list_view.delete_process_def_requested.connect(self.delete_process)
+        self._process_list_view.copy_process_def.connect(self.copy_process)
         layout.addWidget(self._process_list_view)
         return process_list_widget
 
@@ -429,6 +430,11 @@ class MainWindow(QMainWindow, DebugListener):
         if dialog.exec() == QDialog.DialogCode.Accepted:
             process_def = dialog.process_def
             self.do_open_process(process_def)
+
+    @Slot(ProcessDef)
+    def copy_process(self, process_def: ProcessDef):
+        dialog = CopyProcessDialog(self.app, process_def, self)
+        dialog.exec()
 
     @Slot()
     def config_current_process(self):

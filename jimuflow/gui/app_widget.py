@@ -1,11 +1,11 @@
-# This software is dual-licensed under the GNU General Public License (GPL) 
+# This software is dual-licensed under the GNU General Public License (GPL)
 # and a commercial license.
 #
 # You may use this software under the terms of the GNU GPL v3 (or, at your option,
-# any later version) as published by the Free Software Foundation. See 
+# any later version) as published by the Free Software Foundation. See
 # <https://www.gnu.org/licenses/> for details.
 #
-# If you require a proprietary/commercial license for this software, please 
+# If you require a proprietary/commercial license for this software, please
 # contact us at jimuflow@gmail.com for more information.
 #
 # This program is distributed in the hope that it will be useful,
@@ -27,6 +27,7 @@ class AppProcessListView(QWidget):
     open_process_def = Signal(ProcessDef)
     config_process_def_requested = Signal(ProcessDef)
     delete_process_def_requested = Signal(ProcessDef)
+    copy_process_def = Signal(ProcessDef)
 
     def __init__(self):
         super().__init__()
@@ -107,6 +108,8 @@ class AppProcessListView(QWidget):
             set_main_process_action.triggered.connect(lambda: self._set_main_process(process_def))
         config_action = context_menu.addAction(gettext("Config"))
         config_action.triggered.connect(lambda: self.config_process_def_requested.emit(process_def))
+        copy_action = context_menu.addAction(gettext("Copy"))
+        copy_action.triggered.connect(lambda: self.copy_process_def.emit(process_def))
         remove_action = context_menu.addAction(gettext("Remove"))
         remove_action.triggered.connect(lambda: self.delete_process_def_requested.emit(process_def))
         context_menu.exec(self._list_view.mapToGlobal(pos))

@@ -681,6 +681,18 @@ class App(QObject):
         self.process_def_files_changed.emit()
         return process_def
 
+    def copy_process_def(self, process_def_name: str, source_process_def: ProcessDef) -> ProcessDef:
+        process_file = self.app_package.path / f'{process_def_name}.process.json'
+        process_def = source_process_def.clone()
+        process_def.package = self.app_package
+        process_def.name = process_def_name
+        process_def.path = process_file
+        process_def.save_to_file(process_file)
+        self.app_package.components.append(process_def)
+        self.process_def_created.emit(process_def)
+        self.process_def_files_changed.emit()
+        return process_def
+
     def update_process_def_config(self, process_def: ProcessDef, process_def_name: str):
         if process_def.name != process_def_name:
             old_name = process_def.name
