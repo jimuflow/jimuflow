@@ -1,0 +1,80 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "wechat_message_file",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "Z:\\Downloads\\微信消息.xlsx",
+      "uiConfig": {
+        "label": "WeChat Message File",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "messages",
+      "type": "table",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "current_message",
+      "type": "list",
+      "direction": "LOCAL",
+      "elementType": "text"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:table:ImportExcelAsTable",
+      "inputs": {
+        "filePath": "wechat_message_file",
+        "sheetSelectType": "by_index",
+        "sheetIndex": "\"1\"",
+        "useFirstRowAsHeader": true
+      },
+      "outputs": {
+        "table": "messages"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"There are \" + messages . numberOfRows + \" messages to be sent.\""
+      },
+      "lineNo": 2
+    },
+    {
+      "component": "jimuflow:table:LoopTableRows",
+      "inputs": {
+        "table": "messages",
+        "loopRange": "all",
+        "reversedLoop": false
+      },
+      "outputs": {
+        "currentRow": "current_message"
+      },
+      "lineNo": 3,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "current_message[\"0\"]+\"：\"+current_message[\"1\"]"
+          },
+          "lineNo": 4
+        },
+        {
+          "component": "send_message",
+          "inputs": {
+            "wechat_friend_name": "current_message [ \"0\" ]",
+            "message_content": "current_message [ \"1\" ]"
+          },
+          "errorHandlingType": "IGNORE",
+          "errorReasonOutVar": "",
+          "outputsOnError": {},
+          "lineNo": 5
+        }
+      ]
+    }
+  ]
+}

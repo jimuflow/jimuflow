@@ -140,7 +140,7 @@ class ProcessModel(QAbstractItemModel):
     def rename_variable_in_node(self, node: FlowNode, new_var_def: VariableDef, old_var_def: VariableDef):
         """更新流程节点中的所有变量引用"""
         update_count = 0
-        for var_def in node.component_def.variables:
+        for var_def in (node.component_def.variables if node.component_def else []):
             if var_def.direction == VariableDirection.IN:
                 # 更新节点输入配置中的变量引用
                 var_value = node.inputs.get(var_def.name, None)

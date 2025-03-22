@@ -1,0 +1,7 @@
+{
+  "name": "wechat_send_message",
+  "namespace": "jimuflow",
+  "version": "1.0.0",
+  "mainProcess": "main",
+  "dependencies": []
+}

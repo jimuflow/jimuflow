@@ -151,6 +151,8 @@ def get_element_node(parent: UIAElementInfo, element: UIAElementInfo, with_posit
     if with_position:
         siblings = parent.children()
         if len(siblings) == 1:
+            if siblings[0] != element:
+                return None
             path_node["predicates"].append(['position()', '=', '1', False])
         else:
             count = 0
@@ -160,6 +162,8 @@ def get_element_node(parent: UIAElementInfo, element: UIAElementInfo, with_posit
                     count += 1
                 if siblings[i] == element:
                     position = count
+            if position == 0:
+                return None
             path_node["predicates"].append(['position()', '=', str(position), count > 1])
     return path_node
 
@@ -174,10 +178,11 @@ def get_element_path(element: UIAElementInfo):
         if not in_window_path:
             in_window_path = UIAWrapper(element).is_dialog() or parent == root
         path_node = get_element_node(parent, element, not in_window_path)
-        if in_window_path:
-            window_path.append(path_node)
-        else:
-            element_path.append(path_node)
+        if path_node:
+            if in_window_path:
+                window_path.append(path_node)
+            else:
+                element_path.append(path_node)
         element = parent
     window_path.reverse()
     element_path.reverse()

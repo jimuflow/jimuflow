@@ -1,0 +1,79 @@
+{
+  "name": "main",
+  "variables": [
+    {
+      "name": "微信消息Excel文件",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "Z:\\Downloads\\微信消息.xlsx",
+      "uiConfig": {
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "微信消息表",
+      "type": "table",
+      "direction": "LOCAL"
+    },
+    {
+      "name": "当前记录",
+      "type": "list",
+      "direction": "LOCAL",
+      "elementType": "text"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:table:ImportExcelAsTable",
+      "inputs": {
+        "filePath": "微信消息Excel文件",
+        "sheetSelectType": "by_index",
+        "sheetIndex": "\"1\"",
+        "useFirstRowAsHeader": true
+      },
+      "outputs": {
+        "table": "微信消息表"
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:core:Print",
+      "inputs": {
+        "message": "\"共有\" + 微信消息表 . numberOfRows + \"条消息待发送\""
+      },
+      "lineNo": 2
+    },
+    {
+      "component": "jimuflow:table:LoopTableRows",
+      "inputs": {
+        "table": "微信消息表",
+        "loopRange": "all",
+        "reversedLoop": false
+      },
+      "outputs": {
+        "currentRow": "当前记录"
+      },
+      "lineNo": 3,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "当前记录 [ \"0\" ] + \"：\" + 当前记录 [ \"1\" ]"
+          },
+          "lineNo": 4
+        },
+        {
+          "component": "发送微信信息",
+          "inputs": {
+            "微信好友名称": "当前记录 [ \"0\" ]",
+            "消息内容": "当前记录 [ \"1\" ]"
+          },
+          "errorHandlingType": "IGNORE",
+          "errorReasonOutVar": "",
+          "outputsOnError": {},
+          "lineNo": 5
+        }
+      ]
+    }
+  ]
+}

@@ -238,3 +238,4 @@ nav:
     - Collect Baidu Hot Searches: examples/collect_baidu_hot_searches/index.md
     - Batch Translation of Text Files Using a LLM: examples/translate_files_using_llm/index.md
     - Creating a Daily Public Opinion Briefing: examples/make_public_opinion_daily/index.md
+    - Batch Sending of Messages on WeChat: examples/wechat_send_messages/index.md

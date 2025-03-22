@@ -1,0 +1,122 @@
+{
+  "name": "发送微信信息",
+  "variables": [
+    {
+      "name": "微信好友名称",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "宝贝",
+      "uiConfig": {
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "消息内容",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "联系人是否存在",
+      "type": "bool",
+      "direction": "LOCAL"
+    }
+  ],
+  "flow": [
+    {
+      "component": "jimuflow:windows_automation:ClickWindowElement",
+      "inputs": {
+        "elementUri": "jimuflow:windowelement:5f7a7f9d4a9e465d80ef310f32d75df2",
+        "clickType": "single_click",
+        "mouseButton": "left",
+        "modifierKey": "none",
+        "delayAfterAction": "\"0\"",
+        "waitTime": "\"30\""
+      },
+      "lineNo": 1
+    },
+    {
+      "component": "jimuflow:windows_automation:WindowInput",
+      "inputs": {
+        "elementUri": "jimuflow:windowelement:666382d3cdd84ab6aa6b578e979f427d",
+        "content": "微信好友名称",
+        "append": false,
+        "pressEnterAfterInput": false,
+        "pressTabAfterInput": false,
+        "inputMethod": "simulate",
+        "includeShortcutKeys": false,
+        "clickBeforeInput": true,
+        "inputInterval": "\"100\"",
+        "delayAfterFocus": "\"1\"",
+        "delayAfterAction": "\"1\"",
+        "waitTime": "\"30\""
+      },
+      "lineNo": 2
+    },
+    {
+      "component": "jimuflow:windows_automation:WaitWindowElement",
+      "inputs": {
+        "waitElementUri": "jimuflow:windowelement:0aedaf0f3a924047832ca0603551ef34",
+        "waitType": "include_element",
+        "withTimeout": false
+      },
+      "outputs": {
+        "waitResult": "联系人是否存在"
+      },
+      "lineNo": 3
+    },
+    {
+      "component": "jimuflow:core:If",
+      "inputs": {
+        "operand1": "联系人是否存在",
+        "op": "is_false"
+      },
+      "lineNo": 4,
+      "flow": [
+        {
+          "component": "jimuflow:core:Print",
+          "inputs": {
+            "message": "\"联系人“\" + 微信好友名称 + \"”不存在\""
+          },
+          "lineNo": 5
+        },
+        {
+          "component": "jimuflow:core:Return",
+          "lineNo": 6
+        }
+      ]
+    },
+    {
+      "component": "jimuflow:windows_automation:ClickWindowElement",
+      "inputs": {
+        "elementUri": "jimuflow:windowelement:f53699270d674b35833c9a13d822b36d",
+        "clickType": "single_click",
+        "mouseButton": "left",
+        "modifierKey": "none",
+        "delayAfterAction": "\"0\"",
+        "waitTime": "\"30\""
+      },
+      "lineNo": 7
+    },
+    {
+      "component": "jimuflow:windows_automation:WindowInput",
+      "inputs": {
+        "elementUri": "jimuflow:windowelement:68861e5a620243b78b06f97a4bece1fd",
+        "content": "消息内容",
+        "append": false,
+        "pressEnterAfterInput": true,
+        "pressTabAfterInput": false,
+        "inputMethod": "simulate",
+        "includeShortcutKeys": false,
+        "clickBeforeInput": true,
+        "inputInterval": "\"100\"",
+        "delayAfterFocus": "\"1\"",
+        "delayAfterAction": "\"0\"",
+        "waitTime": "\"30\""
+      },
+      "lineNo": 8
+    }
+  ]
+}
