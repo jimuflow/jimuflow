@@ -43,7 +43,7 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/jimuflow/jimuflow"
+Homepage = "https://jimuflow.readthedocs.io/en/"
 Repository = "https://github.com/jimuflow/jimuflow"
 
 [project.optional-dependencies]

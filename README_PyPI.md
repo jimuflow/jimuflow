@@ -13,6 +13,6 @@ The currently supported commands are categorized as follows:
 
 ## Useful links
 
-- [JimuFlow on GitHub](https://github.com/jimu-flow/jimu-flow)
+- [JimuFlow on GitHub](https://github.com/jimuflow/jimuflow)
 - [JimuFlow on Gitee](https://gitee.com/incoding/jimuflow)
 - [JimuFlow Website](https://jimuflow.readthedocs.io/en/)
