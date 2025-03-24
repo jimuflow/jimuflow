@@ -33,7 +33,8 @@ dependencies = [
     "requests[socks]",
     "mysql-connector-python",
     "psycopg2-binary",
-    "pymssql"
+    "pymssql",
+    "ddddocr"
 ]
 
 classifiers = [

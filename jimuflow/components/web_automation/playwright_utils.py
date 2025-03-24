@@ -134,6 +134,19 @@ async def get_element_xpath(element: Locator, timeout: float | None = None) -> s
 
 async def get_element_by_uri(component: "Component", page: Page, element_uri: str, timeout: float,
                              wait_for_element=True):
+    """
+    Get element by uri.
+
+    Args:
+    - component: The component object.
+    - page: The page object.
+    - element_uri: The uri of the element.
+    - timeout: The timeout in seconds.
+    - wait_for_element: If true, it will wait for the element until timeout.
+
+    Returns:
+    - The element locator.
+    """
     try:
         element_var = parse_variable_uri(element_uri)
         if element_var:

@@ -20,6 +20,7 @@ from .change_text_case_component import ChangeTextCaseComponent
 from .check_process_component import CheckProcessComponent
 from .clear_folder_component import ClearFolderComponent
 from .compress_file_component import CompressFileComponent
+from .concatenate_string_list_component import ConcatenateStringListComponent
 from .continue_component import ContinueComponent
 from .copy_file_component import CopyFileComponent
 from .copy_folder_component import CopyFolderComponent

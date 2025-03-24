@@ -1,0 +1,52 @@
+{
+  "name": "ConcatenateStringList",
+  "displayName": "Concatenate String List",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.core.ConcatenateStringListComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "Data Process",
+  "secondaryCategory": "Text Operation",
+  "sortNo": 9,
+  "helpUrl": "commands/DataProcess/TextOperation/concatenate_string_list/",
+  "variables": [
+    {
+      "name": "stringList",
+      "type": "list",
+      "elementType": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "String List",
+        "inputType": "expression"
+      }
+    },
+    {
+      "name": "delimiter",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "\"\"",
+      "uiConfig": {
+        "label": "Delimiter",
+        "inputType": "expression",
+        "required": false
+      }
+    },
+    {
+      "name": "ignoreEmptyItem",
+      "type": "boolean",
+      "direction": "IN",
+      "defaultValue": false,
+      "uiConfig": {
+        "label": "Ignore Empty Item",
+        "inputType": "check_box"
+      }
+    },
+    {
+      "name": "result",
+      "type": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Result"
+      }
+    }
+  ]
+}

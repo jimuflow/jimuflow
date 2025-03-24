@@ -1,0 +1,142 @@
+{
+  "name": "RecognizeCharCaptcha",
+  "displayName": "Recognize Character Captcha",
+  "controlFlowType": "NORMAL",
+  "type": "jimuflow.components.ai.recognize_char_captcha_component.RecognizeCharCaptchaComponent",
+  "supportsErrorHandling": true,
+  "primaryCategory": "AI",
+  "secondaryCategory": "Captcha Recognition",
+  "sortNo": 1,
+  "helpUrl": "commands/AI/CaptchaRecognition/recognize_char_captcha/",
+  "variables": [
+    {
+      "name": "imageSource",
+      "type": "text",
+      "direction": "IN",
+      "defaultValue": "file",
+      "uiConfig": {
+        "label": "Image Source",
+        "group": "general",
+        "required": true,
+        "sortNo": 1,
+        "inputType": "combo_box",
+        "options": [
+          {
+            "value": "file",
+            "label": "File"
+          },
+          {
+            "value": "web_element",
+            "label": "Web Element"
+          },
+          {
+            "value": "window_element",
+            "label": "Window Element"
+          }
+        ]
+      }
+    },
+    {
+      "name": "imageFile",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Image File",
+        "group": "general",
+        "required": true,
+        "sortNo": 2,
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.file_path_editor.OpenFilePathEdit",
+        "inputValueType": "expression",
+        "dependsOn": {
+          "variableName": "imageSource",
+          "operator": "==",
+          "value": "file"
+        }
+      }
+    },
+    {
+      "name": "webPage",
+      "type": "WebPage",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web Page Object",
+        "group": "general",
+        "required": true,
+        "sortNo": 3,
+        "inputType": "expression",
+        "dependsOn": {
+          "variableName": "imageSource",
+          "operator": "==",
+          "value": "web_element"
+        }
+      }
+    },
+    {
+      "name": "webElementUri",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Web Element",
+        "group": "general",
+        "required": true,
+        "sortNo": 4,
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.web_element_selector.WebElementEdit",
+        "inputValueType": "literal",
+        "dependsOn": {
+          "variableName": "imageSource",
+          "operator": "==",
+          "value": "web_element"
+        }
+      }
+    },
+    {
+      "name": "windowElementUri",
+      "type": "text",
+      "direction": "IN",
+      "uiConfig": {
+        "label": "Window Element",
+        "group": "general",
+        "required": true,
+        "sortNo": 5,
+        "inputType": "custom",
+        "inputEditorType": "jimuflow.gui.components.window_element_selector.WindowElementEdit",
+        "inputValueType": "literal",
+        "dependsOn": {
+          "variableName": "imageSource",
+          "operator": "==",
+          "value": "window_element"
+        }
+      }
+    },
+    {
+      "name": "waitTime",
+      "type": "number",
+      "direction": "IN",
+      "defaultValue": 30,
+      "uiConfig": {
+        "label": "Waiting Time (seconds)",
+        "group": "advanced",
+        "required": false,
+        "sortNo": 6,
+        "inputType": "expression",
+        "helpInfo": "Waiting time for the web element or window element to appear, unit is second",
+        "dependsOn": {
+          "variableName": "imageSource",
+          "operator": "in",
+          "value": ["web_element", "window_element"]
+        }
+      }
+    },
+    {
+      "name": "recognitionResult",
+      "type": "text",
+      "direction": "OUT",
+      "uiConfig": {
+        "label": "Recognition Result",
+        "sortNo": 1
+      }
+    }
+  ]
+}

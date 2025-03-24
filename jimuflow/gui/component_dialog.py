@@ -83,6 +83,7 @@ class DefaultComponentForm(ComponentForm):
             error_handling_tab = QWidget()
             error_handling_tab.setLayout(self._error_form_layout)
             tabs.addTab(error_handling_tab, gettext("Error Handling"))
+        self._tabs = tabs
         main_layout = QVBoxLayout()
         main_layout.addWidget(tabs)
         self.setLayout(main_layout)
@@ -356,6 +357,7 @@ class DefaultComponentForm(ComponentForm):
         general_outputs_visible = False
         advanced_outputs_visible = False
         out_var_satisfied_dict = {}
+        advanced_config_visible = False
         for variable_def in variables:
             if variable_def.direction == VariableDirection.LOCAL:
                 continue
@@ -380,6 +382,8 @@ class DefaultComponentForm(ComponentForm):
                     label.show()
                 if help_label:
                     help_label.show()
+                if variable_def.ui_config.group == VariableUiGroup.ADVANCED:
+                    advanced_config_visible = True
             else:
                 editor.hide()
                 if label:
@@ -431,6 +435,8 @@ class DefaultComponentForm(ComponentForm):
                 self.findChild(QWidget, 'errorReasonOutputLabel').show()
                 self.findChild(QWidget, 'errorReasonOutputHelp').show()
                 self._show_error_outputs(out_var_satisfied_dict)
+        self._tabs.setTabVisible(1, advanced_config_visible)
+            
 
     def _hide_error_outputs(self):
         if not self.comp_def.output_variables():

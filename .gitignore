@@ -9,3 +9,4 @@
 /test_venv/
 /jimuflow.egg-info/
 /help/
+__pycache__/

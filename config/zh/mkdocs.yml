@@ -139,6 +139,7 @@ nav:
         - 正则匹配: commands/DataProcess/TextOperation/regex_match.md
         - 改变文本大小写: commands/DataProcess/TextOperation/change_text_case.md
         - 截取文本: commands/DataProcess/TextOperation/slice_text.md
+        - 拼接字符串列表: commands/DataProcess/TextOperation/concatenate_string_list.md
       - 数值操作:
         - 数值转文本: commands/DataProcess/NumberOperation/number_to_text.md
         - 生成随机整数: commands/DataProcess/NumberOperation/randomint.md
@@ -213,6 +214,8 @@ nav:
       - 查询数据库: commands/Database/query_database.md
       - 批量更新数据库: commands/Database/batch_update_database.md
       - 关闭数据库连接: commands/Database/close_database_connection.md
+    - AI:
+      - 识别字符验证码: commands/AI/CaptchaRecognition/recognize_char_captcha.md
     - 其他:
       - 打印消息: commands/others/print.md
       - 发送HTTP请求: commands/others/send_http_request.md

@@ -139,6 +139,7 @@ nav:
         - Regex Match: commands/DataProcess/TextOperation/regex_match.md
         - Change Text Case: commands/DataProcess/TextOperation/change_text_case.md
         - Slice Text: commands/DataProcess/TextOperation/slice_text.md
+        - Concatenate String List: commands/DataProcess/TextOperation/concatenate_string_list.md
       - Number Operation:
         - Number to Text: commands/DataProcess/NumberOperation/number_to_text.md
         - Generate Random Integer: commands/DataProcess/NumberOperation/randomint.md
@@ -213,6 +214,8 @@ nav:
       - Query Database: commands/Database/query_database.md
       - Batch Update Database: commands/Database/batch_update_database.md
       - Connect to Database: commands/Database/close_database_connection.md
+    - AI:
+      - Recognize Character Captcha: commands/AI/CaptchaRecognition/recognize_char_captcha.md
     - Others:
       - Print Message: commands/others/print.md
       - Send HTTP Request: commands/others/send_http_request.md

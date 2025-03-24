@@ -140,6 +140,18 @@ def find_element_by_xpath(window_xpath, element_xpath):
 
 def get_element_by_uri(component: "Component", element_uri: str, timeout: float,
                        wait_for_element=True) -> UIAWrapper:
+    """
+    Get a window element by uri.
+
+    Args:
+    - component: The component object.
+    - element_uri: The uri of the element.
+    - timeout: The timeout in seconds.
+    - wait_for_element: If true, it will wait for the element until timeout.
+
+    Returns:
+    - The element object.
+    """
     try:
         element_var = parse_variable_uri(element_uri)
         if element_var:

@@ -3,6 +3,35 @@ msgstr ""
 
 #, python-brace-format
 msgid ""
+"Recognize character captcha in image file ##{imageFile}##, saving result "
+"to ##{result}##"
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"Recognize character captcha in web page ##{webPage}## element "
+"##{webElement}##, saving result to ##{result}##"
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"Recognize character captcha in window element ##{windowElement}##, saving"
+" result to ##{result}##"
+msgstr ""
+
+#, python-brace-format
+msgid "Recognize character captcha, saving result to ##{result}##"
+msgstr ""
+
+#, python-brace-format
+msgid "File does not exist: {image_file}"
+msgstr ""
+
+msgid "Failed to get the image data of the captcha"
+msgstr ""
+
+#, python-brace-format
+msgid ""
 "Add suffix ##{addText}## to ##{originalText}##, and save the result to "
 "##{result}##"
 msgstr ""
@@ -63,6 +92,12 @@ msgstr ""
 
 #, python-brace-format
 msgid "{source_path} is not a valid file or directory."
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"Concatenate string list ##{stringList}## with delimiter ##{delimiter}##, "
+"saving result to ##{result}##"
 msgstr ""
 
 msgid "equal to"
@@ -3476,6 +3511,35 @@ msgstr ""
 msgid "Window height"
 msgstr ""
 
+msgid "Recognize Character Captcha"
+msgstr ""
+
+msgid "AI"
+msgstr ""
+
+msgid "Captcha Recognition"
+msgstr ""
+
+msgid "Image Source"
+msgstr ""
+
+msgid "Image File"
+msgstr ""
+
+msgid "Web Page Object"
+msgstr ""
+
+msgid "Waiting Time (seconds)"
+msgstr ""
+
+msgid ""
+"Waiting time for the web element or window element to appear, unit is "
+"second"
+msgstr ""
+
+msgid "Recognition Result"
+msgstr ""
+
 msgid "Add Prefix or Suffix"
 msgstr ""
 
@@ -3555,6 +3619,18 @@ msgid "Save Folder"
 msgstr ""
 
 msgid "Archive Path"
+msgstr ""
+
+msgid "Concatenate String List"
+msgstr ""
+
+msgid "String List"
+msgstr ""
+
+msgid "Delimiter"
+msgstr ""
+
+msgid "Ignore Empty Item"
 msgstr ""
 
 msgid "Continue to the next loop"
@@ -4940,9 +5016,6 @@ msgstr ""
 msgid "Detect Web Page Content"
 msgstr ""
 
-msgid "Web Page Object"
-msgstr ""
-
 msgid "Detection Type"
 msgstr ""
 
@@ -5629,9 +5702,6 @@ msgid "Get Window"
 msgstr ""
 
 msgid "Current active window"
-msgstr ""
-
-msgid "Waiting Time (seconds)"
 msgstr ""
 
 msgid "Hover Window Element"
